@@ -1,0 +1,38 @@
+[project]
+title = "DP2"
+copyright = "2026 Association of Universities for Research in Astronomy, Inc. (AURA)"
+author = "Vera C. Rubin Observatory"
+base_url = "https://dp2.lsst.io"
+github_url = "https://github.com/lsst/dp2_lsst_io"
+github_default_branch = "main"
+version = "Current"
+
+[sphinx]
+rst_epilog_file = "rst_epilog.rst"
+exclude = []
+
+[sphinx.linkcheck]
+ignore = [
+    "https://arxiv.org/pdf/.*#",
+    "http://localhost",
+    "https://minorplanetcenter.net//iau/info/MPOrbitFormat.html",
+    "https://www.minorplanetcenter.net/iau/MPCORB.html",
+    "https://minorplanetcenter.net",
+    "https://docushare.lsstcorp.org/docushare/dsweb/Get/LSE-163/LSE-163_DataProductsDefinitionDocumentDPDD.pdf",
+    "http://ls.st/doc-29545",
+    "https://ui.adsabs.harvard.edu/abs/.*#", #temporary to unblock MLG Sun Jun 29
+    "https://aladin.cds.unistra.fr/hips/", #temporary to unblock, is in portal 104-1
+    "http://www.star.bris.ac.uk/~mbt/topcat/", #temporary to unblock, in ap1-1
+    "https://ds9.si.edu/doc/ref/region.html", #temporary to unblock a review on portal 105 series
+    "https://healpix.sourceforge.io/", #temporary to unblock PR 161
+    "https://www.lsst.org/content/lsst-statement-regarding-increased-deployment-satellite-constellations" #temporary to unblock PR 171
+]
+
+[sphinx.intersphinx.projects]
+python = "https://docs.python.org/3/"
+lsst = "https://pipelines.lsst.io/v/v29_1_1/"
+astropy = "https://docs.astropy.org/en/v7.0.1/"
+pandas = "https://pandas.pydata.org/pandas-docs/version/2.2/"
+
+[sphinx.redirects]
+
