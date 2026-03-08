@@ -11,7 +11,7 @@ Data Preview 2 contains image and catalog products from Rubin Science Pipelines 
 *Dataset* |dataset_doi| [:download:`BibTeX <bib/dataset.bib>`].
 To be used when citing the DP2 dataset and this documentation (the link is self-referential).
 
-|lsstcam_doi| [:download:`BibTeX </bib/camera.bib>`]
+|lsstcam_doi| [:download:`BibTeX </bib/lsstcam.bib>`]
 
 **Data Policy:** Only Rubin data rights holders may have an account in the Rubin Science Platform (RSP) and access to Data Preview 2.
 All scientists and students in the US and Chile, plus named members of international in-kind teams, have Rubin data rights.
