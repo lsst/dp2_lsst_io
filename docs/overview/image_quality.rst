@@ -1,5 +1,3 @@
-.. _image_quality:
-
 #############
 Image quality
 #############

@@ -1,5 +1,3 @@
-.. _known_issues:
-
 ############
 Known issues
 ############
