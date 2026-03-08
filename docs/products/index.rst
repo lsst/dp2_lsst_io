@@ -1,3 +1,6 @@
-######################
-LSST DP2 Data products
-######################
+#############
+Data products
+#############
+
+Descriptions and schema for the science-ready data products.
+

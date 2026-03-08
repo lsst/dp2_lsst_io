@@ -73,8 +73,8 @@ Tutorials demonstrating how to access and analyze the data products.
 
    Tutorials <tutorials/index>
 
-Cite
-====
+Citing DP2
+==========
 
 How to cite Rubin Observatory and Data Preview 2.
 
