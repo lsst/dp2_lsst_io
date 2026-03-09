@@ -18,8 +18,8 @@ The sky coverage, filters, and number of visits.
 
     observations
 
-Image quality
-=============
+Data quality
+============
 
 A summary of astrometric, photometric, and PSF shape assessments.
 
@@ -27,7 +27,7 @@ A summary of astrometric, photometric, and PSF shape assessments.
     :maxdepth: 2
     :glob:
 
-    image_quality
+    data_quality
 
 Image artifacts
 ===============

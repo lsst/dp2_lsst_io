@@ -1,6 +1,6 @@
-#############
-Image quality
-#############
+############
+Data quality
+############
 
 A summary of astrometric, photometric, and PSF shape assessments.
 
@@ -13,11 +13,6 @@ Photometry
 ==========
 
 ``Content TBD.``
-
-Depths
-------
-
-``Average depths in fields and in WFD.``
 
 Point spread function (PSF)
 ===========================
