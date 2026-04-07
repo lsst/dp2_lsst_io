@@ -4,28 +4,62 @@
 Known issues
 ############
 
-Crowded fields and deblend skipping
-===================================
+.. _issues_crowded_fields:
+
+Crowded fields
+==============
+
+Deblend skipping
+----------------
 
 The DP2 observations include several fields that present a challenge for our pipelines, especially with respect to crowding.
 
-The most common failure mode is when so many peaks are detected in a single above-threshold region that the deblender determines that it would run out of memory trying to separate them and simply gives up, resulting in few or no entries in the :ref:`catalogs-object` catalog in that region.
+The most common failure mode is when so many peaks are detected in a single above-threshold region that the deblender determines that it would run out of memory trying to separate them and simply gives up, resulting in few or no entries in the Object catalog in that region.
 Poor deconvolution in crowded fields can also leave rings that connect large regions, resulting in blends that span most or all of a patch; we do not have the compute to process blends that large, so measurements may be missing for many patches in dense stellar fields.
 
 We are currently integrating a major change to our deblender that we hope will mitigate this problem in future processing, and future data releases will include a coadd mask plane indicating when skipping occurs, making the problem easier to diagnose.
 
-It is likely that our direct image processing in crowded fields will still lag dedicated crowded-field photometry codes; Rubin's focus for these fields has always been image subtraction (where we do expect to compete with the state of the art), with the :ref:`catalogs-object` catalog a best-effort addition.
+It is likely that our direct image processing in crowded fields will still lag dedicated crowded-field photometry codes; Rubin's focus for these fields has always been image subtraction (where we do expect to compete with the state of the art), with the Object catalog a best-effort addition.
+
+Deblending quality
+------------------
+
+A population of faint, semi-isolated sources causes catastrophic deblending failures, which appear to exist in every patch.
+A sizeable number of outliers (approximately the bottom 2% for most patches) need investigation.
+Resolved grand-design spirals and other non-monotonic structures are also expected to have poor deblending chi-squared values.
+
+Users should be cautious with objects that have reduced deblending chi-squared values much greater than 3.
+
+Coadd photometry in crowded fields
+-----------------------------------
+
+Stellar photometry on coadds is biased bright in crowded fields.
+This is likely due to undersubtracted backgrounds, though the diagnosis is not yet complete.
+
+PSF modeling issues in crowded fields
+-------------------------------------
+
+PSF residuals in DP2 show structure that correlates with stellar density, with the largest biases appearing in the Milky Way, the LMC, and the SMC.
+This stellar-density dependence also explains observed differences in PSF residuals between bands (bands with more crowding show larger residuals).
+The underlying cause is believed to be related to background subtraction in dense fields.
+
+DP2 has an order of magnitude more visits than previous processing campaigns, revealing a new variety of PSF-related issues, including annealing patterns in E2V sensors visible in u and g-band stacks.
+
+.. _issues_astrometry:
+
+Astrometry
+==========
 
 .. _products_wcs_known_issues:
 
 WCS FITS approximations and misleading interfaces
-==================================================
+--------------------------------------------------
 
 Rubin's single-visit World Coordinate System (WCS) objects are not, in general, exactly representable via the FITS WCS standard.
-The FITS WCS in the headers of the :ref:`visit image <images-visit-image>` and :ref:`difference image <images-difference-image>` data products (they are the same) are ``TAN-SIP`` approximations that were expected to be good enough for visualization and object finding, not for precision astrometry.
+The FITS WCS in the headers of the visit image and difference image data products (they are the same) are ``TAN-SIP`` approximations that were expected to be good enough for visualization and object finding, not for precision astrometry.
 
 Current recommendations for WCS use
-------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To make use of the full WCS of a visit image or difference image, it is necessary to use Rubin's ``lsst.afw.geom.SkyWcs`` objects::
 
@@ -40,7 +74,7 @@ These problems center around the fact that their ``getSkyOrigin`` and ``getPixel
 The ``skyToPixel[Array]`` and ``pixelToSky[Array]`` are always safe to use, and ``getPixelScale`` can be used safely if you explicitly provide it with the point to evaluate the pixel scale at.
 Most other methods are best avoided (including ``getFitsMetadata``, which does *not* return the FITS approximation in the file headers).
 
-The WCSs objects attached to coadds *are* exactly representable in FITS WCS, but can also be tricky to use since each full ``tract`` has a single WCS, and each patch image has an integer offset relative to that coordinate system.
+The WCS objects attached to coadds *are* exactly representable in FITS WCS, but can also be tricky to use since each full ``tract`` has a single WCS, and each patch image has an integer offset relative to that coordinate system.
 So if you're indexing the NumPy array that backs a coadd image directly, e.g.::
 
   coadd.image.array[i, j]
@@ -54,8 +88,8 @@ be aware that this corresponds to the ``x`` and ``y`` pixel coordinates of the W
 When we write a coadd image to a file, we offset the WCS in the FITS header to be consistent with the pixels (since FITS requires that the origin of any image be ``(1, 1)``).
 But this is not done when calling ``wcs.getFitsMetadata()``, since the necessary offset is stored with the coadd object, not the WCS, and this is another common source of confusion.
 
-Finally, the WCS objects of :ref:`raw <images-raw>` images simply should not be used; they are based on an initial guess from the telescope at its pointing, but at present this can be quite far off from the true pointing.
-The corresponding :ref:`visit image <images-visit-image>` WCS should be used instead.
+Finally, the WCS objects of raw images simply should not be used; they are based on an initial guess from the telescope at its pointing, but at present this can be quite far off from the true pointing.
+The corresponding visit image WCS should be used instead.
 
 **Please do not:**
 
@@ -75,15 +109,72 @@ The corresponding :ref:`visit image <images-visit-image>` WCS should be used ins
 For more details on Rubin WCS pitfalls (especially outside the context of DP2), see `this community post <https://community.lsst.org/t/how-to-use-wcss-in-dp1-and-commissioning-processing/10769>`__.
 We expect our single-visit WCS objects to continue to be non-representable as FITS.
 
+Astrometric calibration
+------------------------
+
+The final astrometry in DP2 is performed in two steps: GBDES fits static and per-visit polynomials, and remaining atmospheric turbulence is fit by Gaussian Processes.
+In a separate step, proper motion and parallax are now fit for all isolated stars.
+Single-frame astrometry uses ``astrometry_camera``, the camera distortion model built from the astrometry fit, though pointing accuracy remains an issue.
+
+Known astrometric issues include:
+
+- Not yet understood behavior in the AA1 (per-visit median offset from Gaia) metrics.
+- Stacking residuals in focal plane coordinates reveals unmodeled camera behavior, including tree ring signatures and other small-scale effects.
+- The GBDES fit currently consumes a large amount of memory and is a processing bottleneck.
+
+Coadd astrometry: galaxy RA bias
+---------------------------------
+
+Galaxy Right Ascension (but not Declination) has a magnitude-dependent bias, seen when compared to external catalogs (Euclid, DES, and others) and confirmed in injection runs.
+This may be related to the way the aperture used in ``SdssCentroid`` grows with source brightness.
+Exponential and Sersic model centroids, which have a free centroid parameter, are generally more accurate and have a smaller bias.
+
+.. _issues_flags:
+
+Flags and catalogs
+==================
+
+Flag columns
+------------
+
+The measurement algorithms that populate our catalogs typically have both a "general" failure flag that is set for any failure and one or more detailed flags that can be used to identify exactly what happened.
+We also have a suite of "pixel flags" (``*_pixelFlags_*``) that report on the image mask planes in the neighborhood of a source or object.
+
+Science users are expected to filter their samples using both types of flags explicitly; almost no filtering has already been performed, and filtering on flags can depend greatly on the science case.
+
+Calibration source catalogs and flags
+--------------------------------------
+
+The public Source catalog does not contain the same single-visit detections used to estimate the PSF and fit for the astrometric and photometric calibrations.
+Those initial sources (the ``single_visit_star`` and ``recalibrated_star`` butler dataset types) are some of the many intermediate data products that are not retained in a final data release, while Source detections are made on the final visit image after all calibration steps are complete.
+
+Furthermore, the Object catalog has a few columns (prefixed with ``calib_``) that purport to identify objects used in various calibration steps.
+These are generated from a spatial match from the object positions to the initial sources positions, which means they can suffer from mismatch problems in rare cases.
+
+A more serious problem is that these flags currently reflect our preliminary single-detector astrometric and photometric calibration steps, not the later FGCM and GBDES fits (they do reflect the stars that went into our final Piff PSF models, however).
+This problem will be fixed in future data releases.
+
+Star/galaxy classification
+---------------------------
+
+A new floating-point, per-band and griz ``model_extendedness`` classifier using Sersic fluxes and sizes generally performs better than the previous ``refExtendedness``.
+However, ``griz_model_extendedness`` tends to classify everything as a galaxy fainter than approximately ``i = 24``; adjusting the threshold can help, but optimal faint-star selection will require user input.
+A classification for bad or bogus detections is still lacking.
+
+.. _issues_photometry:
+
+Photometry
+==========
+
 Image units
-===========
+-----------
 
 All image data products are annotated as having units of ``nJy``, but this does not mean individual pixel values can be treated as direct measures of spectral flux density (any more than any other image with an AB magnitude zero point - which would be directly proportional to ``nJy`` - can be used this way).
 
 Instead, it simply means that photometry algorithms that account for the PSF model and aperture corrections (see below) directly yield ``nJy`` fluxes.
 
 Aperture corrections
-====================
+--------------------
 
 Rubin processing uses aperture corrections to ensure that different photometry estimators produce consistent results on point sources.
 These corrections are measured by applying different algorithms to the same set of bright stars on each single-visit image and interpolating the ratio of each algorithm to a standard one (a background-compensated top-hat aperture flux), which is then used for all photometric calibration.
@@ -101,42 +192,31 @@ This scheme has several problems:
 
 Improving our approach to aperture corrections is a research project; we are not happy with the current situation, but have not yet identified a satisfactory alternative.
 
-Flag columns
-============
+Photometric calibration: background oversubtraction
+----------------------------------------------------
 
-The measurement algorithms that populate our catalogs typically have both a "general" failure flag that is set for any failure and one or more detailed flags that can be used to identify exactly what happened.
-We also have a suite of "pixel flags" (``*_pixelFlags_*``) that report on the image mask planes in the neighborhood of a source or object.
-
-Science users are expected to filter their samples using both types of flags explicitly; almost no filtering has already been performed, and filtering on flags can depend greatly on the science case.
+Photometrically-derived background offset QA plots reveal systematic oversubtraction in all bands, worsening toward redder bands and in the densest regions.
+DP2 includes many dense regions, making this effect more pronounced.
+This oversubtraction can affect photometry and PSF estimation in crowded fields.
 
 Forced photometry variants and blending
-=======================================
+----------------------------------------
 
-There are a total of four variants of forced photometry in Rubin data release processing for the combination of two different reference catalogs (:ref:`catalogs-object` and :ref:`catalogs-dia-object`) and two different measurement images (:ref:`images-visit-image` and :ref:`images-difference-image`).
-Each of the two forced photometry catalogs includes rows for both measurement images and a single reference catalog (:ref:`catalogs-forced-source` uses :ref:`catalogs-object` positions, while :ref:`catalogs-dia-forced-source` uses :ref:`catalogs-dia-object` positions).
+There are a total of four variants of forced photometry in Rubin data release processing for the combination of two different reference catalogs (Object and DiaObject) and two different measurement images (visit images and difference images).
+Each of the two forced photometry catalogs includes rows for both measurement images and a single reference catalog (ForcedSource uses Object positions, while DiaForcedSource uses DiaObject positions).
 
-We expect forced photometry on :ref:`images-difference-image` to behave best, especially in crowded regions, since image subtraction should remove neighbors even more effectively than the deblender we run on the coadds (note that we do not deblend when producing the :ref:`catalogs-dia-source` catalog, either).
-There is no deblending whatsoever in our forced photometry on :ref:`images-visit-image`.
-
-Calibration source catalogs and flags
-=====================================
-
-The public :ref:`catalogs-source` catalog does not contain the same single-visit detections used to estimate the PSF and fit for the astrometric and photometric calibrations.
-Those initial sources (the ``single_visit_star`` and ``recalibrated_star`` butler dataset types) are some of the many intermediate data products that are not retained in a final data release, while :ref:`catalogs-source` detections are made on the final :ref:`images-visit-image` after all calibration steps are complete.
-
-Furthermore, the :ref:`catalogs-object` catalog has a few columns (prefixed with ``calib_``) that purport to identify objects used in various calibration steps.
-These are generated from a spatial match from the object positions to the initial sources positions, which means they can suffer from mismatch problems in rare cases.
-
-A more serious problem is that these flags currently reflect our preliminary single-detector astrometric and photometric calibration steps, not the later FGCM and GBDES fits (they do reflect the stars that went into our final Piff PSF models, however).
-This problem will be fixed in future data releases.
+We expect forced photometry on difference images to behave best, especially in crowded regions, since image subtraction should remove neighbors even more effectively than the deblender we run on the coadds (note that we do not deblend when producing the DiaSource catalog, either).
+There is no deblending whatsoever in our forced photometry on visit images.
 
 Ellipse parameterizations and units
-====================================
+-------------------------------------
 
 ``TBD``
 
+.. _issues_isr:
+
 Instrumental signature removal
-==============================
+===============================
 
 Amplifier offsets
 -----------------
@@ -167,34 +247,16 @@ This correction does not work well in the outer partly vignetted region of the f
 
 Camera temperature variations (particularly during the second calibration epoch) and focal plane restarts also changed gains slightly, resulting in additional amplifier offsets.
 
-Photometric calibration: background oversubtraction
-====================================================
+.. _issues_backgrounds:
 
-Photometrically-derived background offset QA plots reveal systematic oversubtraction in all bands, worsening toward redder bands and in the densest regions.
-DP2 includes many dense regions, making this effect more pronounced.
-This oversubtraction can affect photometry and PSF estimation in crowded fields.
+Background subtraction
+=======================
 
-Astrometric calibration
-========================
+The ``SkyCorrectionTask`` that performs full-focal-plane background correction is not designed to accommodate detector-to-detector offsets in the input data.
+These offsets arise from several sources, including E2V/ITL sensor differences, offset detectors, and offset REBs, and are more pronounced in the u and y bands.
+A new full-focal-plane background fitter is under development but was not ready for DP2.
 
-The final astrometry in DP2 is performed in two steps: GBDES fits static and per-visit polynomials, and remaining atmospheric turbulence is fit by Gaussian Processes.
-In a separate step, proper motion and parallax are now fit for all isolated stars.
-Single-frame astrometry uses `astrometry_camera`, the camera distortion model built from the astrometry fit, though pointing accuracy remains an issue.
-
-Known astrometric issues include:
-
-- Not yet understood behavior in the AA1 (per-visit median offset from Gaia) metrics.
-- Stacking residuals in focal plane coordinates reveals unmodeled camera behavior, including tree ring signatures and other small-scale effects.
-- The GBDES fit currently consumes a large amount of memory and is a processing bottleneck.
-
-PSF modeling issues in crowded fields
-======================================
-
-PSF residuals in DP2 show structure that correlates with stellar density, with the largest biases appearing in the Milky Way, the LMC, and the SMC.
-This stellar-density dependence also explains observed differences in PSF residuals between bands (bands with more crowding show larger residuals).
-The underlying cause is believed to be related to background subtraction in dense fields.
-
-DP2 has an order of magnitude more visits than previous processing campaigns, revealing a new variety of PSF-related issues, including annealing patterns in E2V sensors visible in u and g-band stacks.
+.. _issues_coadds:
 
 Cell-based coadds
 ==================
@@ -205,27 +267,7 @@ Cells are 150x150 pixels, and the PSF model for each cell is the weighted averag
 
 Cell coadd injection is not yet working for DP2, so characterization relies on matching against external catalogs in deep drilling fields. A large injection campaign is planned for the DP2 release.
 
-Deblending quality
-===================
-
-A population of faint, semi-isolated sources causes catastrophic deblending failures, which appear to exist in every patch.
-A sizeable number of outliers (approximately the bottom 2% for most patches) need investigation.
-Resolved grand-design spirals and other non-monotonic structures are also expected to have poor deblending chi-squared values.
-
-Users should be cautious with objects that have reduced deblending chi-squared values much greater than 3.
-
-Coadd photometry in crowded fields
-====================================
-
-Stellar photometry on coadds is biased bright in crowded fields.
-This is likely due to undersubtracted backgrounds, though the diagnosis is not yet complete.
-
-Coadd astrometry: galaxy RA bias
-==================================
-
-Galaxy Right Ascension (but not Declination) has a magnitude-dependent bias, seen when compared to external catalogs (Euclid, DES, and others) and confirmed in injection runs.
-This may be related to the way the aperture used in ``SdssCentroid`` grows with source brightness.
-Exponential and Sersic model centroids, which have a free centroid parameter, are generally more accurate and have a smaller bias.
+.. _issues_dia:
 
 Difference imaging
 ===================
@@ -238,19 +280,7 @@ Remaining known issues in difference imaging include:
 - Detection and measurement with preconvolution needs further development.
 - The reliability model for DIA sources shows improved performance relative to DP1, but does not perform well on bad stellar subtractions.
 
-Background subtraction
-=======================
-
-The ``SkyCorrectionTask`` that performs full-focal-plane background correction is not designed to accommodate detector-to-detector offsets in the input data.
-These offsets arise from several sources, including E2V/ITL sensor differences, offset detectors, and offset REBs, and are more pronounced in the u and y bands.
-A new full-focal-plane background fitter is under development but was not ready for DP2.
-
-Star/galaxy classification
-===========================
-
-A new floating-point, per-band and griz ``model_extendedness`` classifier using Sersic fluxes and sizes generally performs better than the previous ``refExtendedness``.
-However, ``griz_model_extendedness`` tends to classify everything as a galaxy fainter than approximately ``i = 24``; adjusting the threshold can help, but optimal faint-star selection will require user input.
-A classification for bad or bogus detections is still lacking.
+.. _issues_solarsystem:
 
 Solar system processing
 ========================
