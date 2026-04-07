@@ -9,32 +9,12 @@ Known issues
 Crowded fields
 ==============
 
-Deblend skipping
-----------------
-
-The DP2 observations include several fields that present a challenge for our pipelines, especially with respect to crowding.
-
-The most common failure mode is when so many peaks are detected in a single above-threshold region that the deblender determines that it would run out of memory trying to separate them and simply gives up, resulting in few or no entries in the Object catalog in that region.
-Poor deconvolution in crowded fields can also leave rings that connect large regions, resulting in blends that span most or all of a patch; we do not have the compute to process blends that large, so measurements may be missing for many patches in dense stellar fields.
-
-We are currently integrating a major change to our deblender that we hope will mitigate this problem in future processing, and future data releases will include a coadd mask plane indicating when skipping occurs, making the problem easier to diagnose.
-
-It is likely that our direct image processing in crowded fields will still lag dedicated crowded-field photometry codes; Rubin's focus for these fields has always been image subtraction (where we do expect to compete with the state of the art), with the Object catalog a best-effort addition.
-
 Deblending quality
 ------------------
 
-A population of faint, semi-isolated sources causes catastrophic deblending failures, which appear to exist in every patch.
-A sizeable number of outliers (approximately the bottom 2% for most patches) need investigation.
-Resolved grand-design spirals and other non-monotonic structures are also expected to have poor deblending chi-squared values.
+Poor deconvolution in crowded fields leaves rings that connect large regions, resulting in blends that take up most or all of a patch.
+There are missing measurements for several patches in dense stellar fields.
 
-Users should be cautious with objects that have reduced deblending chi-squared values much greater than 3.
-
-Coadd photometry in crowded fields
------------------------------------
-
-Stellar photometry on coadds is biased bright in crowded fields.
-This is likely due to undersubtracted backgrounds, though the diagnosis is not yet complete.
 
 PSF modeling issues in crowded fields
 -------------------------------------
@@ -118,9 +98,8 @@ Single-frame astrometry uses ``astrometry_camera``, the camera distortion model 
 
 Known astrometric issues include:
 
-- Not yet understood behavior in the AA1 (per-visit median offset from Gaia) metrics.
+- Not yet understood behavior in the per-visit median offset from Gaia metrics.
 - Stacking residuals in focal plane coordinates reveals unmodeled camera behavior, including tree ring signatures and other small-scale effects.
-- The GBDES fit currently consumes a large amount of memory and is a processing bottleneck.
 
 Coadd astrometry: galaxy RA bias
 ---------------------------------
