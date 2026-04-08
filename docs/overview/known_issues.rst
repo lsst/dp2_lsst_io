@@ -41,7 +41,8 @@ The FITS WCS in the headers of the visit image and difference image data product
 Current recommendations for WCS use
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. TODO: Update this section. New safer types (lsst.images) should be what most users see,
+.. note::
+   TODO: Update this section. New safer types (lsst.images) should be what most users see,
    but it will still be possible to access the old lsst.afw.geom.SkyWcs types.
 
 To make use of the full WCS of a visit image or difference image, it is necessary to use Rubin's ``lsst.afw.geom.SkyWcs`` objects::
