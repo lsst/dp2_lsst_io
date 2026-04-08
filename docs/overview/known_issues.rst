@@ -41,9 +41,9 @@ The FITS WCS in the headers of the visit image and difference image data product
 Current recommendations for WCS use
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note::
-   TODO: Update this section. New safer types (lsst.images) should be what most users see,
-   but it will still be possible to access the old lsst.afw.geom.SkyWcs types.
+.. note:: 
+  TODO: Update this section. New safer types (lsst.images) should be what most users see,
+  but it will still be possible to access the old lsst.afw.geom.SkyWcs types.
 
 To make use of the full WCS of a visit image or difference image, it is necessary to use Rubin's ``lsst.afw.geom.SkyWcs`` objects::
 
@@ -116,7 +116,8 @@ Exponential and Sersic model centroids, which have a free centroid parameter, ar
 Flags and catalogs
 ==================
 
-.. TODO: Move flags and catalogs content to the appropriate catalog data product pages.
+.. note:: 
+  TODO: Move flags and catalogs content to the appropriate catalog data product pages.
 
 Flag columns
 ------------
@@ -153,7 +154,8 @@ Photometry
 Image units
 -----------
 
-.. TODO: Move this section to the image data product pages.
+.. note:: 
+  TODO: Move this section to the image data product pages.
 
 All image data products are annotated as having units of ``nJy``, but this does not mean individual pixel values can be treated as direct measures of spectral flux density (any more than any other image with an AB magnitude zero point - which would be directly proportional to ``nJy`` - can be used this way).
 
