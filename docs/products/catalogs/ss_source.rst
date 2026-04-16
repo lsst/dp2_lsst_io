@@ -18,7 +18,7 @@ The SS source catalog is accessible via the TAP and Butler services.
 TAP
 ---
 
-* |SSSource_doi| [:download:`BibTeX </bib/tap-SSSource.bib>`]
+* |SSSource_doi| [\:download:`BibTeX </bib/tap-SSSource.bib>`]
 * Table name: ``SSSource``
 * Columns: |SSSource_columns|
 * Rows: |SSSource_rows|
