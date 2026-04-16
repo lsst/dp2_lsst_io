@@ -17,14 +17,14 @@ The raw exposures are accessible via the Butler, SIA, and TAP services.
 Butler
 ------
 
-* :ref:`Dataset type <products_butler_terminology>`\ : ('raw', {band, **instrument**, day_obs, **detector**, group, physical_filter, **exposure**}, Exposure)
+.. (This line commented-out for now)  * :ref:`Dataset type <products_butler_terminology>`\ : ('raw', {band, **instrument**, day_obs, **detector**, group, physical_filter, **exposure**}, Exposure)
 * Format: FITS
 * Number of Butler datasets: |raw_butler_count|
 
 SIA and TAP
 -----------
 
-Schema: `ObsCore table <https://sdm-schemas.lsst.io/ivoa_obscore.html>`_
+.. (This line commented-out for now)  Schema: `ObsCore table <https://sdm-schemas.lsst.io/ivoa_obscore.html>`_
 
 IVOA calibration level: 1
 
