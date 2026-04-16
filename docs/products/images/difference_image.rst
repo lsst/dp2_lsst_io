@@ -6,7 +6,7 @@ Difference image
 
 The result of subtracting a template coadd from a visit image.
 
-|difference_image_doi| [:download:`BibTeX </bib/butler-difference_image.bib>`]
+.. (This line commented-out for now) |difference_image_doi| [:download:`BibTeX </bib/butler-difference_image.bib>`]
 
 Access
 ======
@@ -85,5 +85,7 @@ See :ref:`products_wcs_known_issues` for more information.
 Tutorials
 ---------
 
-See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
-tutorials demonstrating how to access the difference images.
+**UPDATE FOR DP2**
+
+.. (This line commented-out for now) See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
+.. (This line commented-out for now) tutorials demonstrating how to access the difference images.
