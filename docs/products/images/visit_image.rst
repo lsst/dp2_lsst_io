@@ -16,14 +16,14 @@ The visit images are accessible via the Butler, SIA, and TAP services.
 Butler
 ------
 
-* :ref:`Dataset type <products_butler_terminology>`\ : ('visit_image', {band, **instrument**, day_obs, **detector**, physical_filter, **visit**}, ExposureF)
+.. (This line commented-out for now)  * :ref:`Dataset type <products_butler_terminology>`\ : ('visit_image', {band, **instrument**, day_obs, **detector**, physical_filter, **visit**}, ExposureF)
 * Format: FITS
 * Number of Butler datasets: |visit_image_butler_count|
 
 SIA and TAP
 -----------
 
-Schema: `ObsCore table <https://sdm-schemas.lsst.io/ivoa_obscore.html>`_
+.. (This line commented-out for now)  Schema: `ObsCore table <https://sdm-schemas.lsst.io/ivoa_obscore.html>`_
 
 IVOA calibration level: 2
 
