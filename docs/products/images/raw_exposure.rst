@@ -6,7 +6,7 @@ Raw exposure
 
 Unprocessed exposure from camera readout.
 
-|raw_doi| [:download:`BibTeX </bib/butler-raw.bib>`]
+.. (This line commented-out for now) |raw_doi| [:download:`BibTeX </bib/butler-raw.bib>`]
 
 
 Access
@@ -60,5 +60,7 @@ and an initial WCS estimated from the telescope boresight.
 Tutorials
 ---------
 
-See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
-tutorials demonstrating how to access the raw exposures.
+**UPDATE FOR DP2**
+
+.. (This line commented-out for now) See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
+.. (This line commented-out for now) tutorials demonstrating how to access the raw exposures.
