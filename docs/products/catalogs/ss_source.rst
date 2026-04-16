@@ -6,7 +6,7 @@ SS source
 
 Instantaneous physical parameters for moving objects at the time of every observation.
 
-Schema: `SSSource table <https://sdm-schemas.lsst.io/dp1.html#SSSource>`_
+.. (This line commented-out for now)  Schema: `SSSource table <https://sdm-schemas.lsst.io/dp1.html#SSSource>`_
 
 Access
 ======
@@ -27,7 +27,7 @@ Butler
 ------
 
 .. (This line commented-out for now) * |ss_source_doi| [:download:`BibTeX </bib/butler-ss_source.bib>`]
-* :ref:`Dataset type <products_butler_terminology>`\ : ('ss_source', {}, ArrowAstropy)
+.. (This line commented-out for now)  * :ref:`Dataset type <products_butler_terminology>`\ : ('ss_source', {}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |ss_source_butler_count|
 
