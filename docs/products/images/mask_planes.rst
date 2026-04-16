@@ -128,8 +128,11 @@ The following table provides a summary.
      - difference
      - Pixel saturated in the template used for difference imaging.
 
-Mask planes not populated in DP1
+Mask planes not populated in DP2
 ================================
+
+**UPDATE FOR DP2**
+
 In DP1, several mask planes defined by the LSST Science Pipelines are not populated in either ``visit_image`` or ``deep_coadd`` products.
 This is expected and reflects DP1-specific processing, camera geometry, and pipeline configuration, and may differ in future data releases.
 
