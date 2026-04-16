@@ -3,6 +3,8 @@
 Deep and Template Coadd Mask Planes
 ===================================
 
+**UPDATE FOR DP2**
+
 This page documents the mask planes used in deep coadd template coadd images in Data Preview 1 (DP1).
 Each plane corresponds to a bit in the coadd mask and reflects the propagation or summary of pixel conditions from contributing single-visit exposures.
 
