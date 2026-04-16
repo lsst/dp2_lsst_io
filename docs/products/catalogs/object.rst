@@ -18,7 +18,7 @@ The object catalog is accessible via the TAP and Butler services.
 
 .. note::
 
-    The Object catalog has many columns, and it is recommended to retrieve only a subset of the columns :ref:`with TAP <products_adql_queries>` or the :ref:`with the Butler <products_butler_terminology>`.
+.. (This line commented-out for now)     The Object catalog has many columns, and it is recommended to retrieve only a subset of the columns :ref:`with TAP <products_adql_queries>` or the :ref:`with the Butler <products_butler_terminology>`.
 
 TAP
 ---
@@ -57,7 +57,7 @@ They are then filtered down to just those whose reference-band centroid falls wi
 Processing
 ----------
 
-The object catalog is the result of :doc:`/processing/detection/index`.
+.. (This line commented-out for now) The object catalog is the result of :doc:`/processing/detection/index`.
 
 Tutorials
 ---------
