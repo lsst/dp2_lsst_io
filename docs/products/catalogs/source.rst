@@ -6,7 +6,7 @@ Source
 
 Measurements for sources detected in processed visit images.
 
-Schema: `Source table <https://sdm-schemas.lsst.io/dp1.html#Source>`_
+.. (This line commented-out for now)  Schema: `Source table <https://sdm-schemas.lsst.io/dp1.html#Source>`_
 
 Access
 ======
@@ -27,7 +27,7 @@ Butler
 ------
 
 .. (This line commented-out for now) * |source_doi| [:download:`BibTeX </bib/butler-source.bib>`]
-* :ref:`Dataset type <products_butler_terminology>`\ : ('source', {band, **instrument**, day_obs, physical_filter, **visit**}, ArrowAstropy)
+.. (This line commented-out for now)  * :ref:`Dataset type <products_butler_terminology>`\ : ('source', {band, **instrument**, day_obs, physical_filter, **visit**}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |source_butler_count|
 
