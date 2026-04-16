@@ -16,14 +16,14 @@ The template coadd images are accessible via the Butler, SIA, and TAP services.
 Butler
 ------
 
-* :ref:`Dataset type <products_butler_terminology>`\ : ('template_coadd', {**band**, **skymap**, **tract**, **patch**}, ExposureF)
+.. (This line commented-out for now)  * :ref:`Dataset type <products_butler_terminology>`\ : ('template_coadd', {**band**, **skymap**, **tract**, **patch**}, ExposureF)
 * Format: FITS
 * Number of Butler datasets: |template_coadd_butler_count|
 
 SIA and TAP
 -----------
 
-Schema: `ObsCore table <https://sdm-schemas.lsst.io/ivoa_obscore.html>`_
+.. (This line commented-out for now)  Schema: `ObsCore table <https://sdm-schemas.lsst.io/ivoa_obscore.html>`_
 
 IVOA calibration level: 3
 
@@ -72,7 +72,7 @@ WCS
 
 The World Coordinate System objects for coadd images are exactly representable as FITS (they are simple TAN projections), but each ``tract`` has its own WCS that is shared by all ``patches``, with an integer offset that must be applied for each patch manually to index the pixel arrays.
 
-See :ref:`products_wcs_known_issues` for more information.
+.. (This line commented-out for now)  See :ref:`products_wcs_known_issues` for more information.
 
 Tutorials
 ---------
