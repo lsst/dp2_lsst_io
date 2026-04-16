@@ -27,7 +27,7 @@ Butler
 ------
 
 .. (This line commented-out for now)  * |dia_object_forced_source_doi| [:download:`BibTeX </bib/butler-dia_object_forced_source.bib>`]
-* :ref:`Dataset type <products_butler_terminology>`\ : ('dia_object_forced_source', {**skymap**, **tract**, **patch**}, ArrowAstropy)
+.. (This line commented-out for now)  * :ref:`Dataset type <products_butler_terminology>`\ : ('dia_object_forced_source', {**skymap**, **tract**, **patch**}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |dia_object_forced_source_butler_count|
 
