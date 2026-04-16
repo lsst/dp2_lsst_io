@@ -6,7 +6,7 @@ DIA object
 
 Derived properties for transient and variable objects.
 
-Schema: `DiaObject table <https://sdm-schemas.lsst.io/dp1.html#DiaObject>`_
+.. (This line commented-out for now)  Schema: `DiaObject table <https://sdm-schemas.lsst.io/dp1.html#DiaObject>`_
 
 Access
 ======
@@ -18,7 +18,7 @@ The DIA object catalog is accessible via the TAP and Butler services.
 TAP
 ---
 
-* |DiaObject_doi| [:download:`BibTeX </bib/tap-DiaObject.bib>`]
+.. (This line commented-out for now)  * |DiaObject_doi| [:download:`BibTeX </bib/tap-DiaObject.bib>`]
 * Table name: ``DiaObject``
 * Columns: |DiaObject_columns|
 * Rows: |DiaObject_rows|
@@ -26,8 +26,8 @@ TAP
 Butler
 ------
 
-* |dia_object_doi| [:download:`BibTeX </bib/butler-dia_object.bib>`]
-* :ref:`Dataset type <products_butler_terminology>`\ : ('dia_object', {**skymap**, **tract**}, ArrowAstropy)
+.. (This line commented-out for now)  * |dia_object_doi| [:download:`BibTeX </bib/butler-dia_object.bib>`]
+.. (This line commented-out for now)  * :ref:`Dataset type <products_butler_terminology>`\ : ('dia_object', {**skymap**, **tract**}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |dia_object_butler_count|
 
