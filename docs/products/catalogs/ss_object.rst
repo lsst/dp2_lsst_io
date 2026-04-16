@@ -6,7 +6,7 @@ SS object
 
 Derived parameters for moving (Solar System) objects.
 
-.. (This line commented-out for now)  Schema: `SSObject table <https://sdm-schemas.lsst.io/dp1.html#SSObject>`_
+Schema: `SSObject table <https://sdm-schemas.lsst.io/dp1.html#SSObject>`_
 
 Access
 ======
@@ -18,7 +18,7 @@ The SS object catalog is accessible via the TAP and Butler services.
 TAP
 ---
 
-.. (This line commented-out for now) * |SSObject_doi| [:download:`BibTeX </bib/tap-SSObject.bib>`]
+* |SSObject_doi| [\:download:`BibTeX </bib/tap-SSObject.bib>`]
 * Table name: ``SSObject``
 * Columns: |SSObject_columns|
 * Rows: |SSObject_rows|
@@ -26,8 +26,8 @@ TAP
 Butler
 ------
 
-.. (This line commented-out for now) * |ss_object_doi| [:download:`BibTeX </bib/butler-ss_object.bib>`]
-.. (This line commented-out for now)  * :ref:`Dataset type <products_butler_terminology>`\ : ('ss_object', {}, ArrowAstropy)
+* |ss_object_doi| [\:download:`BibTeX </bib/butler-ss_object.bib>`]
+* \:ref:`Dataset type <products_butler_terminology>`\ : ('ss_object', {}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |ss_object_butler_count|
 
@@ -51,5 +51,5 @@ Tutorials
 
 **UPDATE FOR DP2**
 
-.. (This line commented-out for now) See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
-.. (This line commented-out for now) tutorials demonstrating how to access the SS object table.
+See the \:ref:`200-level notebook <notebook-200>` or \:ref:`200-level portal <portal-200>`
+tutorials demonstrating how to access the SS object table.
