@@ -6,7 +6,7 @@ DIA source
 
 Measurements for sources detected in difference images.
 
-Schema: `DiaSource table <https://sdm-schemas.lsst.io/dp1.html#DiaSource>`_
+.. (This line commented-out for now)  Schema: `DiaSource table <https://sdm-schemas.lsst.io/dp1.html#DiaSource>`_
 
 Access
 ======
@@ -18,7 +18,7 @@ The DIA source catalog is accessible via the TAP and Butler services.
 TAP
 ---
 
-* |DiaSource_doi| [:download:`BibTeX </bib/tap-DiaSource.bib>`]
+.. (This line commented-out for now)  * |DiaSource_doi| [:download:`BibTeX </bib/tap-DiaSource.bib>`]
 * Table name: ``DiaSource``
 * Columns: |DiaSource_columns|
 * Rows: |DiaSource_rows|
@@ -26,8 +26,8 @@ TAP
 Butler
 ------
 
-* |source_doi| [:download:`BibTeX </bib/butler-dia_source.bib>`]
-* :ref:`Dataset type <products_butler_terminology>`\ : ('dia_source', {**skymap**, **tract**}, ArrowAstropy)
+.. (This line commented-out for now)  * |source_doi| [:download:`BibTeX </bib/butler-dia_source.bib>`]
+.. (This line commented-out for now)  * :ref:`Dataset type <products_butler_terminology>`\ : ('dia_source', {**skymap**, **tract**}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |source_butler_count|
 
