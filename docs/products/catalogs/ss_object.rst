@@ -6,7 +6,7 @@ SS object
 
 Derived parameters for moving (Solar System) objects.
 
-Schema: `SSObject table <https://sdm-schemas.lsst.io/dp1.html#SSObject>`_
+.. (This line commented-out for now)  Schema: `SSObject table <https://sdm-schemas.lsst.io/dp1.html#SSObject>`_
 
 Access
 ======
@@ -27,7 +27,7 @@ Butler
 ------
 
 .. (This line commented-out for now) * |ss_object_doi| [:download:`BibTeX </bib/butler-ss_object.bib>`]
-* :ref:`Dataset type <products_butler_terminology>`\ : ('ss_object', {}, ArrowAstropy)
+.. (This line commented-out for now)  * :ref:`Dataset type <products_butler_terminology>`\ : ('ss_object', {}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |ss_object_butler_count|
 
