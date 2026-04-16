@@ -52,5 +52,5 @@ Tutorials
 
 **UPDATE FOR DP2**
 
-See the \:ref:`200-level notebook <notebook-200>` or \:ref:`200-level portal <portal-200>`
+See the ``:ref:`200-level notebook <notebook-200>``` or ``:ref:`200-level portal <portal-200>```
 tutorials demonstrating how to access the forced source table.
