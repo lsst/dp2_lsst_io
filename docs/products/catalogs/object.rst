@@ -23,7 +23,7 @@ The object catalog is accessible via the TAP and Butler services.
 TAP
 ---
 
-* |Object_doi| [:download:`BibTeX </bib/tap-Object.bib>`]
+.. (This line commented-out for now) * |Object_doi| [:download:`BibTeX </bib/tap-Object.bib>`]
 * Table name: ``Object``
 * Columns: |Object_columns|
 * Rows: |Object_rows|
@@ -31,7 +31,7 @@ TAP
 Butler
 ------
 
-* |object_doi| [:download:`BibTeX </bib/butler-object.bib>`]
+.. (This line commented-out for now) * |object_doi| [:download:`BibTeX </bib/butler-object.bib>`]
 * :ref:`Dataset type <products_butler_terminology>`\ : ('object', {**skymap**, **tract**}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |object_butler_count|
@@ -62,5 +62,7 @@ The object catalog is the result of :doc:`/processing/detection/index`.
 Tutorials
 ---------
 
-See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
-tutorials demonstrating how to access the object table.
+**UPDATE FOR DP2**
+
+.. (This line commented-out for now) See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
+.. (This line commented-out for now) tutorials demonstrating how to access the object table.
