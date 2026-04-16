@@ -18,7 +18,7 @@ The SS object catalog is accessible via the TAP and Butler services.
 TAP
 ---
 
-* |SSObject_doi| [:download:`BibTeX </bib/tap-SSObject.bib>`]
+.. (This line commented-out for now) * |SSObject_doi| [:download:`BibTeX </bib/tap-SSObject.bib>`]
 * Table name: ``SSObject``
 * Columns: |SSObject_columns|
 * Rows: |SSObject_rows|
@@ -26,7 +26,7 @@ TAP
 Butler
 ------
 
-* |ss_object_doi| [:download:`BibTeX </bib/butler-ss_object.bib>`]
+.. (This line commented-out for now) * |ss_object_doi| [:download:`BibTeX </bib/butler-ss_object.bib>`]
 * :ref:`Dataset type <products_butler_terminology>`\ : ('ss_object', {}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |ss_object_butler_count|
@@ -49,5 +49,7 @@ The SS object catalog is the result of :doc:`/processing/moving/index`.
 Tutorials
 ---------
 
-See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
-tutorials demonstrating how to access the SS object table.
+**UPDATE FOR DP2**
+
+.. (This line commented-out for now) See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
+.. (This line commented-out for now) tutorials demonstrating how to access the SS object table.
