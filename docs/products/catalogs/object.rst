@@ -6,7 +6,7 @@ Object
 
 Measurements of objects detected in deep coadd images.
 
-Schema: `Object table <https://sdm-schemas.lsst.io/dp1.html#Object>`_
+.. (This line commented-out for now)  Schema: `Object table <https://sdm-schemas.lsst.io/dp1.html#Object>`_
 
 Access
 ======
@@ -32,7 +32,7 @@ Butler
 ------
 
 .. (This line commented-out for now) * |object_doi| [:download:`BibTeX </bib/butler-object.bib>`]
-* :ref:`Dataset type <products_butler_terminology>`\ : ('object', {**skymap**, **tract**}, ArrowAstropy)
+.. (This line commented-out for now)  * :ref:`Dataset type <products_butler_terminology>`\ : ('object', {**skymap**, **tract**}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |object_butler_count|
 
