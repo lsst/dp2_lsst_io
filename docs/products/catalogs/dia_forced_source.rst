@@ -52,5 +52,5 @@ Tutorials
 
 **UPDATE FOR DP2**
 
-.. (This line commented-out for now) See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
-.. (This line commented-out for now) tutorials demonstrating how to access the DIA forced source table.
+See the \:ref:`200-level notebook <notebook-200>` or \:ref:`200-level portal <portal-200>`
+tutorials demonstrating how to access the DIA forced source table.
