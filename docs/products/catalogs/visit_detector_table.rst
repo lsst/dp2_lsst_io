@@ -6,7 +6,7 @@ Visit detector (CcdVisit)
 
 Observation metadata for individual detectors (CCDs; date, time, band, PSF, zeropoint).
 
-Schema: `CcdVisit table <https://sdm-schemas.lsst.io/dp1.html#CcdVisit>`_
+.. (This line commented-out for now)  Schema: `CcdVisit table <https://sdm-schemas.lsst.io/dp1.html#CcdVisit>`_
 
 Access
 ======
@@ -27,7 +27,7 @@ Butler
 ------
 
 .. (This line commented-out for now) * |visit_detector_table_doi| [:download:`BibTeX </bib/butler-visit_detector_table.bib>`]
-* :ref:`Dataset type <products_butler_terminology>`\ : ('visit_detector_table', {**instrument**}, ArrowAstropy)
+.. (This line commented-out for now)  * :ref:`Dataset type <products_butler_terminology>`\ : ('visit_detector_table', {**instrument**}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |visit_detector_table_butler_count|
 
