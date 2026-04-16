@@ -6,7 +6,7 @@ Difference image
 
 The result of subtracting a template coadd from a visit image.
 
-.. (This line commented-out for now) |difference_image_doi| [:download:`BibTeX </bib/butler-difference_image.bib>`]
+|difference_image_doi| [\:download:`BibTeX </bib/butler-difference_image.bib>`]
 
 Access
 ======
@@ -16,14 +16,14 @@ The difference images are accessible via the Butler, SIA, and TAP services.
 Butler
 ------
 
-.. (This line commented-out for now)  * :ref:`Dataset type <products_butler_terminology>`\ : ('difference_image', {band, **instrument**, day_obs, **detector**, physical_filter, **visit**}, ExposureF)
+* \:ref:`Dataset type <products_butler_terminology>`\ : ('difference_image', {band, **instrument**, day_obs, **detector**, physical_filter, **visit**}, ExposureF)
 * Format: FITS
 * Number of Butler datasets: |difference_image_butler_count|
 
 SIA and TAP
 -----------
 
-.. (This line commented-out for now)  Schema: `ObsCore table <https://sdm-schemas.lsst.io/ivoa_obscore.html>`_
+Schema: `ObsCore table <https://sdm-schemas.lsst.io/ivoa_obscore.html>`_
 
 IVOA calibration level: 3
 
@@ -87,5 +87,5 @@ Tutorials
 
 **UPDATE FOR DP2**
 
-.. (This line commented-out for now) See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
-.. (This line commented-out for now) tutorials demonstrating how to access the difference images.
+See the \:ref:`200-level notebook <notebook-200>` or \:ref:`200-level portal <portal-200>`
+tutorials demonstrating how to access the difference images.
