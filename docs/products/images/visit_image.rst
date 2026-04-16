@@ -6,7 +6,7 @@ Visit image
 
 Individual processed and calibrated sky images.
 
-|visit_image_doi| [:download:`BibTeX </bib/butler-visit_image.bib>`]
+.. (This line commented-out for now) |visit_image_doi| [:download:`BibTeX </bib/butler-visit_image.bib>`]
 
 Access
 ======
@@ -81,5 +81,7 @@ This function should *always* be given an argument with x, y coordinates, so tha
 Tutorials
 ---------
 
-See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
-tutorials demonstrating how to access the visit images.
+**UPDATE FOR DP2**
+
+.. (This line commented-out for now) See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
+.. (This line commented-out for now) tutorials demonstrating how to access the visit images.
