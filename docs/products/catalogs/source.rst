@@ -18,7 +18,7 @@ The source catalog is accessible via the TAP and Butler services.
 TAP
 ---
 
-* |Source_doi| [:download:`BibTeX </bib/tap-Source.bib>`]
+.. (This line commented-out for now) * |Source_doi| [:download:`BibTeX </bib/tap-Source.bib>`]
 * Table name: ``Source``
 * Columns: |Source_columns|
 * Rows: |Source_rows|
@@ -26,7 +26,7 @@ TAP
 Butler
 ------
 
-* |source_doi| [:download:`BibTeX </bib/butler-source.bib>`]
+.. (This line commented-out for now) * |source_doi| [:download:`BibTeX </bib/butler-source.bib>`]
 * :ref:`Dataset type <products_butler_terminology>`\ : ('source', {band, **instrument**, day_obs, physical_filter, **visit**}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |source_butler_count|
@@ -50,5 +50,7 @@ The source catalog is the result of :doc:`/processing/detection/index`.
 Tutorials
 ---------
 
-See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
-tutorials demonstrating how to access the source table.
+**UPDATE FOR DP2**
+
+.. (This line commented-out for now) See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
+.. (This line commented-out for now) tutorials demonstrating how to access the source table.
