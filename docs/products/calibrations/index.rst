@@ -64,4 +64,4 @@ Tutorials
 
 **UPDATE FOR DP2**
 
-See the \:ref:`200-level notebook <notebook-200>` tutorial demonstrating how to access the calibration products.
+See the ``:ref:`200-level notebook <notebook-200>``` tutorial demonstrating how to access the calibration products.
