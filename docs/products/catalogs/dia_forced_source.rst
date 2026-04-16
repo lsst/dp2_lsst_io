@@ -6,7 +6,7 @@ DIA forced source
 
 Forced measurements in visit and difference images, at the coordinates of all DIA objects.
 
-.. (This line commented-out for now)  Schema: `ForcedSourceOnDiaObject table <https://sdm-schemas.lsst.io/dp1.html#ForcedSourceOnDiaObject>`_
+Schema: `ForcedSourceOnDiaObject table <https://sdm-schemas.lsst.io/dp1.html#ForcedSourceOnDiaObject>`_
 
 Access
 ======
@@ -52,5 +52,5 @@ Tutorials
 
 **UPDATE FOR DP2**
 
-See the \:ref:`200-level notebook <notebook-200>` or \:ref:`200-level portal <portal-200>`
+See the ``:ref:`200-level notebook <notebook-200>``` or ``:ref:`200-level portal <portal-200>```
 tutorials demonstrating how to access the DIA forced source table.
