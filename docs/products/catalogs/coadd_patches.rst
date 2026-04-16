@@ -32,4 +32,6 @@ To uniquely identify a patch, both the tract and patch numbers are required.
 Tutorials
 ---------
 
-See the :ref:`200-level notebook <notebook-200>` tutorial demonstrating how to access the coadd patches table.
+**UPDATE FOR DP2**
+
+.. (This line commented-out for now) See the :ref:`200-level notebook <notebook-200>` tutorial demonstrating how to access the coadd patches table.
