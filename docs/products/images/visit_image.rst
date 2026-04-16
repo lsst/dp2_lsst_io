@@ -6,7 +6,7 @@ Visit image
 
 Individual processed and calibrated sky images.
 
-.. (This line commented-out for now) |visit_image_doi| [:download:`BibTeX </bib/butler-visit_image.bib>`]
+|visit_image_doi| [\:download:`BibTeX </bib/butler-visit_image.bib>`]
 
 Access
 ======
@@ -16,14 +16,14 @@ The visit images are accessible via the Butler, SIA, and TAP services.
 Butler
 ------
 
-.. (This line commented-out for now)  * :ref:`Dataset type <products_butler_terminology>`\ : ('visit_image', {band, **instrument**, day_obs, **detector**, physical_filter, **visit**}, ExposureF)
+* \:ref:`Dataset type <products_butler_terminology>`\ : ('visit_image', {band, **instrument**, day_obs, **detector**, physical_filter, **visit**}, ExposureF)
 * Format: FITS
 * Number of Butler datasets: |visit_image_butler_count|
 
 SIA and TAP
 -----------
 
-.. (This line commented-out for now)  Schema: `ObsCore table <https://sdm-schemas.lsst.io/ivoa_obscore.html>`_
+Schema: `ObsCore table <https://sdm-schemas.lsst.io/ivoa_obscore.html>`_
 
 IVOA calibration level: 2
 
@@ -72,7 +72,7 @@ WCS
 
 The World Coordinate System objects for visit images are not exactly representable as FITS; the FITS headers have an approximation that is good enough only for visualization.
 Transformations with the true WCS are currently only possible using LSST Science Pipelines libraries, and those can be easy to misuse.
-See :ref:`products_wcs_known_issues` for more information.
+See:ref:`products_wcs_known_issues` for more information.
 
 Note also that the pixel scale in a visit image can vary with position.
 If one wishes to use the pixel scale, it is recommended to extract it using the "getPixelScale" method associated with the visit images' WCS.
@@ -83,5 +83,5 @@ Tutorials
 
 **UPDATE FOR DP2**
 
-.. (This line commented-out for now) See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
-.. (This line commented-out for now) tutorials demonstrating how to access the visit images.
+See the \:ref:`200-level notebook <notebook-200>` or \:ref:`200-level portal <portal-200>`
+tutorials demonstrating how to access the visit images.
