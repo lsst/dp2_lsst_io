@@ -6,7 +6,7 @@ Visit
 
 Observation metadata for the full focal plane (date, time, band, coordinates).
 
-Schema: `Visit table <https://sdm-schemas.lsst.io/dp1.html#Visit>`_
+.. (This line commented-out for now)  Schema: `Visit table <https://sdm-schemas.lsst.io/dp1.html#Visit>`_
 
 Access
 ======
@@ -27,7 +27,7 @@ Butler
 ------
 
 .. (This line commented-out for now) * |visit_table_doi| [:download:`BibTeX </bib/butler-visit_table.bib>`]
-* :ref:`Dataset type <products_butler_terminology>`\ : ('visit_table', {**instrument**}, ArrowAstropy)
+.. (This line commented-out for now)  * :ref:`Dataset type <products_butler_terminology>`\ : ('visit_table', {**instrument**}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |visit_table_butler_count|
 
