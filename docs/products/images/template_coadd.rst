@@ -6,7 +6,7 @@ Template coadd
 
 The combination of processed images with the best seeing, for a patch of sky and for each of the six LSST filters, to be used as a template for difference imaging.
 
-|template_coadd_doi| [:download:`BibTeX </bib/butler-template_coadd.bib>`]
+.. (This line commented-out for now) |template_coadd_doi| [:download:`BibTeX </bib/butler-template_coadd.bib>`]
 
 Access
 ======
@@ -77,5 +77,8 @@ See :ref:`products_wcs_known_issues` for more information.
 Tutorials
 ---------
 
-See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
-tutorials demonstrating how to access the template coadd images.
+**UPDATE FOR DP2**
+
+
+.. (This line commented-out for now) See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
+.. (This line commented-out for now) tutorials demonstrating how to access the template coadd images.
