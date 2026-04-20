@@ -90,7 +90,7 @@ The following are the pixel mask bit planes defined in visit and difference imag
     Not used in standalone visit images; relevant in DP1 difference image products.
 
 ``SENSOR_EDGE``
-    Used on `deep coadds <images-deep-coadd>` only; see the :ref:`deep and template coadds mask planes <images-deep-coadd-mask-planes>` page.
+    Used on deep coadds <images-deep-coadd> only; see the deep and template coadds mask planes <images-deep-coadd-mask-planes> page.
 
 ``STREAK``
     Pixel in a linear streak region — typically from satellites, aircraft, or occasionally diffraction spikes.
