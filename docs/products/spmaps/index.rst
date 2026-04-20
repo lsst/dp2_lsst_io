@@ -6,14 +6,14 @@ Survey property maps
 
 Survey-level `healsparse <https://healsparse.readthedocs.io/en/1.9.0/>`_ property maps.
 
-|survey_property_doi| [\:download:`BibTeX </bib/butler-survey-property.bib>`]
+|survey_property_doi|
 
 Access
 ======
 
 The survey property maps are accessible via the Butler service.
 
-* \:ref:`Dataset type <products_butler_terminology>`\ : ('<map_name>', {**band**, **skymap**}, HealSparseMap)
+* `Dataset type <products_butler_terminology>`\ : ('<map_name>', {**band**, **skymap**}, HealSparseMap)
 * Format: `FITS <https://healsparse.readthedocs.io/en/1.9.0/filespec.html#healsparsemap-fits-serialization>`_ (with ``.hsp`` file extension)
 * Number of files: |survey_property_butler_count|
 
@@ -45,7 +45,6 @@ The map names, descriptions (and units if not dimensionless) are:
 
 Tutorials
 ---------
-**UPDATE FOR DP2**
 
-See the \:ref:`200-level notebook <notebook-200>` or \:ref:`200-level portal <portal-200>`
-tutorials demonstrating how to access the survey property maps.
+Coming soon.
+
