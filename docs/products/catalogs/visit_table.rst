@@ -18,7 +18,7 @@ The visit catalog is accessible via the TAP and Butler services.
 TAP
 ---
 
-* |Visit_doi| [\:download:`BibTeX </bib/tap-Visit.bib>`]
+* |Visit_doi|
 * Table name: ``Visit``
 * Columns: |Visit_columns|
 * Rows: |Visit_rows|
@@ -26,7 +26,7 @@ TAP
 Butler
 ------
 
-* |visit_table_doi| [\:download:`BibTeX </bib/butler-visit_table.bib>`]
+* |visit_table_doi|
 * \:ref:`Dataset type <products_butler_terminology>`\ : ('visit_table', {**instrument**}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |visit_table_butler_count|
@@ -41,7 +41,5 @@ reference for the observational metadata (e.g., airmass).
 Tutorials
 ---------
 
-**UPDATE FOR DP2**
+Coming soon.
 
-See the \:ref:`200-level notebook <notebook-200>` or \:ref:`200-level portal <portal-200>`
-tutorials demonstrating how to access the visit table.
