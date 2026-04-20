@@ -32,7 +32,7 @@ Butler
 ------
 
 * |object_doi|
-* :ref:`Dataset type <products_butler_terminology>`\ : ('object', {**skymap**, **tract**}, ArrowAstropy)
+* `Dataset type <products_butler_terminology>`\ : ('object', {**skymap**, **tract**}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |object_butler_count|
 
@@ -62,5 +62,5 @@ The object catalog is the result of :doc:`/processing/detection/index`.
 Tutorials
 ---------
 
-Coming soon!
+Coming soon.
 
