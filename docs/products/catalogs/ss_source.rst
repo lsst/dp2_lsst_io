@@ -18,7 +18,7 @@ The SS source catalog is accessible via the TAP and Butler services.
 TAP
 ---
 
-* |SSSource_doi| [\:download:`BibTeX </bib/tap-SSSource.bib>`]
+* |SSSource_doi|
 * Table name: ``SSSource``
 * Columns: |SSSource_columns|
 * Rows: |SSSource_rows|
@@ -26,7 +26,7 @@ TAP
 Butler
 ------
 
-* |ss_source_doi| [\:download:`BibTeX </bib/butler-ss_source.bib>`]
+* |ss_source_doi|
 * \:ref:`Dataset type <products_butler_terminology>`\ : ('ss_source', {}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |ss_source_butler_count|
@@ -46,7 +46,4 @@ The SS source catalog is the result of :doc:`/processing/moving/index`.
 Tutorials
 ---------
 
-**UPDATE FOR DP2**
-
-See the \:ref:`200-level notebook <notebook-200>` or \:ref:`200-level portal <portal-200>`
-tutorials demonstrating how to access the SS source table.
+Coming soon!
