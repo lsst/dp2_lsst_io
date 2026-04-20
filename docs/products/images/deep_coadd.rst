@@ -6,7 +6,7 @@ Deep coadd
 
 The combination of multiple processed, calibrated, and background-subtracted images, for a patch of sky, for each of the six LSST filters.
 
-|deep_coadd_doi| [\:download:`BibTeX </bib/butler-deep_coadd.bib>`]
+|deep_coadd_doi|
 
 
 Access
@@ -17,7 +17,7 @@ The deep coadd images are accessible via the Butler, SIA, and TAP services.
 Butler
 ------
 
-* \:ref:`Dataset type <products_butler_terminology>`\ : ('deep_coadd', {**band**, **skymap**, **tract**, **patch**}, ExposureF)
+* `Dataset type <products_butler_terminology>`\ : ('deep_coadd', {**band**, **skymap**, **tract**, **patch**}, ExposureF)
 * Format: FITS
 * Number of Butler datasets: |deep_coadd_butler_count|
 
@@ -70,12 +70,10 @@ WCS
 
 The World Coordinate System objects for coadd images are exactly representable as FITS (they are simple TAN projections), but each ``tract`` has its own WCS that is shared by all ``patches``, with an integer offset that must be applied for each patch manually to index the pixel arrays.
 
-See \:ref:`products_wcs_known_issues` for more information.
+See `products_wcs_known_issues` for more information.
 
 Tutorials
 ---------
 
-**UPDATE FOR DP2**
+Coming soon.
 
-See the \:ref:`200-level notebook <notebook-200>` or \:ref:`200-level portal <portal-200>`
-tutorials demonstrating how to access the deep coadd images.
