@@ -42,5 +42,5 @@ The MPCORB catalog is the result of :doc:`/processing/moving/index`.
 Tutorials
 ---------
 
-Coming soon!
+Coming soon.
 
