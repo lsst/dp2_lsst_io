@@ -27,7 +27,7 @@ Butler
 ------
 
 * |object_forced_source_doi|
-* :ref:`Dataset type <products_butler_terminology>`\ : ('object_forced_source', {**skymap**, **tract**, **patch**}, ArrowAstropy)
+* `Dataset type <products_butler_terminology>`\ : ('object_forced_source', {**skymap**, **tract**, **patch**}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |object_forced_source_butler_count|
 
@@ -50,4 +50,4 @@ The forced source catalog is the result of :doc:`/processing/detection/index`.
 Tutorials
 ---------
 
-Coming soon!
+Coming soon.
