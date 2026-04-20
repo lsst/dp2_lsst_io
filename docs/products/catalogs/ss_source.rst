@@ -27,7 +27,7 @@ Butler
 ------
 
 * |ss_source_doi|
-* \:ref:`Dataset type <products_butler_terminology>`\ : ('ss_source', {}, ArrowAstropy)
+* `Dataset type <products_butler_terminology>`\ : ('ss_source', {}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |ss_source_butler_count|
 
@@ -46,4 +46,4 @@ The SS source catalog is the result of :doc:`/processing/moving/index`.
 Tutorials
 ---------
 
-Coming soon!
+Coming soon.
