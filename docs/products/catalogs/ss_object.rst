@@ -26,7 +26,7 @@ TAP
 Butler
 ------
 
-* |ss_object_doi| [\:download:`BibTeX </bib/butler-ss_object.bib>`]
+* |ss_object_doi|
 * Dataset type: ('ss_object', {}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |ss_object_butler_count|
