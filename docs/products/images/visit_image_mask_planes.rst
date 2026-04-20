@@ -11,7 +11,7 @@ The following are the pixel mask bit planes defined in visit and difference imag
     as BAD. They are typically interpolated over in processing.
 
 ``CLIPPED``
-    Used on deep coadds <images-deep-coadd only; see the deep and template coadds mask planes <images-deep-coadd-mask-planes> page.
+    Used on deep coadds <images-deep-coadd only>; see the deep and template coadds mask planes <images-deep-coadd-mask-planes> page.
     However, this may be back-propagated on visit and difference images in future data releases.
 
 ``CR``
@@ -39,7 +39,7 @@ The following are the pixel mask bit planes defined in visit and difference imag
     These pixels are masked because the kernel footprint extends beyond the image boundary, making reliable measurements impossible.
 
 ``INEXACT_PSF``
-    Used on :ref:`deep coadds <images-deep-coadd>` only; see the :ref:`deep and template coadds mask planes <images-deep-coadd-mask-planes>` page.
+    Used on deep coadds <images-deep-coadd> only; see the deep and template coadds mask planes <images-deep-coadd-mask-planes> page.
 
 ``INJECTED``
     Pixel containing an injected synthetic source in the science exposure.
