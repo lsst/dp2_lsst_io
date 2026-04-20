@@ -27,7 +27,7 @@ Butler
 ------
 
 * |ss_object_doi| [\:download:`BibTeX </bib/butler-ss_object.bib>`]
-* :ref:`Dataset type <products_butler_terminology>`\ : ('ss_object', {}, ArrowAstropy)
+* `Dataset type <products_butler_terminology>`\ : ('ss_object', {}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |ss_object_butler_count|
 
@@ -49,5 +49,5 @@ The SS object catalog is the result of :doc:`/processing/moving/index`.
 Tutorials
 ---------
 
-Coming soon!
+Coming soon.
 
