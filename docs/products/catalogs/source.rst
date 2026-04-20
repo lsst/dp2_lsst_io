@@ -27,7 +27,7 @@ Butler
 ------
 
 * |source_doi|
-* :ref:`Dataset type <products_butler_terminology>`\ : ('source', {band, **instrument**, day_obs, physical_filter, **visit**}, ArrowAstropy)
+* `Dataset type <products_butler_terminology>`\ : ('source', {band, **instrument**, day_obs, physical_filter, **visit**}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |source_butler_count|
 
@@ -50,4 +50,4 @@ The source catalog is the result of :doc:`/processing/detection/index`.
 Tutorials
 ---------
 
-Coming soon!
+Coming soon.
