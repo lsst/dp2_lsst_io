@@ -74,7 +74,7 @@ The following are the pixel mask bit planes defined in visit and difference imag
     In general, ``NO_DATA`` indicates that the pixel should be ignored in analysis (not observed).
 
 ``REJECTED``
-    Used on :ref:`deep coadds <images-deep-coadd>` only; see the :ref:`deep and template coadds mask planes <images-deep-coadd-mask-planes>` page.
+    Used on deep coadds <images-deep-coadd> only; see the deep and template coadds mask planes <images-deep-coadd-mask-planes> page.
 
 ``SAT``
     Saturated pixel.
