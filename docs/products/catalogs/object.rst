@@ -18,7 +18,7 @@ The object catalog is accessible via the TAP and Butler services.
 
 .. note::
 
-   The Object catalog has many columns, and it is recommended to retrieve only a subset of the columns \:ref:`with TAP <products_adql_queries>` or the \:ref:`with the Butler <products_butler_terminology>`.
+   The Object catalog has many columns, and it is recommended to retrieve only a subset of the columns with TAP <products_adql_queries> or the with the Butler <products_butler_terminology>.
 
 TAP
 ---
@@ -32,7 +32,7 @@ Butler
 ------
 
 * |object_doi|
-* `Dataset type <products_butler_terminology>`\ : ('object', {**skymap**, **tract**}, ArrowAstropy)
+* Dataset type: ('object', {**skymap**, **tract**}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |object_butler_count|
 
