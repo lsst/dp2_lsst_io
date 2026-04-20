@@ -6,7 +6,7 @@ Visit
 
 Observation metadata for the full focal plane (date, time, band, coordinates).
 
-.. (This line commented-out for now)  Schema: `Visit table <https://sdm-schemas.lsst.io/dp1.html#Visit>`_
+Schema: `Visit table <https://sdm-schemas.lsst.io/dp1.html#Visit>`_
 
 Access
 ======
@@ -18,7 +18,7 @@ The visit catalog is accessible via the TAP and Butler services.
 TAP
 ---
 
-.. (This line commented-out for now) * |Visit_doi| [:download:`BibTeX </bib/tap-Visit.bib>`]
+* |Visit_doi|
 * Table name: ``Visit``
 * Columns: |Visit_columns|
 * Rows: |Visit_rows|
@@ -26,8 +26,8 @@ TAP
 Butler
 ------
 
-.. (This line commented-out for now) * |visit_table_doi| [:download:`BibTeX </bib/butler-visit_table.bib>`]
-.. (This line commented-out for now)  * :ref:`Dataset type <products_butler_terminology>`\ : ('visit_table', {**instrument**}, ArrowAstropy)
+* |visit_table_doi|
+* Dataset type: ('visit_table', {**instrument**}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |visit_table_butler_count|
 
@@ -41,7 +41,5 @@ reference for the observational metadata (e.g., airmass).
 Tutorials
 ---------
 
-**UPDATE FOR DP2**
+Coming soon.
 
-.. (This line commented-out for now) See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
-.. (This line commented-out for now) tutorials demonstrating how to access the visit table.

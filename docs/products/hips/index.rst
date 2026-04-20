@@ -24,7 +24,5 @@ in the coadded map.
 Tutorials
 ---------
 
-**UPDATE FOR DP2**
+Coming soon.
 
-.. (This line commented-out for now) See the :ref:`100-level portal <portal-100>`
-.. (This line commented-out for now) tutorial demonstrating how to explore the HiPS maps.

@@ -6,7 +6,7 @@ Difference image
 
 The result of subtracting a template coadd from a visit image.
 
-.. (This line commented-out for now) |difference_image_doi| [:download:`BibTeX </bib/butler-difference_image.bib>`]
+|difference_image_doi|
 
 Access
 ======
@@ -16,14 +16,14 @@ The difference images are accessible via the Butler, SIA, and TAP services.
 Butler
 ------
 
-.. (This line commented-out for now)  * :ref:`Dataset type <products_butler_terminology>`\ : ('difference_image', {band, **instrument**, day_obs, **detector**, physical_filter, **visit**}, ExposureF)
+* Dataset type: ('difference_image', {band, **instrument**, day_obs, **detector**, physical_filter, **visit**}, ExposureF)
 * Format: FITS
 * Number of Butler datasets: |difference_image_butler_count|
 
 SIA and TAP
 -----------
 
-.. (This line commented-out for now)  Schema: `ObsCore table <https://sdm-schemas.lsst.io/ivoa_obscore.html>`_
+Schema: `ObsCore table <https://sdm-schemas.lsst.io/ivoa_obscore.html>`_
 
 IVOA calibration level: 3
 
@@ -80,12 +80,10 @@ WCS
 
 The World Coordinate System objects for difference images are not exactly representable as FITS; the FITS headers have an approximation that is good enough only for visualization.
 Transformations with the true WCS are currently only possible using LSST Science Pipelines libraries, and those can be easy to misuse.
-See :ref:`products_wcs_known_issues` for more information.
+See products_wcs_known_issues for more information.
 
 Tutorials
 ---------
 
-**UPDATE FOR DP2**
+Coming soon.
 
-.. (This line commented-out for now) See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
-.. (This line commented-out for now) tutorials demonstrating how to access the difference images.

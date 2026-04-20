@@ -6,7 +6,7 @@ DIA source
 
 Measurements for sources detected in difference images.
 
-.. (This line commented-out for now)  Schema: `DiaSource table <https://sdm-schemas.lsst.io/dp1.html#DiaSource>`_
+Schema: `DiaSource table <https://sdm-schemas.lsst.io/dp1.html#DiaSource>`_
 
 Access
 ======
@@ -18,7 +18,7 @@ The DIA source catalog is accessible via the TAP and Butler services.
 TAP
 ---
 
-.. (This line commented-out for now)  * |DiaSource_doi| [:download:`BibTeX </bib/tap-DiaSource.bib>`]
+* |DiaSource_doi|
 * Table name: ``DiaSource``
 * Columns: |DiaSource_columns|
 * Rows: |DiaSource_rows|
@@ -26,12 +26,12 @@ TAP
 Butler
 ------
 
-.. (This line commented-out for now)  * |source_doi| [:download:`BibTeX </bib/butler-dia_source.bib>`]
-.. (This line commented-out for now)  * :ref:`Dataset type <products_butler_terminology>`\ : ('dia_source', {**skymap**, **tract**}, ArrowAstropy)
+* |source_doi|
+* Dataset type: ('dia_source', {**skymap**, **tract**}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |source_butler_count|
 
-DIA sources are sharded by ``tract``, not ``visit`` in order to make them easier to join to their :ref:`catalogs-dia-object`.
+DIA sources are sharded by ``tract``, not ``visit`` in order to make them easier to join to their catalogs-dia-object.
 
 Description
 ===========
@@ -54,7 +54,4 @@ The DIA source catalog is the result of :doc:`/processing/dia/index`.
 Tutorials
 ---------
 
-**UPDATE FOR DP2**
-
-.. (This line commented-out for now) See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
-.. (This line commented-out for now) tutorials demonstrating how to access the DIA source table.
+Coming soon.

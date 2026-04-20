@@ -11,7 +11,7 @@ The following are the pixel mask bit planes defined in visit and difference imag
     as BAD. They are typically interpolated over in processing.
 
 ``CLIPPED``
-    Used on :ref:`deep coadds <images-deep-coadd>` only; see the :ref:`deep and template coadds mask planes <images-deep-coadd-mask-planes>` page.
+    Used on deep coadds <images-deep-coadd only>; see the deep and template coadds mask planes <images-deep-coadd-mask-planes> page.
     However, this may be back-propagated on visit and difference images in future data releases.
 
 ``CR``
@@ -39,7 +39,7 @@ The following are the pixel mask bit planes defined in visit and difference imag
     These pixels are masked because the kernel footprint extends beyond the image boundary, making reliable measurements impossible.
 
 ``INEXACT_PSF``
-    Used on :ref:`deep coadds <images-deep-coadd>` only; see the :ref:`deep and template coadds mask planes <images-deep-coadd-mask-planes>` page.
+    Used on deep coadds <images-deep-coadd> only; see the deep and template coadds mask planes <images-deep-coadd-mask-planes> page.
 
 ``INJECTED``
     Pixel containing an injected synthetic source in the science exposure.
@@ -74,7 +74,7 @@ The following are the pixel mask bit planes defined in visit and difference imag
     In general, ``NO_DATA`` indicates that the pixel should be ignored in analysis (not observed).
 
 ``REJECTED``
-    Used on :ref:`deep coadds <images-deep-coadd>` only; see the :ref:`deep and template coadds mask planes <images-deep-coadd-mask-planes>` page.
+    Used on deep coadds <images-deep-coadd> only; see the deep and template coadds mask planes <images-deep-coadd-mask-planes> page.
 
 ``SAT``
     Saturated pixel.
@@ -90,7 +90,7 @@ The following are the pixel mask bit planes defined in visit and difference imag
     Not used in standalone visit images; relevant in DP1 difference image products.
 
 ``SENSOR_EDGE``
-    Used on :ref:`deep coadds <images-deep-coadd>` only; see the :ref:`deep and template coadds mask planes <images-deep-coadd-mask-planes>` page.
+    Used on deep coadds <images-deep-coadd> only; see the deep and template coadds mask planes <images-deep-coadd-mask-planes> page.
 
 ``STREAK``
     Pixel in a linear streak region — typically from satellites, aircraft, or occasionally diffraction spikes.

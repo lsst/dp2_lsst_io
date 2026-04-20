@@ -18,6 +18,7 @@
 
 .. |tutorials_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Rubin Observatory LSST Tutorials |doi_image| https://doi.org/10.11578/rubin/dc.20250909.20
 
+.. |rtn-099_doi| replace:: *Citation*: ``<tbd>``
 
 .. |calibrations_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: calibrations dataset type |doi_image| ``<doi-tbd>``
 .. |calibrations_butler_count| replace:: ``<tbd>``

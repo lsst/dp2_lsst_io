@@ -6,7 +6,7 @@ Object
 
 Measurements of objects detected in deep coadd images.
 
-.. (This line commented-out for now)  Schema: `Object table <https://sdm-schemas.lsst.io/dp1.html#Object>`_
+Schema: `Object table <https://sdm-schemas.lsst.io/dp1.html#Object>`_
 
 Access
 ======
@@ -18,12 +18,12 @@ The object catalog is accessible via the TAP and Butler services.
 
 .. note::
 
-    The Object catalog has many columns, and it is recommended to retrieve only a subset of the columns :ref:`with TAP <products_adql_queries>` or the :ref:`with the Butler <products_butler_terminology>`.
+   The Object catalog has many columns, and it is recommended to retrieve only a subset of the columns with TAP <products_adql_queries> or the with the Butler <products_butler_terminology>.
 
 TAP
 ---
 
-.. (This line commented-out for now) * |Object_doi| [:download:`BibTeX </bib/tap-Object.bib>`]
+* |Object_doi|
 * Table name: ``Object``
 * Columns: |Object_columns|
 * Rows: |Object_rows|
@@ -31,8 +31,8 @@ TAP
 Butler
 ------
 
-.. (This line commented-out for now) * |object_doi| [:download:`BibTeX </bib/butler-object.bib>`]
-.. (This line commented-out for now)  * :ref:`Dataset type <products_butler_terminology>`\ : ('object', {**skymap**, **tract**}, ArrowAstropy)
+* |object_doi|
+* Dataset type: ('object', {**skymap**, **tract**}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |object_butler_count|
 
@@ -62,7 +62,5 @@ The object catalog is the result of :doc:`/processing/detection/index`.
 Tutorials
 ---------
 
-**UPDATE FOR DP2**
+Coming soon.
 
-.. (This line commented-out for now) See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
-.. (This line commented-out for now) tutorials demonstrating how to access the object table.

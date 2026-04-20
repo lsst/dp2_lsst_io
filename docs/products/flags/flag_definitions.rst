@@ -16,20 +16,20 @@ DP1 contains 660 flag columns distributed across five catalog tables, as listed 
    * - Table
      - Flag columns
      - Flag types
-   * - :ref:`Object <catalogs-object>`
-     - 512
+   * - Object <catalogs-object>
+     - coming soon
      - Pixel quality, measurement failure, extendedness, and calibration flags across 6 photometric bands (u, g, r, i, z, y).
-   * - :ref:`Source <catalogs-source>`
-     - 82
+   * - Source <catalogs-source>
+     - coming soon
      - Centroiding, photometry, and calibration flags.
-   * - :ref:`ForcedSource <catalogs-forced-source>`
-     - 15
+   * - ForcedSource <catalogs-forced-source>
+     - coming soon
      - Pixel quality and forced photometry flags.
-   * - :ref:`DiaSource <catalogs-dia-source>`
-     - 36
+   * - DiaSource <catalogs-dia-source>
+     - coming soon
      - Pixel quality, real/bogus classification, and dipole flags.
-   * - :ref:`ForcedSourceOnDiaObject <catalogs-dia-forced-source>`
-     - 15
+   * - ForcedSourceOnDiaObject <catalogs-dia-forced-source>
+     - coming soon
      - Pixel quality and forced difference-image photometry flags.
 
 Flag categories
@@ -42,7 +42,7 @@ Pixel quality flags
 
 Pattern: ``{band}_pixelFlags_*``
 
-Purpose: Report on issues with individual pixels in the source footprint, derived from :ref:`image mask planes <images-mask-planes>`.
+Purpose: Report on issues with individual pixels in the source footprint, derived from image mask planes <images-mask-planes>.
 
 The most commonly used pixel quality flags are listed in the table below.
 

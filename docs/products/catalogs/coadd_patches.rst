@@ -6,7 +6,7 @@ Coadd patches
 
 Coordinates and regions for the patches of the all-sky map.
 
-.. (This line commented-out for now)  Schema: `CoaddPatches table <https://sdm-schemas.lsst.io/dp1.html#CoaddPatches>`_
+Schema: `CoaddPatches table <https://sdm-schemas.lsst.io/dp1.html#CoaddPatches>`_
 
 Access
 ======
@@ -17,8 +17,8 @@ TAP
 ---
 
 * Table name: ``CoaddPatches``
-* Columns: 5
-* Rows: 652
+* Columns:
+* Rows:
 
 Description
 ===========
@@ -32,6 +32,4 @@ To uniquely identify a patch, both the tract and patch numbers are required.
 Tutorials
 ---------
 
-**UPDATE FOR DP2**
-
-.. (This line commented-out for now) See the :ref:`200-level notebook <notebook-200>` tutorial demonstrating how to access the coadd patches table.
+Coming soon!

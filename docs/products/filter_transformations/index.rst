@@ -6,7 +6,7 @@ Filter transformations
 
 Filter transformations to/from the LSSTComCam photometric system and other astronomical photometric systems.
 
-.. (This line commented-out for now) |rtn-099_doi| [:download:`BibTeX </bib/filter-transformations.bib>`]
+|rtn-099_doi|
 
 
 Access
@@ -30,8 +30,9 @@ SDSS, Gaia DR3, Euclid Q1, and Johnson-Cousins UBVRcIc.  There are also some tra
 equations based on synthetic photometry available to/from LSSTCam filters and DES and TESS.
 
 
-.. The following lines commented out for now:
-.. Tutorials
-.. ---------
-..
-.. See the :ref:`300-level notebook <notebook-300>` tutorial demonstrating how to apply the filter transfomration relations.
+
+Tutorials
+---------
+
+Coming soon.
+

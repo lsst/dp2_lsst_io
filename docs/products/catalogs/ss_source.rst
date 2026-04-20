@@ -6,7 +6,7 @@ SS source
 
 Instantaneous physical parameters for moving objects at the time of every observation.
 
-.. (This line commented-out for now)  Schema: `SSSource table <https://sdm-schemas.lsst.io/dp1.html#SSSource>`_
+Schema: `SSSource table <https://sdm-schemas.lsst.io/dp1.html#SSSource>`_
 
 Access
 ======
@@ -18,7 +18,7 @@ The SS source catalog is accessible via the TAP and Butler services.
 TAP
 ---
 
-.. (This line commented-out for now) * |SSSource_doi| [:download:`BibTeX </bib/tap-SSSource.bib>`]
+* |SSSource_doi|
 * Table name: ``SSSource``
 * Columns: |SSSource_columns|
 * Rows: |SSSource_rows|
@@ -26,8 +26,8 @@ TAP
 Butler
 ------
 
-.. (This line commented-out for now) * |ss_source_doi| [:download:`BibTeX </bib/butler-ss_source.bib>`]
-.. (This line commented-out for now)  * :ref:`Dataset type <products_butler_terminology>`\ : ('ss_source', {}, ArrowAstropy)
+* |ss_source_doi|
+* Dataset type: ('ss_source', {}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |ss_source_butler_count|
 
@@ -46,7 +46,5 @@ The SS source catalog is the result of :doc:`/processing/moving/index`.
 Tutorials
 ---------
 
-**UPDATE FOR DP2**
+Coming soon.
 
-.. (This line commented-out for now) See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
-.. (This line commented-out for now) tutorials demonstrating how to access the SS source table.

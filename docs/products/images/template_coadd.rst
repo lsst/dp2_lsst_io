@@ -6,7 +6,7 @@ Template coadd
 
 The combination of processed images with the best seeing, for a patch of sky and for each of the six LSST filters, to be used as a template for difference imaging.
 
-.. (This line commented-out for now) |template_coadd_doi| [:download:`BibTeX </bib/butler-template_coadd.bib>`]
+|template_coadd_doi|
 
 Access
 ======
@@ -16,14 +16,14 @@ The template coadd images are accessible via the Butler, SIA, and TAP services.
 Butler
 ------
 
-.. (This line commented-out for now)  * :ref:`Dataset type <products_butler_terminology>`\ : ('template_coadd', {**band**, **skymap**, **tract**, **patch**}, ExposureF)
+* Dataset type: ('template_coadd', {**band**, **skymap**, **tract**, **patch**}, ExposureF)
 * Format: FITS
 * Number of Butler datasets: |template_coadd_butler_count|
 
 SIA and TAP
 -----------
 
-.. (This line commented-out for now)  Schema: `ObsCore table <https://sdm-schemas.lsst.io/ivoa_obscore.html>`_
+Schema: `ObsCore table <https://sdm-schemas.lsst.io/ivoa_obscore.html>`_
 
 IVOA calibration level: 3
 
@@ -72,13 +72,10 @@ WCS
 
 The World Coordinate System objects for coadd images are exactly representable as FITS (they are simple TAN projections), but each ``tract`` has its own WCS that is shared by all ``patches``, with an integer offset that must be applied for each patch manually to index the pixel arrays.
 
-.. (This line commented-out for now)  See :ref:`products_wcs_known_issues` for more information.
+See products_wcs_known_issues for more information.
 
 Tutorials
 ---------
 
-**UPDATE FOR DP2**
+Coming soon.
 
-
-.. (This line commented-out for now) See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
-.. (This line commented-out for now) tutorials demonstrating how to access the template coadd images.
