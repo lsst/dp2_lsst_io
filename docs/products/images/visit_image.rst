@@ -16,7 +16,7 @@ The visit images are accessible via the Butler, SIA, and TAP services.
 Butler
 ------
 
-* `Dataset type <products_butler_terminology>`\ : ('visit_image', {band, **instrument**, day_obs, **detector**, physical_filter, **visit**}, ExposureF)
+* Dataset type: ('visit_image', {band, **instrument**, day_obs, **detector**, physical_filter, **visit**}, ExposureF)
 * Format: FITS
 * Number of Butler datasets: |visit_image_butler_count|
 
@@ -72,7 +72,7 @@ WCS
 
 The World Coordinate System objects for visit images are not exactly representable as FITS; the FITS headers have an approximation that is good enough only for visualization.
 Transformations with the true WCS are currently only possible using LSST Science Pipelines libraries, and those can be easy to misuse.
-See:ref:`products_wcs_known_issues` for more information.
+See products_wcs_known_issues for more information.
 
 Note also that the pixel scale in a visit image can vary with position.
 If one wishes to use the pixel scale, it is recommended to extract it using the "getPixelScale" method associated with the visit images' WCS.
@@ -82,3 +82,4 @@ Tutorials
 ---------
 
 Coming soon.
+
