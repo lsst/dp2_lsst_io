@@ -27,7 +27,7 @@ Butler
 ------
 
 * |ss_object_doi| [\:download:`BibTeX </bib/butler-ss_object.bib>`]
-* `Dataset type <products_butler_terminology>`\ : ('ss_object', {}, ArrowAstropy)
+* Dataset type: ('ss_object', {}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |ss_object_butler_count|
 
