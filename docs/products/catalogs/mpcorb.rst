@@ -7,7 +7,7 @@ MPCORB
 The orbit catalog produced by the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC).
 The MPC has assigned `"observatory code" <https://minorplanetcenter.net/iau/lists/ObsCodesF.html>`_ ``X05`` to the Rubin Observatory.
 
-.. (This line commented-out for now)  Schema: `MPCORB table <https://sdm-schemas.lsst.io/dp1.html#MPCORB>`_
+Schema: `MPCORB table <https://sdm-schemas.lsst.io/dp1.html#MPCORB>`_
 
 Access
 ======
@@ -18,8 +18,8 @@ TAP
 ---
 
 * Table name: ``MPCORB``
-* Columns: 10
-* Rows: 1,425,270
+* Columns:
+* Rows:
 
 Butler
 ------
@@ -42,7 +42,5 @@ The MPCORB catalog is the result of :doc:`/processing/moving/index`.
 Tutorials
 ---------
 
-**UPDATE FOR DP2**
+Coming soon!
 
-.. (This line commented-out for now) See the :ref:`200-level notebook <notebook-200>` or :ref:`200-level portal <portal-200>`
-.. (This line commented-out for now) tutorials demonstrating how to access the MPCORB table.
