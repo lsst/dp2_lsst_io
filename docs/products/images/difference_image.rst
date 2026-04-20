@@ -6,7 +6,7 @@ Difference image
 
 The result of subtracting a template coadd from a visit image.
 
-|difference_image_doi| [\:download:`BibTeX </bib/butler-difference_image.bib>`]
+|difference_image_doi|
 
 Access
 ======
@@ -16,7 +16,7 @@ The difference images are accessible via the Butler, SIA, and TAP services.
 Butler
 ------
 
-* \:ref:`Dataset type <products_butler_terminology>`\ : ('difference_image', {band, **instrument**, day_obs, **detector**, physical_filter, **visit**}, ExposureF)
+* `Dataset type <products_butler_terminology>`\ : ('difference_image', {band, **instrument**, day_obs, **detector**, physical_filter, **visit**}, ExposureF)
 * Format: FITS
 * Number of Butler datasets: |difference_image_butler_count|
 
@@ -85,7 +85,5 @@ See :ref:`products_wcs_known_issues` for more information.
 Tutorials
 ---------
 
-**UPDATE FOR DP2**
+Coming soon.
 
-See the \:ref:`200-level notebook <notebook-200>` or \:ref:`200-level portal <portal-200>`
-tutorials demonstrating how to access the difference images.
