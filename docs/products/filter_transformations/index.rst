@@ -6,7 +6,7 @@ Filter transformations
 
 Filter transformations to/from the LSSTComCam photometric system and other astronomical photometric systems.
 
-|rtn-099_doi| [:download:`BibTeX </bib/filter-transformations.bib>`]
+|rtn-099_doi|
 
 
 Access
