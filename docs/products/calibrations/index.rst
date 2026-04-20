@@ -7,7 +7,7 @@ Calibrations
 Calibration products (e.g., combined bias, dark, and flat frames).
 
 
-``|calibrations_doi| [:download:`BibTeX </bib/butler-calibrations.bib>`]``
+|calibrations_doi|
 
 
 Access
@@ -62,6 +62,5 @@ Metadata
 Tutorials
 ---------
 
-**UPDATE FOR DP2**
+Coming soon!
 
-See the ``:ref:`200-level notebook <notebook-200>``` tutorial demonstrating how to access the calibration products.
