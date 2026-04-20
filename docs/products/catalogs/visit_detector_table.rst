@@ -18,7 +18,7 @@ The visit detector catalog is accessible via the TAP and Butler services.
 TAP
 ---
 
-* |CcdVisit_doi| [\:download:`BibTeX </bib/tap-CcdVisit.bib>`]
+* |CcdVisit_doi|
 * Table name: ``CcdVisit``
 * Columns: |CcdVisit_columns|
 * Rows: |CcdVisit_rows|
@@ -26,8 +26,8 @@ TAP
 Butler
 ------
 
-* |visit_detector_table_doi| [\:download:`BibTeX </bib/butler-visit_detector_table.bib>`]
-* \:ref:`Dataset type <products_butler_terminology>`\ : ('visit_detector_table', {**instrument**}, ArrowAstropy)
+* |visit_detector_table_doi|
+* :ref:`Dataset type <products_butler_terminology>`\ : ('visit_detector_table', {**instrument**}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |visit_detector_table_butler_count|
 
@@ -43,7 +43,5 @@ This table includes image characterization information measured from the image, 
 Tutorials
 ---------
 
-**UPDATE FOR DP2**
+Coming soon.
 
-See the \:ref:`200-level notebook <notebook-200>` or \:ref:`200-level portal <portal-200>`
-tutorials demonstrating how to access the visit detector (``CcdVisit``) table.
