@@ -18,7 +18,7 @@ The DIA source catalog is accessible via the TAP and Butler services.
 TAP
 ---
 
-* |DiaSource_doi| [\:download:`BibTeX </bib/tap-DiaSource.bib>`]
+* |DiaSource_doi|
 * Table name: ``DiaSource``
 * Columns: |DiaSource_columns|
 * Rows: |DiaSource_rows|
@@ -26,8 +26,8 @@ TAP
 Butler
 ------
 
-* |source_doi| [\:download:`BibTeX </bib/butler-dia_source.bib>`]
-* \:ref:`Dataset type <products_butler_terminology>`\ : ('dia_source', {**skymap**, **tract**}, ArrowAstropy)
+* |source_doi|
+* :ref:`Dataset type <products_butler_terminology>`\ : ('dia_source', {**skymap**, **tract**}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |source_butler_count|
 
@@ -54,7 +54,4 @@ The DIA source catalog is the result of :doc:`/processing/dia/index`.
 Tutorials
 ---------
 
-**UPDATE FOR DP2**
-
-See the \:ref:`200-level notebook <notebook-200>` or \:ref:`200-level portal <portal-200>`
-tutorials demonstrating how to access the DIA source table.
+Coming soon!
