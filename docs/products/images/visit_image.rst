@@ -6,7 +6,7 @@ Visit image
 
 Individual processed and calibrated sky images.
 
-|visit_image_doi| [\:download:`BibTeX </bib/butler-visit_image.bib>`]
+|visit_image_doi|
 
 Access
 ======
@@ -16,7 +16,7 @@ The visit images are accessible via the Butler, SIA, and TAP services.
 Butler
 ------
 
-* \:ref:`Dataset type <products_butler_terminology>`\ : ('visit_image', {band, **instrument**, day_obs, **detector**, physical_filter, **visit**}, ExposureF)
+* `Dataset type <products_butler_terminology>`\ : ('visit_image', {band, **instrument**, day_obs, **detector**, physical_filter, **visit**}, ExposureF)
 * Format: FITS
 * Number of Butler datasets: |visit_image_butler_count|
 
@@ -81,7 +81,4 @@ This function should *always* be given an argument with x, y coordinates, so tha
 Tutorials
 ---------
 
-**UPDATE FOR DP2**
-
-See the \:ref:`200-level notebook <notebook-200>` or \:ref:`200-level portal <portal-200>`
-tutorials demonstrating how to access the visit images.
+Coming soon.
