@@ -27,11 +27,11 @@ Butler
 ------
 
 * |source_doi|
-* :ref:`Dataset type <products_butler_terminology>`\ : ('dia_source', {**skymap**, **tract**}, ArrowAstropy)
+* `Dataset type <products_butler_terminology>`\ : ('dia_source', {**skymap**, **tract**}, ArrowAstropy)
 * Format: Parquet
 * Number of Butler datasets: |source_butler_count|
 
-DIA sources are sharded by ``tract``, not ``visit`` in order to make them easier to join to their \:ref:`catalogs-dia-object`.
+DIA sources are sharded by ``tract``, not ``visit`` in order to make them easier to join to their `catalogs-dia-object`.
 
 Description
 ===========
@@ -54,4 +54,4 @@ The DIA source catalog is the result of :doc:`/processing/dia/index`.
 Tutorials
 ---------
 
-Coming soon!
+Coming soon.
