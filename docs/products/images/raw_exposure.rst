@@ -6,7 +6,7 @@ Raw exposure
 
 Unprocessed exposure from camera readout.
 
-|raw_doi| [\:download:`BibTeX </bib/butler-raw.bib>`]
+|raw_doi|
 
 
 Access
@@ -17,7 +17,7 @@ The raw exposures are accessible via the Butler, SIA, and TAP services.
 Butler
 ------
 
-* \:ref:`Dataset type <products_butler_terminology>`\ : ('raw', {band, **instrument**, day_obs, **detector**, group, physical_filter, **exposure**}, Exposure)
+* `Dataset type <products_butler_terminology>`\ : ('raw', {band, **instrument**, day_obs, **detector**, group, physical_filter, **exposure**}, Exposure)
 * Format: FITS
 * Number of Butler datasets: |raw_butler_count|
 
@@ -60,7 +60,5 @@ and an initial WCS estimated from the telescope boresight.
 Tutorials
 ---------
 
-**UPDATE FOR DP2**
+Coming soon.
 
-See the \:ref:`200-level notebook <notebook-200>` or \:ref:`200-level portal <portal-200>`
-tutorials demonstrating how to access the raw exposures.
