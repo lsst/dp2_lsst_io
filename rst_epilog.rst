@@ -76,6 +76,19 @@
 
 .. |object_forced_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: object_forced_source dataset type |doi_image| ``<doi-tbd>``
 .. |object_forced_source_butler_count| replace:: ``<tbd>``
+
+.. |object_scarlet_models_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: Object searchable catalog |doi_image| ``<doi-tbd>``
+.. |object_scarlet_models_rows| replace:: ``<tbd>``
+.. |object_scarlet_models_columns| replace:: ``<tbd>``
+
+.. |isolated_star_stellar_motions_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: Object searchable catalog |doi_image| ``<doi-tbd>``
+.. |isolated_star_stellar_motions_rows| replace:: ``<tbd>``
+.. |isolated_star_stellar_motions_columns| replace:: ``<tbd>``
+
+.. |object_shear_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: Object searchable catalog |doi_image| ``<doi-tbd>``
+.. |object_shear_rows| replace:: ``<tbd>``
+.. |object_shear_columns| replace:: ``<tbd>``
+
 .. |ForcedSource_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: ForcedSource searchable catalog |doi_image| ``<doi-tbd>``
 .. |ForcedSource_rows| replace:: ``<tbd>``
 .. |ForcedSource_columns| replace:: ``<tbd>``
