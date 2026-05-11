@@ -10,6 +10,9 @@ Access
 ======
 
 
+|object_scarlet_models_doi|
+
+
 
 Butler
 ------
