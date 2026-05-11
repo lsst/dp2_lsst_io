@@ -27,6 +27,7 @@ or for use as templates in difference image analysis.
 
     deep_coadd
     template_coadd
+    object_scarlet_models
 
 
 
