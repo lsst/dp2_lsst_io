@@ -25,6 +25,7 @@ Measurements on the deep coadd images at the locations of all detected objects.
 
     object
     object_scarlet_models
+    isolated_star_stellar_motions
 
 
 Source and forced source
