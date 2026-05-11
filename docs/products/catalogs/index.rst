@@ -24,6 +24,7 @@ Measurements on the deep coadd images at the locations of all detected objects.
     :glob:
 
     object
+    object_scarlet_models
 
 
 Source and forced source
