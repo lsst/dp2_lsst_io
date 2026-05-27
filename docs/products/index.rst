@@ -9,17 +9,48 @@ Catalogs
 
 Tables of measurements made on detected sources, plus observational metadata.
 
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    catalogs/index
+
 Images
 ======
 
 Individual, difference, and coadded images of the sky in the six LSST filters.
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    images/index
+
 
 Maps
 ====
 
 All-sky maps of deep coadded images, survey depth, image quality, and more.
 
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    spmaps/index
+    hips/index
+
 Additional data products and information
 ========================================
 
 Additional data products (e.g., calibration frames, filter bandpasses, filter transformations, time measurements) and information about catalog flag columns.
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    calibrations/index
+    bandpasses/index
+    filter_transformations/index
+    time_measurements/index
+    flags/index
+
