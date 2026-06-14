@@ -96,6 +96,9 @@ Other notable flags are listed in the table below.
      - Table1, Table2, Table3
      - Description here.
 
+
+.. _calibration-flags:
+
 Calibration flags
 -----------------
 

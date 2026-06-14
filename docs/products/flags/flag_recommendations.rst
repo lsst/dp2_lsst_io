@@ -5,7 +5,7 @@ Flag usage guidance
 ######################
 
 Flag usage guidance by table
-================================
+============================
 
 This section provides table-specific guidance on which flags to apply for typical science-quality selections.
 The flags listed under "recommended quality filters" should be applied in most science analyses.

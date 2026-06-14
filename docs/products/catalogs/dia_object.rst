@@ -6,7 +6,7 @@ DIA object
 
 Derived properties for transient and variable objects.
 
-Schema: `DiaObject table <https://sdm-schemas.lsst.io/dp1.html#DiaObject>`_
+Schema: TBD
 
 Access
 ======
@@ -53,6 +53,4 @@ The DIA object catalog is the result of :doc:`/processing/dia/index`.
 Tutorials
 ---------
 
-**UPDATE FOR DP2**
-
-Coming soon.
+TBD.
