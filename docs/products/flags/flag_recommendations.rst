@@ -42,7 +42,7 @@ Galaxy samples (model photometry).
 
 .. note::
 
-   The ``extendedness`` classifier in DP1 has not been fully characterized for purity or completeness.
+   The ``extendedness`` classifier has not been fully characterized for purity or completeness.
    There is currently no published guidance on the selection function these cuts produce.
    Users should treat galaxy/star separation as approximate and validate against their specific science requirements.
 
@@ -107,7 +107,7 @@ Additional quality filters.
    AND pixelFlags_interpolatedCenter = 0  -- No interpolation at center
    AND pixelFlags_suspectCenter = 0       -- No suspect pixels at center
 
-Calibration stars: If specifically selecting or excluding calibration stars, use ``calib_*`` flags (including ``calib_psf_used`` and ``calib_psf_reserved``), but note DP1 caveats (:ref:`calibration-flags`).
+Calibration stars: If specifically selecting or excluding calibration stars, use ``calib_*`` flags (including ``calib_psf_used`` and ``calib_psf_reserved``).
 
 .. _flags-forced-source:
 

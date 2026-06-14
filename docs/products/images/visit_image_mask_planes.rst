@@ -3,7 +3,9 @@
 Visit and Difference Image Mask Planes
 ======================================
 
-The following are the pixel mask bit planes defined in visit and difference images in Data Preview 1 (DP1). Each plane represents a specific per-pixel condition flagged during image processing. Multiple flags may be set on the same pixel simultaneously.
+The following are the pixel mask bit planes defined in visit and difference images.
+Each plane represents a specific per-pixel condition flagged during image processing.
+Multiple flags may be set on the same pixel simultaneously.
 
 ``BAD``
     Pixel marked as bad – e.g. known defective pixel or column, or part of a bad amplifier region.
@@ -31,7 +33,7 @@ The following are the pixel mask bit planes defined in visit and difference imag
 ``DETECTED_NEGATIVE``
     Pixel that is part of a negative source detection.
     This is used in image difference contexts (for detecting disappearances or negative flux transients).
-    In DP1 static visit images, this plane is generally not used (no negative detections are run),
+    In static visit images, this plane is generally not used (no negative detections are run),
     but it is defined for compatibility with difference imaging.
 
 ``EDGE``
@@ -45,7 +47,6 @@ The following are the pixel mask bit planes defined in visit and difference imag
     Pixel containing an injected synthetic source in the science exposure.
     This plane is used when artificial sources are added to images for testing or calibration.
     Any pixel whose value was modified by inserting a simulated source gets the ``INJECTED`` bit.
-    DP1’s official processing did not inject extra sources into visit images, so this will be unset for most DP1 data.
 
 ``INJECTED_TEMPLATE``
     Pixel containing an injected synthetic source in the template image.
@@ -80,14 +81,14 @@ The following are the pixel mask bit planes defined in visit and difference imag
     Saturated pixel.
     The pixel’s value exceeded the Photon Transfer Curve (PTC) turnoff point — the threshold at which the detector begins to deviate from linearity and blooming starts.
     Pixels above this threshold are flagged as ``SAT``.
-    In DP1 visit image processing, the ``SAT`` mask is dilated slightly to ensure bleed trails from saturated stars are fully masked, covering adjacent pixels that may be affected by charge blooming.
+    The ``SAT`` mask is dilated slightly to ensure bleed trails from saturated stars are fully masked, covering adjacent pixels that may be affected by charge blooming.
     For comparison, the ``SUSPECT`` bit is also set above the PTC turnoff but not dilated — it flags pixels likely affected by saturation without meeting the criteria for full saturation.
 
 ``SAT_TEMPLATE``
     Pixel that corresponds to a saturated pixel in the template image.
     This is used in difference imaging: if the static sky template had a saturation at this location, the difference image flags it as ``SAT_TEMPLATE`` (to distinguish from saturation in the new science exposure).
     This helps avoid false detections or mis-estimation in difference images.
-    Not used in standalone visit images; relevant in DP1 difference image products.
+    Not used in standalone visit images, but relevant in difference image products.
 
 ``SENSOR_EDGE``
     Used on deep coadds <images-deep-coadd> only; see the deep and template coadds mask planes <images-deep-coadd-mask-planes> page.

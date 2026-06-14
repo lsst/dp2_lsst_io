@@ -5,7 +5,7 @@ Connection to image mask planes
 ####################################
 
 Catalog ``pixelFlags_*`` columns are directly derived from :ref:`image mask planes <images-mask-planes>`.
-Each mask plane bit in the image (``BAD``, ``SAT``, ``CR``, ``INTRP``, ``EDGE``, etc.) propagates to a corresponding pixel flag in the catalog.
+Each mask plane bit in the image propagates to a corresponding pixel flag in the catalog.
 
 The key mask plane to flag mappings are listed in the table below.
 

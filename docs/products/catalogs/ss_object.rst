@@ -6,7 +6,7 @@ SS object
 
 Derived parameters for moving (Solar System) objects.
 
-Schema: `SSObject table <https://sdm-schemas.lsst.io/dp1.html#SSObject>`_
+Schema: Link TBD.
 
 Access
 ======
@@ -37,9 +37,6 @@ Description
 A "Solar System object" is a moving object for which groupings of difference image detections (``DIASources``) have been linked together.
 
 The SS object table contains the unique ``SSObjectId`` identifier, number of observations, and the date of the discovery submission (if a new discovery) for each solar system object detected with signal-to-noise ratio >5.
-
-The DP1 version of the SS object table is very minimal, with only 3 columns.
-Future versions of this table will include, for example, the best fit absolute magnitude and slope (G and H) parameters per band and associated statistics.
 
 Processing
 ----------

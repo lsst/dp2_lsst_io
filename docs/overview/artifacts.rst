@@ -6,8 +6,7 @@ Image artifacts
 
 Some image artifacts from the camera or processing will remain visible in the data.
 
-The purpose of this page is to assist with artifact identification
-and to provide users with a consistent vocabulary for the artifacts they might notice.
+The purpose of this page is to assist with artifact identification and to provide users with a consistent vocabulary for the artifacts they might notice.
 
 
 Masked artifacts
@@ -142,7 +141,7 @@ Crosshatch pattern
 ------------------
 
 A faint correlated-noise pattern introduced by the overscan subtraction, most noticeable in visit images with low background levels.
-The effect is more pronounced for LSSTComCam than for most LSSTCam detectors, due to the comparatively lower quality of the LSSTComCam CCDs.
+The effect was more pronounced for LSSTComCam than for most LSSTCam detectors, due to the comparatively lower quality of the LSSTComCam CCDs.
 
 .. note::
   TODO: Add figure showing crosshatch pattern.
