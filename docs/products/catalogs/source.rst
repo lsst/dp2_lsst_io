@@ -48,4 +48,4 @@ The source table is the result of :doc:`/processing/detection/index`.
 Tutorials
 ---------
 
-See the 200-level catalog :doc:`tutorials/index` for a notebook on the source table.
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on the source table.

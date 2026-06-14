@@ -44,4 +44,4 @@ TBD
 Tutorials
 ---------
 
-See the 200-level catalog :doc:`tutorials/index` for a notebook on the object shear table.
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on the object shear table.

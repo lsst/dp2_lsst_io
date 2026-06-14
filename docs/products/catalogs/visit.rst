@@ -6,12 +6,12 @@ Visit
 
 Observation metadata for the full focal plane (date, time, band, coordinates).
 
-Schema: `Visit table <https://sdm-schemas.lsst.io/dp1.html#Visit>`_
+Schema: `Visit table <https://sdm-schemas.lsst.io/lsstcam.html#Visit>`_
 
 Access
 ======
 
-The visit catalog is accessible via the TAP and Butler services.
+The visit table is accessible via the TAP and Butler services.
 
 **Recommended access service:** TAP
 
@@ -35,11 +35,10 @@ Description
 ===========
 
 A "visit" is an observation in a single filter, obtained at a given time and sky coordinate.
-It refers to an observation with the full focal plane, with the boresight (center) as the
-reference for the observational metadata (e.g., airmass).
+It refers to an observation with the full focal plane, with the boresight (center) as the reference for the observational metadata (e.g., airmass).
 
 Tutorials
 ---------
 
-Coming soon.
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on the visit table.
 

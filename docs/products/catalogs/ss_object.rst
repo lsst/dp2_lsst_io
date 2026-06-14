@@ -6,12 +6,12 @@ SS object
 
 Derived parameters for moving (Solar System) objects.
 
-Schema: Link TBD.
+Schema: `SSObject table <https://dp1.lsst.io/products/catalogs/ss_object.html>`_
 
 Access
 ======
 
-The SS object catalog is accessible via the TAP and Butler services.
+The SS object table is accessible via the TAP and Butler services.
 
 **Recommended access service:** TAP
 
@@ -41,10 +41,10 @@ The SS object table contains the unique ``SSObjectId`` identifier, number of obs
 Processing
 ----------
 
-The SS object catalog is the result of :doc:`/processing/moving/index`.
+The SS object table is the result of :doc:`/processing/moving/index`.
 
 Tutorials
 ---------
 
-Coming soon.
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on the SS object table.
 

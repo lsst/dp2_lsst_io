@@ -6,12 +6,12 @@ SS source
 
 Instantaneous physical parameters for moving objects at the time of every observation.
 
-Schema: `SSSource table <https://sdm-schemas.lsst.io/dp1.html#SSSource>`_
+Schema: `SSSource table <https://dp1.lsst.io/products/catalogs/ss_source.html>`_
 
 Access
 ======
 
-The SS source catalog is accessible via the TAP and Butler services.
+The SS source table is accessible via the TAP and Butler services.
 
 **Recommended access service:** TAP
 
@@ -41,10 +41,10 @@ The SS source table contains the 2-d (sky) coordinates and 3-d distances and vel
 Processing
 ----------
 
-The SS source catalog is the result of :doc:`/processing/moving/index`.
+The SS source table is the result of :doc:`/processing/moving/index`.
 
 Tutorials
 ---------
 
-Coming soon.
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on the SS source table.
 

@@ -1,25 +1,25 @@
 .. _catalogs-mpcorb:
 
-######
-MPCORB
-######
+##########
+MPC orbits
+##########
 
 The orbit catalog produced by the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC).
 The MPC has assigned `"observatory code" <https://minorplanetcenter.net/iau/lists/ObsCodesF.html>`_ ``X05`` to the Rubin Observatory.
 
-Schema: Link TBD.
+Schema: `mpc_orbits table <https://sdm-schemas.lsst.io/lsstcam.html#mpc_orbits>`_
 
 Access
 ======
 
-The MPCORB catalog is accessible via the TAP service only.
+The MPC orbits catalog is accessible via the TAP service only.
 
 TAP
 ---
 
 * Table name: ``mpc_orbits``
-* Columns:
-* Rows:
+* Columns: |mpc_orbits_columns|
+* Rows: |mpc_orbits_rows|
 
 Butler
 ------
@@ -43,5 +43,4 @@ The MPCORB catalog is the result of :doc:`/processing/moving/index`.
 Tutorials
 ---------
 
-Coming soon.
-
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on the MPC orbits table.

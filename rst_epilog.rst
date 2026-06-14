@@ -42,6 +42,66 @@
 .. |IsolatedStarStellarMotions_rows| replace:: ``<tbd>``
 .. |IsolatedStarStellarMotions_columns| replace:: ``<tbd>``
 
+.. |source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: source dataset type |doi_image| ``<doi-tbd>``
+.. |source_butler_count| replace:: ``<tbd>``
+.. |Source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: Source searchable catalog |doi_image| ``<doi-tbd>``
+.. |Source_rows| replace:: ``<tbd>``
+.. |Source_columns| replace:: ``<tbd>``
+
+.. |object_forced_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: object_forced_source dataset type |doi_image| ``<doi-tbd>``
+.. |object_forced_source_butler_count| replace:: ``<tbd>``
+.. |ForcedSource_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: ForcedSource searchable catalog |doi_image| ``<doi-tbd>``
+.. |ForcedSource_rows| replace:: ``<tbd>``
+.. |ForcedSource_columns| replace:: ``<tbd>``
+
+.. |dia_object_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: dia_object dataset type |doi_image| ``<doi-tbd>``
+.. |dia_object_butler_count| replace:: 25
+.. |DiaObject_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: DiaObject searchable catalog |doi_image| ``<doi-tbd>``
+.. |DiaObject_rows| replace:: ``<tbd>``
+.. |DiaObject_columns| replace:: ``<tbd>``
+
+.. |dia_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: dia_source dataset type |doi_image| ``<doi-tbd>``
+.. |dia_source_butler_count| replace:: ``<tbd>``
+.. |DiaSource_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: DiaSource searchable catalog |doi_image| ``<doi-tbd>``
+.. |DiaSource_rows| replace:: ``<tbd>``
+.. |DiaSource_columns| replace:: ``<tbd>``
+
+.. |dia_object_forced_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: dia_object_forced_source dataset type |doi_image| ``<doi-tbd>``
+.. |dia_object_forced_source_butler_count| replace:: ``<tbd>``
+.. |ForcedSourceOnDiaObject_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: ForcedSourceOnDiaObject searchable catalog |doi_image| ``<doi-tbd>``
+.. |ForcedSourceOnDiaObject_rows| replace:: ``<tbd>``
+.. |ForcedSourceOnDiaObject_columns| replace:: ``<tbd>``
+
+.. |ss_object_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: ss_object dataset type |doi_image| ``<doi-tbd>``
+.. |ss_object_butler_count| replace:: ``<tbd>``
+.. |SSObject_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: SSObject searchable catalog |doi_image| ``<doi-tbd>``
+.. |SSObject_rows| replace:: ``<tbd>``
+.. |SSObject_columns| replace:: ``<tbd>``
+
+.. |ss_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: ss_source dataset type |doi_image| ``<doi-tbd>``
+.. |ss_source_butler_count| replace:: ``<tbd>``
+.. |SSSource_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: SSSource searchable catalog |doi_image| ``<doi-tbd>``
+.. |SSSource_rows| replace:: ``<tbd>``
+.. |SSSource_columns| replace:: ``<tbd>``
+
+.. |mpc_orbits_rows| replace:: ``<tbd>``
+.. |mpc_orbits_columns| replace:: ``<tbd>``
+
+.. |visit_table_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: visit_table dataset type |doi_image| ``<doi-tbd>``
+.. |visit_table_butler_count| replace:: ``<tbd>``
+.. |Visit_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: Visit searchable catalog |doi_image| ``<doi-tbd>``
+.. |Visit_rows| replace:: ``<tbd>``
+.. |Visit_columns| replace:: ``<tbd>``
+
+.. |visit_detector_table_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: visit_detector_table dataset type |doi_image| ``<doi-tbd>``
+.. |visit_detector_table_butler_count| replace:: ``<tbd>``
+.. |VisitDetector_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: VisitDetector searchable catalog |doi_image| ``<doi-tbd>``
+.. |VisitDetector_rows| replace:: ``<tbd>``
+.. |VisitDetector_columns| replace:: ``<tbd>``
+
+.. |CoaddPatches_rows| replace:: ``<tbd>``
+.. |CoaddPatches_columns| replace:: ``<tbd>``
+
 
 
 
@@ -68,65 +128,9 @@
 .. |survey_property_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: survey property dataset type |doi_image| ``<doi-tbd>``
 .. |survey_property_butler_count| replace:: ``<tbd>``
 
-.. |dia_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: dia_source dataset type |doi_image| ``<doi-tbd>``
-.. |dia_source_butler_count| replace:: ``<tbd>``
-
-.. |DiaSource_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: DiaSource searchable catalog |doi_image| ``<doi-tbd>``
-.. |DiaSource_rows| replace:: ``<tbd>``
-.. |DiaSource_columns| replace:: ``<tbd>``
-
-.. |dia_object_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: dia_object dataset type |doi_image| ``<doi-tbd>``
-.. |dia_object_butler_count| replace:: 25
-.. |DiaObject_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: DiaObject searchable catalog |doi_image| ``<doi-tbd>``
-.. |DiaObject_rows| replace:: ``<tbd>``
-.. |DiaObject_columns| replace:: ``<tbd>``
-
-.. |dia_object_forced_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: dia_object_forced_source dataset type |doi_image| ``<doi-tbd>``
-.. |dia_object_forced_source_butler_count| replace:: ``<tbd>``
-.. |ForcedSourceOnDiaObject_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: ForcedSourceOnDiaObject searchable catalog |doi_image| ``<doi-tbd>``
-.. |ForcedSourceOnDiaObject_rows| replace:: ``<tbd>``
-.. |ForcedSourceOnDiaObject_columns| replace:: ``<tbd>``
 
 
 
 
-.. |source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: source dataset type |doi_image| ``<doi-tbd>``
-.. |source_butler_count| replace:: ``<tbd>``
-.. |Source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: Source searchable catalog |doi_image| ``<doi-tbd>``
-.. |Source_rows| replace:: ``<tbd>``
-.. |Source_columns| replace:: ``<tbd>``
 
 
-
-
-.. |object_forced_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: object_forced_source dataset type |doi_image| ``<doi-tbd>``
-.. |object_forced_source_butler_count| replace:: ``<tbd>``
-
-
-.. |ForcedSource_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: ForcedSource searchable catalog |doi_image| ``<doi-tbd>``
-.. |ForcedSource_rows| replace:: ``<tbd>``
-.. |ForcedSource_columns| replace:: ``<tbd>``
-
-.. |visit_table_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: visit_table dataset type |doi_image| ``<doi-tbd>``
-.. |visit_table_butler_count| replace:: ``<tbd>``
-.. |Visit_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: Visit searchable catalog |doi_image| ``<doi-tbd>``
-.. |Visit_rows| replace:: ``<tbd>``
-.. |Visit_columns| replace:: ``<tbd>``
-
-.. |visit_detector_table_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: visit_detector_table dataset type |doi_image| ``<doi-tbd>``
-.. |visit_detector_table_butler_count| replace:: ``<tbd>``
-.. |CcdVisit_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: CcdVisit searchable catalog |doi_image| ``<doi-tbd>``
-.. |CcdVisit_rows| replace:: ``<tbd>``
-.. |CcdVisit_columns| replace:: ``<tbd>``
-
-.. |ss_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: ss_source dataset type |doi_image| ``<doi-tbd>``
-.. |ss_source_butler_count| replace:: ``<tbd>``
-.. |SSSource_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: SSSource searchable catalog |doi_image| ``<doi-tbd>``
-.. |SSSource_rows| replace:: ``<tbd>``
-.. |SSSource_columns| replace:: ``<tbd>``
-
-.. |ss_object_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: ss_object dataset type |doi_image| ``<doi-tbd>``
-.. |ss_object_butler_count| replace:: ``<tbd>``
-.. |SSObject_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: SSObject searchable catalog |doi_image| ``<doi-tbd>``
-.. |SSObject_rows| replace:: ``<tbd>``
-.. |SSObject_columns| replace:: ``<tbd>``

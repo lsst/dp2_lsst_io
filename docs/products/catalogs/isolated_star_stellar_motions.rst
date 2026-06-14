@@ -44,4 +44,4 @@ TBD
 Tutorials
 ---------
 
-See the 200-level catalog :doc:`tutorials/index` for a notebook on the isolated stars stellar motions table.
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on the isolated stars stellar motions table.
