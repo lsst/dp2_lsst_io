@@ -6,9 +6,9 @@ Time Measurements
 
 Time measurements are in International Atomic Time (TAI).
 
-The data products that contain time measurements include the mean epoch of an object in each of the ugrizy-band coadds (e.g., ``r_epoch``) in the :doc:`Object <../catalogs/object>` catalog, ``expTime``, ``obsStart``, ``expMidptMJD``, ``expMidpt``, and ``obsStartMJD`` in both the :doc:`Visit <../catalogs/visit_table>` and :doc:`CcdVisit <../catalogs/visit_detector_table>` catalogs, ``time_processed`` in the :doc:`DiaSource <../catalogs/dia_source>` catalog, and the ``discoverySubmissionDate`` in the :doc:`SSObject <../catalogs/ss_object>` catalog.
+The data products that contain time measurements include the mean epoch of an object in each of the ugrizy-band coadds (e.g., ``r_epoch``) in the :doc:`Object </products/catalogs/object>` catalog, ``expTime``, ``obsStart``, ``expMidptMJD``, ``expMidpt``, and ``obsStartMJD`` in both the :doc:`Visit </products/catalogs/visit>` and :doc:`VisitDetector </products/catalogs/visit_detector>` catalogs, ``time_processed`` in the :doc:`DiaSource </products/catalogs/dia_source>` catalog, and the ``discoverySubmissionDate`` in the :doc:`SSObject </products/catalogs/ss_object>` catalog.
 
-The ``epoch`` provided in the :doc:`MPCORB <../catalogs/mpcorb>` catalog is the only time measurement that is not measured in TAI, but Terrestrial Time (TT).
+The ``epoch`` provided in the :doc:`MPCORB </products/catalogs/mpcorb>` catalog is the only time measurement that is not measured in TAI, but Terrestrial Time (TT).
 
 
 Time scale definitions

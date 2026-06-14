@@ -6,12 +6,12 @@ Forced source
 
 Forced measurements in visit and difference images, at the coordinates of all objects.
 
-Schema: TBD
+Schema: `ForcedSource table <https://sdm-schemas.lsst.io/lsstcam.html#ForcedSource>`_
 
 Access
 ======
 
-The forced source catalog is accessible via the TAP and Butler services.
+The forced source table is accessible via the TAP and Butler services.
 
 **Recommended access service:** TAP
 
@@ -36,18 +36,16 @@ Forced sources are sharded by ``patch``, not just ``tract``, because in regions 
 Description
 ===========
 
-"Forced" photometry means a measurement made at a fixed coordinate in an image,
-regardless of whether an above-threshold region was detected there in that particular image.
+"Forced" photometry means a measurement made at a fixed coordinate in an image, regardless of whether an above-threshold region was detected there in that particular image.
 
-The forced source catalog contains forced PSF flux photometry on both the visit (i.e., "science" or "direct")
-and difference images at the coordinates of every object in the object table.
+The forced source table contains forced PSF flux photometry on both the visit (i.e., "science" or "direct") and difference images at the coordinates of every object in the object table.
 
 Processing
 ----------
 
-The forced source catalog is the result of :doc:`/processing/detection/index`.
+The forced source table is the result of :doc:`/processing/detection/index`.
 
 Tutorials
 ---------
 
-Coming soon.
+See the 200-level catalog :doc:`tutorials/index` for a notebook on the forced source table.

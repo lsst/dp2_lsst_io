@@ -37,4 +37,4 @@ TBD
 Tutorials
 ---------
 
-See the 200-level catalog :doc:`tutorials/index.html` for a notebook on the object Scarlet models table.
+See the 200-level catalog :doc:`tutorials/index` for a notebook on the object Scarlet models table.

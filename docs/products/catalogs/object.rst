@@ -52,4 +52,4 @@ The object table is the result of :doc:`/processing/detection/index`.
 Tutorials
 ---------
 
-See the 200-level catalog :doc:`tutorials/index.html` for a notebook on the object table.
+See the 200-level catalog :doc:`tutorials/index` for a notebook on the object table.
