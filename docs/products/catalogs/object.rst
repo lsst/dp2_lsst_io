@@ -4,21 +4,16 @@
 Object
 ######
 
-Measurements of objects detected in deep coadd images.
+Measurements of static astronomical objects (or the static aspects of variable and slowly-moving objects) detected and measured on coadds.
 
-Schema: `Object table <https://sdm-schemas.lsst.io/dp1.html#Object>`_
+Schema: `Object table <https://sdm-schemas.lsst.io/lsstcam.html#Object>`_
 
 Access
 ======
 
-The object catalog is accessible via the TAP and Butler services.
+The object table is accessible via the TAP and Butler services.
 
 **Recommended access service:** TAP
-
-
-.. note::
-
-   The Object catalog has many columns, and it is recommended to retrieve only a subset of the columns with TAP <products_adql_queries> or the with the Butler <products_butler_terminology>.
 
 TAP
 ---
@@ -36,19 +31,14 @@ Butler
 * Format: Parquet
 * Number of Butler datasets: |object_butler_count|
 
-
-
 Description
 ===========
 
 An "object" is an astrophysical object at a static sky coordinate.
 
-The object catalog contains forced measurements on the deep coadd images
-at the coordinates of every object detected with signal-to-noise ratio >5
-in a deep coadd image of any filter.
+The object table contains forced measurements on the deep coadd images at the coordinates of every object detected with signal-to-noise ratio >5 in a deep coadd image of any filter.
 
-Measurements include PSF and extended fluxes, shapes, and sizes,
-as well as processing pixel flags.
+Measurements include PSF and extended fluxes, shapes, and sizes, as well as processing pixel flags.
 Photometry is calibrated, but not corrected for Milky Way dust extinction.
 
 Objects are detected and deblended in each patch independently, including the "outer" patch regions that overlap.
@@ -57,10 +47,9 @@ They are then filtered down to just those whose reference-band centroid falls wi
 Processing
 ----------
 
-The object catalog is the result of :doc:`/processing/detection/index`.
+The object table is the result of :doc:`/processing/detection/index`.
 
 Tutorials
 ---------
 
-Coming soon.
-
+See the 200-level catalog :doc:`tutorials/index.html` for a notebook on the object table.

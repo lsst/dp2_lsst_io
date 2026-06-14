@@ -1,4 +1,4 @@
-.. _catalogs-visit-table:
+.. _catalogs-visit:
 
 #####
 Visit

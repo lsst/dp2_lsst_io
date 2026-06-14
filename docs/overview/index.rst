@@ -6,6 +6,16 @@ Overview
 
 General information about the observations that comprise the dataset.
 
+LSST Camera
+===========
+
+Details about the LSST Camera (LSSTCam).
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    lsstcam
 
 Observations
 ============

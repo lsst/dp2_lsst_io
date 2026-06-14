@@ -1,17 +1,15 @@
-:og:description: FIXME add description of DP2 here.
+:og:description: The Data Preview 2 dataset is based on images from the Vera C. Rubin Observatory's Camera.
 
 ##############################################
 Vera C. Rubin Observatory Data Preview 2 (DP2)
 ##############################################
 
-**Release date:** to be determined
+**Release date:** TBD
 
 Data Preview 2 contains image and catalog products from Rubin Science Pipelines v30 processing of observations obtained with the LSST Camera.
 
 *Dataset* |dataset_doi| [:download:`BibTeX <bib/dataset.bib>`].
 To be used when citing the DP2 dataset and this documentation (the link is self-referential).
-
-|lsstcam_doi| [:download:`BibTeX </bib/lsstcam.bib>`]
 
 **Data Policy:** Only Rubin data rights holders may have an account in the Rubin Science Platform (RSP) and access to Data Preview 2.
 All scientists and students in the US and Chile, plus named members of international in-kind teams, have Rubin data rights.
@@ -57,7 +55,7 @@ Data access
 Services and tools for data access.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    Data access <access/index>
@@ -68,7 +66,7 @@ Tutorials
 Tutorials demonstrating how to access and analyze the data products.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    Tutorials <tutorials/index>

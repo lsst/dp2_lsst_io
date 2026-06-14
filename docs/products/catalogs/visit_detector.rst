@@ -1,8 +1,8 @@
-.. _catalogs-visit-detector-table:
+.. _catalogs-visit-detector:
 
-#########################
-Visit detector (CcdVisit)
-#########################
+##############################
+Visit detector (VisitDetector)
+##############################
 
 Observation metadata for individual detectors (CCDs; date, time, band, PSF, zeropoint).
 

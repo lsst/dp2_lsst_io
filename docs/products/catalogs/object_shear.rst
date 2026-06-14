@@ -1,59 +1,47 @@
 .. _object-shear:
 
 ############
-Object Shear
+Object shear
 ############
 
+Descriptions of shear objects detected and measured on coadds with metadetection.
 
-
+Schema: `ShearObject table <https://sdm-schemas.lsst.io/lsstcam.html#ShearObject>`_
 
 Access
 ======
 
+The object shear table is accessible via the TAP and Butler services.
+
+**Recommended access service:** TAP
 
 TAP
 ---
 
-* |object_shear_doi|
-* Table name:
-* Columns:
-* Rows:
+* |ShearObject_doi|
+* Table name: ``ShearObject``
+* Columns: |ShearObject_columns|
+* Rows: |ShearObject_rows|
 
 Butler
 ------
 
-* insert doi
-* Dataset type:
-* Format:
-* Number of Butler datasets:
-
+* |shear_object_doi|
+* Dataset type: ('object_shear_all', {**skymap**, **tract**}, ArrowAstropy)
+* Format: Parquet
+* Number of Butler datasets: |shear_object_butler_count|
 
 Description
 ===========
 
-
+TBD
 
 Processing
 ----------
 
-
-
-Pixel data
-----------
-
-
-
-Metadata
---------
-
-
-
-WCS
-"""
-
-
+TBD
 
 Tutorials
 ---------
 
-Coming soon.
+See the 200-level catalog :doc:`tutorials/index.html` for a notebook on the object shear table.

@@ -6,7 +6,7 @@ Forced source
 
 Forced measurements in visit and difference images, at the coordinates of all objects.
 
-Schema: `ForcedSource table <https://sdm-schemas.lsst.io/dp1.html#ForcedSource>`_
+Schema: TBD
 
 Access
 ======
