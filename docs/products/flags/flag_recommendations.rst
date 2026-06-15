@@ -21,25 +21,25 @@ Band-specific flags: The Object table has approximately 100 flags per band.
 The naming pattern is ``{band}_{measurement}_flag`` (e.g., ``g_psfFlux_flag``, ``i_cModel_flag``).
 Apply the same flag logic to each band independently.
 
-In the code snippets below, ``{f}`` is the filter (ugrizy).
+In the code snippets below, ``f`` is the filter (ugrizy).
 
 .. code-block:: sql
 
-   WHERE {f}r_psfFlux_flag = 0                  -- PSF flux succeeded
-     AND {f}_pixelFlags_saturatedCenter = 0     -- No saturation at center
-     AND {f}_pixelFlags_crCenter = 0            -- No cosmic ray at center
-     AND {f}_pixelFlags_interpolatedCenter = 0  -- No interpolation at center
-     AND {f}_pixelFlags_sensor_edgeCenter = 0   -- Not on detector edge
-     AND {f}_invalidPsfFlag = 0                 -- Valid PSF model
+   WHERE f_psfFlux_flag = 0                  -- PSF flux succeeded
+     AND f_pixelFlags_saturatedCenter = 0     -- No saturation at center
+     AND f_pixelFlags_crCenter = 0            -- No cosmic ray at center
+     AND f_pixelFlags_interpolatedCenter = 0  -- No interpolation at center
+     AND f_pixelFlags_sensor_edgeCenter = 0   -- Not on detector edge
+     AND f_invalidPsfFlag = 0                 -- Valid PSF model
 
 Galaxy samples
 --------------
 
 .. code-block:: sql
 
-   AND r_cModel_flag = 0        -- CModel fit succeeded
-   AND r_extendedness = 1       -- Extended source (galaxy)
-   AND r_extendedness_flag = 0  -- Classification valid
+   AND f_cModel_flag = 0        -- CModel fit succeeded
+   AND f_extendedness = 1       -- Extended source (galaxy)
+   AND f_extendedness_flag = 0  -- Classification valid
 
 .. note::
 
@@ -52,8 +52,8 @@ Star samples
 
 .. code-block:: sql
 
-   AND r_extendedness = 0       -- Point source (star)
-   AND r_extendedness_flag = 0  -- Classification valid
+   AND f_extendedness = 0       -- Point source (star)
+   AND f_extendedness_flag = 0  -- Classification valid
 
 .. note::
 
@@ -66,14 +66,14 @@ High-precision Kron photometry
 
 .. code-block:: sql
 
-   AND r_kronFlux_flag = 0  -- Kron flux succeeded
+   AND f_kronFlux_flag = 0  -- Kron flux succeeded
 
 High-precision shape measurements
 ---------------------------------
 
 .. code-block:: sql
 
-   AND r_hsmShapeRegauss_flag = 0  -- HSM shapes succeeded
+   AND f_hsmShapeRegauss_flag = 0  -- HSM shapes succeeded
 
 Strict pixel quality
 --------------------
@@ -82,7 +82,7 @@ This is optional.
 
 .. code-block:: sql
 
-   AND r_pixelFlags_interpolated = 0  -- No interpolated pixels in footprint
+   AND f_pixelFlags_interpolated = 0  -- No interpolated pixels in footprint
 
 
 .. _flags-source:
