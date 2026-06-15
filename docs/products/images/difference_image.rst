@@ -16,7 +16,7 @@ The difference images are accessible via the Butler, SIA, and TAP services.
 Butler
 ------
 
-* Dataset type: ('difference_image', {band, **instrument**, day_obs, **detector**, physical_filter, **visit**}, ExposureF)
+* Dataset type: ('difference_image', {band, **instrument**, day_obs, **detector**, physical_filter, **visit**}, DifferenceImage)
 * Format: FITS
 * Number of Butler datasets: |difference_image_butler_count|
 
@@ -33,22 +33,14 @@ Dataproduct subtype: ``lsst.difference_image``
 Description
 ===========
 
-Difference images are created by taking template coadd images, then
-resizing, warping, PSF-matching, and scaling them to a given visit image,
-and subtracting the result from the visit image.
+Difference images are created by taking template coadd images, then resizing, warping, PSF-matching, and scaling them to a given visit image, and subtracting the result from the visit image.
 Each individual difference image contains data from one of the camera's detectors.
 
-Difference images contain sources of residual flux from the subtraction, both
-positive and negative.
-Real astrophyisical transients, variables, and moving objects appear as sources with
-a flux that is equal to the difference between their flux in the template and visit images.
+Difference images contain sources of residual flux from the subtraction, both positive and negative.
+Real astrophyisical transients, variables, and moving objects appear as sources with a flux that is equal to the difference between their flux in the template and visit images.
 
 For *future* data releases, to save space, the difference images will not be stored.
 Instead, a tool for on-the-fly difference image recreation will be provided to users.
-
-For DP1, the difference images are served and can be retrieved
-and displayed by users instantaneously, but the inputs and tools
-for their re-creation are not supplied.
 
 Processing
 ----------
@@ -64,26 +56,18 @@ Image: sky pixel data in flux units of nJy.
 
 Variance: uncertainty (noise) in the flux in units of nJy^2.
 
-Mask: an integer bitmask of representative flag values that indicate processing status or issues,
-similar to the `SDSS bitmasks <https://www.sdss4.org/dr17/algorithms/bitmasks/>`_.
+Mask: an integer bitmask of representative flag values that indicate processing status or issues.
+See :doc:`/products/images/visit_image_mask_planes`.
 
 
 Metadata
 --------
 
-The metadata for difference images retrieved from the Butler include
-information about the observation (e.g., pointing, weather),
-and the derived PSF, photometric calibration, and WCS.
+The metadata for difference images retrieved from the Butler include the derived PSF and the WCS.
 
-WCS
-"""
-
-The World Coordinate System objects for difference images are not exactly representable as FITS; the FITS headers have an approximation that is good enough only for visualization.
-Transformations with the true WCS are currently only possible using LSST Science Pipelines libraries, and those can be easy to misuse.
-See products_wcs_known_issues for more information.
 
 Tutorials
 ---------
 
-Coming soon.
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on difference images.
 

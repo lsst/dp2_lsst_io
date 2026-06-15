@@ -53,12 +53,10 @@ Image: sky pixel data in units of ADU (analog-digital units).
 Metadata
 --------
 
-The metadata for raw exposures retrieved from the Butler include
-information about the observation (e.g., pointing, weather)
-and an initial WCS estimated from the telescope boresight.
+The metadata for raw exposures retrieved from the Butler include information about the observation (e.g., pointing, weather) and an initial WCS estimated from the telescope boresight.
 
 Tutorials
 ---------
 
-Coming soon.
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on raw exposures.
 

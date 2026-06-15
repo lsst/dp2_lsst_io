@@ -39,10 +39,11 @@ All-sky maps of deep coadded images, survey depth, image quality, and more.
     spmaps/index
     hips/index
 
-Additional data products and information
-========================================
 
-Additional data products (e.g., calibration frames, filter bandpasses, filter transformations, time measurements) and information about catalog flag columns.
+Supplementary information
+=========================
+
+Additional data products and information.
 
 .. toctree::
     :maxdepth: 1

@@ -1,57 +1,59 @@
 .. _flag-recommendations:
 
-######################
+###################
 Flag usage guidance
-######################
+###################
 
-Flag usage guidance by table
-================================
-
-This section provides table-specific guidance on which flags to apply for typical science-quality selections.
-The flags listed under "recommended quality filters" should be applied in most science analyses.
-Additional filters are provided as guidance for specific science cases and should be adapted based on the science requirements.
+Table-specific guidance on which flags to apply for *typical* science-quality selections.
+It is up to the user to adapt this guidance to their *specific* science applications.
 
 .. _flags-object:
 
 Object table
-------------
+============
 
 Guidance for the application of flags on the deep coadd measurements of static sky objects.
 
-Cuts for r-band PSF photometry are shown; adjust the band prefix as needed.
+Multi-band requirements: when requiring detections in multiple bands, ensure flux measurements and key pixel flags are valid in each band used.
+Check ``pixelFlags_nodata`` to confirm coverage.
+
+Band-specific flags: The Object table has approximately 100 flags per band.
+The naming pattern is ``{band}_{measurement}_flag`` (e.g., ``g_psfFlux_flag``, ``i_cModel_flag``).
+Apply the same flag logic to each band independently.
+
+In the code snippets below, ``f`` is the filter (ugrizy).
 
 .. code-block:: sql
 
-   -- For r-band example; adjust band as needed
-   WHERE r_psfFlux_flag = 0                   -- PSF flux succeeded
-     AND r_pixelFlags_saturatedCenter = 0     -- No saturation at center
-     AND r_pixelFlags_crCenter = 0            -- No cosmic ray at center
-     AND r_pixelFlags_interpolatedCenter = 0  -- No interpolation at center
-     AND r_pixelFlags_sensor_edgeCenter = 0   -- Not on detector edge
-     AND r_invalidPsfFlag = 0                 -- Valid PSF model
+   WHERE f_psfFlux_flag = 0                  -- PSF flux succeeded
+     AND f_pixelFlags_saturatedCenter = 0     -- No saturation at center
+     AND f_pixelFlags_crCenter = 0            -- No cosmic ray at center
+     AND f_pixelFlags_interpolatedCenter = 0  -- No interpolation at center
+     AND f_pixelFlags_sensor_edgeCenter = 0   -- Not on detector edge
+     AND f_invalidPsfFlag = 0                 -- Valid PSF model
 
-Additional filters for specific science cases are described below.
-
-Galaxy samples (model photometry).
+Galaxy samples
+--------------
 
 .. code-block:: sql
 
-   AND r_cModel_flag = 0        -- CModel fit succeeded
-   AND r_extendedness = 1       -- Extended source (galaxy)
-   AND r_extendedness_flag = 0  -- Classification valid
+   AND f_cModel_flag = 0        -- CModel fit succeeded
+   AND f_extendedness = 1       -- Extended source (galaxy)
+   AND f_extendedness_flag = 0  -- Classification valid
 
 .. note::
 
-   The ``extendedness`` classifier in DP1 has not been fully characterized for purity or completeness.
+   The ``extendedness`` classifier has not been fully characterized for purity or completeness.
    There is currently no published guidance on the selection function these cuts produce.
    Users should treat galaxy/star separation as approximate and validate against their specific science requirements.
 
-Star samples (PSF photometry).
+Star samples
+------------
 
 .. code-block:: sql
 
-   AND r_extendedness = 0       -- Point source (star)
-   AND r_extendedness_flag = 0  -- Classification valid
+   AND f_extendedness = 0       -- Point source (star)
+   AND f_extendedness_flag = 0  -- Classification valid
 
 .. note::
 
@@ -59,35 +61,34 @@ Star samples (PSF photometry).
 
 Stars used and reserved in PSF modeling can also be identified using ``{band}_calib_psf_used`` and ``{band}_calib_psf_reserved`` in the Source table (see :ref:`calibration-flags`).
 
-High-precision Kron photometry.
+High-precision Kron photometry
+------------------------------
 
 .. code-block:: sql
 
-   AND r_kronFlux_flag = 0  -- Kron flux succeeded
+   AND f_kronFlux_flag = 0  -- Kron flux succeeded
 
-High-precision shape measurements.
-
-.. code-block:: sql
-
-   AND r_hsmShapeRegauss_flag = 0  -- HSM shapes succeeded
-
-Strict pixel quality (optional).
+High-precision shape measurements
+---------------------------------
 
 .. code-block:: sql
 
-   AND r_pixelFlags_interpolated = 0  -- No interpolated pixels in footprint
+   AND f_hsmShapeRegauss_flag = 0  -- HSM shapes succeeded
 
-Multi-band requirements: When requiring detections in multiple bands, ensure flux measurements and key pixel flags are valid in each band used.
-Check ``pixelFlags_nodata`` to confirm coverage.
+Strict pixel quality
+--------------------
 
-Band-specific flags: The Object table has approximately 100 flags per band.
-The naming pattern is ``{band}_{measurement}_flag`` (e.g., ``g_psfFlux_flag``, ``i_cModel_flag``).
-Apply the same flag logic to each band independently.
+This is optional.
+
+.. code-block:: sql
+
+   AND f_pixelFlags_interpolated = 0  -- No interpolated pixels in footprint
+
 
 .. _flags-source:
 
 Source table
-------------
+============
 
 Guidance for the application of flags on single-epoch visit detections.
 
@@ -107,14 +108,24 @@ Additional quality filters.
    AND pixelFlags_interpolatedCenter = 0  -- No interpolation at center
    AND pixelFlags_suspectCenter = 0       -- No suspect pixels at center
 
-Calibration stars: If specifically selecting or excluding calibration stars, use ``calib_*`` flags (including ``calib_psf_used`` and ``calib_psf_reserved``), but note DP1 caveats (:ref:`calibration-flags`).
+Calibration stars
+-----------------
+
+If specifically selecting or excluding calibration stars, use ``calib_*`` flags (including ``calib_psf_used`` and ``calib_psf_reserved``).
+
 
 .. _flags-forced-source:
 
 ForcedSource table
-------------------
+==================
 
-Guidance for the application of flags on forced photometry at Object positions on single-epoch images.
+Guidance for the application of flags on forced photometry at Object positions.
+
+When constructing light curves, apply these flags to each measurement (row) individually.
+This filters out poor-quality epochs while retaining good measurements for the same object across other visits.
+
+Science-image flux
+------------------
 
 .. code-block:: sql
 
@@ -123,23 +134,22 @@ Guidance for the application of flags on forced photometry at Object positions o
      AND pixelFlags_edge = 0             -- Position not on edge
      AND invalidPsfFlag = 0              -- PSF model valid
 
-If using difference image flux.
+
+Difference-image flux
+---------------------
 
 .. code-block:: sql
 
    AND psfDiffFlux_flag = 0              -- Difference flux succeeded
    AND diff_PixelFlags_nodataCenter = 0  -- Difference image has coverage
 
-Light curve usage: When constructing light curves, apply these flags to each measurement (row) individually.
-This filters out poor-quality epochs while retaining good measurements for the same object across other visits.
 
 .. _flags-dia-source:
 
 DiaSource table
----------------
+===============
 
 Guidance for the application of flags on transient/variable detections on difference images.
-
 
 High-confidence real astrophysical transients.
 
@@ -158,13 +168,19 @@ Additional quality filters.
    AND centroid_flag = 0  -- Position reliable
    AND pixelFlags_cr = 0  -- Not a cosmic ray residual
 
+
 .. _flags-dia-forced:
 
 ForcedSourceOnDiaObject table
-------------------------------
+=============================
 
-Guidance for the application of flags on forced photometry at DiaObject positions on _difference_ images.
+Guidance for the application of flags on forced photometry at DiaObject positions.
 
+When constructing light curves, apply these flags to each measurement (row) individually.
+This filters out poor-quality epochs while retaining good measurements for the same object across other visits.
+
+Difference-image flux
+---------------------
 
 .. code-block:: sql
 
@@ -173,11 +189,8 @@ Guidance for the application of flags on forced photometry at DiaObject position
      AND pixelFlags_saturatedCenter = 0    -- No saturation
      AND invalidPsfFlag = 0                -- PSF valid
 
-Apply these filters when building DiaObject light curves from forced photometry on difference images.
-Similar to ForcedSource, filter per-measurement to remove bad epochs while keeping good ones.
-
-Guidance for the application of flags on forced photometry at DiaObject positions on _science_ images.
-
+Science-image flux
+------------------
 
 .. code-block:: sql
 
@@ -186,5 +199,3 @@ Guidance for the application of flags on forced photometry at DiaObject position
      AND pixelFlags_saturatedCenter = 0    -- No saturation
      AND invalidPsfFlag = 0                -- PSF valid
 
-Apply these filters when building DiaObject light curves from forced photometry on science images.
-Similar to ForcedSource, filter per-measurement to remove bad epochs while keeping good ones.

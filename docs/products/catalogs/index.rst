@@ -24,9 +24,9 @@ Measurements on the deep coadd images at the locations of all detected objects.
     :glob:
 
     object
+    object_shear
     object_scarlet_models
     isolated_star_stellar_motions
-    object_shear
 
 
 Source and forced source
@@ -74,8 +74,8 @@ Derived properties for moving objects detected in difference images.
 
 
 
-Observations and metadata
-=========================
+Observational metadata
+======================
 
 Metadata for observations (visits and detectors) and the sky map (tracts and patches).
 
@@ -84,7 +84,7 @@ Metadata for observations (visits and detectors) and the sky map (tracts and pat
     :titlesonly:
     :glob:
 
-    visit_table
-    visit_detector_table
+    visit
+    visit_detector
     coadd_patches
 

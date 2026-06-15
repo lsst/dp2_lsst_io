@@ -6,12 +6,12 @@ DIA source
 
 Measurements for sources detected in difference images.
 
-Schema: `DiaSource table <https://sdm-schemas.lsst.io/dp1.html#DiaSource>`_
+Schema: `DiaSource table <https://sdm-schemas.lsst.io/lsstcam.html#DiaSource>`_
 
 Access
 ======
 
-The DIA source catalog is accessible via the TAP and Butler services.
+The DIA source table is accessible via the TAP and Butler services.
 
 **Recommended access service:** TAP
 
@@ -31,27 +31,21 @@ Butler
 * Format: Parquet
 * Number of Butler datasets: |source_butler_count|
 
-DIA sources are sharded by ``tract``, not ``visit`` in order to make them easier to join to their catalogs-dia-object.
-
 Description
 ===========
 
 A "DIA source" is a signal-to-noise ratio > 5 detection in a difference image.
 
-The DIA source catalog contains measurements on a difference image
-at the coordinates of every source detected in that difference image.
-These measurements include PSF-fit and forced PSF fluxes, and aperture and
-trailed-source fluxes.
-Forced PSF fluxes on the corresponding visit (i.e., "direct" or "science") image
-at the coordinates of the DIA source are also included.
-
+The DIA source table contains measurements on a difference image at the coordinates of every source detected in that difference image.
+These measurements include PSF-fit and forced PSF fluxes, and aperture and trailed-source fluxes.
+Forced PSF fluxes on the corresponding visit (i.e., "direct" or "science") image at the coordinates of the DIA source are also included.
 
 Processing
 ----------
 
-The DIA source catalog is the result of :doc:`/processing/dia/index`.
+The DIA source table is the result of :doc:`/processing/dia/index`.
 
 Tutorials
 ---------
 
-Coming soon.
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on the DIA source table.

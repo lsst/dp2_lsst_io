@@ -4,7 +4,7 @@
 Bandpasses
 ##########
 
-LSSTComCam filter bandpasses.
+LSSTCam filter bandpasses.
 
 
 |bandpasses_doi|
@@ -27,21 +27,12 @@ Examples of dataset types:
 Description
 ===========
 
-There are six ``standard_passband`` datasets in the DP2 Butler repository -- one for each of the *ugrizy* bands.
-These datasets tabulate the full-system transmission of the six LSSTComCam filters as a function of wavelength, which was used as a reference for the LSSTComCam DP2 photometry.
-The ``standard_passband`` dataset is keyed by band and is in Astropy Table format.
+There are six standard passband datasets, one for each of the *ugrizy* bands.
+These datasets tabulate the full-system transmission of the six filters as a function of wavelength, which was used as a reference for the photometry.
 
-**UPDATE FOR DP2?**
-
-.. figure:: figures/dp1_comcam_std_bandpasses.png
-    :name: dp1-std-bandpasses
-    :alt: Curves illustrating throughput as a function of wavelength for each of the six LSSTComCam filters.
-
-    Figure 1: The LSSTComCam standard bandpasses, illustrating full system throughput as a function of wavelength.
-
+Find more information (e.g., effective wavelength, a throughput curve plot) in the `LSSTCam documentation <https://lsstcam.lsst.io/#filters>`_.
 
 Tutorials
 ---------
 
-Coming Soon!
-
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on the passbands.

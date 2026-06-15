@@ -6,12 +6,12 @@ DIA object
 
 Derived properties for transient and variable objects.
 
-Schema: `DiaObject table <https://sdm-schemas.lsst.io/dp1.html#DiaObject>`_
+Schema: `DiaObject table <https://sdm-schemas.lsst.io/lsstcam.html#DiaObject>`_
 
 Access
 ======
 
-The DIA object catalog is accessible via the TAP and Butler services.
+The DIA object table is accessible via the TAP and Butler services.
 
 **Recommended access service:** TAP
 
@@ -37,22 +37,18 @@ Description
 A "DIA object" is an astrophysical transient or variable object at a static sky coordinate.
 
 The DIA object table is created by associating DIA sources within a 1 arcsecond radius.
-DIA objects are assigned to a ``tract`` and ``patch`` based on their ``ra, dec`` at ``radecMjdTai``.
-DIA objects are only created in the non-overlapping ``tract`` and ``patch`` inner regions.
+DIA objects are assigned to a tract and patch based on their ``RA, Dec`` at ``radecMjdTai``.
+DIA objects are only created in the non-overlapping tract and patch inner regions.
 
-The DIA object catalog contains derived per-filter variability parameters such as the minimum, mean,
-maximum, standard deviation and skew in the difference-image fluxes, and the light curve’s slope, percentiles,
-and StetsonJ parameter.
+The DIA object table contains derived per-filter variability parameters such as the minimum, mean, maximum, standard deviation and skew in the difference-image fluxes, and the light curve’s slope, percentiles, and StetsonJ parameter.
 
 
 Processing
 ----------
 
-The DIA object catalog is the result of :doc:`/processing/dia/index`.
+The DIA object table is the result of :doc:`/processing/dia/index`.
 
 Tutorials
 ---------
 
-**UPDATE FOR DP2**
-
-Coming soon.
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on the DIA object table.

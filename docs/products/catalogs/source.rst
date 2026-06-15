@@ -6,12 +6,12 @@ Source
 
 Measurements for sources detected in processed visit images.
 
-Schema: `Source table <https://sdm-schemas.lsst.io/dp1.html#Source>`_
+Schema: `Source table <https://sdm-schemas.lsst.io/lsstcam.html#Source>`_
 
 Access
 ======
 
-The source catalog is accessible via the TAP and Butler services.
+The source table is accessible via the TAP and Butler services.
 
 **Recommended access service:** TAP
 
@@ -36,19 +36,16 @@ Description
 
 A "source" is a signal-to-noise ratio > 5 detection in a visit image.
 
-The source catalog contains measurements on a visit image
-at the coordinates of every source detected in that image.
+The source table contains measurements on a visit image at the coordinates of every source detected in that image.
 
-Measurements include PSF and Gaussian fluxes and sizes,
-as well as processing pixel flags.
+Measurements include PSF and Gaussian fluxes and sizes, as well as processing pixel flags.
 
 Processing
 ----------
 
-The source catalog is the result of :doc:`/processing/detection/index`.
+The source table is the result of :doc:`/processing/detection/index`.
 
 Tutorials
 ---------
 
-Coming soon.
-
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on the source table.

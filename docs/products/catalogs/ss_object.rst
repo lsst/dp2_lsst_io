@@ -6,12 +6,12 @@ SS object
 
 Derived parameters for moving (Solar System) objects.
 
-Schema: `SSObject table <https://sdm-schemas.lsst.io/dp1.html#SSObject>`_
+Schema: `SSObject table <https://dp1.lsst.io/products/catalogs/ss_object.html>`_
 
 Access
 ======
 
-The SS object catalog is accessible via the TAP and Butler services.
+The SS object table is accessible via the TAP and Butler services.
 
 **Recommended access service:** TAP
 
@@ -38,16 +38,13 @@ A "Solar System object" is a moving object for which groupings of difference ima
 
 The SS object table contains the unique ``SSObjectId`` identifier, number of observations, and the date of the discovery submission (if a new discovery) for each solar system object detected with signal-to-noise ratio >5.
 
-The DP1 version of the SS object table is very minimal, with only 3 columns.
-Future versions of this table will include, for example, the best fit absolute magnitude and slope (G and H) parameters per band and associated statistics.
-
 Processing
 ----------
 
-The SS object catalog is the result of :doc:`/processing/moving/index`.
+The SS object table is the result of :doc:`/processing/moving/index`.
 
 Tutorials
 ---------
 
-Coming soon.
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on the SS object table.
 
