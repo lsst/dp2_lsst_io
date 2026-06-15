@@ -103,15 +103,11 @@
 .. |CoaddPatches_columns| replace:: ``<tbd>``
 
 
+.. |deep_coadd_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: deep_coadd dataset type |doi_image| ``<doi-tbd>``
+.. |deep_coadd_butler_count| replace:: ``<tbd>``
 
-
-.. |calibrations_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: calibrations dataset type |doi_image| ``<doi-tbd>``
-.. |calibrations_butler_count| replace:: ``<tbd>``
-
-.. |bandpasses_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2 |doi_image| ``<doi-tbd>``
-
-.. |raw_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: raw dataset type |doi_image| ``<doi-tbd>``
-.. |raw_butler_count| replace:: ``<tbd>``
+.. |template_coadd_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: template_coadd dataset type |doi_image| ``<doi-tbd>``
+.. |template_coadd_butler_count| replace:: ``<tbd>``
 
 .. |visit_image_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: visit_image dataset type |doi_image| ``<doi-tbd>``
 .. |visit_image_butler_count| replace:: ``<tbd>``
@@ -119,11 +115,15 @@
 .. |difference_image_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: difference_image dataset type |doi_image| ``<doi-tbd>``
 .. |difference_image_butler_count| replace:: ``<tbd>``
 
-.. |deep_coadd_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: deep_coadd dataset type |doi_image| ``<doi-tbd>``
-.. |deep_coadd_butler_count| replace:: ``<tbd>``
+.. |raw_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: raw dataset type |doi_image| ``<doi-tbd>``
+.. |raw_butler_count| replace:: ``<tbd>``
 
-.. |template_coadd_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: template_coadd dataset type |doi_image| ``<doi-tbd>``
-.. |template_coadd_butler_count| replace:: ``<tbd>``
+
+
+.. |calibrations_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: calibrations dataset type |doi_image| ``<doi-tbd>``
+.. |calibrations_butler_count| replace:: ``<tbd>``
+
+.. |bandpasses_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2 |doi_image| ``<doi-tbd>``
 
 .. |survey_property_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: survey property dataset type |doi_image| ``<doi-tbd>``
 .. |survey_property_butler_count| replace:: ``<tbd>``

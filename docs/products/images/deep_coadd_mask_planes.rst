@@ -1,6 +1,6 @@
 .. _images-deep-coadd-mask-planes:
 
-Deep and Template Coadd Mask Planes
+Deep and template coadd mask planes
 ===================================
 
 This page documents the mask planes used in deep coadd and template coadd images.

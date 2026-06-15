@@ -1,6 +1,6 @@
 .. _images-visit-mask-planes:
 
-Visit and Difference Image Mask Planes
+Visit and difference image mask planes
 ======================================
 
 The following are the pixel mask bit planes defined in visit and difference images.

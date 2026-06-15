@@ -127,8 +127,3 @@ The following table provides a summary.
    * - **SAT_TEMPLATE**
      - difference
      - Pixel saturated in the template used for difference imaging.
-
-Mask planes not populated in DP2
-================================
-
-TBD

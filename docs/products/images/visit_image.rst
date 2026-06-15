@@ -16,7 +16,7 @@ The visit images are accessible via the Butler, SIA, and TAP services.
 Butler
 ------
 
-* Dataset type: ('visit_image', {band, **instrument**, day_obs, **detector**, physical_filter, **visit**}, ExposureF)
+* Dataset type: ('visit_image', {band, **instrument**, day_obs, **detector**, physical_filter, **visit**}, VisitImage)
 * Format: FITS
 * Number of Butler datasets: |visit_image_butler_count|
 
@@ -37,7 +37,7 @@ Raw images from the camera undergo processing that includes instrument signature
 The result is a fully calibrated visit image.
 
 Each individual visit image contains data from one of the camera's detectors.
-Visit images are rotated, and are not aligned north-up east-left, such that RA, Dec do not correspond to x, y.
+Visit images are rotated, and are not aligned north-up east-left, such that ``RA, Dec`` do not correspond to ``x, y``.
 
 Processing
 ----------
@@ -72,5 +72,6 @@ This function should *always* be given an argument with x, y coordinates, so tha
 Tutorials
 ---------
 
-TBD
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on visit images.
+
 

@@ -16,7 +16,7 @@ The difference images are accessible via the Butler, SIA, and TAP services.
 Butler
 ------
 
-* Dataset type: ('difference_image', {band, **instrument**, day_obs, **detector**, physical_filter, **visit**}, ExposureF)
+* Dataset type: ('difference_image', {band, **instrument**, day_obs, **detector**, physical_filter, **visit**}, DifferenceImage)
 * Format: FITS
 * Number of Butler datasets: |difference_image_butler_count|
 
@@ -69,5 +69,5 @@ The metadata for difference images retrieved from the Butler include the derived
 Tutorials
 ---------
 
-TBD
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on difference images.
 

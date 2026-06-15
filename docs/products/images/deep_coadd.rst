@@ -17,7 +17,7 @@ The deep coadd images are accessible via the Butler, SIA, and TAP services.
 Butler
 ------
 
-* Dataset type: ('deep_coadd', {**band**, **skymap**, **tract**, **patch**}, ExposureF)
+* Dataset type: ('deep_coadd', {**band**, **skymap**, **tract**, **patch**}, CellCoadd)
 * Format: FITS
 * Number of Butler datasets: |deep_coadd_butler_count|
 
@@ -30,11 +30,12 @@ IVOA calibration level: 3
 
 Dataproduct subtype: ``lsst.deep_coadd``
 
-
 Description
 ===========
 
-TBD
+The LSST all-sky map is divided into "tracts".
+One tract is one square region of LSST's all-sky tesselation ("skymap"), $~1.66$ deg per side.
+Tracts are subdivided into 100 overlapping patches, and one deep coadd image is created per patch.
 
 Processing
 ----------
@@ -56,10 +57,10 @@ See :doc:`/products/images/deep_coadd_mask_planes`.
 Metadata
 --------
 
-The metadata for deep coadd images retrieved from the Butler include a list of the input visit images, the derived PSF, and the WCS.
+The metadata for deep coadd images retrieved from the Butler include, e.g., the PSF, the WCS, and a list of input images.
 
 Tutorials
 ---------
 
-TBD
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on deep coadd images.
 

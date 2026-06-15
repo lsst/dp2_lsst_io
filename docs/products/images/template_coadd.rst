@@ -33,13 +33,14 @@ Dataproduct subtype: ``lsst.template_coadd``
 Description
 ===========
 
-TBD
+The LSST all-sky map is divided into "tracts".
+One tract is one square region of LSST's all-sky tesselation ("skymap"), $~1.66$ deg per side.
+Tracts are subdivided into 100 overlapping patches, and one template coadd image is created per patch.
 
 Processing
 ----------
 
-The template coadd images are the result of :doc:`/processing/coaddition/index`,
-and they are used in :doc:`/processing/dia/index`.
+The template coadd images are the result of :doc:`/processing/coaddition/index`, and they are used in :doc:`/processing/dia/index`.
 
 Pixel data
 ----------
@@ -56,10 +57,10 @@ See :doc:`/products/images/deep_coadd_mask_planes`.
 Metadata
 --------
 
-The metadata for template coadd images retrieved from the Butler include a list of the input visit images, the derived PSF, and the WCS.
+The metadata for template coadd images retrieved from the Butler include, e.g., the PSF, the WCS, and a list of input images.
 
 Tutorials
 ---------
 
-TBD
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on template coadd images.
 
