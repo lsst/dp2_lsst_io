@@ -4,30 +4,23 @@
 Flag definitions and categories
 ###############################
 
-Flag inventory
-==============
+To help users interpret flag meanings, the following sections organize key flags into categories based on what the flag indicates.
+See also the :doc:`/products/flags/flag_recommendations` for recommendations on the application of flags for scientific analyses.
 
-TBD.
-
-Flag categories
-===============
-
-To help users interpret flag meanings, the following sections organize flags into categories based on what the flag indicates.
+This is not a complete list, and focuses on the most scientifically useful flags.
 
 Pixel quality flags
--------------------
+===================
 
 Pattern: ``{band}_pixelFlags_*``
 
 Purpose: Report on issues with individual pixels in the source footprint, derived from image mask planes <images-mask-planes>.
 
-The most commonly used pixel quality flags are listed in the table below.
-
 .. list-table::
    :header-rows: 1
    :widths: 25 15 60
 
-   * - Flag name
+   * - Pixel quality flag
      - Tables
      - Meaning when set to 1
    * - ``{band}_pixelFlags_{flagname}``
@@ -36,54 +29,45 @@ The most commonly used pixel quality flags are listed in the table below.
 
 
 Measurement failure flags
---------------------------
+=========================
 
 Pattern: ``*_flag`` (algorithm-specific)
 
 Purpose: Indicate that a particular measurement algorithm failed or produced unreliable results.
 
-The general measurement failure flags are listed in the table below.
-
 .. list-table::
    :header-rows: 1
    :widths: 30 15 55
 
-   * - Flag name
+   * - Measurement flag
      - Tables
      - Meaning when set to 1
    * - ``{band}_{column}_flag``
      - Table1, Table2
      - Description here.
 
-Difference imaging flags
-------------------------
 
-The DiaSource-specific flags are listed in the table below.
+DIA flags
+=========
 
-.. list-table::
-   :header-rows: 1
-   :widths: 30 70
-
-   * - Flag name
-     - Meaning and recommendation
-   * - ``{flagname}``
-     - Description here.
-
-The ForcedSourceOnDiaObject difference imaging flags are listed in the table below.
+Purpose: Indicate particular issues with difference image analysis (DIA).
 
 .. list-table::
    :header-rows: 1
-   :widths: 35 65
+   :widths: 30 15 55
 
-   * - Flag name
+   * - DIA flag
+     - Tables
      - Meaning when set to 1
    * - ``{flagname}``
+     - Table1, Table2
      - Description here.
 
-Specialized flags
------------------
 
-Other notable flags are listed in the table below.
+Special flags
+=============
+
+Additional notable flags that provide ancillary information about source measurements.
 
 .. list-table::
    :header-rows: 1
@@ -100,26 +84,22 @@ Other notable flags are listed in the table below.
 .. _calibration-flags:
 
 Calibration flags
------------------
+=================
 
 Pattern: ``{band}_calib_*``
 
-For most science, these flags can be ignored as they pertain to internal use in the calibration process.
+Purpose: These flags indicate whether a source was used in astrometric calibration, photometric calibration, or PSF modeling during single-visit processing.
 
-These flags indicate whether a source was used in astrometric calibration, photometric calibration, or PSF modeling during single-visit processing.
-
-The common calibration flags are listed in the table below.
+**For most science applications, these flags can be ignored as they pertain to internal use in the calibration process.**
 
 .. list-table::
    :header-rows: 1
    :widths: 30 15 55
 
-   * - Flag name
+   * - Calibration flag
      - Tables
      - Meaning when set to 1
    * - ``{band}_calib_{flagname}``
      - Table1, Table2
      - Description here.
 
-These flags are primarily diagnostic.
-Calibrator stars can be excluded if needed (e.g., ``calib_photometry_used = 0`` to remove stars used for zeropoint fitting), but the preliminary nature means some true calibrators will not be flagged and vice versa.

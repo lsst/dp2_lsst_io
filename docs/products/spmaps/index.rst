@@ -14,14 +14,14 @@ Access
 The survey property maps are accessible via the Butler service.
 
 * Dataset type: ('<map_name>', {**band**, **skymap**}, HealSparseMap)
-* Format: `FITS <https://healsparse.readthedocs.io/en/1.9.0/filespec.html#healsparsemap-fits-serialization>`_ (with ``.hsp`` file extension)
+* Format: `healsparse FITS serialization <https://healsparse.readthedocs.io/en/1.9.0/filespec.html#healsparsemap-fits-serialization>`_ (with ``.hsp`` file extension)
 * Number of files: |survey_property_butler_count|
 
 
 Description
 ===========
 
-Maps in ``HealSparse`` format that aggregate information from the visit images contributing to the ``deep_coadds`` and
+Maps in ``HealSparse`` format that aggregate information from the visit images contributing to the deep coadd images and
 summarize key observing conditions and survey characteristics across the sky.
 
 Map types
@@ -30,7 +30,7 @@ Map types
 The map names, descriptions (and units if not dimensionless) are:
 
 * ``deepCoadd_exposure_time_consolidated_map_sum``: Total exposure time accumulated per sky position (second)
-* ``deepCoadd_epoch_consolidated_map_min, ...max, ...mean``: Earliest, latest, and mean observation epochs (MJD)
+* ``deepCoadd_epoch_consolidated_map_min, max, mean``: Earliest, latest, and mean observation epochs (MJD)
 * ``deepCoadd_psf_size_consolidated_map_weighted_mean``: Weighted mean of PSF characteristic width as computed from the determinant radius (pixel)
 * ``deepCoadd_psf_e1_consolidated_map_weighted_mean``: Weighted mean of PSF ellipticity component e1
 * ``deepCoadd_psf_e2_consolidated_map_weighted_mean``: Weighted mean of PSF ellipticity component e2
@@ -42,9 +42,8 @@ The map names, descriptions (and units if not dimensionless) are:
 * ``deepCoadd_dcr_e1_consolidated_map_weighted_mean``: Weighted mean of DCR-induced change in PSF ellipticity (e1), expressed as a proportionality factor
 * ``deepCoadd_dcr_e2_consolidated_map_weighted_mean``: Weighted mean of DCR-induced change in PSF ellipticity (e2), expressed as a proportionality factor
 
-
 Tutorials
 ---------
 
-TBD.
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on survey property maps.
 

@@ -8,8 +8,6 @@ Catalog tables contain extensive boolean flag columns that indicate quality issu
 **These flags are provided for users to apply as quality filters based on their science requirements.**
 Catalog data is delivered largely "as measured" with minimal a priori filtering, since the appropriate flag criteria depend on the specific science case.
 
-This section provides guidance on understanding and using flag columns across all catalog tables.
-
 .. toctree::
    :maxdepth: 1
    :titlesonly:

@@ -27,11 +27,12 @@ Examples of dataset types:
 Description
 ===========
 
-There are six ``standard_passband`` datasets, one for each of the *ugrizy* bands.
+There are six standard passband datasets, one for each of the *ugrizy* bands.
 These datasets tabulate the full-system transmission of the six filters as a function of wavelength, which was used as a reference for the photometry.
-The ``standard_passband`` dataset is keyed by band and is in Astropy Table format.
+
+Find more information (e.g., effective wavelength, a throughput curve plot) in the `LSSTCam documentation <https://lsstcam.lsst.io/#filters>`_.
 
 Tutorials
 ---------
 
-TBD
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on the passbands.
