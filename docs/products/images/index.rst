@@ -11,6 +11,13 @@ The `schema browser <https://sdm-schemas.lsst.io/>`_ includes tables of image me
 Image data products are available via the butler, SIA, and TAP services.
 See the :doc:`/access/index` and the :doc:`/tutorials/index` pages to get started with these services.
 
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+    :glob:
+
+    new_lsst_image_format
+
 
 Coadd and template images
 =========================
