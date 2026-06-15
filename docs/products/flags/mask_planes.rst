@@ -2,7 +2,7 @@
 
 ###############################
 Connection to image mask planes
-#####################+#########
+###############################
 
 Catalog ``pixelFlags_*`` columns are directly derived from :ref:`image mask planes <images-mask-planes>`.
 Each mask plane bit in the image propagates to a corresponding pixel flag in the catalog.
