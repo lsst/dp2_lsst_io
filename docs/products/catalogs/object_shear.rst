@@ -26,10 +26,10 @@ TAP
 Butler
 ------
 
-* |shear_object_doi|
+* |object_shear_doi|
 * Dataset type: ('object_shear_all', {**skymap**, **tract**}, ArrowAstropy)
 * Format: Parquet
-* Number of Butler datasets: |shear_object_butler_count|
+* Number of Butler datasets: |object_shear_butler_count|
 
 Description
 ===========
