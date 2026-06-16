@@ -4,7 +4,12 @@
 Vera C. Rubin Observatory Data Preview 2 (DP2)
 ##############################################
 
-**Release date:** TBD
+**Release date:** TBD (Jul-Sep 2026)
+
+.. important::
+
+   Data Preview 2 has not yet been released. This website is currently under development.
+
 
 Data Preview 2 contains image and catalog products from Rubin Science Pipelines v30 processing of observations obtained with the LSST Camera.
 

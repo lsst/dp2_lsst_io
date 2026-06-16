@@ -9,13 +9,12 @@ General information about the observations that comprise the dataset.
 LSST Camera
 ===========
 
-Details about the LSST Camera (LSSTCam).
+|lsstcam_doi| [:download:`BibTeX </bib/lsstcam.bib>`]
 
-.. toctree::
-    :maxdepth: 2
-    :glob:
+All observations included in the DP2 dataset were obtained with the LSST Commissioning Camera (LSSTComCam).
 
-    lsstcam
+For more information, please visit `LSSTCam documentation <https://lsstcam.lsst.io/>`_.
+
 
 Observations
 ============
