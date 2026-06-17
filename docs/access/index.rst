@@ -2,9 +2,14 @@
 Data access
 ###########
 
+.. important::
+
+   Data Preview 2 has not yet been released. This website is currently under development.
+
+
 Services, tools, and policies for accessing the alerts and the Prompt data products.
 
-**Data Policy:** Only Rubin data rights holders may have an account in the Rubin Science Platform (RSP) and access to Data Preview 1.
+**Data Policy:** Only Rubin data rights holders may have an account in the Rubin Science Platform (RSP) and access to Data Preview 2.
 All scientists and students in the US and Chile, plus named members of international in-kind teams, have Rubin data rights.
 
 `Learn more about the Rubin data policy <https://rubinobservatory.org/for-scientists/data-products/data-policy>`_.

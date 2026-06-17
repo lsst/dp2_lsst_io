@@ -4,11 +4,15 @@
 Data processing
 ###############
 
-A high-level overview of the Data Release Processing (DRP) steps which generated the data products.
+.. important::
 
+   Data Preview 2 has not yet been released. This website is currently under development.
+
+
+A high-level overview of the Data Release Processing (DRP) steps which generated the data products.
 All processing was done with the `LSST Science Pipelines <https://pipelines.lsst.io/>`_.
 
-For details see |dp2_paper| [:download:`BibTeX </bib/paper.bib>`].
+For processing details see |dp2_paper| [:download:`BibTeX </bib/paper.bib>`].
 
 
 Summary

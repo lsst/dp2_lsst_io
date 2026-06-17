@@ -2,12 +2,12 @@
 Observations
 ############
 
-The sky coverage (fields), filters, and number of visits (cadence).
-
 .. important::
 
    Data Preview 2 has not yet been released. This website is currently under development.
 
+
+The sky coverage (fields), filters, and number of visits (cadence).
 
 .. _observations-fields:
 
