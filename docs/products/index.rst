@@ -2,6 +2,11 @@
 Data products
 #############
 
+.. important::
+
+   Data Preview 2 has not yet been released. This website is currently under development.
+
+
 Descriptions and schema for the science-ready data products.
 
 Catalogs
@@ -10,7 +15,7 @@ Catalogs
 Tables of measurements made on detected sources, plus observational metadata.
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :glob:
 
     catalogs/index
@@ -21,7 +26,7 @@ Images
 Individual, difference, and coadded images of the sky in the six LSST filters.
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :glob:
 
     images/index

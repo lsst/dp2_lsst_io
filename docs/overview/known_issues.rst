@@ -4,6 +4,14 @@
 Known issues
 ############
 
+.. important::
+
+   This webpage contains some placeholder information from Data Preview 1 and is currently under development.
+
+
+The purpose of this page is to document and provide guidance on known issues with the dataset.
+
+
 .. _issues_crowded_fields:
 
 Crowded fields
@@ -34,6 +42,11 @@ Astrometry
 
 WCS FITS approximations and misleading interfaces
 --------------------------------------------------
+
+.. important::
+
+   This webpage contains some placeholder information from Data Preview 1. WCS issues have been fixed and will not persist to DP2.
+
 
 Rubin's single-visit World Coordinate System (WCS) objects are not, in general, exactly representable via the FITS WCS standard.
 The FITS WCS in the headers of the visit image and difference image data products (they are the same) are ``TAN-SIP`` approximations that were expected to be good enough for visualization and object finding, not for precision astrometry.
@@ -93,7 +106,7 @@ The corresponding visit image WCS should be used instead.
 We expect our single-visit WCS objects to continue to be non-representable as FITS.
 
 Astrometric calibration
-------------------------
+-----------------------
 
 The final astrometry in DP2 is performed in two steps: GBDES fits static and per-visit polynomials, and remaining atmospheric turbulence is fit by Gaussian Processes.
 In a separate step, proper motion and parallax are now fit for all isolated stars.
@@ -105,7 +118,7 @@ Known astrometric issues include:
 - Stacking residuals in focal plane coordinates reveals unmodeled camera behavior, including tree ring signatures and other small-scale effects.
 
 Coadd astrometry: galaxy RA bias
----------------------------------
+--------------------------------
 
 Galaxy Right Ascension (but not Declination) has a magnitude-dependent bias, seen when compared to external catalogs (Euclid, DES, and others) and confirmed in injection runs.
 This may be related to the way the aperture used in ``SdssCentroid`` grows with source brightness.

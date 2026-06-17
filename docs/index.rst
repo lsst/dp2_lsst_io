@@ -4,7 +4,12 @@
 Vera C. Rubin Observatory Data Preview 2 (DP2)
 ##############################################
 
-**Release date:** TBD
+**Release date:** TBD (Jul-Sep 2026)
+
+.. important::
+
+   Data Preview 2 has not yet been released. This website is currently under development.
+
 
 Data Preview 2 contains image and catalog products from Rubin Science Pipelines v30 processing of observations obtained with the LSST Camera.
 
@@ -22,7 +27,7 @@ Overview
 General information about the observations that comprise the dataset.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    Overview <overview/index>
@@ -33,7 +38,7 @@ Data products
 Descriptions and schema for the images and catalogs.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    Data products <products/index>
@@ -44,7 +49,7 @@ Data processing
 Summaries of the data processing steps that generated the data products.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    Data processing <processing/index>
@@ -55,7 +60,7 @@ Data access
 Services and tools for data access.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    Data access <access/index>
@@ -66,7 +71,7 @@ Tutorials
 Tutorials demonstrating how to access and analyze the data products.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    Tutorials <tutorials/index>

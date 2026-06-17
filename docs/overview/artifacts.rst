@@ -4,6 +4,11 @@
 Image artifacts
 ###############
 
+.. important::
+
+   This webpage contains placeholder information from Data Preview 1 and is currently under development.
+
+
 Some image artifacts from the camera or processing will remain visible in the data.
 
 The purpose of this page is to assist with artifact identification and to provide users with a consistent vocabulary for the artifacts they might notice.
@@ -66,7 +71,9 @@ Artificial objects in Earth's orbit, including satellites and debris, can reflec
 
 **Visit images:** No streak or glint detection or masking is presently implemented.
 
-In all cases, pixel values are not erased, redacted, or otherwise altered due to streaks or glints, and no attempt is made to identify the origin of any streak. For a description of how satellite constellations impact LSST more generally, please see `ls.st/satcon <https://rubinobservatory.org/for-scientists/frequently-asked-questions/leo-sats>`_.
+In all cases, pixel values are not erased, redacted, or otherwise altered due to streaks or glints, and no attempt is made to identify the origin of any streak.
+
+For a description of how satellite constellations impact LSST, and mitigation strategies, a please see the `FAQ on artificial satellites and debris <https://rubinobservatory.org/for-scientists/frequently-asked-questions/leo-sats>`_.
 
 .. note::
   TODO: Add figure showing examples of streaks and glints.

@@ -4,11 +4,15 @@
 Data processing
 ###############
 
-A high-level overview of the Data Release Processing (DRP) steps which generated the data products.
+.. important::
 
+   Data Preview 2 has not yet been released. This website is currently under development.
+
+
+A high-level overview of the Data Release Processing (DRP) steps which generated the data products.
 All processing was done with the `LSST Science Pipelines <https://pipelines.lsst.io/>`_.
 
-For details see |dp2_paper| [:download:`BibTeX </bib/paper.bib>`].
+For processing details see |dp2_paper| [:download:`BibTeX </bib/paper.bib>`].
 
 
 Summary
@@ -29,7 +33,7 @@ Instrument signature removal (ISR)
 Corrects the raw images for the effects of the telescope and detector.
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :glob:
 
     isr/index
@@ -41,7 +45,7 @@ Calibration
 Generates the science-ready processed visit images.
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :glob:
 
     calibration/index
@@ -53,7 +57,7 @@ Coaddition
 Generates the deep coadd and template images.
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :glob:
 
     coaddition/index
@@ -65,7 +69,7 @@ Source detection and measurement
 Generates catalogs of detected sources and measurements of their properties.
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :glob:
 
     detection/index
@@ -77,7 +81,7 @@ Difference image analysis
 Runs image subtraction to generate difference images and associated detection catalogs.
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :glob:
 
     dia/index
@@ -89,7 +93,7 @@ Moving objects processing
 Links detected sources into moving objects and generates Solar System catalogs.
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :glob:
 
     moving/index
