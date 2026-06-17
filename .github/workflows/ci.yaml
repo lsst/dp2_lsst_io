@@ -67,26 +67,25 @@ jobs:
           path: _build/html/
           if-no-files-found: error
 
-  # TODO: Enable upload step when ready to publish documentation.
-  # upload:
-  #   runs-on: ubuntu-latest
-  #   needs: [lint, build, linkcheck]
+  upload:
+    runs-on: ubuntu-latest
+    needs: [lint, build, linkcheck]
 
-  #   steps:
-  #     - uses: actions/download-artifact@v7
-  #       with:
-  #         name: html
-  #         path: _build/html
+    steps:
+      - uses: actions/download-artifact@v7
+        with:
+          name: html
+          path: _build/html
 
-  #     - name: Set up Python
-  #       uses: actions/setup-python@v6
-  #       with:
-  #         python-version: ${{ env.PYTHON_VERSION }}
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
 
-  #     - name: Upload to LSST the Docs
-  #       uses: lsst-sqre/ltd-upload@v1
-  #       with:
-  #         project: "dp2"
-  #         dir: "_build/html"
-  #         username: ${{ secrets.LTD_USERNAME }}
-  #         password: ${{ secrets.LTD_PASSWORD }}
+      - name: Upload to LSST the Docs
+        uses: lsst-sqre/ltd-upload@v1
+        with:
+          project: "dp2"
+          dir: "_build/html"
+          username: ${{ secrets.LTD_USERNAME }}
+          password: ${{ secrets.LTD_PASSWORD }}
