@@ -23,7 +23,7 @@ When asked to cite the DP2 dataset as a whole please use:
 |dataset_doi| [:download:`BibTeX </bib/dataset.bib>`]
 
 If you only use a specific subset, such as only querying the Objects catalog or only using the deep coadd images, you may cite the DOI explicitly assigned to that subset.
-Each individual page in :ref:`products` includes the relevant DOI.
+Each individual page in :doc:`/products/index` includes the relevant DOI.
 
 Bibtex
 ------

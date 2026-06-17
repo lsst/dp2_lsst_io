@@ -14,6 +14,9 @@ The sky coverage (fields), filters, and number of visits (cadence).
 Sky coverage
 ============
 
+Figure 1, below, gives an impression of the sky coverage of DP2.
+**Caveat:** a tract is shown on this map if it exists in the Butler sky map for DP2, and a tract outline being drawn does not mean that it will have a deep coadd image in every patch.
+
 .. figure:: images/observations-1-dp2map-temp.png
     :name: dp2_map
     :alt: Skymap of DP2 images.
