@@ -16,7 +16,7 @@ LSST Camera
 
 |lsstcam_doi| [:download:`BibTeX </bib/lsstcam.bib>`]
 
-All observations included in the DP2 dataset were obtained with the LSST Commissioning Camera (LSSTComCam).
+All observations included in the DP2 dataset were obtained with the LSST Camera (LSSTCam).
 
 For more information, please visit `LSSTCam documentation <https://lsstcam.lsst.io/>`_.
 
