@@ -102,5 +102,3 @@ Brighter-fatter correction
     `Astier & Regnault 2023 <https://ui.adsabs.harvard.edu/abs/2023A%26A...670A.118A/abstract>`_
     and
     `Broughton et al. 2024 <https://ui.adsabs.harvard.edu/abs/2024PASP..136d5003B/abstract>`_.
-    This brighter-fatter correction has been meeting the Y10 science
-    requirements.
