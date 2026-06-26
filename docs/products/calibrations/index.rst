@@ -25,9 +25,9 @@ Number of Butler datasets: |calibrations_butler_count|
 
 Examples of dataset types:
 
-* ('bias', {instrument, detector}, ExposureF, isCalibration=True)
-* ('dark', {instrument, detector}, ExposureF, isCalibration=True)
-* ('flat', {band, instrument, detector, physical_filter}, ExposureF, isCalibration=True)
+* ``'bias', {instrument, detector}, ExposureF, isCalibration=True``
+* ``'dark', {instrument, detector}, ExposureF, isCalibration=True)``
+* ``'flat', {band, instrument, detector, physical_filter}, ExposureF, isCalibration=True)``
 
 For a full list of the calibration Butler dataset types and their descriptions, see:
 
@@ -72,4 +72,3 @@ Tutorials
 ---------
 
 See the 200-level catalog :doc:`/tutorials/index` for a notebook on the calibration products.
-
