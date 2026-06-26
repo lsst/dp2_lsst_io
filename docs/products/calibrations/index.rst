@@ -25,11 +25,17 @@ Number of Butler datasets: |calibrations_butler_count|
 
 Examples of dataset types:
 
-* ('bias', {instrument, detector}, ExposureF, isCalibration=True)
-* ('dark', {instrument, detector}, ExposureF, isCalibration=True)
-* ('flat', {band, instrument, detector, physical_filter}, ExposureF, isCalibration=True)
-* ('ptc', {instrument, detector}, PhotonTransferCurveDataset, isCalibration=True)
-* ('bfk', {instrument, detector}, BrighterFatterKernel, isCalibration=True)
+* ``'bias', {instrument, detector}, ExposureF, isCalibration=True``
+* ``'dark', {instrument, detector}, ExposureF, isCalibration=True)``
+* ``'flat', {band, instrument, detector, physical_filter}, ExposureF, isCalibration=True)``
+
+For a full list of the calibration Butler dataset types and their descriptions, see:
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    dataset_types
 
 Description
 ===========
@@ -42,9 +48,8 @@ The process of Instrument Signature Removal (ISR; also called "image reduction")
 
 **Flat fields**: An exposure taken with even illumination across the field to measure pixel response variations.
 
-**Photon transfer curves (ptc)**: TBD
-
-**Brighter-fatter kernel (bfk)**: TBD
+In addition to the combined bias, dark, and flat frames, a number of other calibration products (e.g., defects, crosstalk, linearizer, photon transfer curves, and the brighter-fatter distortion matrix) are produced and used during ISR.
+See :doc:`dataset_types` for the full list of calibration Butler dataset types and their descriptions.
 
 Processing
 ----------
@@ -67,4 +72,3 @@ Tutorials
 ---------
 
 See the 200-level catalog :doc:`/tutorials/index` for a notebook on the calibration products.
-
