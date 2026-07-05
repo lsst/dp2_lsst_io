@@ -24,7 +24,7 @@ To **get started**, follow these `instructions to sign up for an RSP account <ht
 
 To **get support**, ask questions, and report issues regarding the Rubin data products, services, and tools, post a new topic in the Rubin Community Forum's `Support category <https://community.lsst.org/c/support/6>`_.
 
-A brief overview, and some helpful tips and terminology, of the RSP's data services.
+Below are brief descriptions, and tips and terminology, for the RSP's data services.
 
 Table Access Protocol (TAP)
 ---------------------------
