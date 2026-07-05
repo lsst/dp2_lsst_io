@@ -1,4 +1,4 @@
-.. _spmaps:
+.. _maps_spmaps:
 
 ####################
 Survey property maps

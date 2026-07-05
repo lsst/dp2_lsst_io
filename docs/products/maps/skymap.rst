@@ -1,4 +1,4 @@
-.. _hipsmaps:
+.. _maps_skymap:
 
 ##########
 The Skymap
