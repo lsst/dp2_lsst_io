@@ -1,20 +1,26 @@
 .. _maps_skymap:
 
-##########
-The Skymap
-##########
+###############################
+The Skymap (tracts and patches)
+###############################
 
-The Skymap; tracts and patches, sizes, etc. Its the cellsv2.
+An all-sky tessellation of pre-defined regions.
 
 Access
 ======
 
-The Skymap is accessible via the Butler in the Notebook Aspect.
+The skymap is accessible via the Butler in the Notebook Aspect.
+Tract and patch boundaries are also available in the TAP table ``CoaddPatches``.
 
 Description
 ===========
 
-TBD
+The skymap is divided into tracts of about 1.66 degrees per side.
+Each tract is subdiveded into 100 patches.
+Patches and tracts overlap slightly at their edges.
+The LSST deep coadd and template image are generated, and available to users, per patch.
+
+Data Preview 2 uses the skymap ``lsst_cells_v2``.
 
 Tutorials
 ---------
