@@ -41,9 +41,9 @@ All-sky maps of deep coadded images, survey depth, image quality, and more.
     :maxdepth: 1
     :glob:
 
-    spmaps/index
-    hips/index
-
+    maps/skymap
+    maps/sp_maps
+    maps/hips
 
 Supplementary information
 =========================

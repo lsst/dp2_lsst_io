@@ -1,4 +1,4 @@
-.. _hipsmaps:
+.. _maps_hips:
 
 #########
 HiPS maps
