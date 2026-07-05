@@ -94,3 +94,15 @@ Avoid putting TAP queries in ``for...in`` loops
 ===============================================
 
 For users that have a list of coordinates (Right Ascension, Declination) and need to cross-match them to Rubin source catalogs, it is recommended to avoid making multiple TAP queries in a ``for ... in`` loop (i.e., one TAP query for each coordinate), and instead use the TAP functionality for **table upload** and **cross-match** as demonstrated in the :doc:`/tutorials/index`.
+
+
+Use JOIN for table joins
+========================
+
+Use the ``JOIN`` functionality to join TAP tables in ADQL statements, instead of the option to list comma-separated table names after ``FROM``.
+
+
+INTERSECTS is not implemented
+=============================
+
+Not all SQL/ADQL functionality has been implemented in the Rubin TAP service, e.g., INTERSECTS.
