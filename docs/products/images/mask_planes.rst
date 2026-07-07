@@ -84,6 +84,14 @@ The following table provides a summary.
      - difference
      - Linear artifact (satellite trail, diffraction spike).
 
+   * - **SPIKE**
+     - difference
+     - Diffraction spike from a bright source. New in DP2.
+
+   * - **HIGH_VARIANCE**
+     - difference
+     - Pixel with high variance in the template detectors used for difference imaging. New in DP2.
+
    * - **CLIPPED**
      - coadd only
      - At least one input image contributing to this pixel was identified as an artifact and excluded.

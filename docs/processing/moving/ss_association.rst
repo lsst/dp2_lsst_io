@@ -6,7 +6,8 @@ Source detection and association
 
 Moving objects are detected as part of :doc:`/processing/dia/index`.
 Difference-image detections with signal-to-noise ratio of at least 5, ``DiaSources``, are associated with either a static-sky time-domain object (``DiaObject``) or a moving object (``SSObject``).
-In both cases, source association uses a radius of 1 arcsecond.
+In both cases, source association uses a radius of 1 arcsecond, without taking positional uncertainties into account.
+In DP2 this yields approximately 4 million associations.
 
 Because a single known moving object predicted position may fall within the 1-arcsecond association radius for multiple nearby ``DiaSources``, a ``diaDistanceRank`` field is included in the ``ssSource`` table with the rank of the ``diaSourceId`` -identified source in terms of its closeness to the predicted SSO position.
 If the ``diaSourceId`` is the nearest ``DiaSource`` to this SSO prediction, ``diaDistanceRank`` = 1 would be set.
