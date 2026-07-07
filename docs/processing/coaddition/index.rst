@@ -36,6 +36,9 @@ The effect is that, within a cell, the PSF may be considered "edge-free": it was
 The cells are created separately, then stitched together into the coadd image.
 Thus the set of input visits for each cell can be slightly different from neighboring cells, within the same coadd image.
 
+Cell coadd injection is not yet working for DP2, so characterization relies on matching against external catalogs in deep drilling fields.
+A large injection campaign is planned for the DP2 release.
+
 
 
 .. _coaddition-visitselect:

@@ -20,8 +20,17 @@ After :doc:`/processing/isr/index` has been performed on the images, additional 
 * The final global photometric calibration uses the Forward Global Calibration Method (FGCM; `Burke et al. 2018 <https://ui.adsabs.harvard.edu/abs/2018AJ....155...41B/abstract>`_). FGCM is used to calibrate the full DP2 dataset with a forward model that uses a parameterized model of the atmosphere as a function of airmass along with a model of the instrument throughput as a function of wavelength. Nightly variations in the atmosphere are modeled by minimizing the variance in repeated observations of stars with an SNR greater than 10. Additional constraints, particularly the overall throughput, are provided by a subset of stars from :doc:`The Monster reference catalog </processing/calibration/monster>`.
 * Observations of overlapping spectrophotometric flux standard standard stars are used to evaluate the accuracy of the absolute system throughputs.
 
+Aperture corrections
+====================
+
+Rubin processing uses aperture corrections to ensure that different photometry estimators produce consistent results on point sources.
+These corrections are measured by applying different algorithms to the same set of bright stars on each single-visit image and interpolating the ratio of each algorithm to a standard one (a background-compensated top-hat aperture flux), which is then used for all photometric calibration.
+All fluxes other than the standard algorithm's are then multiplied by the interpolated flux ratio.
+Aperture corrections on coadds are computed by averaging the single-detector ratios with the same weights that were used to combine images.
+
+See :ref:`products_known_issues` for known issues with this scheme.
+
 Additional resources
 ====================
 
 For a description of the photometric calibration steps and hardware to enable them, refer to the "Rubin Baseline Calibration Plan" (`sitcomtn-086.lsst.io <https://sitcomtn-086.lsst.io/>`_).
-

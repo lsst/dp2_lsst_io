@@ -44,6 +44,18 @@ Photometry is calibrated, but not corrected for Milky Way dust extinction.
 Objects are detected and deblended in each patch independently, including the "outer" patch regions that overlap.
 They are then filtered down to just those whose reference-band centroid falls within the inner (non-overlapping) patch bounds when per-patch catalogs are aggregated.
 
+Star/galaxy classification
+--------------------------
+
+A new floating-point, per-band and griz ``model_extendedness`` classifier using Sersic fluxes and sizes generally performs better than the previous ``refExtendedness``.
+However, ``griz_model_extendedness`` tends to classify everything as a galaxy fainter than approximately ``i = 24``; adjusting the threshold can help, but optimal faint-star selection will require user input.
+A classification for bad or bogus detections is still lacking.
+
+Ellipse parameterizations and units
+-----------------------------------
+
+``TBD``
+
 Processing
 ----------
 

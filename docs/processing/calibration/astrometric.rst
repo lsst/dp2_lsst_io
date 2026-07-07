@@ -10,6 +10,7 @@ Overview
 ========
 
 Bright, isolated stars detected in the post-ISR images are used to obtain an initial astrometric solution.
+Single-frame astrometry uses ``astrometry_camera``, the camera distortion model built from the astrometry fit.
 
 The final astrometric calibration of DP2 follows the method used in DP1, with some key additions described below (see also the DP2 paper, `rtn-115.lsst.io <https://rtn-115.lsst.io/>`_).
 A joint calibration is performed on all visits in a given band that overlap a given region of the sky.
