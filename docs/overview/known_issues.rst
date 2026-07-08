@@ -70,6 +70,7 @@ Coadd astrometry: galaxy RA bias
 Galaxy Right Ascension (but not Declination) has a magnitude-dependent bias, seen when compared to external catalogs (Euclid, DES, and others) and confirmed in injection runs.
 This may be related to the way the aperture used in ``SdssCentroid`` grows with source brightness.
 Exponential and Sersic model centroids, which have a free centroid parameter, are generally more accurate and have a smaller bias.
+This issue is tracked in `DM-54726 <https://rubinobs.atlassian.net/browse/DM-54726>`__.
 
 .. note::
 
@@ -110,6 +111,22 @@ This oversubtraction can affect photometry and PSF estimation in crowded fields.
    TODO (pair-documenting): quantify what the user needs to care about.
    What is the size of the oversubtraction per band and as a function of density, what is the impact on fluxes (e.g., in mmag), and how can affected regions be identified?
 
+Aperture flux uncertainties
+---------------------------
+
+The ``{band}_ap12FluxErr`` column in the Object table is sometimes NaN even when the uncertainty for larger apertures (e.g., ``{band}_ap17FluxErr``) is finite.
+This is likely a problem with the sinc interpolation used for smaller apertures, and may also affect ``apFlux_12_0_instFluxErr`` in the Source table.
+This issue is tracked in `DM-54658 <https://rubinobs.atlassian.net/browse/DM-54658>`__.
+
+Sersic and Exponential model outputs
+------------------------------------
+
+Improvements to the Sersic and Exponential model outputs are tracked in `DM-53939 <https://rubinobs.atlassian.net/browse/DM-53939>`__.
+
+.. note::
+
+   TODO (pair-documenting): a full description of the ellipse parameterizations and units is owed on the :doc:`/products/catalogs/object` page.
+
 
 .. _issues_backgrounds:
 
@@ -126,10 +143,54 @@ A new full-focal-plane background fitter is under development but was not ready 
    What is the typical size of the detector-to-detector offsets, which data are most affected, and what is the impact on user photometry and surface brightness measurements?
 
 
+.. _issues_coadds:
+
+Coadds
+======
+
+Empty cells
+-----------
+
+Coadd cells will have no data if none of the input warps is below the masked-pixel threshold, even though a fallback (such as including the warp with the largest mask fraction) could have been implemented.
+This is not so much a bug as a case where the best solution has not yet been chosen.
+
+.. note::
+
+   TODO (pair-documenting): quantify how often this occurs and add guidance on identifying affected cells.
+
+
+.. _issues_object_catalog:
+
+Object catalog
+==============
+
+Objects spanning multiple cell footprints
+-----------------------------------------
+
+There is no column to identify objects whose cells span multiple footprints, and which therefore effectively have ``INEXACT_PSF`` for their measurements.
+What to do about this has not yet been decided.
+
+Duplicate or missing objects near patch boundaries
+--------------------------------------------------
+
+A tiny fraction of objects with centroids near patch boundaries may appear in the Object table zero times (if their reference-band centroids happen to shift outside the inner area of every patch) or multiple times (up to four).
+
+Similarly, the ``exponential_ra``/``exponential_dec`` and ``sersic_ra``/``sersic_dec`` centroids may not correspond to the same patch/tract as ``coord_ra``/``coord_dec``.
+
+Matching to the object_shear_all table
+--------------------------------------
+
+The ``object_shear_all`` table has a completely different set of rows from the Object table: it includes rows with ``is_tract_inner == False``, but not rows with ``is_patch_inner == False``.
+Users will need to be careful when comparing or matching the two tables.
+
+
 .. _issues_dia:
 
 Difference imaging
 ===================
+
+DIA source reliability
+----------------------
 
 The reliability model for DIA sources shows improved performance relative to DP1, but does not perform well on bad stellar subtractions.
 
@@ -137,6 +198,16 @@ The reliability model for DIA sources shows improved performance relative to DP1
 
    TODO (pair-documenting): add details on what "does not perform well" means.
    What reliability values do bad stellar subtractions receive, what threshold is recommended for clean transient samples, and what fraction of DIA sources is affected?
+
+Diffraction spike masks and bright-star halos
+---------------------------------------------
+
+The ``SPIKE`` masks are excessively wide at the bases.
+In practice, where the bases intersect they mask out a polygon that is typically (possibly always) larger than the saturated (``SAT``) mask.
+
+Despite the large spike masks, there is usually some residual flux from the halos of bright stars, beyond where the ``SPIKE`` masks end, that is not subtracted off.
+Detections in these regions are more likely to be bogus, and even if real, the measurements are likely unreliable.
+In the simplest case, where the diffraction spikes all line up, these detections are clustered around the four points where the spike-mask triangles intersect, making a square/diamond shape around the center of the star.
 
 
 .. _issues_solarsystem:
