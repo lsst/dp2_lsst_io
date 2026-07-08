@@ -37,6 +37,27 @@ The charge created from very bright stars can overflow a pixel and extend along 
 When a bleed trail extends to the CCD edge and then continues to affect pixels along the edge of the CCD in the x-direction.
 There are two types of edge bleeds depending on the sensor vendor: for ITL sensors, the bleed fans out at the edge and we attempt to mask them, though some may be missed; for E2V sensors, the edge bleeds appear as a more compact feature and are masked with a box.
 
+.. figure:: images/ITL_edge_bleed_3_inset.jpg
+    :name: itl_edge_bleed
+    :alt: A bleed trail on an ITL sensor fanning out along the CCD edge.
+
+    An edge bleed on an ITL sensor: the bleed trail from a saturated star extends along the column to the CCD edge, where it fans out along the edge in the x-direction.
+
+.. figure:: images/e2v_edge_bleed_3_inset.jpg
+    :name: e2v_edge_bleed
+    :alt: A compact edge bleed at the CCD edge of an e2v sensor.
+
+    An edge bleed on an e2v sensor: compared to ITL sensors, the feature at the CCD edge is more compact, and it is masked with a box.
+
+On ITL sensors, bright saturated stars can also produce a "dark dip" (or "ITL dip"): a depression of the background level along the columns that pass through the star.
+See `The "dark dips" phenomenon in the LSST Camera on-sky images <https://ui.adsabs.harvard.edu/abs/2026arXiv260700925J/abstract>`_ for a detailed description of this effect.
+
+.. figure:: images/ITL_dip_1_inset.jpg
+    :name: itl_dip
+    :alt: A dark column passing through a saturated star on an ITL sensor.
+
+    An ITL dip ("dark dip"): the columns passing through a bright saturated star on an ITL sensor show a depressed background level, appearing as a dark vertical trail through the star.
+
 Dark trails
 -----------
 
