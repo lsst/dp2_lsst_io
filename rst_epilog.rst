@@ -7,6 +7,7 @@
    :width: 15
    :alt: DOI Logo
 
+.. |dp1_paper| replace:: **NSF-DOE Vera C. Rubin Observatory** (2025); The Vera C. Rubin Observatory Data Preview 1 |doi_image| https://doi.org/10.71929/rubin/2570536
 
 .. |dataset_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2 |doi_image| ``<doi-tbd>``
 
