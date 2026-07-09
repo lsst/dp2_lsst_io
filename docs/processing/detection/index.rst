@@ -22,7 +22,7 @@ Detection refers specifically to the process of finding regions with above-thres
 These regions are called "footprints".
 The threshold used for detection is a signal-to-noise ratio > 5.
 
-If the footprint contains one or more flagged pixels, e.g., for cosmic rays, detector edge, bad pixels, or flux saturation, the source is also flagged (see :doc:`/products/flags/index`),
+If the footprint contains one or more flagged pixels, e.g., for cosmic rays, detector edge, bad pixels, or flux saturation, the source is also flagged (see :doc:`/products/flags/index`).
 
 
 .. _detection-deblend:
