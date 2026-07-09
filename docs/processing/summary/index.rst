@@ -13,7 +13,7 @@ Note that not every product in the graph is a final user-facing image or catalog
 Stage 1
 =======
 
-:ref:`Instrument Signature Removal (ISR) <isr>` applies the input :ref:`calibration data products <calibrations>` to :ref:`raw images <images-raw>` and produces "post_isr_images", which are matched to the :doc:`/processing/calibration/monster` to derive the initial single-detector calibrations.
+:doc:`/processing/isr/index` applies the input :ref:`calibration data products <calibrations>` to :ref:`raw images <images-raw>` and produces "post_isr_images", which are matched to the :doc:`/processing/calibration/monster` to derive the initial single-detector calibrations.
 Then, analysis is performed on the initial calibrated single-visit images in preparation for stage 2.
 
 .. figure:: images/DP2-stage1-figure.png
@@ -28,7 +28,7 @@ Then, analysis is performed on the initial calibrated single-visit images in pre
 Stage 2
 =======
 
-Multi-visit and full-visit recalibration, including :ref:`FGCM photometric calibration <photometric>` and :ref:`gbdes astrometric calibration <astrometric>`.
+Multi-visit and full-visit recalibration, including :doc:`/processing/calibration/photometric` and :doc:`/processing/calibration/astrometric`.
 
 .. figure:: images/DP2-stage2-figure.png
   :alt: Pipeline graph of DP2 DRP Stage 2, showing recalibration steps
@@ -58,7 +58,7 @@ These coadds are then processed through detection, deblending, and measurement a
 Stage 4
 =======
 
-The :ref:`Source <catalogs-source>` catalogs are created (measurements for detections in single-visit images), and :ref:`difference imaging <dia>` and :ref:`detection-forcephot` are performed.
+The :ref:`Source <catalogs-source>` catalogs are created (measurements for detections in single-visit images), and :doc:`/processing/dia/index` and :ref:`detection-forcephot` are performed.
 
 .. figure:: images/DP2-stage4-figure.png
   :alt: Pipeline graph of DP2 DRP Stage 4, showing variability measurement steps

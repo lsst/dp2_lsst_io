@@ -6,7 +6,7 @@ Small body tracklet linking and orbit fitting
 
 .. image:: images/LSST-HelioLinC3D-Infographic.png
 
-Small body tracklet linking and orbit fitting is done with the `HelioLinC3D` package.
+Small body tracklet linking and orbit fitting is done with the ``HelioLinC3D`` package.
 
 The goal of the HelioLinC3D software package is to discover previously unknown asteroids amid the millions of new difference-image detections every night.
 The algorithm identifies and links together little sequences of typically 6-20 sources that could comprise repeated detections of a new asteroid moving in its orbit around the Sun.

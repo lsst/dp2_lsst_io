@@ -4,7 +4,7 @@
 Source detection and association
 ################################
 
-Moving objects are detected as part of :doc:`processing/dia/index`.
+Moving objects are detected as part of :doc:`/processing/dia/index`.
 Difference-image detections with signal-to-noise ratio of at least 5, ``DiaSources``, are associated with either a static-sky time-domain object (``DiaObject``) or a moving object (``SSObject``).
 In both cases, source association uses a radius of 1 arcsecond.
 

@@ -9,7 +9,7 @@ Key terminology:
 
 * ``DiaSource``: a detection, positive or negative, in a single difference image
 * ``DiaObject``: the astrophysical transient or variable object at a static sky coordinate
-* light curve : photometric measurements of a ``DiaObject`` as a function of time; :ref:`Forced photometry` should be used for light curves.
+* light curve : photometric measurements of a ``DiaObject`` as a function of time; :ref:`detection-forcephot` should be used for light curves.
 
 
 .. _dia-image:
@@ -66,7 +66,7 @@ DIA object association
 DIA sources are associated into DIA objects using a radius of 1 arcsecond.
 The DIA objects are stored in the ``DiaObject`` catalog.
 
-DIA source can instead be associated with a moving object (an SS object), as described in :doc:`processing/moving/index`.
+DIA source can instead be associated with a moving object (an SS object), as described in :doc:`/processing/moving/index`.
 
 
 Variability characterization
