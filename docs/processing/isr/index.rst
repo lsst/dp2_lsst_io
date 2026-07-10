@@ -11,7 +11,7 @@ ISR is the first step of image processing, which removes instrumental effects in
     :name: isr_model
     :alt: A schematic diagram of the photon transfer and data-acquisition model with various detector signatures relevant for LSSTCam images.
 
-    Figure 1: Photon transfer and data-acquisition model for the LSSTCam detectors and readout electronics board (REB), labeled with the instrumental effects (dashed boxes) and where each enters the chain. Low-signal non-linearities have been observed in the detector response, but their origin is not yet established, so that contribution appears as a disconnected box (from `RTN-117 <https://rtn-117.lsst.io/>`_).
+    Figure 1: Photon transfer and data-acquisition model for the LSSTCam detectors and readout electronics board (REB), labeled with the instrumental effects (dashed boxes) and where each enters the chain. Low-signal non-linearities have been observed in the detector response, but their origin is not yet established, so that contribution appears as a disconnected box (from `RTN-117 <https://rtn-117.lsst.io/>`__).
 
 
 .. figure:: images/isr_steps.png
@@ -19,14 +19,14 @@ ISR is the first step of image processing, which removes instrumental effects in
     :name: isr_steps
     :alt: A schematic diagram with the sequence of Instrument Signature Removal steps applied to LSSTCam science images.
 
-    Figure 2: Outline of the Instrument Signature Removal pipeline applied to LSSTCam science images for DP2, derived from the detector model in Figure 1. Blue boxes denote static steps that apply pre-computed calibration inputs; orange boxes denote steps whose application depends on the science exposure itself; white boxes mark the raw input and post-ISR output; and the dashed box is an optional step (from `RTN-117 <https://rtn-117.lsst.io/>`_).
+    Figure 2: Outline of the Instrument Signature Removal pipeline applied to LSSTCam science images for DP2, derived from the detector model in Figure 1. Blue boxes denote static steps that apply pre-computed calibration inputs; orange boxes denote steps whose application depends on the science exposure itself; white boxes mark the raw input and post-ISR output; and the dashed box is an optional step (from `RTN-117 <https://rtn-117.lsst.io/>`__).
 
 
 
 Components
 ==========
 
-The steps of ISR, in the order they are applied to DP2 science images, include (from `RTN-117 <https://rtn-117.lsst.io/>`_; see also `Plazas Malagón et al. 2025 <https://ui.adsabs.harvard.edu/abs/2025JATIS..11a1209P/abstract>`_):
+The steps of ISR, in the order they are applied to DP2 science images, include (from `RTN-117 <https://rtn-117.lsst.io/>`__; see also `Plazas Malagón et al. 2025 <https://ui.adsabs.harvard.edu/abs/2025JATIS..11a1209P/abstract>`__):
 
 **Conversion from integer to float**: promotes the raw integer pixel values to floating-point precision before any corrections are applied.
 
@@ -88,7 +88,7 @@ Because effects are undone in the opposite order to which they were imprinted, s
 Quantization is addressed first through count dithering, followed by serial overscan subtraction, saturation masking, and gain conversion to electrons.
 Crosstalk is then corrected to prevent its contamination of later steps like parallel overscan subtraction and non-linearity correction, and deferred charge (CTI) is corrected next, followed by vendor-specific masks for artifacts such as edge bleeds and the ITL dip.
 The final steps include bias and dark subtraction, defect masking, brighter-fatter correction, variance plane construction, flat-fielding, and interpolation over masked pixels.
-Each of these steps is tied to specific elements in the detector readout chain; running the pipeline with misplaced steps would either apply a correction in the wrong physical units or leave residual structure that invalidates downstream calibrations (`RTN-117 <https://rtn-117.lsst.io/>`_, `Plazas Malagón et al. 2025 <https://ui.adsabs.harvard.edu/abs/2025JATIS..11a1209P/abstract>`_).
+Each of these steps is tied to specific elements in the detector readout chain; running the pipeline with misplaced steps would either apply a correction in the wrong physical units or leave residual structure that invalidates downstream calibrations (`RTN-117 <https://rtn-117.lsst.io/>`__, `Plazas Malagón et al. 2025 <https://ui.adsabs.harvard.edu/abs/2025JATIS..11a1209P/abstract>`__).
 
 
 Subtleties
@@ -150,7 +150,7 @@ Additional resources
 
 For descriptions of the ISR steps and the generation, verification, certification, approval, and distribution of the calibration products necessary for ISR, refer to the following:
 
-* "Image Calibration and Instrument Signal Removal for the First Year of the LSST" (`RTN-117 <https://rtn-117.lsst.io/>`_)
+* "Image Calibration and Instrument Signal Removal for the First Year of the LSST" (`RTN-117 <https://rtn-117.lsst.io/>`__)
 * `Instrument Signature Removal and Calibration Products for the Rubin Legacy Survey of Space and Time <https://ui.adsabs.harvard.edu/abs/2025JATIS..11a1209P/abstract>`_
 * "Rubin Baseline Calibration Plan" (`SITCOMTN-086 <https://sitcomtn-086.lsst.io/>`_)
 * "Verifying LSST Calibration Data Products" (`DMTN-101 <https://dmtn-101.lsst.io/>`_)
