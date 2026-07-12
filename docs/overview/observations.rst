@@ -49,6 +49,26 @@ Small fields
      - x
 
 
+.. csv-table:: Table 1: Small field survey area central coordinates.
+   :header: "Field Name", "RA, Dec [deg]"
+   :widths: 50, 50
+   :align: left
+
+    "Abell_2764", "5.5, -49.0"
+    "DESI_SV3_R1", "180.5, -0.3"
+    "M49", "186.3, 6.9"
+    "New_Horizons", "289.4, -20.2"
+    "Prawn", "253.5, -41.0"
+    "Rubin_SV_212_-7", "210.2, -6.1"
+    "Rubin_SV_216_-17", "216.1, -16.7"
+    "Rubin_SV_225_-40", "225.0, -39.5"
+    "Rubin_SV_280_-48", "280.1, -48.0"
+    "Rubin_SV_300_-41", "300.3, -41.0"
+    "Rubin_SV_320_-15", "320.2, -15.1"
+    "Trifid-Lagoon", "271.7, -23.9"
+
+
+
 Deep drilling fields
 --------------------
 
