@@ -6,7 +6,7 @@ Coadd patches
 
 Coordinates and regions for the patches of the all-sky map.
 
-Schema: `CoaddPatches table <https://sdm-schemas.lsst.io/lsstcam.html#CoaddPatches>`_
+Schema: `CoaddPatches table <https://sdm-schemas.lsst.io/dp2.html#CoaddPatches>`_
 
 Access
 ======
