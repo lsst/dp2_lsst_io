@@ -6,7 +6,7 @@ DIA forced source
 
 Forced measurements in visit and difference images, at the coordinates of all DIA objects.
 
-Schema: `ForcedSourceOnDiaObject table <https://sdm-schemas.lsst.io/lsstcam.html#ForcedSourceOnDiaObject>`_
+Schema: `ForcedSourceOnDiaObject table <https://sdm-schemas.lsst.io/dp2.html#ForcedSourceOnDiaObject>`_
 
 Access
 ======
