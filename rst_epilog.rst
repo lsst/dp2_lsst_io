@@ -123,7 +123,6 @@
 .. |survey_property_butler_count| replace:: ``<tbd>``
 
 .. |calibrations_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: calibrations dataset type |doi_image| ``<doi-tbd>``
-.. |calibrations_butler_count| replace:: ``<tbd>``
 
 .. |bandpasses_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2 |doi_image| ``<doi-tbd>``
 
