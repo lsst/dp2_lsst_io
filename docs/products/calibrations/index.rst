@@ -4,6 +4,11 @@
 Calibrations
 ############
 
+.. important::
+
+   Calibration images are not part of Early Data Preview 2 (EDP2); they will be delivered with the full DP2 release.
+   For more information, see "Rubin Plans for an Early Science Program" (`RTN-011 <https://ls.st/rtn-011>`__).
+
 Calibration products (e.g., combined bias, dark, and flat frames).
 
 
@@ -21,13 +26,11 @@ This is usually best provided by also passing an exposure or visit ID when looki
 Butler
 ------
 
-Number of Butler datasets: |calibrations_butler_count|
-
 Examples of dataset types:
 
-* ('bias', {instrument, detector}, ExposureF, isCalibration=True)
-* ('dark', {instrument, detector}, ExposureF, isCalibration=True)
-* ('flat', {band, instrument, detector, physical_filter}, ExposureF, isCalibration=True)
+* ('bias', {**instrument**, **detector**}, ExposureF, isCalibration=True)
+* ('dark', {**instrument**, **detector**}, ExposureF, isCalibration=True)
+* ('flat', {band, **instrument**, **detector**, **physical_filter**}, ExposureF, isCalibration=True)
 
 For a full list of the calibration Butler dataset types and their descriptions, see:
 
