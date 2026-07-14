@@ -6,7 +6,7 @@ Visit
 
 Observation metadata for the full focal plane (date, time, band, coordinates).
 
-Schema: `Visit table <https://sdm-schemas.lsst.io/lsstcam.html#Visit>`_
+Schema: `Visit table <https://sdm-schemas.lsst.io/dp2.html#Visit>`_
 
 Access
 ======
