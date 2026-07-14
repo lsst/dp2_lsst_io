@@ -6,7 +6,7 @@ Object
 
 Measurements of static astronomical objects (or the static aspects of variable and slowly-moving objects) detected and measured on coadds.
 
-Schema: `Object table <https://sdm-schemas.lsst.io/lsstcam.html#Object>`_
+Schema: `Object table <https://sdm-schemas.lsst.io/dp2.html#Object>`_
 
 Access
 ======
