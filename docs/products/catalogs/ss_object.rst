@@ -6,7 +6,7 @@ SS object
 
 Derived parameters for moving (Solar System) objects.
 
-Schema: `SSObject table <https://dp1.lsst.io/products/catalogs/ss_object.html>`_
+Schema: `SSObject table <https://sdm-schemas.lsst.io/dp2.html#SSObject>`_
 
 Access
 ======
