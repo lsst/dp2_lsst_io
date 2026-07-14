@@ -4,6 +4,11 @@
 Calibration Butler dataset types
 #######################################
 
+.. important::
+
+   Calibration images are not part of Early Data Preview 2 (EDP2); they will be delivered with the full DP2 release.
+   For more information, see "Rubin Plans for an Early Science Program" (`RTN-011 <https://ls.st/rtn-011>`__).
+
 The calibration products are accessed via the Butler as a number of dataset types.
 The combined bias, dark, and flat frames described on the
 :doc:`main calibrations page <index>` are the most commonly used, but the full set of
@@ -25,24 +30,6 @@ Raw images
 
     The unprocessed images from the camera, which are the input to the ISR pipeline;
     see :doc:`/products/images/raw_exposure` for a full description.
-
-Bootstrap calibrations
-======================
-
-``biasBootstrap``
-    A preliminary bias frame built from a small set of zero-second exposures;
-    produced without defect masking or other downstream corrections applied,
-    used to construct the defect map.
-
-``darkBootstrap``
-    A preliminary dark frame capturing dark current and other time-dependent
-    signal; produced without defect masking or other downstream corrections
-    applied, used to construct the defect map.
-
-``flatBootstrap``
-    A preliminary flat field characterizing the relative pixel-to-pixel
-    response; produced without defect masking or other downstream corrections
-    applied, used to construct the defect map.
 
 Detector characterization
 =========================
@@ -93,7 +80,7 @@ Combined calibration frames
 
     The final combined bias frame removing static electronic structure present
     in zero-exposure reads; built by combining many bias exposures with defect
-    masking and bootstrap corrections applied.
+    masking and preliminary corrections applied.
 
 ``dark``
     ('dark', {**instrument**, **detector**}, ExposureF, isCalibration=True)
