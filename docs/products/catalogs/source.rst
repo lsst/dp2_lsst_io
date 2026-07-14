@@ -6,7 +6,7 @@ Source
 
 Measurements for sources detected in processed visit images.
 
-Schema: `Source table <https://sdm-schemas.lsst.io/lsstcam.html#Source>`_
+Schema: `Source table <https://sdm-schemas.lsst.io/dp2.html#Source>`_
 
 Access
 ======
