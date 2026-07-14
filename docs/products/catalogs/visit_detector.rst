@@ -6,7 +6,7 @@ Visit detector
 
 Observation metadata for individual detectors (CCDs; date, time, band, PSF, zeropoint).
 
-Schema: `VisitDetector table <https://sdm-schemas.lsst.io/lsstcam.html#VisitDetector>`_
+Schema: `VisitDetector table <https://sdm-schemas.lsst.io/dp2.html#VisitDetector>`_
 
 Access
 ======
