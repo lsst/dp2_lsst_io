@@ -70,7 +70,6 @@ Coadd astrometry: galaxy RA bias
 Galaxy Right Ascension (but not Declination) has a magnitude-dependent bias, seen when compared to external catalogs (Euclid, DES, and others) and confirmed in injection runs.
 This may be related to the way the aperture used in ``SdssCentroid`` grows with source brightness.
 Exponential and Sersic model centroids, which have a free centroid parameter, are generally more accurate and have a smaller bias.
-This issue is tracked in `DM-54726 <https://rubinobs.atlassian.net/browse/DM-54726>`__.
 
 .. note::
 
@@ -111,17 +110,38 @@ This oversubtraction can affect photometry and PSF estimation in crowded fields.
    TODO (pair-documenting): quantify what the user needs to care about.
    What is the size of the oversubtraction per band and as a function of density, what is the impact on fluxes (e.g., in mmag), and how can affected regions be identified?
 
+Absolute calibration: AB offsets
+--------------------------------
+
+DP2 provides photometry that is spatially and temporally uniform to an exceedingly high degree (< 2 milli-mags RMS) across the DP2 footprint, meeting the primary calibration goals for this release.
+The DP2 photometric system is defined by the relative passbands derived from FGCM fits to DP2 observations.
+These passbands ensure internal consistency but are not yet the final Rubin standard passbands that will be adopted for Data Release 1 (DR1).
+As a result, synthetic photometry generated using spectrophotometry and the DP2 relative passbands will not perfectly match the observed DP2 magnitudes.
+
+A small but measurable absolute calibration offset remains between the DP2 photometric system and the AB system.
+These AB magnitude offsets and AB color offsets are derived from DP2 observations of the HST CalSpec standard star C26202, which lies in the ECDFS field and is unsaturated in LSST images.
+The offsets are generally modest (up to 0.02-0.03 mag in grizy), but reach 0.05-0.07 mag in the u band.
+These offsets are smaller than those discovered and corrected prior to DP1, but there was insufficient time to update the absolute calibration before DP2 was released.
+
+Users who compute synthetic photometry using DP2 relative passbands should therefore be aware that the resulting synthetic magnitudes will differ from the observed DP2 photometry by these AB offsets.
+To place observed DP2 photometry onto the AB system, subtract the offsets:
+
+.. math::
+
+   m_{AB} = m_{obs} - m_{offset}
+
+These offsets will be removed for Rubin DR1, when the final standard passbands, constrained by LSSTCam in-situ throughput measurements and an updated absolute calibration of The Monster reference catalog, are adopted.
+
 Aperture flux uncertainties
 ---------------------------
 
 The ``{band}_ap12FluxErr`` column in the Object table is sometimes NaN even when the uncertainty for larger apertures (e.g., ``{band}_ap17FluxErr``) is finite.
 This is likely a problem with the sinc interpolation used for smaller apertures, and may also affect ``apFlux_12_0_instFluxErr`` in the Source table.
-This issue is tracked in `DM-54658 <https://rubinobs.atlassian.net/browse/DM-54658>`__.
 
 Sersic and Exponential model outputs
 ------------------------------------
 
-Improvements to the Sersic and Exponential model outputs are tracked in `DM-53939 <https://rubinobs.atlassian.net/browse/DM-53939>`__.
+Improvements to the Sersic and Exponential model outputs are planned for future data releases.
 
 .. note::
 
@@ -173,7 +193,7 @@ What to do about this has not yet been decided.
 Duplicate or missing objects near patch boundaries
 --------------------------------------------------
 
-A tiny fraction of objects with centroids near patch boundaries may appear in the Object table zero times (if their reference-band centroids happen to shift outside the inner area of every patch) or multiple times (up to four).
+A tiny fraction of objects, of the order of 10 per tract, with centroids near patch boundaries may appear in the Object table zero times (if their reference-band centroids happen to shift outside the inner area of every patch) or multiple times (up to four).
 
 Similarly, the ``exponential_ra``/``exponential_dec`` and ``sersic_ra``/``sersic_dec`` centroids may not correspond to the same patch/tract as ``coord_ra``/``coord_dec``.
 
@@ -192,12 +212,16 @@ Difference imaging
 DIA source reliability
 ----------------------
 
-The reliability model for DIA sources shows improved performance relative to DP1, but does not perform well on bad stellar subtractions.
+The machine-learned reliability ("real/bogus") model for DIA sources shows improved performance relative to DP1, but does not perform well on bad stellar subtractions: detections matched to Gaia stars, both real variables and subtraction artifacts, receive characteristically low reliability scores.
 
-.. note::
+Other known weaknesses of the model are:
 
-   TODO (pair-documenting): add details on what "does not perform well" means.
-   What reliability values do bad stellar subtractions receive, what threshold is recommended for clean transient samples, and what fraction of DIA sources is affected?
+- A spurious peak in the reliability distribution at approximately 0.3, produced when the science or difference image cutouts contain rows or columns of NaN values.
+- A bias against low signal-to-noise sources: detections with ``|psfFlux/psfFluxErr|`` below approximately 5 are unlikely to receive a reliability above 0.6.
+- An excess of reliability scores above 0.5 for negative-flux detections.
+
+On test data, a purity and completeness of 93.1% are both achieved at a reliability threshold of 0.596 (97.5% at a threshold of 0.301 for injected point sources); users can adjust the threshold to trade purity against completeness.
+See `DMTN-337 <https://dmtn-337.lsst.io/>`__ for a full description of the model, its training data, and its performance.
 
 Diffraction spike masks and bright-star halos
 ---------------------------------------------
