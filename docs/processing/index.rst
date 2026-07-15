@@ -73,6 +73,7 @@ Generates catalogs of detected sources and measurements of their properties.
     :glob:
 
     detection/index
+    detection/shear
 
 
 Difference image analysis
