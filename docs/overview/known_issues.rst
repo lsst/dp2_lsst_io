@@ -31,19 +31,25 @@ There are missing measurements for several patches in dense stellar fields.
    Which patches/tracts and stellar densities are affected? How many objects have missing measurements? Add example images and mitigation strategies (e.g., flags or selections to identify affected regions).
 
 
-PSF modeling issues in crowded fields
--------------------------------------
+PSF modeling in crowded fields is also affected; see :ref:`issues_psf`.
 
-PSF residuals in DP2 show structure that correlates with stellar density, with the largest biases appearing in the Milky Way, the LMC, and the SMC.
-This stellar-density dependence also explains observed differences in PSF residuals between bands (bands with more crowding show larger residuals).
-The underlying cause is believed to be related to background subtraction in dense fields.
 
-DP2 has an order of magnitude more visits than previous processing campaigns, revealing a new variety of PSF-related issues, including annealing patterns in E2V sensors visible in u and g-band stacks.
+.. _issues_psf:
 
-.. note::
+PSF modeling
+============
 
-   TODO (pair-documenting): quantify this issue and add practical guidance.
-   What is the size of the PSF residuals as a function of stellar density and band? Add plots of the residuals and advice on the impact for PSF-sensitive science (e.g., PSF photometry and shape measurement).
+A complete analysis of the DP2 PSF characterization will be presented in a forthcoming technote ("PSF Characterization using DP2", in preparation); see also the DP2 paper (`RTN-115 <https://rtn-115.lsst.io/>`__).
+The key findings are:
+
+- The PSF shape correlates with height variations across the focal plane (`RTN-108 <https://rtn-108.lsst.io/>`__).
+  This is why ITL sensors are harder to model than E2V sensors, and why a fourth-order model is warranted.
+- The LSSTCam PSF is chromatic, in a way that appears consistent with differential chromatic refraction (`SITCOMTN-174 <https://sitcomtn-174.lsst.io/>`__).
+  This can be modeled, following the approach of the DES Y6 PSF analysis, but the modeling was not enabled for DP2 processing.
+- With an order of magnitude more visits than previous campaigns, DP2 reveals new PSF-related artifacts, including annealing patterns in E2V sensors (visible in the u- and g-band stacks) and fringing in the z and y bands, all expected to arise from background subtraction.
+- PSF residuals show structure that correlates with stellar density, with the largest biases in the Milky Way, the LMC, and the SMC.
+  This also explains the band-to-band differences in the residuals, since more crowded bands show larger residuals.
+  The underlying cause is again believed to be related to background subtraction in dense fields.
 
 
 .. _issues_astrometry:
