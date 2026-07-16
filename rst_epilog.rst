@@ -11,7 +11,7 @@
 
 .. |dataset_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2 |doi_image| ``<doi-tbd>``
 
-.. |dp2_paper| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); The Vera C. Rubin Observatory Data Preview 2 |doi_image| ``<doi-tbd>``
+.. |dp2_paper| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); The Vera C. Rubin Observatory Data Preview 2 |doi_image| https://doi.org/10.71929/rubin/3377440
 
 .. |lsstcam_doi| replace:: *Citation:* SLAC National Accelerator Laboratory & NSF-DOE Vera C. Rubin Observatory (2025); *The LSST Camera (LSSTCam)* |doi_image| https://doi.org/10.71929/rubin/2571927
 
