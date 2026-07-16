@@ -9,7 +9,7 @@ All shear measurements are stored in the catalog :doc:`/products/index`.
 Counterfactual images
 =====================
 
-The ``GalSim`` ``Shear`` class is used to create five "counterfactual" versions of the deep coadd images with different artificial linear shears introduced, using the "reduced shear" option with a step value (``g1``) of 0.01 (`GalSim documentation <https://galsim-developers.github.io/>`_; `Rowe et al. 2025 <https://ui.adsabs.harvard.edu/abs/2023OJAp....6E..17S/abstract>`_).
+The ``GalSim`` ``Shear`` class is used to create five "counterfactual" versions of the deep coadd images with different artificial linear shears introduced, using the "reduced shear" option with a step value (``g1``) of 0.01 (`GalSim documentation <https://galsim-developers.github.io/GalSim/_build/html/overview.html>`_; `Rowe et al. 2025 <https://ui.adsabs.harvard.edu/abs/2023OJAp....6E..17S/abstract>`_).
 The application of shear to an image essentially performs a convolution that adds ellipticity with a set minor-to-major axis ratio and position angle, but conserves area.
 
 The five counterfactual images and their shear directions are:
