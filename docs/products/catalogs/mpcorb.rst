@@ -7,7 +7,7 @@ MPC orbits
 The orbit catalog produced by the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC).
 The MPC has assigned `"observatory code" <https://minorplanetcenter.net/iau/lists/ObsCodesF.html>`_ ``X05`` to the Rubin Observatory.
 
-Schema: `mpc_orbits table <https://sdm-schemas.lsst.io/lsstcam.html#mpc_orbits>`_
+Schema: `mpc_orbits table <https://sdm-schemas.lsst.io/dp2.html#mpc_orbits>`_
 
 Access
 ======

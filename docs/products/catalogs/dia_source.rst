@@ -6,7 +6,7 @@ DIA source
 
 Measurements for sources detected in difference images.
 
-Schema: `DiaSource table <https://sdm-schemas.lsst.io/lsstcam.html#DiaSource>`_
+Schema: `DiaSource table <https://sdm-schemas.lsst.io/dp2.html#DiaSource>`_
 
 Access
 ======

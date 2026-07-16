@@ -6,7 +6,7 @@ Object shear
 
 Descriptions of shear objects detected and measured on coadds with metadetection.
 
-Schema: `ShearObject table <https://sdm-schemas.lsst.io/lsstcam.html#ShearObject>`_
+Schema: `ShearObject table <https://sdm-schemas.lsst.io/dp2.html#ShearObject>`_
 
 Access
 ======

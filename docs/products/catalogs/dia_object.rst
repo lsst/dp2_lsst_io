@@ -6,7 +6,7 @@ DIA object
 
 Derived properties for transient and variable objects.
 
-Schema: `DiaObject table <https://sdm-schemas.lsst.io/lsstcam.html#DiaObject>`_
+Schema: `DiaObject table <https://sdm-schemas.lsst.io/dp2.html#DiaObject>`_
 
 Access
 ======

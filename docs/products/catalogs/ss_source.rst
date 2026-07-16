@@ -6,7 +6,7 @@ SS source
 
 Instantaneous physical parameters for moving objects at the time of every observation.
 
-Schema: `SSSource table <https://dp1.lsst.io/products/catalogs/ss_source.html>`_
+Schema: `SSSource table <https://sdm-schemas.lsst.io/dp2.html#SSSource>`_
 
 Access
 ======

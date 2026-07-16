@@ -6,7 +6,7 @@ Isolated star stellar motions
 
 Position, proper motion, and parallax for isolated stars, fit using associated source measurements, with positions for associated reference objects if available.
 
-Schema: `IsolatedStarStellarMotions table <https://sdm-schemas.lsst.io/lsstcam.html#IsolatedStarStellarMotions>`_
+Schema: `IsolatedStarStellarMotions table <https://sdm-schemas.lsst.io/dp2.html#IsolatedStarStellarMotions>`_
 
 Access
 ======
