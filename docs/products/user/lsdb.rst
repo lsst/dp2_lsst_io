@@ -34,7 +34,7 @@ The DIA object catalog, with the difference-image forced photometry nested per o
 
 **Photo-z catalog:**
 Photometric redshift estimates (mean, median, mode, and best) from multiple pz algorithms, provided as a HATS catalog with ``objectId``, ``ra``, and ``dec`` columns.
-See :docs:`/products/user/photoz`.
+See :doc:`/products/user/photoz`.
 
 Tutorials
 =========
