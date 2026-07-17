@@ -7,9 +7,8 @@ Observations
    Data Preview 2 has not yet been released. This website is currently under development.
 
 
-The sky coverage (fields), filters, and number of visits (cadence).
+A summary of the sky coverage, including metadata for visit images and deep coadd images.
 
-.. _observations-fields:
 
 Sky coverage
 ============
@@ -63,7 +62,6 @@ The small fields include M49 and Trifid-Lagoon, which produced the Rubin First L
     "Rubin SV 320 -15", "21h20m48s -15d06m00s", "320.2 -15.1"
 
 
-
 Deep drilling fields
 --------------------
 
@@ -84,11 +82,15 @@ While these fields were covered during commissioning, observations did not follo
     "DDF COSMOS", "10h00m24s +02d06m00s", "150.1 2.1"
 
 
-.. _observations-filters:
+
+Visit images metadata
+=====================
+
 
 Filters
-=======
+-------
 
+While observations in all six filters *ugrizy* are included in DP2, each field had a different distribution of visits per filter.
 
 
 .. csv-table:: Table 3: Visit filter distribution by field.
@@ -117,37 +119,107 @@ Filters
     "All", "1964", "4166", "4856", "7959", "5809", "3944", "28698"
 
 
-.. _observations-epochs:
+Epochs
+------
 
-Epochs (nights)
-===============
-
-.. list-table:: Table 4: Number of nights, mean visits per night.
-   :widths: 3 1 1
-   :header-rows: 1
-
-   * - Sky region
-     - Epochs (nights)
-     - Visits/epoch
-   * - WFD
-     - x
-     - x
-   * - M49
-     - x
-     - x
-   * - COSMOS
-     - x
-     - x
-   * - Add new here
-     - x
-     - x
+The number of visits, and the number of unique nights (epochs), varies by field.
 
 
+.. csv-table:: Table 4: Number of visits and unique nights, by field.
+   :header: "Field Name", "visits", "nights", "mean(visits/night)"
+   :widths: 30, 10, 10, 10
+   :align: left
 
-.. _observations-tracts:
+    "DDF COSMOS", "714", "21", "34"
+    "DDF ECDFS", "289", "37", "8"
+    "DDF EDFS a", "170", "51", "3"
+    "DDF EDFS b", "172", "50", "3"
+    "DDF ELAIS S1", "770", "62", "12"
+    "DDF XMM LSS", "132", "23", "6"
+    "Abell 2764", "8", "2", "4"
+    "DESI SV3 R1", "3", "1", "3"
+    "M49", "1105", "7", "158"
+    "New Horizons", "396", "24", "16"
+    "Prawn", "612", "7", "87"
+    "Rubin SV 212 -7", "493", "5", "99"
+    "Rubin SV 216 -17", "114", "2", "57"
+    "Rubin SV 225 -40", "1946", "28", "70"
+    "Rubin SV 280 -48", "144", "1", "144"
+    "Rubin SV 300 -41", "38", "2", "19"
+    "Rubin SV 320 -15", "710", "34", "21"
+    "Trifid-Lagoon", "695", "23", "30"
+    "All", "28698", "131", "219"
 
-Coadd tracts
-============
+
+Seeing
+------
+
+The DP2 images were acquired during commissioning, during which the Active Optics System (AOS) to stabilize image quality was also being commissioned for operations.
+These values are not representative of the future expected image quality distributions.
+
+
+.. csv-table:: Table 5: The mean seeing (PSF FWHM in arcsec) across all detectors and visits.
+   :header: "Field Name", "u", "g", "r", "i", "z", "y"
+   :widths: 30, 10, 10, 10, 10, 10, 10
+   :align: left
+
+    "DDF COSMOS", "1.36", "1.16", "1.25", "1.14", "1.17", "1.22"
+    "DDF ECDFS", "1.68", "1.59", "1.35", "1.15", "1.34", "1.32"
+    "DDF EDFS a", "1.56", "1.39", "1.39", "1.12", "1.29", "0.94"
+    "DDF EDFS b", "1.34", "1.41", "1.39", "1.16", "1.3", "0.91"
+    "DDF ELAIS S1", "1.63", "1.51", "1.51", "1.32", "1.46", "1.33"
+    "DDF XMM LSS", "1.52", "1.24", "1.08", "1.01", "0.99", "0.94"
+    "Abell 2764", "nan", "1.01", "nan", "0.85", "nan", "nan"
+    "DESI SV3 R1", "nan", "nan", "nan", "1.47", "nan", "nan"
+    "M49", "1.49", "1.37", "1.27", "1.22", "nan", "nan"
+    "New Horizons", "1.26", "1.36", "1.12", "1.04", "1.01", "1.12"
+    "Prawn", "1.49", "1.38", "1.28", "1.24", "1.42", "nan"
+    "Rubin SV 212 -7", "nan", "1.42", "1.28", "1.12", "nan", "nan"
+    "Rubin SV 216 -17", "nan", "1.35", "1.25", "1.32", "nan", "nan"
+    "Rubin SV 225 -40", "1.5", "1.42", "1.27", "1.24", "1.31", "1.25"
+    "Rubin SV 280 -48", "1.69", "1.54", "1.51", "1.34", "1.53", "nan"
+    "Rubin SV 300 -41", "nan", "1.86", "nan", "nan", "1.65", "nan"
+    "Rubin SV 320 -15", "1.26", "1.68", "1.47", "1.36", "1.37", "1.15"
+    "Trifid-Lagoon", "1.22", "1.15", "1.15", "1.03", "1.1", "1.55"
+    "All", "1.36", "1.3", "1.27", "1.18", "1.21", "1.19"
+
+
+
+Magnitude limits
+----------------
+
+For the same reason as described above, these values are also not representative of the future expected mean depths per image (see `LSST Key Numbers <https://rubinobservatory.org/for-scientists/rubin-101/key-numbers>`_).
+
+
+.. csv-table:: Table 6: The mean :math:`5\sigma` PSF magnitude limit across all detectors and visits.
+   :header: "Field Name", "u", "g", "r", "i", "z", "y"
+   :widths: 30, 10, 10, 10, 10, 10, 10
+   :align: left
+
+    "DDF COSMOS", "23.39", "24.39", "23.54", "22.98", "22.58", "21.57"
+    "DDF ECDFS", "23.01", "23.52", "23.17", "23.42", "22.57", "21.68"
+    "DDF EDFS a", "23.1", "23.62", "23.23", "23.47", "22.51", "21.94"
+    "DDF EDFS b", "23.26", "23.68", "23.25", "23.42", "22.48", "21.96"
+    "DDF ELAIS S1", "23.23", "23.64", "23.27", "23.2", "22.47", "21.48"
+    "DDF XMM LSS", "23.21", "23.7", "23.93", "23.62", "23.03", "21.92"
+    "Abell 2764", "nan", "24.87", "nan", "23.41", "nan", "nan"
+    "DESI SV3 R1", "nan", "nan", "nan", "23.5", "nan", "nan"
+    "M49", "23.29", "24.3", "23.85", "23.44", "nan", "nan"
+    "New Horizons", "23.17", "24.41", "24.11", "23.63", "22.94", "21.88"
+    "Prawn", "23.1", "24.07", "23.74", "23.38", "22.71", "nan"
+    "Rubin SV 212 -7", "nan", "24.23", "23.83", "23.71", "nan", "nan"
+    "Rubin SV 216 -17", "nan", "24.34", "24.03", "23.62", "nan", "nan"
+    "Rubin SV 225 -40", "23.3", "23.97", "23.52", "23.33", "22.76", "21.63"
+    "Rubin SV 280 -48", "22.59", "23.45", "23.28", "23.18", "22.27", "nan"
+    "Rubin SV 300 -41", "nan", "23.25", "nan", "nan", "22.31", "nan"
+    "Rubin SV 320 -15", "23.55", "24.08", "23.29", "23.05", "22.39", "21.67"
+    "Trifid-Lagoon", "23.42", "24.28", "23.86", "23.65", "22.63", "21.05"
+    "All", "23.37", "24.12", "23.58", "23.32", "22.65", "21.68"
+
+
+
+Deep coadd images metadata
+==========================
 
 .. list-table:: Table 5: Coadd tract IDs for each field
    :widths: 3 3
