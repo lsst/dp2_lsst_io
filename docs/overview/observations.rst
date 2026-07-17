@@ -14,7 +14,7 @@ The sky coverage (fields), filters, and number of visits (cadence).
 Sky coverage
 ============
 
-.. figure:: images/observations-1-dp2map-temp.png
+.. figure:: images/observations-1-dp2map-visits.png
     :name: dp2_map
     :alt: DP2 coverage on the sky.
 
@@ -25,26 +25,28 @@ Sky coverage
     :name: dp2_depth_map
     :alt: DP2 deep coadd image depth over the sky.
 
-    Figure 2: A map of the i-band PSF limiting magnitude for DP2 deep coadd images. Deep coadd images are only made within the pre-defined tracts for which sufficient input visits exist. The total area covered by deep coadd images is approximatley 3700 square degrees.
+    Figure 2: A map of the i-band PSF limiting magnitude for DP2 deep coadd images. Deep coadd images are only made within the pre-defined tracts for which sufficient input visits exist. The total area covered by deep coadd images is approximatley 3000 square degrees.
 
 
 Wide-fast-deep region
 ---------------------
 
-The region of sky covered similarly to the LSST's future "wide-fast-deep" (WFD) stretches from RA 240-30 deg, over 20 deg of Declination.
-It includes low-dust and dusty regions within the plane of the Milky Way, where the depth is shallower, as seen in Figure 2.
-There are three small fields within this "WFD" region, as labeled in Figure 1.
+The region of sky covered somewhat similarly to the LSST's future "wide-fast-deep" (WFD) stretches from RA 240-30 deg, over 20 deg span of Declination.
+It is similar in that it includes low-dust and dusty regions within the plane of the Milky Way, where the depth is shallower, as seen in Figure 2.
+There are three small fields within this WFD region, as labeled in Figure 1, making it particularly non-uniform in depth.
+However this is still somewhat similar to the future LSST sky coverage, which won't be uniform in their depth either (especially years with rolling cadence).
+Learn more about the WFD and the LSST strategy in the `Survey strategy documentation <https://survey-strategy.lsst.io/>`_.
 
 
 Small fields
 ------------
 
-``To be replaced with info about the small fields; why they were done, etc.``
-
+Selected to provide LSSTCam commissioning-era images for science validation across variety of environments (crowded, dusty, galactic, extragalactic, clustering, nebulosity, and so on).
+The small fields include M49 and Trifid-Lagoon, which produced the Rubin First Look images in June 2025.
 
 .. csv-table:: Table 1: Small field survey area central coordinates.
    :header: "Field Name", "RA, Dec", "RA, Dec [deg]"
-   :widths: 40, 40, 20
+   :widths: 30, 30, 20
    :align: left
 
     "Abell 2764", "00h22m00s -49d00m00s", "5.5 -49"
@@ -65,11 +67,13 @@ Small fields
 Deep drilling fields
 --------------------
 
-``To be replaced with info about the DDFs. Link to survey-strat pages.``
+The LSST Deep Drilling Field (DDF) program includes 5 single-pointing fields, chosen to maximize multi-wavelength coverage with pre-existing surveys.
+The Euclid Deep Field South (EDFS) is larger and is split between an "a" and a "b" pointing which share the DDF visits.
+While these fields were covered during commissioning, observations did not follow the `baseline DDF strategy <https://survey-strategy.lsst.io/baseline/ddf.html>`_ (primarily, the seasons were short).
 
 .. csv-table:: Table 2: Deep drilling field central coordinates.
    :header: "Field Name", "RA, Dec", "RA, Dec [deg]"
-   :widths: 40, 40, 20
+   :widths: 30, 30, 20
    :align: left
 
     "DDF ELAIS S1", "00h38m00s -44d00m00s", "9.5 -44"
@@ -85,51 +89,32 @@ Deep drilling fields
 Filters
 =======
 
-.. list-table:: Table 3: Number of visits per band per field.
-   :widths: 4 1 1 1 1 1 1 1
-   :header-rows: 1
 
-   * - Sky region
-     - u
-     - g
-     - r
-     - i
-     - z
-     - y
-     - Total
-   * - WFD
-     - x
-     - x
-     - x
-     - x
-     - x
-     - x
-     - x
-   * - M49
-     - x
-     - x
-     - x
-     - x
-     - x
-     - x
-     - x
-   * - COSMOS
-     - x
-     - x
-     - x
-     - x
-     - x
-     - x
-     - x
-   * - Add new here
-     - x
-     - x
-     - x
-     - x
-     - x
-     - x
-     - x
 
+.. csv-table:: Table 3: Visit filter distribution by field.
+   :header: "Field Name", "u", "g", "r", "i", "z", "y", "Total"
+   :widths: 30, 10, 10, 10, 10, 10, 10, 10
+   :align: left
+
+    "DDF COSMOS", "105", "87", "173", "162", "110", "77", "714"
+    "DDF ECDFS", "10", "61", "50", "96", "61", "11", "289"
+    "DDF EDFS a", "7", "31", "33", "59", "33", "7", "170"
+    "DDF EDFS b", "5", "37", "33", "57", "33", "7", "172"
+    "DDF ELAIS S1", "57", "153", "128", "232", "141", "59", "770"
+    "DDF XMM LSS", "42", "15", "8", "47", "10", "10", "132"
+    "Abell 2764", "0", "6", "0", "2", "0", "0", "8"
+    "DESI SV3 R1", "0", "0", "0", "3", "0", "0", "3"
+    "M49", "234", "280", "378", "213", "0", "0", "1105"
+    "New Horizons", "37", "53", "77", "116", "80", "33", "396"
+    "Prawn", "193", "159", "139", "91", "30", "0", "612"
+    "Rubin SV 212 -7", "0", "139", "231", "123", "0", "0", "493"
+    "Rubin SV 216 -17", "0", "27", "28", "59", "0", "0", "114"
+    "Rubin SV 225 -40", "307", "524", "391", "381", "239", "104", "1946"
+    "Rubin SV 280 -48", "30", "29", "26", "30", "29", "0", "144"
+    "Rubin SV 300 -41", "0", "8", "0", "0", "30", "0", "38"
+    "Rubin SV 320 -15", "12", "47", "104", "259", "211", "77", "710"
+    "Trifid-Lagoon", "231", "201", "129", "119", "9", "6", "695"
+    "All", "1964", "4166", "4856", "7959", "5809", "3944", "28698"
 
 
 .. _observations-epochs:
