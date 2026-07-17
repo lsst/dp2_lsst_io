@@ -221,15 +221,68 @@ For the same reason as described above, these values are also not representative
 Deep coadd images metadata
 ==========================
 
-.. list-table:: Table 5: Coadd tract IDs for each field
-   :widths: 3 3
-   :header-rows: 1
+Depth
+-----
 
-   * - Field name
-     - Tract IDs
-   * - M49
-     - x, x
-   * - COSMOS
-     - x
-   * - Add new here
-     - x
+The :math:`5\sigma` PSF magnitude depth of the deep coadd image at the center coordinates of each field
+
+.. csv-table:: Table 7: Deep coadd PSF magnitude limits.
+   :header: "Field Name", "u", "g", "r", "i", "z", "y"
+   :widths: 30, 10, 10, 10, 10, 10, 10
+   :align: left
+
+    "DDF ELAIS S1", "25.18", "26.57", "25.88", "26.07", "25.07", "23.64"
+    "DDF XMM LSS", "nan", "nan", "nan", "nan", "nan", "nan"
+    "DDF ECDFS", "24.35", "25.84", "25.47", "25.87", "24.76", "22.23"
+    "DDF EDFS a", "nan", "25.63", "25.53", "25.65", "24.53", "23.08"
+    "DDF EDFS b", "23.69", "25.75", "25.47", "25.71", "24.58", "23.27"
+    "DDF COSMOS", "25.77", "26.73", "26.35", "25.94", "25.0", "23.69"
+    "Abell 2764", "nan", "25.88", "nan", "22.58", "nan", "nan"
+    "DESI SV3 R1", "nan", "nan", "nan", "nan", "nan", "nan"
+    "M49", "25.62", "27.03", "26.72", "26.05", "nan", "nan"
+    "Prawn", "25.66", "26.52", "26.06", "25.41", "24.12", "nan"
+    "Trifid-Lagoon", "26.22", "26.95", "26.13", "25.29", "23.41", "22.18"
+    "New Horizons", "25.26", "26.37", "26.37", "25.99", "25.25", "23.65"
+    "Rubin SV 212 -7", "nan", "26.33", "26.16", "25.6", "nan", "nan"
+    "Rubin SV 216 -17", "nan", "26.15", "25.93", "25.83", "nan", "nan"
+    "Rubin SV 225 -40", "26.26", "27.26", "26.75", "26.36", "25.52", "24.06"
+    "Rubin SV 280 -48", "23.92", "25.09", "24.89", "24.88", "23.7", "nan"
+    "Rubin SV 300 -41", "nan", "24.41", "nan", "nan", "23.85", "nan"
+    "Rubin SV 320 -15", "24.09", "24.82", "24.42", "24.99", "24.21", "22.42"
+
+
+PSF FWHM
+--------
+
+The PSF FWHM of the deep coadd image at the center coordinates of each field.
+
+.. csv-table:: Table 8: Deep coadd PSF FWHM, in arcseconds.
+   :header: "Field Name", "u", "g", "r", "i", "z", "y"
+   :widths: 30, 10, 10, 10, 10, 10, 10
+   :align: left
+
+    "DDF ELAIS S1", "1.26", "1.2", "1.2", "1.19", "1.21", "1.22"
+    "DDF XMM LSS", "nan", "nan", "nan", "nan", "nan", "nan"
+    "DDF ECDFS", "1.19", "1.18", "1.03", "1.06", "1.01", "1.36"
+    "DDF EDFS a", "nan", "1.16", "1.09", "1.01", "1.11", "0.96"
+    "DDF EDFS b", "1.38", "1.22", "1.16", "1.01", "1.06", "0.94"
+    "DDF COSMOS", "1.3", "1.09", "1.17", "1.02", "1.11", "1.12"
+    "Abell 2764", "nan", "1.0", "nan", "1.46", "nan", "nan"
+    "DESI SV3 R1", "nan", "nan", "nan", "nan", "nan", "nan"
+    "M49", "1.38", "1.26", "1.19", "1.16", "nan", "nan"
+    "Prawn", "1.34", "1.33", "1.19", "1.23", "1.33", "nan"
+    "Trifid-Lagoon", "1.18", "1.11", "1.16", "1.02", "1.01", "1.07"
+    "New Horizons", "1.4", "1.3", "1.08", "1.07", "1.03", "1.05"
+    "Rubin SV 212 -7", "nan", "1.28", "1.26", "1.15", "nan", "nan"
+    "Rubin SV 216 -17", "nan", "1.07", "1.0", "1.17", "nan", "nan"
+    "Rubin SV 225 -40", "1.33", "1.35", "1.25", "1.22", "1.22", "1.22"
+    "Rubin SV 280 -48", "1.54", "1.49", "1.47", "1.32", "1.46", "nan"
+    "Rubin SV 300 -41", "nan", "1.12", "nan", "nan", "1.5", "nan"
+    "Rubin SV 320 -15", "1.08", "1.41", "1.19", "1.26", "1.24", "1.15"
+
+
+
+Additional resources
+====================
+
+See the :doc:`/overview/data_quality` page for interactive data quality plots, or the 301-series notebook :doc:`/tutorials/index` to recreate these tables and plots.
