@@ -257,3 +257,14 @@ Association uses 1 arcsecond matching without uncertainties, yielding approximat
 Astrometry for solar system objects shows a 30 mas bias compared to orbit catalogs, with a dependence on asteroid properties but not on observation parameters.
 
 Three-night discovery candidates are not sufficiently pure (approximately 1 in 500), while four-night candidates achieve much higher purity (approximately 1 in 10,000).
+
+.. _issues_forcedsource:
+
+Missing ForcedSources
+=====================
+
+Approximately 3% of visit images in the coadded area that were processed successfully and included in coadd construction were not measured during force photometry and did not generate ForcedSources.
+The affected images had failed image differencing, and because force photometry is normally performed on both the visit image and its corresponding difference image by the same task, the pipeline skipped both types of force photometry since the required inputs were not all available.
+In some areas where very few visits were obtained, this means there may be Objects that have no corresponding ForcedSources at all.
+In future data releases this task will be corrected to perform visit image force photometry regardless of the difference image status.
+
