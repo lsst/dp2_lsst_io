@@ -67,3 +67,10 @@ Images and catalogs can be accessed with the Butler via the RSP's Notebook aspec
 
     butler_service
 
+
+LSDB
+----
+
+LSDB is a python tool for scalable analysis of large catalogs (query and cross-match).
+It is best suited for, e.g., whole-catalog analyses and cross-match.
+Learn more at :doc:`/products/user/lsdb`.
