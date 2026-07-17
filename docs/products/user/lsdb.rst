@@ -41,5 +41,9 @@ Tutorials
 
 To get started with LSDB in the RSP, follow the LSDB notebook in the "Catalog access" series of the :doc:`/tutorials/index`.
 
-Additional information and explanations of the different DP2 LSDB data products are available at `data.lsdb.io <https://data.lsdb.io/>`__.
-General LSDB documentation and tutorials are available at `docs.lsdb.io <https://docs.lsdb.io/>`__.
+For further LSDB resources, see:
+
+* `lsdb.io/dp2 <https://lsdb.io/dp2>`__ for more information on using LSDB with DP2 data
+* `data.lsdb.io <https://data.lsdb.io/>`__ for descriptions of the DP2 LSDB data products
+* `docs.lsdb.io <https://docs.lsdb.io/>`__ for general LSDB documentation and tutorials
+
