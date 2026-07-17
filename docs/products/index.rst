@@ -60,3 +60,15 @@ Additional data products and information.
     time_measurements/index
     flags/index
 
+
+User-generated products
+=======================
+
+User-generated data products for DP2, shared with all Rubin data rights holders via the RSP.
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    user/lsdb.rst
+    user/photoz.rst
