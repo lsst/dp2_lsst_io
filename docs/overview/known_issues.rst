@@ -268,3 +268,12 @@ The affected images had failed image differencing, and because force photometry 
 In some areas where very few visits were obtained, this means there may be Objects that have no corresponding ForcedSources at all.
 In future data releases this task will be corrected to perform visit image force photometry regardless of the difference image status.
 
+Differences between Butler tables and TAP
+=========================================
+
+A small number of changes have been made to the tables presented in TAP, which cause them to differ from the tables available in parquet format via the Butler:
+
+- ``coord_ra`` and ``coord_dec`` are omitted from ForcedSource and ForcedSourceOnDiaObject, as it is more efficient to perform spatial queries by joining to Object or DiaObject and spatially restricting on the Object/DiaObject coordinates.
+- ``ra`` in the ``isolated_star_stellar_motions`` Butler dataset ranges from -180 to +180; in TAP this has been corrected to run from 0 to 360.
+- ``coord_ra`` and ``coord_dec`` are empty in the ``dia_source`` Butler dataset and omitted from TAP; ``ra`` and ``dec`` are the correct columns to use.
+- ``coord_ra`` and ``coord_dec`` are duplicates of ``ra`` and ``dec`` in ``source``, and are omitted from TAP.
