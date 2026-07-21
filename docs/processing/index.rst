@@ -99,3 +99,14 @@ Links detected sources into moving objects and generates Solar System catalogs.
 
     moving/index
 
+
+Data Quality Plots
+==================
+
+Summary of data quality metrics.
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    quality/index
