@@ -4,8 +4,7 @@ Data quality
 
 A summary of astrometric, photometric, and PSF shape assessments.
 
-Static plots
-============
+Browse static plots of the data quality by filter.
 
 .. toctree::
     :maxdepth: 1
@@ -16,9 +15,7 @@ Static plots
     data_quality_astrometry
 
 
-
-Interactive plots
-=================
+Interactive tool for visualizing data quality metrics.
 
 .. The plots are a prebuilt Svelte app in _static/dp2_data_quality, generated
    by https://github.com/lsst-dm/interactive_plots. conf.py attaches the
