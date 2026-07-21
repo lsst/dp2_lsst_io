@@ -1,3 +1,9 @@
+# The data quality app under _static is a generated bundle installed by
+# interactive_plots' `make deploy`, not source. Hooks that reformat files would
+# fight its output (vite leaves trailing whitespace in the minified bundle) and
+# break on every redeploy.
+exclude: ^_static/dp2_data_quality/
+
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
