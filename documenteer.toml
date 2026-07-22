@@ -29,10 +29,10 @@ ignore = [
 ]
 
 [sphinx.intersphinx.projects]
+numpy = "https://numpy.org/doc/stable/"
 python = "https://docs.python.org/3/"
 lsst = "https://pipelines.lsst.io/"  # should switch to a v30 tag when we have a final-enough one
 astropy = "https://docs.astropy.org/en/v7.0.1/"
 pandas = "https://pandas.pydata.org/pandas-docs/version/2.2/"
 
 [sphinx.redirects]
-
