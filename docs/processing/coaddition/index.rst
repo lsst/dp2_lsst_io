@@ -57,7 +57,7 @@ There are 6 reasons that a visit would not be contributing to a particular pixel
 * The detector or visit was excluded because it did not meet the PSF or transparancy thresholds outlined above.
 * The visit's contributing pixels were masked with any of the visit-level bad mask planes: `'NO_DATA', 'BAD', 'SAT', 'SUSPECT', 'PARTLY_VIGNETTED', 'SPIKE'`.  This will flip on the coadd-level `REJECTED` mask bit in the `deep_coadd` to indicate that at least one of the inputs visits have been rejected for that pixel.
 * The visit's input pixels were labeled as an "artifact" (e.g., a satellite trail, cosmic ray, or optical ghost) and were marked `CLIPPED` in the resulting `deep_coadd`.
-* The visit overlaps less than 50% of the cell's pixels, _or_ one of the visit's chip gaps overlaps the cell, and thus the full visit was excluded from contributing to the whole cell.
+* The visit overlaps less than 50% of the cell's pixels, *or* one of the visit's chip gaps overlaps the cell, and thus the full visit was excluded from contributing to the whole cell.
 
 ..
   For the template coadds, good seeing (low PSF FWHM) is more important than depth.
