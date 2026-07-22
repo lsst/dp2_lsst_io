@@ -37,6 +37,9 @@
 .. |object_scarlet_models_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: object_scarlet_models dataset type |doi_image| ``<doi-tbd>``
 .. |object_scarlet_models_butler_count| replace:: ``<tbd>``
 
+.. |deep_coadd_input_summary_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: deep_coadd_input_summary dataset type |doi_image| ``<doi-tbd>``
+.. |deep_coadd_input_summary_count| replace:: ``<tbd>``
+
 .. |isolated_star_stellar_motions_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: isolated_star_stellar_motions dataset type |doi_image| ``<doi-tbd>``
 .. |isolated_star_stellar_motions_count| replace:: ``<tbd>``
 .. |IsolatedStarStellarMotions_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: IsolatedStarStellarMotions searchable catalog |doi_image| ``<doi-tbd>``

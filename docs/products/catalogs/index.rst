@@ -87,4 +87,5 @@ Metadata for observations (visits and detectors) and the sky map (tracts and pat
     visit
     visit_detector
     coadd_patches
+    deep_coadd_input_summary
 
