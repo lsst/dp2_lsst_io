@@ -4,14 +4,16 @@
 Vera C. Rubin Observatory Data Preview 2 (DP2)
 ##############################################
 
-**Release date:** Monday July 27 2026
+**Early DP2 release date:** Monday July 27 2026
+
+**Full DP2 release date:** expected Oct-Dec 2026
 
 .. important::
 
-   Data Preview 2 has not yet been released. This website is currently under development.
+   Early Data Preview 2 (EDP2) has not yet been released. EDP2 will have limited image data products, deep coadd images only, but will have all catalogs including measurements made on the processed visit and difference images. See `RTN-011 <https://rtn-011.lsst.io/>`_ for details.
 
 
-Data Preview 2 contains image and catalog products from Rubin Science Pipelines v30 processing of observations obtained with the LSST Camera.
+Data Preview 2 contains image and catalog products from Rubin Science Pipelines v30 processing of observations obtained with the LSST Camera between April 2025 and January 2026.
 
 *Dataset* |dataset_doi| [:download:`BibTeX <bib/dataset.bib>`].
 To be used when citing the DP2 dataset and this documentation (the link is self-referential).

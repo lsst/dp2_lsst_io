@@ -2,12 +2,12 @@
 Data products
 #############
 
+Descriptions and schema for the science-ready data products.
+
 .. important::
 
-   Data Preview 2 has not yet been released. This website is currently under development.
+   Early Data Preview 2 (EDP2) has limited image data products, deep coadd images only, but has all catalogs including measurements made on the processed visit and difference images. It also has all the maps, supplementary information, and user-generated products listed below. See `RTN-011 <https://rtn-011.lsst.io/>`_ for details.
 
-
-Descriptions and schema for the science-ready data products.
 
 Catalogs
 ========
@@ -44,6 +44,7 @@ All-sky maps of deep coadded images, survey depth, image quality, and more.
     maps/skymap
     maps/sp_maps
     maps/hips
+
 
 Supplementary information
 =========================

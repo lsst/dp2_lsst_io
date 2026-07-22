@@ -8,6 +8,12 @@ The result of subtracting a template coadd from a visit image.
 
 |difference_image_doi|
 
+
+.. important::
+
+   Early Data Preview 2 (EDP2) has limited image data products, deep coadd images only. The raw, visit, difference, and template images will be added in the "Full" Data Preview 2 release expected Oct-Dec 2026. The metadata and source measurements for all images are available in the catalogs. See `RTN-011 <https://rtn-011.lsst.io/>`_ for details.
+
+
 Access
 ======
 
