@@ -118,19 +118,61 @@ The DP2 photometric system is defined by the relative passbands derived from FGC
 These passbands ensure internal consistency but are not yet the final Rubin standard passbands that will be adopted for Data Release 1 (DR1).
 As a result, synthetic photometry generated using spectrophotometry and the DP2 relative passbands will not perfectly match the observed DP2 magnitudes.
 
-A small but measurable absolute calibration offset remains between the DP2 photometric system and the AB system.
-These AB magnitude offsets and AB color offsets are derived from DP2 observations of the HST CalSpec standard star C26202, which lies in the ECDFS field and is unsaturated in LSST images.
-The offsets are generally modest (up to 0.02-0.03 mag in grizy), but reach 0.05-0.07 mag in the u band.
+A small but measurable offset remains between the DP2 photometric system and the AB magnitude system.
+These AB magnitude offsets are derived from DP2 observations of the HST CalSpec standard star C26202 (see the `CalSpec archive <https://www.stsci.edu/hst/instrumentation/reference-data-for-calibration-and-tools/astronomical-catalogs/calspec>`_), which lies in the ECDFS field and is unsaturated in LSST images.
+The offsets are generally modest, ranging from 0.001 to 0.023 mag in grizy, but reach 0.071 mag in the u band (see table below).
 These offsets are smaller than those discovered and corrected prior to DP1, but there was insufficient time to update the absolute calibration before DP2 was released.
 
-Users who compute synthetic photometry using DP2 relative passbands should therefore be aware that the resulting synthetic magnitudes will differ from the observed DP2 photometry by these AB offsets.
-To place observed DP2 photometry onto the AB system, subtract the offsets:
+Users who compute synthetic photometry using the DP2 relative passbands should therefore expect the resulting synthetic magnitudes to differ from observed DP2 photometry by the offsets listed below.
+
+
+
+The offset is defined as
 
 .. math::
 
-   m_{AB} = m_{obs} - m_{offset}
+   m_{offset} = m_{obs} - m_{AB}
+
+Thus, to place observed DP2 photometry onto the AB system, subtract the offsets:
+
+.. math::
+
+   m_{AB} = m_{obs} - m_{offset}.
+
+
 
 These offsets will be removed for Rubin DR1, when the final standard passbands, constrained by LSSTCam in-situ throughput measurements and an updated absolute calibration of The Monster reference catalog, are adopted.
+
+
+AB Magnitude Offsets for the LSST DP2 Photometric System
+--------------------------------------------------------
+
+
++------+--------+-----------------+----------------+-------------+
+| band | n_band |m_obs\*          |m_AB\*\*        |m_offset     |
++======+========+=================+================+=============+
+| u    | 9      | 17.649          | 17.578         | 0.071       |
++------+--------+-----------------+----------------+-------------+
+| g    | 40     | 16.712          | 16.689         | 0.023       |
++------+--------+-----------------+----------------+-------------+
+| r    | 43     | 16.363          | 16.362         | 0.001       |
++------+--------+-----------------+----------------+-------------+
+| i    | 82     | 16.249          | 16.260         | -0.011      |
++------+--------+-----------------+----------------+-------------+
+| z    | 53     | 16.242          | 16.244         | -0.001      |
++------+--------+-----------------+----------------+-------------+
+| y    | 10     | 16.237          | 16.238         | -0.002      |
++------+--------+-----------------+----------------+-------------+
+
+
+\* Observed LSST DP2 magnitude for the HST spectrophotometric standard
+C26202, computed as the median of all source-table magnitude measurements
+in the corresponding band.
+
+\*\* Synthetic AB magnitude derived from the HST/STIS reference spectrum
+``c26202_stiswfcnic_007`` of C26202 and integrated through the DP2 relative bandpass for the corresponding filter provided by FGCM.
+
+
 
 Aperture flux uncertainties
 ---------------------------
