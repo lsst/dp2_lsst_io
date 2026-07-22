@@ -8,7 +8,6 @@ Pipeline graphs visualize the four stages of Data Release Processing (DRP).
 Pipeline tasks (i.e., the code that is executed) are shown in blue boxes, while data products that are produced by the tasks are in light gray boxes.
 Arrows represent the connections between tasks and data products, including inputs to tasks as well as their outputs.
 Each stage finishes with all the analysis needed to validate that it is complete, and move onto the next stage.
-DRP tasks designed to compute metrics and make plots are omitted from these graphs for simplicity.
 Note that not every product in the graph is a final user-facing image or catalog (many are intermediate products).
 
 
