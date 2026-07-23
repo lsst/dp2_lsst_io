@@ -1,5 +1,9 @@
 # See the documenteer.toml for overrides of the Rubin user guide presets
 
+extensions = [
+    "myst_sphinx_gallery",
+]
+
 from documenteer.conf.guide import *  # noqa: F401, F403
 nb_execution_mode = 'off'
 
@@ -43,8 +47,5 @@ myst_enable_extensions = [
     "html_image",
 ]
 
-supress_warnings = ["linkcheck"]
-
-extensions.append("myst_sphinx_gallery")
-
+suppress_warnings = ["linkcheck"]
 
