@@ -29,7 +29,7 @@ Butler
 * |isolated_star_stellar_motions_doi|
 * Dataset type: ('isolated_star_stellar_motions', {instrument, **skymap**, **tract**}, ArrowAstropy)
 * Format: Parquet
-* Number of Butler datasets: |isolated_star_stellar_motions_count|
+* Number of Butler datasets: |isolated_star_stellar_motions_butler_count|
 
 Description
 ===========

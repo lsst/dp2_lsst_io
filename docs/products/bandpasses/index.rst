@@ -6,8 +6,7 @@ Bandpasses
 
 LSSTCam filter bandpasses.
 
-
-|bandpasses_doi|
+|standard_passband_doi|
 
 
 Access
@@ -15,13 +14,8 @@ Access
 
 The bandpasses are accessible via the Butler.
 
-
-Butler
-------
-
-Examples of dataset types:
-
-* ``('standard_passband', {band, instrument}, ArrowAstropy)``
+* Dataset type: ``('standard_passband', {band, instrument}, ArrowAstropy)``
+* Number of files: |standard_passband_butler_count|
 
 
 Description
