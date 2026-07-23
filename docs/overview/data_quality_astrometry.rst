@@ -57,9 +57,6 @@ Delta Dec
     Figure 1: Astrometric scatter (sigma MAD) in Declination between calibration stars and the reference catalog, in r band.
 
 
-
-:::{gallery}
-images/astromDiffRA_u_sigmaMAD.png
-:::
-
+.. gallery::
+   :images: images/astromDiffRA_u_sigmaMAD.png
 
