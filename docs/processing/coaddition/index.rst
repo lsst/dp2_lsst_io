@@ -13,7 +13,7 @@ Coadds by patch
 When producing coadded images, the processing pipeline refers to a skymap, which defines a grid of
 2.8 square degree tracts covering the entire celestial sphere.
 Each tract is further subdivided into 10 by 10 equally-sized patches, each covering
-approximately 128 square arcminutes.
+approximately 122 square arcminutes.
 
 To create a coadded image, the processing pipeline selects all suitable
 (i.e., surpassing certain quality thresholds) calibrated visit images
@@ -43,18 +43,28 @@ Thus the set of input visits for each cell can be slightly different from neighb
 Input image selection
 =====================
 
-.. important::
-
-   Parameter values to be added from `RTN-121 <https://rtn-115.lsst.io>`_.
-
 **Deep coadd images**: as the name suggests, these images are created to have the faintest limiting magnitudes for source detection.
-For the deep coadds, a visit image had to have a circular (ellipticity < ``max_ell``) PSF with FWHM < ``max_psf`` arcseconds to be selected as an input image.
+For the deep coadds, a visit image had to have a circular (ellipticity < 0.2) PSF with median FWHM < 1.7 arcseconds to be selected as an input image.
+An additional criterion removes images that do not meet depth criteria based on the "effective exposure time," which is the exposure time that would be needed under nominal conditions to achieve the same signal-to-noise as the visit image in question.
+Images with effective exposure time less than 0.75 times the actual exposure time were excluded from coaddition.
+In addition to the per-visit image quality selection, detectors that are outliers in various PSF shape and model-fitting parameters are excluded.
 This selection is the most inclusive of all coadd productions and aims to maximize the depth of the coadd while still ensuring good image quality.
 
-For the template coadds, good seeing (low PSF FWHM) is more important than depth.
-The ``fraction`` of visit images with the smallest PSF are selected to contribute to a template coadd image.
-If that corresponds to less than ``number`` visits, then the ``min_num`` of visits with the smallest PSFs are selected.
-This strategy optimizes for image quality in regions that are well-covered by visit images, while also ensuring template coadd images exist in regions that are not well covered.
+**Per-cell contributions**: The visits that contribute to the coadd can differ for each 150x150-pixel cell within the coadd patch.
+There are 6 reasons that a visit would not be contributing to a particular pixel:
+
+* None of the visit's detectors (in the raw image) overlap that pixel (e.g., because it's in a chip gap).
+* The input data products associated with the overlapping detectors for that visit don't exist because one of the upstream single-frame processing tasks failed. A "preliminary_visit_image" and "visit_summary" containing successful photometric and astrometric solutions for that detector are needed.
+* The detector or visit was excluded because it did not meet the PSF or transparancy thresholds outlined above.
+* The visit's contributing pixels were masked with any of the visit-level bad mask planes: NO_DATA, BAD, SAT, SUSPECT, PARTLY_VIGNETTED, or SPIKE.  This will flip on the coadd-level REJECTED mask bit in the deep_coadd to indicate that at least one of the inputs visits have been rejected for that pixel.
+* The visit's input pixels were labeled as an "artifact" (e.g., a satellite trail, cosmic ray, or optical ghost) and were marked CLIPPED in the resulting deep_coadd.
+* The visit overlaps less than 50% of the cell's pixels, *or* one of the visit's chip gaps overlaps the cell, and thus the full visit was excluded from contributing to the whole cell.
+
+..
+  For the template coadds, good seeing (low PSF FWHM) is more important than depth.
+  The ``fraction`` of visit images with the smallest PSF are selected to contribute to a template coadd image.
+  If that corresponds to less than ``number`` visits, then the ``min_num`` of visits with the smallest PSFs are selected.
+  This strategy optimizes for image quality in regions that are well-covered by visit images, while also ensuring template coadd images exist in regions that are not well covered.
 
 
 .. _coaddition-algorithm:
@@ -72,4 +82,4 @@ See "Coaddition Artifact Rejection and CompareWarp" (`dmtn-080.lsst.io <https://
 Coadd background subtraction
 ============================
 
-After image coaddition, a constant background residual is fit and subtracted.
+After image coaddition, a background residual is fit and subtracted following a procedure similar to that described in :doc:`/processing/calibration/backgrounds`.
