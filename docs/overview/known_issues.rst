@@ -9,9 +9,7 @@ Known issues
    This webpage contains some placeholder information from Data Preview 1 and is currently under development.
 
 
-The purpose of this page is to document and provide guidance on known issues with the dataset.
-Each issue should be quantified and accompanied by practical user-facing information, such as the size of the resulting uncertainties, plots, and mitigation strategies.
-Facts and descriptions of data products and processing are documented on the relevant :doc:`/products/index` and :doc:`/processing/index` pages.
+For questions related to any of the issues listed on this page, please ask in the `Support category on community.lsst.org <https://community.lsst.org/c/support>`_, where Rubin staff will follow up.
 
 
 .. _issues_crowded_fields:
@@ -68,15 +66,17 @@ In addition, differential chromatic refraction (DCR) is not yet corrected for in
 
    The ``AA1`` metric (per-visit median astrometric offset relative to Gaia) in Right Ascension, in mas, for the i band across the DP2 footprint.
 
-.. figure:: images/astrometry-focal-plane-x.png
-   :alt: Focal plane map of stacked astrometric residuals in x.
+.. list-table::
+   :widths: 50 50
 
-   Stacked astrometric residuals in focal plane coordinates (x component, in mas), revealing unmodeled camera behavior such as tree ring signatures.
+   * - .. figure:: images/astrometry-focal-plane-x.png
+          :alt: Focal plane map of stacked astrometric residuals in x.
 
-.. figure:: images/astrometry-focal-plane-y.png
-   :alt: Focal plane map of stacked astrometric residuals in y.
+          Stacked astrometric residuals in focal plane coordinates (x component, in mas), revealing unmodeled camera behavior such as tree ring signatures.
+     - .. figure:: images/astrometry-focal-plane-y.png
+          :alt: Focal plane map of stacked astrometric residuals in y.
 
-   Stacked astrometric residuals in focal plane coordinates (y component, in mas).
+          Stacked astrometric residuals in focal plane coordinates (y component, in mas).
 
 Coadd astrometry: galaxy RA bias
 --------------------------------
@@ -186,6 +186,20 @@ Sersic and Exponential model outputs
 Improvements to the Sersic and Exponential model outputs are planned for future data releases.
 A full description of the ellipse parameterizations and units will be provided on the :doc:`/products/catalogs/object` page.
 
+Photometric zeropoints in non-photometric conditions
+----------------------------------------------------
+
+FGCM derives per-visit photometric zeropoints by fitting a model of atmospheric and instrumental throughput to stellar observations distributed across the focal plane.
+This approach works reliably when observing conditions are photometric — that is, when the atmosphere is stable and spatially uniform across the field of view.
+However, some visits included in DP2 coadds were taken under non-photometric conditions, where clouds introduce spatially variable throughput losses across the field of view.
+
+In such cases, the zeropoint derived from the cloud-free portion of the focal plane cannot be reliably extrapolated to the cloud-affected portion.
+This is particularly relevant for LSSTCam data: cloud structure in LSSTCam images tends to be spatially complex and variable, making interpolation or extrapolation of zeropoints across the focal plane less reliable than in previous surveys.
+As a result, objects located in cloud-affected regions of an exposure may carry an inaccurate photometric zeropoint.
+Since these visits are combined into coadds, the impact is most visible as spatially correlated photometric offsets, which can vary from coadd cell to coadd cell.
+
+Users performing precision photometry — especially on faint or extended sources — should be aware that the photometric uniformity of DP2 may be locally degraded in regions observed predominantly under non-photometric conditions.
+
 
 .. _issues_backgrounds:
 
@@ -269,4 +283,11 @@ In the simplest case, where the diffraction spikes all line up, these detections
 Solar system processing
 ========================
 
-Three-night discovery candidates are not sufficiently pure (approximately 1 in 500), while four-night candidates achieve much higher purity (approximately 1 in 10,000).
+DP2 includes solar system object discovery and association results.
+Association uses 1 arcsecond matching without astrometric uncertainties, yielding approximately 4 million associations.
+
+Although astrometry for solar system objects shows a ~30 mas bias relative to orbits from the Minor Planet Center (MPC) catalog, this bias disappears when comparing against Gaia-only orbits.
+This indicates that the offset originates in the MPC orbit catalog rather than in Rubin astrometry.
+
+Three-night discovery candidates are not sufficiently pure (approximately 1 in 500 are real), while four-night candidates achieve substantially higher purity (approximately 1 in 10,000 are spurious).
+Users requiring high-purity samples should apply a minimum tracklet length of four nights.
