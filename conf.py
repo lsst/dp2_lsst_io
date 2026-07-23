@@ -35,6 +35,15 @@ def setup(app):
 intersphinx_mapping["lsst.images"] = ("https://images.lsst.io/", None)
 
 
+myst_enable_extensions = [
+    "colon_fence",
+    "linkify",
+    "substitution",
+    "deflist",
+    "html_image",
+]
+
+
 extensions.append("myst_sphinx_gallery")
 
 
