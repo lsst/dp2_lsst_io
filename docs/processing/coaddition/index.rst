@@ -52,6 +52,7 @@ This selection is the most inclusive of all coadd productions and aims to maximi
 
 **Per-cell contributions**: The visits that contribute to the coadd can differ for each 150x150-pixel cell within the coadd patch.
 There are 6 reasons that a visit would not be contributing to a particular pixel:
+
 * None of the visit's detectors (in the raw image) overlap that pixel (e.g., because it's in a chip gap).
 * The input data products associated with the overlapping detectors for that visit don't exist because one of the upstream single-frame processing tasks failed. A "preliminary_visit_image" and "visit_summary" containing successful photometric and astrometric solutions for that detector are needed.
 * The detector or visit was excluded because it did not meet the PSF or transparancy thresholds outlined above.
