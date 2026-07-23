@@ -10,6 +10,7 @@ Overview
 ========
 
 Bright, isolated stars detected in the post-ISR images are used to obtain an initial astrometric solution.
+Single-frame astrometry uses ``astrometry_camera``, the camera distortion model built from the astrometry fit.
 
 The final astrometric solution is computed using the ensemble of visits in a given band, overlapping with a given tract.
 Isolated point sources are associated between overlapping visits and the Gaia DR3 reference catalog in order to constrain the model fit.
@@ -18,6 +19,7 @@ The fit is done using the ``gbdes`` package (`Bernstein et al. 2017 <https://ui.
 
 The per-detector model is intended to capture quasi-static characteristics of the telescope and camera, and account for changes in the camera due to warming and cooling and other discrete events.
 The per-visit model attempts to account for time-varying effects on the path of a photon from both atmospheric sources and those dependent on the telescope position.
+Remaining atmospheric turbulence is fit by Gaussian Processes.
 The last component of the astrometric calibration is the position of the isolated point sources included in the fit.
 The positions consist of five parameters: position on the sky, proper motion, and parallax.
 The reference epoch for the fit positions is 2024.9.

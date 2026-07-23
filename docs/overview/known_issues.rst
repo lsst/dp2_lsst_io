@@ -9,7 +9,7 @@ Known issues
    This webpage contains some placeholder information from Data Preview 1 and is currently under development.
 
 
-The purpose of this page is to document and provide guidance on known issues with the dataset.
+For questions related to any of the issues listed on this page, please ask in the `Support category on community.lsst.org <https://community.lsst.org/c/support>`_, where Rubin staff will follow up.
 
 
 .. _issues_crowded_fields:
@@ -23,99 +23,60 @@ Deblending quality
 Poor deconvolution in crowded fields leaves rings that connect large regions, resulting in blends that take up most or all of a patch.
 There are missing measurements for several patches in dense stellar fields.
 
+PSF modeling in crowded fields is also affected; see :ref:`issues_psf`.
 
-PSF modeling issues in crowded fields
--------------------------------------
 
-PSF residuals in DP2 show structure that correlates with stellar density, with the largest biases appearing in the Milky Way, the LMC, and the SMC.
-This stellar-density dependence also explains observed differences in PSF residuals between bands (bands with more crowding show larger residuals).
-The underlying cause is believed to be related to background subtraction in dense fields.
+.. _issues_psf:
 
-DP2 has an order of magnitude more visits than previous processing campaigns, revealing a new variety of PSF-related issues, including annealing patterns in E2V sensors visible in u and g-band stacks.
+PSF modeling
+============
+
+A complete analysis of the DP2 PSF characterization will be presented in a forthcoming technote ("PSF Characterization using DP2", in preparation); see also the DP2 paper (`RTN-115 <https://rtn-115.lsst.io/>`__).
+The key findings are:
+
+- The PSF shape correlates with height variations across the focal plane (`RTN-108 <https://rtn-108.lsst.io/>`__).
+  This is why ITL sensors are harder to model than E2V sensors, and why a fourth-order model is warranted.
+- The LSSTCam PSF is chromatic, in a way that appears consistent with differential chromatic refraction (`SITCOMTN-174 <https://sitcomtn-174.lsst.io/>`__).
+  This can be modeled, following the approach of the DES Y6 PSF analysis, but the modeling was not enabled for DP2 processing.
+- With an order of magnitude more visits than previous campaigns, DP2 reveals new PSF-related artifacts, including annealing patterns in E2V sensors (visible in the u- and g-band stacks) and fringing in the z and y bands, all expected to arise from background subtraction.
+- PSF residuals show structure that correlates with stellar density, with the largest biases in the Milky Way, the LMC, and the SMC.
+  This also explains the band-to-band differences in the residuals, since more crowded bands show larger residuals.
+  The underlying cause is again believed to be related to background subtraction in dense fields.
+
 
 .. _issues_astrometry:
 
 Astrometry
 ==========
 
-.. _products_wcs_known_issues:
+Visit-level astrometry
+----------------------
 
-WCS FITS approximations and misleading interfaces
---------------------------------------------------
+Known visit-level astrometric effects include:
 
-.. important::
-
-   This webpage contains some placeholder information from Data Preview 1. WCS issues have been fixed and will not persist to DP2.
-
-
-Rubin's single-visit World Coordinate System (WCS) objects are not, in general, exactly representable via the FITS WCS standard.
-The FITS WCS in the headers of the visit image and difference image data products (they are the same) are ``TAN-SIP`` approximations that were expected to be good enough for visualization and object finding, not for precision astrometry.
-
-Current recommendations for WCS use
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. note::
-  TODO: Update this section. New safer types (lsst.images) should be what most users see,
-  but it will still be possible to access the old lsst.afw.geom.SkyWcs types.
-
-To make use of the full WCS of a visit image or difference image, it is necessary to use Rubin's ``lsst.afw.geom.SkyWcs`` objects::
-
-  wcs = visit_image.wcs
-  x, y = wcs.skyToPixelArray(ra, dec, degrees=True)  # or False for radians
-  ra, dec = wcs.pixelToSkyArray(x, y, degrees=True)
-
-where ``x``, ``y``, ``ra``, and ``dec`` are double-precision (``dtype=np.float64``) NumPy arrays.
-
-Unfortunately, these ``lsst.afw.geom.SkyWcs`` objects are not included in our Python API documentation reference at present, and they are counterintuitive and easy to misuse in several ways, which can make it appear as if the WCS fits are terrible.
-These problems center around the fact that their ``getSkyOrigin`` and ``getPixelOrigin`` methods generally return a point that is far off the image the WCS corresponds to (where the mapping can extrapolate poorly), and other methods like ``getPixelScale`` will by default evaluate at this often-irrelevant point.
-The ``skyToPixel[Array]`` and ``pixelToSky[Array]`` are always safe to use, and ``getPixelScale`` can be used safely if you explicitly provide it with the point to evaluate the pixel scale at.
-Most other methods are best avoided (including ``getFitsMetadata``, which does *not* return the FITS approximation in the file headers).
-
-The WCS objects attached to coadds *are* exactly representable in FITS WCS, but can also be tricky to use since each full ``tract`` has a single WCS, and each patch image has an integer offset relative to that coordinate system.
-So if you're indexing the NumPy array that backs a coadd image directly, e.g.::
-
-  coadd.image.array[i, j]
-
-be aware that this corresponds to the ``x`` and ``y`` pixel coordinates of the WCS via::
-
-  bbox = coadd.getBBox()
-  i = y - bbox.y.min
-  j = x - bbox.x.min
-
-When we write a coadd image to a file, we offset the WCS in the FITS header to be consistent with the pixels (since FITS requires that the origin of any image be ``(1, 1)``).
-But this is not done when calling ``wcs.getFitsMetadata()``, since the necessary offset is stored with the coadd object, not the WCS, and this is another common source of confusion.
-
-Finally, the WCS objects of raw images simply should not be used; they are based on an initial guess from the telescope at its pointing, but at present this can be quite far off from the true pointing.
-The corresponding visit image WCS should be used instead.
-
-**Please do not:**
-
-- Call ``getPixelOrigin()``. This may return CRPIX for a FITS WCS, or a value that is not meaningful for your data.
-- Call ``getSkyOrigin()``. This may return CRVAL for a FITS WCS, or a value that is not meaningful for your data.
-- Call ``getCdMatrix()``. This may return the CD matrix for a FITS WCS, or a value that is not meaningful for your data.
-- Call ``getPixelScale()`` without arguments. This is evaluated at ``getPixelOrigin()``, which may not correspond to a relevant location in your image.
-- Call ``getTanWcs()``. This returns a FITS-compatible TAN WCS, but it may reference a point far from the image and differ significantly from the original WCS. It can appear superficially correct in some cases, making it more prone to causing subtle errors.
-
-**With an lsst.afw.geom.SkyWcs object, you should:**
-
-- Call ``pixelToSky[Array]`` to transform points from pixel coordinates (which may not start at (0, 0)!) to celestial coordinates.
-- Call ``skyToPixel[Array]`` to transform points from celestial coordinates to pixel coordinates.
-- Call ``linearizePixelToSky`` and ``linearizeSkyToPixel`` to obtain local affine approximations to the WCS at a given point.
-- Call ``getPixelScale(point)`` with a specific position to evaluate the local pixel scale.
-
-We expect our single-visit WCS objects to continue to be non-representable as FITS.
-
-Astrometric calibration
------------------------
-
-The final astrometry in DP2 is performed in two steps: GBDES fits static and per-visit polynomials, and remaining atmospheric turbulence is fit by Gaussian Processes.
-In a separate step, proper motion and parallax are now fit for all isolated stars.
-Single-frame astrometry uses ``astrometry_camera``, the camera distortion model built from the astrometry fit, though pointing accuracy remains an issue.
-
-Known astrometric issues include:
-
-- Not yet understood behavior in the per-visit median offset from Gaia metrics.
+- Not yet understood behavior in the per-visit median offset from Gaia (the ``AA1`` metric).
 - Stacking residuals in focal plane coordinates reveals unmodeled camera behavior, including tree ring signatures and other small-scale effects.
+
+These effects are all on the scale of approximately 1-2 mas, and are illustrated in the figures below.
+This part of the analysis is expected to improve in future releases (for a description of the astrometric calibration, see the DP2 paper, `RTN-115 <https://rtn-115.lsst.io/>`__).
+In addition, differential chromatic refraction (DCR) is not yet corrected for in the astrometric calibration.
+
+.. figure:: images/astrometry-aa1.png
+   :alt: Sky map of the per-visit median astrometric offset from Gaia in Right Ascension for the i band.
+
+   The ``AA1`` metric (per-visit median astrometric offset relative to Gaia) in Right Ascension, in mas, for the i band across the DP2 footprint.
+
+.. list-table::
+   :widths: 50 50
+
+   * - .. figure:: images/astrometry-focal-plane-x.png
+          :alt: Focal plane map of stacked astrometric residuals in x.
+
+          Stacked astrometric residuals in focal plane coordinates (x component, in mas), revealing unmodeled camera behavior such as tree ring signatures.
+     - .. figure:: images/astrometry-focal-plane-y.png
+          :alt: Focal plane map of stacked astrometric residuals in y.
+
+          Stacked astrometric residuals in focal plane coordinates (y component, in mas).
 
 Coadd astrometry: galaxy RA bias
 --------------------------------
@@ -124,74 +85,23 @@ Galaxy Right Ascension (but not Declination) has a magnitude-dependent bias, see
 This may be related to the way the aperture used in ``SdssCentroid`` grows with source brightness.
 Exponential and Sersic model centroids, which have a free centroid parameter, are generally more accurate and have a smaller bias.
 
-.. _issues_flags:
-
-Flags and catalogs
-==================
-
-.. note::
-  TODO: Move flags and catalogs content to the appropriate catalog data product pages.
-
-Flag columns
-------------
-
-The measurement algorithms that populate our catalogs typically have both a "general" failure flag that is set for any failure and one or more detailed flags that can be used to identify exactly what happened.
-We also have a suite of "pixel flags" (``*_pixelFlags_*``) that report on the image mask planes in the neighborhood of a source or object.
-
-Science users are expected to filter their samples using both types of flags explicitly; almost no filtering has already been performed, and filtering on flags can depend greatly on the science case.
-
-Calibration source catalogs and flags
---------------------------------------
-
-The public Source catalog does not contain the same single-visit detections used to estimate the PSF and fit for the astrometric and photometric calibrations.
-Those initial sources (the ``single_visit_star`` and ``recalibrated_star`` butler dataset types) are some of the many intermediate data products that are not retained in a final data release, while Source detections are made on the final visit image after all calibration steps are complete.
-
-Furthermore, the Object catalog has a few columns (prefixed with ``calib_``) that purport to identify objects used in various calibration steps.
-These are generated from a spatial match from the object positions to the initial sources positions, which means they can suffer from mismatch problems in rare cases.
-
-A more serious problem is that these flags currently reflect our preliminary single-detector astrometric and photometric calibration steps, not the later FGCM and GBDES fits (they do reflect the stars that went into our final Piff PSF models, however).
-This problem will be fixed in future data releases.
-
-Star/galaxy classification
----------------------------
-
-A new floating-point, per-band and griz ``model_extendedness`` classifier using Sersic fluxes and sizes generally performs better than the previous ``refExtendedness``.
-However, ``griz_model_extendedness`` tends to classify everything as a galaxy fainter than approximately ``i = 24``; adjusting the threshold can help, but optimal faint-star selection will require user input.
-A classification for bad or bogus detections is still lacking.
 
 .. _issues_photometry:
 
 Photometry
 ==========
 
-Image units
------------
-
-.. note::
-  TODO: Move this section to the image data product pages.
-
-All image data products are annotated as having units of ``nJy``, but this does not mean individual pixel values can be treated as direct measures of spectral flux density (any more than any other image with an AB magnitude zero point - which would be directly proportional to ``nJy`` - can be used this way).
-
-Instead, it simply means that photometry algorithms that account for the PSF model and aperture corrections (see below) directly yield ``nJy`` fluxes.
-
 Aperture corrections
 --------------------
 
-Rubin processing uses aperture corrections to ensure that different photometry estimators produce consistent results on point sources.
-These corrections are measured by applying different algorithms to the same set of bright stars on each single-visit image and interpolating the ratio of each algorithm to a standard one (a background-compensated top-hat aperture flux), which is then used for all photometric calibration.
-All fluxes other than the standard algorithm's are then multiplied by the interpolated flux ratio.
-Aperture corrections on coadds are computed by averaging the single-detector ratios with the same weights that were used to combine images.
+The aperture correction scheme used in Rubin processing (see :doc:`/processing/calibration/photometric`) has several known problems:
 
-This scheme has several problems:
-
-- These aperture corrections are well-defined for point sources only, but we still apply them for most of our galaxy-focused photometry algorithms (the ``sersic_*`` fluxes are the sole exception), since this at least makes them well-calibrated for poorly-resolved galaxies.
+- These aperture corrections are well-defined for point sources only, but they are still applied for most of the galaxy-focused photometry algorithms (the ``sersic_*`` fluxes are the sole exception), since this at least makes them well-calibrated for poorly-resolved galaxies.
 
 - Coadding apertures with the same weights as the images is only correct in the limit that the images have the same PSF.
-  For fixed-aperture photometry a different combination should be used (and will be used in future data releases, if we use this scheme at all), and for PSF-dependent photometry no formally correct combination is possible.
+  For fixed-aperture photometry a different combination should be used (and will be used in future data releases, if this scheme is used at all), and for PSF-dependent photometry no formally correct combination is possible.
 
-- Ratios of fluxes on even bright stars can be very noisy, and in some cases the aperture correction is a significant fraction of our error budget.
-
-Improving our approach to aperture corrections is a research project; we are not happy with the current situation, but have not yet identified a satisfactory alternative.
+- Ratios of fluxes on even bright stars can be very noisy, and in some cases the aperture correction is a significant fraction of the error budget.
 
 Photometric calibration: background oversubtraction
 ----------------------------------------------------
@@ -200,19 +110,96 @@ Photometrically-derived background offset QA plots reveal systematic oversubtrac
 DP2 includes many dense regions, making this effect more pronounced.
 This oversubtraction can affect photometry and PSF estimation in crowded fields.
 
-Forced photometry variants and blending
-----------------------------------------
+Absolute calibration: AB offsets
+--------------------------------
 
-There are a total of four variants of forced photometry in Rubin data release processing for the combination of two different reference catalogs (Object and DiaObject) and two different measurement images (visit images and difference images).
-Each of the two forced photometry catalogs includes rows for both measurement images and a single reference catalog (ForcedSource uses Object positions, while DiaForcedSource uses DiaObject positions).
+DP2 provides photometry that is spatially and temporally uniform to an exceedingly high degree (< 2 milli-mags RMS) across the DP2 footprint, meeting the primary calibration goals for this release.
+The DP2 photometric system is defined by the relative passbands derived from FGCM fits to DP2 observations.
+These passbands ensure internal consistency but are not yet the final Rubin standard passbands that will be adopted for Data Release 1 (DR1).
+As a result, synthetic photometry generated using spectrophotometry and the DP2 relative passbands will not perfectly match the observed DP2 magnitudes.
 
-We expect forced photometry on difference images to behave best, especially in crowded regions, since image subtraction should remove neighbors even more effectively than the deblender we run on the coadds (note that we do not deblend when producing the DiaSource catalog, either).
-There is no deblending whatsoever in our forced photometry on visit images.
+A small but measurable offset remains between the DP2 photometric system and the AB magnitude system.
+These AB magnitude offsets are derived from DP2 observations of the HST CalSpec standard star C26202 (see the `CalSpec archive <https://www.stsci.edu/hst/instrumentation/reference-data-for-calibration-and-tools/astronomical-catalogs/calspec>`_), which lies in the ECDFS field and is unsaturated in LSST images.
+The offsets are generally modest, ranging from 0.001 to 0.023 mag in grizy, but reach 0.071 mag in the u band (see table below).
+These offsets are smaller than those discovered and corrected prior to DP1, but there was insufficient time to update the absolute calibration before DP2 was released.
 
-Ellipse parameterizations and units
--------------------------------------
+Users who compute synthetic photometry using the DP2 relative passbands should therefore expect the resulting synthetic magnitudes to differ from observed DP2 photometry by the offsets listed below.
 
-``TBD``
+
+
+The offset is defined as
+
+.. math::
+
+   m_{offset} = m_{obs} - m_{AB}
+
+Thus, to place observed DP2 photometry onto the AB system, subtract the offsets:
+
+.. math::
+
+   m_{AB} = m_{obs} - m_{offset}.
+
+
+
+These offsets will be removed for Rubin DR1, when the final standard passbands, constrained by LSSTCam in-situ throughput measurements and an updated absolute calibration of The Monster reference catalog, are adopted.
+
+
+AB Magnitude Offsets for the LSST DP2 Photometric System
+--------------------------------------------------------
+
+
++------+--------+-----------------+----------------+-------------+
+| band | n_band |m_obs\*          |m_AB\*\*        |m_offset     |
++======+========+=================+================+=============+
+| u    | 9      | 17.649          | 17.578         | 0.071       |
++------+--------+-----------------+----------------+-------------+
+| g    | 40     | 16.712          | 16.689         | 0.023       |
++------+--------+-----------------+----------------+-------------+
+| r    | 43     | 16.363          | 16.362         | 0.001       |
++------+--------+-----------------+----------------+-------------+
+| i    | 82     | 16.249          | 16.260         | -0.011      |
++------+--------+-----------------+----------------+-------------+
+| z    | 53     | 16.242          | 16.244         | -0.001      |
++------+--------+-----------------+----------------+-------------+
+| y    | 10     | 16.237          | 16.238         | -0.002      |
++------+--------+-----------------+----------------+-------------+
+
+
+\* Observed LSST DP2 magnitude for the HST spectrophotometric standard
+C26202, computed as the median of all source-table magnitude measurements
+in the corresponding band.
+
+\*\* Synthetic AB magnitude derived from the HST/STIS reference spectrum
+``c26202_stiswfcnic_007`` of C26202 and integrated through the DP2 relative bandpass for the corresponding filter provided by FGCM.
+
+
+
+Aperture flux uncertainties
+---------------------------
+
+The ``{band}_ap12FluxErr`` column in the Object table is sometimes NaN even when the uncertainty for larger apertures (e.g., ``{band}_ap17FluxErr``) is finite.
+This is likely a problem with the sinc interpolation used for smaller apertures, and may also affect ``apFlux_12_0_instFluxErr`` in the Source table.
+
+Sersic and Exponential model outputs
+------------------------------------
+
+Improvements to the Sersic and Exponential model outputs are planned for future data releases.
+A full description of the ellipse parameterizations and units will be provided on the :doc:`/products/catalogs/object` page.
+
+Photometric zeropoints in non-photometric conditions
+----------------------------------------------------
+
+FGCM derives per-visit photometric zeropoints by fitting a model of atmospheric and instrumental throughput to stellar observations distributed across the focal plane.
+This approach works reliably when observing conditions are photometric — that is, when the atmosphere is stable and spatially uniform across the field of view.
+However, some visits included in DP2 coadds were taken under non-photometric conditions, where clouds introduce spatially variable throughput losses across the field of view.
+
+In such cases, the zeropoint derived from the cloud-free portion of the focal plane cannot be reliably extrapolated to the cloud-affected portion.
+This is particularly relevant for LSSTCam data: cloud structure in LSSTCam images tends to be spatially complex and variable, making interpolation or extrapolation of zeropoints across the focal plane less reliable than in previous surveys.
+As a result, objects located in cloud-affected regions of an exposure may carry an inaccurate photometric zeropoint.
+Since these visits are combined into coadds, the impact is most visible as spatially correlated photometric offsets, which can vary from coadd cell to coadd cell.
+
+Users performing precision photometry — especially on faint or extended sources — should be aware that the photometric uniformity of DP2 may be locally degraded in regions observed predominantly under non-photometric conditions.
+
 
 .. _issues_backgrounds:
 
@@ -223,37 +210,84 @@ The ``SkyCorrectionTask`` that performs full-focal-plane background correction i
 These offsets arise from several sources, including E2V/ITL sensor differences, offset detectors, and offset REBs, and are more pronounced in the u and y bands.
 A new full-focal-plane background fitter is under development but was not ready for DP2.
 
+
 .. _issues_coadds:
 
-Cell discontinuities in coadds
-===============================
+Coadds
+======
 
-The deep coadds used to build the Object table are now built with cell-level input selection: a ``{visit, detector}`` must fully overlap a cell to be included in that cell.
-These "edge-free" cell coadds eliminate detector-edge discontinuities, but there are discontinuities between cells on the coadd, and these may be more pronounced than the old discontinuities at detector edges.
-Cells are 150x150 pixels, and the PSF model for each cell is the weighted average of the PSFs of the input images, assumed constant over the cell.
+Empty cells
+-----------
 
-Cell coadd injection is not yet working for DP2, so characterization relies on matching against external catalogs in deep drilling fields. A large injection campaign is planned for the DP2 release.
+Coadd cells will have no data if none of the input warps is below the masked-pixel threshold, even though a fallback (such as including the warp with the largest mask fraction) could have been implemented.
+This is not so much a bug as a case where the best solution has not yet been chosen.
+
+
+.. _issues_object_catalog:
+
+Object catalog
+==============
+
+Objects spanning multiple cell footprints
+-----------------------------------------
+
+There is no column to identify objects whose cells span multiple footprints, and which therefore effectively have ``INEXACT_PSF`` for their measurements.
+What to do about this has not yet been decided.
+
+Duplicate or missing objects near patch boundaries
+--------------------------------------------------
+
+A tiny fraction of objects, of the order of 10 per tract, with centroids near patch boundaries may appear in the Object table zero times (if their reference-band centroids happen to shift outside the inner area of every patch) or multiple times (up to four).
+
+Similarly, the ``exponential_ra``/``exponential_dec`` and ``sersic_ra``/``sersic_dec`` centroids may not correspond to the same patch/tract as ``coord_ra``/``coord_dec``.
+
+Matching to the object_shear_all table
+--------------------------------------
+
+The ``object_shear_all`` table has a completely different set of rows from the Object table: it includes rows with ``is_tract_inner == False``, but not rows with ``is_patch_inner == False``.
+Users will need to be careful when comparing or matching the two tables.
+
 
 .. _issues_dia:
 
 Difference imaging
 ===================
 
-Difference imaging in DP2 benefits from new masking features, including a ``SPIKE`` mask plane for diffraction spikes and a ``HIGH_VARIANCE`` mask plane in template detectors.
+DIA source reliability
+----------------------
 
-Remaining known issues in difference imaging include:
+The machine-learned reliability ("real/bogus") model for DIA sources shows improved performance relative to DP1, but does not perform well on bad stellar subtractions: detections matched to Gaia stars, both real variables and subtraction artifacts, receive characteristically low reliability scores.
 
-- Deblending on the difference image is not yet implemented.
-- Detection and measurement with preconvolution needs further development.
-- The reliability model for DIA sources shows improved performance relative to DP1, but does not perform well on bad stellar subtractions.
+Other known weaknesses of the model are:
+
+- A spurious peak in the reliability distribution at approximately 0.3, produced when the science or difference image cutouts contain rows or columns of NaN values.
+- A bias against low signal-to-noise sources: detections with ``|psfFlux/psfFluxErr|`` below approximately 5 are unlikely to receive a reliability above 0.6.
+- An excess of reliability scores above 0.5 for negative-flux detections.
+
+On test data, a purity and completeness of 93.1% are both achieved at a reliability threshold of 0.596 (97.5% at a threshold of 0.301 for injected point sources); users can adjust the threshold to trade purity against completeness.
+See `DMTN-337 <https://dmtn-337.lsst.io/>`__ for a full description of the model, its training data, and its performance.
+
+Diffraction spike masks and bright-star halos
+---------------------------------------------
+
+The ``SPIKE`` masks are excessively wide at the bases.
+In practice, where the bases intersect they mask out a polygon that is typically (possibly always) larger than the saturated (``SAT``) mask.
+
+Despite the large spike masks, there is usually some residual flux from the halos of bright stars, beyond where the ``SPIKE`` masks end, that is not subtracted off.
+Detections in these regions are more likely to be bogus, and even if real, the measurements are likely unreliable.
+In the simplest case, where the diffraction spikes all line up, these detections are clustered around the four points where the spike-mask triangles intersect, making a square/diamond shape around the center of the star.
+
 
 .. _issues_solarsystem:
 
 Solar system processing
 ========================
 
-DP2 includes solar system discovery and association results.
-Association uses 1 arcsecond matching without uncertainties, yielding approximately 4 million associations.
-Astrometry for solar system objects shows a 30 mas bias compared to orbit catalogs, with a dependence on asteroid properties but not on observation parameters.
+DP2 includes solar system object discovery and association results.
+Association uses 1 arcsecond matching without astrometric uncertainties, yielding approximately 4 million associations.
 
-Three-night discovery candidates are not sufficiently pure (approximately 1 in 500), while four-night candidates achieve much higher purity (approximately 1 in 10,000).
+Although astrometry for solar system objects shows a ~30 mas bias relative to orbits from the Minor Planet Center (MPC) catalog, this bias disappears when comparing against Gaia-only orbits.
+This indicates that the offset originates in the MPC orbit catalog rather than in Rubin astrometry.
+
+Three-night discovery candidates are not sufficiently pure (approximately 1 in 500 are real), while four-night candidates achieve substantially higher purity (approximately 1 in 10,000 are spurious).
+Users requiring high-purity samples should apply a minimum tracklet length of four nights.

@@ -28,3 +28,8 @@ The key characteristics of flag columns are the following.
 - Naming convention: Most flag columns have ``flag`` in the column name (e.g., ``psfFlux_flag``, ``pixelFlags_saturated``). Some flags, such as those related to calibration (``calib_*``), do not include "flag" in their name. The naming pattern is typically ``{band}_{measurement}_flag`` for the Object table and ``{measurement}_flag`` for Source-level tables.
 - Interpretation: ``1`` (True) indicates the condition occurred or the measurement failed; ``0`` (False) indicates success or absence of the issue.
 - Usage: Users typically filter out rows where critical flags are set to ``1`` to obtain clean, science-quality samples.
+
+The measurement algorithms that populate the catalogs typically have both a "general" failure flag that is set for any failure and one or more detailed flags that can be used to identify exactly what happened.
+There is also a suite of "pixel flags" (``*_pixelFlags_*``) that report on the image mask planes in the neighborhood of a source or object.
+
+Science users are expected to filter their samples using both types of flags explicitly; almost no filtering has already been performed, and filtering on flags can depend greatly on the science case.
