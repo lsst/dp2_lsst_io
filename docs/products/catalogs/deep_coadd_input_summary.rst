@@ -22,7 +22,7 @@ Butler
 * |deep_coadd_input_summary_doi|
 * Dataset type: ('deep_coadd_input_summary', {**skymap**}, ArrowAstropy))
 * Format: Parquet
-* Number of Butler datasets: |deep_coadd_input_summary_count|
+* Number of Butler datasets: |deep_coadd_input_summary_butler_count|
 
 Description
 ===========

@@ -16,6 +16,7 @@ The coadd patches table is accessible via the TAP service only.
 TAP
 ---
 
+* |CoaddPatches_doi|
 * Table name: ``CoaddPatches``
 * Columns: |CoaddPatches_columns|
 * Rows: |CoaddPatches_rows|
