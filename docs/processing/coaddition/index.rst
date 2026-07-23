@@ -53,10 +53,10 @@ This selection is the most inclusive of all coadd productions and aims to maximi
 **Per-cell contributions**: The visits that contribute to the coadd can differ for each 150x150-pixel cell within the coadd patch.
 There are 6 reasons that a visit would not be contributing to a particular pixel:
 * None of the visit's detectors (in the raw image) overlap that pixel (e.g., because it's in a chip gap).
-* The input data products associated with the overlapping detectors for that visit don't exist because one of the upstream single-frame processing tasks failed. A `preliminary_visit_image` and `visit_summary` containing successful photometric and astrometric solutions for that detector are needed.
+* The input data products associated with the overlapping detectors for that visit don't exist because one of the upstream single-frame processing tasks failed. A "preliminary_visit_image" and "visit_summary" containing successful photometric and astrometric solutions for that detector are needed.
 * The detector or visit was excluded because it did not meet the PSF or transparancy thresholds outlined above.
-* The visit's contributing pixels were masked with any of the visit-level bad mask planes: `'NO_DATA', 'BAD', 'SAT', 'SUSPECT', 'PARTLY_VIGNETTED', 'SPIKE'`.  This will flip on the coadd-level `REJECTED` mask bit in the `deep_coadd` to indicate that at least one of the inputs visits have been rejected for that pixel.
-* The visit's input pixels were labeled as an "artifact" (e.g., a satellite trail, cosmic ray, or optical ghost) and were marked `CLIPPED` in the resulting `deep_coadd`.
+* The visit's contributing pixels were masked with any of the visit-level bad mask planes: NO_DATA, BAD, SAT, SUSPECT, PARTLY_VIGNETTED, or SPIKE.  This will flip on the coadd-level REJECTED mask bit in the deep_coadd to indicate that at least one of the inputs visits have been rejected for that pixel.
+* The visit's input pixels were labeled as an "artifact" (e.g., a satellite trail, cosmic ray, or optical ghost) and were marked CLIPPED in the resulting deep_coadd.
 * The visit overlaps less than 50% of the cell's pixels, *or* one of the visit's chip gaps overlaps the cell, and thus the full visit was excluded from contributing to the whole cell.
 
 ..
@@ -82,18 +82,3 @@ Coadd background subtraction
 ============================
 
 After image coaddition, a background residual is fit and subtracted following a procedure similar to that described in :doc:`processing/calibration/backgrounds`.
-
-
-
-WHAT SHOULD I CALL THIS SECTION?
-================================
-
-There are 6 reasons that a visit would not be contributing to a pixel in a coadd. This tutorial demonstrates how to check which of these 5 reasons are in play:
-1) **raws overlap**: None of the visits detectors (raws) overlap that pixel.
-2) **single-frame processing succeeds**: The input data products associated with the overlapping detectors for that visit don't exist because one of the upstream tasks failed. A `preliminary_visit_image` and `visit_summary` containing successful photometric and astrometric solutions for that detector are needed.
-3) **meets quality criteria**: the detectors or visits were excluded because they did not meet PSF or transparancy thresholds
-4) **pixel was not REJECTED** : The input pixels were masked with any of the visit-level bad mask planes: `'NO_DATA', 'BAD', 'SAT', 'SUSPECT', 'PARTLY_VIGNETTED', 'SPIKE'`.  This will flip on the coadd-level `REJECTED` mask bit in the `deep_coadd` to indicate that at least one of the inputs visits have been rejected for that pixel.
-5) **pixel not CLIPPED**: The input pixels were labeled as an artifact and were marked `CLIPPED` in the resulting `deep_coadd`
-6) In the cell-based `deep_coadd`, if < 50% of a visit overlaps a cell (not CLIPPED, REJECTION), it is excluded from the whole cell.
-
-I am a pixel in a visit. Why might I contribute to a coadd? My raw image needs to overlap that patch. I needed to have succeeded through single-frame processing. I must meet the PSF and transparancy requirements. I must not boe labeled `'NO_DATA', 'BAD', 'SAT', 'SUSPECT', 'PARTLY_VIGNETTED', 'SPIKE'`. I must not be "CLIPPED" during artifact rejection. And ALL of my neighbors in my cell, must be not be a chip gap AND <50% of my neighbors in my cell must be not REJECTED or CLIPPED.
