@@ -37,6 +37,30 @@ The charge created from very bright stars can overflow a pixel and extend along 
 When a bleed trail extends to the CCD edge and then continues to affect pixels along the edge of the CCD in the x-direction.
 There are two types of edge bleeds depending on the sensor vendor: for ITL sensors, the bleed fans out at the edge and we attempt to mask them, though some may be missed; for E2V sensors, the edge bleeds appear as a more compact feature and are masked with a box.
 
+.. list-table::
+   :widths: 50 50
+
+   * - .. figure:: images/ITL_edge_bleed_3_inset.jpg
+          :name: itl_edge_bleed
+          :alt: A bleed trail on an ITL sensor fanning out along the CCD edge.
+
+          An edge bleed on an ITL sensor: the bleed trail from a saturated star extends along the column to the CCD edge, where it fans out along the edge in the x-direction.
+     - .. figure:: images/e2v_edge_bleed_3_inset.jpg
+          :name: e2v_edge_bleed
+          :alt: A compact edge bleed at the CCD edge of an e2v sensor.
+
+          An edge bleed on an e2v sensor: compared to ITL sensors, the feature at the CCD edge is more compact, and it is masked with a box.
+
+On ITL sensors, bright saturated stars can also produce a "dark dip" (or "ITL dip"): a depression of the background level along the columns that pass through the star.
+See `The "dark dips" phenomenon in the LSST Camera on-sky images <https://ui.adsabs.harvard.edu/abs/2026arXiv260700925J/abstract>`_ for a detailed description of this effect.
+
+.. figure:: images/ITL_dip_1_inset.jpg
+    :name: itl_dip
+    :alt: A dark column passing through a saturated star on an ITL sensor.
+    :width: 50%
+
+    An ITL dip ("dark dip"): the columns passing through a bright saturated star on an ITL sensor show a depressed background level, appearing as a dark vertical trail through the star.
+
 Dark trails
 -----------
 
@@ -75,9 +99,6 @@ In all cases, pixel values are not erased, redacted, or otherwise altered due to
 
 For a description of how satellite constellations impact LSST, and mitigation strategies, a please see the `FAQ on artificial satellites and debris <https://rubinobservatory.org/for-scientists/frequently-asked-questions/leo-sats>`_.
 
-.. note::
-  TODO: Add figure showing examples of streaks and glints.
-
 
 Optical system
 ==============
@@ -102,25 +123,29 @@ Glint
 
 Also caused by reflections, e.g., off the uncoated edge of the filters, but typically smaller and less diffuse.
 
-.. note::
-  TODO: Add figure showing examples of stray light, ghost, ghoul, and glint.
+Flares and comb pattern
+-----------------------
 
-Flares
-------
+Flares and the comb pattern are related artifacts.
+The comb pattern most often shows up in images with high sky background or in y-band flats, and looks like a series of small flares along the edge of the detector.
 
-``TBD``
+.. list-table::
+   :widths: 50 50
 
-.. note::
-  TODO: Document flare artifacts observed in LSSTCam data.
+   * - .. figure:: images/flare.png
+          :name: flare
+          :alt: A flare artifact on an LSSTCam detector.
+
+          A flare artifact on an LSSTCam detector.
+     - .. figure:: images/comb.png
+          :name: comb
+          :alt: A comb pattern artifact along the edge of an LSSTCam detector.
+
+          A comb pattern artifact: a series of small flares along the edge of the detector, most visible in high-background or y-band images.
 
 
 Camera detector
 ===============
-
-.. note::
-  TODO: The artifacts below were documented for LSSTComCam. All of these are also present in LSSTCam
-  (though some effects are less pronounced). LSSTCam also has additional artifacts not seen in
-  LSSTComCam (e.g., flares, comb pattern). Update descriptions and figures accordingly.
 
 There are several effects related to the camera which should be corrected for during instrument signature removal -- by the flat field in particular.
 
@@ -141,26 +166,11 @@ Tree rings
 Circularly symmetric features caused by changes in the effective pixel size over the CCD; most apparent in the z-band.
 Tree rings are actually changes in pixel *area*, not sensitivity, so they have a small astrometric effect as well, which is not currently corrected.
 
-.. note::
-  TODO: Add figure showing examples of amplifier jump and tree rings.
-
 Crosshatch pattern
 ------------------
 
 A faint correlated-noise pattern introduced by the overscan subtraction, most noticeable in visit images with low background levels.
 The effect was more pronounced for LSSTComCam than for most LSSTCam detectors, due to the comparatively lower quality of the LSSTComCam CCDs.
-
-.. note::
-  TODO: Add figure showing crosshatch pattern.
-  TODO: Confirm whether crosshatch pattern description needs updating for LSSTCam-only DP2 data.
-
-Comb pattern
-------------
-
-``TBD``
-
-.. note::
-  TODO: Document comb pattern artifact observed in LSSTCam data.
 
 
 Interpolation
@@ -172,12 +182,9 @@ Our interpolation algorithm is optimized for small regions and vertical features
 
 Interpolation will also be evident at the edges of the HiPS maps.
 
-.. note::
-  TODO: Add figures showing interpolation artifacts.
-
 
 Background subtraction artifacts
-================================
+=================================
 
 Artifacts that stem from the estimation and subtraction of the sky background.
 
