@@ -59,5 +59,5 @@ Delta Dec
 
 .. gallery::
    :images: images/astromDiffRA_u_sigmaMAD.png, images/astromDiffRA_g_sigmaMAD.png, images/astromDiffRA_r_sigmaMAD.png
-   ::titles: Astrometric scatter (sigma MAD) in RA
+   :titles: Astrometric scatter (sigma MAD) in RA
 
