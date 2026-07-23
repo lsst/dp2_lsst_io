@@ -43,6 +43,7 @@ myst_enable_extensions = [
     "html_image",
 ]
 
+supress_warnings = ["linkcheck"]
 
 extensions.append("myst_sphinx_gallery")
 
