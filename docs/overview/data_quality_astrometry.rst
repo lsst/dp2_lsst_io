@@ -63,15 +63,15 @@ Delta Dec
      <div class="carousel-inner">
 
        <div class="carousel-item active">
-         <img src="images/astromDiffRA_u_sigmaMAD.png" class="d-block w-100" alt="RA u-band sigma MAD">
+         <img src="../_images/astromDiffRA_u_sigmaMAD.png" class="d-block w-100" alt="RA u-band sigma MAD">
        </div>
 
        <div class="carousel-item">
-         <img src="images/astromDiffRA_g_sigmaMAD.png" class="d-block w-100" alt="RA g-band sigma MAD">
+         <img src="../_images/astromDiffRA_g_sigmaMAD.png" class="d-block w-100" alt="RA g-band sigma MAD">
        </div>
 
        <div class="carousel-item">
-         <img src="images/astromDiffRA_r_sigmaMAD.png" class="d-block w-100" alt="RA r-band sigma MAD">
+         <img src="../_images/astromDiffRA_r_sigmaMAD.png" class="d-block w-100" alt="RA r-band sigma MAD">
        </div>
 
      </div>
