@@ -15,10 +15,6 @@ Delta RA
      Astrometric RA σ(MAD) by Filter
    </h4>
 
-   <p style="text-align:center; font-size:0.9em; margin-top:-6px;">
-     (interactive carousel)
-   </p>
-
    <style>
      /* Make carousel arrows black */
      #astrometryCarousel .carousel-control-prev-icon,
@@ -132,10 +128,6 @@ Delta Dec
    <h4 style="text-align:center; margin-bottom:10px;">
      Astrometric DEC σ(MAD) by Filter
    </h4>
-
-   <p style="text-align:center; font-size:0.9em; margin-top:-6px;">
-     (interactive carousel)
-   </p>
 
    <style>
      /* Make carousel arrows black */
