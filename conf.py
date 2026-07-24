@@ -1,9 +1,5 @@
 # See the documenteer.toml for overrides of the Rubin user guide presets
 
-extensions = [
-    "myst_sphinx_gallery",
-]
-
 from documenteer.conf.guide import *  # noqa: F401, F403
 nb_execution_mode = 'off'
 
@@ -38,14 +34,4 @@ def setup(app):
 # causes a conflict.
 intersphinx_mapping["lsst.images"] = ("https://images.lsst.io/", None)
 
-
-myst_enable_extensions = [
-    "colon_fence",
-    "linkify",
-    "substitution",
-    "deflist",
-    "html_image",
-]
-
-suppress_warnings = ["linkcheck"]
 
