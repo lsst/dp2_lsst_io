@@ -127,15 +127,19 @@ The following plots show the photometric offset between calibration stars and th
         style="border: 1px solid #ccc; box-shadow: 0 0 8px rgba(0,0,0,0.2);"
         data-bs-ride="carousel">
 
-     <div class="carousel-indicators">
-       <button type="button" data-bs-target="#photometryCarousel" data-bs-slide-to="0" class="active"></button>
-       <button type="button" data-bs-target="#photometryCarousel" data-bs-slide-to="1"></button>
-       <button type="button" data-bs-target="#photometryCarousel" data-bs-slide-to="2"></button>
-     </div>
+   <div class="carousel-indicators">
+     <button type="button" data-bs-target="#photometryCarousel" data-bs-slide-to="0" class="active"></button>
+     <button type="button" data-bs-target="#photometryCarousel" data-bs-slide-to="1"></button>
+     <button type="button" data-bs-target="#photometryCarousel" data-bs-slide-to="2"></button>
+     <button type="button" data-bs-target="#photometryCarousel" data-bs-slide-to="3"></button>
+     <button type="button" data-bs-target="#photometryCarousel" data-bs-slide-to="4"></button>
+     <button type="button" data-bs-target="#photometryCarousel" data-bs-slide-to="5"></button>
+   </div>
+
 
      <div class="carousel-inner">
 
-       <div class="carousel-item">
+       <div class="carousel-item active">
          <img src="../_images/photomDiff_u_offset.png" class="d-block w-100" alt="Photometric offset between calibration stars and the reference catalog, in u band">
        </div>
 
