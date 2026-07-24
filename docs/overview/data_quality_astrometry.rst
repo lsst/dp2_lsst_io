@@ -37,38 +37,48 @@ Delta RA
      }
 
      #astrometryCarousel .carousel-indicators .active {
-       background-color: #fff;
+       background-color: #333;   /* visible active dot */
        opacity: 1;
+     }
+
+     /* Anchor dots to the image width */
+     #astrometryCarousel .carousel-inner {
+       position: relative;
      }
 
      /* Move dots BELOW the image and center them */
      #astrometryCarousel .carousel-indicators {
        position: absolute;
-       bottom: -30px;
+       bottom: -55px;            /* lower the dots more */
        left: 50%;
        transform: translateX(-50%);
        display: flex;
-       gap: 8px;
+       gap: 10px;
+       width: auto;
+       padding: 0;
+       margin: 0;
+       justify-content: center;  /* force centering */
      }
 
-     /* Keep arrows vertically centered */
+     /* Perfect vertical centering for arrows */
      #astrometryCarousel .carousel-control-prev,
      #astrometryCarousel .carousel-control-next {
-       top: 45%;
+       top: 50%;
+       transform: translateY(-50%);
      }
 
-     /* Move arrows horizontally outward */
+     /* Horizontal arrow placement */
      #astrometryCarousel .carousel-control-prev {
-       left: -40px;
+       left: -30px;
      }
 
      #astrometryCarousel .carousel-control-next {
-       right: -40px;
+       right: -30px;
      }
 
      /* Add spacing below carousel */
      #astrometryCarousel {
-       margin-bottom: 40px;
+       margin-bottom: 60px;
      }
    </style>
 
