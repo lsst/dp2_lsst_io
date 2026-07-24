@@ -25,6 +25,13 @@ Bad pixels
 Individual pixels with erroneous sensitivity (quantum efficiency) beyond a correctable range or dead pixels.
 A "vampire pixel" is a term for a particular kind of bad pixel that seems to "suck" charge from nearby pixels.
 
+.. figure:: images/vampire_pixels.png
+   :name: vampire_pixels
+   :alt: Vampire pixel artifacts on an LSSTCam detector.
+   :width: 50%
+
+   Vampire pixel artifacts: bad pixels that drain charge from neighboring pixels, appearing as dark spots surrounded by a depleted halo.
+
 Bad columns
 -----------
 
@@ -108,6 +115,13 @@ Stray light
 
 Light from off-axis sources beyond the camera's field of view can scatter into the camera and cause stray light features, typically near the edge of the focal plane.
 
+.. figure:: images/stray_light.png
+   :name: stray_light
+   :alt: Stray light artifacts on an LSSTCam detector.
+   :width: 50%
+
+   Left: An example of the "Angel wings" stray light feature. Right: An example of the "Banana" stray light feature.
+
 Ghost
 -----
 
@@ -165,6 +179,13 @@ Tree rings
 
 Circularly symmetric features caused by changes in the effective pixel size over the CCD; most apparent in the z-band.
 Tree rings are actually changes in pixel *area*, not sensitivity, so they have a small astrometric effect as well, which is not currently corrected.
+
+.. figure:: images/tree_rings.png
+   :name: tree_rings
+   :alt: Tree ring artifacts on an LSSTCam detector.
+   :width: 50%
+
+   Tree ring artifacts: circularly symmetric patterns caused by variations in the effective pixel area across the CCD.
 
 Crosshatch pattern
 ------------------
