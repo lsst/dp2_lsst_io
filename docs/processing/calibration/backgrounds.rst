@@ -3,7 +3,7 @@ Background subtraction
 ######################
 
 The background subtraction algorithms in the LSST Science Pipelines estimate and remove large-scale background signals from science imaging.
-Such signals may include sky brightness from airglow, moonlight, scattered light, zodiacal light, instrumental effects, and diffuse astrophysical emission.
+Such signals include sky brightness from airglow, moonlight, scattered light, zodiacal light, and diffuse astrophysical emission.
 In so doing, true astrophysical sources are isolated to allow for accurate detection and measurement.
 For a detailed description of the DP2 background subtraction implementation, see `RTN-115 <https://rtn-115.lsst.io/>`_.
 
@@ -11,26 +11,22 @@ For a detailed description of the DP2 background subtraction implementation, see
 Overview
 ========
 
-Each post-:doc:`ISR </processing/isr/index>` image is processed by the `CalibrateImageTask <https://pipelines.lsst.io/modules/lsst.pipe.tasks/tasks/lsst.pipe.tasks.calibrateImage.CalibrateImageTask.html>`_, which performs image characterization including background subtraction and produces the preliminary science image (``preliminary_visit_image``) and the associated preliminary background model (``preliminary_visit_image_background``).
+Background subtraction in `CalibrateImageTask <https://pipelines.lsst.io/modules/lsst.pipe.tasks/tasks/lsst.pipe.tasks.calibrateImage.CalibrateImageTask.html>`_ estimates and removes large-scale background signals from science imaging prior to source detection and measurement.
+The background is estimated twice: an initial model (``psf_subtract_background``) is subtracted before PSF characterization, and a second model (``star_background``) is fit on the updated source-masked image before the final detection pass.
 
-Background subtraction is performed in two passes.
-An initial background model (``psf_subtract_background``) is subtracted before PSF characterization.
-A second model (``star_background``) is then fit on the updated source-masked image before the final detection pass.
-
-To generate a background model, each post-ISR image is divided into superpixels of 128×128 pixels.
-Pixels with a mask flag indicating no useful science data or flux from a preliminary source detection are masked.
-The iterative 3σ-clipped mean of the remaining unmasked pixels is calculated for each superpixel, constructing a background statistics image.
-A sixth-order two-dimensional Chebyshev polynomial is fit to these values and evaluated at native pixel resolution via Akima spline interpolation.
+Each post-:doc:`ISR </processing/isr/index>` image is divided into 128×128 pixel superpixels.
+The iterative 3σ-clipped mean of unmasked pixels in each bin is fit with a sixth-order two-dimensional Chebyshev polynomial, evaluated at native pixel resolution via Akima spline interpolation.
 Before fitting ``star_background``, the ``DETECTED`` mask plane is dilated by up to 10 pixels to suppress source-wing flux from leaking into background bins.
+
+Additionally, an extra iterative detection round is run to converge on an optimal detection fraction of pixels in the image (a "Goldilocks Zone" where the background is neither over- nor under-masked).
+The detection mask plane used for this step is discarded before the final source catalog detection pass.
 
 After ``star_background`` subtraction, a zeroth-order pedestal correction is estimated iteratively over bin sizes starting at 32×32 pixels, doubling each step until the cumulative pedestal level changes by less than 5% or 0.5 counts between steps.
 The ``star_background`` model and pedestal corrections together constitute the output background model (``preliminary_visit_image_background``).
 
-Following background subtraction, the median and standard deviation of all unmasked pixels and of *sky source* fluxes are recorded in the task metadata as diagnostics of background subtraction quality.
+This procedure is designed to mitigate the over-subtraction tendency to which background estimates are typically prone, especially when trying to accommodate a wide range of scenes from sparse to crowded fields.
 
-Using ``preliminary_visit_image_background`` as input, `ReprocessVisitImageTask <https://pipelines.lsst.io/v/d_2024_11_01/modules/lsst.drp.tasks/tasks/lsst.drp.tasks.reprocess_visit_image.ReprocessVisitImageTask.html>`_ applies calibration models produced by upstream tasks to the single-visit image.
-It then performs the final round of source detection, deblending, and measurement that ultimately populate the ``Source`` table.
-One of the outputs of ``ReprocessVisitImageTask`` is the refined, final visit-level background model, ``visit_image_background``, along with the final background-subtracted visit image, ``visit_image``.
+Following background subtraction, the median and standard deviation of all unmasked pixels and of *sky source* fluxes are recorded in the task metadata as diagnostics of background subtraction quality.
 
 
 Changes relative to DP1
