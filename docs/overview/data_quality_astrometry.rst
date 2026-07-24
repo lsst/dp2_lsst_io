@@ -25,9 +25,7 @@ Delta RA
      #astrometryCarousel .carousel-control-next-icon {
        filter: invert(0) brightness(0);
      }
-   </style>
 
-   <style>
      /* Bigger, darker indicator dots */
      #astrometryCarousel .carousel-indicators button {
        width: 14px;
@@ -43,14 +41,34 @@ Delta RA
        opacity: 1;
      }
 
-     /* Force indicator container to be visible and centered */
+     /* Move dots BELOW the image and center them */
      #astrometryCarousel .carousel-indicators {
        position: absolute;
-       bottom: 10px;
+       bottom: -30px;
        left: 50%;
        transform: translateX(-50%);
        display: flex;
        gap: 8px;
+     }
+
+     /* Keep arrows vertically centered */
+     #astrometryCarousel .carousel-control-prev,
+     #astrometryCarousel .carousel-control-next {
+       top: 45%;
+     }
+
+     /* Move arrows horizontally outward */
+     #astrometryCarousel .carousel-control-prev {
+       left: -40px;
+     }
+
+     #astrometryCarousel .carousel-control-next {
+       right: -40px;
+     }
+
+     /* Add spacing below carousel */
+     #astrometryCarousel {
+       margin-bottom: 40px;
      }
    </style>
 
@@ -93,8 +111,6 @@ Delta RA
    <p style="text-align:center; font-style:italic; margin-top:6px;">
      Astrometric scatter (σ(MAD)) in Right Ascension between calibration stars and the reference catalog, in u, g, and r-bands.
    </p>
-
-
 
 
 Delta Dec
