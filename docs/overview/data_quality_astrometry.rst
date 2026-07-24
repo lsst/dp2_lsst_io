@@ -8,27 +8,53 @@ The following plots show the astrometric offset between calibration stars and th
 Delta RA
 ========
 
-.. figure:: images/astromDiffRA_u_sigmaMAD.png
-    :width: 600
-    :name: images/astromDiffRA_u_sigmaMAD
-    :alt: Astrometric sigma MAD in RA for calibration stars compared to the reference catalog, in u band.
 
+.. raw:: html
 
-    Figure 1: Astrometric scatter (sigma MAD) in RA between calibration stars and the reference catal
+   <h4 style="text-align:center; margin-bottom:10px;">
+     Astrometric RA σ(MAD) by Filter
+   </h4>
 
-.. figure:: images/astromDiffRA_g_sigmaMAD.png
-    :width: 600
-    :name: images/astromDiffRA_g_sigmaMAD
-    :alt: Astrometric sigma MAD in RA for calibration stars compared to the reference catalog, in g band.
+   <div id="astrometryCarousel" class="carousel slide" 
+        style="border: 1px solid #ccc; box-shadow: 0 0 8px rgba(0,0,0,0.2);"
+        data-bs-ride="carousel">
 
-    Figure 2: Astrometric scatter (sigma MAD) in RA between calibration stars and the reference catalog, in g band.
+     <div class="carousel-indicators">
+       <button type="button" data-bs-target="#astrometryCarousel" data-bs-slide-to="0" class="active"></button>
+       <button type="button" data-bs-target="#astrometryCarousel" data-bs-slide-to="1"></button>
+       <button type="button" data-bs-target="#astrometryCarousel" data-bs-slide-to="2"></button>
+     </div>
 
-.. figure:: images/astromDiffRA_r_sigmaMAD.png
-    :width: 600
-    :name: images/astromDiffRA_r_sigmaMAD
-    :alt: Astrometric sigma MAD in RA for calibration stars compared to the reference catalog, in r band.
+     <div class="carousel-inner">
 
-    Figure 3: Astrometric scatter (sigma MAD) in RA between calibration stars and the reference catalog, in r band.
+       <div class="carousel-item active">
+         <img src="../_images/astromDiffRA_u_sigmaMAD.png" class="d-block w-100" alt="RA u-band sigma MAD">
+       </div>
+
+       <div class="carousel-item">
+         <img src="../_images/astromDiffRA_g_sigmaMAD.png" class="d-block w-100" alt="RA g-band sigma MAD">
+       </div>
+
+       <div class="carousel-item">
+         <img src="../_images/astromDiffRA_r_sigmaMAD.png" class="d-block w-100" alt="RA r-band sigma MAD">
+       </div>
+
+     </div> <!-- end carousel-inner -->
+
+     <button class="carousel-control-prev" type="button" data-bs-target="#astrometryCarousel" data-bs-slide="prev">
+       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+     </button>
+
+     <button class="carousel-control-next" type="button" data-bs-target="#astrometryCarousel" data-bs-slide="next">
+       <span class="carousel-control-next-icon" aria-hidden="true"></span>
+     </button>
+
+   </div>
+
+   <p style="text-align:center; font-style:italic; margin-top:6px;">
+     Astrometric scatter (σ(MAD)) in Right Ascension between calibration stars and the reference catalog, in u, g, and r-bands.
+   </p>
+
 
 
 Delta Dec
@@ -63,15 +89,15 @@ Delta Dec
      <div class="carousel-inner">
 
        <div class="carousel-item active">
-         <img src="../_images/astromDiffRA_u_sigmaMAD.png" class="d-block w-100" alt="RA u-band sigma MAD">
+         <img src="../_images/astromDiffDec_u_sigmaMAD.png" class="d-block w-100" alt="DEC u-band sigma MAD">
        </div>
 
        <div class="carousel-item">
-         <img src="../_images/astromDiffRA_g_sigmaMAD.png" class="d-block w-100" alt="RA g-band sigma MAD">
+         <img src="../_images/astromDiffDec_g_sigmaMAD.png" class="d-block w-100" alt="DEC g-band sigma MAD">
        </div>
 
        <div class="carousel-item">
-         <img src="../_images/astromDiffRA_r_sigmaMAD.png" class="d-block w-100" alt="RA r-band sigma MAD">
+         <img src="../_images/astromDiffDec_r_sigmaMAD.png" class="d-block w-100" alt="DEC r-band sigma MAD">
        </div>
 
      </div>
@@ -83,14 +109,5 @@ Delta Dec
      <button class="carousel-control-next" type="button" data-bs-target="#astrometryCarousel" data-bs-slide="next">
        <span class="carousel-control-next-icon" aria-hidden="true"></span>
      </button>
-   </div>
-
-
-.. raw:: html
-
-   <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-     <img src="../_images/astromDiffRA_u_sigmaMAD.png" width="300">
-     <img src="../_images/astromDiffRA_g_sigmaMAD.png" width="300">
-     <img src="../_images/astromDiffRA_r_sigmaMAD.png" width="300">
    </div>
 
