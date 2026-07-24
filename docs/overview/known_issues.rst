@@ -4,10 +4,6 @@
 Known issues
 ############
 
-.. important::
-
-   This webpage contains some placeholder information from Data Preview 1 and is currently under development.
-
 
 For questions related to any of the issues listed on this page, please ask in the `Support category on community.lsst.org <https://community.lsst.org/c/support>`_, where Rubin staff will follow up.
 
