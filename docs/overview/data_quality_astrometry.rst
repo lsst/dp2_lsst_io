@@ -131,13 +131,13 @@ Delta Dec
 
    <style>
      /* Make carousel arrows black */
-     #astrometryCarousel .carousel-control-prev-icon,
-     #astrometryCarousel .carousel-control-next-icon {
+     #astrometryCarouselDEC .carousel-control-prev-icon,
+     #astrometryCarouselDEC .carousel-control-next-icon {
        filter: invert(0) brightness(0);
      }
 
      /* Bigger, darker indicator dots */
-     #astrometryCarousel .carousel-indicators button {
+     #astrometryCarouselDEC .carousel-indicators button {
        width: 14px;
        height: 14px;
        background-color: #666;
@@ -146,18 +146,18 @@ Delta Dec
        opacity: 0.9;
      }
 
-     #astrometryCarousel .carousel-indicators .active {
+     #astrometryCarouselDEC .carousel-indicators .active {
        background-color: #333;   /* visible active dot */
        opacity: 1;
      }
 
      /* Anchor dots to the image width */
-     #astrometryCarousel .carousel-inner {
+     #astrometryCarouselDEC .carousel-inner {
        position: relative;
      }
 
      /* Move dots BELOW the image and center them */
-     #astrometryCarousel .carousel-indicators {
+     #astrometryCarouselDEC .carousel-indicators {
        position: absolute;
        bottom: -55px;            /* lower the dots more */
        left: 50%;
@@ -171,35 +171,35 @@ Delta Dec
      }
 
      /* Perfect vertical centering for arrows */
-     #astrometryCarousel .carousel-control-prev,
-     #astrometryCarousel .carousel-control-next {
+     #astrometryCarouselDEC .carousel-control-prev,
+     #astrometryCarouselDEC .carousel-control-next {
        top: 50%;
        transform: translateY(-50%);
      }
 
      /* Horizontal arrow placement */
-     #astrometryCarousel .carousel-control-prev {
+     #astrometryCarouselDEC .carousel-control-prev {
        left: -30px;
      }
 
-     #astrometryCarousel .carousel-control-next {
+     #astrometryCarouselDEC .carousel-control-next {
        right: -30px;
      }
 
      /* Add spacing below carousel */
-     #astrometryCarousel {
+     #astrometryCarouselDEC {
        margin-bottom: 60px;
      }
    </style>
 
-   <div id="astrometryCarousel" class="carousel slide"
+   <div id="astrometryCarouselDEC" class="carousel slide"
         style="border: 1px solid #ccc; box-shadow: 0 0 8px rgba(0,0,0,0.2);"
         data-bs-ride="carousel">
 
      <div class="carousel-indicators">
-       <button type="button" data-bs-target="#astrometryCarousel" data-bs-slide-to="0" class="active"></button>
-       <button type="button" data-bs-target="#astrometryCarousel" data-bs-slide-to="1"></button>
-       <button type="button" data-bs-target="#astrometryCarousel" data-bs-slide-to="2"></button>
+       <button type="button" data-bs-target="#astrometryCarouselDEC" data-bs-slide-to="0" class="active"></button>
+       <button type="button" data-bs-target="#astrometryCarouselDEC" data-bs-slide-to="1"></button>
+       <button type="button" data-bs-target="#astrometryCarouselDEC" data-bs-slide-to="2"></button>
      </div>
 
      <div class="carousel-inner">
@@ -218,11 +218,11 @@ Delta Dec
 
      </div>
 
-     <button class="carousel-control-prev" type="button" data-bs-target="#astrometryCarousel" data-bs-slide="prev">
+     <button class="carousel-control-prev" type="button" data-bs-target="#astrometryCarouselDEC" data-bs-slide="prev">
        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
      </button>
 
-     <button class="carousel-control-next" type="button" data-bs-target="#astrometryCarousel" data-bs-slide="next">
+     <button class="carousel-control-next" type="button" data-bs-target="#astrometryCarouselDEC" data-bs-slide="next">
        <span class="carousel-control-next-icon" aria-hidden="true"></span>
      </button>
 
