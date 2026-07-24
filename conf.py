@@ -28,7 +28,6 @@ def _add_data_quality_assets(app, pagename, templatename, context, doctree):
 def setup(app):
     app.connect('html-page-context', _add_data_quality_assets)
 
-
 # This can't go in documenteer.toml because TOML interprets the "lsst.images"
 # in relation to the existing "lsst" (i.e. pipelines.lsst.io) in a way that
 # causes a conflict.
