@@ -40,6 +40,8 @@ Description
 
 The forced source table contains forced PSF flux photometry on both the visit (i.e., "science" or "direct") and difference images at the coordinates of every object in the object table.
 
+For details on the four forced photometry variants and their blending behavior, see :ref:`detection-forcephot`.
+
 Processing
 ----------
 

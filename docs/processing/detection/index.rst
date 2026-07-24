@@ -51,6 +51,13 @@ In deep coadd images, measurements of objects include both PSF and extended shap
 A wide variety of flux measurements are pre-calculated, such as the composite model (cModel), Gaussian-aperture-and-PSF (`GaaP <https://ui.adsabs.harvard.edu/abs/2008A%26A...482.1053K/abstract>`_), and Sersic models.
 The results are stored in the ``Object`` catalog.
 
+Star/galaxy classification
+--------------------------
+
+A new floating-point, per-band and griz ``model_extendedness`` classifier using Sersic fluxes and sizes generally performs better than the previous ``refExtendedness``.
+However, ``griz_model_extendedness`` tends to classify everything as a galaxy fainter than approximately ``i = 24``; adjusting the threshold can help, but optimal faint-star selection will require user input.
+A classification for bad or bogus detections is still lacking.
+
 
 .. _detection-forcephot:
 
@@ -70,3 +77,9 @@ When a photometry algorithm also involves fitting an ellipse, three different ap
 
 Forced PSF photometry measurements are also made on all visit images and all difference images at the locations of all objects.
 The results are stored in the ``ForcedSource`` catalog.
+
+There are a total of four variants of forced photometry in Rubin data release processing, combining two reference catalogs (Object and DiaObject) with two measurement images (visit images and difference images).
+Each of the two forced photometry catalogs includes rows for both measurement images and a single reference catalog: :doc:`ForcedSource </products/catalogs/forced_source>` uses Object positions, while :doc:`DiaForcedSource </products/catalogs/dia_forced_source>` uses DiaObject positions.
+
+Forced photometry on difference images is expected to behave best in crowded regions, since image subtraction removes neighbors more effectively than the coadd deblender (there is no deblending when producing the DiaSource catalog either).
+There is no deblending whatsoever in forced photometry on visit images.

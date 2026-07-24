@@ -92,6 +92,14 @@ Purpose: These flags indicate whether a source was used in astrometric calibrati
 
 **For most science applications, these flags can be ignored as they pertain to internal use in the calibration process.**
 
+The public Source catalog does not contain the same single-visit detections used to estimate the PSF and fit for the astrometric and photometric calibrations.
+Those initial sources (the ``single_visit_star`` and ``recalibrated_star`` butler dataset types) are some of the many intermediate data products that are not retained in a final data release, while Source detections are made on the final visit image after all calibration steps are complete.
+
+The ``calib_*`` columns in the Object table, which purport to identify objects used in various calibration steps, are generated from a spatial match from the object positions to the initial source positions, which means they can suffer from mismatch problems in rare cases.
+
+Note also that these flags currently reflect the preliminary single-detector astrometric and photometric calibration steps, not the later FGCM and GBDES fits (they do reflect the stars that went into the final Piff PSF models, however).
+This will be fixed in future data releases.
+
 .. list-table::
    :header-rows: 1
    :widths: 30 15 55

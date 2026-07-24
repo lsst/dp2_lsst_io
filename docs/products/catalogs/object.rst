@@ -44,6 +44,8 @@ Photometry is calibrated, but not corrected for Milky Way dust extinction.
 Objects are detected and deblended in each patch independently, including the "outer" patch regions that overlap.
 They are then filtered down to just those whose reference-band centroid falls within the inner (non-overlapping) patch bounds when per-patch catalogs are aggregated.
 
+For details on star/galaxy classification, see :ref:`detection-measurement`.
+
 Processing
 ----------
 

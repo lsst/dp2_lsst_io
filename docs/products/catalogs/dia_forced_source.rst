@@ -40,6 +40,10 @@ Description
 
 The DIA forced source table contains forced PSF flux photometry on both the visit (i.e., "direct" or "science") and difference images at the coordinates of every object in the DIA object table.
 
+Forced photometry on difference images is expected to behave best, especially in crowded regions, since image subtraction should remove neighbors even more effectively than the deblender run on the coadds.
+There is no deblending whatsoever in forced photometry on visit images.
+See also :doc:`/products/catalogs/forced_source` for a description of the four forced photometry variants.
+
 Processing
 ----------
 

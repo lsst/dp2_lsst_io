@@ -22,6 +22,8 @@ See the :doc:`/access/index` and the :doc:`/tutorials/index` pages to get starte
 
     new_lsst_image_format
 
+Image pixel flux units are in ``nJy``, meaning that photometry algorithms that account for the PSF model and aperture corrections directly yield ``nJy`` fluxes; see :doc:`/processing/calibration/photometric` for more information.
+
 
 Coadd and template images
 =========================

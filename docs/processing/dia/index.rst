@@ -82,3 +82,7 @@ In general, "forced" photometry means a measurement made at a fixed coordinate i
 Forced PSF photometry measurements are made on all visit and difference images at the locations of all DIA objects.
 The results are stored in the ``ForcedSourceOnDiaObject`` catalog.
 
+Difference imaging in DP2 benefits from new masking features, including a ``SPIKE`` mask plane for diffraction spikes and a ``HIGH_VARIANCE`` mask plane in template detectors (see :doc:`/products/images/mask_planes`).
+
+Deblending on the difference image is not yet implemented, and detection and measurement with preconvolution needs further development.
+
