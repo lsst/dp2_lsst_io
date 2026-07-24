@@ -12,10 +12,6 @@ The following plots show the photometric offset between calibration stars and th
      Photometric offset by Filter
    </h4>
 
-   <p style="text-align:center; font-size:0.9em; margin-top:-6px;">
-     (interactive carousel)
-   </p>
-
    <style>
      /* Make carousel arrows black */
      #photometryCarousel .carousel-control-prev-icon,
@@ -132,5 +128,5 @@ The following plots show the photometric offset between calibration stars and th
    </div>
 
    <p style="text-align:center; font-style:italic; margin-top:6px;">
-     Photometric offset between calibration stars and the reference catalog, in u, g, r, i, z, and y-bands.
+     Photometric offset in u, g, r, i, z, and y-bands.
    </p>
