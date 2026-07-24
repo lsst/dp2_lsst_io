@@ -126,36 +126,94 @@ Delta RA
 Delta Dec
 =========
 
-.. figure:: images/astromDiffDec_u_sigmaMAD.png
-    :width: 600
-    :name: images/astromDiffDec_u_sigmaMAD
-    :alt: Astrometric sigma MAD in Declination for calibration stars compared to the reference catalog, in u band.
-
-
-    Figure 1: Astrometric scatter (sigma MAD) in Declination between calibration stars and the reference catalog, in u band.
-
-.. figure:: images/astromDiffDec_g_sigmaMAD.png
-    :width: 600
-    :name: images/astromDiffDec_g_sigmaMAD
-    :alt: Astrometric sigma MAD in Declination for calibration stars compared to the reference catalog, in g band.
-
-    Figure 2: Astrometric scatter (sigma MAD) in Declination between calibration stars and the reference catalog, in g band.
-
-.. figure:: images/astromDiffDec_r_sigmaMAD.png
-    :width: 600
-    :name: images/astromDiffDec_r_sigmaMAD
-    :alt: Astrometric sigma MAD in Declination for calibration stars compared to the reference catalog, in r band.
-
-    Figure 3: Astrometric scatter (sigma MAD) in Declination between calibration stars and the reference catalog, in r band.
-
 
 .. raw:: html
 
-   <div id="astrometryCarousel" class="carousel slide" data-bs-ride="carousel">
+   <h4 style="text-align:center; margin-bottom:10px;">
+     Astrometric DEC σ(MAD) by Filter
+   </h4>
+
+   <p style="text-align:center; font-size:0.9em; margin-top:-6px;">
+     (interactive carousel)
+   </p>
+
+   <style>
+     /* Make carousel arrows black */
+     #astrometryCarousel .carousel-control-prev-icon,
+     #astrometryCarousel .carousel-control-next-icon {
+       filter: invert(0) brightness(0);
+     }
+
+     /* Bigger, darker indicator dots */
+     #astrometryCarousel .carousel-indicators button {
+       width: 14px;
+       height: 14px;
+       background-color: #666;
+       border-radius: 50%;
+       border: none;
+       opacity: 0.9;
+     }
+
+     #astrometryCarousel .carousel-indicators .active {
+       background-color: #333;   /* visible active dot */
+       opacity: 1;
+     }
+
+     /* Anchor dots to the image width */
+     #astrometryCarousel .carousel-inner {
+       position: relative;
+     }
+
+     /* Move dots BELOW the image and center them */
+     #astrometryCarousel .carousel-indicators {
+       position: absolute;
+       bottom: -55px;            /* lower the dots more */
+       left: 50%;
+       transform: translateX(-50%);
+       display: flex;
+       gap: 10px;
+       width: auto;
+       padding: 0;
+       margin: 0;
+       justify-content: center;  /* force centering */
+     }
+
+     /* Perfect vertical centering for arrows */
+     #astrometryCarousel .carousel-control-prev,
+     #astrometryCarousel .carousel-control-next {
+       top: 50%;
+       transform: translateY(-50%);
+     }
+
+     /* Horizontal arrow placement */
+     #astrometryCarousel .carousel-control-prev {
+       left: -30px;
+     }
+
+     #astrometryCarousel .carousel-control-next {
+       right: -30px;
+     }
+
+     /* Add spacing below carousel */
+     #astrometryCarousel {
+       margin-bottom: 60px;
+     }
+   </style>
+
+   <div id="astrometryCarousel" class="carousel slide"
+        style="border: 1px solid #ccc; box-shadow: 0 0 8px rgba(0,0,0,0.2);"
+        data-bs-ride="carousel">
+
+     <div class="carousel-indicators">
+       <button type="button" data-bs-target="#astrometryCarousel" data-bs-slide-to="0" class="active"></button>
+       <button type="button" data-bs-target="#astrometryCarousel" data-bs-slide-to="1"></button>
+       <button type="button" data-bs-target="#astrometryCarousel" data-bs-slide-to="2"></button>
+     </div>
+
      <div class="carousel-inner">
 
        <div class="carousel-item active">
-         <img src="../_images/astromDiffDec_u_sigmaMAD.png" class="d-block w-100" alt="DEC u-band sigma MAD">
+         <img src="../_images/astromDiffDec_u_sigmaMAD.png" class="d-block w-100" alt="Dec u-band sigma MAD">
        </div>
 
        <div class="carousel-item">
@@ -175,5 +233,10 @@ Delta Dec
      <button class="carousel-control-next" type="button" data-bs-target="#astrometryCarousel" data-bs-slide="next">
        <span class="carousel-control-next-icon" aria-hidden="true"></span>
      </button>
+
    </div>
+
+   <p style="text-align:center; font-style:italic; margin-top:6px;">
+     Astrometric scatter (σ(MAD)) in Declination between calibration stars and the reference catalog, in u, g, and r-bands.
+   </p>
 
