@@ -19,6 +19,36 @@ Delta RA
      (interactive carousel)
    </p>
 
+<style>
+  /* Make carousel arrows black */
+  #astrometryCarousel .carousel-control-prev-icon,
+  #astrometryCarousel .carousel-control-next-icon {
+    filter: invert(0) brightness(0);
+  }
+</style>
+
+<style>
+  /* Bigger, darker indicator dots */
+  #astrometryCarousel .carousel-indicators button {
+    width: 14px;
+    height: 14px;
+    background-color: #666;
+    border-radius: 50%;
+    border: none;
+    opacity: 0.9;
+  }
+
+  #astrometryCarousel .carousel-indicators .active {
+    background-color: #fff;
+    opacity: 1;
+  }
+
+  /* Ensure indicator container is positioned correctly */
+  #astrometryCarousel .carousel-indicators {
+    bottom: 10px;
+  }
+</style>
+
    <div id="astrometryCarousel" class="carousel slide"
         style="border: 1px solid #ccc; box-shadow: 0 0 8px rgba(0,0,0,0.2);"
         data-bs-ride="carousel">
