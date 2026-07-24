@@ -30,10 +30,9 @@ Sky coverage
 Wide-fast-deep region
 ---------------------
 
-The region of sky covered somewhat similarly to the LSST's future "wide-fast-deep" (WFD) stretches from RA 240-30 deg, over 20 deg span of Declination.
-It is similar in that it includes low-dust and dusty regions within the plane of the Milky Way, where the depth is shallower, as seen in Figure 2.
-There are three small fields within this WFD region, as labeled in Figure 1, making it particularly non-uniform in depth.
-However this is still somewhat similar to the future LSST sky coverage, which won't be uniform in their depth either (especially years with rolling cadence).
+The region of sky covered somewhat similarly to the LSST's future "wide-fast-deep" (WFD) stretches from Right Ascension ~240 to ~30 deg (passing through RA=0), and over a ~20 deg span of Declination.
+It is somewhat similar to the LSST in that it includes low-dust and dusty regions within the plane of the Milky Way, where the depth is shallower, as seen in Figure 2.
+The cadence and filter distribution are not representative of the future LSST strategy, and there are three small fields within this WFD region, as labeled in Figure 1, making it particularly non-uniform in depth (however, the future LSST sky coverage won't be perfectly uniform in depth either, especially years with rolling cadence).
 Learn more about the WFD and the LSST strategy in the `Survey strategy documentation <https://survey-strategy.lsst.io/>`_.
 
 
