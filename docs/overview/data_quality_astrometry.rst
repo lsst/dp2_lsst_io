@@ -15,7 +15,7 @@ Delta RA
      Astrometric RA σ(MAD) by Filter
    </h4>
 
-   <div id="astrometryCarousel" class="carousel slide" 
+   <div id="astrometryCarousel" class="carousel slide"
         style="border: 1px solid #ccc; box-shadow: 0 0 8px rgba(0,0,0,0.2);"
         data-bs-ride="carousel">
 
@@ -54,7 +54,6 @@ Delta RA
    <p style="text-align:center; font-style:italic; margin-top:6px;">
      Astrometric scatter (σ(MAD)) in Right Ascension between calibration stars and the reference catalog, in u, g, and r-bands.
    </p>
-
 
 
 Delta Dec
