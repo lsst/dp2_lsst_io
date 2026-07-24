@@ -84,3 +84,13 @@ Delta Dec
        <span class="carousel-control-next-icon" aria-hidden="true"></span>
      </button>
    </div>
+
+
+.. raw:: html
+
+   <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+     <img src="../_images/astromDiffRA_u_sigmaMAD.png" width="300">
+     <img src="../_images/astromDiffRA_g_sigmaMAD.png" width="300">
+     <img src="../_images/astromDiffRA_r_sigmaMAD.png" width="300">
+   </div>
+
