@@ -6,14 +6,14 @@ What's new with DP2 images
 
 DP2 image data products are written in a new file format and are represented in Python by new classes in the :external+lsst.images:ref:`lsst.images` package.
 
-The new format still FITS-based, but it is more self-documenting, better at handling versioning changes, and implemented in a way that opens the door to other (i.e. non-FITS) file types in the future, such as ASDF or HDF5.
+The new format is still FITS-based, but it is more self-documenting, better at handling versioning changes, and implemented in a way that opens the door to other (i.e. non-FITS) file types in the future, such as ASDF or HDF5.
 
 The new Python types are built around many of the same concepts as the ``lsst.afw.image`` classes they are replacing, but with what we hope is a more intuitive and natural interface, especially for new users and those familiar with Astropy concepts.
 The new :external+lsst.images:ref:`lsst.images` package is installable via ``pip`` and hence the new files can be read into Python code without having access to the full LSST Science Pipelines software stack.
 
 The LSST pipeline code still uses the ``lsst.afw.image`` types for the most part; we are in the early stages of our own internal migration to the new types.
 This means some users will still sometimes encounter them when working with DP2 data, especially when using image display tools in notebook environments or running LSST Data Management tasks.
-We have no plans to fully remove the ``lsst.afw.image`` types, but our hope is that they will be used less and less over time (especially by science users), and ultimately become private implementation details only.
+We have no immediate plans to fully remove the ``lsst.afw.image`` types, but we advise you to reduce your reliance on them, as we intend that they will ultimately become private implementation details only.
 Many :external+lsst.images:ref:`lsst.images` classes have a ``to_legacy`` method to convert to their counterpart ``lsst.afw`` type, for exactly this reason.
 See :external+lsst.images:ref:`guide-for-afw-users` for a complete mapping between the old ``lsst.afw`` (etc) types and their :external+lsst.images:ref:`lsst.images` counterparts.
 
