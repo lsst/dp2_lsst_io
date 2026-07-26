@@ -44,6 +44,9 @@ An estimate of how likely a source is to be real is provided to enable filtering
 The technical note "Performance of Machine-Learned Reliability Scoring for Image Differencing" (`DMTN-337 <https://dmtn-337.lsst.io/>`_) documents the architecture and performance of each model version and provides details about, e.g., the training set.
 The reliability value is stored in the ``reliability`` column of the ``DiaSource`` catalog.
 
+**DP2 reliability scores were accidentally calculated with the v0.1 model.**
+This is the same model as used for DP1.
+
 
 Dipoles
 -------

@@ -4,6 +4,11 @@
 Flag definitions and categories
 ###############################
 
+.. important::
+
+   DP2 flag descriptions and guidance for their scientific applications is currently under development. These webpages are not complete.
+
+
 To help users interpret flag meanings, the following sections organize key flags into categories based on what the flag indicates.
 See also the :doc:`/products/flags/flag_recommendations` for recommendations on the application of flags for scientific analyses.
 

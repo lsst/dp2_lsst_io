@@ -4,6 +4,11 @@
 Connection to image mask planes
 ###############################
 
+.. important::
+
+   DP2 flag descriptions and guidance for their scientific applications is currently under development. These webpages are not complete. Mask names have changed.
+
+
 Catalog ``pixelFlags_*`` columns are directly derived from :ref:`image mask planes <images-mask-planes>`.
 Each mask plane bit in the image propagates to a corresponding pixel flag in the catalog.
 
