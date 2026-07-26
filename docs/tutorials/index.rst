@@ -22,8 +22,7 @@ Notebook Aspect
     :maxdepth: 2
     :glob:
 
-    notebook/notebook-101
-    notebook/notebook-102
+    notebook/index
 
 
 .. _tutorials-portal:
@@ -31,7 +30,12 @@ Notebook Aspect
 Portal Aspect
 =============
 
-TBD
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    portal/index
+
 
 
 .. _tutorials-api:
@@ -39,7 +43,7 @@ TBD
 API Aspect
 ==========
 
-TBD
+Coming soon.
 
 
 .. _tutorials-contribute:

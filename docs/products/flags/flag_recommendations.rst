@@ -4,6 +4,11 @@
 Flag usage guidance
 ###################
 
+.. important::
+
+   DP2 flag descriptions and guidance for their scientific applications is currently under development. These webpages are not complete.
+
+
 Table-specific guidance on which flags to apply for *typical* science-quality selections.
 It is up to the user to adapt this guidance to their *specific* science applications.
 

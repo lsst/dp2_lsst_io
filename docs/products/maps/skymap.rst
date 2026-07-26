@@ -22,7 +22,7 @@ Butler
 TAP
 ---
 
-* Table name: ``CoaddPatches``
+* See the :doc:`/products/catalogs/coadd_patches` catalog.
 
 Description
 ===========
