@@ -39,7 +39,7 @@ The table combines selected measured astrometry and photometry with ephemeris qu
 It does not include unassociated detections, and its ephemeris quantities are not a Rubin-derived orbit solution.
 
 The association used a 1-arcsecond radius without positional uncertainties or photometric information.
-The input catalog was a 2025 March 13 MPC orbit snapshot restricted to observational arcs longer than two days.
+The input catalog was a 2026 March 13 MPC orbit snapshot restricted to observational arcs longer than two days.
 Small bodies discovered later are not represented, and no comets were associated because the input orbit catalog did not contain them.
 See :doc:`/processing/moving/ss_association` for the algorithm and selection effects.
 

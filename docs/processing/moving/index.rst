@@ -32,7 +32,7 @@ DP2 provides five Solar System tables:
      - An MPC mapping between permanent numbers and primary provisional designations.
 
 The three MPC tables retain the upstream MPC field semantics rather than being recomputed from DP2 observations.
-The delivered ``mpc_orbits`` reference product is the same 2025 March 13 MPC snapshot that was used as input to association.
+The delivered ``mpc_orbits`` reference product is the same 2026 March 13 MPC snapshot that was used as input to association.
 
 
 .. toctree::
