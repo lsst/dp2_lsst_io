@@ -17,6 +17,8 @@ TAP
 ---
 
 * Table name: ``current_identifications``
+* Columns: |current_identifications_columns|
+* Rows: |current_identifications_rows|
 
 Butler
 ------
@@ -32,3 +34,15 @@ The upstream definitions and field semantics are documented in the `MPC replicat
 
 This table is useful for resolving historical or alternate designations before joining to the Rubin-derived Solar System tables.
 It was not computed from DP2 observations.
+
+The ``current_identifications`` table is joinable with the ``mpc_orbits`` table and ``numbered_identifications`` table using the ``packed_primary_provisional_designation`` and ``unpacked_primary_provisional_designation``.
+
+Processing
+----------
+
+The table was adopted from the MPC database; its contents were not recomputed by DP2 processing.
+
+Tutorials
+---------
+
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on the MPC orbits table.
