@@ -22,8 +22,8 @@ Matching algorithm
 
 Associations were made independently for each detector and visit.
 Predicted objects were first restricted to the detector footprint.
-For each predicted position, the algorithm found the nearest ``DiaSource`` within 1 arcsecond.
-Candidate pairs were considered in order of increasing separation and accepted only if neither the predicted object nor the detection had already been assigned.
+For each predicted position, the algorithm found all ``DiaSources`` within 1 arcsecond.
+For each visit-detector, all candidate pairs were considered in order of increasing separation and accepted only if neither the predicted object nor the detection had already been assigned.
 The result is therefore a one-to-one positional match.
 
 The matching did not use positional uncertainties, brightness, color, morphology, motion rate, or a probabilistic association score.
