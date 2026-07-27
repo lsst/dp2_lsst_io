@@ -38,7 +38,7 @@ Maps
 All-sky maps of deep coadded images, survey depth, image quality, and more.
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :glob:
 
     maps/skymap
