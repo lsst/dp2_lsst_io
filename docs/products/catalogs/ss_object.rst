@@ -34,7 +34,7 @@ Butler
 Description
 ===========
 
-Each row summarizes a previously known small body with one or more accepted DP2 associations.
+Each row summarizes a previously known small body with one or more DP2 associations.
 This is not a catalog of objects discovered by DP2, and the table does not contain orbits fitted from DP2 observations.
 
 ``SSObject`` includes the integer ``ssObjectId``, the unpacked primary provisional ``designation``, total and per-band observation counts, the first observation epoch and observing arc, per-band phase-angle ranges, extendedness summaries, and selected quantities derived from the input MPC orbit.

@@ -34,7 +34,7 @@ Butler
 Description
 ===========
 
-Each row represents an accepted one-to-one positional association between a ``DiaSource`` and the predicted position of a known small body.
+Each row represents a one-to-one positional association between a ``DiaSource`` and the predicted position of a known small body.
 The table combines selected measured astrometry and photometry with ephemeris quantities predicted from an MPC orbit using Sorcha.
 It does not include unassociated detections, and its ephemeris quantities are not a Rubin-derived orbit solution.
 
