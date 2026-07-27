@@ -21,7 +21,7 @@ DP2 provides five Solar System tables:
    * - Table
      - Purpose
    * - :doc:`SSSource </products/catalogs/ss_source>`
-     - One row per accepted association between a ``DiaSource`` and a known object's predicted position, with selected measured and ephemeris quantities.
+     - One row per association between a ``DiaSource`` and a known object's predicted position, with selected measured and ephemeris quantities.
    * - :doc:`SSObject </products/catalogs/ss_object>`
      - One row per recovered known object, with observation summaries, per-band absolute-magnitude fits, and selected orbit-derived quantities.
    * - :doc:`mpc_orbits </products/catalogs/mpc_orbits>`

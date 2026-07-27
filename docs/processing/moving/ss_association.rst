@@ -33,7 +33,7 @@ Each ``diaSourceId`` occurs at most once in ``SSSource``; unassociated ``DiaSour
 Contents and interpretation
 ===========================
 
-Each accepted ``SSSource`` row contains selected measured quantities from the ``DiaSource`` and the predicted ephemeris at the observation epoch.
+Each ``SSSource`` row contains selected measured quantities from the ``DiaSource`` and the predicted ephemeris at the observation epoch.
 These include measured astrometry and PSF photometry, predicted position and apparent Johnson-V magnitude, observing geometry, rates, and Cartesian position and velocity components.
 The ephemeris coordinates and state vectors are predictions from the input MPC orbit, not a Rubin-derived orbital solution.
 Users needing the complete detection record or detection-quality fields should join ``SSSource`` to ``DiaSource`` on ``diaSourceId``.
