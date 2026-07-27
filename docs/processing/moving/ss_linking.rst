@@ -6,7 +6,7 @@ Small body tracklet linking and orbit fitting
 
 .. important::
 
-   The discovery campaign described on this page ran as part of Prompt Processing, not the DP2 Data Release processing.
+   The discovery campaign described on this page ran as part of Prompt Processing, not the DP2 Data Release processing; we present it here to give a general overview of how Rubin discovers asteroids on a continuous basis.
    Objects discovered by Rubin and reported to the MPC before the DP2 association cutoff may appear in the DP2 known-object products, but DP2 does not deliver a standalone catalog of Rubin discoveries or Rubin-derived orbits.
 
 .. image:: images/LSST-HelioLinC3D-Infographic.png
