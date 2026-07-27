@@ -7,7 +7,7 @@ They are known-object products, not a blind moving-object search or an orbit cat
 DP2 delivers the associated observations in ``SSSource`` and Rubin-derived object-level photometry and summary quantities in ``SSObject``.
 It also provides three auxiliary snapshots adopted from the Minor Planet Center (MPC) PostgreSQL database.
 
-Rubin searched for and discovered new Solar System objects during `Solar System Prompt Processing <https://prompt-products.lsst.io/processing/moving/ss_prompt.html>`_.
+Rubin searched for and discovered new Solar System objects during :doc:`Pre-DP2 Solar System Processing <ss_linking>`.
 That campaign preceded the official DP2 Data Release processing, so objects discovered by Rubin and reported to the MPC before the association cutoff can occur in the DP2 known-object products.
 DP2 does not, however, deliver a standalone catalog of Rubin discoveries.
 The Prompt Processing discoveries will be described separately, and future Data Releases will deliver discovery catalogs.
