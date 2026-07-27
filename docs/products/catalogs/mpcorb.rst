@@ -41,7 +41,7 @@ For end-user convenience, DP2 adds a ``designation`` column containing the unpac
 It is identical row by row to ``unpacked_primary_provisional_designation`` and provides a readable join key to ``SSSource`` and ``SSObject``.
 For performance, prefer SQL joins on integer identifiers such as ``ssObjectId`` wherever they are available.
 
-The delivered ``mpc_orbits`` table is an auxiliary reference snapshot and is distinct from the 2025 March 13 MPC orbit snapshot used as input to :doc:`DP2 association </processing/moving/ss_association>`.
+The delivered ``mpc_orbits`` table is the same 2025 March 13 MPC snapshot used as input to :doc:`DP2 association </processing/moving/ss_association>`.
 
 Processing
 ----------

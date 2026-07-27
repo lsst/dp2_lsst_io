@@ -15,7 +15,7 @@ Small bodies discovered after that date, including those found in Rubin data, ar
 The input orbit catalog did not contain comets, so no comets were available for association in DP2.
 
 Ephemerides at the visit epochs were generated with `Sorcha <https://sorcha.space/>`_ (see `Merritt et al. 2025 <https://ui.adsabs.harvard.edu/abs/2025AJ....170..100M/abstract>`_ and `Holman et al. 2025 <https://ui.adsabs.harvard.edu/abs/2025AJ....170...97H/abstract>`_).
-The ``mpc_orbits`` table delivered as an auxiliary DP2 product is a separate MPC snapshot and is not the source catalog that should be used to infer the association cutoff.
+The same MPC snapshot is delivered as the auxiliary DP2 ``mpc_orbits`` table.
 
 Matching algorithm
 ==================
