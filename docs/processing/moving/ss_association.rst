@@ -45,4 +45,5 @@ These residuals are useful diagnostics, but the hard 1-arcsecond selection radiu
 Chance associations remain possible, especially in regions with high ``DiaSource`` density, because the match does not use brightness or detection reliability.
 Users constructing a high-purity sample should consider detection reliability, angular and cross-track residuals, consistency with the predicted magnitude, and the uncertainty of the input orbit.
 
+At this time, most of the associations delivered here have not yet been reported to the Minor Planet Center (MPC).
 Rubin will submit the astrometric measurements represented in ``SSSource`` to the MPC in stages, so that association quality can be validated before each submission and the risk of reporting misassociations can be minimized.
