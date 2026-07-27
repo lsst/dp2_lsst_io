@@ -27,7 +27,7 @@ Observations
 The sky coverage, filters, and number of visits.
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :glob:
 
     observations
