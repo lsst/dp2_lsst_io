@@ -2,12 +2,37 @@
 Solar System processing (SSP)
 #############################
 
-The Solar System processing (SSP) pipeline links together detections of new and known solar system objects, and interfaces with the Minor Planet Center (MPC) for physical parameter derivation and orbit fitting.
+The DP2 Solar System products concentrate on associations between Rubin ``DiaSource`` observations and previously known objects.
+They are known-object products, not a blind moving-object search or an orbit catalog derived from DP2 observations alone.
+DP2 delivers the associated observations in ``SSSource`` and Rubin-derived object-level photometry and summary quantities in ``SSObject``.
+It also provides three auxiliary snapshots adopted from the Minor Planet Center (MPC) PostgreSQL database.
 
-The bulk of SSP runs as part of `Solar System Prompt Processing <https://prompt-products.lsst.io/processing/moving/ss_prompt.html>`_.
-For DP2, a re-processing was performed that is similar to what will be done for the future annual Data Release processing (DRP).
-This includes detection, association, and measurement on the processed and calibrated visit and difference images, which results in a single, static, well-characterized software release.
-The DP2 SSP data products are thus more suitable for population studies of objects detected by LSST with orbits estimated using only LSST data, e.g., large-scale Solar System population studies and model debiasing.
+Rubin searched for and discovered new Solar System objects during `Solar System Prompt Processing <https://prompt-products.lsst.io/processing/moving/ss_prompt.html>`_.
+That campaign preceded the official DP2 Data Release processing, so objects discovered by Rubin and reported to the MPC before the association cutoff can occur in the DP2 known-object products.
+DP2 does not, however, deliver a standalone catalog of Rubin discoveries.
+The Prompt Processing discoveries will be described separately, and future Data Releases will deliver discovery catalogs.
+
+DP2 provides five Solar System tables:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 70
+
+   * - Table
+     - Purpose
+   * - :doc:`SSSource </products/catalogs/ss_source>`
+     - One row per accepted association between a ``DiaSource`` and a known object's predicted position, with selected measured and ephemeris quantities.
+   * - :doc:`SSObject </products/catalogs/ss_object>`
+     - One row per recovered known object, with observation summaries, per-band absolute-magnitude fits, and selected orbit-derived quantities.
+   * - :doc:`mpc_orbits </products/catalogs/mpcorb>`
+     - An MPC orbit-catalog snapshot containing orbital elements and associated fit information.
+   * - :doc:`current_identifications </products/catalogs/current_identifications>`
+     - An MPC mapping of primary and secondary provisional designations for the same physical object.
+   * - :doc:`numbered_identifications </products/catalogs/numbered_identifications>`
+     - An MPC mapping between permanent numbers and primary provisional designations.
+
+The three MPC tables retain the upstream MPC field semantics rather than being recomputed from DP2 observations.
+The delivered ``mpc_orbits`` snapshot is a reference product and should not be confused with the earlier orbit-catalog snapshot used as input to association.
 
 
 .. toctree::

@@ -77,7 +77,7 @@ Refer to the following list for the identifier in each of the remaining tables t
 * ``ForcedSource``: ``objectId``
 * ``ForcedSourceOnDiaObject``: ``diaObjectId``
 * ``SSSource``: ``diaSourceId`` or ``ssObjectId``
-* ``MPCORB``: ``ssObjectId``
+* ``mpc_orbits``: ``ssObjectId``
 
 Reporting data to external systems
 ==================================

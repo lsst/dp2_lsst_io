@@ -4,7 +4,7 @@
 SS source
 #########
 
-Instantaneous physical parameters for moving objects at the time of every observation.
+Measured and predicted single-epoch quantities for detections associated with known small bodies.
 
 Schema: `SSSource table <https://sdm-schemas.lsst.io/dp2.html#SSSource>`_
 
@@ -34,9 +34,21 @@ Butler
 Description
 ===========
 
-A "Solar System source" is a signal-to-noise ratio > 5 moving object detection in a visit image.
+Each row represents an accepted one-to-one positional association between a ``DiaSource`` and the predicted position of a known small body.
+The table combines selected measured astrometry and photometry with ephemeris quantities predicted from an MPC orbit using Sorcha.
+It does not include unassociated detections, and its ephemeris quantities are not a Rubin-derived orbit solution.
 
-The SS source table contains the 2-d (sky) coordinates and 3-d distances and velocities for every ``SSObject`` at the time of every LSST observation of that ``SSObject``.
+The association used a 1-arcsecond radius without positional uncertainties or photometric information.
+The input catalog was a 2025 March 13 MPC orbit snapshot restricted to observational arcs longer than two days.
+Small bodies discovered later are not represented, and no comets were associated because the input orbit catalog did not contain them.
+See :doc:`/processing/moving/ss_association` for the algorithm and selection effects.
+
+Every ``diaSourceId`` occurs at most once.
+Join to :doc:`DiaSource <dia_source>` on ``diaSourceId`` for the complete detection record and quality fields, and join to :doc:`SSObject <ss_object>` on ``ssObjectId`` for object-level summaries.
+The ``designation`` column is the object's unpacked primary provisional designation.
+
+The ``diaDistanceRank`` column is 1 for every delivered row and should not be used as an association-quality or ambiguity metric.
+For quality filtering, use the measured-minus-predicted offsets together with ``DiaSource`` reliability information and consistency with the predicted magnitude.
 
 Processing
 ----------
@@ -47,4 +59,3 @@ Tutorials
 ---------
 
 See the 200-level catalog :doc:`/tutorials/index` for a notebook on the SS source table.
-
