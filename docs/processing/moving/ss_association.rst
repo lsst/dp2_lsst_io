@@ -10,7 +10,7 @@ For the DP2 Solar System products, ``DiaSource`` detections were associated with
 Association input
 =================
 
-The association input was a 2025 March 13 snapshot of the MPC orbit database, limited to objects whose observational arcs exceeded two days.
+The association input was a 2026 March 13 snapshot of the MPC orbit database, limited to objects whose observational arcs exceeded two days.
 Small bodies discovered after that date, including those found in Rubin data, are therefore absent from the delivered ``SSSource`` table.
 The input orbit catalog did not contain comets, so no comets were available for association in DP2.
 
