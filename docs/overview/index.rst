@@ -6,7 +6,7 @@ Overview
 
 .. important::
 
-   Data Preview 2 has not yet been released. This website is currently under development.
+   These webpages are under development.
 
 
 General information about the observations that comprise the dataset.

@@ -2,12 +2,7 @@
 Observations
 ############
 
-.. important::
-
-   Data Preview 2 has not yet been released. This website is currently under development.
-
-
-A summary of the sky coverage, including metadata for visit images and deep coadd images.
+A summary of the sky coverage, cadence, and image quality of the observations.
 
 
 Sky coverage
