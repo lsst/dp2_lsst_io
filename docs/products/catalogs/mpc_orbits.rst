@@ -1,4 +1,4 @@
-.. _catalogs-mpcorb:
+.. _catalogs-mpc-orbits:
 
 ##########
 MPC orbits

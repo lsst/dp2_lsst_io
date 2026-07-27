@@ -24,7 +24,7 @@ DP2 provides five Solar System tables:
      - One row per accepted association between a ``DiaSource`` and a known object's predicted position, with selected measured and ephemeris quantities.
    * - :doc:`SSObject </products/catalogs/ss_object>`
      - One row per recovered known object, with observation summaries, per-band absolute-magnitude fits, and selected orbit-derived quantities.
-   * - :doc:`mpc_orbits </products/catalogs/mpcorb>`
+   * - :doc:`mpc_orbits </products/catalogs/mpc_orbits>`
      - An MPC orbit-catalog snapshot containing orbital elements and associated fit information.
    * - :doc:`current_identifications </products/catalogs/current_identifications>`
      - An MPC mapping of primary and secondary provisional designations for the same physical object.
