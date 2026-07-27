@@ -4,7 +4,7 @@
 MPC orbits
 ##########
 
-The orbit catalog produced by the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC).
+An orbit-catalog snapshot adopted from the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC).
 The MPC has assigned `"observatory code" <https://minorplanetcenter.net/iau/lists/ObsCodesF.html>`_ ``X05`` to the Rubin Observatory.
 
 Schema: `mpc_orbits table <https://sdm-schemas.lsst.io/dp2.html#mpc_orbits>`_
@@ -33,12 +33,20 @@ Description
 The `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC) is the single worldwide location for receipt and distribution of positional measurements of small bodies.
 The MPC is responsible for the identification, designation, and orbit computation for all of these objects.
 
-The MPCORB table contains the orbital parameters calculated by the MPC for all known solar system objects and the linked difference-image detections of moving objects submitted by Rubin.
+The ``mpc_orbits`` table is a snapshot of the MPC PostgreSQL orbit table.
+It contains MPC orbital elements, photometric parameters, fit metadata, and uncertainties; it does not contain Rubin difference-image detections and was not derived by fitting DP2 observations.
+The upstream definitions and field semantics are documented in the `MPC replicated-tables schema <https://docs.minorplanetcenter.net/mpc-ops-docs/data-and-services/replicated-tables-schema/>`_.
+
+For end-user convenience, DP2 adds a ``designation`` column containing the unpacked primary provisional designation.
+It is identical row by row to ``unpacked_primary_provisional_designation`` and provides a readable join key to ``SSSource`` and ``SSObject``.
+For performance, prefer SQL joins on integer identifiers such as ``ssObjectId`` wherever they are available.
+
+The delivered ``mpc_orbits`` table is an auxiliary reference snapshot and is distinct from the 2025 March 13 MPC orbit snapshot used as input to :doc:`DP2 association </processing/moving/ss_association>`.
 
 Processing
 ----------
 
-The MPCORB catalog is the result of :doc:`/processing/moving/index`.
+The table was adopted from the MPC database; its contents were not recomputed by DP2 processing.
 
 Tutorials
 ---------

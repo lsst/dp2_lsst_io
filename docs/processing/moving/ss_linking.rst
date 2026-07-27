@@ -4,6 +4,11 @@
 Small body tracklet linking and orbit fitting
 #############################################
 
+.. important::
+
+   The discovery campaign described on this page ran as part of Prompt Processing, not the DP2 Data Release processing.
+   Objects discovered by Rubin and reported to the MPC before the DP2 association cutoff may appear in the DP2 known-object products, but DP2 does not deliver a standalone catalog of Rubin discoveries or Rubin-derived orbits.
+
 .. image:: images/LSST-HelioLinC3D-Infographic.png
 
 Small body tracklet linking and orbit fitting is done with the ``HelioLinC3D`` package.
@@ -21,4 +26,3 @@ After the full set of candidate linkages has been produced, they are culled and 
 The final product is a purified set of thousands of non-overlapping linkages, each of which has an orbit-fit with sub-arcsecond astrometric residuals.
 These linkages -- each comprising a probable new asteroid discovery -- are submitted to the `Minor Planet Center <https://minorplanetcenter.net>`_ (MPC) for confirmation and publication.
 The tracklet linking and orbit fitting procedure is illustrated in the infographic provided above.
-

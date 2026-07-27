@@ -5,21 +5,44 @@ Source detection and association
 ################################
 
 Moving objects are detected as part of :doc:`/processing/dia/index`.
-Difference-image detections with signal-to-noise ratio of at least 5, ``DiaSources``, are associated with either a static-sky time-domain object (``DiaObject``) or a moving object (``SSObject``).
-In both cases, source association uses a radius of 1 arcsecond, without taking positional uncertainties into account.
-In DP2 this yields approximately 4 million associations.
+For the DP2 Solar System products, ``DiaSource`` detections were associated with the predicted positions of previously known small bodies.
 
-Because a single known moving object predicted position may fall within the 1-arcsecond association radius for multiple nearby ``DiaSources``, a ``diaDistanceRank`` field is included in the ``ssSource`` table with the rank of the ``diaSourceId`` -identified source in terms of its closeness to the predicted SSO position.
-If the ``diaSourceId`` is the nearest ``DiaSource`` to this SSO prediction, ``diaDistanceRank`` = 1 would be set.
-If it is the second nearest, it would be 2, etc.
-In this framework, multiple ``DiaSources`` may include the ``ssSource`` record for the same known solar system object, but each would have a different value assigned for the ``diaDistanceRank`` according to their proximity to the predicted position of that SSO.
-To find the best association match between a given ``diaSourceId`` to the predicted position of a known solar system object, filter on ``diaDistanceRank`` == 1 in the ``SSSource`` table.
-In addition, because ``SSSources`` (detections) are attributed to ``SSObjects``, a given ``ssObjectId`` may have ``SSSources`` associated to that ``ssObjectId`` that include different ``diaDistanceRank`` values.
-Similarly in this case, to find the best association match between a given ``ssObjectId`` to the predicted position of a known SSO, filter on ``diaDistanceRank`` == 1 in the ``SSSource`` table.
+Association input
+=================
 
-Also included in the ``ssSource`` catalog is the ephemeris offset (``ephOffset``) that measures the total observed versus predicted angular separation on the sky between the observed ``DiaSource`` and the predicted position of a known solar system object.
-This field is also useful for quality control, association confidence, and filtering uncertain matches.
-The along-track and cross-track ephemeris offsets (``ephOffsetAlongTrack`` and ``ephOffsetCrossTrack``, respectively) as well as the RA and Dec ephemeris offsets (``ephOffsetRa`` and ``ephOffsetDec``, respectively) between the observed ``DiaSource`` and the predicted position of a known solar system object are also included in the ``ssSource`` catalog.
+The association input was a 2025 March 13 snapshot of the MPC orbit database, limited to objects whose observational arcs exceeded two days.
+Small bodies discovered after that date, including those found in Rubin data, are therefore absent from the delivered ``SSSource`` table.
+The input orbit catalog did not contain comets, so no comets were available for association in DP2.
 
-To decipher ambiguous associations, the ``diaDistanceRank``, ephemeris offsets, and multiple associated detections can be used.
-Orbit-fitting, performed by the IAU Minor Planet Center (MPC), after ``DiaSource`` detections associated with known solar system objects in the above ranked system are submitted to the MPC and subsequently ingested by the Solar System Processing pipelines in the ``mpc_orbits`` catalog, will provide the most concrete solar system object association.
+Ephemerides at the visit epochs were generated with `Sorcha <https://sorcha.space/>`_ (see `Merritt et al. 2025 <https://ui.adsabs.harvard.edu/abs/2025AJ....170..100M/abstract>`_ and `Holman et al. 2025 <https://ui.adsabs.harvard.edu/abs/2025AJ....170...97H/abstract>`_).
+The ``mpc_orbits`` table delivered as an auxiliary DP2 product is a separate MPC snapshot and is not the source catalog that should be used to infer the association cutoff.
+
+Matching algorithm
+==================
+
+Associations were made independently for each detector and visit.
+Predicted objects were first restricted to the detector footprint.
+For each predicted position, the algorithm found the nearest ``DiaSource`` within 1 arcsecond.
+Candidate pairs were considered in order of increasing separation and accepted only if neither the predicted object nor the detection had already been assigned.
+The result is therefore a one-to-one positional match.
+
+The matching did not use positional uncertainties, brightness, color, morphology, motion rate, or a probabilistic association score.
+The delivered ``diaDistanceRank`` is 1 for every ``SSSource`` row and must not be interpreted as a ranking of alternative matches.
+Each ``diaSourceId`` occurs at most once in ``SSSource``; unassociated ``DiaSource`` detections have no corresponding row.
+
+Contents and interpretation
+===========================
+
+Each accepted ``SSSource`` row contains selected measured quantities from the ``DiaSource`` and the predicted ephemeris at the observation epoch.
+These include measured astrometry and PSF photometry, predicted position and apparent Johnson-V magnitude, observing geometry, rates, and Cartesian position and velocity components.
+The ephemeris coordinates and state vectors are predictions from the input MPC orbit, not a Rubin-derived orbital solution.
+Users needing the complete detection record or detection-quality fields should join ``SSSource`` to ``DiaSource`` on ``diaSourceId``.
+
+The ``ephOffset`` column gives the total measured-minus-predicted angular separation.
+The coordinate, along-track, and cross-track components are available in ``ephOffsetRa``, ``ephOffsetDec``, ``ephOffsetAlongTrack``, and ``ephOffsetCrossTrack``.
+These residuals are useful diagnostics, but the hard 1-arcsecond selection radius truncates their distribution.
+
+Chance associations remain possible, especially in regions with high ``DiaSource`` density, because the match does not use brightness or detection reliability.
+Users constructing a high-purity sample should consider detection reliability, angular and cross-track residuals, consistency with the predicted magnitude, and the uncertainty of the input orbit.
+
+Rubin will submit the astrometric measurements represented in ``SSSource`` to the MPC in stages, so that association quality can be validated before each submission and the risk of reporting misassociations can be minimized.

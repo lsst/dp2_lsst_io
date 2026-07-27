@@ -61,7 +61,7 @@ Measurements on the difference and visit images at the locations of all variable
 Solar system (SS)
 =================
 
-Derived properties for moving objects detected in difference images.
+Associations and derived properties for previously known small bodies detected in difference images, together with auxiliary MPC orbit and identification tables.
 
 .. toctree::
     :maxdepth: 1
@@ -71,6 +71,8 @@ Derived properties for moving objects detected in difference images.
     ss_object
     ss_source
     mpcorb
+    current_identifications
+    numbered_identifications
 
 
 
@@ -88,4 +90,3 @@ Metadata for observations (visits and detectors) and the sky map (tracts and pat
     visit_detector
     coadd_patches
     deep_coadd_input_summary
-

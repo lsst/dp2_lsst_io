@@ -91,11 +91,11 @@ Runs image subtraction to generate difference images and associated detection ca
 Moving objects processing
 =========================
 
-Links detected sources into moving objects and generates Solar System catalogs.
+Associates difference-image detections with known small bodies and generates Solar System catalogs.
+Discovery and linking of new objects are performed separately in Prompt Processing.
 
 .. toctree::
     :maxdepth: 1
     :glob:
 
     moving/index
-

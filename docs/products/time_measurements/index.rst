@@ -8,7 +8,7 @@ Time measurements are in International Atomic Time (TAI).
 
 The data products that contain time measurements include the mean epoch of an object in each of the ugrizy-band coadds (e.g., ``r_epoch``) in the :doc:`Object </products/catalogs/object>` catalog, ``expTime``, ``obsStart``, ``expMidptMJD``, ``expMidpt``, and ``obsStartMJD`` in both the :doc:`Visit </products/catalogs/visit>` and :doc:`VisitDetector </products/catalogs/visit_detector>` catalogs, ``time_processed`` in the :doc:`DiaSource </products/catalogs/dia_source>` catalog, and the ``discoverySubmissionDate`` in the :doc:`SSObject </products/catalogs/ss_object>` catalog.
 
-The ``epoch`` provided in the :doc:`MPCORB </products/catalogs/mpcorb>` catalog is the only time measurement that is not measured in TAI, but Terrestrial Time (TT).
+The ``epoch`` provided in the :doc:`mpc_orbits </products/catalogs/mpcorb>` catalog is the only time measurement that is not measured in TAI, but Terrestrial Time (TT).
 
 
 Time scale definitions
@@ -36,4 +36,3 @@ Converting between time scales
 To convert between time scales, the astropy python library has helpful resources.
 
 Using the astropy ``Time`` object, declare times from TAP catalog queries as e.g., ``t = Time(60623, format='mjd', scale='tai')``. Conversion to a different time scale and format can be done using, e.g., ``t.utc.datetime`` or ``t.tt.jd``. It is advised to always include a ``scale='xxx'`` when defining astropy ``Time`` objects, since astropy assumes times are in UTC.
-

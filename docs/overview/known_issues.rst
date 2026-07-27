@@ -279,11 +279,13 @@ In the simplest case, where the diffraction spikes all line up, these detections
 Solar system processing
 ========================
 
-DP2 includes solar system object discovery and association results.
-Association uses 1 arcsecond matching without astrometric uncertainties, yielding approximately 4 million associations.
+DP2 delivers associations between ``DiaSource`` detections and previously known small bodies; it does not deliver a standalone catalog of Rubin discoveries.
+Association used a 1-arcsecond positional match without astrometric uncertainties, photometry, or a probabilistic score.
+Chance associations are therefore possible, particularly where the ``DiaSource`` density is high.
+See :doc:`/processing/moving/ss_association` for selection and quality guidance.
 
-Although astrometry for solar system objects shows a ~30 mas bias relative to orbits from the Minor Planet Center (MPC) catalog, this bias disappears when comparing against Gaia-only orbits.
-This indicates that the offset originates in the MPC orbit catalog rather than in Rubin astrometry.
-
-Three-night discovery candidates are not sufficiently pure (approximately 1 in 500 are real), while four-night candidates achieve substantially higher purity (approximately 1 in 10,000 are spurious).
-Users requiring high-purity samples should apply a minimum tracklet length of four nights.
+Astrometric comparisons show different behavior for different object samples.
+For long-observed objects discovered before 2000, median measured-minus-predicted coordinate residuals are below 1 mas, with approximately 13--14 mas scatter.
+For objects discovered during 2000--2020, offsets relative to JPL Horizons are spatially coherent across the DP2 footprint: in 5 by 5 degree sky cells, the median offset-vector length is approximately 19 mas, the 95th percentile is approximately 30 mas, and the largest values approach 42 mas.
+Our current hypothesis is that orbit catalogs can retain 20--40 mas systematic errors in predicted positions, especially for objects constrained primarily by northern, pre-Gaia astrometry.
+This interpretation remains under investigation and will be discussed in detail in a subsequent paper.
