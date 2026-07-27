@@ -4,7 +4,7 @@ Tutorials
 
 .. important::
 
-   Data Preview 2 has not yet been released. This website is currently under development.
+   The DP2 tutorials are under development.
 
 
 Tutorials demonstrating :doc:`/access/index` and analysis via the Rubin Science Platform (RSP).

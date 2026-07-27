@@ -12,7 +12,7 @@ Use the left- and right-hand menu bars to navigate this page.
 
 .. important::
 
-   Notebook tutorials for DP2 are currently under development. Until they're all ready, refer to the `DP1 Notebook tutorials <https://dp1.lsst.io/tutorials/notebook/index.html>`_ for missing how-to instructions.
+   Notebook tutorials for DP2 are currently under development. Until they're all ready, refer also to the `DP1 Notebook tutorials <https://dp1.lsst.io/tutorials/notebook/index.html>`_ for any missing instructions.
 
 
 

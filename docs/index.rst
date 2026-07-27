@@ -10,7 +10,7 @@ Vera C. Rubin Observatory Data Preview 2 (DP2)
 
 .. important::
 
-   Early Data Preview 2 (EDP2) has not yet been released. EDP2 will have limited image data products, deep coadd images only, but will have all catalogs including measurements made on the processed visit and difference images. See `RTN-011 <https://rtn-011.lsst.io/>`_ for details.
+   Early Data Preview 2 (EDP2) has limited image data products (deep coadd images only), but has all catalogs, including measurements made on the processed visit and difference images. See `RTN-011 <https://rtn-011.lsst.io/>`_ for the full DP2 timeline.
 
 
 Data Preview 2 contains image and catalog products from Rubin Science Pipelines v30 processing of observations obtained with the LSST Camera between April 2025 and January 2026.
@@ -29,7 +29,7 @@ Overview
 General information about the observations that comprise the dataset.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    Overview <overview/index>

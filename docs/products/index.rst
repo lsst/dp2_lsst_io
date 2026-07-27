@@ -6,7 +6,7 @@ Descriptions and schema for the science-ready data products.
 
 .. important::
 
-   Early Data Preview 2 (EDP2) has limited image data products, deep coadd images only, but has all catalogs including measurements made on the processed visit and difference images. It also has all the maps, supplementary information, and user-generated products listed below. See `RTN-011 <https://rtn-011.lsst.io/>`_ for details.
+   Early Data Preview 2 (EDP2) has limited image data products, deep coadd images only, but has all catalogs including measurements made on the processed visit and difference images. It also has all the maps, supplementary information, and user-generated products listed below. See `RTN-011 <https://rtn-011.lsst.io/>`_ for the full DP2 timeline.
 
 
 Catalogs
@@ -15,7 +15,7 @@ Catalogs
 Tables of measurements made on detected sources, plus observational metadata.
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :glob:
 
     catalogs/index
@@ -26,7 +26,7 @@ Images
 Individual, difference, and coadded images of the sky in the six LSST filters.
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :glob:
 
     images/index

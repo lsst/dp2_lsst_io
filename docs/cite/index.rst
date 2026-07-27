@@ -2,11 +2,6 @@
 How to cite DP2
 ###############
 
-.. important::
-
-   Data Preview 2 has not yet been released. This website is currently under development.
-
-
 For general information, see `How to cite Rubin Observatory <https://rubinobservatory.org/for-scientists/documentation/cite>`_ and `citations.lsst.io <https://citations.lsst.io/>`_.
 
 

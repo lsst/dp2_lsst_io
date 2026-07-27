@@ -4,7 +4,7 @@
 TAP and ADQL tips
 #################
 
-.. Important::
+.. important::
     If a query takes longer than expected, please report it in the `Rubin Community Forum <https://community.lsst.org/>`_.
     Rubin staff will investigate and help to optimize queries.
 

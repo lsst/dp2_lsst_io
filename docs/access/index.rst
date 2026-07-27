@@ -4,7 +4,7 @@ Data access
 
 .. important::
 
-   Data Preview 2 has not yet been released. This website is currently under development.
+   These webpages are under development.
 
 
 Services, tools, and policies for accessing the alerts and the Prompt data products.
