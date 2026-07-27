@@ -36,3 +36,4 @@ astropy = "https://docs.astropy.org/en/v7.0.1/"
 pandas = "https://pandas.pydata.org/pandas-docs/version/2.2/"
 
 [sphinx.redirects]
+"products/catalogs/mpcorb" = "products/catalogs/mpc_orbits"

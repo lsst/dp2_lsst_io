@@ -70,7 +70,7 @@ Associations and derived properties for previously known small bodies detected i
 
     ss_object
     ss_source
-    mpcorb
+    mpc_orbits
     current_identifications
     numbered_identifications
 
