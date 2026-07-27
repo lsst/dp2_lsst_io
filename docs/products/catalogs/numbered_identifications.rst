@@ -17,8 +17,8 @@ TAP
 ---
 
 * Table name: ``numbered_identifications``
-* Columns: |current_identifications_columns|
-* Rows: |current_identifications_rows|
+* Columns: |numbered_identifications_columns|
+* Rows: |numbered_identifications_rows|
 
 Butler
 ------
