@@ -21,18 +21,21 @@ Butler
 
 * |visit_summary_doi|
 * Dataset type: ('visit_summary', {band, **instrument**, day_obs, physical_filter, **visit**}, ExposureCatalog)
-* Format: Parquet
+* Format: FITS
 * Number of Butler datasets: |visit_summary_butler_count|
 
 Description
 ===========
 
-TBD
+The ``visit_summary`` dataset is a catalog with one row per detector processed for the visit.
+Each row contains metadata, statistics, the PSF model, the photometric calibration, and the full WCS.
+
+Note that the :doc:`/products/catalogs/visit` and :doc:`/products/catalogs/visit_detector` tables also contain aggregated per-visit and per-detector metadata and statistics, but not PSF models, photometric calibration objects, or WCS.
 
 Processing
 ----------
 
-TBD
+The visit summary is computed by the ``updateVisitSummary`` task and aggregates all the input metadata as well as the final PSF, global photometric calibration, and multi-visit WCS that was used in coaddition.
 
 Tutorials
 ---------
