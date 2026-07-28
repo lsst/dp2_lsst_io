@@ -39,7 +39,7 @@
 
 
 .. |visit_summary_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: visit_summary dataset type |doi_image| ``DOI URL TBD``
-.. |visit_summary_butler_count| replace:: ``COUNT TBD``
+.. |visit_summary_butler_count| replace:: 28,698
 
 .. |deep_coadd_input_summary_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: deep_coadd_input_summary dataset type |doi_image| https://doi.org/10.71929/rubin/3382551
 .. |deep_coadd_input_summary_butler_count| replace:: 1
