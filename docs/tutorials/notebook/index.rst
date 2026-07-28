@@ -130,6 +130,14 @@ Longer tutorials with a learning objective of executing an end-to-end scientific
     301/notebook-301-3.rst
 
 
+304. Cosmology
+--------------
+
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    304/notebook-304-1.rst
 
 
 .. _notebook-es:
