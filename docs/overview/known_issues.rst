@@ -263,6 +263,8 @@ Other known weaknesses of the model are:
 On test data, a purity and completeness of 93.1% are both achieved at a reliability threshold of 0.596 (97.5% at a threshold of 0.301 for injected point sources); users can adjust the threshold to trade purity against completeness.
 See `DMTN-337 <https://dmtn-337.lsst.io/>`__ for a full description of the model, its training data, and its performance.
 
+**DP2 reliability scores were accidentally calculated with the v0.1 model.** This is the same model as used for DP1.
+
 Diffraction spike masks and bright-star halos
 ---------------------------------------------
 
