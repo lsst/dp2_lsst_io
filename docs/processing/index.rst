@@ -6,7 +6,7 @@ Data processing
 
 .. important::
 
-   These webpages are under development.
+   Early Data Preview 2 data are available. These webpages are under development, and will continue to evolve.
 
 
 A high-level overview of the Data Release Processing (DRP) steps which generated the data products.
