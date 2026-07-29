@@ -218,6 +218,22 @@ Empty cells
 Coadd cells will have no data if none of the input warps is below the masked-pixel threshold, even though a fallback (such as including the warp with the largest mask fraction) could have been implemented.
 This is not so much a bug as a case where the best solution has not yet been chosen.
 
+Bad input visits
+----------------
+
+There are 15 visits included in coadd assembly that ran through the Science Pipelines despite being visually obviously bad.
+These include images that are very out of focus or had the shutter open while the telescope was in motion.
+The affected visits are listed below.
+These are a subset of the visits listed in ``bad.ecsv`` for LSSTCam in `excluded_visits <https://github.com/lsst-dm/excluded_visits>`__ , and were identified after DP2 processing had already begun.
+They are also a subset of the visits listed in :ref:`Bad visits <issues_badvisits>`.
+
+.. code-block::
+
+   Visits from DP2 deep_coadd_input_summary in excluded list: 15
+   [2025060400117 2025062000652 2025062900348 2025070300278 2025070300493
+    2025070400108 2025070400290 2025070400291 2025071100194 2025071700678
+    2025071800299 2025071800360 2025071800368 2025071800445 2025071800518]
+
 
 .. _issues_object_catalog:
 
@@ -291,3 +307,27 @@ For long-observed objects discovered before 2000, median measured-minus-predicte
 For objects discovered during 2000--2020, offsets relative to JPL Horizons are spatially coherent across the DP2 footprint: in 5 by 5 degree sky cells, the median offset-vector length is approximately 19 mas, the 95th percentile is approximately 30 mas, and the largest values approach 42 mas.
 Our current hypothesis is that orbit catalogs can retain 20--40 mas systematic errors in predicted positions, especially for objects constrained primarily by northern, pre-Gaia astrometry.
 This interpretation remains under investigation and will be discussed in detail in a subsequent paper.
+
+
+.. _issues_badvisits:
+
+Bad visits
+==========
+
+There are 39 visits in DP2 that processed through at least some stages of the Science Pipelines despite being visually obviously bad.
+As described in :ref:`Coadds <issues_coadds>`, only 15 of these were used as inputs to coadds.
+They include images that are very out of focus or had the shutter open while the telescope was in motion.
+The affected visits are listed below.
+These are a subset of the visits listed in ``bad.ecsv`` for LSSTCam in `excluded_visits <https://github.com/lsst-dm/excluded_visits>`__ , and were identified after DP2 processing had already begun.
+
+.. code-block::
+
+   Visits from DP2 visit_summary in excluded list: 39
+   [2025050600762 2025052500596 2025052900166 2025060100605 2025060400085
+    2025060400117 2025061900271 2025062000652 2025062900348 2025063000597
+    2025070300278 2025070300493 2025070400108 2025070400290 2025070400291
+    2025070400293 2025070800409 2025071100194 2025071100273 2025071100319
+    2025071100365 2025071100501 2025071100819 2025071300612 2025071600479
+    2025071700678 2025071800104 2025071800110 2025071800129 2025071800151
+    2025071800299 2025071800360 2025071800368 2025071800382 2025071800445
+    2025071800518 2025072000352 2025072200096 2025072200207]
