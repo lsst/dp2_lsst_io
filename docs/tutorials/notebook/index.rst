@@ -225,6 +225,7 @@ Longer tutorials with a learning objective of executing an end-to-end scientific
     :glob:
 
     305/notebook-305-1.rst
+    305/notebook-305-2.rst
 
 
 306. Extragalactic transients
