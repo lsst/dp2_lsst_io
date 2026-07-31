@@ -23,7 +23,7 @@
 
 .. |object_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: object dataset type |doi_image| https://doi.org/10.71929/rubin/3382539 [:download:`BibTeX </bib/butler-object.bib>`]
 .. |object_butler_count| replace:: 2,174
-.. |Object_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: Object searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382540 [:download:`BibTeX </bib/tap-object.bib>`]
+.. |Object_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: Object searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382540 [:download:`BibTeX </bib/tap-Object.bib>`]
 .. |Object_rows| replace:: 786,420,720
 .. |Object_columns| replace:: 1,248
 
