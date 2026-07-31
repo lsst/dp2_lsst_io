@@ -15,7 +15,7 @@ Vera C. Rubin Observatory Data Preview 2 (DP2)
 
 Data Preview 2 contains image and catalog products from Rubin Science Pipelines v30 processing of observations obtained with the LSST Camera between April 2025 and January 2026.
 
-*Dataset* |dataset_doi| [:download:`BibTeX <bib/dataset.bib>`].
+*Dataset* |dataset_doi|.
 To be used when citing the DP2 dataset and this documentation (the link is self-referential).
 
 **Data Policy:** Only Rubin data rights holders may have an account in the Rubin Science Platform (RSP) and access to Data Preview 2.
