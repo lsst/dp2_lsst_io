@@ -11,11 +11,11 @@ DOI and publications
 Data release and data products
 ------------------------------
 
-When citing this data release please reference the data release paper: |dp2_paper| [:download:`BibTeX </bib/paper.bib>`].
+When citing this data release please reference the data release paper: |dp2_paper|.
 
 When asked to cite the DP2 dataset as a whole please use:
 
-|dataset_doi| [:download:`BibTeX </bib/dataset.bib>`]
+|dataset_doi|
 
 If you only use a specific subset, such as only querying the Objects catalog or only using the deep coadd images, you may cite the DOI explicitly assigned to that subset.
 Each individual page in :doc:`/products/index` includes the relevant DOI.
@@ -31,7 +31,7 @@ Science pipelines software
 
 The `Rubin Science Pipelines <https://pipelines.lsst.io/>`_ can be formally cited as:
 
-|osprae_doi| [:download:`BibTeX </bib/osprae.bib>`]
+|osprae_doi|
 
 
 Telescope and instrument
@@ -42,7 +42,7 @@ The `Minor Planet Center <https://minorplanetcenter.net/iau/lists/ObsCodesF.html
 
 The instrument itself can be formally cited as
 
-|lsstcam_doi| [:download:`BibTeX </bib/lsstcam.bib>`]
+|lsstcam_doi|
 
 and that page includes additional references describing the camera.
 
@@ -52,7 +52,7 @@ Tutorials
 
 When citing the tutorials please use:
 
-|tutorials_doi| [:download:`BibTeX </bib/tutorials.bib>`]
+|tutorials_doi|
 
 
 How to refer to single objects from DP2 data
