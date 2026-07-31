@@ -27,90 +27,90 @@
 .. |Object_rows| replace:: 786,420,720
 .. |Object_columns| replace:: 1,248
 
-.. |object_shear_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: object_shear_all dataset type |doi_image| https://doi.org/10.71929/rubin/3382555
+.. |object_shear_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: object_shear_all dataset type |doi_image| https://doi.org/10.71929/rubin/3382555 [:download:`BibTeX </bib/butler-object_shear_all.bib>`]
 .. |object_shear_butler_count| replace:: 1,699
-.. |ShearObject_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: ShearObject searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382556
+.. |ShearObject_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: ShearObject searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382556 [:download:`BibTeX </bib/tap-ShearObject.bib>`]
 .. |ShearObject_rows| replace:: 2,530,178,491
 .. |ShearObject_columns| replace:: 67
 
-.. |object_scarlet_models_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: object_scarlet_models dataset type |doi_image| https://doi.org/10.71929/rubin/3382554
+.. |object_scarlet_models_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: object_scarlet_models dataset type |doi_image| https://doi.org/10.71929/rubin/3382554  [:download:`BibTeX </bib/butler-object_scarlet_models.bib>`]
 .. |object_scarlet_models_butler_count| replace:: 195,366
 
 
-.. |visit_summary_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: visit_summary dataset type |doi_image| https://doi.org/10.71929/rubin/3388544
+.. |visit_summary_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: visit_summary dataset type |doi_image| https://doi.org/10.71929/rubin/3388544 [:download:`BibTeX </bib/butler-visit_summary.bib>`]
 .. |visit_summary_butler_count| replace:: 28,698
 
-.. |deep_coadd_input_summary_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: deep_coadd_input_summary dataset type |doi_image| https://doi.org/10.71929/rubin/3382551
+.. |deep_coadd_input_summary_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: deep_coadd_input_summary dataset type |doi_image| https://doi.org/10.71929/rubin/3382551 [:download:`BibTeX </bib/butler-deep_coadd_input_summary.bib>`]
 .. |deep_coadd_input_summary_butler_count| replace:: 1
 
-.. |isolated_star_stellar_motions_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: isolated_star_stellar_motions dataset type |doi_image| https://doi.org/10.71929/rubin/3382552
+.. |isolated_star_stellar_motions_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: isolated_star_stellar_motions dataset type |doi_image| https://doi.org/10.71929/rubin/3382552 [:download:`BibTeX </bib/butler-isolated_star_stellar_motions.bib>`]
 .. |isolated_star_stellar_motions_butler_count| replace:: 7,809
-.. |IsolatedStarStellarMotions_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: IsolatedStarStellarMotions searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382553
+.. |IsolatedStarStellarMotions_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: IsolatedStarStellarMotions searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382553 [:download:`BibTeX </bib/tap-IsolatedStarStellarMotions.bib>`]
 .. |IsolatedStarStellarMotions_rows| replace:: 318,429,415
 .. |IsolatedStarStellarMotions_columns| replace:: 28
 
-.. |source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: source dataset type |doi_image| https://doi.org/10.71929/rubin/3382537
+.. |source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: source dataset type |doi_image| https://doi.org/10.71929/rubin/3382537 [:download:`BibTeX </bib/butler-source.bib>`]
 .. |source_butler_count| replace:: 28,589
-.. |Source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: Source searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382538
+.. |Source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: Source searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382538 [:download:`BibTeX </bib/tap-Source.bib>`]
 .. |Source_rows| replace:: 17,566,180,086
 .. |Source_columns| replace:: 154
 
-.. |object_forced_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: object_forced_source dataset type |doi_image| https://doi.org/10.71929/rubin/3382541
+.. |object_forced_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: object_forced_source dataset type |doi_image| https://doi.org/10.71929/rubin/3382541 [:download:`BibTeX </bib/butler-object_forced_source.bib>`]
 .. |object_forced_source_butler_count| replace:: 192,147
-.. |ForcedSource_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: ForcedSource searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382542
+.. |ForcedSource_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: ForcedSource searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382542 [:download:`BibTeX </bib/tap-ForcedSource.bib>`]
 .. |ForcedSource_rows| replace:: 44,727,948,693
 .. |ForcedSource_columns| replace:: 28
 
-.. |dia_object_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: dia_object dataset type |doi_image| https://doi.org/10.71929/rubin/3382533
+.. |dia_object_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: dia_object dataset type |doi_image| https://doi.org/10.71929/rubin/3382533  [:download:`BibTeX </bib/butler-dia_object.bib>`]
 .. |dia_object_butler_count| replace:: 2,112
-.. |DiaObject_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: DiaObject searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382534
+.. |DiaObject_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: DiaObject searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382534 [:download:`BibTeX </bib/tap-DiaObject.bib>`]
 .. |DiaObject_rows| replace:: 232,004,216
 .. |DiaObject_columns| replace:: 64
 
-.. |dia_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: dia_source dataset type |doi_image| https://doi.org/10.71929/rubin/3382531
+.. |dia_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: dia_source dataset type |doi_image| https://doi.org/10.71929/rubin/3382531 [:download:`BibTeX </bib/butler-dia_source.bib>`]
 .. |dia_source_butler_count| replace:: 2,112
-.. |DiaSource_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: DiaSource searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382532
+.. |DiaSource_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: DiaSource searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382532 [:download:`BibTeX </bib/tap-DiaSource.bib>`]
 .. |DiaSource_rows| replace:: 1,000,825,975
 .. |DiaSource_columns| replace:: 90
 
-.. |dia_object_forced_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: dia_object_forced_source dataset type |doi_image| https://doi.org/10.71929/rubin/3382535
+.. |dia_object_forced_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: dia_object_forced_source dataset type |doi_image| https://doi.org/10.71929/rubin/3382535 [:download:`BibTeX </bib/butler-dia_object_forced_source.bib>`]
 .. |dia_object_forced_source_butler_count| replace:: 183,169
-.. |ForcedSourceOnDiaObject_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: ForcedSourceOnDiaObject searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382536
+.. |ForcedSourceOnDiaObject_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: ForcedSourceOnDiaObject searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382536 [:download:`BibTeX </bib/tap-ForcedSourceOnDiaObject.bib>`]
 .. |ForcedSourceOnDiaObject_rows| replace:: 24,259,599,059
 .. |ForcedSourceOnDiaObject_columns| replace:: 26
 
-.. |ss_object_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: ss_object dataset type |doi_image| https://doi.org/10.71929/rubin/3382549
+.. |ss_object_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: ss_object dataset type |doi_image| https://doi.org/10.71929/rubin/3382549 [:download:`BibTeX </bib/butler-ss_object.bib>`]
 .. |ss_object_butler_count| replace:: 1
-.. |SSObject_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: SSObject searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382550
+.. |SSObject_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: SSObject searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382550 [:download:`BibTeX </bib/tap-SSObject.bib>`]
 .. |SSObject_rows| replace:: 299,343
 .. |SSObject_columns| replace:: 80
 
-.. |ss_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: ss_source dataset type |doi_image| https://doi.org/10.71929/rubin/3382547
+.. |ss_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: ss_source dataset type |doi_image| https://doi.org/10.71929/rubin/3382547 [:download:`BibTeX </bib/butler-ss_source.bib>`]
 .. |ss_source_butler_count| replace:: 1
-.. |SSSource_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: SSSource searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382548
+.. |SSSource_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: SSSource searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382548 [:download:`BibTeX </bib/tap-SSSource.bib>`]
 .. |SSSource_rows| replace:: 8,136,150
 .. |SSSource_columns| replace:: 39
 
 .. |mpc_orbits_rows| replace:: ``<tbd>``
 .. |mpc_orbits_columns| replace:: ``<tbd>``
 
-.. |visit_table_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: visit_table dataset type |doi_image| https://doi.org/10.71929/rubin/3382543
+.. |visit_table_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: visit_table dataset type |doi_image| https://doi.org/10.71929/rubin/3382543 [:download:`BibTeX </bib/butler-visit_table.bib>`]
 .. |visit_table_butler_count| replace:: 1
-.. |Visit_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: Visit searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382544
+.. |Visit_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: Visit searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382544 [:download:`BibTeX </bib/tap-Visit.bib>`]
 .. |Visit_rows| replace:: 28,698
 .. |Visit_columns| replace:: 15
 
-.. |visit_detector_table_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: visit_detector_table dataset type |doi_image| https://doi.org/10.71929/rubin/3382545
+.. |visit_detector_table_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: visit_detector_table dataset type |doi_image| https://doi.org/10.71929/rubin/3382545 [:download:`BibTeX </bib/butler-visit_detector_table.bib>`]
 .. |visit_detector_table_butler_count| replace:: 1
-.. |VisitDetector_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: VisitDetector searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382546
+.. |VisitDetector_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: VisitDetector searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382546 [:download:`BibTeX </bib/tap-VisitDetector.bib>`]
 .. |VisitDetector_rows| replace:: 5,150,198
 .. |VisitDetector_columns| replace:: 56
 
-.. |CoaddPatches_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: CoaddPatches searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382557
+.. |CoaddPatches_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: CoaddPatches searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382557 [:download:`BibTeX </bib/tap-CoaddPatches.bib>`]
 .. |CoaddPatches_rows| replace:: 197,105
 .. |CoaddPatches_columns| replace:: 5
 
-.. |deep_coadd_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: deep_coadd dataset type |doi_image| https://doi.org/10.71929/rubin/3382529
+.. |deep_coadd_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: deep_coadd dataset type |doi_image| https://doi.org/10.71929/rubin/3382529 [:download:`BibTeX </bib/butler-deep_coadd.bib>`]
 .. |deep_coadd_butler_count| replace:: 925,460
 
 .. |template_coadd_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 2: template_coadd dataset type |doi_image| ``<doi-tbd>``
