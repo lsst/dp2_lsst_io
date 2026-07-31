@@ -7,24 +7,23 @@
    :width: 15
    :alt: DOI Logo
 
-.. |dp1_paper| replace:: **NSF-DOE Vera C. Rubin Observatory** (2025); The Vera C. Rubin Observatory Data Preview 1 |doi_image| https://doi.org/10.71929/rubin/2570536
 
-.. |dataset_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2 |doi_image| https://doi.org/10.71929/rubin/3382528
+.. |dataset_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2 |doi_image| https://doi.org/10.71929/rubin/3382528 [:download:`BibTeX </bib/dataset.bib>`]
 
-.. |dp2_paper| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); The Vera C. Rubin Observatory Data Preview 2 |doi_image| https://doi.org/10.71929/rubin/3377440
+.. |dp2_paper| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); The Vera C. Rubin Observatory Data Preview 2 |doi_image| https://doi.org/10.71929/rubin/3377440 [:download:`BibTeX </bib/paper.bib>`]
 
-.. |lsstcam_doi| replace:: *Citation:* SLAC National Accelerator Laboratory & NSF-DOE Vera C. Rubin Observatory (2025); *The LSST Camera (LSSTCam)* |doi_image| https://doi.org/10.71929/rubin/2571927
+.. |lsstcam_doi| replace:: *Citation:* SLAC National Accelerator Laboratory & NSF-DOE Vera C. Rubin Observatory (2025); *The LSST Camera (LSSTCam)* |doi_image| https://doi.org/10.71929/rubin/2571927 [:download:`BibTeX </bib/lsstcam.bib>`]
 
-.. |osprae_doi| replace:: *Citation*: **Rubin Observatory Science Pipelines Developers** (2025); The LSST Science Pipelines Software: Optical Survey Pipeline Reduction and Analysis Environment |doi_image| https://doi.org/10.71929/rubin/2570545
+.. |osprae_doi| replace:: *Citation*: **Rubin Observatory Science Pipelines Developers** (2025); The LSST Science Pipelines Software: Optical Survey Pipeline Reduction and Analysis Environment |doi_image| https://doi.org/10.71929/rubin/2570545 [:download:`BibTeX </bib/osprae.bib>`]
 
-.. |tutorials_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Rubin Observatory LSST Tutorials |doi_image| https://doi.org/10.11578/rubin/dc.20250909.20
+.. |tutorials_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Rubin Observatory LSST Tutorials |doi_image| https://doi.org/10.11578/rubin/dc.20250909.20 [:download:`BibTeX </bib/tutorials.bib>`]
 
 .. |rtn-099_doi| replace:: *Citation*: **Porter et al.** (2025); Photometric Transformation Relations for the LSST Data Preview 1 |doi_image| https://doi.org/10.71929/rubin/3006074
 
 
-.. |object_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: object dataset type |doi_image| https://doi.org/10.71929/rubin/3382539
+.. |object_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: object dataset type |doi_image| https://doi.org/10.71929/rubin/3382539 [:download:`BibTeX </bib/butler-object.bib>`]
 .. |object_butler_count| replace:: 2,174
-.. |Object_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: Object searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382540
+.. |Object_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: Object searchable catalog |doi_image| https://doi.org/10.71929/rubin/3382540 [:download:`BibTeX </bib/tap-object.bib>`]
 .. |Object_rows| replace:: 786,420,720
 .. |Object_columns| replace:: 1,248
 
