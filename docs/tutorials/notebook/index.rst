@@ -140,6 +140,16 @@ Longer tutorials with a learning objective of executing an end-to-end scientific
     304/notebook-304-1.rst
 
 
+310. Photometric redshifts
+--------------------------
+
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    310/notebook-310-1.rst
+
+
 .. _notebook-es:
 
 Traducciones al Español
