@@ -77,6 +77,8 @@ Tutorials with a learning objective of understanding one of the data products.
     201/notebook-201-12.rst
     201/notebook-201-13.rst
     201/notebook-201-14.rst
+    201/notebook-201-15.rst
+    201/notebook-201-16.rst
 
 
 202. Images
