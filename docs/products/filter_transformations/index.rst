@@ -23,5 +23,5 @@ There are also some transformation equations based on synthetic photometry avail
 Tutorials
 ---------
 
-Until they are available for DP2 and LSSTCam, refer to the `DP1 calibrations tutorial notebooks <https://dp1.lsst.io/tutorials/notebook/index.html#calibrations>`_).
+Until they are available for DP2 and LSSTCam, refer to the `DP1 calibrations tutorial notebooks <https://dp1.lsst.io/tutorials/notebook/index.html#calibrations>`_.
 
