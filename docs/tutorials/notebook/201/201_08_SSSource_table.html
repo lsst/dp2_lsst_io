@@ -10247,8 +10247,8 @@ rkJggg==
 <p>For the Rubin Science Platform at data.lsst.cloud.<br/>
 Data Release: <a href="https://dp2.lsst.io/">Data Preview 2</a><br/>
 Container Size: Large<br/>
-LSST Science Pipelines version: r30.0.9<br/>
-Last verified to run: 2026-07-20<br/>
+LSST Science Pipelines version: r30.0.10<br/>
+Last verified to run: 2026-08-05<br/>
 Repository: <a href="https://github.com/lsst/tutorial-notebooks">github.com/lsst/tutorial-notebooks</a><br/>
 DOI: <a href="https://doi.org/10.11578/rubin/dc.20250909.20">10.11578/rubin/dc.20250909.20</a></p>
 </div>
@@ -10496,7 +10496,7 @@ or use the TAP service via the Portal Aspect or as demonstrated in Section 2.1.<
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div><i>Table length=39</i>
-<table class="table-striped table-bordered table-condensed" id="table139081924474704">
+<table class="table-striped table-bordered table-condensed" id="table134305784772432">
 <thead><tr><th>column_name</th><th>datatype</th><th>description</th><th>unit</th></tr></thead>
 <thead><tr><th>str64</th><th>str64</th><th>str512</th><th>str64</th></tr></thead>
 <tr><td>diaSourceId</td><td>long</td><td>Unique identifier of the observation (matching DiaSource.diaSourceId).</td><td></td></tr>
@@ -10508,26 +10508,7 @@ or use the TAP service via the Portal Aspect or as demonstrated in Section 2.1.<
 <tr><td>galLat</td><td>double</td><td>Galactic latitude, converted from the observed coordinates.</td><td>deg</td></tr>
 <tr><td>elongation</td><td>float</td><td>Solar elongation of the object at the time of observation.</td><td>deg</td></tr>
 <tr><td>phaseAngle</td><td>float</td><td>Phase angle between the Sun, object, and observer.</td><td>deg</td></tr>
-<tr><td>topoRange</td><td>float</td><td>Topocentric distance (delta) at light-emission time.</td><td>AU</td></tr>
-<tr><td>topoRangeRate</td><td>float</td><td>Topocentric radial (line-of-sight) velocity (deldot); positive values indicate motion away from the observer.</td><td>km/s</td></tr>
-<tr><td>helioRange</td><td>float</td><td>Heliocentric distance (r) at light-emission time.</td><td>AU</td></tr>
-<tr><td>helioRangeRate</td><td>float</td><td>Heliocentric radial velocity (rdot); positive values indicate motion away from the Sun.</td><td>km/s</td></tr>
-<tr><td>ephRa</td><td>double</td><td>Predicted ICRS right ascension from the orbit in mpc_orbits.</td><td>deg</td></tr>
-<tr><td>ephDec</td><td>double</td><td>Predicted ICRS declination from the orbit in mpc_orbits.</td><td>deg</td></tr>
-<tr><td>ephVmag</td><td>float</td><td>Predicted magnitude in V band, computed from mpc_orbits data including the mpc_orbits-provided (H, G) estimates</td><td>mag</td></tr>
-<tr><td>ephRate</td><td>float</td><td>Total predicted on-sky angular rate of motion.</td><td>deg/d</td></tr>
-<tr><td>ephRateRa</td><td>float</td><td>Predicted on-sky angular rate in the R.A. direction (includes the cos(dec) factor).</td><td>deg/d</td></tr>
-<tr><td>ephRateDec</td><td>float</td><td>Predicted on-sky angular rate in the declination direction.</td><td>deg/d</td></tr>
-<tr><td>ephOffset</td><td>float</td><td>Total observed versus predicted angular separation on the sky.</td><td>arcsec</td></tr>
-<tr><td>ephOffsetRa</td><td>double</td><td>Offset between observed and predicted position in the R.A. direction (includes cos(dec) term).</td><td>arcsec</td></tr>
-<tr><td>ephOffsetDec</td><td>double</td><td>Offset between observed and predicted position in declination.</td><td>arcsec</td></tr>
-<tr><td>ephOffsetAlongTrack</td><td>float</td><td>Offset between observed and predicted position in the along-track direction on the sky.</td><td>arcsec</td></tr>
-<tr><td>ephOffsetCrossTrack</td><td>float</td><td>Offset between observed and predicted position in the cross-track direction on the sky.</td><td>arcsec</td></tr>
-<tr><td>helio_x</td><td>float</td><td>Cartesian heliocentric X coordinate at light-emission time (ICRS).</td><td>AU</td></tr>
-<tr><td>helio_y</td><td>float</td><td>Cartesian heliocentric Y coordinate at light-emission time (ICRS).</td><td>AU</td></tr>
-<tr><td>helio_z</td><td>float</td><td>Cartesian heliocentric Z coordinate at light-emission time (ICRS).</td><td>AU</td></tr>
-<tr><td>helio_vx</td><td>float</td><td>Cartesian heliocentric X velocity at light-emission time (ICRS).</td><td>km/s</td></tr>
-<tr><td>helio_vy</td><td>float</td><td>Cartesian heliocentric Y velocity at light-emission time (ICRS).</td><td>km/s</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td></tr>
 <tr><td>helio_vz</td><td>float</td><td>Cartesian heliocentric Z velocity at light-emission time (ICRS).</td><td>km/s</td></tr>
 <tr><td>helio_vtot</td><td>float</td><td>The magnitude of the heliocentric velocity vector, sqrt(vx*vx + vy*vy + vz*vz).</td><td>km/s</td></tr>
 <tr><td>topo_x</td><td>float</td><td>Cartesian topocentric X coordinate at light-emission time (ICRS).</td><td>AU</td></tr>
@@ -10810,7 +10791,7 @@ or use the TAP service via the Portal Aspect or as demonstrated in Section 2.1.<
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div><i>Table length=4</i>
-<table class="table-striped table-bordered table-condensed" id="table139081925585072">
+<table class="table-striped table-bordered table-condensed" id="table134305785866416">
 <thead><tr><th>column_name</th><th>datatype</th><th>description</th><th>unit</th></tr></thead>
 <thead><tr><th>str64</th><th>str64</th><th>str512</th><th>str64</th></tr></thead>
 <tr><td>ssObjectId</td><td>long</td><td>Unique LSST identifier of the Solar System object.</td><td></td></tr>
@@ -10904,7 +10885,7 @@ or use the TAP service via the Portal Aspect or as demonstrated in Section 2.1.<
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div><i>Table length=1</i>
-<table class="table-striped table-bordered table-condensed" id="table139081925589328">
+<table class="table-striped table-bordered table-condensed" id="table134305785870672">
 <thead><tr><th>COUNT1</th></tr></thead>
 <thead><tr><th>int64</th></tr></thead>
 <tr><td>8136150</td></tr>
@@ -10960,7 +10941,7 @@ or use the TAP service via the Portal Aspect or as demonstrated in Section 2.1.<
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div><i>Table length=1</i>
-<table class="table-striped table-bordered table-condensed" id="table139081924540848">
+<table class="table-striped table-bordered table-condensed" id="table134305784839152">
 <thead><tr><th>min1</th><th>max2</th></tr></thead>
 <thead><tr><th>int64</th><th>int64</th></tr></thead>
 <tr><td>20606185051795521</td><td>6001945050679883312</td></tr>
@@ -11620,20 +11601,6 @@ but the butler can be used to retrieve the same table information.</p>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">del</span> <span class="n">col_list</span><span class="p">,</span> <span class="n">results</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=bf56f744-0cb6-4749-94dd-408b6c8cc79e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span>
 </pre></div>
 </div>
 </div>
