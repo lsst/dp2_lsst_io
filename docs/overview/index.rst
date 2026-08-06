@@ -14,7 +14,7 @@ General information about the observations that comprise the dataset.
 LSST Camera
 ===========
 
-|lsstcam_doi| [:download:`BibTeX </bib/lsstcam.bib>`]
+|lsstcam_doi|
 
 All observations included in the DP2 dataset were obtained with the LSST Camera (LSSTCam).
 
