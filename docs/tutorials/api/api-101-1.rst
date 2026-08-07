@@ -1,8 +1,8 @@
 .. _api-101-1:
 
-###################################
-101.1. Get started with with TOPCAT
-###################################
+##############################
+101.1. Get started with TOPCAT
+##############################
 
 For the API Aspect of the Rubin Science Platform at data.lsst.cloud.
 
@@ -46,8 +46,7 @@ this will open up a separate Table Access Protocol (TAP) Query window.
 
 .. figure:: images/api-101-1-1.png
     :name: api-101-1-1
-    :alt: A screenshot of the main TOPCAT window with the Table Access Protocol item
-	  highlighted by the cursor under the VO drop-down menu.
+    :alt: A screenshot of the main TOPCAT window with the Table Access Protocol item highlighted by the cursor under the VO drop-down menu.
 
     Figure 1:  The main TOPCAT window, with the "VO" menu pulled down and the "Table Access Protocol (TAP) Query" highlighted.
 
@@ -58,9 +57,7 @@ In “TAP URL”, at the bottom of the window, use the DP2 TAP service address `
 .. figure:: images/api-101-1-2.png
     :name: api-101-1-2
     :alt: A screenshot of the the Table Access Protocol (TAP) Query window in which the value
-          for the TAP URL has been filled in with the URL
-	  https://data.lsst.cloud/api/tap .  A blue oval indicates the location of the
-          Selected TAP Service panel in the window.
+          for the TAP URL has been filled in with the URL https://data.lsst.cloud/api/tap.
 
     Figure 2:  The Table Access Protocol (TAP) Query window with the location of the "Selected TAP Service" panel indicated by a red oval.
 
@@ -141,7 +138,6 @@ Copy the code block below and paste it into the ADQL text box, then click "Run Q
 .. figure:: images/api-101-1-7.png
     :name: api-101-1-7
     :alt:  A screenshot of of Table Access Protocol (TAP) Query window.
-	  It appears the same as in Figure 5 with the code block in the ADQL Text box.
 
     Figure 7:  The Table Access Protocol (TAP) Query window as in Figure 5, with
     the code block in the ADQL Text box.
@@ -173,12 +169,7 @@ This particular table contains 321,139 rows and 5 columns.  Vertical and horizon
 
 .. figure:: images/api-101-1-10.png
     :name: api-101-1-10
-    :alt: A screenshot of a Table Browser window.  It shows the contents of Table 1,
-	  called TAP_1_dp2.Object.
+    :alt: A screenshot of a Table Browser window.  It shows the contents of Table 1, called TAP_1_dp2.Object.
 
     Figure 10:  The Table Browser Window, showing the contents of the newly created table.
-
-**13. Explore.**
-
-At this stage, the Rubin DP2 data set can be further explored via TOPCAT.
 
