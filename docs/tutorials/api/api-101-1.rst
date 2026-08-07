@@ -1,19 +1,19 @@
 .. _api-101-1:
 
-#####################################
-101.1. How to get started with TOPCAT
-#####################################
+###################################
+101.1. Get started with with TOPCAT
+###################################
 
 For the API Aspect of the Rubin Science Platform at data.lsst.cloud.
 
-**Data Release:** DP1
+**Data Release:** DP2
 
-**Last verified to run:** 2026-02-02
+**Last verified to run:** 2026-08-07
 
 **Learning objective:** This tutorial provides a basic guide to set up `TOPCAT <http://www.star.bris.ac.uk/~mbt/topcat/>`_
-to explore DP1.
+to explore DP2.
 
-**LSST data products:** The DP1 catalogs within the Rubin Science Platform (RSP) Table Access Protocol (TAP) service.
+**LSST data products:** The DP2 catalogs within the Rubin Science Platform (RSP) Table Access Protocol (TAP) service.
 
 **Credit:** Based on tutorials developed by the Rubin Community Science team. Please consider acknowledging them if this
 tutorial is used for the preparation of journal articles, software releases, or other tutorials.
@@ -35,13 +35,14 @@ A new token is not needed for every TOPCAT session; the token can be reused, but
     **Note that tokens should be treated like passwords:  they should not be shared with others.
     Take precautions to keep tokens secure.  Never store tokens in git-tracked files.**
 
-**2. Start up TOPCAT on your own computer.**
+**2. Start TOPCAT.**
 
 See `TOPCAT homepage <http://www.star.bris.ac.uk/~mbt/topcat/>`_ for download and install instructions.
 
-**3. Click on "Table Access Protocol (TAP) Query" under the “VO” menu.**
+**3. Open TAP Query.**
 
-This will open up a separate Table Access Protocol (TAP) Query window.
+Click on "Table Access Protocol (TAP) Query" under the “VO” menu,
+this will open up a separate Table Access Protocol (TAP) Query window.
 
 .. figure:: images/api-101-1-1.png
     :name: api-101-1-1
@@ -50,9 +51,9 @@ This will open up a separate Table Access Protocol (TAP) Query window.
 
     Figure 1:  The main TOPCAT window, with the "VO" menu pulled down and the "Table Access Protocol (TAP) Query" highlighted.
 
-**4. In “TAP URL”, at the bottom of the window, fill in the relevant TAP service address, then click the “Use Service” button.**
+**4. Add DP2 TAP URL**
 
-For DP1, use ``https://data.lsst.cloud/api/tap``.
+In “TAP URL”, at the bottom of the window, use the DP2 TAP service address ``https://data.lsst.cloud/api/tap``, then click the “Use Service” button.
 
 .. figure:: images/api-101-1-2.png
     :name: api-101-1-2
@@ -61,11 +62,11 @@ For DP1, use ``https://data.lsst.cloud/api/tap``.
 	  https://data.lsst.cloud/api/tap .  A blue oval indicates the location of the
           Selected TAP Service panel in the window.
 
-    Figure 2:  The Table Access Protocol (TAP) Query window with the location of the "Selected TAP Service" panel indicated by a blue oval.
+    Figure 2:  The Table Access Protocol (TAP) Query window with the location of the "Selected TAP Service" panel indicated by a red oval.
 
 **5. Populate the "Authenticate" window.**
 
-Fill in ``x-oauth-basic`` for the "User" and your security token for the "Password" and click "OK".
+For "User" add ``x-oauth-basic`` and for "Password" and security token created in Step 1, then click "Authenticate".
 
 .. figure:: images/api-101-1-3.png
     :name: api-101-1-3
@@ -74,73 +75,61 @@ Fill in ``x-oauth-basic`` for the "User" and your security token for the "Passwo
 
     Figure 3:  The Authentication window with the values for the user and the password filled in.
 
-**6. Note that the RSP TAP service is now accessible from your instance of TOPCAT.**
+**6. RSP TAP service is now accessible from TOPCAT.**
 
-An indicator that the service is now accessible is that a list of DP1 tables available has appeared in the Metadata panel of the TAP Query window.
+A list of available DP2 tables now appears in the TAP Query window’s Metadata panel.
+Note: Under the TAP service, the file structure may list dp02 and dp1 catalogs first.  DP2 tables can be found by collapsing those folders or using the scroll bar.
 
 .. figure:: images/api-101-1-4.png
     :name: api-101-1-4
-    :alt: A screenshot of the Table Access Protocol (TAP) Query window.
-          The Table Access Protocol (TAP) Query window shows three panels, stacked vertically.  The
-	  top panel is the Metadata panel, and it shows a list of DP1 schemas and tables that
-	  are available to query.  The middle panel is the Service Capabilities panel, and it shows that
-	  the available Query Language is ADQL-2.0.  The bottom panel is the ADQL Text panel, and it
-	  indicates the current Mode is Synchronous; the bottom panel text box is currently empty.
+    :alt: A screenshot of the Table Access Protocol (TAP) Query window showing DP2 tables.
 
-    Figure 4:  The Table Access Protocol (TAP) Query window; a list of DP1 tables
+    Figure 4:  The Table Access Protocol (TAP) Query window; a list of DP2 tables
     available for query can be be seen in the Metadata panel.
 
-**7. In the left Metadata panel of the Table Access Protocol (TAP) Query window, click on the dp1.Object table.**
+**7. Click dp2.Object table.**
 
-In the right Metadata panel, click the "columns" tabs to change the view.
-Note that the column names, data types, units, and descriptions for the columns of the dp1.Object table are shown.
+In the left Metadata panel of the Table Access Protocol (TAP) Query window, click on the dp1.Object table.
+Then, in the right Metadata panel, click the "columns" tabs to change the view.
+Note that the column names, data types, units, and descriptions for the columns of the dp2.Object table are shown.
 
 .. figure:: images/api-101-1-5.png
     :name: api-101-1-5
-    :alt: A screenshot of Table Access Protocol (TAP) Query window.
-	  It appears the same as in Figure 4, but the dp1.Object table is highlighted
-	  in the left-hand Metadata panel and the column names, data types, units, and
-	  descriptions for the columns in the dp1.Object table are shown in the
-	  right-hand Metadata panel.
+    :alt: A screenshot of Table Access Protocol (TAP) Query window showing dp2.Object table and columns.
 
-    Figure 5:  The Table Access Protocol (TAP) Query window as in Figure 4, but here
-    the dp1.Object table is highlighted in the left-hand Metadata panel and the
-    column names, data types, units, and descriptions for the columns in the dp1.Object
-    table are shown in the right-hand Metadata panel.
+    Figure 5:  The Table Access Protocol (TAP) Query window as in Figure 4, with dp2.Object table and
+    column names, data types, units, and descriptions for the columns shown in the right-hand Metadata panel.
 
 **8. Explore sample ADQL queries.**
 
 Within the ADQL Text panel of the Table Access Protocol (TAP) Query window, select the Examples button located at the lower left and choose Full Table from the Basic menu.
-A sample ADQL query will then be displayed in the text box. Figure 6 demonstrates a query that retrieves the top 1000 entries from the dp1.Object table.
+A sample ADQL query will be displayed in the text box. Figure 6 demonstrates a query that retrieves the top 1000 entries from the dp2.Object table.
 
-This type of query is generally not recommended for routine use, as some tables contain a large volume of data.
+**Warning:** This type of query is generally not recommended for routine use, as some tables contain a large volume of data.
 The queries provided in the Examples menu are intended as starting templates and should be adapted within the ADQL text box to meet specific requirements,
 or replaced with a predefined query (such as the one presented in Step 9).
 
 
 .. figure:: images/api-101-1-6.png
     :name: api-101-1-6
-    :alt: A screenshot of Table Access Protocol (TAP) Query window.
-	  It appears the same as in Figure 5, but the Example button has been clicked
-	  and the Full Table menu item from the Basic menu item has been chosen and
-	  highlighted.
+    :alt: A screenshot of Table Access Protocol (TAP) Query window with a basic full table query shown in the ADQL text box.
 
     Figure 6:  The Table Access Protocol (TAP) Query window as in Figure 5, with
-    the Full Table menu item from the Basic menu item chosen after clicking on
-    the Examples button at the bottom of the ADQL Text panel.
+    the Basic/Full Table menu query shown.
 
-**9. Avoid full-table queries. Construct a specific query to access information from the dp1.Object table.**
+**9. Construct appropriately constrained query.**
 
-Because the dp1.Object table is large, it is good practice to always include spatial constraints and only retrieve necessary columns.
+Because the dp2.Object table is large, it is good practice to always include spatial constraints and only retrieve necessary columns.
 
-Search for objects within 0.5 degrees of the center of the Extended Chandra Deep Field South (ECDFS) field, RA, Dec =  53.13, -28.10 and retrieve g-band and r-band PSF magnitudes.
-Copy the code block below and paste it into the ADQL text box, then click "Run Query".
+The ADQL code block below searches for obects within 0.5 degrees of the center of the Extended Chandra Deep Field South (ECDFS) field, RA, Dec =  53.13, -28.10 and retrieve g-band and r-band PSF magnitudes.
+
+Copy the code block below and paste it into the ADQL text box, then click "Run Query". The query could take a few seconds to execute.
 
 .. code-block:: sql
 
   SELECT objectId, coord_ra, coord_dec,
          g_psfMag, r_psfMag
-  FROM dp1.Object
+  FROM dp2.Object
   WHERE CONTAINS(
             POINT('ICRS', coord_ra, coord_dec),
             CIRCLE('ICRS', 53.13, -28.10, 0.5)
@@ -157,21 +146,19 @@ Copy the code block below and paste it into the ADQL text box, then click "Run Q
     Figure 7:  The Table Access Protocol (TAP) Query window as in Figure 5, with
     the code block in the ADQL Text box.
 
-**10. Note that a new table, TAP_1_dp1.Object, has appeared in the Table List panel of the main TOPCAT window.**
+**10. New table has appeared in main TOPCAT window.**
+
+Note that a new table, TAP_1_dp2.Object, has appeared in the Table List panel of the main TOPCAT window.
 
 .. figure:: images/api-101-1-8.png
     :name: api-101-1-8
-    :alt: A screenshot of the main TOPCAT window.  It is composed of four main parts.
-	  1. A row of icons along the top of the window.  2. A Table List panel on the left
-	  of the window; this currently shows one table, called TAP_1_dp1.Object,
-	  and it is highlighted.  3. A Current Table Properties panel on the right of the window.
-	  4. A small SAMP panel just below the Current Table Properties panel.
+    :alt: A screenshot of the main TOPCAT window showing a new table obtained from the ADQL search.
 
-    Figure 8:  The main TOPCAT window with a new table, TAP_1_dp1.Object, appearing in the Table List panel.
+    Figure 8:  The main TOPCAT window with a new table, TAP_1_dp2.Object, appearing in the Table List panel.
 
-**11. Find the table of results in the "Table List" panel of the main TOPCAT window, and then click on the "Display table cell data" icon.**
+**11. Explore the table.**
 
-It is the 4th icon from the left in the row of icons at the top of the main TOPCAT window (it looks like a table with the first row and first column grayed out).
+To view the table of results, find the in the "Table List" panel of the main TOPCAT window , and then click on the "Display table cell data" icon (see Figure 9 red circle).
 
 .. figure:: images/api-101-1-9.png
     :name: api-101-1-9
