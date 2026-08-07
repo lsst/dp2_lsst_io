@@ -4,7 +4,7 @@ Tutorials
 
 .. important::
 
-   The DP2 tutorials are under development.
+   Early Data Preview 2 data are available. The DP2 tutorials are under development.
 
 
 Tutorials demonstrating :doc:`/access/index` and analysis via the Rubin Science Platform (RSP).

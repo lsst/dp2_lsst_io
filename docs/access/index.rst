@@ -4,7 +4,7 @@ Data access
 
 .. important::
 
-   These webpages are under development.
+   Early Data Preview 2 data are available. These webpages are under development, and will continue to evolve.
 
 
 Services, tools, and policies for accessing the alerts and the Prompt data products.
