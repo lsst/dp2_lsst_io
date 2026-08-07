@@ -89,7 +89,7 @@ Note: Under the TAP service, the file structure may list dp02 and dp1 catalogs f
 
 **7. Click dp2.Object table.**
 
-In the left Metadata panel of the Table Access Protocol (TAP) Query window, click on the dp1.Object table.
+In the left Metadata panel of the Table Access Protocol (TAP) Query window, click on the dp2.Object table.
 Then, in the right Metadata panel, click the "columns" tabs to change the view.
 Note that the column names, data types, units, and descriptions for the columns of the dp2.Object table are shown.
 
