@@ -61,15 +61,15 @@ To zoom in and pan around the image use the scroll features on your mouse or use
 **5. Direct links to the DP2 HiPS maps.**
 Use the following links to go to a DP2 region, then zoom out to explore.
 
-* `In the contiguous region <https://data.lsst.cloud/portal/app/?api=hips&uri=https://data.lsst.cloud/api/hips/v2/dp2/color_gri&ra284.1701404&dec=-25.0224338&sr=2d>`_
+* `Random spot in the contiguous region <https://data.lsst.cloud/portal/app/?api=hips&uri=https://data.lsst.cloud/api/hips/v2/dp2/color_gri&ra=284.1701404&dec=-25.0224338&sr=2d>`_
 
 Deep drilling fields:
 
-* `DDF ELAIS S1, 00h38m00s -44d00m00s <https://data.lsst.cloud/portal/app/?api=hips&uri=https://data.lsst.cloud/api/hips/v2/dp2/color_gri&ra9.5&dec=-44&sr=2d>`_
-* `DDF ECDFS, 03h32m00s -28d06m00s <https://data.lsst.cloud/portal/app/?api=hips&uri=https://data.lsst.cloud/api/hips/v2/dp2/color_gri&ra53&dec=-28.1&sr=2d>`_
-* `DDF EDFS a, 03h56m48s -49d12m00s <https://data.lsst.cloud/portal/app/?api=hips&uri=https://data.lsst.cloud/api/hips/v2/dp2/color_gri&ra59.2&dec=-49.2&sr=2d>`_
-* `DDF EDFS b, 04h12m48s -47d48m00s <https://data.lsst.cloud/portal/app/?api=hips&uri=https://data.lsst.cloud/api/hips/v2/dp2/color_gri&ra63.2&dec=-47.8&sr=2d>`_
-* `DDF COSMOS, 10h00m24s +02d06m00s <https://data.lsst.cloud/portal/app/?api=hips&uri=https://data.lsst.cloud/api/hips/v2/dp2/color_gri&ra150.1&dec=2.1&sr=2d>`_
+* `DDF ELAIS S1, 00h38m00s -44d00m00s <https://data.lsst.cloud/portal/app/?api=hips&uri=https://data.lsst.cloud/api/hips/v2/dp2/color_gri&ra=9.5&dec=-44&sr=2d>`_
+* `DDF ECDFS, 03h32m00s -28d06m00s <https://data.lsst.cloud/portal/app/?api=hips&uri=https://data.lsst.cloud/api/hips/v2/dp2/color_gri&ra=53&dec=-28.1&sr=2d>`_
+* `DDF EDFS a, 03h56m48s -49d12m00s <https://data.lsst.cloud/portal/app/?api=hips&uri=https://data.lsst.cloud/api/hips/v2/dp2/color_gri&ra=59.2&dec=-49.2&sr=2d>`_
+* `DDF EDFS b, 04h12m48s -47d48m00s <https://data.lsst.cloud/portal/app/?api=hips&uri=https://data.lsst.cloud/api/hips/v2/dp2/color_gri&ra=63.2&dec=-47.8&sr=2d>`_
+* `DDF COSMOS, 10h00m24s +02d06m00s <https://data.lsst.cloud/portal/app/?api=hips&uri=https://data.lsst.cloud/api/hips/v2/dp2/color_gri&ra=150.1&dec=2.1&sr=2d>`_
 
 
 Small field areas:

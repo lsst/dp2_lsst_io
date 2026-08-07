@@ -1,8 +1,8 @@
 .. _portal-101-4:
 
-#############################################
-101.4. Use the query job monitor (get job ID)
-#############################################
+##########################################
+101.4. See query status in the job monitor
+##########################################
 
 For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
@@ -10,7 +10,7 @@ For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
 **Last verified to run:** 2026-08-06
 
-**Learning objective:** Use the Job Monitor to obtain the status and ID of, and delete, submitted query jobs.
+**Learning objective:** Use the Job Monitor to see information about past and current queries.
 
 **LSST data products:** ``Object`` table
 
@@ -42,7 +42,7 @@ Hit the "Search" button in the lower left corner to execute the query.
 **3.  Examine the job monitor.**
 Click on the "Job Monitor" tab.
 The job monitor will have all jobs submitted by you (created within the retention period).
-The jobs listed are in the chronological order (most recent first), in Coordinated Universal Time (UTC).
+The jobs listed are in the chronological order (most recent first).
 
 .. figure:: images/portal-101-4-1.png
     :name: portal-101-4-1

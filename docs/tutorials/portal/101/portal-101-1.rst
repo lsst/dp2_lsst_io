@@ -71,8 +71,7 @@ At the bottom of the sidebar menu under **Appearance** there is an option to swi
 Dismiss the sidebar by clicking on the X in the upper right corner of the menu.
 
 **8. Review the Portal's default tabs.**
-
-All Portal functionality can be accessed via the sidebar:
+The purposes for each of the default tabs are:
 
 * **Results:** Data query results interface.
 * **DP1 & DP2 Images:** Query interface for image data.
