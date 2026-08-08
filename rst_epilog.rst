@@ -91,8 +91,8 @@
 .. |SSSource_rows| replace:: 8,136,150
 .. |SSSource_columns| replace:: 39
 
-.. |mpc_orbits_rows| replace:: ``<tbd>``
-.. |mpc_orbits_columns| replace:: ``<tbd>``
+.. |mpc_orbits_rows| replace:: 1,505,545
+.. |mpc_orbits_columns| replace:: 53
 
 .. |visit_table_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Data Preview 2: visit_table dataset type |doi_image| https://doi.org/10.71929/rubin/3382543 [:download:`BibTeX </bib/butler-visit_table.bib>`]
 .. |visit_table_butler_count| replace:: 1
