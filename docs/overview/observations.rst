@@ -34,7 +34,7 @@ Learn more about the WFD and the LSST strategy in the `Survey strategy documenta
 Small fields
 ------------
 
-Selected to provide LSSTCam commissioning-era images for science validation across variety of environments (crowded, dusty, galactic, extragalactic, clustering, nebulosity, and so on).
+Selected to provide LSSTCam commissioning-era images for science validation across a variety of environments (crowded, dusty, galactic, extragalactic, clustering, nebulosity, and so on).
 The small fields include M49 and Trifid-Lagoon, which produced the Rubin First Look images in June 2025.
 These coordinates are the mean RA and mean Dec for all visits associated with these fields.
 
