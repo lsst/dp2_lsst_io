@@ -19,7 +19,7 @@ Sky coverage
     :name: dp2_depth_map
     :alt: DP2 deep coadd image depth over the sky.
 
-    Figure 2: A map of the i-band PSF limiting magnitude for DP2 deep coadd images. Deep coadd images are only made within the pre-defined tracts for which sufficient input visits exist. The total area covered by deep coadd images is approximatley 3000 square degrees.
+    Figure 2: A map of the i-band PSF limiting magnitude for DP2 deep coadd images. Deep coadd images are only made within the pre-defined tracts for which sufficient input visits exist. The total area covered by deep coadd images is approximately 3000 square degrees.
 
 
 Wide-fast-deep region
