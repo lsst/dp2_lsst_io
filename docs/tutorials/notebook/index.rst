@@ -195,6 +195,7 @@ Longer tutorials with a learning objective of executing an end-to-end scientific
     301/notebook-301-1.rst
     301/notebook-301-2.rst
     301/notebook-301-3.rst
+    301/notebook-301-4.rst
 
 
 302. Stars, Milky Way, and Local Volume
