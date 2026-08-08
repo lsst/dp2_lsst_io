@@ -99,7 +99,7 @@ Artificial objects in Earth's orbit, including satellites and debris, can reflec
 
 In all cases, pixel values are not erased, redacted, or otherwise altered due to streaks or glints, and no attempt is made to identify the origin of any streak.
 
-For a description of how satellite constellations impact LSST, and mitigation strategies, a please see the `FAQ on artificial satellites and debris <https://rubinobservatory.org/for-scientists/frequently-asked-questions/leo-sats>`_.
+For a description of how satellite constellations impact LSST, and mitigation strategies, please see the `FAQ on artificial satellites and debris <https://rubinobservatory.org/for-scientists/frequently-asked-questions/leo-sats>`_.
 
 
 Optical system
