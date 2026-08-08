@@ -9,7 +9,7 @@ Filter transformations to/from the LSST photometric system and other astronomica
 Access
 ======
 
-Until they are available for DP2 and LSSTCam, refer to the `Data Preview 1 (DP1) filter transformations for LSSTComCam <https://dp1.lsst.io/products/filter_transformations/index.html>`_).
+Until they are available for DP2 and LSSTCam, refer to the `Data Preview 1 (DP1) filter transformations for LSSTComCam <https://dp1.lsst.io/products/filter_transformations/index.html>`_.
 
 Description
 ===========
@@ -23,5 +23,5 @@ There are also some transformation equations based on synthetic photometry avail
 Tutorials
 ---------
 
-Until they are available for DP2 and LSSTCam, refer to the `DP1 calibrations tutorial notebooks <https://dp1.lsst.io/tutorials/notebook/index.html#calibrations>`_).
+Until they are available for DP2 and LSSTCam, refer to the `DP1 calibrations tutorial notebooks <https://dp1.lsst.io/tutorials/notebook/index.html#calibrations>`_.
 
