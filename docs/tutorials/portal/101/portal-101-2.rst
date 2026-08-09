@@ -38,7 +38,7 @@ Click on the sidebar menu (three vertical lines in the upper left hand corner) a
 
 
 **3. Select the target and data set.**
-Next to "Select Target" enter the coordinates ``53.13,-28.10``, which are the center of the Extended Chanrda Deep Field South (ECDFS) field, and field of view of ``1`` degree.
+Next to "Select Target" enter the coordinates ``53.13,-28.10``, which are the center of the Extended Chandra Deep Field South (ECDFS) field, and field of view of ``1`` degree.
 Under "Select Data Set" click on the row "DP2 gri pretty coadd", as in Figure 2, then click "Search" at lower left.
 
 .. figure:: images/portal-101-2-2.png
