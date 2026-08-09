@@ -37,7 +37,7 @@ The new ``lsst.images`` classes
 ===============================
 
 As it's designed to stand on its own, :external+lsst.images:ref:`lsst.images` doesn't rely on any of the types in ``lsst.afw``.
-It has its own `~lsst.images.Box`, `~lsst.images.psfs.PointSpreadFunction`, `~lsst.images.SkyProjection`, etc. (often backed by other packages, like Piff for PSFs, Starlink AST for coodinate transforms, and Shapely for polygons).
+It has its own `~lsst.images.Box`, `~lsst.images.psfs.PointSpreadFunction`, `~lsst.images.SkyProjection`, etc. (often backed by other packages, like Piff for PSFs, Starlink AST for coordinate transforms, and Shapely for polygons).
 
 .. TODO: add and link to a "For astropy users" doc page in lsst.images.  This is where we will discuss the difference in how LSST and Astropy approach subimage indexing and hence SkyProjection/WCS.
 
