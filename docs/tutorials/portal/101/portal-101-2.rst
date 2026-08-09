@@ -10,7 +10,7 @@ For the Portal Aspect of the Rubin Science Platform (RSP) at data.lsst.cloud.
 
 **Last verified to run:** 2026-08-06
 
-**Learning objective:** Browse the all-sky color HiPS maps.
+**Learning objective:** Browse the all-sky color `HiPS maps <https://dp2.lsst.io/products/maps/hips.html>`_ (Hierarchical Progressive Surveys (HiPS) map representation of the tiled multiband coadded images).
 
 **LSST data products:** HiPS maps
 
