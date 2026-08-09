@@ -41,7 +41,7 @@ Multiple flags may be set on the same pixel simultaneously.
     These pixels are masked because the kernel footprint extends beyond the image boundary, making reliable measurements impossible.
 
 ``INEXACT_PSF``
-    Used on deep coadds <images-deep-coadd> only; see the deep and template coadds mask planes <images-deep-coadd-mask-planes> page.
+    Used on deep coadds only; see the :doc:`/products/images/deep_coadd_mask_planes` page.
 
 ``INJECTED``
     Pixel containing an injected synthetic source in the science exposure.
@@ -75,7 +75,7 @@ Multiple flags may be set on the same pixel simultaneously.
     In general, ``NO_DATA`` indicates that the pixel should be ignored in analysis (not observed).
 
 ``REJECTED``
-    Used on deep coadds <images-deep-coadd> only; see the deep and template coadds mask planes <images-deep-coadd-mask-planes> page.
+    Used on deep coadds only; see the :doc:`/products/images/deep_coadd_mask_planes` page.
 
 ``SAT``
     Saturated pixel.
@@ -91,7 +91,7 @@ Multiple flags may be set on the same pixel simultaneously.
     Not used in standalone visit images, but relevant in difference image products.
 
 ``SENSOR_EDGE``
-    Used on deep coadds <images-deep-coadd> only; see the deep and template coadds mask planes <images-deep-coadd-mask-planes> page.
+    Used on deep coadds only; see the :doc:`/products/images/deep_coadd_mask_planes` page.
 
 ``STREAK``
     Pixel in a linear streak region — typically from satellites, aircraft, or occasionally diffraction spikes.
