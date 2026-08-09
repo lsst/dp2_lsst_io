@@ -40,7 +40,7 @@ Description
 ===========
 
 The LSST all-sky map is divided into "tracts".
-One tract is one square region of LSST's all-sky tesselation ("skymap"), ~1.66 deg per side.
+One tract is one square region of LSST's all-sky tessellation ("skymap"), ~1.66 deg per side.
 Tracts are subdivided into 100 overlapping patches, and one template coadd image is created per patch.
 
 Processing
