@@ -37,7 +37,7 @@ Bleed trails
 
 The charge created from very bright stars can overflow a pixel and extend along the column (vertical; y-direction), sometimes all the way to the CCD edge.
 When a bleed trail extends to the CCD edge and then continues to affect pixels along the edge of the CCD in the x-direction.
-There are two types of edge bleeds depending on the sensor vendor: for ITL sensors, the bleed fans out at the edge and we attempt to mask them, though some may be missed; for E2V sensors, the edge bleeds appear as a more compact feature and are masked with a box.
+There are two types of edge bleeds depending on the sensor vendor: for ITL sensors, the bleed fans out at the edge and the pipeline attempts to mask them, though some may be missed; for E2V sensors, the edge bleeds appear as a more compact feature and are masked with a box.
 
 .. list-table::
    :widths: 50 50
@@ -194,7 +194,7 @@ Interpolation
 
 Pixel values are replaced by an interpolation algorithm when they're identified
 as affected by bad pixels, cosmic rays, and bleeding.
-Our interpolation algorithm is optimized for small regions and vertical features (primarily bleed trails); in larger areas it produces visible striping, and we rely on other features of the processing to ignore these areas.
+Our interpolation algorithm is optimized for small regions and vertical features (primarily bleed trails); in larger areas it produces visible striping, and the pipeline relies on other features of the processing to ignore these areas.
 
 Interpolation will also be evident at the edges of the HiPS maps.
 
