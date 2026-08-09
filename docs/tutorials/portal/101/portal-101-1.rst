@@ -65,7 +65,7 @@ On the Portal landing page click on the menu icon (three horizontal lines at upp
 
 
 **7. Review the sidebar menu.**
-In the sidebar menu (Figure 3) under **Tab Selection**, notice that some of the menu options are for older data releases (e.g., DP0.2 Catalogs) and external data servers (e.g., Gaia TAP at EAC).
+In the sidebar menu (Figure 3) under **Tab Selection**, notice that some of the menu options are for older data releases (e.g., DP0.2 Catalogs) and external data servers (e.g., Gaia TAP at ESAC).
 Which tabs you see in the Portal landing page are configurable with the "Hide Tab" option.
 At the bottom of the sidebar menu under **Appearance** there is an option to switch your Portal interface between light and dark mode.
 Dismiss the sidebar by clicking on the X in the upper right corner of the menu.

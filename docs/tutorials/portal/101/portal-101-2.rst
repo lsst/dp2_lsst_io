@@ -49,7 +49,7 @@ Under "Select Data Set" click on the row "DP2 gri pretty coadd", as in Figure 2,
 
 **4. Results.**
 Results of the search are shown in Figure 3.
-To zoom in and pan around the image use the scroll features on your mouse or use the zoom in an out buttons
+To zoom in and pan around the image use the scroll features on your mouse or use the zoom in and out buttons
 (magnifying glass icons in the upper left-hand corner of the image).
 
 .. figure:: images/portal-101-2-3.png
