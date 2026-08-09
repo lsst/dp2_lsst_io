@@ -13,7 +13,7 @@ Multiple flags may be set on the same pixel simultaneously.
     as BAD. They are typically interpolated over in processing.
 
 ``CLIPPED``
-    Used on deep coadds only; see the deep and template coadds mask planes <images-deep-coadd-mask-planes> page.
+    Used on deep coadds only; see the :doc:`/products/images/deep_coadd_mask_planes` page.
     However, this may be back-propagated on visit and difference images in future data releases.
 
 ``CR``
