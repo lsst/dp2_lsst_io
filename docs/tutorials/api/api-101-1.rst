@@ -165,7 +165,7 @@ then click on the "Display table cell data" icon (see Figure 9 red circle).
 
 **12. View the contents of the TOPCAT Table Browser window.**
 
-This particular table contains 321,139 rows and 5 columns.  Vertical and horizontal scrollbars in this window permit viewing the full contents of the table.
+This particular table contains 238,673 rows and 5 columns.  Vertical and horizontal scrollbars in this window permit viewing the full contents of the table.
 
 .. figure:: images/api-101-1-10.png
     :name: api-101-1-10
