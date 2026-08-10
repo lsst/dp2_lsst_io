@@ -75,7 +75,7 @@ For "User" add ``x-oauth-basic`` and for "Password" and security token created i
 **6. RSP TAP service is now accessible from TOPCAT.**
 
 A list of available DP2 tables now appears in the TAP Query window’s Metadata panel.
-Note: Under the TAP service, the file structure may list dp02 and dp1 catalogs first.  DP2 tables can be found by collapsing those folders or using the scroll bar.
+Note: Under TAP service, the file structure may list dp02 and dp1 catalogs first.  DP2 tables can be found by collapsing those folders or using the scroll bar.
 
 .. figure:: images/api-101-1-4.png
     :name: api-101-1-4
