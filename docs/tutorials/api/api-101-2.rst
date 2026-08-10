@@ -34,7 +34,7 @@ Create a skymap of the Data Preview 2 Dataset using TOPCAT and an `"aitoff" <htt
 
 After starting TOPCAT and accessing the Rubin DP2 data through the VO protocol, click on "dp2.CoaddPatches" in the Table Access
 Protocol (TAP) Query Metadata section (top left arrow).
-Click on "Columns" in the right panel (top right arrow)to see a description of each of the columns in this table.
+Click on "Columns" in the right panel (top right arrow) to see a description of each of the columns in this table.
 
 .. figure:: images/api-101-2-1.png
     :name: api-101-2-1
