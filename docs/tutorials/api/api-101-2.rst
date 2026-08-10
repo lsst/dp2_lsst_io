@@ -26,11 +26,11 @@ of the Rubin Community Forum. Rubin staff will respond to all questions posted t
 
 See `API Tutorial 101-1 <https://dp1.lsst.io/tutorials/api/api-101-1.html>`_ for instructions on how to access Rubin DP2 data with "Tool for OPerations on Catalogues And Tables" (TOPCAT).
 
-**2. Create DP2 Skymap**
+**2. Create DP2 Skymap.**
 
 Create a skymap of the Data Preview 2 Dataset using TOPCAT and an `"aitoff" <https://en.wikipedia.org/wiki/Aitoff_projection>`_ projection.
 
-**2.1 Use TAP Query window**
+**2.1 Use TAP Query window.**
 
 After starting TOPCAT and accessing the Rubin DP2 data through the VO protocol, click on "dp2.CoaddPatches" in the Table Access
 Protocol (TAP) Query Metadata section (top left arrow).
@@ -43,7 +43,7 @@ Click on "Columns" in the right panel (top right arrow) to see a description of 
 
     Figure 1:  TAP Query window with dp2.CoaddPatches table selected, column descriptions visible, and ADQL query in ADQL Text box.
 
-**2.2 Run ADQL query**
+**2.2 Run ADQL query.**
 
 Within the ADQL Text panel of the Table Access Protocol (TAP) Query window (Figure 1 bottom left arrow), copy the ADQL query below and paste into the ADQL text window, then click "Run Query" (Figure 1 bottom center arrow).
 This query will retrieve the RA/DEC of each of the Coadd Patches within DP2. A temporary window called "Load New Table" will appear with a status bar showing query progress.
@@ -59,7 +59,7 @@ See examples of queries with spatial constraints in API 101-1 (linked above) or 
   FROM dp2.CoaddPatches
 
 
-**2.3 Create Skymap of DP2 fields using the Sky plotting window and Aitoff projection**
+**2.3 Create Skymap of DP2 fields using the Sky plotting window and Aitoff projection.**
 
 A new window will open which shows the "Table List" (red arrow) and "Current Table Properties". Notice this table has 197,105 rows for each of the Coadd Patches and 2 columns (for RA and DEC).
 To create a Skymap of data returned from the query, click on the "Sky plotting window" (red circle).
@@ -82,11 +82,11 @@ Click the "X" in the upper right-hand corner to close the image.
 
     Figure 3:  Skymap of dp2 fields on aitoff projection.
 
-**3. Create Histogram of dp2.VisitDetector table limiting magnitude in the ECDFS field**
+**3. Create Histogram of dp2.VisitDetector table limiting magnitude in the ECDFS field.**
 
 Create a histogram in TOPCAT by using the Histogram button.
 
-**3.1 Run ADQL query on dp2.VisitDetector table and plot histogram**
+**3.1 Run ADQL query on dp2.VisitDetector table and plot histogram.**
 
 Return to the Table Access Protocol (TAP) Query window to execture a new ADQL query.
 Copy the ADQL query below, add it to the window in the "ADQL Text" box (see Figure 1) and click "Run Query".
@@ -106,7 +106,7 @@ Notice a new table (red arrow) is available in the TOPCAT window. Click the hist
 
     Figure 4:  New table from dp2.VisitDetector query.
 
-**3.2 Plot Histogram**
+**3.2 Plot Histogram.**
 
 In the "Histogram Plot" window the default histogram will be plotted from the first appropriate value in the drop-down menu (in this case the "ra").
 To change the histogram value, select "magLim" from the "X:" drop-down menu (see Figure 5).
@@ -119,7 +119,7 @@ To close the histogram, click the "X" in the upper right-hand corner of this win
     Figure 5:  Histogram of magLim for the ECDFS field in dp2.VisitDetector table.
 
 
-**4. Create Color-Color Diagram (CCD) with TOPCAT**
+**4. Create Color-Color Diagram (CCD) with TOPCAT.**
 
 Create a CCD in TOPCAT by using the "Plane plotting window".
 
@@ -145,7 +145,7 @@ This table might take a few seconds to load.
         AND r_psfFlux/r_psfFluxErr > 5
         AND i_psfFlux/i_psfFluxErr > 5
 
-**4.2 Create CCD**
+**4.2 Create CCD.**
 
 Click on the "Plane plotting window" shown in Figure 7 with the blue circle.
 
