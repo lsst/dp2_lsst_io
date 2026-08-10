@@ -305,7 +305,7 @@ See :doc:`/processing/moving/ss_association` for selection and quality guidance.
 Astrometric comparisons show different behavior for different object samples.
 For long-observed objects discovered before 2000, median measured-minus-predicted coordinate residuals are below 1 mas, with approximately 13--14 mas scatter.
 For objects discovered during 2000--2020, offsets relative to JPL Horizons are spatially coherent across the DP2 footprint: in 5 by 5 degree sky cells, the median offset-vector length is approximately 19 mas, the 95th percentile is approximately 30 mas, and the largest values approach 42 mas.
-Our current hypothesis is that orbit catalogs can retain 20--40 mas systematic errors in predicted positions, especially for objects constrained primarily by northern, pre-Gaia astrometry.
+The current hypothesis is that orbit catalogs can retain 20--40 mas systematic errors in predicted positions, especially for objects constrained primarily by northern, pre-Gaia astrometry.
 This interpretation remains under investigation and will be discussed in detail in a subsequent paper.
 
 

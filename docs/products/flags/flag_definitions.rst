@@ -19,7 +19,7 @@ Pixel quality flags
 
 Pattern: ``{band}_pixelFlags_*``
 
-Purpose: Report on issues with individual pixels in the source footprint, derived from image mask planes <images-mask-planes>.
+Purpose: Report on issues with individual pixels in the source footprint, derived from image :doc:`/products/images/mask_planes`.
 
 .. list-table::
    :header-rows: 1

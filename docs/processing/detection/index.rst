@@ -30,7 +30,7 @@ If the footprint contains one or more flagged pixels, e.g., for cosmic rays, det
 Deblending
 ==========
 
-After detection, footprints with multiple peaks are deblended into "children", and the original blended footprint called the "parent".
+After detection, footprints with multiple peaks are deblended into "children", and the original blended footprint is called the "parent".
 The Scarlet Lite algorithm performs the deblending, as described in
 "The current state of scarlet and looking toward the future" (`dmtn-194.lsst.io <https://dmtn-194.lsst.io/>`_).
 The catalogs only include the deblended children.

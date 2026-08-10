@@ -19,7 +19,7 @@ Sky coverage
     :name: dp2_depth_map
     :alt: DP2 deep coadd image depth over the sky.
 
-    Figure 2: A map of the i-band PSF limiting magnitude for DP2 deep coadd images. Deep coadd images are only made within the pre-defined tracts for which sufficient input visits exist. The total area covered by deep coadd images is approximatley 3000 square degrees.
+    Figure 2: A map of the i-band PSF limiting magnitude for DP2 deep coadd images. Deep coadd images are only made within the pre-defined tracts for which sufficient input visits exist. The total area covered by deep coadd images is approximately 3000 square degrees.
 
 
 Wide-fast-deep region
@@ -34,7 +34,7 @@ Learn more about the WFD and the LSST strategy in the `Survey strategy documenta
 Small fields
 ------------
 
-Selected to provide LSSTCam commissioning-era images for science validation across variety of environments (crowded, dusty, galactic, extragalactic, clustering, nebulosity, and so on).
+Selected to provide LSSTCam commissioning-era images for science validation across a variety of environments (crowded, dusty, galactic, extragalactic, clustering, nebulosity, and so on).
 The small fields include M49 and Trifid-Lagoon, which produced the Rubin First Look images in June 2025.
 These coordinates are the mean RA and mean Dec for all visits associated with these fields.
 
