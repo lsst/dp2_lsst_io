@@ -8368,7 +8368,8 @@ It takes  4332  19-sided HEALPix to cover the full sky.
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">region_names</span><span class="p">):</span>
     <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">rad</span> <span class="o">=</span> <span class="n">regions</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-    <span class="n">offsets</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">visit_table</span><span class="p">[</span><span class="s1">'ra'</span><span class="p">]</span><span class="o">-</span><span class="n">ra</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">visit_table</span><span class="p">[</span><span class="s1">'dec'</span><span class="p">]</span><span class="o">-</span><span class="n">dec</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">cosdec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">dec</span><span class="p">))</span>
+    <span class="n">offsets</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">cosdec</span><span class="o">*</span><span class="p">(</span><span class="n">visit_table</span><span class="p">[</span><span class="s1">'ra'</span><span class="p">]</span><span class="o">-</span><span class="n">ra</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">visit_table</span><span class="p">[</span><span class="s1">'dec'</span><span class="p">]</span><span class="o">-</span><span class="n">dec</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">tx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">offsets</span> <span class="o">&lt;</span> <span class="n">rad</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">filt</span> <span class="ow">in</span> <span class="n">filter_names</span><span class="p">:</span>
         <span class="n">field_filt_dist</span><span class="p">[</span><span class="n">filt</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">visit_table</span><span class="p">[</span><span class="s1">'band'</span><span class="p">][</span><span class="n">tx</span><span class="p">]</span> <span class="o">==</span> <span class="n">filt</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
@@ -8417,27 +8418,27 @@ It takes  4332  19-sided HEALPix to cover the full sky.
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div><i>Table length=19</i>
-<table class="table-striped table-bordered table-condensed" id="table139324322701712">
+<table class="table-striped table-bordered table-condensed" id="table132660436525456">
 <thead><tr><th>Field</th><th>u</th><th>g</th><th>r</th><th>i</th><th>z</th><th>y</th><th>Total</th></tr></thead>
 <thead><tr><th>str16</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th><th>int64</th></tr></thead>
-<tr><td>DDF_ELAIS_S1</td><td>57</td><td>153</td><td>128</td><td>232</td><td>141</td><td>59</td><td>770</td></tr>
+<tr><td>DDF_ELAIS_S1</td><td>59</td><td>159</td><td>133</td><td>237</td><td>146</td><td>65</td><td>799</td></tr>
 <tr><td>DDF_XMM_LSS</td><td>42</td><td>15</td><td>8</td><td>47</td><td>10</td><td>10</td><td>132</td></tr>
 <tr><td>DDF_ECDFS</td><td>10</td><td>61</td><td>50</td><td>96</td><td>61</td><td>11</td><td>289</td></tr>
-<tr><td>DDF_EDFS_a</td><td>7</td><td>31</td><td>33</td><td>59</td><td>33</td><td>7</td><td>170</td></tr>
-<tr><td>DDF_EDFS_b</td><td>5</td><td>37</td><td>33</td><td>57</td><td>33</td><td>7</td><td>172</td></tr>
+<tr><td>DDF_EDFS_a</td><td>7</td><td>31</td><td>33</td><td>59</td><td>34</td><td>9</td><td>173</td></tr>
+<tr><td>DDF_EDFS_b</td><td>5</td><td>37</td><td>33</td><td>59</td><td>34</td><td>10</td><td>178</td></tr>
 <tr><td>DDF_COSMOS</td><td>105</td><td>87</td><td>173</td><td>162</td><td>110</td><td>77</td><td>714</td></tr>
-<tr><td>Abell_2764</td><td>0</td><td>6</td><td>0</td><td>2</td><td>0</td><td>0</td><td>8</td></tr>
+<tr><td>Abell_2764</td><td>0</td><td>7</td><td>0</td><td>3</td><td>0</td><td>0</td><td>10</td></tr>
 <tr><td>DESI_SV3_R1</td><td>0</td><td>0</td><td>0</td><td>3</td><td>0</td><td>0</td><td>3</td></tr>
 <tr><td>M49</td><td>234</td><td>280</td><td>378</td><td>213</td><td>0</td><td>0</td><td>1105</td></tr>
-<tr><td>Prawn</td><td>193</td><td>159</td><td>139</td><td>91</td><td>30</td><td>0</td><td>612</td></tr>
-<tr><td>Trifid-Lagoon</td><td>231</td><td>201</td><td>129</td><td>119</td><td>9</td><td>6</td><td>695</td></tr>
-<tr><td>New_Horizons</td><td>37</td><td>53</td><td>77</td><td>116</td><td>80</td><td>33</td><td>396</td></tr>
+<tr><td>Prawn</td><td>196</td><td>160</td><td>142</td><td>93</td><td>30</td><td>0</td><td>621</td></tr>
+<tr><td>Trifid-Lagoon</td><td>240</td><td>210</td><td>134</td><td>124</td><td>10</td><td>8</td><td>726</td></tr>
+<tr><td>New_Horizons</td><td>37</td><td>53</td><td>78</td><td>116</td><td>80</td><td>33</td><td>397</td></tr>
 <tr><td>Rubin_SV_212_-7</td><td>0</td><td>139</td><td>187</td><td>123</td><td>0</td><td>0</td><td>449</td></tr>
-<tr><td>Rubin_SV_216_-17</td><td>0</td><td>27</td><td>28</td><td>59</td><td>0</td><td>0</td><td>114</td></tr>
-<tr><td>Rubin_SV_225_-40</td><td>307</td><td>524</td><td>391</td><td>381</td><td>239</td><td>104</td><td>1946</td></tr>
-<tr><td>Rubin_SV_280_-48</td><td>30</td><td>29</td><td>26</td><td>30</td><td>29</td><td>0</td><td>144</td></tr>
+<tr><td>Rubin_SV_216_-17</td><td>0</td><td>28</td><td>30</td><td>63</td><td>0</td><td>0</td><td>121</td></tr>
+<tr><td>Rubin_SV_225_-40</td><td>312</td><td>529</td><td>391</td><td>381</td><td>241</td><td>104</td><td>1958</td></tr>
+<tr><td>Rubin_SV_280_-48</td><td>30</td><td>30</td><td>29</td><td>31</td><td>29</td><td>0</td><td>149</td></tr>
 <tr><td>Rubin_SV_300_-41</td><td>0</td><td>8</td><td>0</td><td>0</td><td>30</td><td>0</td><td>38</td></tr>
-<tr><td>Rubin_SV_320_-15</td><td>12</td><td>47</td><td>104</td><td>259</td><td>211</td><td>77</td><td>710</td></tr>
+<tr><td>Rubin_SV_320_-15</td><td>12</td><td>49</td><td>106</td><td>267</td><td>216</td><td>82</td><td>732</td></tr>
 <tr><td>All</td><td>1964</td><td>4166</td><td>4856</td><td>7959</td><td>5809</td><td>3944</td><td>28698</td></tr>
 </table></div>
 </div>
@@ -8471,7 +8472,8 @@ It takes  4332  19-sided HEALPix to cover the full sky.
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">region_names</span><span class="p">):</span>
     <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">rad</span> <span class="o">=</span> <span class="n">regions</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-    <span class="n">offsets</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">visit_table</span><span class="p">[</span><span class="s1">'ra'</span><span class="p">]</span><span class="o">-</span><span class="n">ra</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">visit_table</span><span class="p">[</span><span class="s1">'dec'</span><span class="p">]</span><span class="o">-</span><span class="n">dec</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">cosdec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">dec</span><span class="p">))</span>
+    <span class="n">offsets</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">cosdec</span><span class="o">*</span><span class="p">(</span><span class="n">visit_table</span><span class="p">[</span><span class="s1">'ra'</span><span class="p">]</span><span class="o">-</span><span class="n">ra</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">visit_table</span><span class="p">[</span><span class="s1">'dec'</span><span class="p">]</span><span class="o">-</span><span class="n">dec</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">tx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">offsets</span> <span class="o">&lt;</span> <span class="n">rad</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">field_epochs</span><span class="p">[</span><span class="s1">'visits'</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tx</span><span class="p">)</span>
     <span class="n">unique_nights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">visit_table</span><span class="p">[</span><span class="s1">'expMidptMJD'</span><span class="p">][</span><span class="n">tx</span><span class="p">]))</span>
@@ -8512,27 +8514,27 @@ It takes  4332  19-sided HEALPix to cover the full sky.
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div><i>Table length=19</i>
-<table class="table-striped table-bordered table-condensed" id="table139324322693808">
+<table class="table-striped table-bordered table-condensed" id="table132660436517552">
 <thead><tr><th>Field</th><th>visits</th><th>nights</th><th>mean(visits/night)</th></tr></thead>
 <thead><tr><th>str16</th><th>int64</th><th>int64</th><th>int64</th></tr></thead>
-<tr><td>DDF_ELAIS_S1</td><td>770</td><td>62</td><td>12</td></tr>
+<tr><td>DDF_ELAIS_S1</td><td>799</td><td>62</td><td>13</td></tr>
 <tr><td>DDF_XMM_LSS</td><td>132</td><td>23</td><td>6</td></tr>
 <tr><td>DDF_ECDFS</td><td>289</td><td>37</td><td>8</td></tr>
-<tr><td>DDF_EDFS_a</td><td>170</td><td>51</td><td>3</td></tr>
-<tr><td>DDF_EDFS_b</td><td>172</td><td>50</td><td>3</td></tr>
+<tr><td>DDF_EDFS_a</td><td>173</td><td>51</td><td>3</td></tr>
+<tr><td>DDF_EDFS_b</td><td>178</td><td>50</td><td>4</td></tr>
 <tr><td>DDF_COSMOS</td><td>714</td><td>21</td><td>34</td></tr>
-<tr><td>Abell_2764</td><td>8</td><td>2</td><td>4</td></tr>
+<tr><td>Abell_2764</td><td>10</td><td>3</td><td>3</td></tr>
 <tr><td>DESI_SV3_R1</td><td>3</td><td>1</td><td>3</td></tr>
 <tr><td>M49</td><td>1105</td><td>7</td><td>158</td></tr>
-<tr><td>Prawn</td><td>612</td><td>7</td><td>87</td></tr>
-<tr><td>Trifid-Lagoon</td><td>695</td><td>23</td><td>30</td></tr>
-<tr><td>New_Horizons</td><td>396</td><td>24</td><td>16</td></tr>
+<tr><td>Prawn</td><td>621</td><td>7</td><td>89</td></tr>
+<tr><td>Trifid-Lagoon</td><td>726</td><td>24</td><td>30</td></tr>
+<tr><td>New_Horizons</td><td>397</td><td>25</td><td>16</td></tr>
 <tr><td>Rubin_SV_212_-7</td><td>449</td><td>5</td><td>90</td></tr>
-<tr><td>Rubin_SV_216_-17</td><td>114</td><td>2</td><td>57</td></tr>
-<tr><td>Rubin_SV_225_-40</td><td>1946</td><td>28</td><td>70</td></tr>
-<tr><td>Rubin_SV_280_-48</td><td>144</td><td>1</td><td>144</td></tr>
+<tr><td>Rubin_SV_216_-17</td><td>121</td><td>2</td><td>60</td></tr>
+<tr><td>Rubin_SV_225_-40</td><td>1958</td><td>29</td><td>68</td></tr>
+<tr><td>Rubin_SV_280_-48</td><td>149</td><td>2</td><td>74</td></tr>
 <tr><td>Rubin_SV_300_-41</td><td>38</td><td>2</td><td>19</td></tr>
-<tr><td>Rubin_SV_320_-15</td><td>710</td><td>34</td><td>21</td></tr>
+<tr><td>Rubin_SV_320_-15</td><td>732</td><td>34</td><td>22</td></tr>
 <tr><td>All</td><td>28698</td><td>131</td><td>219</td></tr>
 </table></div>
 </div>
@@ -8751,7 +8753,7 @@ To save memory, delete the original tables and run the garbage collector.</p>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>4072</pre>
+<pre>4132</pre>
 </div>
 </div>
 </div>
@@ -8936,7 +8938,7 @@ To save memory, delete the original tables and run the garbage collector.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Field'</span><span class="p">,</span> <span class="s1">'u'</span><span class="p">,</span> <span class="s1">'g'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="s1">'i'</span><span class="p">,</span> <span class="s1">'z'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">]</span>
@@ -8948,7 +8950,8 @@ To save memory, delete the original tables and run the garbage collector.</p>
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">region_names</span><span class="p">):</span>
     <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">rad</span> <span class="o">=</span> <span class="n">regions</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-    <span class="n">offsets</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">joined_table</span><span class="p">[</span><span class="s1">'ra'</span><span class="p">]</span><span class="o">-</span><span class="n">ra</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">joined_table</span><span class="p">[</span><span class="s1">'dec'</span><span class="p">]</span><span class="o">-</span><span class="n">dec</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">cosdec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">dec</span><span class="p">))</span>
+    <span class="n">offsets</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">cosdec</span><span class="o">*</span><span class="p">(</span><span class="n">joined_table</span><span class="p">[</span><span class="s1">'ra'</span><span class="p">]</span><span class="o">-</span><span class="n">ra</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">joined_table</span><span class="p">[</span><span class="s1">'dec'</span><span class="p">]</span><span class="o">-</span><span class="n">dec</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">tx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">offsets</span> <span class="o">&lt;</span> <span class="n">rad</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">filt</span> <span class="ow">in</span> <span class="n">filter_names</span><span class="p">:</span>
         <span class="n">fx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">joined_table</span><span class="p">[</span><span class="s1">'band'</span><span class="p">][</span><span class="n">tx</span><span class="p">]</span> <span class="o">==</span> <span class="n">filt</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -8977,7 +8980,7 @@ To save memory, delete the original tables and run the garbage collector.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">field_seeing</span>
@@ -8991,30 +8994,30 @@ To save memory, delete the original tables and run the garbage collector.</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div><i>Table length=19</i>
-<table class="table-striped table-bordered table-condensed" id="table139324325292624">
+<table class="table-striped table-bordered table-condensed" id="table132660437392016">
 <thead><tr><th>Field</th><th>u</th><th>g</th><th>r</th><th>i</th><th>z</th><th>y</th></tr></thead>
 <thead><tr><th>str16</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th></tr></thead>
-<tr><td>DDF_ELAIS_S1</td><td>1.63</td><td>1.51</td><td>1.51</td><td>1.32</td><td>1.46</td><td>1.33</td></tr>
+<tr><td>DDF_ELAIS_S1</td><td>1.63</td><td>1.5</td><td>1.5</td><td>1.33</td><td>1.46</td><td>1.33</td></tr>
 <tr><td>DDF_XMM_LSS</td><td>1.52</td><td>1.24</td><td>1.08</td><td>1.01</td><td>0.99</td><td>0.94</td></tr>
 <tr><td>DDF_ECDFS</td><td>1.68</td><td>1.59</td><td>1.35</td><td>1.15</td><td>1.34</td><td>1.32</td></tr>
-<tr><td>DDF_EDFS_a</td><td>1.56</td><td>1.39</td><td>1.39</td><td>1.12</td><td>1.29</td><td>0.94</td></tr>
-<tr><td>DDF_EDFS_b</td><td>1.34</td><td>1.41</td><td>1.39</td><td>1.16</td><td>1.3</td><td>0.91</td></tr>
+<tr><td>DDF_EDFS_a</td><td>1.56</td><td>1.39</td><td>1.39</td><td>1.12</td><td>1.29</td><td>0.98</td></tr>
+<tr><td>DDF_EDFS_b</td><td>1.34</td><td>1.41</td><td>1.39</td><td>1.16</td><td>1.29</td><td>1.01</td></tr>
 <tr><td>DDF_COSMOS</td><td>1.36</td><td>1.16</td><td>1.25</td><td>1.14</td><td>1.17</td><td>1.22</td></tr>
-<tr><td>Abell_2764</td><td>nan</td><td>1.01</td><td>nan</td><td>0.85</td><td>nan</td><td>nan</td></tr>
+<tr><td>Abell_2764</td><td>nan</td><td>1.0</td><td>nan</td><td>1.04</td><td>nan</td><td>nan</td></tr>
 <tr><td>DESI_SV3_R1</td><td>nan</td><td>nan</td><td>nan</td><td>1.47</td><td>nan</td><td>nan</td></tr>
 <tr><td>M49</td><td>1.49</td><td>1.37</td><td>1.27</td><td>1.22</td><td>nan</td><td>nan</td></tr>
 <tr><td>Prawn</td><td>1.49</td><td>1.38</td><td>1.28</td><td>1.24</td><td>1.42</td><td>nan</td></tr>
-<tr><td>Trifid-Lagoon</td><td>1.22</td><td>1.15</td><td>1.15</td><td>1.03</td><td>1.1</td><td>1.55</td></tr>
+<tr><td>Trifid-Lagoon</td><td>1.22</td><td>1.14</td><td>1.14</td><td>1.03</td><td>1.09</td><td>1.41</td></tr>
 <tr><td>New_Horizons</td><td>1.26</td><td>1.36</td><td>1.12</td><td>1.04</td><td>1.01</td><td>1.12</td></tr>
 <tr><td>Rubin_SV_212_-7</td><td>nan</td><td>1.42</td><td>1.3</td><td>1.12</td><td>nan</td><td>nan</td></tr>
-<tr><td>Rubin_SV_216_-17</td><td>nan</td><td>1.35</td><td>1.25</td><td>1.32</td><td>nan</td><td>nan</td></tr>
-<tr><td>Rubin_SV_225_-40</td><td>1.5</td><td>1.42</td><td>1.27</td><td>1.24</td><td>1.31</td><td>1.25</td></tr>
-<tr><td>Rubin_SV_280_-48</td><td>1.69</td><td>1.54</td><td>1.51</td><td>1.34</td><td>1.53</td><td>nan</td></tr>
+<tr><td>Rubin_SV_216_-17</td><td>nan</td><td>1.35</td><td>1.25</td><td>1.31</td><td>nan</td><td>nan</td></tr>
+<tr><td>Rubin_SV_225_-40</td><td>1.51</td><td>1.43</td><td>1.27</td><td>1.24</td><td>1.32</td><td>1.25</td></tr>
+<tr><td>Rubin_SV_280_-48</td><td>1.69</td><td>1.53</td><td>1.52</td><td>1.35</td><td>1.53</td><td>nan</td></tr>
 <tr><td>Rubin_SV_300_-41</td><td>nan</td><td>1.86</td><td>nan</td><td>nan</td><td>1.65</td><td>nan</td></tr>
-<tr><td>Rubin_SV_320_-15</td><td>1.26</td><td>1.68</td><td>1.47</td><td>1.36</td><td>1.37</td><td>1.15</td></tr>
+<tr><td>Rubin_SV_320_-15</td><td>1.26</td><td>1.67</td><td>1.47</td><td>1.38</td><td>1.39</td><td>1.16</td></tr>
 <tr><td>All</td><td>1.36</td><td>1.3</td><td>1.27</td><td>1.18</td><td>1.21</td><td>1.19</td></tr>
 </table></div>
 </div>
@@ -9026,7 +9029,7 @@ To save memory, delete the original tables and run the garbage collector.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">field_maglim</span>
@@ -9040,30 +9043,30 @@ To save memory, delete the original tables and run the garbage collector.</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div><i>Table length=19</i>
-<table class="table-striped table-bordered table-condensed" id="table139324323601760">
+<table class="table-striped table-bordered table-condensed" id="table132660409601392">
 <thead><tr><th>Field</th><th>u</th><th>g</th><th>r</th><th>i</th><th>z</th><th>y</th></tr></thead>
 <thead><tr><th>str16</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th></tr></thead>
-<tr><td>DDF_ELAIS_S1</td><td>23.23</td><td>23.64</td><td>23.27</td><td>23.2</td><td>22.47</td><td>21.48</td></tr>
+<tr><td>DDF_ELAIS_S1</td><td>23.19</td><td>23.64</td><td>23.28</td><td>23.19</td><td>22.47</td><td>21.49</td></tr>
 <tr><td>DDF_XMM_LSS</td><td>23.21</td><td>23.7</td><td>23.93</td><td>23.62</td><td>23.03</td><td>21.92</td></tr>
 <tr><td>DDF_ECDFS</td><td>23.01</td><td>23.52</td><td>23.17</td><td>23.42</td><td>22.57</td><td>21.68</td></tr>
-<tr><td>DDF_EDFS_a</td><td>23.1</td><td>23.62</td><td>23.23</td><td>23.47</td><td>22.51</td><td>21.94</td></tr>
-<tr><td>DDF_EDFS_b</td><td>23.26</td><td>23.68</td><td>23.25</td><td>23.42</td><td>22.48</td><td>21.96</td></tr>
+<tr><td>DDF_EDFS_a</td><td>23.1</td><td>23.62</td><td>23.23</td><td>23.47</td><td>22.52</td><td>21.94</td></tr>
+<tr><td>DDF_EDFS_b</td><td>23.26</td><td>23.68</td><td>23.25</td><td>23.42</td><td>22.5</td><td>21.9</td></tr>
 <tr><td>DDF_COSMOS</td><td>23.39</td><td>24.39</td><td>23.54</td><td>22.98</td><td>22.58</td><td>21.57</td></tr>
-<tr><td>Abell_2764</td><td>nan</td><td>24.87</td><td>nan</td><td>23.41</td><td>nan</td><td>nan</td></tr>
+<tr><td>Abell_2764</td><td>nan</td><td>24.87</td><td>nan</td><td>23.14</td><td>nan</td><td>nan</td></tr>
 <tr><td>DESI_SV3_R1</td><td>nan</td><td>nan</td><td>nan</td><td>23.5</td><td>nan</td><td>nan</td></tr>
 <tr><td>M49</td><td>23.29</td><td>24.3</td><td>23.85</td><td>23.44</td><td>nan</td><td>nan</td></tr>
-<tr><td>Prawn</td><td>23.1</td><td>24.07</td><td>23.74</td><td>23.38</td><td>22.71</td><td>nan</td></tr>
-<tr><td>Trifid-Lagoon</td><td>23.42</td><td>24.28</td><td>23.86</td><td>23.65</td><td>22.63</td><td>21.05</td></tr>
+<tr><td>Prawn</td><td>23.11</td><td>24.07</td><td>23.74</td><td>23.39</td><td>22.71</td><td>nan</td></tr>
+<tr><td>Trifid-Lagoon</td><td>23.41</td><td>24.29</td><td>23.86</td><td>23.65</td><td>22.65</td><td>21.28</td></tr>
 <tr><td>New_Horizons</td><td>23.17</td><td>24.41</td><td>24.11</td><td>23.63</td><td>22.94</td><td>21.88</td></tr>
 <tr><td>Rubin_SV_212_-7</td><td>nan</td><td>24.23</td><td>23.83</td><td>23.71</td><td>nan</td><td>nan</td></tr>
-<tr><td>Rubin_SV_216_-17</td><td>nan</td><td>24.34</td><td>24.03</td><td>23.62</td><td>nan</td><td>nan</td></tr>
-<tr><td>Rubin_SV_225_-40</td><td>23.3</td><td>23.97</td><td>23.52</td><td>23.33</td><td>22.76</td><td>21.63</td></tr>
-<tr><td>Rubin_SV_280_-48</td><td>22.59</td><td>23.45</td><td>23.28</td><td>23.18</td><td>22.27</td><td>nan</td></tr>
+<tr><td>Rubin_SV_216_-17</td><td>nan</td><td>24.34</td><td>24.02</td><td>23.62</td><td>nan</td><td>nan</td></tr>
+<tr><td>Rubin_SV_225_-40</td><td>23.29</td><td>23.97</td><td>23.52</td><td>23.33</td><td>22.75</td><td>21.63</td></tr>
+<tr><td>Rubin_SV_280_-48</td><td>22.59</td><td>23.45</td><td>23.27</td><td>23.15</td><td>22.27</td><td>nan</td></tr>
 <tr><td>Rubin_SV_300_-41</td><td>nan</td><td>23.25</td><td>nan</td><td>nan</td><td>22.31</td><td>nan</td></tr>
-<tr><td>Rubin_SV_320_-15</td><td>23.55</td><td>24.08</td><td>23.29</td><td>23.05</td><td>22.39</td><td>21.67</td></tr>
+<tr><td>Rubin_SV_320_-15</td><td>23.55</td><td>24.09</td><td>23.3</td><td>23.04</td><td>22.39</td><td>21.65</td></tr>
 <tr><td>All</td><td>23.37</td><td>24.12</td><td>23.58</td><td>23.32</td><td>22.65</td><td>21.68</td></tr>
 </table></div>
 </div>
@@ -9090,7 +9093,7 @@ This will be demonstrated in Section 3.2.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s2">"""SELECT lsst_patch, lsst_tract, s_dec, s_ra, s_region FROM dp2.CoaddPatches"""</span>
@@ -9138,7 +9141,7 @@ This will be demonstrated in Section 3.2.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># patches_table</span>
@@ -9163,7 +9166,7 @@ This will be demonstrated in Section 3.2.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">tracts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">patches_table</span><span class="p">[</span><span class="s1">'lsst_tract'</span><span class="p">])</span>
@@ -9202,7 +9205,7 @@ This will be demonstrated in Section 3.2.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">skymap</span> <span class="o">=</span> <span class="n">butler</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"skyMap"</span><span class="p">,</span> <span class="n">skymap</span><span class="o">=</span><span class="s2">"lsst_cells_v2"</span><span class="p">)</span>
@@ -9227,7 +9230,7 @@ This will be demonstrated in Section 3.2.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
@@ -9306,7 +9309,7 @@ add to that radius the tract's diagonal size $\sqrt{2\times1.66^2}$ degrees.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">"DDF_ECDFS"</span>
@@ -9384,7 +9387,7 @@ add to that radius the tract's diagonal size $\sqrt{2\times1.66^2}$ degrees.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># name = "DDF_ECDFS"</span>
@@ -9433,7 +9436,7 @@ add to that radius the tract's diagonal size $\sqrt{2\times1.66^2}$ degrees.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">map_name</span> <span class="o">=</span> <span class="s2">"deepCoadd_psf_maglim_consolidated_map_weighted_mean"</span>
@@ -9461,7 +9464,7 @@ add to that radius the tract's diagonal size $\sqrt{2\times1.66^2}$ degrees.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">default_nside_coverage</span> <span class="o">=</span> <span class="n">hspmap</span><span class="o">.</span><span class="n">nside_coverage</span>
@@ -9502,7 +9505,7 @@ Retrieved data resolution: 1024
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
@@ -9571,7 +9574,7 @@ Retrieved data resolution: 1024
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">remove_figure</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
@@ -9587,7 +9590,7 @@ Retrieved data resolution: 1024
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[37]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>3236</pre>
 </div>
@@ -9613,7 +9616,7 @@ Retrieved data resolution: 1024
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">map_name</span> <span class="o">=</span> <span class="s2">"deepCoadd_psf_size_consolidated_map_weighted_mean"</span>
@@ -9651,7 +9654,7 @@ Retrieved data resolution: 1024
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
@@ -9708,7 +9711,7 @@ Retrieved data resolution: 1024
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">remove_figure</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
@@ -9725,7 +9728,7 @@ Retrieved data resolution: 1024
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[40]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[41]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>3155</pre>
 </div>
@@ -9750,202 +9753,96 @@ They are included because they were used to generated the <a href="https://dp2.l
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Field'</span><span class="p">,</span> <span class="s1">'u'</span><span class="p">,</span> <span class="s1">'g'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="s1">'i'</span><span class="p">,</span> <span class="s1">'z'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">]</span>
-<span class="n">fields</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">region_names</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">'str'</span><span class="p">)</span>
-<span class="n">temp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fields</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">'float'</span><span class="p">)</span>
-<span class="n">field_coadd_maglim</span> <span class="o">=</span> <span class="n">Table</span><span class="p">([</span><span class="n">fields</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">temp</span><span class="p">],</span> <span class="n">names</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
-<span class="n">field_coadd_size</span> <span class="o">=</span> <span class="n">Table</span><span class="p">([</span><span class="n">fields</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">temp</span><span class="p">],</span> <span class="n">names</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
-<span class="k">del</span> <span class="n">columns</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">temp</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># columns = ['Field', 'u', 'g', 'r', 'i', 'z', 'y']</span>
+<span class="c1"># fields = np.asarray(region_names, dtype='str')</span>
+<span class="c1"># temp = np.zeros(len(fields), dtype='float')</span>
+<span class="c1"># field_coadd_maglim = Table([fields, temp, temp, temp, temp, temp, temp], names=columns)</span>
+<span class="c1"># field_coadd_size = Table([fields, temp, temp, temp, temp, temp, temp], names=columns)</span>
+<span class="c1"># del columns, fields, temp</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8b66f174-98c7-4782-841b-f440652db112">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8b66f174-98c7-4782-841b-f440652db112">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [42]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">map_name</span> <span class="o">=</span> <span class="s2">"deepCoadd_psf_maglim_consolidated_map_weighted_mean"</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Reading psf maglim map for filter: "</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">filt</span> <span class="ow">in</span> <span class="n">filter_names</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">filt</span><span class="p">)</span>
-    <span class="n">hspmap</span> <span class="o">=</span> <span class="n">butler</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">map_name</span><span class="p">,</span> <span class="n">band</span><span class="o">=</span><span class="n">filt</span><span class="p">,</span> <span class="n">skymap</span><span class="o">=</span><span class="s1">'lsst_cells_v2'</span><span class="p">,</span>
-                        <span class="n">parameters</span><span class="o">=</span><span class="p">{</span><span class="s1">'degrade_nside'</span><span class="p">:</span><span class="mi">512</span><span class="p">})</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">region_names</span><span class="p">):</span>
-        <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">rad</span> <span class="o">=</span> <span class="n">regions</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-        <span class="n">field_coadd_maglim</span><span class="p">[</span><span class="n">filt</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">hspmap</span><span class="o">.</span><span class="n">get_values_pos</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">field_coadd_maglim</span><span class="p">[</span><span class="n">filt</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">field_coadd_maglim</span><span class="p">[</span><span class="n">filt</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-        <span class="k">del</span> <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">rad</span>
-    <span class="k">del</span> <span class="n">hspmap</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># map_name = "deepCoadd_psf_maglim_consolidated_map_weighted_mean"</span>
+<span class="c1"># print("Reading psf maglim map for filter: ")</span>
+<span class="c1"># for filt in filter_names:</span>
+<span class="c1">#     print(filt)</span>
+<span class="c1">#     hspmap = butler.get(map_name, band=filt, skymap='lsst_cells_v2',</span>
+<span class="c1">#                         parameters={'degrade_nside': 512})</span>
+<span class="c1">#     for i, name in enumerate(region_names):</span>
+<span class="c1">#         ra, dec, rad = regions[name]</span>
+<span class="c1">#         field_coadd_maglim[filt][i] = np.round(hspmap.get_values_pos(ra, dec), 2)</span>
+<span class="c1">#         if field_coadd_maglim[filt][i] &lt; 0:</span>
+<span class="c1">#             field_coadd_maglim[filt][i] = np.nan</span>
+<span class="c1">#         del ra, dec, rad</span>
+<span class="c1">#     del hspmap</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Reading psf maglim map for filter:
-u
-g
-r
-i
-z
-y
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=94be5e5e-f0d7-466b-a33c-51123d74588b">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=94be5e5e-f0d7-466b-a33c-51123d74588b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [43]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">field_coadd_maglim</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># field_coadd_maglim</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[43]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div><i>Table length=18</i>
-<table class="table-striped table-bordered table-condensed" id="table139323561424976">
-<thead><tr><th>Field</th><th>u</th><th>g</th><th>r</th><th>i</th><th>z</th><th>y</th></tr></thead>
-<thead><tr><th>str16</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th></tr></thead>
-<tr><td>DDF_ELAIS_S1</td><td>25.18</td><td>26.57</td><td>25.88</td><td>26.07</td><td>25.07</td><td>23.64</td></tr>
-<tr><td>DDF_XMM_LSS</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td></tr>
-<tr><td>DDF_ECDFS</td><td>24.35</td><td>25.84</td><td>25.47</td><td>25.87</td><td>24.76</td><td>22.23</td></tr>
-<tr><td>DDF_EDFS_a</td><td>nan</td><td>25.63</td><td>25.53</td><td>25.65</td><td>24.53</td><td>23.08</td></tr>
-<tr><td>DDF_EDFS_b</td><td>23.69</td><td>25.75</td><td>25.47</td><td>25.71</td><td>24.58</td><td>23.27</td></tr>
-<tr><td>DDF_COSMOS</td><td>25.77</td><td>26.73</td><td>26.35</td><td>25.94</td><td>25.0</td><td>23.69</td></tr>
-<tr><td>Abell_2764</td><td>nan</td><td>25.88</td><td>nan</td><td>22.58</td><td>nan</td><td>nan</td></tr>
-<tr><td>DESI_SV3_R1</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td></tr>
-<tr><td>M49</td><td>25.62</td><td>27.03</td><td>26.72</td><td>26.05</td><td>nan</td><td>nan</td></tr>
-<tr><td>Prawn</td><td>25.66</td><td>26.52</td><td>26.06</td><td>25.41</td><td>24.12</td><td>nan</td></tr>
-<tr><td>Trifid-Lagoon</td><td>26.22</td><td>26.95</td><td>26.13</td><td>25.29</td><td>23.41</td><td>22.18</td></tr>
-<tr><td>New_Horizons</td><td>25.26</td><td>26.37</td><td>26.37</td><td>25.99</td><td>25.25</td><td>23.65</td></tr>
-<tr><td>Rubin_SV_212_-7</td><td>nan</td><td>26.81</td><td>26.56</td><td>26.09</td><td>nan</td><td>nan</td></tr>
-<tr><td>Rubin_SV_216_-17</td><td>nan</td><td>26.15</td><td>25.93</td><td>25.83</td><td>nan</td><td>nan</td></tr>
-<tr><td>Rubin_SV_225_-40</td><td>26.26</td><td>27.26</td><td>26.75</td><td>26.36</td><td>25.52</td><td>24.06</td></tr>
-<tr><td>Rubin_SV_280_-48</td><td>23.92</td><td>25.09</td><td>24.89</td><td>24.88</td><td>23.7</td><td>nan</td></tr>
-<tr><td>Rubin_SV_300_-41</td><td>nan</td><td>24.41</td><td>nan</td><td>nan</td><td>23.85</td><td>nan</td></tr>
-<tr><td>Rubin_SV_320_-15</td><td>24.09</td><td>24.82</td><td>24.42</td><td>24.99</td><td>24.21</td><td>22.42</td></tr>
-</table></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5e27308e-4ab1-4bb6-a6e1-fb03a6ff02f5">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=5e27308e-4ab1-4bb6-a6e1-fb03a6ff02f5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [44]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">map_name</span> <span class="o">=</span> <span class="s2">"deepCoadd_psf_size_consolidated_map_weighted_mean"</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Reading psf size map for filter: "</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">filt</span> <span class="ow">in</span> <span class="n">filter_names</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">filt</span><span class="p">)</span>
-    <span class="n">hspmap</span> <span class="o">=</span> <span class="n">butler</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">map_name</span><span class="p">,</span> <span class="n">band</span><span class="o">=</span><span class="n">filt</span><span class="p">,</span> <span class="n">skymap</span><span class="o">=</span><span class="s1">'lsst_cells_v2'</span><span class="p">,</span>
-                        <span class="n">parameters</span><span class="o">=</span><span class="p">{</span><span class="s1">'degrade_nside'</span><span class="p">:</span><span class="mi">1024</span><span class="p">})</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">region_names</span><span class="p">):</span>
-        <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">rad</span> <span class="o">=</span> <span class="n">regions</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-        <span class="n">field_coadd_size</span><span class="p">[</span><span class="n">filt</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">hspmap</span><span class="o">.</span><span class="n">get_values_pos</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">field_coadd_size</span><span class="p">[</span><span class="n">filt</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">field_coadd_size</span><span class="p">[</span><span class="n">filt</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-        <span class="k">del</span> <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">rad</span>
-    <span class="k">del</span> <span class="n">hspmap</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># map_name = "deepCoadd_psf_size_consolidated_map_weighted_mean"</span>
+<span class="c1"># print("Reading psf size map for filter: ")</span>
+<span class="c1"># for filt in filter_names:</span>
+<span class="c1">#     print(filt)</span>
+<span class="c1">#     hspmap = butler.get(map_name, band=filt, skymap='lsst_cells_v2',</span>
+<span class="c1">#                         parameters={'degrade_nside': 1024})</span>
+<span class="c1">#     for i, name in enumerate(region_names):</span>
+<span class="c1">#         ra, dec, rad = regions[name]</span>
+<span class="c1">#         field_coadd_size[filt][i] = np.round(hspmap.get_values_pos(ra, dec), 2)</span>
+<span class="c1">#         if field_coadd_size[filt][i] &lt; 0:</span>
+<span class="c1">#             field_coadd_size[filt][i] = np.nan</span>
+<span class="c1">#         del ra, dec, rad</span>
+<span class="c1">#     del hspmap</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Reading psf size map for filter:
-u
-g
-r
-i
-z
-y
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c4c4e34c-8041-4620-8fb0-f01827a43374">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c4c4e34c-8041-4620-8fb0-f01827a43374">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [45]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">field_coadd_size</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># field_coadd_size</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[45]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div><i>Table length=18</i>
-<table class="table-striped table-bordered table-condensed" id="table139323561423184">
-<thead><tr><th>Field</th><th>u</th><th>g</th><th>r</th><th>i</th><th>z</th><th>y</th></tr></thead>
-<thead><tr><th>str16</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th></tr></thead>
-<tr><td>DDF_ELAIS_S1</td><td>2.69</td><td>2.55</td><td>2.55</td><td>2.53</td><td>2.57</td><td>2.6</td></tr>
-<tr><td>DDF_XMM_LSS</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td></tr>
-<tr><td>DDF_ECDFS</td><td>2.53</td><td>2.5</td><td>2.2</td><td>2.25</td><td>2.14</td><td>2.89</td></tr>
-<tr><td>DDF_EDFS_a</td><td>nan</td><td>2.47</td><td>2.31</td><td>2.14</td><td>2.36</td><td>2.04</td></tr>
-<tr><td>DDF_EDFS_b</td><td>2.93</td><td>2.6</td><td>2.46</td><td>2.15</td><td>2.25</td><td>2.0</td></tr>
-<tr><td>DDF_COSMOS</td><td>2.76</td><td>2.31</td><td>2.49</td><td>2.18</td><td>2.37</td><td>2.38</td></tr>
-<tr><td>Abell_2764</td><td>nan</td><td>2.13</td><td>nan</td><td>3.11</td><td>nan</td><td>nan</td></tr>
-<tr><td>DESI_SV3_R1</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td><td>nan</td></tr>
-<tr><td>M49</td><td>2.94</td><td>2.68</td><td>2.54</td><td>2.47</td><td>nan</td><td>nan</td></tr>
-<tr><td>Prawn</td><td>2.86</td><td>2.82</td><td>2.54</td><td>2.62</td><td>2.84</td><td>nan</td></tr>
-<tr><td>Trifid-Lagoon</td><td>2.5</td><td>2.36</td><td>2.46</td><td>2.16</td><td>2.14</td><td>2.28</td></tr>
-<tr><td>New_Horizons</td><td>2.98</td><td>2.77</td><td>2.3</td><td>2.27</td><td>2.2</td><td>2.23</td></tr>
-<tr><td>Rubin_SV_212_-7</td><td>nan</td><td>2.68</td><td>2.62</td><td>2.37</td><td>nan</td><td>nan</td></tr>
-<tr><td>Rubin_SV_216_-17</td><td>nan</td><td>2.28</td><td>2.13</td><td>2.49</td><td>nan</td><td>nan</td></tr>
-<tr><td>Rubin_SV_225_-40</td><td>2.82</td><td>2.87</td><td>2.66</td><td>2.59</td><td>2.6</td><td>2.6</td></tr>
-<tr><td>Rubin_SV_280_-48</td><td>3.27</td><td>3.18</td><td>3.13</td><td>2.81</td><td>3.1</td><td>nan</td></tr>
-<tr><td>Rubin_SV_300_-41</td><td>nan</td><td>2.39</td><td>nan</td><td>nan</td><td>3.19</td><td>nan</td></tr>
-<tr><td>Rubin_SV_320_-15</td><td>2.29</td><td>3.0</td><td>2.53</td><td>2.69</td><td>2.63</td><td>2.45</td></tr>
-</table></div>
 </div>
 </div>
 </div>
