@@ -43,7 +43,11 @@ Portal Aspect
 API Aspect
 ==========
 
-Coming soon.
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    api/index
 
 
 .. _tutorials-contribute:
