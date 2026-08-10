@@ -1,17 +1,17 @@
 .. _api-101-3:
 
-####################################################################
-101.3. How to use TOPCAT and SIA to view DP1 images in ds9 or Aladin
-####################################################################
+###################################################
+101.3. View images with SIA, TOPCAT, and DS9/Aladin
+###################################################
 
-**Data Release:** DP1
+**Data Release:** DP2
 
-**Last verified to run:** 2026-06-12
+**Last verified to run:** 2026-08-10
 
 **Learning objective:** This tutorial provides a basic guide to using `TOPCAT <http://www.star.bris.ac.uk/~mbt/topcat/>`_ with the
-`Simple Image Access (SIA) <https://www.ivoa.net/documents/SIA/>`_ protocol and sending images directly to `SAOImageDS9 <https://ds9.si.edu/doc/install.html>`_ and `Aladin <https://aladin.cds.unistra.fr/>`_ to explore DP1 image data.
+`Simple Image Access (SIA) <https://www.ivoa.net/documents/SIA/>`_ protocol and sending images directly to `SAOImageDS9 <https://ds9.si.edu/doc/install.html>`_ and `Aladin <https://aladin.cds.unistra.fr/>`_ to explore DP2 image data.
 
-**LSST data products:** The DP1 catalogs and image data products within the Rubin Science Platform (RSP).
+**LSST data products:** The DP2 catalogs and image data products within the Rubin Science Platform (RSP).
 
 **Credit:** Based on tutorials developed by the Rubin Community Science team. Please consider acknowledging them if this
 tutorial is used for the preparation of journal articles, software releases, or other tutorials.
@@ -22,7 +22,7 @@ of the Rubin Community Forum. Rubin staff will respond to all questions posted t
 
 **1. Open TOPCAT and SAOImageDS9 or Aladin**
 
-See `API Tutorial 101-1 <https://dp1.lsst.io/tutorials/api/api-101-1.html>`_ for instructions on how to access Rubin DP1 data with "Tool for OPerations on Catalogues And Tables" (TOPCAT).
+See `API Tutorial 101-1 <https://dp1.lsst.io/tutorials/api/api-101-1.html>`_ for instructions on how to access Rubin DP2 data with "Tool for OPerations on Catalogues And Tables" (TOPCAT).
 Obtain an authentication token that includes  **read: image**.
 Follow download and install instructions at `DS9 <https://ds9.si.edu/doc/install.html>`_ and `Aladin download <https://aladin.cds.unistra.fr/AladinDesktop/#Download>`_.
 Screenshots for this tutorial were generated on a Windows computer using TOPCAT Version 4.10-7, SAOImageDS9 Verions 8.6, and Aladin (v 12.060).
@@ -47,7 +47,7 @@ As stated before, TOPCAT commands are identical for either option.
     Figure 1: TOPCAT window with Interop menu item selected.
 
 A pop up window will open (Figure 2) showing SAMP Control active clients: Hub, topcat, and ds9, or Hub, topcat, and Aladin (depending on which software package was used).
-This step will verify TOPCAT has the ability to send information to ds9 or Aladin.
+This step will verify TOPCAT can to send information to ds9 or Aladin.
 
 .. figure:: images/api-101-3-2.png
     :name: api-101-3-2
@@ -73,11 +73,11 @@ In the main TOPCAT window, click the VO menu item, then select Simple Image Acce
 
 At the bottom of the window, in the SIA Parameters (Figure 4) section of the Simple Image Access (SIA) Query window:
 
--	 add https\://data.lsst.cloud/api/sia/dp1/query into SIA URL:
+-	 add https\://data.lsst.cloud/api/sia/dp2/query into SIA URL:
 -	Change SIA Version:  to 2.0 by using the drop down menu
 -	Input 53.076 degrees into the RA: box and -28.110 degrees into the Dec: box (coordinates for the ECDFS field)
 -	Change Angular Size: to 0.5 degrees
--	Click OK
+-	Click "OK"
 
 .. figure:: images/api-101-3-4.png
     :name: api-101-3-4
@@ -98,9 +98,9 @@ Press Authenticate (Figure 5).
 
     Figure 5: Add authentication information obtained from tutorial “101.1 How to get started with TOPCAT”.
 
-**2.4 TOPCAT will load the ObsCore table**
+**2.4 TOPCAT will load a DP2 SIA table**
 
-TOPCAT will retrieve the relevant sections of the ObsCore table (Figure 6).  The table retrieved by TOPCAT has 18,118 rows and 37 columns.
+TOPCAT will retrieve a table called SIA-30m) (whic are the relevant sections of the ObsCore table) (Figure 6).  The table retrieved by TOPCAT has 132 rows and 37 columns.
 
 .. figure:: images/api-101-3-6.png
     :name: api-101-3-6
@@ -111,7 +111,7 @@ TOPCAT will retrieve the relevant sections of the ObsCore table (Figure 6).  The
 
 **2.5 Tell TOPCAT how to send data to ds9**
 
-Click the "Display actions invoked when rows are selected" button (resembles a ladder with a lightning bolt) (Figure 7), to open the TOPCAT: Activation Actions window.
+Click the "Display actions invoked when rows are selected" button (resembles a ladder with a lightning bolt, red circle in Figure 7), to open the TOPCAT: Activation Actions window.
 
 .. figure:: images/api-101-3-7.png
     :name: api-101-3-7
@@ -134,8 +134,7 @@ Click the "View URL" option (Figure 8). (Note: older versions of TOPCAT might ne
 **2.7 Click Display table cell data**
 
 Click on the "Display table cell data" button (Figure 9) to open the TOPCAT: Table Browser window (Figure 10).
-Use the scroll bar on the side to scroll down the table and select a row that has calibration level 2 for the ECDFS field.
-Row 6915 is selected in Figure 10.  A new window will open entitled View Datalink Table (Figure 11).
+
 
 .. figure:: images/api-101-3-9.png
     :name: api-101-3-9
@@ -143,12 +142,13 @@ Row 6915 is selected in Figure 10.  A new window will open entitled View Datalin
 
     Figure 9: Click Display table cell data button to open the TOPCAT: Table Browser.
 
+Once the TOPCAT: Table Browser window (Figure 10) opens, click on row 1 to select an image.
 
 .. figure:: images/api-101-3-10.png
     :name: api-101-3-10
-    :alt: Use scroll bar on the right to find an image with calibration level 2 within the ECDFS field. Click a row to open the View Datalink Table window.
+    :alt: Click a row to open the View Datalink Table window.
 
-    Figure 10: Use scroll bar on the right to find an image with calibration level 2 within the ECDFS field. Click a row to open the View Datalink Table window.
+    Figure 10: Click a row to select an image and to open the View Datalink Table window (see Figure 11).
 
 
 
@@ -184,8 +184,8 @@ If using Aladin for image display, after completing step 2.8 (listed above), the
 
 .. figure:: images/api-101-3-13.png
     :name: api-101-3-13
-    :alt: Aladin display dp1 image.
+    :alt: Aladin display dp2 image.
 
-    Figure 13: DP1 image displayed in Aladin.
+    Figure 13: DP2 image displayed in Aladin.
 
 
