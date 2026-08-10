@@ -38,7 +38,7 @@ Resulting catalog
 
 The results of shear detection and measurement are stored in the ``ShearObject`` catalog.
 
-If a given galaxy is detected with :math:`> 5\sigma` in all five counterfactual images, then it will populate five rows of the ``ShearObject`` table (with five separate ``shearObjectId``).
+If a given galaxy is detected with :math:`> 5\sigma` significance in all five counterfactual images, then it will populate five rows of the ``ShearObject`` table (with five separate ``shearObjectId``).
 
 The process of detecting and measuring objects in the counterfactual images, and the resulting ``ShearObject`` table, is completely independent of the process that creates the ``Object`` table.
 These two tables are not joinable and have independent (unique and unrelated) object identifiers.
