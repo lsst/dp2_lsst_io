@@ -46,8 +46,8 @@ Click on "Columns" in the right panel (top right arrow) to see a description of 
 **2.2 Run ADQL query**
 
 Within the ADQL Text panel of the Table Access Protocol (TAP) Query window (Figure 1 bottom left arrow), copy the ADQL query below and paste into the ADQL text window, then click "Run Query" (Figure 1 bottom center arrow).
-This query will retrieve the RA/DEC of each of the Coadd Patches within DP2. A temporary window, called "Load New Table", will appear will appear with a status bar.
-This window will close when the table is loaded and a new table name should appear in the main TOPCAT window. The query should take a few seconds to run.
+This query will retrieve the RA/DEC of each of the Coadd Patches within DP2. A temporary window called "Load New Table" will appear with a status bar showing query progress.
+The window will close when the table is loaded and a new table name will appear in the main TOPCAT window. The query should take a few seconds to run.
 
 **NOTE: It is recommended to construct a TAP query using spatial constraints but that is not necessary in this case because the dp2.CoaddPatches table is small.
 See examples of queries with spatial constraints in API 101-1 (linked above) or step 3.1 below.**
