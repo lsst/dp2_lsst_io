@@ -71,7 +71,7 @@ To create a Skymap of data returned from the query, click on the "Sky plotting w
     Figure 2:  Click "Sky plotting window".
 
 
-The default plot shows the seven fields contained in Data Preview 2 on a rotating globe.
+The default plot shows the fields contained in Data Preview 2 on a rotating globe.
 Click on "Axes", then select "aitoff" from the "Projection" drop-down menu to change the skymap.
 Click the "X" in the upper right-hand corner to close the image.
 
