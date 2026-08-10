@@ -108,7 +108,7 @@ Notice a new table (red arrow) is available in the TOPCAT window. Click the hist
 
 **3.2 Plot Histogram**
 
-In the "Histogram Plot" window the default histogram will be plotted from the first column in the table (in this case the "ra").
+In the "Histogram Plot" window the default histogram will be plotted from the first appropriate value in the drop-down menu (in this case the "ra").
 To change the histogram value, select "magLim" from the "X:" drop-down menu (see Figure 5).
 To close the histogram, click the "X" in the upper right-hand corner of this window.
 
