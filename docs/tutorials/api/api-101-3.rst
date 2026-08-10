@@ -100,7 +100,7 @@ Press Authenticate (Figure 5).
 
 **2.4 TOPCAT will load a DP2 SIA table**
 
-TOPCAT will retrieve a table called SIA-30m) (whic are the relevant sections of the ObsCore table) (Figure 6).  The table retrieved by TOPCAT has 132 rows and 37 columns.
+TOPCAT will retrieve a table called SIA-30m (Figure 6).  The table retrieved by TOPCAT has 132 rows and 37 columns.
 
 .. figure:: images/api-101-3-6.png
     :name: api-101-3-6
