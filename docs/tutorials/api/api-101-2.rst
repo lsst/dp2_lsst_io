@@ -24,7 +24,9 @@ of the Rubin Community Forum. Rubin staff will respond to all questions posted t
 
 **1. Open TOPCAT and access DP2 Data.**
 
-See `API Tutorial 101-1 <https://dp1.lsst.io/tutorials/api/api-101-1.html>`_ for instructions on how to access Rubin DP2 data with "Tool for OPerations on Catalogues And Tables" (TOPCAT).
+
+See :doc:`API Tutorial 101-1 <tutorials/api/api-101-1>` for instructions on how to access Rubin DP2 data with "Tool for OPerations on Catalogues And Tables" (TOPCAT).
+
 
 **2. Create DP2 Skymap.**
 
