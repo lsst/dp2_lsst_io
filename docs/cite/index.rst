@@ -11,7 +11,9 @@ DOI and publications
 Data release and data products
 ------------------------------
 
-When citing this data release please reference the data release paper: |dp2_paper|.
+When citing this data release please reference the data release paper:
+
+|dp2_paper|
 
 When asked to cite the DP2 dataset as a whole please use:
 
