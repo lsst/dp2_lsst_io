@@ -50,7 +50,7 @@ this will open up a separate Table Access Protocol (TAP) Query window.
 
     Figure 1:  The main TOPCAT window, with the "VO" menu pulled down and the "Table Access Protocol (TAP) Query" highlighted.
 
-**4. Add DP2 TAP URL**
+**4. Add DP2 TAP URL.**
 
 In “TAP URL”, at the bottom of the window, use the DP2 TAP service address ``https://data.lsst.cloud/api/tap``, then click the “Use Service” button.
 
