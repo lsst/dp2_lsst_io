@@ -1,8 +1,8 @@
 .. _api:
 
-################
+#############
 API tutorials
-################
+#############
 
 Tutorials for the API (Application Programming Interface) Aspect of the Rubin Science Platform at `data.lsst.cloud <https://data.lsst.cloud/>`_.
 
@@ -25,4 +25,5 @@ Short tutorials with a learning objective of how to use a single RSP function or
 
     api-101-1.rst
     api-101-2.rst
+    api-101-3.rst
 
