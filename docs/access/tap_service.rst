@@ -42,7 +42,7 @@ Use spatial constraints
 =======================
 
 It is recommended to always include spatial constraints unless deliberately performing an all-sky analysis.
-Even in that case it is strongly recommend to first prototype the query with a spatial constraint included.
+Even in that case it is strongly recommended to first prototype the query with a spatial constraint included.
 
 Qserv stores catalog data sharded by coordinate (RA, Dec).
 This can be thought of as the database being divided up by spatial region (shard) and distributed across multiple servers.
