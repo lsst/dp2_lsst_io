@@ -56,4 +56,4 @@ Footprint vs center: Flags without ``Center`` suffix are set if any pixel in the
 ``Center`` flags are set only if a pixel in the central 3x3 box has that bit.
 For quality filtering, center flags are typically more important since they affect core photometry.
 
-See images-visit-mask-planes and images-deep-coadd-mask-planes for detailed mask plane descriptions.
+See  :doc:`/products/images/visit_image_mask_planes` and :doc:`/products/images/deep_coadd_mask_planes` for detailed mask plane descriptions.
