@@ -90,7 +90,7 @@ Create a histogram in TOPCAT by using the Histogram button.
 
 Return to the Table Access Protocol (TAP) Query window to execture a new ADQL query.
 Copy the ADQL query below, add it to the window in the "ADQL Text" box (see Figure 1) and click "Run Query".
-A temporary "Load New Table" window will appear. A new table will appear in the main TOPCAT window (see Figure 4).
+A temporary "Load New Table" window will appear and a new table will appear in the main TOPCAT window (see Figure 4) when the query is complete.
 
 .. code-block:: sql
 
