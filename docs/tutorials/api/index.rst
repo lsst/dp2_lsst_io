@@ -16,4 +16,12 @@ See also the `API Aspect User Guide <https://rsp.lsst.io/guides/api/index.html>`
 
 Short tutorials with a learning objective of how to use a single RSP function or tool.
 
+101. Remote data access with TOPCAT
+------------------------------------
+
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    api-101-1.rst
 
