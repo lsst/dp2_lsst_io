@@ -143,7 +143,7 @@ Search for a calibrated image at the target position. For this example, search f
    target_ra = 53.1246023
    target_dec = -27.7404715
    eff_wl = 622.1e-09
-   time1 = Time(60623.256, format="mjd", scale="tai")
+   time1 = Time(60800.000, format="mjd", scale="tai")
    time2 = Time(61000.000, format="mjd", scale="tai")
 
    circle = (target_ra, target_dec, 0.05)
