@@ -144,14 +144,14 @@ Search for a calibrated image at the target position. For this example, search f
    target_dec = -27.7404715
    eff_wl = 622.1e-09
    time1 = Time(60623.256, format="mjd", scale="tai")
-   time2 = Time(60623.259, format="mjd", scale="tai")
+   time2 = Time(61000.000, format="mjd", scale="tai")
 
    circle = (target_ra, target_dec, 0.05)
 
    results = sia_service.search(
        pos=circle,
-       calib_level=2,
-       dpsubtype="lsst.visit_image",
+       calib_level=3,
+       dpsubtype="lsst.deep_coadd",
        band=eff_wl,
        time=(time1, time2),
    )
