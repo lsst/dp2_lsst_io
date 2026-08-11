@@ -6,15 +6,15 @@
 
 For the API Aspect of the Rubin Science Platform at data.lsst.cloud.
 
-**Data Release:** DP1
+**Data Release:** DP2
 
-**Last verified to run:** 2026-03-17
+**Last verified to run:** 2026-08-11
 
-**Learning objective:** Create image cutouts from Rubin DP1 images using the Server-side Operations for Data Access (SODA) protocol with PyVO from a Python environment.
+**Learning objective:** Create image cutouts from Rubin DP2 images using the Server-side Operations for Data Access (SODA) protocol with PyVO from a Python environment.
 
-**LSST data products:** DP1 image cutouts accessed via the Rubin Science Platform SODA service.
+**LSST data products:** DP2 image cutouts accessed via the Rubin Science Platform SODA service.
 
-**Credit:** Developed by Andrés A. Plazas Malagón and the Rubin Community Science Team (CST), and based on tutorials developed by the CST. Please consider acknowledging them if this tutorial is used for the preparation of journal articles, software releases, or other tutorials.
+**Credit:** Originally developed Rubin Community Science Team (CST). Please consider acknowledging them if this tutorial is used for the preparation of journal articles, software releases, or other tutorials.
 
 **Get Support:** Everyone is encouraged to ask questions or raise issues in the `Support Category <https://community.lsst.org/c/support/6>`_ of the Rubin Community Forum. Rubin staff will respond to all questions posted there.
 
@@ -22,9 +22,11 @@ For the API Aspect of the Rubin Science Platform at data.lsst.cloud.
 Introduction
 ------------
 
-This tutorial demonstrates how to create image cutouts from Rubin DP1 data programmatically using the API Aspect of the Rubin Science Platform. The tutorial uses the Python Virtual Observatory (PyVO) package to authenticate with the Rubin SODA cutout service and request spatial cutouts of images.
+This tutorial demonstrates how to create image cutouts from Rubin DP1 data programmatically using the API Aspect of the Rubin Science Platform.
+The tutorial uses the Python Virtual Observatory (PyVO) package to authenticate with the Rubin SODA cutout service and request spatial cutouts of images.
 
-SODA is a protocol of the International Virtual Observatory Alliance (IVOA) that provides server-side data processing capabilities, including spatial and spectral cutouts. Learn more in the `IVOA SODA documentation <https://www.ivoa.net/documents/SODA/>`_.
+SODA is a protocol of the International Virtual Observatory Alliance (IVOA) that provides server-side data processing capabilities, including spatial and spectral cutouts.
+Learn more in the `IVOA SODA documentation <https://www.ivoa.net/documents/SODA/>`_.
 
 The Rubin SODA cutout service supports three service types that control how much image data is returned:
 
@@ -127,7 +129,7 @@ Define the SIA service endpoint and create a SIA service object.
 
 .. code-block:: python
 
-   rsp_sia_url = "https://data.lsst.cloud/api/sia/dp1/query"
+   rsp_sia_url = "https://data.lsst.cloud/api/sia/dp2/query"
    sia_service = pyvo.dal.SIA2Service(
        rsp_sia_url, session=session, check_baseurl=False
    )
