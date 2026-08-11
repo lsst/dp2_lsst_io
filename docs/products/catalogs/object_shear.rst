@@ -34,12 +34,16 @@ Butler
 Description
 ===========
 
-TBD
+Metadetection is a novel approach that combines source detection with metacalibration to produce weak lensing shear estimates that are robust to selection effects. 
+The `ShearObject` table contains measurements of objects detected and measured on coadded images with metadetection. The metadetection algorithm involves applying small artificial shear to images of small regions of sky and performing detection on the sheared images, as well as measurements that are used to calculate a shear response (`Sheldon et al. 2020 <https://ui.adsabs.harvard.edu/abs/2020ApJ...902..138S/abstract>`_, `Sheldon et al. 2023 <https://ui.adsabs.harvard.edu/abs/2023OJAp....6E..17S/abstract>`_, `Yamamoto et al. 2025 <https://ui.adsabs.harvard.edu/abs/2025MNRAS.543.4156Y/abstract>`_). The shape measurements are performed by Gaussian weighted moments and need to be converted into shear estimates via the response.
+In addition to the shape and shear measurements, the positions, fluxes, gaussian moments, and PSF shapes are also measured.
+
+The `ShearObject` table is completely independent from the ``Object`` table.
 
 Processing
 ----------
 
-TBD
+The shear object table is the result of :doc:`/processing/detection/shear`.
 
 Tutorials
 ---------
