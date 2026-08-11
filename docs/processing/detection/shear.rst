@@ -27,10 +27,12 @@ Detection and measurement
 All objects detected with a significance of :math:`> 5\sigma` in a given counterfactual image have their shapes measured.
 
 Two approaches are used for shape and shear measurement:
-1. A single 2D gaussian is fit jointly across the r, i, and z-band deep coadd images. The resulting ellipticity components in the image x-y (the first component) and diagonal (the second component) directions are measured, and then the reduced shear components (``gauss_g1``, ``gauss_g2``) are obtained after a response is applied to the ellipticity.
-2. The 2D gaussian-weighted moments on single band (r, i, z) images are fit separately. The resulting ellipticity components of the sum, weighted by inverse-variance, in the image x-y and diagonal directions are measured, and then the reduced shear components (``pgauss_g1``, ``pgauss_g2``) are obtained after a response is applied to the ellipticity.
 
-In addition to the shape and shear measurements above, the positions, fluxes, gaussian moments, and PSF shapes are also measured.
+1. A single 2D gaussian is fit jointly across the r, i, and z-band deep coadd images. The resulting ellipticity components in the image x-y (``gauss_g1``) and diagonal (``gauss_g2``) directions are measured.
+
+2. The 2D gaussian-weighted moments on single band (r, i, z) images are fit separately. The resulting ellipticity components of the mean, weighted by inverse-variance, in the image x-y (``pgauss_g1``) and diagonal (``pgauss_g2``) directions are measured. This is currently not included in DP2.
+
+In addition to the shape measurements above, the positions, fluxes, gaussian moments, and PSF shapes are also measured.
 
 
 Resulting catalog
