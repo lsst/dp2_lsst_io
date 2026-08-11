@@ -30,7 +30,7 @@ Two approaches are used for measurement (`Yamamoto et al. 2025 <https://ui.adsab
 
 1. A Gaussian forward model fit across the r,i,z band images individually (``gauss``). The resulting ellipticity components in the image x-y (``gauss_g1``) and diagonal (``gauss_g2``) directions are measured.
 
-2. A specialized Fourier-space method to measure a Gaussian weighted flux for each detection on a PSF-deconvolved image (``pgauss``). This flux measure has the advantage of matching the effective flux apertures between different bands, which is important for the measurement of object colors and photometric redshifts. 
+2. A specialized Fourier-space method to measure a Gaussian weighted flux for each detection on a PSF-deconvolved image (``pgauss``). This flux measure has the advantage of matching the effective flux apertures between different bands, which is important for the measurement of object colors and photometric redshifts.
 
 Both ``gauss`` and ``pgauss`` measure pre-PSF properties of the object.
 
