@@ -6,15 +6,15 @@
 
 For the API Aspect of the Rubin Science Platform at data.lsst.cloud.
 
-**Data Release:** DP1
+**Data Release:** DP2
 
 **Last verified to run:** 2026-02-18
 
-**Learning objective:** Query Rubin DP1 catalogs using the Table Access Protocol (TAP) with PyVO from a Python environment.
+**Learning objective:** Query Rubin DP2 catalogs using the Table Access Protocol (TAP) with PyVO from a Python environment.
 
-**LSST data products:** DP1 Visit catalogs accessed via the Rubin Science Platform TAP service.
+**LSST data products:** DP2 Visit catalogs accessed via the Rubin Science Platform TAP service.
 
-**Credit:** Developed by Andrés A. Plazas Malagón and the Rubin Community Science Team (CST), and based on tutorials developed by the CST. Please consider acknowledging them if this tutorial is used for the preparation of journal articles, software releases, or other tutorials.
+**Credit:** Originally developed by the Rubin Community Science team. Please consider acknowledging them if this tutorial is used for the preparation of journal articles, software releases, or other tutorials.
 
 **Get Support:** Everyone is encouraged to ask questions or raise issues in the `Support Category <https://community.lsst.org/c/support/6>`_ of the Rubin Community Forum. Rubin staff will respond to all questions posted there.
 
@@ -22,7 +22,8 @@ For the API Aspect of the Rubin Science Platform at data.lsst.cloud.
 Introduction
 ------------
 
-This tutorial demonstrates how to access Rubin DP1 catalog data programmatically using the API Aspect of the Rubin Science Platform. The tutorial uses the Python Virtual Observatory (PyVO) package to authenticate with the Rubin Table Access Protocol (TAP) service and execute an asynchronous Astronomical Data Query Language (ADQL) query.
+This tutorial demonstrates how to access Rubin DP2 catalog data programmatically using the API Aspect of the Rubin Science Platform.
+The tutorial uses the Python Virtual Observatory (PyVO) package to authenticate with the Rubin Table Access Protocol (TAP) service and execute an asynchronous Astronomical Data Query Language (ADQL) query.
 
 This workflow is suitable for users who prefer scripted or automated access to Rubin data from a local Python environment or from cloud-based environments such as Google Colab. Familiarity with basic Python syntax is assumed.
 
@@ -107,13 +108,13 @@ The TAP service object represents the remote catalog service and manages job sub
 6. Define the ADQL query
 ------------------------
 
-Define an ADQL query that retrieves the ``visit`` table, as in `DP1 Notebook tutorial 201.10 <https://dp1.lsst.io/tutorials/notebook/201/notebook-201-10.html>`_
+Define an ADQL query that retrieves the ``visit`` table, as in `DP2 Notebook tutorial 201.10 <https://dp2.lsst.io/tutorials/notebook/201/notebook-201-10.html>`_
 
 .. code-block:: python
 
    query = """
    SELECT visit, ra, dec, band, expMidptMJD
-   FROM dp1.Visit
+   FROM dp2.Visit
    WHERE CONTAINS(
          POINT('ICRS', ra, dec),
          CIRCLE('ICRS', 53.13, -28.10, 3)
@@ -168,4 +169,4 @@ Optionally display the first few rows.
    :name: api-102-1-1
    :alt: Screenshot of a notebook output displaying the first five rows of the query result table.
 
-   Figure 1: Preview of the DP1 ``visit`` table query results returned by the TAP service.
+   Figure 1: Preview of the DP2 ``visit`` table query results returned by the TAP service.
