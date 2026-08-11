@@ -129,7 +129,7 @@ The position is specified as a tuple of (RA, Dec, radius) in decimal degrees.
 7. Query for images
 -------------------
 
-Execute a search query to retrieve images that overlap the specified region. Limit the results to calibrated images (``calib_level=2``) and restrict the number of results to 5.
+Execute a search query to retrieve images that overlap the specified region. Limit the results to calibrated images (``calib_level=3``) and restrict the number of results to 5.
 Note: For Early Data Preview 2 only ``calib_level=3`` images are available.
 
 .. code-block:: python
