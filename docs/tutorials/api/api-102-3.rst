@@ -58,8 +58,8 @@ Copy the token to a secure location. The token will not be shown again.
    Treat tokens like passwords.
    Do not share them and do not store them in version-controlled files.
 
-2. Install and import the Python packages
-------------------------------------------
+2. Install and import Python packages
+-------------------------------------
 
 Install the required Python packages in the chosen environment (for example, in a local computer or in a Google Colab notebook).
 
