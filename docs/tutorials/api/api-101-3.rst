@@ -22,7 +22,7 @@ of the Rubin Community Forum. Rubin staff will respond to all questions posted t
 
 **1. Open TOPCAT and SAOImageDS9 or Aladin.**
 
-See :doc:`API Tutorial 101-1 <api-101-1>` for instructions on how to access Rubin DP2 data with "Tool for OPerations on Catalogues And Tables" (TOPCAT).
+See :doc:`API Tutorial 101.1 <api-101-1>` for instructions on how to access Rubin DP2 data with "Tool for OPerations on Catalogues And Tables" (TOPCAT).
 Obtain an authentication token that includes  **read: image**.
 Follow download and install instructions at `DS9 <https://ds9.si.edu/doc/install.html>`_ and `Aladin download <https://aladin.cds.unistra.fr/AladinDesktop/#Download>`_.
 Screenshots for this tutorial were generated on a Windows computer using TOPCAT Version 4.10-7, SAOImageDS9 Versions 8.6, and Aladin (v 12.060).
