@@ -22,7 +22,7 @@ For the API Aspect of the Rubin Science Platform at data.lsst.cloud.
 Introduction
 ------------
 
-This tutorial demonstrates how to create image cutouts from Rubin DP1 data programmatically using the API Aspect of the Rubin Science Platform.
+This tutorial demonstrates how to create image cutouts from Rubin DP2 data programmatically using the API Aspect of the Rubin Science Platform.
 The tutorial uses the Python Virtual Observatory (PyVO) package to authenticate with the Rubin SODA cutout service and request spatial cutouts of images.
 
 SODA is a protocol of the International Virtual Observatory Alliance (IVOA) that provides server-side data processing capabilities, including spatial and spectral cutouts.
@@ -219,7 +219,7 @@ Extract the image data from the image extension and display the cutout.
        vmin=np.percentile(image_data, 5),
        vmax=np.percentile(image_data, 95),
    )
-   plt.title("Rubin DP1 Cutout Image")
+   plt.title("Rubin DP2 Cutout Image")
    plt.colorbar()
    plt.show()
 
@@ -227,7 +227,7 @@ The cutout image is displayed with contrast adjusted using the 5th and 95th perc
 
 .. figure:: images/SODA-cutout.png
    :name: api-102-3-soda-cutout
-   :alt: Example of a SODA cutout image showing a portion of the sky from Rubin DP1 data.
+   :alt: Example of a SODA cutout image showing a portion of the sky from Rubin DP2 data.
 
    Example of a SODA cutout image.
 
