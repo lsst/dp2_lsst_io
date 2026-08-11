@@ -46,3 +46,4 @@ If a given galaxy is detected with :math:`> 5\sigma` significance in all five co
 
 The process of detecting and measuring objects in the counterfactual images, and the resulting ``ShearObject`` table, is completely independent of the process that creates the ``Object`` table.
 These two tables are not joinable and have independent (unique and unrelated) object identifiers.
+
