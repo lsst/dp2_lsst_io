@@ -43,7 +43,7 @@ Related tutorials describe full image downloads via SIA (:doc:`api-102-2`) and c
 1. Create an RSP access token
 ------------------------------
 
-Create an RSP access token following the instructions on the `Creating user tokens webpage <https://rsp.lsst.io/guides/auth/creating-user-tokens.html>`_
+Create an RSP access token following the instructions on the `Creating user tokens webpage <https://rsp.lsst.io/guides/auth/creating-user-tokens.html>`_.
 
 Configure the token with the following properties:
 
