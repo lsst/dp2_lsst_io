@@ -15,7 +15,7 @@ to explore DP2.
 
 **LSST data products:** The DP2 catalogs within the Rubin Science Platform (RSP) Table Access Protocol (TAP) service.
 
-**Credit:** Based on tutorials developed by the Rubin Community Science team. Please consider acknowledging them if this
+**Credit:** Originally developed by the Rubin Community Science team. Please consider acknowledging them if this
 tutorial is used for the preparation of journal articles, software releases, or other tutorials.
 
 **Get Support:** Everyone is encouraged to ask questions or raise issues in the `Support Category <https://community.lsst.org/c/support/6>`_
@@ -82,7 +82,7 @@ Note: Under TAP service, the file structure may list dp02 and dp1 catalogs first
     :alt: A screenshot of the Table Access Protocol (TAP) Query window showing DP2 tables.
 
     Figure 4:  The Table Access Protocol (TAP) Query window; a list of DP2 tables
-    available for query can be be seen in the Metadata panel.
+    available for query can be seen in the Metadata panel.
 
 **7. Click dp2.Object table.**
 
@@ -97,7 +97,7 @@ Note that the column names, data types, units, and descriptions for the columns 
     Figure 5:  The Table Access Protocol (TAP) Query window as in Figure 4, with dp2.Object table and
     column names, data types, units, and descriptions for the columns shown in the right-hand Metadata panel.
 
-**8. Explore sample ADQL queries.**
+**8. Explore sample Astronomical Data Query Language (ADQL) queries.**
 
 Within the ADQL Text panel of the Table Access Protocol (TAP) Query window, select the Examples button located at the lower left and choose Full Table from the Basic menu.
 A sample ADQL query will be displayed in the text box. Figure 6 demonstrates a query that retrieves the top 1000 entries from the dp2.Object table.
@@ -118,7 +118,7 @@ or replaced with a predefined query (such as the one presented in Step 9).
 
 Because the dp2.Object table is large, it is good practice to always include spatial constraints and only retrieve necessary columns.
 
-The ADQL code block below searches for obects within 0.5 degrees of the center of the Extended Chandra Deep Field South (ECDFS) field, RA, Dec =  53.13, -28.10 and retrieve g-band and r-band PSF magnitudes.
+The ADQL code block below searches for objects within 0.5 degrees of the center of the Extended Chandra Deep Field South (ECDFS) field, RA, Dec =  53.13, -28.10 and retrieves g-band and r-band PSF magnitudes.
 
 Copy the code block below and paste it into the ADQL text box, then click "Run Query". The query could take a few seconds to execute.
 
@@ -154,7 +154,7 @@ Note that a new table, TAP_1_dp2.Object, has appeared in the Table List panel of
 
 **11. Explore the table.**
 
-To view the table of results, find the in the "Table List" panel of the main TOPCAT window, select table to view (in this instance only one table is available),
+To view the table of results, find the "Table List" panel of the main TOPCAT window, select table to view (in this instance only one table is available),
 then click on the "Display table cell data" icon (see Figure 9 red circle).
 
 .. figure:: images/api-101-1-9.png
