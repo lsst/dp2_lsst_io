@@ -26,13 +26,15 @@ Detection and measurement
 
 All objects detected with a significance of :math:`> 5\sigma` in a given counterfactual image have their shapes measured.
 
-Two approaches are used for shape and shear measurement:
+Two approaches are used for measurement (`Yamamoto et al. 2025 <https://ui.adsabs.harvard.edu/abs/2025MNRAS.543.4156Y/abstract>`_).
 
-1. A single 2D gaussian is fit jointly across the r, i, and z-band deep coadd images. The resulting ellipticity components in the image x-y (``gauss_g1``) and diagonal (``gauss_g2``) directions are measured.
+1. A Gaussian forward model fit across the r,i,z band images individually (``gauss``). The resulting ellipticity components in the image x-y (``gauss_g1``) and diagonal (``gauss_g2``) directions are measured.
 
-2. The 2D gaussian-weighted moments on single band (r, i, z) images are fit separately. The resulting ellipticity components of the mean, weighted by inverse-variance, in the image x-y (``pgauss_g1``) and diagonal (``pgauss_g2``) directions are measured. This is currently not included in DP2.
+2. A specialized Fourier-space method to measure a Gaussian weighted flux for each detection on a PSF-deconvolved image (``pgauss``). This flux measure has the advantage of matching the effective flux apertures between different bands, which is important for the measurement of object colors and photometric redshifts. 
 
-In addition to the shape measurements above, the positions, fluxes, gaussian moments, and PSF shapes are also measured.
+Both ``gauss`` and ``pgauss`` measure pre-PSF properties of the object.
+
+In addition to the measurements above, the positions, sizes, and PSF shapes are also measured.
 
 
 Resulting catalog
