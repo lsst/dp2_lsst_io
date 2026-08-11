@@ -15,7 +15,7 @@ to explore DP2.
 
 **LSST data products:** The DP2 catalogs within the Rubin Science Platform (RSP) Table Access Protocol (TAP) service.
 
-**Credit:** Based on tutorials developed by the Rubin Community Science team. Please consider acknowledging them if this
+**Credit:** Originally developed by the Rubin Community Science team. Please consider acknowledging them if this
 tutorial is used for the preparation of journal articles, software releases, or other tutorials.
 
 **Get Support:** Everyone is encouraged to ask questions or raise issues in the `Support Category <https://community.lsst.org/c/support/6>`_
@@ -25,14 +25,14 @@ of the Rubin Community Forum. Rubin staff will respond to all questions posted t
 **1. Open TOPCAT and access DP2 Data.**
 
 
-See :doc:`API Tutorial 101-1 <api-101-1>` for instructions on how to access Rubin DP2 data with "Tool for OPerations on Catalogues And Tables" (TOPCAT).
+See :doc:`API Tutorial 101.1 <api-101-1>` for instructions on how to access Rubin DP2 data with "Tool for OPerations on Catalogues And Tables" (TOPCAT).
 
 
 **2. Create DP2 Skymap.**
 
 Create a skymap of the Data Preview 2 Dataset using TOPCAT and an `"aitoff" <https://en.wikipedia.org/wiki/Aitoff_projection>`_ projection.
 
-**2.1 Use TAP Query window.**
+**2.1 Use the TAP Query window.**
 
 After starting TOPCAT and accessing the Rubin DP2 data through the VO protocol, click on "dp2.CoaddPatches" in the Table Access
 Protocol (TAP) Query Metadata section (top left arrow).
@@ -52,7 +52,7 @@ This query will retrieve the RA/DEC of each of the Coadd Patches within DP2. A t
 The window will close when the table is loaded and a new table name will appear in the main TOPCAT window. The query should take a few seconds to run.
 
 **NOTE: It is recommended to construct a TAP query using spatial constraints but that is not necessary in this case because the dp2.CoaddPatches table is small.
-See examples of queries with spatial constraints in API 101-1 (linked above) or step 3.1 below.**
+See examples of queries with spatial constraints in API Tutorial 101.1 (linked above) or step 3.1 below.**
 
 
 .. code-block:: sql
@@ -82,7 +82,7 @@ Click the "X" in the upper right-hand corner to close the image.
     :name: api-101-2-3
     :alt: A screenshot of the skymap aitoff projection.
 
-    Figure 3:  Skymap of dp2 fields on aitoff projection.
+    Figure 3:  Skymap of DP2 fields on aitoff projection.
 
 **3. Create Histogram of dp2.VisitDetector table limiting magnitude in the ECDFS field.**
 
@@ -90,7 +90,7 @@ Create a histogram in TOPCAT by using the Histogram button.
 
 **3.1 Run ADQL query on dp2.VisitDetector table and plot histogram.**
 
-Return to the Table Access Protocol (TAP) Query window to execture a new ADQL query.
+Return to the Table Access Protocol (TAP) Query window to execute a new ADQL query.
 Copy the ADQL query below, add it to the window in the "ADQL Text" box (see Figure 1) and click "Run Query".
 A temporary "Load New Table" window will appear and a new table will appear in the main TOPCAT window (see Figure 4) when the query is complete.
 
@@ -128,7 +128,7 @@ Create a CCD in TOPCAT by using the "Plane plotting window".
 **4.1 Run query**
 
 Return to the Table Access Protocol (TAP) Query window to begin a new ADQL query.
-Copy the following query into the "ADQL Text" box in the TAP Query window (see figure 1), then click "Run Query".
+Copy the following query into the "ADQL Text" box in the TAP Query window (see Figure 1), then click "Run Query".
 The "Load New Table" temporary window will appear and a new table will appear in the TOPCAT window when the search is complete (see Figure 6).
 This table might take a few seconds to load.
 
