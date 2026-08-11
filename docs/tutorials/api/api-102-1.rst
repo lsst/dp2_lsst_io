@@ -53,7 +53,7 @@ Copy the token to a secure location. The token will not be shown again.
 Install the required Python packages, ``PyVO`` and ``requests``, in the chosen environment (for example, in a local computer or in a Google Colab notebook).
 See `the PyVO homepage <https://pyvo.readthedocs.io/en/latest/>`_ and `the "requests" documentation <https://requests.readthedocs.io/en/latest/>`_ for download and install instructions.
 
-Note that in certain environments like Google Colab you may have to re-install these packages for each session.
+Note that in certain environments like Google Colab you may have to re-install these packages with a ``pip install pyvo`` for each session.
 
 Import the required packages.
 
@@ -157,7 +157,7 @@ Fetch the query results, convert them to an Astropy table, and print the length 
    results = job.fetch_result().to_table()
    print(len(results))
 
-In this case, the length should be 467.
+In this case, the length should be 114.
 
 Optionally display the first few rows.
 
