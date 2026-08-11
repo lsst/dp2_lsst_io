@@ -214,7 +214,7 @@ Download the FITS file to your local system.
    r = session.get(image_url, stream=True)
    r.raise_for_status()
 
-   out_path = "dp1_image.fits"
+   out_path = "dp2_image.fits"
    with open(out_path, "wb") as f:
        for chunk in r.iter_content(chunk_size=1024 * 1024):
            if chunk:
