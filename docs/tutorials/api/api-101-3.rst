@@ -13,7 +13,7 @@
 
 **LSST data products:** The DP2 catalogs and image data products within the Rubin Science Platform (RSP).
 
-**Credit:** Based on tutorials developed by the Rubin Community Science team. Please consider acknowledging them if this
+**Credit:** Originally developed by the Rubin Community Science team. Please consider acknowledging them if this
 tutorial is used for the preparation of journal articles, software releases, or other tutorials.
 
 **Get Support:** Everyone is encouraged to ask questions or raise issues in the `Support Category <https://community.lsst.org/c/support/6>`_
@@ -25,7 +25,7 @@ of the Rubin Community Forum. Rubin staff will respond to all questions posted t
 See :doc:`API Tutorial 101-1 <api-101-1>` for instructions on how to access Rubin DP2 data with "Tool for OPerations on Catalogues And Tables" (TOPCAT).
 Obtain an authentication token that includes  **read: image**.
 Follow download and install instructions at `DS9 <https://ds9.si.edu/doc/install.html>`_ and `Aladin download <https://aladin.cds.unistra.fr/AladinDesktop/#Download>`_.
-Screenshots for this tutorial were generated on a Windows computer using TOPCAT Version 4.10-7, SAOImageDS9 Verions 8.6, and Aladin (v 12.060).
+Screenshots for this tutorial were generated on a Windows computer using TOPCAT Version 4.10-7, SAOImageDS9 Versions 8.6, and Aladin (v 12.060).
 Access to image‑retrieval features may depend on running an up‑to‑date version of these software programs and problems encountered during the workflow may be related to installation version or outdated software.
 The steps within TOPCAT for viewing an image in **ds9** or **Aladin** are identical; the only difference is which viewer is opened at the start of the tutorial.
 
@@ -47,7 +47,7 @@ As stated before, TOPCAT commands are identical for either option.
     Figure 1: TOPCAT window with Interop menu item selected.
 
 A pop up window will open (Figure 2) showing SAMP Control active clients: Hub, topcat, and ds9, or Hub, topcat, and Aladin (depending on which software package was used).
-This step will verify TOPCAT can to send information to ds9 or Aladin.
+This step will verify TOPCAT can send information to ds9 or Aladin.
 
 .. figure:: images/api-101-3-2.png
     :name: api-101-3-2
@@ -88,7 +88,7 @@ At the bottom of the window, in the SIA Parameters (Figure 4) section of the Sim
 
 **2.3 Add authentication credentials.**
 
-Add the credentials created during API Tutorial 101, “How to get started with TOPCAT” (linked above)
+Add the credentials created during API Tutorial 101.1, “Get started with TOPCAT”, linked above
 (Note: click `Creating user tokens webpage <https://rsp.lsst.io/guides/auth/creating-user-tokens.html>`_ for instructions to get a token and create a token with "read:images").
 Press Authenticate (Figure 5).
 
@@ -96,7 +96,7 @@ Press Authenticate (Figure 5).
     :name: api-101-3-5
     :alt: Add authentication information obtained earlier.
 
-    Figure 5: Add authentication information obtained from tutorial “101.1 How to get started with TOPCAT”.
+    Figure 5: Add authentication information obtained from tutorial “101.1 Get started with TOPCAT”.
 
 **2.4 TOPCAT will load a DP2 SIA table.**
 
