@@ -1,8 +1,8 @@
 .. _api-102-3:
 
-#################################################
-102.3. How to get started with PyVO using SODA
-#################################################
+#########################################
+102.3. Image cutouts with PyVO using SODA
+#########################################
 
 For the API Aspect of the Rubin Science Platform at data.lsst.cloud.
 
