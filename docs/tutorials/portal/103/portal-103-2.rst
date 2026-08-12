@@ -6,9 +6,9 @@
 
 For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
-**Data Release:** DP1
+**Data Release:** Data Preview 2
 
-**Last verified to run:** 2025-07-23
+**Last verified to run:** 2026-08-14
 
 **Learning objective:** Prepare and execute an `Astronomy Data Query Language (ADQL) <https://www.ivoa.net/documents/latest/ADQL.html>`_ query in the Portal.
 
@@ -16,6 +16,7 @@ For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
 **Credit:** Originally developed by the Rubin Community Science team.
 Please consider acknowledging them if this tutorial is used for the preparation of journal articles, software releases, or other tutorials.
+DOI: `10.11578/rubin/dc.20250909.20 <https://doi.org/10.11578/rubin/dc.20250909.20>`_
 
 **Get Support:** Everyone is encouraged to ask questions or raise issues in the `Support Category <https://community.lsst.org/c/support/6>`_ of the Rubin Community Forum. Rubin staff will respond to all questions posted there.
 
@@ -49,7 +50,7 @@ In the RSP Portal Aspect, ADQL queries are submitted to the TAP (Table Access Pr
 
 ----
 
-**1. Go to the DP1 Catalogs ADQL interface.**
+**1. Go to the DP1 & DP2 Catalogs ADQL interface.**
 The button to switch from the user interface to the ADQL interface is in the upper right corner: "Edit ADQL".
 
 **2. Review the ADQL interface.**
@@ -70,7 +71,7 @@ The following ADQL query selects the coordinates RA and Dec, and the *gri* PSF m
 .. code-block:: SQL
 
   SELECT coord_ra, coord_dec, g_psfMag, r_psfMag, i_psfMag
-  FROM dp1.Object
+  FROM dp2.Object
   WHERE CONTAINS(POINT('ICRS', coord_ra, coord_dec),
         CIRCLE('ICRS', 53, -28, 0.05))=1
   AND g_psfMag < 25 AND r_psfMag < 25 AND i_psfMag < 25
