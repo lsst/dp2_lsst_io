@@ -1,21 +1,22 @@
-.. _portal-103-4:
+.. _portal-103-3:
 
 ############################
-103.4. Join tables with ADQL
+103.3. Join tables with ADQL
 ############################
 
 For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
-**Data Release:** DP1
+**Data Release:** Data Preview 2
 
-**Last verified to run:** 2025-06-28
+**Last verified to run:** 2026-08-14
 
 **Learning objective:** Join multiple tables to retrieve combined results with ADQL.
 
 **LSST data products:** ``Source``, ``Visit``, ``CcdVisit``, and ``Object`` tables
 
-**Credit:** Originally developed by the Rubin Community Science Team.
+**Credit:** Originally developed by the Rubin Community Science team.
 Please consider acknowledging them if this tutorial is used for the preparation of journal articles, software releases, or other tutorials.
+DOI: `10.11578/rubin/dc.20250909.20 <https://doi.org/10.11578/rubin/dc.20250909.20>`_
 
 **Get Support:** Everyone is encouraged to ask questions or raise issues in the `Support Category <https://community.lsst.org/c/support/6>`_ of the Rubin Community Forum. Rubin staff will respond to all questions posted there.
 
@@ -25,8 +26,8 @@ Two tables must have a column in common in order to be joined.
 
 ----
 
-**1. Go to the DP1 Catalogs ADQL interface.**
-Navigate to the Portal's DP1 Catalogs tab and switch to the ADQL interface by clicking "Edit ADQL".
+**1. Go to the DP1 & DP2 Catalogs ADQL interface.**
+Navigate to the Portal's DP1 & DP2 Catalogs tab and switch to the ADQL interface by clicking "Edit ADQL".
 
 **2. The ADQL components of a JOIN...ON statment.**
 The generic example below illustrates a common join scenario.
@@ -61,8 +62,8 @@ Spatial constraints are applied to the ``FROM`` table, not the ``JOIN`` table.
          scisql_nanojanskyToAbMag(src.psfFlux) AS psfAbMag,
          src.Visit, cv.VisitId,
          cv.expMidptMJD, cv.seeing
-  FROM dp1.Source AS src
-  JOIN dp1.CcdVisit AS cv
+  FROM dp2.Source AS src
+  JOIN dp2.CcdVisit AS cv
   ON src.Visit = cv.VisitId
   WHERE CONTAINS(POINT('ICRS', src.coord_ra, src.coord_dec),
         CIRCLE('ICRS', 53.13, -28.10, 0.05)) = 1
@@ -94,8 +95,8 @@ which identifies an LSST visit.
          scisql_nanojanskyToAbMag(obj.i_psfFlux) AS obj_i_psfAbMag,
          scisql_nanojanskyToAbMag(fs.psfFlux) AS fs_psfAbMag,
          cv.VisitId, cv.expMidptMJD, cv.seeing
-  FROM dp1.Object AS obj
-  JOIN dp1.ForcedSource AS fs
+  FROM dp2.Object AS obj
+  JOIN dp2.ForcedSource AS fs
   ON obj.objectId = fs.objectId
   JOIN dp1.CcdVisit AS cv
   ON fs.Visit = cv.VisitId
