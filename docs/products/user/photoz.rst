@@ -9,6 +9,8 @@ members of the Rubin Commissioning Science Unit for photometric redshifts have g
 
 Access to these photo-z estimates from the Rubin Science Platform is available via the :doc:`/products/user/lsdb`.
 
+To get started with LSDB photo-z in the RSP, follow the notebook in the “310. Photometric redshifts” series of the :doc:`/tutorials/index`.
+
 
 .. _products_photoz_pzserver:
 
