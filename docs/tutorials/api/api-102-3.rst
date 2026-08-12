@@ -12,7 +12,7 @@ For the API Aspect of the Rubin Science Platform at data.lsst.cloud.
 
 **Learning objective:** Create image cutouts from Rubin DP2 images using the Server-side Operations for Data Access (SODA) protocol with PyVO from a Python environment.
 
-**LSST data products:** N/A
+**LSST data products:** ``deep_coadd`` images
 
 **Credit:** Originally developed by the Rubin Community Science team.
 Please consider acknowledging them if this tutorial is used for the preparation of journal articles, software releases, or other tutorials.
