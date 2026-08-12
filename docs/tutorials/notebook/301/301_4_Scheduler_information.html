@@ -10447,7 +10447,8 @@ Store the results in <code>tap_results_df</code> as a pandas dataframe.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.2.-Visit-dimension-records">2.2. Visit dimension records<a class="anchor-link" href="#2.2.-Visit-dimension-records">¶</a></h3><p>Visit dimension records can be retrieved from the Butler by individual visit identifier number.
+<h3 id="2.2.-Visit-dimension-records">2.2. Visit dimension records<a class="anchor-link" href="#2.2.-Visit-dimension-records">¶</a></h3><p>Within the Butler, "dimensions" are properties of a dataset type that can be constrained in a Butler query, such as instrument, tract, patch, visit, and detector. The "dimension records" are all the unique values for a given dimension - for example, all visits - <em>and</em> related qualities for that particular unqiue value, such as the visit properties.</p>
+<h4 id="2.2.1.-For-specific-visits">2.2.1. For specific visits<a class="anchor-link" href="#2.2.1.-For-specific-visits">¶</a></h4><p>Visit dimension records can be retrieved from the Butler by individual visit identifier number.
 Retrieve the records for three randomly selected visits by their visit identifier.</p>
 </div>
 </div>
@@ -10472,7 +10473,7 @@ Retrieve the records for three randomly selected visits by their visit identifie
 <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">rec</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">visit_dimrecs</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">rec</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
 
-<span class="k">del</span> <span class="n">visits_list</span><span class="p">,</span> <span class="n">visits_string</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">visit_dimrecs</span>
+<span class="k">del</span> <span class="n">visits_list</span><span class="p">,</span> <span class="n">visits_string</span><span class="p">,</span> <span class="n">query</span>
 </pre></div>
 </div>
 </div>
@@ -10498,13 +10499,78 @@ Notice the order can change between query and results:
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3ed7a62c-7bb1-4e16-beeb-e3ee44042d11">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Display a single visit dimension record.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8f1fe37e-7c44-4126-a177-fd16bd21a0f7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">visit_dimrecs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<pre>visit:
+  instrument: 'LSSTCam'
+  id: 2025042800285
+  day_obs: 20250428
+  physical_filter: 'g_6'
+  name: 'MC_O_20250428_000285'
+  seq_num: 285
+  exposure_time: 30.0
+  target_name: 'Rubin_SV_212_-7'
+  observation_reason: 'field_survey_science'
+  science_program: 'BLOCK-365'
+  azimuth: 327.9714778675945
+  zenith_angle: 26.4855665598186
+  region: ConvexPolygon([UnitVector3d(-0.8570240891474094, -0.4964478218917627, -0.13801909563527054), UnitVector3d(-0.8563861158843464, -0.49642453110839396, -0.14200530072618398), UnitVector3d(-0.8539505165805482, -0.4995056670532897, -0.1458170216863002), UnitVector3d(-0.8509515563234203, -0.5033818402425094, -0.1499605671662167), UnitVector3d(-0.8482610078742504, -0.5069244116009853, -0.15323479840804982), UnitVector3d(-0.846263025636131, -0.510339668539157, -0.152945461379292), UnitVector3d(-0.8335176013096868, -0.5314352911907763, -0.15107924934921058), UnitVector3d(-0.8314221484327073, -0.5347961220360454, -0.15076577513065878), UnitVector3d(-0.8313601827838318, -0.5348950632816482, -0.15075648496351796), UnitVector3d(-0.8292523210110355, -0.5382457263598531, -0.15043977583459908), UnitVector3d(-0.8276396507921289, -0.5417970395096628, -0.14652159026999306), UnitVector3d(-0.8259442055421382, -0.5456574432627616, -0.14168318158240362), UnitVector3d(-0.8246604107715179, -0.548705520366856, -0.13732246292973704), UnitVector3d(-0.8252923841438019, -0.5487386986289712, -0.1333353715306723), UnitVector3d(-0.8294167157876624, -0.5486939891751155, -0.10489431736327028), UnitVector3d(-0.8299433033997793, -0.548648251632541, -0.1008920666971285), UnitVector3d(-0.8324107280569694, -0.5455889256418881, -0.09708297498839172), UnitVector3d(-0.8354097765121759, -0.5417128071119741, -0.09293944221234465), UnitVector3d(-0.8380676329525523, -0.5381501287817626, -0.08964977127398868), UnitVector3d(-0.8401771347131286, -0.5347994479187236, -0.0899551711190951), UnitVector3d(-0.8550767036986998, -0.5102464072005147, -0.09215440700656866), UnitVector3d(-0.8570749971823157, -0.5068278409806087, -0.09245533414502596), UnitVector3d(-0.8587215938453885, -0.5032975531855148, -0.09637840640469889), UnitVector3d(-0.8604171272934579, -0.49943720409172204, -0.10121682779615772), UnitVector3d(-0.861669010850021, -0.4963672570529472, -0.10557491116017935), UnitVector3d(-0.8611484226108966, -0.4964031082955186, -0.1095780466576776)])
+  timespan: Timespan(begin=astropy.time.Time(2460795.0, -0.27935152640565974, scale='tai', format='jd'), end=astropy.time.Time(2460795.0, -0.2789933796296296, scale='tai', format='jd'))<pre>
+</pre></pre></div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9fa726e0-e49f-46f3-b7c5-587cde2377a0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">del</span> <span class="n">visit_dimrecs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=049ae9dc-41d9-4bd6-891a-1c4efbe15225">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Retrieve the visit dimension records for all visits from the Butler, for use in the rest of this tutorial.</p>
+<h4 id="2.2.2.-For-all-visits">2.2.2. For all visits<a class="anchor-link" href="#2.2.2.-For-all-visits">¶</a></h4><p>Retrieve the visit dimension records for all visits from the Butler, for use in the rest of this tutorial.</p>
 </div>
 </div>
 </div>
@@ -10513,7 +10579,7 @@ Notice the order can change between query and results:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">visit_dimrecs</span> <span class="o">=</span> <span class="n">butler</span><span class="o">.</span><span class="n">query_dimension_records</span><span class="p">(</span><span class="s2">"visit"</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
@@ -10544,21 +10610,6 @@ Notice the order can change between query and results:
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>There are more dimension records (29756) than rows of the visit table (28698) because the visit table is limited to successfully acquired and processed visits.</p>
-<p>Option to display a single visit dimension record.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b520b722-890f-47fc-9da2-e4d4774a6242">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># visit_dimrecs[0]</span>
-</pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -10578,7 +10629,7 @@ Notice the order can change between query and results:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">temp_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
@@ -10617,7 +10668,7 @@ Notice the order can change between query and results:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># temp_df</span>
@@ -10643,7 +10694,7 @@ Store the result in <code>df</code>.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">tap_results_df</span><span class="p">,</span> <span class="n">temp_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'visit'</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
@@ -10668,7 +10719,7 @@ Store the result in <code>df</code>.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">tap_results_df</span><span class="p">)</span>
@@ -10707,7 +10758,7 @@ Store the result in <code>df</code>.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">del</span> <span class="n">visit_dimrecs</span><span class="p">,</span> <span class="n">temp_df</span><span class="p">,</span> <span class="n">tap_results_df</span>
@@ -10733,7 +10784,7 @@ Convert the target names for the DDFs to be all lowercase and use underscores in
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'target_name'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'target_name'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'DDF ECDFS'</span><span class="p">,</span> <span class="s1">'ddf_ecdfs'</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -10777,7 +10828,7 @@ Convert the target names for the DDFs to be all lowercase and use underscores in
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># values, counts = np.unique(df['target_name'], return_counts=True)</span>
@@ -10804,7 +10855,7 @@ Convert the target names for the DDFs to be all lowercase and use underscores in
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">temp_list</span> <span class="o">=</span> <span class="p">[]</span>
@@ -10824,7 +10875,7 @@ Convert the target names for the DDFs to be all lowercase and use underscores in
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>array(['Abell_2764', 'COSMOS', 'DESI_SV3_R1', 'ELAIS_S1',
        'GW_case_large_1', 'LMC_SMC', 'M49', 'New_Horizons', 'Prawn',
@@ -10855,7 +10906,7 @@ The total of this list will be more than the total number of visits because visi
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># for name in unique_target_names:</span>
@@ -10883,7 +10934,7 @@ The total of this list will be more than the total number of visits because visi
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">'Blues'</span><span class="p">)</span>
@@ -10969,7 +11020,7 @@ The total of this list will be more than the total number of visits because visi
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># values, counts = np.unique(df['observation_reason'], return_counts=True)</span>
@@ -10996,7 +11047,7 @@ The total of this list will be more than the total number of visits because visi
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df_temp</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"observation_reason.str.contains('too')"</span><span class="p">)</span>
@@ -11042,7 +11093,7 @@ Use, e.g., the measured image quality parameters in the <code>VisitDetector</cod
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># values, counts = np.unique(df['science_program'], return_counts=True)</span>
@@ -11069,7 +11120,7 @@ Use, e.g., the measured image quality parameters in the <code>VisitDetector</cod
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">((</span><span class="mi">61070</span><span class="o">-</span><span class="mi">60780</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">60780</span>
