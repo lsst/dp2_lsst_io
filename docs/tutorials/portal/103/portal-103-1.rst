@@ -6,7 +6,7 @@
 
 For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
-**Data Release:** DP2
+**Data Release:** Data Preview 2
 
 **Last verified to run:** 2026-08-14
 
