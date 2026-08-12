@@ -108,7 +108,7 @@ The TAP service object represents the remote catalog service and manages job sub
 6. Define the ADQL query
 ------------------------
 
-Define an ADQL query that retrieves the ``visit`` table, as in `DP2 Notebook tutorial 201.10 <https://dp2.lsst.io/tutorials/notebook/201/notebook-201-10.html>`_
+Define an ADQL query that retrieves the ``visit`` table, as in `DP2 Notebook tutorial 201.10 <https://dp2.lsst.io/tutorials/notebook/201/notebook-201-10.html>`_.
 
 .. code-block:: python
 
