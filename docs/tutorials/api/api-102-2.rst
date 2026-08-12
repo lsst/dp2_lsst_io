@@ -53,7 +53,7 @@ Copy the token to a secure location. The token will not be shown again.
 2. Install and import the Python packages
 ------------------------------------------
 
-Install the required Python packages, ``PyVO`` and ``requests``, in the chosen environment (for example, in a local computer or in a Google Colab notebook).
+Install the required Python packages, ``PyVO`` and ``requests``, in the chosen environment (for example, on a local computer or in a Google Colab notebook).
 See `the PyVO homepage <https://pyvo.readthedocs.io/en/latest/>`_ and `the "requests" documentation <https://requests.readthedocs.io/en/latest/>`_ for download and install instructions.
 
 Note that in certain environments like Google Colab you may have to re-install these packages for each session.
