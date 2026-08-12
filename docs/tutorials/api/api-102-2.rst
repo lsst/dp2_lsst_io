@@ -10,9 +10,9 @@ For the API Aspect of the Rubin Science Platform at data.lsst.cloud.
 
 **Last verified to run:** 2026-08-11
 
-**Learning objective:** N/A
+**Learning objective:** Access images remotely with PyVO and SIA service.
 
-**LSST data products:** DP2 images accessed via the Rubin Science Platform SIA service.
+**LSST data products:** ``deep_coadd`` images
 
 **Credit:** Originally developed by the Rubin Community Science team.
 Please consider acknowledging them if this tutorial is used for the preparation of journal articles, software releases, or other tutorials.
