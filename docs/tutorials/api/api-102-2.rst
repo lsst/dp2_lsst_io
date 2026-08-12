@@ -171,7 +171,7 @@ The results table includes metadata such as:
 - ``s_ra``, ``s_dec``: Image center position
 - ``t_exptime``: Exposure time
 - ``em_filter_name``: Filter/band name
-- ``dataproduct_subtype``: Type of image (e.g., lsst.deepCoadd)
+- ``dataproduct_subtype``: Type of image (e.g., lsst.deep_coadd)
 - ``access_url``: URL to access the image data
 
 9. Download an image file
