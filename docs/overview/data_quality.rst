@@ -12,6 +12,7 @@ Browse static plots of the data quality by filter.
     :glob:
 
     data_quality_photometry
+    data_quality_photometry_2.rst
     data_quality_astrometry
 
 
