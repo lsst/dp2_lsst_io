@@ -32,13 +32,13 @@ The Rubin SODA cutout service supports three service types that control how much
 
 - ``cutout-sync``: Returns the image pixels with a WCS and the primary header. This is the default and is sufficient for most use cases.
 - ``cutout-sync-maskedimage``: Returns the image pixels, WCS, and the primary header, plus the mask and variance planes.
-- ``cutout-sync-exposure``: Returns the full set of image extensions, including the PSF and provenance planes. This is most useful within the RSP Notebook Aspect where the ``lsst.afw`` package can read the result as an ``ExposureF`` object (see :doc:`/tutorials/notebook/103/notebook-103-4`).
+- ``cutout-sync-exposure``: Returns the full set of image extensions, including the PSF and provenance planes. This is most useful within the RSP Notebook Aspect where the ``lsst.afw`` package can read the result as an ``lsst.images`` object (see :doc:`/tutorials/notebook/103/notebook-103-4`).
 
 The default ``cutout-sync`` mode improves performance by reducing data transfer, particularly for deep coadd images where the PSF and provenance planes can significantly increase the size of the results.
 
 This workflow is suitable for users who prefer scripted or automated access to Rubin data from a local Python environment or from cloud-based environments such as Google Colab. Familiarity with basic Python syntax is assumed.
 
-Related tutorials describe full image downloads via SIA (:doc:`api-102-2`) and catalog access via TAP (:doc:`api-102-1`). For a more comprehensive treatment of SODA cutouts within the RSP Notebook Aspect, see :doc:`/tutorials/notebook/103/notebook-103-4`.
+Related tutorials describe full image downloads via SIA (:doc:`api-102-2`) and catalog access via TAP (:doc:`api-102-1`).
 
 1. Create an RSP access token
 ------------------------------
@@ -258,4 +258,4 @@ Execute the query and inspect the FITS file structure.
 
 The result contains additional HDUs for the mask and variance planes, in addition to the image pixels.
 
-To retrieve the full set of image extensions including the PSF and provenance planes, use the ``cutout-sync-exposure`` service type instead. This mode is most useful within the RSP Notebook Aspect where the ``lsst.afw`` package can read the result as an ``ExposureF`` object (see :doc:`/tutorials/notebook/103/notebook-103-4`).
+To retrieve the full set of image extensions including the PSF and provenance planes, use the ``cutout-sync-exposure`` service type instead.
