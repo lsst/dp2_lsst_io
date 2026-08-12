@@ -10248,7 +10248,7 @@ rkJggg==
 Data Release: <a href="https://dp2.lsst.io/">Data Preview 2</a><br/>
 Container Size: Large<br/>
 LSST Science Pipelines version: r30.0.10<br/>
-Last verified to run: 2026-08-07<br/>
+Last verified to run: 2026-08-11<br/>
 Repository: <a href="https://github.com/lsst/tutorial-notebooks">github.com/lsst/tutorial-notebooks</a><br/>
 DOI: <a href="https://doi.org/10.11578/rubin/dc.20250909.20">10.11578/rubin/dc.20250909.20</a></p>
 </div>
@@ -10282,7 +10282,7 @@ Rubin staff will respond to all questions posted there.</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="1.-Introduction">1. Introduction<a class="anchor-link" href="#1.-Introduction">¶</a></h2><p>In the Early Data Preview 2 (EDP2) Visit table (<a href="https://sdm-schemas.lsst.io/dp2.html#Visit">schema</a>) does not include scheduler information such as the target name, observation reason, or science program.
 These values were omitted partially because they were not standardized during commissioning, not used consistently throughout the commissioning period, and are thus of limited use for EDP2.</p>
-<p><strong>Warning: for EDP2, when "all the visits of a particular field" are desired, it is recommended to follow the guidance in tutorial "301.1. DP2 overview"</strong> and search for visits using the list of field center coordinates and boresight radii provided there in Section 1.</p>
+<p><strong>Warning: for EDP2, when "all the visits of a particular small area or deep drilling commissioning field" are desired, it is recommended to follow the guidance in tutorial "301.1. DP2 overview" and search for visits in a given region by coordinates and offsets.</strong> Note also that these "commissioning fields" were defined only for the commissioning (pre-LSST) era; with the exception of the deep drilling fields, the LSST does not have defined fields.</p>
 <p>However, because some <em>limited</em> and <em>non-standardized</em> scheduler information does exist and is accessible via the Butler dimension records, in order to assuage curiosity and provide guidance, this tutorial demonstrates how to retrieve and interpret the scheduler-related information.</p>
 <p><strong>Related tutorials</strong>: The 100-level tutorials for how to use the RSP's butler and TAP services, the 200-level tutorials for details on the visit table, and the 301-series tutorials that demonstrate how best to use the observational metadta.</p>
 <h3 id="1.1.-Import-packages">1.1. Import packages<a class="anchor-link" href="#1.1.-Import-packages">¶</a></h3><p>Import <code>pandas</code>, <code>numpy</code>, and <code>matplotlib</code>; <code>skyproj</code> for plotting; and the Rubin packages for data access with the Butler and TAP services.</p>
@@ -10401,7 +10401,7 @@ This can be used to cut off, e.g., the darkest or lightest colors, to help with 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2.-Retrieve-visit-information">2. Retrieve visit information<a class="anchor-link" href="#2.-Retrieve-visit-information">¶</a></h2><p>Using the TAP service, retrieve the five columns for all rows of the <code>Visit</code> table: the visit identifier, the coordinates RA and Dec in degrees, and the modified julian date at the midpoint of the exposure.
+<h2 id="2.-Retrieve-visit-information">2. Retrieve visit information<a class="anchor-link" href="#2.-Retrieve-visit-information">¶</a></h2><h3 id="2.1.-Visit-table-(TAP)">2.1. Visit table (TAP)<a class="anchor-link" href="#2.1.-Visit-table-(TAP)">¶</a></h3><p>Using the TAP service, retrieve the five columns for all rows of the <code>Visit</code> table: the visit identifier, the coordinates RA and Dec in degrees, and the modified julian date at the midpoint of the exposure.
 Store the results in <code>tap_results_df</code> as a pandas dataframe.</p>
 </div>
 </div>
@@ -10447,7 +10447,64 @@ Store the results in <code>tap_results_df</code> as a pandas dataframe.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Retrieve the visit dimension records for all visits from the Butler.</p>
+<h3 id="2.2.-Visit-dimension-records">2.2. Visit dimension records<a class="anchor-link" href="#2.2.-Visit-dimension-records">¶</a></h3><p>Visit dimension records can be retrieved from the Butler by individual visit identifier number.
+Retrieve the records for three randomly selected visits by their visit identifier.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cf14c84b-d9e0-4c1b-9d8d-5efc2b81160f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">visits_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2025042800283</span><span class="p">,</span> <span class="mi">2025042800284</span><span class="p">,</span> <span class="mi">2025042800285</span><span class="p">]</span>
+<span class="n">visits_string</span> <span class="o">=</span> <span class="s2">"("</span> <span class="o">+</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">visits_list</span><span class="p">)</span> <span class="o">+</span> <span class="s2">")"</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">"visit.id IN "</span> <span class="o">+</span> <span class="n">visits_string</span>
+<span class="n">visit_dimrecs</span> <span class="o">=</span> <span class="n">butler</span><span class="o">.</span><span class="n">query_dimension_records</span><span class="p">(</span><span class="s2">"visit"</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">query</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Number of visit dimension records: '</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">visit_dimrecs</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Notice the order can change between query and results:'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">rec</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">visit_dimrecs</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">rec</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+
+<span class="k">del</span> <span class="n">visits_list</span><span class="p">,</span> <span class="n">visits_string</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">visit_dimrecs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>visit.id IN (2025042800283, 2025042800284, 2025042800285)
+Number of visit dimension records:  3
+
+Notice the order can change between query and results:
+0 2025042800285
+1 2025042800284
+2 2025042800283
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=049ae9dc-41d9-4bd6-891a-1c4efbe15225">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Retrieve the visit dimension records for all visits from the Butler, for use in the rest of this tutorial.</p>
 </div>
 </div>
 </div>
@@ -10456,7 +10513,7 @@ Store the results in <code>tap_results_df</code> as a pandas dataframe.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">visit_dimrecs</span> <span class="o">=</span> <span class="n">butler</span><span class="o">.</span><span class="n">query_dimension_records</span><span class="p">(</span><span class="s2">"visit"</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
@@ -10496,7 +10553,7 @@ Store the results in <code>tap_results_df</code> as a pandas dataframe.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># visit_dimrecs[0]</span>
@@ -10521,7 +10578,7 @@ Store the results in <code>tap_results_df</code> as a pandas dataframe.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">temp_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
@@ -10560,7 +10617,7 @@ Store the results in <code>tap_results_df</code> as a pandas dataframe.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># temp_df</span>
@@ -10576,7 +10633,7 @@ Store the results in <code>tap_results_df</code> as a pandas dataframe.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Do an inner join on the two dataframes, which means keeping only the rows of the <code>temp_df</code> that are matched to rows of the <code>tap_results_df</code>.
+<h3 id="2.3.-Join-Visit-table-and-dimension-records-dataframes">2.3. Join Visit table and dimension records dataframes<a class="anchor-link" href="#2.3.-Join-Visit-table-and-dimension-records-dataframes">¶</a></h3><p>Do an inner join on the two dataframes, which means keeping only the rows of the <code>temp_df</code> that are matched to rows of the <code>tap_results_df</code>.
 Store the result in <code>df</code>.</p>
 </div>
 </div>
@@ -10586,10 +10643,10 @@ Store the result in <code>df</code>.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">tap_results_df</span><span class="p">,</span> <span class="n">temp_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'visit'</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'inner'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">tap_results_df</span><span class="p">,</span> <span class="n">temp_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'visit'</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -10611,7 +10668,7 @@ Store the result in <code>df</code>.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">tap_results_df</span><span class="p">)</span>
@@ -10650,7 +10707,7 @@ Store the result in <code>df</code>.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">del</span> <span class="n">visit_dimrecs</span><span class="p">,</span> <span class="n">temp_df</span><span class="p">,</span> <span class="n">tap_results_df</span>
@@ -10666,7 +10723,7 @@ Store the result in <code>df</code>.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.1.-Fix-non-standard-DDF-names">2.1. Fix non-standard DDF names<a class="anchor-link" href="#2.1.-Fix-non-standard-DDF-names">¶</a></h3><p>As mentioned in Section 1, the scheduler metadata was not standardized during commissioning and multiple formats exist for the deep drilling field (DDF) names.
+<h3 id="2.4.-Fix-non-standard-DDF-names">2.4. Fix non-standard DDF names<a class="anchor-link" href="#2.4.-Fix-non-standard-DDF-names">¶</a></h3><p>As mentioned in Section 1, the scheduler metadata was not standardized during commissioning and multiple formats exist for the deep drilling field (DDF) names.
 Convert the target names for the DDFs to be all lowercase and use underscores instead of spaces.</p>
 </div>
 </div>
@@ -10676,7 +10733,7 @@ Convert the target names for the DDFs to be all lowercase and use underscores in
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'target_name'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'target_name'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'DDF ECDFS'</span><span class="p">,</span> <span class="s1">'ddf_ecdfs'</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -10698,12 +10755,12 @@ Convert the target names for the DDFs to be all lowercase and use underscores in
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="3.-Explore-the-scheduler-information">3. Explore the scheduler information<a class="anchor-link" href="#3.-Explore-the-scheduler-information">¶</a></h2><h3 id="3.1.-Target-names">3.1. Target names<a class="anchor-link" href="#3.1.-Target-names">¶</a></h3><p>The <code>target_name</code> column is a comma-separated string list of named commissioning targets that overlap the field of view covered by the visit.</p>
 <p><strong>Caveat: A single visit can be associated with multiple target names.</strong></p>
-<p><strong>Caveat: These target names are not necessarily: (1) standard names; (2) used consistently; (3) to be used in the future.</strong></p>
+<p><strong>Caveat: These target names are not necessarily: (1) standard names; (2) used consistently; (3) to be used in the future.</strong> New values for target names might be introduced as the LSST strategy evolves.</p>
 <p>The <a href="https://dp2.lsst.io/overview/observations.html#wide-fast-deep-region">wide-fast-deep regions</a> covered during commissioning are:</p>
 <ul>
 <li><code>lowdust</code> - low dust sky region</li>
 <li><code>dusty_plane</code> - dusty regions of the Galactic plane</li>
-<li><code>bulgy</code> - Galactic bulge region</li>
+<li><code>bulgy</code> - Galactic bulge and plane regions</li>
 <li><code>nes</code> - north ecliptic spur</li>
 <li><code>LMC_SMC</code> - Large and Small Magellanic Clouds</li>
 <li><code>scp</code> - south celestial pole</li>
@@ -10720,7 +10777,7 @@ Convert the target names for the DDFs to be all lowercase and use underscores in
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># values, counts = np.unique(df['target_name'], return_counts=True)</span>
@@ -10747,7 +10804,7 @@ Convert the target names for the DDFs to be all lowercase and use underscores in
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">temp_list</span> <span class="o">=</span> <span class="p">[]</span>
@@ -10767,7 +10824,7 @@ Convert the target names for the DDFs to be all lowercase and use underscores in
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>array(['Abell_2764', 'COSMOS', 'DESI_SV3_R1', 'ELAIS_S1',
        'GW_case_large_1', 'LMC_SMC', 'M49', 'New_Horizons', 'Prawn',
@@ -10798,7 +10855,7 @@ The total of this list will be more than the total number of visits because visi
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># for name in unique_target_names:</span>
@@ -10826,7 +10883,7 @@ The total of this list will be more than the total number of visits because visi
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">'Blues'</span><span class="p">)</span>
@@ -10879,7 +10936,7 @@ The total of this list will be more than the total number of visits because visi
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <blockquote>
-<p><strong>Figure 1:</strong> The density of the number of visits, in any filter, with target name of <code>dusty_plane</code> (purples), <code>bulgy</code> (oranges), or <code>lowdust</code> (blues). Notice that there are a small number of visits labeled as being Galactic bulge visits that are not near the Galactic center (yellow star).</p>
+<p><strong>Figure 1:</strong> The density of the number of visits, in any filter, with target name of <code>dusty_plane</code> (purples), <code>bulgy</code> (oranges), or <code>lowdust</code> (blues). Notice that <code>bulgy</code> does not strictly mean <code>Galactic bulge</code> but extends into regions of the Galactic plane; the Galactic center is marked with a yellow star for reference.</p>
 </blockquote>
 </div>
 </div>
@@ -10892,7 +10949,7 @@ The total of this list will be more than the total number of visits because visi
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="3.2.-Observation-reason">3.2. Observation reason<a class="anchor-link" href="#3.2.-Observation-reason">¶</a></h3><p>The <code>observation_reason</code> column records the source of the visit in the Feature Based Scheduler (FBS).</p>
-<p><strong>Caveat: These observation reasons are not necessarily: (1) standardized in name or meaning; (2) used consistently over commissioning; (3) to be used in the future.</strong></p>
+<p><strong>Caveat: These observation reasons are not necessarily: (1) standardized in name or meaning; (2) used consistently over commissioning; (3) to be used in the future.</strong> New values of the observation reason might be introduced as the LSST strategy evolves.</p>
 <p>The feature-based scheduler (FBS) and Rubin operations were in the early stages when these visits were obtained, and the values of the <code>observation_reason</code> column exhibit diversity; explanations for every single value are not provided, but in general</p>
 <ul>
 <li><code>ddf</code> - observing a Deep Drilling Field</li>
@@ -10912,7 +10969,7 @@ The total of this list will be more than the total number of visits because visi
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># values, counts = np.unique(df['observation_reason'], return_counts=True)</span>
@@ -10939,7 +10996,7 @@ The total of this list will be more than the total number of visits because visi
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df_temp</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"observation_reason.str.contains('too')"</span><span class="p">)</span>
@@ -10969,9 +11026,13 @@ The total of this list will be more than the total number of visits because visi
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.3.-Science-program">3.3. Science program<a class="anchor-link" href="#3.3.-Science-program">¶</a></h3><p>For commissioning, the science program is just an internal designation with no science application.
+<h3 id="3.3.-Science-program">3.3. Science program<a class="anchor-link" href="#3.3.-Science-program">¶</a></h3><p>For commissioning, the science program is a designation with no science application.
 It is accessible as column <code>science_program</code>, but it is just the word "BLOCK" and then a number.
-The observing block was simply the bundle of science-motivated commissioning observations used during a given era of commissioning.</p>
+The observing block was simply the bundle of science-motivated commissioning observations used during a given era of commissioning.
+For example, the "BLOCK-365" was used initially for commissioning observations.
+Then the "BLOCK-400" programs were defined for the pre-LSST observations, and the different blocks were just configurations for different conditions (e.g., good and bad seeing).
+<strong>Caveat:</strong> This will not be how the feature-based scheduler works for the LSST, and the <strong>science program should not be used to constrain data for analyses</strong>.
+Use, e.g., the measured image quality parameters in the <code>VisitDetector</code> table instead.</p>
 <p>Option to print the unique values of the <code>science_program</code> column.</p>
 </div>
 </div>
@@ -10981,7 +11042,7 @@ The observing block was simply the bundle of science-motivated commissioning obs
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># values, counts = np.unique(df['science_program'], return_counts=True)</span>
@@ -11008,7 +11069,7 @@ The observing block was simply the bundle of science-motivated commissioning obs
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">((</span><span class="mi">61070</span><span class="o">-</span><span class="mi">60780</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">60780</span>
@@ -11052,7 +11113,7 @@ The observing block was simply the bundle of science-motivated commissioning obs
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <blockquote>
-<p><strong>Figure 2:</strong> Distribution of visit dates by "science_program", illustrating how different "program" block names were used during the commissioning period to indicate "science observations" in general. The point being made with this plot is that "science_program" is not a scientifically useful piece of scheduler info for EDP2.</p>
+<p><strong>Figure 2:</strong> Distribution of visit dates by "science_program", illustrating how different "program" block names were used during the commissioning period. The point being made with this plot is that "science_program" is not a scientifically useful piece of scheduler info for EDP2.</p>
 </blockquote>
 </div>
 </div>
