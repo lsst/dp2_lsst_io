@@ -181,10 +181,10 @@ Create a SODA query from the DataLink resource. Use the ``cutout-sync`` service 
        dl_result, dl_result.get_adhocservice_by_id("cutout-sync"), session=session
    )
 
-7. Create and display a circular cutout
------------------------------------------
+7. Create and display a cutout
+------------------------------
 
-Define a circular cutout region centered at the target position with a radius of 0.01 degrees. The circle shape produces a square cutout with edge size equal to the circle diameter.
+Define a cutout region centered at the target position with a radius of 0.01 degrees. The circle shape produces a square cutout with edge size equal to the circle diameter.
 
 .. code-block:: python
 
