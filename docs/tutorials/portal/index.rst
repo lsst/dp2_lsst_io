@@ -56,6 +56,7 @@ Execute queries with ADQL statements.
     :glob:
 
     103/portal-103-1.rst
+    103/portal-103-2.rst
 
 
 104. Catalog data results interface
