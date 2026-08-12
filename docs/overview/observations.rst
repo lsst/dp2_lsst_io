@@ -8,6 +8,8 @@ A summary of the sky coverage, cadence, and image quality of the observations.
 Sky coverage
 ============
 
+Coadded images and catalogs cover ~3000 square degrees; single-epoch catalogs cover ~15,000 square degrees.
+
 .. figure:: images/observations-1-dp2map-visits.png
     :name: dp2_map
     :alt: DP2 coverage on the sky.
@@ -81,7 +83,6 @@ While these fields were covered during commissioning, observations did not follo
 Visit images metadata
 =====================
 
-
 Filters
 -------
 
@@ -117,6 +118,7 @@ While observations in all six filters *ugrizy* are included in DP2, each field h
 Epochs
 ------
 
+Observations were obtained between April 2025 and January 2026.
 The number of visits, and the number of unique nights (epochs), varies by field.
 
 
