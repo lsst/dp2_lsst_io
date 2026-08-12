@@ -4,21 +4,23 @@
 101.3. View images with SIA, TOPCAT, and DS9/Aladin
 ###################################################
 
-**Data Release:** DP2
+**Data Release:** Data Preview 2
 
 **Last verified to run:** 2026-08-10
 
 **Learning objective:** This tutorial provides a basic guide to using `TOPCAT <http://www.star.bris.ac.uk/~mbt/topcat/>`_ with the
 `Simple Image Access (SIA) <https://www.ivoa.net/documents/SIA/>`_ protocol and sending images directly to `SAOImageDS9 <https://ds9.si.edu/doc/install.html>`_ and `Aladin <https://aladin.cds.unistra.fr/>`_ to explore DP2 image data.
 
-**LSST data products:** The DP2 catalogs and image data products within the Rubin Science Platform (RSP).
+**LSST data products:** N/A
 
-**Credit:** Originally developed by the Rubin Community Science team. Please consider acknowledging them if this
-tutorial is used for the preparation of journal articles, software releases, or other tutorials.
+**Credit:** Originally developed by the Rubin Community Science team.
+Please consider acknowledging them if this tutorial is used for the preparation of journal articles, software releases, or other tutorials.
+DOI: `10.11578/rubin/dc.20250909.20 <https://doi.org/10.11578/rubin/dc.20250909.20>`_
 
 **Get Support:** Everyone is encouraged to ask questions or raise issues in the `Support Category <https://community.lsst.org/c/support/6>`_
 of the Rubin Community Forum. Rubin staff will respond to all questions posted there.
 
+----
 
 **1. Open TOPCAT and SAOImageDS9 or Aladin.**
 
@@ -73,7 +75,7 @@ In the main TOPCAT window, click the VO menu item, then select Simple Image Acce
 
 At the bottom of the window, in the SIA Parameters (Figure 4) section of the Simple Image Access (SIA) Query window:
 
--	 add https\://data.lsst.cloud/api/sia/dp2/query into SIA URL:
+-	add https\://data.lsst.cloud/api/sia/dp2/query into SIA URL:
 -	Change SIA Version:  to 2.0 by using the drop down menu
 -	Input 53.076 degrees into the RA: box and -28.110 degrees into the Dec: box (coordinates for the ECDFS field)
 -	Change Angular Size: to 0.5 degrees
