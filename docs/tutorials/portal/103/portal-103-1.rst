@@ -30,7 +30,7 @@ Navigate to the “DP1 & DP2 Catalogs” tab in the Portal UI to create an ADQL 
 **2. Set up a query in the user interface.**
 An ADQL query is built from items selected in both the **Enter Constraints** area and the **Column selection** table.
 
-At left, click on “Spatial” (orange arrow in Figure 1) to include spatial constraints (a cone search) centered on RA, Dec = 53.13, -28.10 deg. Limit the radius to 30 arcseconds.
+At left, click on “Spatial” (orange arrow in Figure 1) to include spatial constraints (a cone search) centered on RA, Dec = 53.13, -28.10 deg. Limit the radius to 10 arcseconds.
 Click the check box above the funnel icon (orange circle in Figure 1) to select all rows, and then again to deselect all rows in the table.
 Then select the ``coord_ra``, ``coord_dec``, and ``g_psfFlux`` to construct the ADQL query using only those constraints.
 Finally, click the funnel icon (teal circle in Figure 1) to show only the selected rows.
