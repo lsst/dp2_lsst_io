@@ -8,13 +8,29 @@ The following plots show the astrometric offset between calibration stars and th
 Delta RA
 ========
 
+RA σ(MAD)
+---------
 
-.. ref-gallery::
-   :tooltip:
+.. grid:: 3
+   :gutter: 2
 
-   ../_images/astromDiffRA_u_sigmaMAD.png
-   ../_images/astromDiffRA_g_sigmaMAD.png
-   ../_images/astromDiffRA_r_sigmaMAD.png
+   .. card::
+      :img-top: ../_images/astromDiffRA_u_sigmaMAD.png
+      :text-align: center
+
+      u-band σ(MAD)
+
+   .. card::
+      :img-top: ../_images/astromDiffRA_g_sigmaMAD.png
+      :text-align: center
+
+      g-band σ(MAD)
+
+   .. card::
+      :img-top: ../_images/astromDiffRA_r_sigmaMAD.png
+      :text-align: center
+
+      r-band σ(MAD)
 
 
 .. raw:: html
