@@ -32,8 +32,3 @@ RA σ(MAD)
 
       r-band σ(MAD)
 
-
-Delta Dec
-=========
-
-
