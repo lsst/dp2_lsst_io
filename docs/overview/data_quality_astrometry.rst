@@ -11,6 +11,16 @@ Delta RA
 
 .. raw:: html
 
+   <div class="image-grid">
+     <img src="../_images/astromDiffRA_u_sigmaMAD.png" alt="u-band">
+     <img src="../_images/astromDiffRA_g_sigmaMAD.png" alt="g-band">
+     <img src="../_images/astromDiffRA_r_sigmaMAD.png" alt="r-band">
+   </div>
+
+
+
+.. raw:: html
+
    <h4 style="text-align:center; margin-bottom:10px;">
      Astrometric RA σ(MAD) by Filter
    </h4>
