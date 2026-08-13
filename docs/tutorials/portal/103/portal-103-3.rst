@@ -58,16 +58,16 @@ Spatial constraints are applied to the ``FROM`` table, not the ``JOIN`` table.
 
 .. code-block:: SQL
 
-  SELECT src.coord_ra, src.coord_dec, src.sourceId, src.band,
+  SELECT src.ra, src.dec, src.sourceId, src.band,
          scisql_nanojanskyToAbMag(src.psfFlux) AS psfAbMag,
-         src.Visit, cv.VisitId,
-         cv.expMidptMJD, cv.seeing
+         src.Visit, vd.VisitId,
+         vd.expMidptMJD, vd.seeing
   FROM dp2.Source AS src
-  JOIN dp2.CcdVisit AS cv
-  ON src.Visit = cv.VisitId
+  JOIN dp2.VisitDetector AS vd
+  ON src.Visit = vd.VisitId
   WHERE CONTAINS(POINT('ICRS', src.coord_ra, src.coord_dec),
         CIRCLE('ICRS', 53.13, -28.10, 0.05)) = 1
-        AND cv.expMidptMJD > 60631 AND cv.expMidptMJD < 60637
+        AND cv.expMidptMJD > 60800 AND cv.expMidptMJD < 61050
         AND src.band = 'i'
 
 **4. Review the two-table join results.**
