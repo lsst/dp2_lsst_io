@@ -11,6 +11,29 @@ Delta RA
 
 .. raw:: html
 
+   <div style="display: grid;
+               grid-template-columns: repeat(3, 1fr);
+               gap: 12px;
+               max-width: 1000px;
+               margin: 20px auto;">
+
+     <img src="../_images/astromDiffRA_u_sigmaMAD.png"
+          alt="u-band σ(MAD)"
+          style="width:100%; height:auto;">
+
+     <img src="../_images/astromDiffRA_g_sigmaMAD.png"
+          alt="g-band σ(MAD)"
+          style="width:100%; height:auto;">
+
+     <img src="../_images/astromDiffRA_r_sigmaMAD.png"
+          alt="r-band σ(MAD)"
+          style="width:100%; height:auto;">
+
+   </div>
+
+
+.. raw:: html
+
    <div class="image-grid">
      <img src="../_images/astromDiffRA_u_sigmaMAD.png" alt="u-band">
      <img src="../_images/astromDiffRA_g_sigmaMAD.png" alt="g-band">
