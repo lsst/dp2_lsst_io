@@ -9,7 +9,7 @@ Delta RA
 ========
 
 
-.. base-gallery::
+.. ref-gallery::
    :caption: RA σ(MAD)
    :tooltip:
 
