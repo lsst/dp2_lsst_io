@@ -12,7 +12,7 @@ For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
 **Learning objective:** Join multiple tables to retrieve combined results with ADQL.
 
-**LSST data products:** ``Source``, ``Visit``, ``CcdVisit``, and ``Object`` tables
+**LSST data products:** ``Source``, ``Visit``, ``VisitDetector``, and ``Object`` tables
 
 **Credit:** Originally developed by the Rubin Community Science team.
 Please consider acknowledging them if this tutorial is used for the preparation of journal articles, software releases, or other tutorials.
@@ -72,7 +72,7 @@ Spatial constraints are applied to the ``FROM`` table, not the ``JOIN`` table.
 
 **4. Review the two-table join results.**
 Notice that this join is not one-to-one: there are multiple individual sources returned that are matched to the same visit.
-In other words, there are multiple rows from the ``Source`` table joined with a given row from the ``CcdVisit`` table.
+In other words, there are multiple rows from the ``Source`` table joined with a given row from the ``VisitDetector`` table.
 If multiple tabs are present above the upper left panel in the default Results tab layout, click the "Coverage" tab to display the coverage chart.
 
 .. figure:: images/portal-103-4-1.png
@@ -85,8 +85,8 @@ If multiple tabs are present above the upper left panel in the default Results t
 **5. Execute a three-table join.**
 The ``Object`` table (photometry in the deepCoadd images) can be joined with the
 ``ForcedSource`` table (photometry in individual processed visit images) using their shared ``objectId`` column.
-The ``ForcedSource`` table can be joined with the ``CcdVisit`` table (metadata about individual visits) using a shared column, named ``Visit``
-in the ``ForcedSource`` table and ``VisitId`` in the ``CcdVisit`` table,
+The ``ForcedSource`` table can be joined with the ``VisitDetector`` table (metadata about individual visits) using a shared column, named ``Visit``
+in the ``ForcedSource`` table and ``VisitId`` in the ``VisitDetector`` table,
 which identifies an LSST visit.
 
 .. code-block:: SQL
@@ -94,22 +94,22 @@ which identifies an LSST visit.
   SELECT obj.coord_ra, obj.coord_dec, obj.objectId, obj.refExtendedness,
          scisql_nanojanskyToAbMag(obj.i_psfFlux) AS obj_i_psfAbMag,
          scisql_nanojanskyToAbMag(fs.psfFlux) AS fs_psfAbMag,
-         cv.VisitId, cv.expMidptMJD, cv.seeing
+         vd.VisitId, vd.expMidptMJD, vd.seeing
   FROM dp2.Object AS obj
   JOIN dp2.ForcedSource AS fs
   ON obj.objectId = fs.objectId
-  JOIN dp1.CcdVisit AS cv
-  ON fs.Visit = cv.VisitId
+  JOIN dp2.VisitDetector AS vd
+  ON fs.Visit = vd.VisitId
   WHERE CONTAINS(POINT('ICRS', obj.coord_ra, obj.coord_dec),
         CIRCLE('ICRS', 53.13, -28.10, 0.05)) = 1
         AND obj.refExtendedness = 1
         AND obj.i_psfFlux > 3600
-        AND cv.expMidptMJD > 60631 AND cv.expMidptMJD < 60637
+        AND vd.expMidptMJD > 60800 AND vd.expMidptMJD < 61050
         AND fs.band = 'i'
 
 
 **6. Review the three-table join results.**
-The join of ``Object`` to ``ForcedSource`` is one-to-many, and the join of ``ForcedSource`` to ``CcdVisit`` is many-to-one.
+The join of ``Object`` to ``ForcedSource`` is one-to-many, and the join of ``ForcedSource`` to ``VisitDetector`` is many-to-one.
 To view the coverage chart, click the "Coverage" tab at the top of the upper left panel.
 
 .. figure:: images/portal-103-4-2.png
