@@ -65,9 +65,9 @@ Spatial constraints are applied to the ``FROM`` table, not the ``JOIN`` table.
   FROM dp2.Source AS src
   JOIN dp2.VisitDetector AS vd
   ON src.Visit = vd.VisitId
-  WHERE CONTAINS(POINT('ICRS', src.coord_ra, src.coord_dec),
+  WHERE CONTAINS(POINT('ICRS', src.ra, src.dec),
         CIRCLE('ICRS', 53.13, -28.10, 0.05)) = 1
-        AND cv.expMidptMJD > 60800 AND cv.expMidptMJD < 61050
+        AND vd.expMidptMJD > 60800 AND vd.expMidptMJD < 61050
         AND src.band = 'i'
 
 **4. Review the two-table join results.**
