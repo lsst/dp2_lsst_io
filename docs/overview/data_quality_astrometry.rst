@@ -15,19 +15,19 @@ RA σ(MAD)
    :gutter: 2
 
    .. card::
-      :img-top: ../_images/astromDiffRA_u_sigmaMAD.png
+      :img-top: ../images/astromDiffRA_u_sigmaMAD.png
       :text-align: center
 
       u-band σ(MAD)
 
    .. card::
-      :img-top: ../_images/astromDiffRA_g_sigmaMAD.png
+      :img-top: ../images/astromDiffRA_g_sigmaMAD.png
       :text-align: center
 
       g-band σ(MAD)
 
    .. card::
-      :img-top: ../_images/astromDiffRA_r_sigmaMAD.png
+      :img-top: ../images/astromDiffRA_r_sigmaMAD.png
       :text-align: center
 
       r-band σ(MAD)
