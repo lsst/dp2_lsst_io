@@ -1,1 +1,3 @@
 documenteer[guide]>=2.0
+
+myst-sphinx-gallery
