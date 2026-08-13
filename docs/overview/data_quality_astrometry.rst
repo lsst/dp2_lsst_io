@@ -9,6 +9,15 @@ Delta RA
 ========
 
 
+.. base-gallery::
+   :caption: RA σ(MAD)
+   :tooltip:
+
+   ../_images/astromDiffRA_u_sigmaMAD.png
+   ../_images/astromDiffRA_g_sigmaMAD.png
+   ../_images/astromDiffRA_r_sigmaMAD.png
+
+
 .. raw:: html
 
    <div style="display: grid;
