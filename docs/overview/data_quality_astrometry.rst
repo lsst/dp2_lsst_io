@@ -10,7 +10,6 @@ Delta RA
 
 
 .. ref-gallery::
-   :caption: RA σ(MAD)
    :tooltip:
 
    ../_images/astromDiffRA_u_sigmaMAD.png
