@@ -10284,7 +10284,7 @@ Rubin staff will respond to all questions posted there.</p>
 These values were omitted partially because they were not standardized during commissioning, not used consistently throughout the commissioning period, and are thus of limited use for EDP2.</p>
 <p><strong>Warning: for EDP2, when "all the visits of a particular small area or deep drilling commissioning field" are desired, it is recommended to follow the guidance in tutorial "301.1. DP2 overview" and search for visits in a given region by coordinates and offsets.</strong> Note also that these "commissioning fields" were defined only for the commissioning (pre-LSST) era; with the exception of the deep drilling fields, the LSST does not have defined fields.</p>
 <p>However, because some <em>limited</em> and <em>non-standardized</em> scheduler information does exist and is accessible via the Butler dimension records, in order to assuage curiosity and provide guidance, this tutorial demonstrates how to retrieve and interpret the scheduler-related information.</p>
-<p><strong>Related tutorials</strong>: The 100-level tutorials for how to use the RSP's butler and TAP services, the 200-level tutorials for details on the visit table, and the 301-series tutorials that demonstrate how best to use the observational metadta.</p>
+<p><strong>Related tutorials</strong>: The 100-level tutorials for how to use the RSP's butler and TAP services, the 200-level tutorials for details on the visit table, and the 301-series tutorials that demonstrate how best to use the observational metadata.</p>
 <h3 id="1.1.-Import-packages">1.1. Import packages<a class="anchor-link" href="#1.1.-Import-packages">¶</a></h3><p>Import <code>pandas</code>, <code>numpy</code>, and <code>matplotlib</code>; <code>skyproj</code> for plotting; and the Rubin packages for data access with the Butler and TAP services.</p>
 </div>
 </div>
@@ -10401,7 +10401,7 @@ This can be used to cut off, e.g., the darkest or lightest colors, to help with 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2.-Retrieve-visit-information">2. Retrieve visit information<a class="anchor-link" href="#2.-Retrieve-visit-information">¶</a></h2><h3 id="2.1.-Visit-table-(TAP)">2.1. Visit table (TAP)<a class="anchor-link" href="#2.1.-Visit-table-(TAP)">¶</a></h3><p>Using the TAP service, retrieve the five columns for all rows of the <code>Visit</code> table: the visit identifier, the coordinates RA and Dec in degrees, and the modified julian date at the midpoint of the exposure.
+<h2 id="2.-Retrieve-visit-information">2. Retrieve visit information<a class="anchor-link" href="#2.-Retrieve-visit-information">¶</a></h2><h3 id="2.1.-Visit-table-(TAP)">2.1. Visit table (TAP)<a class="anchor-link" href="#2.1.-Visit-table-(TAP)">¶</a></h3><p>Using the TAP service, retrieve the five columns for all rows of the <code>Visit</code> table: the visit identifier, the coordinates RA and Dec in degrees, the band, and the modified julian date at the midpoint of the exposure.
 Store the results in <code>tap_results_df</code> as a pandas dataframe.</p>
 </div>
 </div>
@@ -10447,7 +10447,7 @@ Store the results in <code>tap_results_df</code> as a pandas dataframe.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.2.-Visit-dimension-records">2.2. Visit dimension records<a class="anchor-link" href="#2.2.-Visit-dimension-records">¶</a></h3><p>Within the Butler, "dimensions" are properties of a dataset type that can be constrained in a Butler query, such as instrument, tract, patch, visit, and detector. The "dimension records" are all the unique values for a given dimension - for example, all visits - <em>and</em> related qualities for that particular unqiue value, such as the visit properties.</p>
+<h3 id="2.2.-Visit-dimension-records">2.2. Visit dimension records<a class="anchor-link" href="#2.2.-Visit-dimension-records">¶</a></h3><p>Within the Butler, "dimensions" are properties of a dataset type that can be constrained in a Butler query, such as instrument, tract, patch, visit, and detector. The "dimension records" are all the unique values for a given dimension - for example, all visits - <em>and</em> related qualities for that particular unique value, such as the visit properties.</p>
 <h4 id="2.2.1.-For-specific-visits">2.2.1. For specific visits<a class="anchor-link" href="#2.2.1.-For-specific-visits">¶</a></h4><p>Visit dimension records can be retrieved from the Butler by individual visit identifier number.
 Retrieve the records for three randomly selected visits by their visit identifier.</p>
 </div>
