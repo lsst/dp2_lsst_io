@@ -40,7 +40,7 @@ Negative fluxes should not be converted to magnitudes using this special ADQL fu
 ----
 
 **1. Go to the DP1 & DP2 Catalogs ADQL interface.**
-Clear any past ADQL query statements from the query box.
+Click on Edit ADQL in the upper right-hand corner.
 
 **2. Set up a query that returns magnitudes.**
 The following query returns the *r*-band cModel and Sersic magnitudes, and their errors, for objects brighter than 25th magnitude in *r*-band.
