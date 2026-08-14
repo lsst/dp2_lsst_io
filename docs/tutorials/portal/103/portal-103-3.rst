@@ -22,7 +22,7 @@ DOI: `10.11578/rubin/dc.20250909.20 <https://doi.org/10.11578/rubin/dc.20250909.
 
 **Warning!**
 Not all tables can be joined.
-Two tables must have a column in common in order to be joined.
+Two tables must have a column in common to be joined.
 
 ----
 
@@ -50,9 +50,8 @@ Two columns are selected from "table2" ("colX" and "colY").
 
 **3. Execute a two-table join.**
 The ``Source`` table (detections in individual processed visit images) can be joined with the
-``CcdVisit`` table (metadata about individual visits) using a shared column, named ``Visit``
-in the ``Source`` table and ``VisitId`` in the ``CcdVisit`` table,
-which identifies an LSST visit.
+``VisitDetector`` table (metadata about individual visits) using a shared column, named ``Visit``
+in the ``Source`` table and ``VisitId`` in the ``VisitDetector`` table, which identifies an LSST visit.
 Constraints can be applied on columns from either or both tables.
 Spatial constraints are applied to the ``FROM`` table, not the ``JOIN`` table.
 
@@ -94,12 +93,12 @@ which identifies an LSST visit.
   SELECT obj.coord_ra, obj.coord_dec, obj.objectId, obj.refExtendedness,
          scisql_nanojanskyToAbMag(obj.i_psfFlux) AS obj_i_psfAbMag,
          scisql_nanojanskyToAbMag(fs.psfFlux) AS fs_psfAbMag,
-         vd.VisitId, vd.expMidptMJD, vd.seeing
+         vd.visitId, vd.expMidptMJD, vd.seeing
   FROM dp2.Object AS obj
   JOIN dp2.ForcedSource AS fs
   ON obj.objectId = fs.objectId
   JOIN dp2.VisitDetector AS vd
-  ON fs.Visit = vd.VisitId
+  ON fs.visit = vd.visitId
   WHERE CONTAINS(POINT('ICRS', obj.coord_ra, obj.coord_dec),
         CIRCLE('ICRS', 53.13, -28.10, 0.05)) = 1
         AND obj.refExtendedness = 1
