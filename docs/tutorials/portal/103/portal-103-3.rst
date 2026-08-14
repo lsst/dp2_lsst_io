@@ -12,7 +12,7 @@ For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
 **Learning objective:** Join multiple tables to retrieve combined results with ADQL.
 
-**LSST data products:** ``Source``, ``Visit``, and ``Object`` tables
+**LSST data products:** ``Source``, ``Visit``, ``VisitDetector`` and ``Object`` tables
 
 **Credit:** Originally developed by the Rubin Community Science team.
 Please consider acknowledging them if this tutorial is used for the preparation of journal articles, software releases, or other tutorials.
