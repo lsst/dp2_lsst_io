@@ -88,7 +88,7 @@ in the ``ForcedSource`` table and ``visitId`` in the ``Visit`` table, which iden
 
 .. code-block:: SQL
 
-SELECT obj.coord_ra, obj.coord_dec, obj.objectId, obj.refExtendedness, obj.i_psfMag,
+ SELECT obj.coord_ra, obj.coord_dec, obj.objectId, obj.refExtendedness, obj.i_psfMag,
         scisql_nanojanskyToAbMag(fs.psfFlux) AS fs_psfAbMag,
         v.visit, v.expMidptMJD
  FROM dp2.Object AS obj
