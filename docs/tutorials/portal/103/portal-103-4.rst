@@ -1,14 +1,14 @@
-.. _portal-103-5:
+.. _portal-103-4:
 
 #################################
-103.5. Query for images with ADQL
+103.4. Query for images with ADQL
 #################################
 
 For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
-**Data Release:** DP1
+**Data Release:** Data Preview 2
 
-**Last verified to run:** 2025-06-28
+**Last verified to run:** 2026-08-14
 
 **Learning objective:** Query for image data with `Astronomy Data Query Language (ADQL) <https://www.ivoa.net/documents/latest/ADQL.html>`_.
 
@@ -16,6 +16,7 @@ For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
 **Credit:** Originally developed by the Rubin Community Science team.
 Please consider acknowledging them if this tutorial is used for the preparation of journal articles, software releases, or other tutorials.
+DOI: `10.11578/rubin/dc.20250909.20 <https://doi.org/10.11578/rubin/dc.20250909.20>`_
 
 **Get Support:** Everyone is encouraged to ask questions or raise issues in the `Support Category <https://community.lsst.org/c/support/6>`_ of the Rubin Community Forum.
 Rubin staff will respond to all questions posted there.
@@ -24,12 +25,12 @@ Rubin staff will respond to all questions posted there.
 
 ----
 
-**1. Go to the DP1 Images ADQL interface.**
+**1. Go to the DP1 & DP2 Images ADQL interface.**
 The button to switch from the user interface to the ADQL interface is in the upper right corner: "Edit ADQL".
 
 **2. Create an ADQL query for images.**
 It is recommended to always select all of the columns as in the query statement below.
-This query requests images with calibration level 2 (processed visit images) that overlap the coordinates RA, Dec = 53.13, -28.1 degrees.
+This query requests images with calibration level 3 (coadds) that overlap the coordinates RA, Dec = 53.13, -28.1 degrees.
 
 .. code:: sql
 
@@ -40,7 +41,7 @@ This query requests images with calibration level 2 (processed visit images) tha
          facility_name, instrument_name, s_region,
          access_url, access_format
   FROM ivoa.ObsCore
-  WHERE calib_level = 2 AND dataproduct_type = 'image'
+  WHERE calib_level = 3 AND dataproduct_type = 'image'
         AND CONTAINS(POINT('ICRS', 53.13, -28.1), s_region)=1
 
 
@@ -50,8 +51,8 @@ Copy-paste the query above into the ADQL query box, and click "Search".
 **4. View the results.**
 The 787 individual visit images that meet the ADQL query constraints will be available in the table, with the selected row displayed at upper right, as in Figure 1.
 
-.. figure:: images/portal-103-5-1.png
-    :name: portal-103-5-1
+.. figure:: images/portal-103-4-1.png
+    :name: portal-103-4-1
     :alt: The screenshot of the image, the scatter plot, and the table resulting from executing the ADQL query above.
 
     Figure 1: The screenshot of the image, the scatter plot, and the table that result from executing the ADQL query.
