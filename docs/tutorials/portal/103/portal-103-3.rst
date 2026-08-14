@@ -74,8 +74,8 @@ Notice that this join is not one-to-one: there are multiple individual sources r
 In other words, there are multiple rows from the ``Source`` table joined with a given row from the ``VisitDetector`` table.
 If multiple tabs are present above the upper left panel in the default Results tab layout, click the "Coverage" tab to display the coverage chart.
 
-.. figure:: images/portal-103-4-1.png
-    :name: portal-103-4-1
+.. figure:: images/portal-103-3-1.png
+    :name: portal-103-3-1
     :alt: The Portal results tab for a two-table join.
 
     Figure 1: The Portal Results tab with a default layout for the data returned from the two-table join query.
@@ -103,8 +103,8 @@ SELECT obj.coord_ra, obj.coord_dec, obj.objectId, obj.refExtendedness, obj.i_psf
 The join of ``Object`` to ``ForcedSource`` is one-to-many, and the join of ``ForcedSource`` to ``Visit`` is many-to-one.
 To view the coverage chart, click the "Coverage" tab at the top of the upper left panel.
 
-.. figure:: images/portal-103-4-2.png
-    :name: portal-103-4-2
+.. figure:: images/portal-103-3-2.png
+    :name: portal-103-3-2
     :alt: The Portal results tab for a three-table join.
 
     Figure 2: The Portal Results tab with the layout displaying the activated coverage chart for the data returned from the three-table join query.
