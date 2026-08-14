@@ -12,7 +12,7 @@ For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
 **Learning objective:** Join multiple tables to retrieve combined results with ADQL.
 
-**LSST data products:** ``Source``, ``Visit``, ``VisitDetector``, and ``Object`` tables
+**LSST data products:** ``Source``, ``Visit``, and ``Object`` tables
 
 **Credit:** Originally developed by the Rubin Community Science team.
 Please consider acknowledging them if this tutorial is used for the preparation of journal articles, software releases, or other tutorials.
@@ -50,8 +50,8 @@ Two columns are selected from "table2" ("colX" and "colY").
 
 **3. Execute a two-table join.**
 The ``Source`` table (detections in individual processed visit images) can be joined with the
-``VisitDetector`` table (metadata about individual visits) using a shared column, named ``Visit``
-in the ``Source`` table and ``VisitId`` in the ``VisitDetector`` table, which identifies an LSST visit.
+``VisitDetector`` table (metadata about individual visits) using a shared column, named ``visit``
+in the ``Source`` table and ``visitId`` in the ``VisitDetector`` table, which identifies an LSST visit.
 Constraints can be applied on columns from either or both tables.
 Spatial constraints are applied to the ``FROM`` table, not the ``JOIN`` table.
 
@@ -59,11 +59,11 @@ Spatial constraints are applied to the ``FROM`` table, not the ``JOIN`` table.
 
   SELECT src.ra, src.dec, src.sourceId, src.band,
          scisql_nanojanskyToAbMag(src.psfFlux) AS psfAbMag,
-         src.Visit, vd.VisitId,
+         src.visit, vd.visitId,
          vd.expMidptMJD, vd.seeing
   FROM dp2.Source AS src
   JOIN dp2.VisitDetector AS vd
-  ON src.Visit = vd.VisitId
+  ON src.visit = vd.visitId
   WHERE CONTAINS(POINT('ICRS', src.ra, src.dec),
         CIRCLE('ICRS', 53.13, -28.10, 0.05)) = 1
         AND vd.expMidptMJD > 60800 AND vd.expMidptMJD < 61050
@@ -82,33 +82,25 @@ If multiple tabs are present above the upper left panel in the default Results t
 
 
 **5. Execute a three-table join.**
-The ``Object`` table (photometry in the deepCoadd images) can be joined with the
-``ForcedSource`` table (photometry in individual processed visit images) using their shared ``objectId`` column.
-The ``ForcedSource`` table can be joined with the ``VisitDetector`` table (metadata about individual visits) using a shared column, named ``Visit``
-in the ``ForcedSource`` table and ``VisitId`` in the ``VisitDetector`` table,
-which identifies an LSST visit.
+The ``Object`` table (photometry in the deepCoadd images) can be joined with the ``ForcedSource`` table (photometry in individual visit images) using their shared ``objectId`` column.
+The ``ForcedSource`` table can be joined with the ``Visit`` table (metadata about individual visits) using a shared column, named ``visit``
+in the ``ForcedSource`` table and ``visitId`` in the ``Visit`` table, which identifies an LSST visit.
 
 .. code-block:: SQL
 
-  SELECT obj.coord_ra, obj.coord_dec, obj.objectId, obj.refExtendedness,
-         scisql_nanojanskyToAbMag(obj.i_psfFlux) AS obj_i_psfAbMag,
-         scisql_nanojanskyToAbMag(fs.psfFlux) AS fs_psfAbMag,
-         vd.visitId, vd.expMidptMJD, vd.seeing
-  FROM dp2.Object AS obj
-  JOIN dp2.ForcedSource AS fs
-  ON obj.objectId = fs.objectId
-  JOIN dp2.VisitDetector AS vd
-  ON fs.visit = vd.visitId
-  WHERE CONTAINS(POINT('ICRS', obj.coord_ra, obj.coord_dec),
-        CIRCLE('ICRS', 53.13, -28.10, 0.05)) = 1
-        AND obj.refExtendedness = 1
-        AND obj.i_psfFlux > 3600
-        AND vd.expMidptMJD > 60800 AND vd.expMidptMJD < 61050
-        AND fs.band = 'i'
+SELECT obj.coord_ra, obj.coord_dec, obj.objectId, obj.refExtendedness, obj.i_psfMag,
+        scisql_nanojanskyToAbMag(fs.psfFlux) AS fs_psfAbMag,
+        v.visit, v.expMidptMJD
+ FROM dp2.Object AS obj
+ JOIN dp2.ForcedSource AS fs ON obj.objectId = fs.objectId
+ JOIN dp2.Visit AS v ON fs.visit = v.visit
+ WHERE CONTAINS(POINT('ICRS', obj.coord_ra, obj.coord_dec), CIRCLE('ICRS', 53.13, -28.10, 0.05)) = 1
+       AND obj.i_sizeExtendedness < 0.5 AND obj.i_psfMag < 23
+       AND fs.band = 'i' AND v.expMidptMJD > 60800 AND v.expMidptMJD < 61050
 
 
 **6. Review the three-table join results.**
-The join of ``Object`` to ``ForcedSource`` is one-to-many, and the join of ``ForcedSource`` to ``VisitDetector`` is many-to-one.
+The join of ``Object`` to ``ForcedSource`` is one-to-many, and the join of ``ForcedSource`` to ``Visit`` is many-to-one.
 To view the coverage chart, click the "Coverage" tab at the top of the upper left panel.
 
 .. figure:: images/portal-103-4-2.png
