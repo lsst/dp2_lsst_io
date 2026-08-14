@@ -33,9 +33,6 @@ where :math:`m` is magnitude and :math:`f` is flux.
 **Warning!** Fluxes measured in difference images can be negative.
 Negative fluxes should not be converted to magnitudes using this special ADQL function.
 
-**Note:** to convert fluxes to magnitudes *after* a query is executed, add a new derived column to calculate magnitudes from fluxes (see the tutorial on how to use the results interface table panel for how to add a column).
-
-
 
 ----
 
