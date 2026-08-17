@@ -9,10 +9,6 @@ Each plane corresponds to a bit in the coadd mask and reflects the propagation o
 .. note::
 
    DP2 images use the new ``lsst.images`` format, in which the mask-plane names and descriptions are stored in the mask's ``schema`` and read at runtime.
-   You can list the planes for any image with, e.g.::
-
-       print(deep_coadd.mask.schema)
-
    Several plane names differ from the legacy ``lsst.afw.image`` names used in DP1: ``SAT`` → ``SATURATED``, ``CR`` → ``COSMIC_RAY``, ``INTRP`` → ``INTERPOLATED``, ``EDGE`` → ``DETECTION_EDGE``, and ``UNMASKEDNAN`` → ``UNMASKED_NAN``.
    The names below are the current ``lsst.images`` names; the legacy name is given in parentheses where it differs, since the catalog ``pixelFlags_*`` columns are still derived from the legacy names (see :doc:`/products/flags/mask_planes`).
 
