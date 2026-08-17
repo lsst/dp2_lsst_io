@@ -27,12 +27,17 @@ Butler
 Description
 ===========
 
-TBD
+The ``deep_coadd_input_summary`` table provides a patch-level summary of the visit detector images that contributed to build each deep coadd. Note that the ``deep_coadd_input_summary`` table does not include information about which visit detector images contributed to each deep coadd cell. The ``deep_coadd_input_summary`` table contains 7 columns and 21,235,500 rows.
 
-Processing
-----------
+A schema is not yet published for the ``deep_coadd_input_summary`` table. The table contains one row per visit detector image per deep coadd that the visit detector image contributes to. The columns are:
 
-TBD
+* ``tract``: ID number of the top level, 'tract', within the standard LSST skymap
+* ``patch``: ID number of the second level, 'patch', within the standard LSST skymap
+* ``visit``: visit ID number
+* ``detector``: detector ID number
+* ``weight``: dimensionless weight for the visit detector image when building the deep coadd, which is built using a weighted mean of the relevant visit detector images
+* ``goodpix``: number of pixels from the visit detector image that overlap the coadd patch
+* ``band``: name of the band used to take the visit detector image
 
 Tutorials
 ---------
