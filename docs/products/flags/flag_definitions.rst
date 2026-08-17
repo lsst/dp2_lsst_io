@@ -4,13 +4,6 @@
 Flag definitions and categories
 ###############################
 
-.. important::
-
-   DP2 flag descriptions and guidance for their scientific applications are still being developed and validated.
-   This page migrates the flag content that remains correct for DP2 and adds the columns that are new in DP2, but it is not a complete catalog of every flag column.
-   For the authoritative, per-column list and the most up-to-date descriptions, always consult the `DP2 schema browser <https://sdm-schemas.lsst.io/dp2.html>`_.
-
-
 To help users interpret flag meanings, the sections below organize the most scientifically useful flags into categories based on what each flag indicates.
 See also the :doc:`/products/flags/flag_recommendations` page for guidance on which flags to apply for science-quality selections.
 
@@ -77,11 +70,6 @@ Center flags are generally the more important for photometry and shapes because 
    In the coadd Object table the columns ``pixelFlags_bad``, ``pixelFlags_edge``, ``pixelFlags_suspect``, ``pixelFlags_suspectCenter``, and ``pixelFlags_offimage`` are deprecated: they are only set in the (rare) case of missing band data and should **not** be used as quality cuts.
    Use ``pixelFlags_sensor_edge``/``sensor_edgeCenter`` for coadd edges. These flags remain valid in the single-epoch and difference-image tables (Source, ForcedSource, DiaSource, ForcedSourceOnDiaObject).
 
-.. note::
-
-   ``pixelFlags_inexact_psf`` and ``pixelFlags_inexact_psfCenter`` are **not** recommended as a general quality cut: they are set over large areas (mostly input-image boundaries) and rejecting on them removes a lot of usable sky.
-   They are more useful as a targeted diagnostic when a PSF-related problem is already suspected for a specific object.
-
 
 Measurement failure flags
 =========================
@@ -140,7 +128,7 @@ The general flag alone is sufficient for filtering; the subflags are diagnostic.
 
 .. note::
 
-   **Free versus forced measurements (new emphasis for DP2).**
+   **Free versus forced measurements.**
    In the Object table most fluxes (e.g. ``{band}_psfFlux``, ``{band}_cModel_*``) are **forced**: they are measured at the reference-band position and shape so that colors are consistent across bands.
    DP2 also provides **free** (unforced) variants — ``{band}_free_psfFlux`` / ``{band}_free_psfFlux_flag`` and ``{band}_free_cModelFlux`` / ``{band}_free_cModelFlux_flag`` — which are measured independently in each band.
    When filtering, apply the flag that matches the flux you use: use ``{band}_psfFlux_flag`` with the forced flux and ``{band}_free_psfFlux_flag`` with the free flux.
@@ -230,7 +218,7 @@ Additional notable flags that provide ancillary information about sources and ob
 
    **Weak-lensing shear (new ShearObject table).**
    DP2 adds a ShearObject table produced by multi-band metadetection, which carries its own suite of flags (e.g. ``gauss_flags`` / ``pgauss_flags`` and their ``…_object_flags``/``…_shape_flags`` variants, ``bmask_flags``, ``ormask_flags``, ``image_flags``, ``psfOriginal_flags``, and the ``is_*_inner`` / ``is_primary`` selection flags).
-   Detailed shear-flag guidance is still being validated; consult the `schema browser <https://sdm-schemas.lsst.io/dp2.html>`_ and weak-lensing documentation for current recommendations, and note that no deblending is performed prior to these measurements.
+   Detailed shear-flag guidance is still being validated; consult the `schema browser <https://sdm-schemas.lsst.io/dp2.html>`_ for current recommendations, and note that no deblending is performed prior to these measurements.
 
 
 .. _calibration-flags:

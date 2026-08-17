@@ -4,11 +4,8 @@
 Flag usage guidance
 ###################
 
-.. important::
-
-   DP2 flag descriptions and guidance for their scientific applications are still being developed and validated.
-   The guidance below is intentionally **minimal and conservative**: it lists only a small set of flags that are almost always appropriate to exclude, for typical science-quality selections.
-   It is **not** a recipe for a "clean sample." The correct flag cuts depend strongly on your science case, and stricter or looser cuts than these will be appropriate for many analyses.
+The guidance below is intentionally **minimal and conservative**: it lists only a small set of flags that are almost always appropriate to exclude, for typical science-quality selections.
+It is **not** a recipe for a "clean sample." The correct flag cuts depend strongly on your science case, and stricter or looser cuts than these will be appropriate for many analyses.
 
 The tables below give, per catalog table, a **minimal recommended set** of flags to apply, followed by **optional, science-case-dependent** cuts.
 Only the minimal set is suggested for most analyses; treat everything under "optional" as a starting point to adapt, not a default.

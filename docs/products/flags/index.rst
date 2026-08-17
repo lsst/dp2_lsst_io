@@ -33,15 +33,3 @@ The measurement algorithms that populate the catalogs typically have both a "gen
 There is also a suite of "pixel flags" (``pixelFlags_*``) that report on the image mask planes in the neighborhood of a source or object.
 
 Science users are expected to filter their samples using both types of flags explicitly; almost no filtering has already been performed, and appropriate flag cuts depend greatly on the science case.
-
-.. note::
-
-   **Which flags exist and which are meaningful depends on the table and the data release.**
-   DP2 is not identical to DP1: some flags were removed, some are deprecated (e.g. several coadd Object ``pixelFlags_*``), and new flags were added (e.g. free/unforced photometry flags, new difference-image flags, and a weak-lensing ShearObject table).
-   For the authoritative, per-column list, always consult the `DP2 schema browser <https://sdm-schemas.lsst.io/dp2.html>`_.
-
-.. note::
-
-   **Free versus forced measurements.**
-   In the Object table, most fluxes are measured in "forced" mode at the reference-band position and shape so that colors are consistent across bands, while ``{band}_free_*`` columns provide independent per-band ("free") measurements.
-   Apply the failure flag that matches the flux you use. See :doc:`/products/flags/flag_definitions` for details.
