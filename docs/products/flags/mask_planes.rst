@@ -15,7 +15,6 @@ Each relevant mask-plane bit set in the pixels of a source's footprint propagate
 
    **Two different naming conventions.**
    DP2 images use the new ``lsst.images`` format, which renames several mask planes relative to the legacy ``lsst.afw.image`` names (e.g. ``SAT`` → ``SATURATED``, ``CR`` → ``COSMIC_RAY``, ``INTRP`` → ``INTERPOLATED``, ``EDGE`` → ``DETECTION_EDGE``).
-   You will see the **new** names when you inspect an image mask (``print(image.mask.schema)``).
    The **catalog** ``pixelFlags_*`` columns, however, are still derived from and named after the **legacy** planes (``pixelFlags_saturated``, ``pixelFlags_cr``, …).
    The table below lists all three so you can move between the image and the catalog.
 
@@ -81,11 +80,5 @@ Single-epoch and difference-image flags
 =======================================
 
 The Source, ForcedSource, DiaSource, and ForcedSourceOnDiaObject catalogs carry additional ``pixelFlags_*`` columns derived from the visit-image and difference-image mask planes — for example ``pixelFlags_bad``, ``pixelFlags_suspect``, ``pixelFlags_edge`` (all valid on these tables, unlike on the coadd Object table), and, for DiaSource, ``pixelFlags_streak`` and the injection flags ``pixelFlags_injected`` / ``pixelFlags_injected_template``.
-
-.. important::
-
-   EDP2 provides the coadds and the catalogs, but **not** the single-epoch ``visit_image`` or ``difference_image`` products.
-   The corresponding mask-plane definitions therefore cannot yet be verified against released images, and the :ref:`visit and difference image mask planes <images-visit-mask-planes>` page is a placeholder pending the full DP2 release.
-   The catalog ``pixelFlags_*`` columns listed above still exist and are usable; only the image-side plane documentation is pending.
 
 See :ref:`deep and template coadd mask planes <images-deep-coadd-mask-planes>` for the full coadd mask-plane descriptions.
