@@ -331,3 +331,32 @@ These are a subset of the visits listed in ``bad.ecsv`` for LSSTCam in `excluded
     2025071700678 2025071800104 2025071800110 2025071800129 2025071800151
     2025071800299 2025071800360 2025071800368 2025071800382 2025071800445
     2025071800518 2025072000352 2025072200096 2025072200207]
+
+.. _issues_forcephotometry:
+
+Force Photometry
+================
+
+Missing ForcedSources
+---------------------
+
+Approximately 3% of visit images in the coadded area that were processed successfully and included in coadd construction were not measured during force photometry and did not generate ForcedSources.
+The affected images had failed image differencing, and because force photometry is normally performed on both the visit image and its corresponding difference image by the same task, the pipeline skipped both types of force photometry since the required inputs were not all available.
+In some areas where very few visits were obtained, this means there may be Objects that have no corresponding ForcedSources at all.
+In future data releases this task will be corrected to perform visit image force photometry regardless of the difference image status.
+
+
+.. _issues_productdifferences:
+
+Data Product Differences
+========================
+
+Differences between Butler tables and TAP
+-----------------------------------------
+
+A small number of changes have been made to the tables presented in TAP which cause them to differ from the tables available in parquet format via the Butler:
+
+- ``coord_ra`` and ``coord_dec`` are omitted from ForcedSource and ForcedSourceOnDiaObject, as it is more efficient to perform spatial queries by joining to Object or DiaObject and spatially restricting on the Object/DiaObject coordinates.
+- ``ra`` in the ``isolated_star_stellar_motions`` Butler dataset ranges from -180 to +180; in TAP this has been corrected to run from 0 to 360.
+- ``coord_ra`` and ``coord_dec`` are empty in the ``dia_source`` Butler dataset and omitted from TAP; ``ra`` and ``dec`` are the correct columns to use.
+- ``coord_ra`` and ``coord_dec`` are duplicates of ``ra`` and ``dec`` in ``source``, and are omitted from TAP.
