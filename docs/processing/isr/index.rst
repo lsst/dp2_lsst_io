@@ -26,7 +26,7 @@ ISR is the first step of image processing, which removes instrumental effects in
 Components
 ==========
 
-The steps of ISR, in the order they are applied to DP2 science images, include (from `RTN-117 <https://rtn-117.lsst.io/>`__; see also `Plazas Malagón et al. 2025 <https://ui.adsabs.harvard.edu/abs/2025JATIS..11a1209P/abstract>`__):
+The steps of ISR, in the order they are applied to DP2 science images, include (from `RTN-117 <https://rtn-117.lsst.io/>`__; see also `Plazas Malagón et al. 2025 <https://scixplorer.org/abs/2025JATIS..11a1209P/abstract>`__):
 
 **Conversion from integer to float**: promotes the raw integer pixel values to floating-point precision before any corrections are applied.
 
@@ -77,7 +77,7 @@ Figure 1 illustrates the photon transfer and data-acquisition model of the detec
 Based on this model, a series of Instrument Signature Removal steps are implemented to eliminate camera-induced effects (Figure 2).
 
 The ISR pipeline essentially "works backward" through the signal chain, applying corrections in reverse chronological order relative to the photon transfer chain and converting the integer analog-to-digital units (ADU) of the raw camera output back to a floating-point number of photoelectrons created in the silicon.
-The physical detector, shown on the left in Figure 1, is the source of effects that arise from the silicon itself, such as the dark current and the brighter-fatter effect (`Broughton et al. 2024 <https://ui.adsabs.harvard.edu/abs/2024PASP..136d5003B/abstract>`_, `Gruen et al. 2015 <https://ui.adsabs.harvard.edu/abs/2015JInst..10C5032G/abstract>`_).
+The physical detector, shown on the left in Figure 1, is the source of effects that arise from the silicon itself, such as the dark current and the brighter-fatter effect (`Broughton et al. 2024 <https://scixplorer.org/abs/2024PASP..136d5003B/abstract>`_, `Gruen et al. 2015 <https://scixplorer.org/abs/2015JInst..10C5032G/abstract>`_).
 
 After the image has integrated, the charge is shifted to the serial register and read out, which can introduce charge transfer inefficiencies and a clock-injected offset level.
 The signals for all amplifiers are transferred via cables to the Readout Electronics Board (REB), during which crosstalk between the amplifiers may occur.
@@ -88,7 +88,7 @@ Because effects are undone in the opposite order to which they were imprinted, s
 Quantization is addressed first through count dithering, followed by serial overscan subtraction, saturation masking, and gain conversion to electrons.
 Crosstalk is then corrected to prevent its contamination of later steps like parallel overscan subtraction and non-linearity correction, and deferred charge (CTI) is corrected next, followed by vendor-specific masks for artifacts such as edge bleeds and the ITL dip.
 The final steps include bias and dark subtraction, defect masking, brighter-fatter correction, variance plane construction, flat-fielding, and interpolation over masked pixels.
-Each of these steps is tied to specific elements in the detector readout chain; running the pipeline with misplaced steps would either apply a correction in the wrong physical units or leave residual structure that invalidates downstream calibrations (`RTN-117 <https://rtn-117.lsst.io/>`__, `Plazas Malagón et al. 2025 <https://ui.adsabs.harvard.edu/abs/2025JATIS..11a1209P/abstract>`__).
+Each of these steps is tied to specific elements in the detector readout chain; running the pipeline with misplaced steps would either apply a correction in the wrong physical units or leave residual structure that invalidates downstream calibrations (`RTN-117 <https://rtn-117.lsst.io/>`__, `Plazas Malagón et al. 2025 <https://scixplorer.org/abs/2025JATIS..11a1209P/abstract>`__).
 
 
 Subtleties
@@ -151,7 +151,7 @@ Additional resources
 For descriptions of the ISR steps and the generation, verification, certification, approval, and distribution of the calibration products necessary for ISR, refer to the following:
 
 * "Image Calibration and Instrument Signal Removal for the First Year of the LSST" (`RTN-117 <https://rtn-117.lsst.io/>`__)
-* `Instrument Signature Removal and Calibration Products for the Rubin Legacy Survey of Space and Time <https://ui.adsabs.harvard.edu/abs/2025JATIS..11a1209P/abstract>`_
+* `Instrument Signature Removal and Calibration Products for the Rubin Legacy Survey of Space and Time <https://scixplorer.org/abs/2025JATIS..11a1209P/abstract>`_
 * "Rubin Baseline Calibration Plan" (`SITCOMTN-086 <https://sitcomtn-086.lsst.io/>`_)
 * "Verifying LSST Calibration Data Products" (`DMTN-101 <https://dmtn-101.lsst.io/>`_)
 * "Calibration Generation, Verification, Acceptance, and Certification" (`DMTN-222 <https://dmtn-222.lsst.io/>`_)

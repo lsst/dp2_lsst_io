@@ -19,7 +19,7 @@ Image subtraction
 
 Template coadd images are warped, scaled, and PSF-matched to a visit image (also called the "direct" or "science" image), and then subtracted from the visit image to create a :doc:`/products/images/difference_image`.
 
-Image subtraction uses the decorrelated `Alard and Lupton (1998) <https://ui.adsabs.harvard.edu/abs/1998ApJ...503..325A/abstract>`_ algorithm, as described in "Implementation of Image Difference Decorrelation" (`dmtn-021.lsst.io <https://dmtn-021.lsst.io/>`_) and in the LSST Science Pipelines documentation for the `Alard-Lupton implementation <https://pipelines.lsst.io/modules/lsst.ip.diffim/AL_implementation.html>`_.
+Image subtraction uses the decorrelated `Alard and Lupton (1998) <https://scixplorer.org/abs/1998ApJ...503..325A/abstract>`_ algorithm, as described in "Implementation of Image Difference Decorrelation" (`dmtn-021.lsst.io <https://dmtn-021.lsst.io/>`_) and in the LSST Science Pipelines documentation for the `Alard-Lupton implementation <https://pipelines.lsst.io/modules/lsst.ip.diffim/AL_implementation.html>`_.
 
 
 .. _dia-source:

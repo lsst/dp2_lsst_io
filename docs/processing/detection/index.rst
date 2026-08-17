@@ -3,7 +3,7 @@ Source detection and measurement
 ################################
 
 Sources in the visit and deep coadd images are detected, deblended, and measured
-following (approximately) the process in `Bosch et al. (2018) <https://ui.adsabs.harvard.edu/abs/2018PASJ...70S...5B/abstract>`_,
+following (approximately) the process in `Bosch et al. (2018) <https://scixplorer.org/abs/2018PASJ...70S...5B/abstract>`_,
 as described in |osprae_doi|.
 All measurements are stored in the catalog :doc:`/products/index`.
 
@@ -48,7 +48,7 @@ In visit images, measurements of sources assume a PSF or Gaussian shape.
 The results are stored in the ``Source`` catalog.
 
 In deep coadd images, measurements of objects include both PSF and extended shapes.
-A wide variety of flux measurements are pre-calculated, such as the composite model (cModel), Gaussian-aperture-and-PSF (`GaaP <https://ui.adsabs.harvard.edu/abs/2008A%26A...482.1053K/abstract>`_), and Sersic models.
+A wide variety of flux measurements are pre-calculated, such as the composite model (cModel), Gaussian-aperture-and-PSF (`GaaP <https://scixplorer.org/abs/2008A%26A...482.1053K/abstract>`_), and Sersic models.
 The results are stored in the ``Object`` catalog.
 
 Star/galaxy classification

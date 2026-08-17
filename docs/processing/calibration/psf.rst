@@ -4,7 +4,7 @@ Point spread function (PSF) modeling
 
 PSF modeling characterizes the shape of point sources after they have been "blurred" by the atmosphere and optical system into a two-dimensional shape on the detector.
 
-PSF modeling uses the Piff (`Jarvis et al. 2021 <https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.1282J/abstract>`_) algorithm.
+PSF modeling uses the Piff (`Jarvis et al. 2021 <https://scixplorer.org/abs/2021MNRAS.501.1282J/abstract>`_) algorithm.
 
 Overview
 ========

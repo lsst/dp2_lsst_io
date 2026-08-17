@@ -54,7 +54,7 @@ There are two types of edge bleeds depending on the sensor vendor: for ITL senso
           An edge bleed on an e2v sensor: compared to ITL sensors, the feature at the CCD edge is more compact, and it is masked with a box.
 
 On ITL sensors, bright saturated stars can also produce a "dark dip" (or "ITL dip"): a depression of the background level along the columns that pass through the star.
-See `The "dark dips" phenomenon in the LSST Camera on-sky images <https://ui.adsabs.harvard.edu/abs/2026arXiv260700925J/abstract>`_ for a detailed description of this effect.
+See `The "dark dips" phenomenon in the LSST Camera on-sky images <https://scixplorer.org/abs/2026arXiv260700925J/abstract>`_ for a detailed description of this effect.
 
 .. figure:: images/ITL_dip_1_inset.jpg
     :name: itl_dip
