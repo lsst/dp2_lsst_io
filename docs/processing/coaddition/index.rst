@@ -85,4 +85,4 @@ See "Coaddition Artifact Rejection and CompareWarp" (`dmtn-080.lsst.io <https://
 Coadd background subtraction
 ============================
 
-After image coaddition, a background residual is fit and subtracted following a procedure similar to that described in :doc:`/processing/calibration/backgrounds`.
+After image coaddition, a background residual is fit and subtracted following a procedure similar to that described in :doc:`/processing/calibration/backgrounds`. The coadd background is estimated in 128x128-pixel bins, which are interpolated with a 6th-order Akima spline.

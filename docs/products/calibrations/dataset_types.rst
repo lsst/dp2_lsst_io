@@ -17,7 +17,7 @@ calibration dataset types and their descriptions is given below.
 These calibrations are produced and consumed by the
 :doc:`Instrument Signature Removal (ISR) </processing/isr/index>` pipeline.
 For a detailed description of the calibration products and the ISR process, see
-`Plazas Malagón et al. 2025 <https://ui.adsabs.harvard.edu/abs/2024arXiv240414516P/abstract>`_
+`Plazas Malagón et al. 2025 <https://scixplorer.org/abs/2024arXiv240414516P/abstract>`_
 and `RTN-117 <https://rtn-117.lsst.io>`_.
 
 For each dataset type below, the required dimensions of the Butler ``dataId`` are shown in **boldface**.
@@ -104,7 +104,7 @@ Brighter-fatter correction
     ('electroBfDistortionMatrix', {**instrument**, **detector**}, IsrCalib, isCalibration=True)
 
     The brighter-fatter distortion matrix (from
-    `Astier & Regnault 2023 <https://ui.adsabs.harvard.edu/abs/2023A%26A...670A.118A/abstract>`_)
+    `Astier & Regnault 2023 <https://scixplorer.org/abs/2023A%26A...670A.118A/abstract>`_)
     describing the pixel area changes in response to a single charge. It
     contains a set of model parameters to solve for the electric field in a
     pixel due to a single charge, as well as a set of pixel distortion matrices
@@ -112,11 +112,11 @@ Brighter-fatter correction
     to shifts in the north, south, east, and west boundaries.
 
     We are no longer using the Coulton correction
-    (`Coulton et al. 2018 <https://ui.adsabs.harvard.edu/abs/2018AJ....155..258C/abstract>`_),
+    (`Coulton et al. 2018 <https://scixplorer.org/abs/2018AJ....155..258C/abstract>`_),
     so there are no brighter-fatter kernels; instead there is a single
     correction that combines both
-    `Astier & Regnault 2023 <https://ui.adsabs.harvard.edu/abs/2023A%26A...670A.118A/abstract>`_
+    `Astier & Regnault 2023 <https://scixplorer.org/abs/2023A%26A...670A.118A/abstract>`_
     and
-    `Broughton et al. 2024 <https://ui.adsabs.harvard.edu/abs/2024PASP..136d5003B/abstract>`_.
+    `Broughton et al. 2024 <https://scixplorer.org/abs/2024PASP..136d5003B/abstract>`_.
     This brighter-fatter correction has been meeting the Y10 science
     requirements.

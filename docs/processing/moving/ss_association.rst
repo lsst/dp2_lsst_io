@@ -14,7 +14,7 @@ The association input was a 2026 March 13 snapshot of the MPC orbit database, li
 Small bodies discovered after that date, including those found in Rubin data, are therefore absent from the delivered ``SSSource`` table.
 The input orbit catalog did not contain comets, so no comets were available for association in DP2.
 
-Ephemerides at the visit epochs were generated with `Sorcha <https://sorcha.space/>`_ (see `Merritt et al. 2025 <https://ui.adsabs.harvard.edu/abs/2025AJ....170..100M/abstract>`_ and `Holman et al. 2025 <https://ui.adsabs.harvard.edu/abs/2025AJ....170...97H/abstract>`_).
+Ephemerides at the visit epochs were generated with `Sorcha <https://sorcha.space/>`_ (see `Merritt et al. 2025 <https://scixplorer.org/abs/2025AJ....170..100M/abstract>`_ and `Holman et al. 2025 <https://scixplorer.org/abs/2025AJ....170...97H/abstract>`_).
 The same MPC snapshot is delivered as the auxiliary DP2 ``mpc_orbits`` table.
 
 Matching algorithm
