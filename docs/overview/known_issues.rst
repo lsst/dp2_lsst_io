@@ -347,18 +347,27 @@ These are a subset of the visits listed in ``bad.ecsv`` for LSSTCam in `excluded
     2025071800151, 2025071800299, 2025071800360, 2025071800368, 2025071800382,
     2025071800445, 2025071800518, 2025072000352, 2025072200096, 2025072200207]
 
-.. _issues_forcedsource:
+.. _issues_forcephotometry:
+
+Force Photometry
+================
 
 Missing ForcedSources
-=====================
+---------------------
 
 Approximately 3% of visit images in the coadded area that were processed successfully and included in coadd construction were not measured during force photometry and did not generate ``ForcedSources``.
 The affected images had failed image differencing, and because force photometry is normally performed on both the visit image and its corresponding difference image by the same task, the pipeline skipped both types of force photometry since the required inputs were not all available.
 In some areas where very few visits were obtained, this means there may be ``Objects`` that have no corresponding ``ForcedSources`` at all.
 In future data releases this task will be corrected to perform visit image force photometry regardless of the difference image status.
 
+
+.. _issues_productdifferences:
+
+Data Product Differences
+========================
+
 Differences between Butler tables and TAP
-=========================================
+-----------------------------------------
 
 A small number of changes have been made to the tables presented in TAP (Table Access Protocol) which cause them to differ from the tables available in parquet format via the Butler:
 
