@@ -27,7 +27,7 @@ Butler
 Description
 ===========
 
-The ``deep_coadd_input_summary`` table provides a list of the visit detector images that contribute to each deep coadd. Note that the ``deep_coadd_input_summary`` table does not include information about which visit detector images contributed to each deep coadd cell. The ``deep_coadd_input_summary`` table contains 7 columns and 21,235,500 rows.
+The ``deep_coadd_input_summary`` table provides a patch-level summary of the visit detector images that contributed to build each deep coadd. Note that the ``deep_coadd_input_summary`` table does not include information about which visit detector images contributed to each deep coadd cell. The ``deep_coadd_input_summary`` table contains 7 columns and 21,235,500 rows.
 
 A schema is not yet published for the ``deep_coadd_input_summary`` table. The table contains one row per visit detector image per deep coadd that the visit detector image contributes to. The columns are:
 
