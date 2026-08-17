@@ -12,7 +12,7 @@ For the Portal Aspect of the Rubin Science Platform (RSP) at data.lsst.cloud.
 
 **Learning objective:** Add a customized plot to the results active chart.
 
-**LSST data products:** `Object` table
+**LSST data products:** ``Object`` table
 
 **Credit:** Originally developed by the Rubin Community Science team.
 Please consider acknowledging them if this tutorial is used for the preparation of journal articles, software releases, or other tutorials.
