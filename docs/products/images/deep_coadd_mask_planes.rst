@@ -3,99 +3,94 @@
 Deep and template coadd mask planes
 ===================================
 
-This page documents the mask planes used in deep coadd and template coadd images.
-Each plane corresponds to a bit in the coadd mask and reflects the propagation or summary of pixel conditions from contributing single-visit exposures.
+This page documents the mask planes carried by DP2 coadd images.
+Each plane corresponds to a bit in the coadd mask and reflects the propagation or summary of pixel conditions from the contributing single-visit exposures.
 
-``BAD``
-    Pixel is flagged as bad in one or more input exposures.
-    The ``BAD`` flag is set if all contributing inputs had the pixel marked bad or if the coadd inherited a bad status for that location.
-    Typically, ``BAD`` pixels on the coadd correspond to known defects where no usable inputs remained.
-    These often appear alongside ``NO_DATA`` in deeply masked regions.
+.. note::
 
-``CLIPPED``
-    Pixel was excluded during coaddition due to artifact clipping -- i.e. at least one input image for this pixel was identified as an artifact and excluded.
-    The coaddition algorithm aggressively rejects transient features such as cosmic rays, meteors, or satellite trails.
+   DP2 images use the new ``lsst.images`` format, in which the mask-plane names and descriptions are stored in the mask's ``schema`` and read at runtime.
+   You can list the planes for any image with, e.g.::
 
-``CR``
-    One or more input visits flagged this pixel as a cosmic ray.
-    That input’s contribution is rejected, but other clean exposures may still contribute.
-    ``CR`` indicates cosmic ray activity in the input stack at this location.
+       print(deep_coadd.mask.schema)
 
-``CROSSTALK``
-    At least one input exposure marked this pixel as affected by crosstalk.
-    As with ``CR``, other clean visits may contribute.
-    ``CROSSTALK`` serves as a provenance indicator for masked artifacts.
+   Several plane names differ from the legacy ``lsst.afw.image`` names used in DP1: ``SAT`` → ``SATURATED``, ``CR`` → ``COSMIC_RAY``, ``INTRP`` → ``INTERPOLATED``, ``EDGE`` → ``DETECTION_EDGE``, and ``UNMASKEDNAN`` → ``UNMASKED_NAN``.
+   The names below are the current ``lsst.images`` names; the legacy name is given in parentheses where it differs, since the catalog ``pixelFlags_*`` columns are still derived from the legacy names (see :doc:`/products/flags/mask_planes`).
 
-``DETECTED``
-    Pixel was detected as part of a source footprint on the coadd itself.
-    This is set after coaddition when sources are measured on the final stacked image.
-    All pixels in detected footprints are flagged ``DETECTED``.
+Deep coadd (cell coadd) mask planes
+-----------------------------------
 
-``DETECTED_NEGATIVE``
-    Used in :ref:`difference images <images-difference-image>` only, see the :ref:`visit and difference image <images-visit-mask-planes>` page.
-
-``EDGE``
-    Pixel lies near the nominal edge of an input image.
-    In practice, coadds use ``SENSOR_EDGE`` for meaningful edge marking.
-    The ``EDGE`` bit is retained for compatibility but less relevant than in visit images.
-
-``INEXACT_PSF``
-    The PSF at this pixel is ill-defined or varies significantly across inputs.
-    This usually occurs at patch boundaries or regions with partial input coverage.
-    When set, ``INEXACT_PSF`` is always accompanied by at least one of ``SENSOR_EDGE``, ``CLIPPED``, or ``REJECTED`` flags.
-
-``INTRP``
-    Pixel value was interpolated during stacking, or all inputs had this pixel marked interpolated.
-    If only interpolated pixels contributed at this location, the coadd propagates ``INTRP``.
-    This is rare in coadds but possible in narrow masked regions.
-
-``ITL_DIP``
-    One or more input images flagged this pixel as affected by the ITL “dip” artifact.
-    This dark trail appears on some ITL CCDs due to bright stars.
-    ``ITL_DIP`` in coadds marks locations where dips were flagged in the visit images and may help interpret masked vertical artifacts.
-
-``NOT_DEBLENDED``
-    A source footprint on the coadd could not be deblended.
-    Large or complex detections, such as stellar halos or crowded galaxies, may skip deblending.
-    The entire footprint receives the ``NOT_DEBLENDED`` mask.
+The Early Data Preview 2 (EDP2) ``deep_coadd`` images are **cell-based coadds**.
+The planes below are those present in the EDP2 ``deep_coadd`` mask schema, in bit order.
+The pipeline enforces the implication chain ``SATURATED`` ⇒ ``REJECTED`` ⇒ ``INEXACT_PSF``, and ``CLIPPED`` ⇒ ``REJECTED``.
 
 ``NO_DATA``
-    No usable data contributed to this coadd pixel.
-    ``NO_DATA`` is common at tract patch edges or in areas not covered by any visit.
-    It may also occur where inputs were masked and no valid interpolation was possible.
+    No data were available for this pixel.
+    Common at tract/patch edges or in areas not covered by any input visit, and also where all inputs were masked (``SATURATED`` is often a reason for ``NO_DATA``).
+    These pixels should be ignored in analysis.
+
+``INTERPOLATED`` (legacy ``INTRP``)
+    The pixel value is the result of interpolating nearby good pixels.
+
+``COSMIC_RAY`` (legacy ``CR``)
+    A cosmic ray affected this pixel on at least one input image (and was interpolated over).
+
+``SATURATED`` (legacy ``SAT``)
+    More than 10% of the potential input visits had a saturated pixel at this location ("potential" because saturated pixel values are not actually propagated to the coadd).
+    ``SATURATED`` always implies ``REJECTED``, and is often a reason for ``NO_DATA``.
+
+``DETECTION_EDGE`` (legacy ``EDGE``)
+    Pixel was too close to the edge of the patch to be considered for detection, due to the finite size of the detection kernel.
+
+    .. note::
+
+       For quality selection on the **Object catalog**, the corresponding coadd-edge flag to use is ``pixelFlags_sensor_edge`` (from ``SENSOR_EDGE`` / ``CELL_EDGE``); the catalog ``pixelFlags_edge`` column (from ``DETECTION_EDGE``) is deprecated on the Object table. See :doc:`/products/flags/flag_definitions`.
+
+``CLIPPED``
+    The region was identified as a probable artifact when comparing multiple single-visit warps and was excluded from the coadd at this pixel.
+    ``CLIPPED`` always implies ``REJECTED``.
 
 ``REJECTED``
-    Pixel where a contributing image was masked and not used.
-    On coadds, this flags pixels where one or more input exposures had the pixel masked (e.g. ``BAD`` or ``SAT``) and thus that pixel’s coadd value comes from fewer images.
-    Many ``REJECTED`` pixels are those falling on a sensor defect or bad column that persisted through single-frame processing.
-    If all inputs rejected this pixel, it may be flagged as ``REJECTED`` and possibly ``NO_DATA``.
+    At least one input visit was left out of the coadd for this pixel due to masking.
+    ``REJECTED`` always implies ``INEXACT_PSF``.
 
-``SAT``
-    One or more input images had this pixel flagged ``SAT`` (saturated).
-    If a configurable fraction of contributing visits flagged it as saturated, the coadd sets ``SAT``.
-    This does not mean the coadd pixel itself is saturated, but that saturation affected at least part of the stack at this location.
+``DETECTED``
+    Pixel was part of a detected source footprint on the coadd.
 
-``SENSOR_EDGE``
-    Pixel lies within a margin near the edge of at least one contributing input image.
-    This margin is set during warping and coaddition and flags partial or unreliable coverage.
-    Objects with pixels in ``SENSOR_EDGE`` regions may have poor PSF modeling or incomplete photometry.
+``INEXACT_PSF``
+    The set of visits contributing to this pixel differs from the set of visits contributing to the PSF model for its cell, so the PSF at this pixel may be inexact.
+    Because ``REJECTED`` implies ``INEXACT_PSF``, this bit covers a large fraction of the coadd and is not recommended as a general quality cut (see :doc:`/products/flags/flag_definitions`).
 
-``STREAK``
-    Used in :ref:`difference images <images-difference-image>` only, see the :ref:`visit and difference image <images-visit-mask-planes>` page.
+.. note::
+
+   Cell-based coadds flag chip boundaries with ``CELL_EDGE`` rather than ``SENSOR_EDGE``.
+
+Template (non-cell) coadd mask planes
+-------------------------------------
+
+Template coadds and other non-cell (``assemble_coadd``) coadds carry the visit-level planes propagated from their input warps in addition to the coadd-specific planes above, and flag chip edges with ``SENSOR_EDGE``.
+
+.. important::
+
+   The additional planes in this subsection are taken from the ``lsst.images`` pipeline definitions.
+   They have not been verified against released EDP2 data (EDP2 serves the ``deep_coadd`` cell coadds); treat this list as provisional pending the full DP2 release.
+
+``BAD``
+    Bad pixel in the instrument, including bad amplifiers.
 
 ``SUSPECT``
-    Pixel was flagged as ``SUSPECT`` (likely above the PTC turnoff but not fully saturated) in one or more inputs.
-    If a configurable fraction of input visits marked the pixel as ``SUSPECT``, it propagates to the coadd.
-    Unlike ``SAT``, ``SUSPECT`` is not dilated, and thus this bit marks only the directly affected pixels.
-    It indicates that photometry may be mildly biased due to non-linearity or blooming shoulders.
+    Pixel was close to the saturation level (above the PTC turnoff but not fully saturated). Unlike ``SATURATED``, ``SUSPECT`` is not dilated.
 
-``UNMASKEDNAN``
-    Coadd pixel contains a NaN due to all contributing inputs being invalid or some processing error.
-    This is rare and usually indicates a failure to interpolate or combine values properly.
-    The ``UNMASKEDNAN`` bit serves as a safety net for unexpected invalid results.
+``CROSSTALK``
+    Pixel was affected by crosstalk and corrected accordingly.
 
-``VIGNETTED``
-    Pixel lies in a vignetted region in all contributing visits.
-    These areas received significantly less flux due to optical shading near the corners or edge of the field.
-    ``VIGNETTED`` pixels may appear at the outer edges of the coadd and usually have lower weight.
+``DETECTED_NEGATIVE``
+    Pixel was part of a detected source with negative flux.
 
+``NOT_DEBLENDED``
+    Pixel belonged to a detection that was not deblended, usually due to size limits.
+
+``UNMASKED_NAN`` (legacy ``UNMASKEDNAN``)
+    Pixel was found to be NaN unexpectedly (a safety net for unexpected invalid values).
+
+``SENSOR_EDGE``
+    Pixel is near the edge of a contributing sensor/chip, so the coadd PSF is discontinuous there.
