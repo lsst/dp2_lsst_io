@@ -34,13 +34,14 @@ Butler
 Description
 ===========
 
-Each row summarizes a previously known small body with one or more DP2 associations.
-This is not a catalog of objects discovered by DP2, and the table does not contain orbits fitted from DP2 observations.
+A “Solar System object” in the DP2 tables is a moving object for which one or more difference image detections (``DIASources``) have been associated to a previously known small body.
+This catalog does _not_ include objects discovered by Rubin, and the table does _not_ contain orbits fitted from Rubin DP2 observations.
 
-``SSObject`` includes the integer ``ssObjectId``, the unpacked primary provisional ``designation``, total and per-band observation counts, the first observation epoch and observing arc, per-band phase-angle ranges, extendedness summaries, and selected quantities derived from the input MPC orbit.
-Join to :doc:`SSSource <ss_source>` on ``ssObjectId`` for single-epoch measurements and observing geometry.
+``SSObject`` includes the unique identifier integer ``ssObjectId``, the unpacked primary provisional ``designation``, total and per-band observation counts, the first observation epoch and observing arc, per-band phase-angle ranges, extendedness summaries, and selected quantities derived from the input MPC orbit.
 
-Per-band absolute magnitudes were fitted to the associated PSF photometry with an H-G12 phase function.
+The ``SSObject` table can be joined to the :doc:`SSSource <ss_source>` table on the ``ssObjectId`` to obtain single-epoch measurements and observing geometry.
+
+The ``SSObject`` table per-band absolute magnitudes were fitted to the associated PSF photometry with an H-G12 phase function.
 For DP2, G12 was fixed at 0.5 and only H was fitted; valid G12 values therefore all equal 0.5, while G12 uncertainties and the H-G12 covariance are undefined.
 A 0.05 magnitude uncertainty floor was included, and a robust initial fit was used to reject measurements beyond 10 sigma before the final least-squares fit.
 Users should compare the per-band ``nObsUsed`` and ``nObs`` values, inspect the phase-angle coverage and fit statistics, and treat sparsely sampled fits and cross-band colors with care.
