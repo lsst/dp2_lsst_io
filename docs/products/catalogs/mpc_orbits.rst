@@ -33,15 +33,15 @@ Description
 The `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC) is the single worldwide location for receipt and distribution of positional measurements of small bodies.
 The MPC is responsible for the identification, designation, and orbit computation for all of these objects.
 
-The ``mpc_orbits`` table is a snapshot of the MPC PostgreSQL orbit table.
-It contains MPC orbital elements, photometric parameters, fit metadata, and uncertainties; it does not contain Rubin difference-image detections and was not derived by fitting DP2 observations.
+The ``mpc_orbits`` table is a snapshot of the `MPC PostgreSQL orbit table <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_.
+It contains MPC orbital elements, photometric parameters, fit metadata, and uncertainties; it does _not_ contain Rubin difference-image detections and was _not_ derived by fitting Rubin DP2 observations.
 The upstream definitions and field semantics are documented in the `MPC replicated-tables schema <https://docs.minorplanetcenter.net/mpc-ops-docs/data-and-services/replicated-tables-schema/>`_.
 
 For end-user convenience, DP2 adds a ``designation`` column containing the unpacked primary provisional designation.
-It is identical row by row to ``unpacked_primary_provisional_designation`` and provides a readable join key to ``SSSource`` and ``SSObject``.
-For performance, prefer SQL joins on integer identifiers such as ``ssObjectId`` wherever they are available.
+It is identical row by row to ``unpacked_primary_provisional_designation`` and provides a readable join key to the ``SSSource`` and ``SSObject`` tables.
+For improved performance, SQL joins on integer identifiers such as ``ssObjectId`` are preferred wherever they are available.
 
-The delivered ``mpc_orbits`` table is the same 2026 March 13 MPC snapshot used as input to :doc:`DP2 association </processing/moving/ss_association>`.
+The delivered DP2 ``mpc_orbits`` table is the same 2026 March 13 MPC orbit snapshot used as input for :doc:`DP2 association </processing/moving/ss_association>`.
 
 Processing
 ----------
