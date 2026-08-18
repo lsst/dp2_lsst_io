@@ -6,12 +6,12 @@ Small body tracklet linking and orbit fitting
 
 .. important::
 
-   The discovery campaign described on this page ran as part of Prompt Processing, not the DP2 Data Release processing; we present it here to give a general overview of how Rubin discovers asteroids on a continuous basis.
-   Objects discovered by Rubin and reported to the MPC before the DP2 association cutoff may appear in the DP2 known-object products, but DP2 does not deliver a standalone catalog of Rubin discoveries or Rubin-derived orbits.
+   The tracklet linking and orbit fitting discovery campaign described on this page runs as part of `Prompt Processing <https://prompt-products.lsst.io/processing/prompt-processing/index.html>`_, but was not used as a pipeline algorithm for DP2 data processing.
+The process is presented here to give a general idea of how tracklet linking was used for DP2 and an overview of how Rubin discovers asteroids on a continuous basis.
 
 .. image:: images/LSST-HelioLinC3D-Infographic.png
 
-Small body tracklet linking and orbit fitting is done with the ``HelioLinC3D`` package.
+Small body tracklet linking and orbit fitting is done with the `HelioLinC3D <https://github.com/lsst-dm/heliolinc2>`_ package.
 
 The goal of the HelioLinC3D software package is to discover previously unknown asteroids amid the millions of new difference-image detections every night.
 The algorithm identifies and links together little sequences of typically 6-20 sources that could comprise repeated detections of a new asteroid moving in its orbit around the Sun.
