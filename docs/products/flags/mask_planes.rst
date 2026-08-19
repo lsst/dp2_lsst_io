@@ -51,7 +51,7 @@ It applies to the coadd-based **Object** catalog.
    * - ``DETECTION_EDGE``
      - ``EDGE``
      - ``pixelFlags_edge``
-     - **Deprecated on the Object table** — use ``sensor_edge`` (below) for coadd edges.
+     - **Deprecated on the Object table** — use ``pixelFlags_sensor_edge`` for coadd edges (see note below).
    * - ``CLIPPED``
      - ``CLIPPED``
      - ``pixelFlags_clipped`` / ``…clippedCenter``
@@ -68,10 +68,11 @@ It applies to the coadd-based **Object** catalog.
      - ``DETECTED``
      - (no quality flag; see ``detect_*`` columns)
      - Pixel is part of a detected source footprint.
-   * - ``SENSOR_EDGE`` / ``CELL_EDGE``
-     - ``SENSOR_EDGE``
-     - ``pixelFlags_sensor_edge`` / ``…sensor_edgeCenter``
-     - Chip/cell boundary from an input; the edge flag to use on coadds. (Non-cell coadds use ``SENSOR_EDGE``; cell coadds use ``CELL_EDGE``.)
+
+.. note::
+
+   The Object catalog does provide ``pixelFlags_sensor_edge`` / ``pixelFlags_sensor_edgeCenter`` columns, and these are the recommended edge flag for the Object table (``pixelFlags_edge`` is deprecated there).
+   However, the ``SENSOR_EDGE`` mask plane is **not** present in the EDP2 ``deep_coadd`` (cell coadd) mask schema — it is a non-cell/template-coadd plane — so the image-side provenance of these catalog columns for the cell coadds is not verified here.
 
 Footprint versus center: flags without a ``Center`` suffix are set if *any* pixel in the source footprint carries the mask bit; ``Center`` flags are set only if a pixel in the central 3×3 box carries it.
 For quality filtering, center flags are usually the more important because they affect the core photometry and shape.

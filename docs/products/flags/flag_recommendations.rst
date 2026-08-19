@@ -27,15 +27,14 @@ In the snippets below, ``f`` is the band (one of ``ugrizy``); apply the same log
 
 .. code-block:: sql
 
-   WHERE detect_isPrimary = 1                   -- Primary, deblended, de-duplicated detection
-     AND f_psfFlux_flag = 0                      -- (or the flag for whichever flux you use)
+   WHERE f_psfFlux_flag = 0                      -- (or the flag for whichever flux you use)
      AND f_invalidPsfFlag = 0                    -- Valid PSF model
      AND f_pixelFlags_saturatedCenter = 0        -- No saturation at the center
      AND f_pixelFlags_interpolatedCenter = 0     -- No interpolated pixels at the center
 
 .. note::
 
-   - ``detect_isPrimary = 1`` is important: it selects the single, primary, deblended version of each detection and removes duplicate and pre-deblend rows.
+   - The Object table is already delivered as the primary set: only inner-patch, deblended child objects are included, so no primary/deduplication flag needs to be (or can be) applied.
    - Replace ``f_psfFlux_flag`` with the failure flag of the flux you actually use (e.g. ``f_cModel_flag`` for CModel fluxes, ``f_free_psfFlux_flag`` for the free/unforced PSF flux — see the note on free versus forced measurements in :doc:`/products/flags/flag_definitions`).
    - The DP2 Object columns ``pixelFlags_bad``, ``pixelFlags_edge``, and ``pixelFlags_suspect`` are **deprecated** and must not be used as cuts here (see :doc:`/products/flags/flag_definitions`). Use ``pixelFlags_sensor_edgeCenter`` if you need a coadd edge cut.
 
