@@ -294,19 +294,34 @@ In the simplest case, where the diffraction spikes all line up, these detections
 
 .. _issues_solarsystem:
 
-Solar system processing
-========================
+Solar system
+============
 
-DP2 delivers associations between ``DiaSource`` detections and previously known small bodies; it does not deliver a standalone catalog of Rubin discoveries.
-Association used a 1-arcsecond positional match without astrometric uncertainties, photometry, or a probabilistic score.
-Chance associations are therefore possible, particularly where the ``DiaSource`` density is high.
-See :doc:`/processing/moving/ss_association` for selection and quality guidance.
+Astrometry
+----------
 
-Astrometric comparisons show different behavior for different object samples.
+Astrometric comparisons show different behavior for different object samples in DP2.
 For long-observed objects discovered before 2000, median measured-minus-predicted coordinate residuals are below 1 mas, with approximately 13--14 mas scatter.
 For objects discovered during 2000--2020, offsets relative to JPL Horizons are spatially coherent across the DP2 footprint: in 5 by 5 degree sky cells, the median offset-vector length is approximately 19 mas, the 95th percentile is approximately 30 mas, and the largest values approach 42 mas.
 The current hypothesis is that orbit catalogs can retain 20--40 mas systematic errors in predicted positions, especially for objects constrained primarily by northern, pre-Gaia astrometry.
 This interpretation remains under investigation and will be discussed in detail in a subsequent paper.
+
+MPC orbits table
+----------------
+
+Several fields in the MPC-derived data contained in the DP2 ``mpc_orbits`` table (2026 March 13 snapshot obtained from the MPC) contain inconsistent information or issues related to upstream failures, including:
+- Missing semimajor axes
+- Incorrect number of oppositions
+- Incorrect number of observations
+- Incorrect arc lengths
+- Missing orbit type integers
+
+Overall, the orbital elements in the DP2 ``mpc_orbits`` table are generally reliable, though occasional upstream failures may have occurred and be included in the table.
+
+Current identifications table
+-----------------------------
+
+The MPC-derived data contained in the DP2 ``current_identifications`` table (2026 March 13 snapshot obtained from the MPC) include many missing object type integers due to upstream failures.
 
 
 .. _issues_badvisits:
