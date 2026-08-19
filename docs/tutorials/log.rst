@@ -4,6 +4,11 @@
 Log of major tutorial updates
 #############################
 
+2026-08-19
+==========
+
+Released a new notebook tutorial illustrating the pixel mask planes of DP2 deep coadd images.
+
 2026-06-09
 ==========
 
