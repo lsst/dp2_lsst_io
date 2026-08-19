@@ -41,7 +41,7 @@ The Isolated Star Stellar Motions catalog provides a best-fit position (``ra``, 
 Processing
 ----------
 
-The position, proper motion, and parallax are computed jointly across the matched visits using ``FitStellarMotionTask``. For details, see :doc:`/processing/detection/index`.
+The position, proper motion, and parallax are computed jointly across the matched visits using ``FitStellarMotionTask``. For details, see :doc:`/processing/calibration/astrometric`.
 
 Tutorials
 ---------
