@@ -39,7 +39,7 @@ The pipeline enforces the implication chain ``SATURATED`` ⇒ ``REJECTED`` ⇒ `
 
     .. note::
 
-       For quality selection on the **Object catalog**, the corresponding coadd-edge flag to use is ``pixelFlags_sensor_edge`` (from ``SENSOR_EDGE`` / ``CELL_EDGE``); the catalog ``pixelFlags_edge`` column (from ``DETECTION_EDGE``) is deprecated on the Object table. See :doc:`/products/flags/flag_definitions`.
+       For quality selection on the **Object catalog**, the corresponding coadd-edge flag to use is ``pixelFlags_sensor_edge`` (derived from the ``SENSOR_EDGE`` plane on non-cell/template coadds); the catalog ``pixelFlags_edge`` column (from ``DETECTION_EDGE``) is deprecated on the Object table. See :doc:`/products/flags/flag_definitions`.
 
 ``CLIPPED``
     The region was identified as a probable artifact when comparing multiple single-visit warps and was excluded from the coadd at this pixel.
@@ -55,10 +55,6 @@ The pipeline enforces the implication chain ``SATURATED`` ⇒ ``REJECTED`` ⇒ `
 ``INEXACT_PSF``
     The set of visits contributing to this pixel differs from the set of visits contributing to the PSF model for its cell, so the PSF at this pixel may be inexact.
     Because ``REJECTED`` implies ``INEXACT_PSF``, this bit covers a large fraction of the coadd and is not recommended as a general quality cut (see :doc:`/products/flags/flag_definitions`).
-
-.. note::
-
-   Cell-based coadds flag chip boundaries with ``CELL_EDGE`` rather than ``SENSOR_EDGE``.
 
 Template (non-cell) coadd mask planes
 -------------------------------------
