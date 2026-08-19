@@ -194,6 +194,11 @@ Special flags
 
 Additional notable flags that provide ancillary information about sources and objects.
 
+.. note::
+
+   The DP2 Object table does not include a ``detect_isPrimary`` column (unlike some earlier data previews).
+   It is delivered already reduced to the primary set — only inner-patch, deblended child objects — so no primary/deduplication cut is needed.
+
 .. list-table::
    :header-rows: 1
    :widths: 30 30 40
@@ -201,9 +206,6 @@ Additional notable flags that provide ancillary information about sources and ob
    * - Flag name
      - Tables
      - Meaning when set to 1
-   * - ``detect_isPrimary``
-     - Object
-     - Not a failure flag: it marks the single primary version of a detection (deblended, inner-patch, inner-tract). Require ``detect_isPrimary = 1`` to avoid duplicate and pre-deblend rows.
    * - ``{band}_invalidPsfFlag``
      - Object
      - The PSF model is invalid (no usable inputs); measurements are unreliable. Exclude these objects.
