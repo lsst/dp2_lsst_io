@@ -4,6 +4,11 @@
 Log of major tutorial updates
 #############################
 
+2026-08-20
+==========
+
+Released new notebook tutorial about galaxy shapes.
+
 2026-06-09
 ==========
 

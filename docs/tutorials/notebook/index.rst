@@ -210,6 +210,16 @@ Longer tutorials with a learning objective of executing an end-to-end scientific
     302/notebook-302-3.rst
 
 
+303. Galaxies
+----------------------------------------
+
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    303/notebook-303-2.rst
+
+
 304. Cosmology
 --------------
 
