@@ -7946,7 +7946,7 @@ and image display functions from the LSST Science Pipelines (<a href="https://pi
 <span class="sd">    -------</span>
 <span class="sd">    cutout : 'lsst.images object'</span>
 <span class="sd">    """</span>
-    
+
     <span class="n">sia_client</span> <span class="o">=</span> <span class="n">discovery</span><span class="o">.</span><span class="n">get_sia_client</span><span class="p">()</span>
 
     <span class="n">eff_wl</span> <span class="o">=</span> <span class="mf">622.1e-09</span>
@@ -7977,7 +7977,7 @@ and image display functions from the LSST Science Pipelines (<a href="https://pi
     <span class="n">sq</span><span class="o">.</span><span class="n">circle</span> <span class="o">=</span> <span class="p">(</span><span class="n">cutout_ra</span><span class="p">,</span> <span class="n">cutout_dec</span><span class="p">,</span> <span class="n">Radius</span><span class="p">)</span>
     <span class="n">cutout_bytes</span> <span class="o">=</span> <span class="n">sq</span><span class="o">.</span><span class="n">execute_stream</span><span class="p">()</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
     <span class="n">sq</span><span class="o">.</span><span class="n">raise_if_error</span><span class="p">()</span>
-    
+
     <span class="n">cutout</span> <span class="o">=</span> <span class="n">read_archive</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">cutout_bytes</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">cutout</span>
 </pre></div>
