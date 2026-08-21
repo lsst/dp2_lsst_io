@@ -26,12 +26,12 @@ Rubin staff will respond to all questions posted there.
 Magnitude conversions
 =====================
 
-While the ``Object`` table has columns for PSF and cModel magnitudes, all other photometry measures are provided only in fluxes (in nJy).
-These fluxes can be retrieved as AB magnitudes using the ``scisql_nanojanskyToAbMag()`` function, which applies the equation :math:`m = -2.5 log(f) + 31.4`,
+While the ``Object`` table includes magnitudes (e.g., PSF and cModel), many other photometry measurements are provided only as fluxes (in nJy).
+These fluxes can be converted to AB magnitudes using the ``scisql_nanojanskyToAbMag()`` function, which applies the equation :math:`m = -2.5 log_{10}(f) + 31.4`,
 where :math:`m` is magnitude and :math:`f` is flux.
 
 **Warning!** Fluxes measured in difference images can be negative.
-Negative fluxes should not be converted to magnitudes using this special ADQL function.
+The ``scisql_nanojanskyToAbMag()`` function should be used only with positive flux values.
 
 
 ----
@@ -40,9 +40,8 @@ Negative fluxes should not be converted to magnitudes using this special ADQL fu
 Click on Edit ADQL in the upper right-hand corner.
 
 **2. Set up a query that returns magnitudes.**
-The following query returns the *r*-band cModel and Sersic magnitudes, and their errors, for objects brighter than 25th magnitude in *r*-band.
-The query uses the ``AS`` functionality to name the newly-calculated magnitude columns.
-The query includes a spatial constraint: a circle with radius 0.2 degrees near the center of the ECDFS field.
+The following query returns the *r*-band cModel and Sersic-flux derived magnitudes, and their errors, for objects brighter than 25th magnitude in *r*-band.
+It demonstrates the use of ``AS`` to name computed columns and applies a spatial constraint selecting objects within a 0.2-degree radius near the center of the ECDFS field.
 
 .. code-block:: SQL
 
