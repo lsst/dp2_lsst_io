@@ -21,8 +21,6 @@ DOI: `10.11578/rubin/dc.20250909.20 <https://doi.org/10.11578/rubin/dc.20250909.
 **Get Support:** Everyone is encouraged to ask questions or raise issues in the `Support Category <https://community.lsst.org/c/support/6>`_ of the Rubin Community Forum.
 Rubin staff will respond to all questions posted there.
 
-**An introduction to ADQL** is provided in another tutorial in this series.
-
 ----
 
 **1. Go to the DP1 & DP2 Images ADQL interface.**
