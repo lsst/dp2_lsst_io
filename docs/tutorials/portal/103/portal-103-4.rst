@@ -36,7 +36,7 @@ This query requests images with calibration level 3 (deep_coadd) that overlap th
 
    SELECT obs_collection,dataproduct_type,dataproduct_subtype,calib_level,lsst_band,s_ra,s_dec,em_min,em_max,
           lsst_tract,lsst_patch,lsst_filter,lsst_visit,lsst_detector,instrument_name,t_min,t_max,
-          t_exptime,s_fov,obs_id,o_ucd,facility_name,obs_title,s_region,access_url,access_format 
+          t_exptime,s_fov,obs_id,o_ucd,facility_name,obs_title,s_region,access_url,access_format
    FROM ivoa.ObsCore
    WHERE CONTAINS(POINT('ICRS', s_ra, s_dec),CIRCLE('ICRS', 53.13, -28.1, 0.5))=1
          AND obs_collection = 'LSST.DP2'
