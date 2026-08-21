@@ -27,14 +27,15 @@ Rubin staff will respond to all questions posted there.
 The button to switch from the user interface to the ADQL interface is in the upper right corner: "Edit ADQL".
 
 **2. Create an ADQL query for images.**
-It is recommended to always select all of the columns as in the query statement below.
-This query requests images with calibration level 3 (deep_coadd) that overlap the coordinates RA, Dec = 53.13, -28.1 degrees.
+When building an ADQL query for images, select the columns needed to identify and retrieve the image products.
+For Early Data Preview 2, only deep‑coadd images are available, so the query below includes only the metadata relevant to calibration‑level 3 coadds.
+This query retrieves deep-coadd images that overlap the coordinates RA, Dec = 53.13, -28.1 degrees in the ECDFS field.
 
 .. code:: sql
 
-   SELECT obs_collection,dataproduct_type,dataproduct_subtype,calib_level,lsst_band,s_ra,s_dec,em_min,em_max,
-          lsst_tract,lsst_patch,lsst_filter,lsst_visit,lsst_detector,instrument_name,t_min,t_max,
-          t_exptime,s_fov,obs_id,o_ucd,facility_name,obs_title,s_region,access_url,access_format
+   SELECT obs_collection,dataproduct_type,dataproduct_subtype,calib_level,lsst_band,s_ra,s_dec,
+          lsst_tract,lsst_patch,lsst_filter,instrument_name,
+          obs_id,facility_name,obs_title,s_region,access_url,access_format
    FROM ivoa.ObsCore
    WHERE CONTAINS(POINT('ICRS', s_ra, s_dec),CIRCLE('ICRS', 53.13, -28.1, 0.5))=1
          AND obs_collection = 'LSST.DP2'
