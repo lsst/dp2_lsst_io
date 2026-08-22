@@ -4,6 +4,11 @@
 Log of major tutorial updates
 #############################
 
+2026-08-21
+==========
+
+Released new notebook tutorial about the ``deep_coadd_input_summary`` table.
+
 2026-08-20
 ==========
 
