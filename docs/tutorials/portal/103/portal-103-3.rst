@@ -59,8 +59,7 @@ Spatial constraints are applied to the ``FROM`` table, not the ``JOIN`` table.
 
   SELECT src.ra, src.dec, src.sourceId, src.band,
          scisql_nanojanskyToAbMag(src.psfFlux) AS psfAbMag,
-         src.visit, vd.visitId,
-         vd.expMidptMJD, vd.seeing
+         src.visit, vd.visitId, vd.expMidptMJD
   FROM dp2.Source AS src
   JOIN dp2.VisitDetector AS vd
   ON src.visit = vd.visitId
