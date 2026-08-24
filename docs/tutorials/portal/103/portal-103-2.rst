@@ -87,5 +87,3 @@ The query will be executed and the 517 objects returned will be available in the
 
     Figure 2: The default results view for the query.
 
-
-Next steps: see the tutorials in the series on manipulating the catalog results interface.
