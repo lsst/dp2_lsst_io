@@ -34,7 +34,7 @@ This query retrieves deep-coadd images that overlap the coordinates RA, Dec = 53
 .. code:: sql
 
    SELECT obs_collection,dataproduct_type,dataproduct_subtype,calib_level,lsst_band,s_ra,s_dec,
-          lsst_tract,lsst_patch,lsst_filter,instrument_name,
+          lsst_tract,lsst_patch,instrument_name,
           obs_id,facility_name,obs_title,s_region,access_url,access_format
    FROM ivoa.ObsCore
    WHERE CONTAINS(POINT('ICRS', s_ra, s_dec),CIRCLE('ICRS', 53.13, -28.1, 0.5))=1
