@@ -9,7 +9,7 @@ That campaign preceded the official DP2 release processing, so that objects disc
 DP2 does not, however, deliver a standalone catalog of Rubin discoveries; these Rubin-discovery-only catalogs will be delivered in future Data Releases.
 The `Solar System Prompt Processing <https://prompt-products.lsst.io/processing/moving/ss_prompt.html>`_ discoveries will be described once they are made available by Rubin. Currently, all Solar System objects discovered by Rubin get reported to and are made available via the `Minor Planet Center <https://minorplanetcenter.net/>`_ and the `B612 Foundation's Asteroid Institute <https://b612.ai/rubin-mpc-downloads/>`_ (see `Prompt Products Data Access <https://prompt-products.lsst.io/access/index.html#minor-planet-center-mpc`_ for more information).
 
-DP2 provides five Solar System tables (see :doc:`DP2 catalogs <products/catalogs/index>` for details):
+The DP2 data products deliver the associations between Rubin difference image detections (``DiaSources``) and previously known small bodies in ``SSSource`` and Rubin-derived object-level photometry and summary quantities in ``SSObject``. It also provides three auxiliary snapshots adopted from the `Minor Planet Center (MPC) PostgreSQL database <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_ (see :doc:`DP2 catalogs <products/catalogs/index>` for details):
 
 .. list-table::
    :header-rows: 1
