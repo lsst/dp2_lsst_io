@@ -42,4 +42,4 @@ A schema is not yet published for the ``deep_coadd_input_summary`` table. The ta
 Tutorials
 ---------
 
-TBD
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on the ``deep_coadd_input_summary`` table.
