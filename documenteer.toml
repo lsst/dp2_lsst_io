@@ -26,12 +26,7 @@ ignore = [
     "https://ds9.si.edu/doc/ref/region.html", #temporary to unblock a review on portal 105 series
     "https://healpix.sourceforge.io/", #temporary to unblock PR 161
     "https://www.lsst.org/content/lsst-statement-regarding-increased-deployment-satellite-constellations", #temporary to unblock PR 171
-    "https://doi.org/10.71929/rubin/3382543", # temporary to unblock linkcheck for PR 74 tickets/SP-3352
     "https://doi.org/10.71929/rubin/3382545", # temporary to unblock linkcheck for PR 74 tickets/SP-3352
-    "https://doi.org/10.71929/rubin/3382548", # temporary to unblock linkcheck for PR 74 tickets/SP-3352
-    "https://doi.org/10.71929/rubin/3382547", # temporary to unblock linkcheck for PR 74 tickets/SP-3352
-    "https://doi.org/10.71929/rubin/3382544", # temporary to unblock linkcheck for PR 74 tickets/SP-3352
-    "https://doi.org/10.71929/rubin/3382546" # temporary to unblock linkcheck for PR 74 tickets/SP-3352
 ]
 
 [sphinx.intersphinx.projects]
