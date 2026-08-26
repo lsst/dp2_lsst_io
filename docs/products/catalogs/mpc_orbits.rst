@@ -43,6 +43,8 @@ For improved performance, SQL joins on integer identifiers such as ``ssObjectId`
 
 The delivered DP2 ``mpc_orbits`` table is the same 2026 March 13 MPC orbit snapshot used as input for :doc:`DP2 association </processing/moving/ss_association>`.
 
+Some :doc:`known issues <overview/known_issues>` are present in the MPC-derived data contained in the DP2 ``mpc_orbits`` table, including missing or inconsistent information.
+
 Processing
 ----------
 

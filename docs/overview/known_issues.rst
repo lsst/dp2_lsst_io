@@ -306,7 +306,7 @@ For objects discovered during 2000--2020, offsets relative to JPL Horizons are s
 The current hypothesis is that orbit catalogs can retain 20--40 mas systematic errors in predicted positions, especially for objects constrained primarily by northern, pre-Gaia astrometry.
 This interpretation remains under investigation and will be discussed in detail in a subsequent paper.
 
-MPC orbits table
+MPC_orbits table
 ----------------
 
 Several fields in the MPC-derived data contained in the DP2 ``mpc_orbits`` table (2026 March 13 snapshot obtained from the MPC) contain inconsistent information or issues related to upstream failures, including:
@@ -318,7 +318,7 @@ Several fields in the MPC-derived data contained in the DP2 ``mpc_orbits`` table
 
 Overall, the orbital elements in the DP2 ``mpc_orbits`` table are generally reliable, though occasional upstream failures may have occurred and be included in the table.
 
-Current identifications table
+Current_identifications table
 -----------------------------
 
 The MPC-derived data contained in the DP2 ``current_identifications`` table (2026 March 13 snapshot obtained from the MPC) include many missing object type integers due to upstream failures.
