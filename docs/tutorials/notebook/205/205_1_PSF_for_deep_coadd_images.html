@@ -8113,7 +8113,7 @@ body {
 <pre style="font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><code style="font-family:inherit">CellCoadd
 ├── skymap: lsst_cells_v2
 ├── tract: 5063
-├── patch: id=15, index=(y=1, x=5), inner_bbox=[y=3000:6000, x=15000:18000], cells=([y=2850:6150, 
+├── patch: id=15, index=(y=1, x=5), inner_bbox=[y=3000:6000, x=15000:18000], cells=([y=2850:6150,
 │   x=14850:18150], cell_shape=(y=150, x=150))
 ├── band: r
 ├── bbox: [y=2850:6150, x=14850:18150]
@@ -8124,7 +8124,7 @@ body {
 ├── mask (Mask)
 │   └── schema (MaskSchema)
 │       ├── dtype: uint8
-│       └── Mask planes                                                                             
+│       └── Mask planes
 │           ┏━━━━━┳━━━━━━━┳━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┓
 │           ┃<span style="font-weight: bold"> Bit </span>┃<span style="font-weight: bold"> Index </span>┃<span style="font-weight: bold"> Mask </span>┃<span style="font-weight: bold"> Name           </span>┃<span style="font-weight: bold"> Description                       </span>┃<span style="font-weight: bold"> Set pixels </span>┃
 │           ┡━━━━━╇━━━━━━━╇━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━┩
@@ -8165,12 +8165,12 @@ body {
 │           └─────┴───────┴──────┴────────────────┴───────────────────────────────────┴────────────┘
 ├── variance: (dtype float32)
 ├── sky_projection (ICRS coordinates)
-│   ├── center pixel: (x=16499.5, y=4499.5) → 03h31m58.3s -28d06m14s  (RA 52.993059°, Dec 
+│   ├── center pixel: (x=16499.5, y=4499.5) → 03h31m58.3s -28d06m14s  (RA 52.993059°, Dec
 │   │   -28.103914°)
 │   ├── Image extent: 11 x 11 arcmin @ 0 deg E of N
 │   ├── Nominal pixel scale: 0.20 arcsec
 │   ├── fits_wcs: available
-│   └── Corners                                                                 
+│   └── Corners
 │       ┏━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━┓
 │       ┃<span style="font-weight: bold"> x       </span>┃<span style="font-weight: bold"> y      </span>┃<span style="font-weight: bold"> RA          </span>┃<span style="font-weight: bold"> Dec        </span>┃<span style="font-weight: bold"> RA (°)    </span>┃<span style="font-weight: bold"> Dec (°)    </span>┃
 │       ┡━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━┩
@@ -9154,7 +9154,7 @@ HSM ellipticity: e1 =  0.0135, e2 = -0.0051, |e| =  0.0145
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">bbox</span> <span class="o">=</span> <span class="n">deep_coadd</span><span class="o">.</span><span class="n">bbox</span>
-    
+
 <span class="n">position_star</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="k">for</span> <span class="n">ra_star</span><span class="p">,</span> <span class="n">dec_star</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">star_ra</span><span class="p">,</span> <span class="n">star_dec</span><span class="p">):</span>
     <span class="n">coord</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="n">ra_star</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="n">dec_star</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="s1">'icrs'</span><span class="p">)</span>
@@ -9369,7 +9369,7 @@ HSM ellipticity: e1 =  0.0135, e2 = -0.0051, |e| =  0.0145
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
+<div class="highlight hl-ipython3"><pre><span></span>
 </pre></div>
 </div>
 </div>
