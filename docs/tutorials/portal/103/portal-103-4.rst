@@ -46,7 +46,7 @@ This query retrieves deep-coadd images that overlap the coordinates RA, Dec = 53
 
 
 **3. Execute the query.**
-Copy-paste the query above into the ADQL query box, and click "Search".
+Copy-paste the query above into the ADQL query box and click "Search".
 
 **4. View the results.**
 The 222 deep_coadd images that meet the ADQL query constraints will be available in the table, with the selected row displayed at upper right, as in Figure 1.
