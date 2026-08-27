@@ -39,7 +39,7 @@ A typical ADQL statement has at least three components:
 where ``<columns>`` is a comma-separated list of the columns to return, ``<catalog>`` is the name of the catalog to retreive data from, and ``<constraints>`` imposes a restriction that only rows with column values that meet the constraints are returned.
 
 For example, say there is a catalog called "mysurveydata" with 5 columns, "col1", "col2", and so on.
-The following ADQL statement would return a table that has three columns, and as many rows as meet both of the restrictions in the ``WHERE`` statement.
+The following ADQL statement would return a table that has three columns, and as many rows as meet both restrictions in the ``WHERE`` statement.
 
 .. code-block:: SQL
 
@@ -54,7 +54,7 @@ In the RSP Portal Aspect, ADQL queries are submitted to the TAP (Table Access Pr
 The button to switch from the user interface to the ADQL interface is in the upper right corner: "Edit ADQL".
 
 **2. Review the ADQL interface.**
-Browse the available tables in the TAP service in the left side-bar.
+Browse the available tables in the TAP service in the left sidebar.
 Scroll down to see examples of ADQL queries.
 The interface should look like Figure 1.
 
@@ -66,7 +66,7 @@ The interface should look like Figure 1.
 
 
 **3. Enter the ADQL statement in the box.**
-The following ADQL query selects the coordinates RA and Dec, and the *gri* PSF magnitudes for objects that are within a small circular region of the center of the ECDFS field (RA, Dec = 53, -28; radius = 0.05 degrees), and are brighter than 25th magnitude in all three filters.
+The following ADQL query selects the coordinates RA and Dec, and the *gri* PSF magnitudes for objects that are within a small circular region of the center of the ECDFS field (RA, Dec = 53, -28; radius = 0.05 degrees) and are brighter than 25th magnitude in all three filters.
 
 .. code-block:: SQL
 
