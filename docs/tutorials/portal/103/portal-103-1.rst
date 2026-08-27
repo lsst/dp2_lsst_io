@@ -44,7 +44,7 @@ Finally, click the funnel icon (teal circle in Figure 1) to show only the select
 
 
 **3. Convert UI to ADQL query.**
-Click on the button labeled "Populate and edit ADQL", located bottom-center (teal arrow in Figure 1).
+Click on the button labeled "Populate and edit ADQL", located at the bottom-center (teal arrow in Figure 1).
 The UI will switch to the ADQL interface and will populate the ADQL Query box with an ADQL statement that represents the exact same query (Figure 2).
 
 .. figure:: images/portal-103-1-2.png
