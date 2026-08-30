@@ -46,7 +46,7 @@ The default layout of the results interface is shown in Figure 1.
     :name: portal-104-1-1
     :alt: The results interface.
 
-    Figure 1: The results interface after a query has been executed defaults to a screens split three ways: the coverage map (A), the active chart (B), and the table (C).
+    Figure 1: The results interface after a query has been executed defaults to a screen split three ways: the coverage map (A), the active chart (B), and the table (C).
 
 
 **3.1. Coverage chart.**
