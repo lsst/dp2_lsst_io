@@ -29,7 +29,7 @@ Rubin staff will respond to all questions posted there.
 * `HEALPix <https://healpix.sourceforge.io/>`_: Hierarchical Equal Area isoLatitude Pixelation of a sphere
 * `regions <https://ds9.si.edu/doc/ref/region.html>`_ file: a standard format for marking regions in an image
 * `WCS <https://fits.gsfc.nasa.gov/fits_wcs.html>`_: World Coordinate System (the convention that defines the coordinates per pixel)
-* PNG: Portable Network Graphic
+* PNG: Portable Network Graphics
 
 ----
 
