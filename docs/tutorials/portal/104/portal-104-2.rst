@@ -87,7 +87,7 @@ In the coverage chart panel (Figure 1) click on each of the drop-down menus and 
 Above C in Figure 1, click the "zoom in" icon (magnifying glass with a + inside) or use the mouse to zoom in until individual object markers are displayed instead of the HEALPix grid (Figure 2).
 
 **6. Select a single object.**
-Click on any individual marker, and notice that it's row will be highlighted orange in the table panel and its symbol will be orange in the active chart (Figure 2).
+Click on any individual marker, and notice that its row will be highlighted orange in the table panel and its symbol will be orange in the active chart (Figure 2).
 
 .. figure:: images/portal-104-2-2.png
     :name: portal-104-2-2
