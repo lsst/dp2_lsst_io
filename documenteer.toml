@@ -27,6 +27,7 @@ ignore = [
     "https://healpix.sourceforge.io/", #temporary to unblock PR 161
     "https://www.lsst.org/content/lsst-statement-regarding-increased-deployment-satellite-constellations", #temporary to unblock PR 171
     "https://doi.org/10.71929/rubin/.*", # temporary to unblock linkcheck for PR 74 tickets/SP-3352
+    "https://ui.adsabs.harvard.edu/.*", # temporary to unblock linkcheck for tickets/SP-3387
 ]
 
 [sphinx.intersphinx.projects]
