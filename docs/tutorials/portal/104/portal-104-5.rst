@@ -92,4 +92,4 @@ The newly added chart is now customized, as in Figure 5.
     :name: portal-104-5-5
     :alt: The default view of the active chart panel.
 
-    Figure 4: A customized plot in the active chart.
+    Figure 5: A customized plot in the active chart.
