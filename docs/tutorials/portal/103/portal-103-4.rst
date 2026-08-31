@@ -24,7 +24,7 @@ Rubin staff will respond to all questions posted there.
 ----
 
 **1. Go to the DP1 & DP2 Images ADQL interface.**
-The button to switch from the user interface to the ADQL interface is in the upper right corner: "Edit ADQL".
+Click on the "DP1 & DP2 Images" tab, then click the "EDIT ADQL" button in the upper right corner.
 
 **2. Create an ADQL query for images.**
 When building an ADQL query for images, select the columns needed to identify and retrieve the image products.
@@ -49,7 +49,7 @@ This query retrieves deep-coadd images that overlap the coordinates RA, Dec = 53
 Copy-paste the query above into the ADQL query box and click "Search".
 
 **4. View the results.**
-The 222 deep_coadd images that meet the ADQL query constraints will be available in the table, with the selected row displayed at upper right, as in Figure 1.
+The 222 deep‑coadd images that match the query are listed in the results table, with the selected image preview shown at upper right.
 
 .. figure:: images/portal-103-4-1.png
     :name: portal-103-4-1
