@@ -25,8 +25,8 @@ DOI: `10.11578/rubin/dc.20250909.20 <https://doi.org/10.11578/rubin/dc.20250909.
 An introduction to ADQL
 =======================
 
-The `documentation for ADQL <http://www.ivoa.net/documents/ADQL>`_
-includes more information about syntax, keywords, operators, functions, and so on.
+`ADQL documentation <http://www.ivoa.net/documents/ADQL>`_
+includes more information about syntax, keywords, operators, functions, and constructing a query.
 ADQL is similar to SQL (Structured Query Langage).
 
 A typical ADQL statement has at least three components:
@@ -51,7 +51,7 @@ In the RSP Portal Aspect, ADQL queries are submitted to the TAP (Table Access Pr
 ----
 
 **1. Go to the DP1 & DP2 Catalogs ADQL interface.**
-The button to switch from the user interface to the ADQL interface is in the upper right corner: "Edit ADQL".
+Click the "Edit ADQL" button in the upper right corner to switch from the user interface to the ADQL interface.
 
 **2. Review the ADQL interface.**
 Browse the available tables in the TAP service in the left sidebar.
@@ -66,7 +66,8 @@ The interface should look like Figure 1.
 
 
 **3. Enter the ADQL statement in the box.**
-The following ADQL query selects the coordinates RA and Dec, and the *gri* PSF magnitudes for objects that are within a small circular region of the center of the ECDFS field (RA, Dec = 53, -28; radius = 0.05 degrees) and are brighter than 25th magnitude in all three filters.
+The following ADQL query selects the coordinates RA and Dec, and the *gri* PSF magnitudes for objects that are within a small circular region of the center of the ECDFS field
+(RA, Dec = 53, -28; radius = 0.05 degrees) and are brighter than 25th magnitude in all three filters. Copy the query and paste it into the "ADQL Query" box.
 
 .. code-block:: SQL
 
@@ -79,7 +80,7 @@ The following ADQL query selects the coordinates RA and Dec, and the *gri* PSF m
 
 **4. Execute the ADQL query.**
 Click the Search button at lower left.
-The query will be executed and the 517 objects returned will be available in the results interface.
+The query runs and returns 517 objects, shown in the data table along with their coordinates and *gri* PSF magnitudes.
 
 .. figure:: images/portal-103-2-2.png
     :name: portal-103-2-2
