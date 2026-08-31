@@ -37,7 +37,7 @@ The ``scisql_nanojanskyToAbMag()`` function should be used only with positive fl
 ----
 
 **1. Go to the DP1 & DP2 Catalogs ADQL interface.**
-Click on "DP1 & DP2 Catalogs, then click on "Edit ADQL" in the upper right corner.
+Click on "DP1 & DP2 Catalogs", then click on "Edit ADQL" in the upper right corner.
 
 **2. Set up a query that returns magnitudes.**
 The following query returns the *r*-band cModel and Sersic-flux derived magnitudes, and their errors, for objects brighter than 25th magnitude in *r*-band.
