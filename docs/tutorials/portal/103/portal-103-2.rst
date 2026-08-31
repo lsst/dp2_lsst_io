@@ -79,7 +79,7 @@ The following ADQL query selects the coordinates RA and Dec, and the *gri* PSF m
 
 
 **4. Execute the ADQL query.**
-Click the Search button at lower left.
+Click the "Search" button at lower left.
 The query runs and returns 517 objects, shown in the data table along with their coordinates and *gri* PSF magnitudes.
 
 .. figure:: images/portal-103-2-2.png
