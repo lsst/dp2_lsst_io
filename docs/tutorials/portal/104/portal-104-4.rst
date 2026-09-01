@@ -78,7 +78,7 @@ Click on the zoom icon (C in Figure 1) to enter zoom mode.
 Click-and-drag in the plot to zoom in.
 Click on the pan icon (D in Figure 1) to enter pan mode.
 Click-and-drag in the plot to recenter the plotted data.
-Click on the zoom reset icon (H in Figure 1) to restore all settings to the default plot.
+Click on the restore icon (H in Figure 1) to restore all settings to the default plot.
 
 **7. Use the box select tool.**
 Click on the box icon (E in Figure 1).
