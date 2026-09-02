@@ -91,6 +91,14 @@
         },
         "units": "mmag",
         "description": "Slope and scatter about the stellar locus for principal colors"
+      },
+      "Stellar Photometric Repeatability": {
+        "template": "stellar-phot-repeat-{band}-stdev",
+        "parameters": {
+          "band": ["u", "g", "r", "i", "z", "y"]
+        },
+        "units": "mmag",
+        "description": "Median photometric repeatability of the stars in each tract, where repeatability is defined as the standard deviation of a single star's magnitude over the visits that measured it. Stars are included if they were measured at least three times at a signal-to-noise above 200."
       }
     }
   }
