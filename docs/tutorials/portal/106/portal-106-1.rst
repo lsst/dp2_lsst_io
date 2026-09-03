@@ -83,8 +83,7 @@ At the lower left, click the blue button named "Search".
 Leave the default row limit.
 
 **Warning for not a short table!**
-Simple click search works fine for a very short table, but if the table has a decent number of rows, the query will take long. In that case, instead of clicking the "Search" button, click on the button labeled "Populate and edit ADQL", located at the bottom-center. 
-The UI will switch to the ADQL interface and will populate the ADQL Query box with an ADQL statement that represents the exact same query. Replace the lines after the "SELECT" statement with these: 
+Use the simple click "Search" only for short tables. To avoid slow queries on larger tables, skip the "Search" button and click "Populate and edit ADQL" at the bottom-center. When the ADQL interface opens and auto-fills the query box, replace the lines following the ``SELECT`` statement with these:
 
 .. code-block::
 
