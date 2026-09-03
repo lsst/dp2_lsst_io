@@ -297,9 +297,9 @@ Since DP2 is derived from LSSTCam commissioning data, standard dithering routine
 
 .. figure:: images/diaObj_grid_pattern.png
    :alt: ``DiaObject`` density map of an example sky region. The visible grid-like overdensity pattern is an artifact resulting from PSF discontinuities across the detector chip gaps.
-   :width: 50%
+   :width: 70%
 
-   DiaObject density map of an example sky region. The visible grid-like overdensity pattern is an artifact resulting from PSF discontinuities across the detector chip gaps.
+   ``DiaObject`` density map of an example sky region. The visible grid-like overdensity pattern is an artifact resulting from PSF discontinuities across the detector chip gaps.
 
 .. _issues_solarsystem:
 
