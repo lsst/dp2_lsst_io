@@ -92,7 +92,7 @@ Use the simple click "Search" only for short tables. To avoid slow queries on la
     ON DISTANCE(POINT('ICRS', d.coord_ra, d.coord_dec),
                 POINT('ICRS', ut.ra, ut.dec)) < 0.0002777778
 
-Joining the uploaded table with the ``Object`` table using `DISTANCE` makes a query highly efficient by targeting only the relevant chunks of data.
+Joining the uploaded table with the ``Object`` table using ``DISTANCE`` makes a query highly efficient by targeting only the relevant chunks of data.
 
 **8. Review the results**.
 The search returns matches for all ten objects from the user-uploaded table.
