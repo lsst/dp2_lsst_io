@@ -225,14 +225,13 @@ There are 15 visits included in coadd assembly that ran through the Science Pipe
 These include images that are very out of focus or had the shutter open while the telescope was in motion.
 The affected visits are listed below.
 These are a subset of the visits listed in ``bad.ecsv`` for LSSTCam in `excluded_visits <https://github.com/lsst-dm/excluded_visits>`__ , and were identified after DP2 processing had already begun.
-They are also a subset of the visits listed in :ref:`Bad visits <issues_badvisits>`.
+They are also a subset of the visits listed in :ref:`Bad visits <issues_badvisits>`. The following code block lists these 15 visits.
 
 .. code-block::
 
-   Visits from DP2 deep_coadd_input_summary in excluded list: 15
-   [2025060400117 2025062000652 2025062900348 2025070300278 2025070300493
-    2025070400108 2025070400290 2025070400291 2025071100194 2025071700678
-    2025071800299 2025071800360 2025071800368 2025071800445 2025071800518]
+    bad_input_visits = [2025060400117, 2025062000652, 2025062900348, 2025070300278,
+    2025070300493, 2025070400108, 2025070400290, 2025070400291, 2025071100194,
+    2025071700678, 2025071800299, 2025071800360, 2025071800368, 2025071800445, 2025071800518]
 
 
 .. _issues_object_catalog:
@@ -298,6 +297,7 @@ Since DP2 is derived from LSSTCam commissioning data, standard dithering routine
 
 .. figure:: images/diaObj_grid_pattern.png
    :alt: ``DiaObject`` density map of an example sky region. The visible grid-like overdensity pattern is an artifact resulting from PSF discontinuities across the detector chip gaps.
+   :width: 50%
 
    DiaObject density map of an example sky region. The visible grid-like overdensity pattern is an artifact resulting from PSF discontinuities across the detector chip gaps.
 
