@@ -291,6 +291,15 @@ Despite the large spike masks, there is usually some residual flux from the halo
 Detections in these regions are more likely to be bogus, and even if real, the measurements are likely unreliable.
 In the simplest case, where the diffraction spikes all line up, these detections are clustered around the four points where the spike-mask triangles intersect, making a square/diamond shape around the center of the star.
 
+PSF discontinuities in the chip gaps between detectors
+------------------------------------------------------
+
+Since DP2 is derived from LSSTCam commissioning data, standard dithering routines were deliberately reduced or omitted during certain visits to evaluate system performance. The lack of dithering in these regions propagates into template generation, resulting in PSF discontinuities across detector chip gaps. Consequently, PSF mismatches between the template and direct images artificially inflate the number of detections in the difference images. As shown below, these artifacts manifest as grid-like or striped patterns in the ``DiaObject`` density map. This PSF discontinuity issue will be mitigated in DR1.
+
+.. figure:: images/diaObj_grid_pattern.png
+   :alt: ``DiaObject`` density map of an example sky region. The visible grid-like overdensity pattern is an artifact resulting from PSF discontinuities across the detector chip gaps.
+
+   DiaObject density map of an example sky region. The visible grid-like overdensity pattern is an artifact resulting from PSF discontinuities across the detector chip gaps.
 
 .. _issues_solarsystem:
 
@@ -318,16 +327,15 @@ There are 39 visits in DP2 that processed through at least some stages of the Sc
 As described in :ref:`Coadds <issues_coadds>`, only 15 of these were used as inputs to coadds.
 They include images that are very out of focus or had the shutter open while the telescope was in motion.
 The affected visits are listed below.
-These are a subset of the visits listed in ``bad.ecsv`` for LSSTCam in `excluded_visits <https://github.com/lsst-dm/excluded_visits>`__ , and were identified after DP2 processing had already begun.
+These are a subset of the visits listed in ``bad.ecsv`` for LSSTCam in `excluded_visits <https://github.com/lsst-dm/excluded_visits>`__ , and were identified after DP2 processing had already begun. The following code block lists these 39 visits.
 
 .. code-block::
 
-   Visits from DP2 visit_summary in excluded list: 39
-   [2025050600762 2025052500596 2025052900166 2025060100605 2025060400085
-    2025060400117 2025061900271 2025062000652 2025062900348 2025063000597
-    2025070300278 2025070300493 2025070400108 2025070400290 2025070400291
-    2025070400293 2025070800409 2025071100194 2025071100273 2025071100319
-    2025071100365 2025071100501 2025071100819 2025071300612 2025071600479
-    2025071700678 2025071800104 2025071800110 2025071800129 2025071800151
-    2025071800299 2025071800360 2025071800368 2025071800382 2025071800445
-    2025071800518 2025072000352 2025072200096 2025072200207]
+    bad_visits_list = [2025050600762, 2025052500596, 2025052900166, 2025060100605,
+    2025060400085, 2025060400117, 2025061900271, 2025062000652, 2025062900348,
+    2025063000597, 2025070300278, 2025070300493, 2025070400108, 2025070400290,
+    2025070400291, 2025070400293, 2025070800409, 2025071100194, 2025071100273,
+    2025071100319, 2025071100365, 2025071100501, 2025071100819, 2025071300612,
+    2025071600479, 2025071700678, 2025071800104, 2025071800110, 2025071800129,
+    2025071800151, 2025071800299, 2025071800360, 2025071800368, 2025071800382,
+    2025071800445, 2025071800518, 2025072000352, 2025072200096, 2025072200207]
