@@ -16,25 +16,9 @@ RA σ(MAD)
    :header-rows: 0
 
    * - .. image:: images/astromDiffRA_u_sigmaMAD.png
-          :width: 100px
+          :width: 350px
      - .. image:: images/astromDiffRA_g_sigmaMAD.png
-          :width: 100px
+          :width: 350px
      - .. image:: images/astromDiffRA_r_sigmaMAD.png
-          :width: 100px
-
-
-
-.. list-table::
-   :widths: 33 33 33
-   :header-rows: 0
-
-   * - .. image:: images/astromDiffRA_u_sigmaMAD.png
-          :width: 150px
-          :target: images/astromDiffRA_u_sigmaMAD.png
-     - .. image:: images/astromDiffRA_g_sigmaMAD.png
-          :width: 150px
-          :target: images/astromDiffRA_g_sigmaMAD.png
-     - .. image:: images/astromDiffRA_r_sigmaMAD.png
-          :width: 150px
-          :target: images/astromDiffRA_r_sigmaMAD.png
+          :width: 350px
 
