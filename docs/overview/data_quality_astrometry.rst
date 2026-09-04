@@ -1,0 +1,48 @@
+
+########################
+Data Quality: Astrometry
+########################
+
+The following plots show the astrometric offset between calibration stars and the reference catalog.
+
+Delta RA
+========
+
+RA σ(MAD)
+---------
+
+.. list-table::
+   :widths: 33 33 33
+   :header-rows: 0
+
+   * - .. image:: images/astromDiffRA_u_sigmaMAD.png
+          :width: 350px
+     - .. image:: images/astromDiffRA_g_sigmaMAD.png
+          :width: 350px
+     - .. image:: images/astromDiffRA_r_sigmaMAD.png
+          :width: 350px
+   * - u-band
+     - g-band
+     - r-band
+
+
+Delta Dec
+=========
+
+DEC σ(MAD)
+----------
+
+.. list-table::
+   :widths: 33 33 33
+   :header-rows: 0
+
+   * - .. image:: images/astromDiffDec_u_sigmaMAD.png
+          :width: 350px
+     - .. image:: images/astromDiffDec_g_sigmaMAD.png
+          :width: 350px
+     - .. image:: images/astromDiffDec_r_sigmaMAD.png
+          :width: 350px
+   * - u-band
+     - g-band
+     - r-band
+
