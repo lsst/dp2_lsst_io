@@ -22,3 +22,12 @@ RA σ(MAD)
      - .. image:: images/astromDiffRA_r_sigmaMAD.png
           :width: 100px
 
+
+.. base-gallery::
+   :caption: Gallery Caption
+   :tooltip:
+
+   images/astromDiffRA_u_sigmaMAD.png
+   images/astromDiffRA_g_sigmaMAD.png
+   images/astromDiffRA_r_sigmaMAD.png
+
