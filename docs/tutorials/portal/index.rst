@@ -43,7 +43,13 @@ Learn to navigate the Portal's user interface.
 
 Set up queries in the user interface without ADQL.
 
-``Coming soon.``
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    102/portal-102-1.rst
+    102/portal-102-2.rst
+    102/portal-102-3.rst
 
 
 103. Queries with ADQL

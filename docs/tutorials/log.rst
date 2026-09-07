@@ -9,6 +9,11 @@ Log of major tutorial updates
 
 Released a new notebook tutorial illustrating the pixel mask planes of DP2 deep coadd images.
 
+2026-09-07
+==========
+
+Released the DP2 Portal 102 series, "Queries with the UI": query for catalog data, and query for images with SIAv2 and with ObsTAP.
+
 2026-09-04
 ==========
 
