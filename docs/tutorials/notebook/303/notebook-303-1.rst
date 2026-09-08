@@ -1,8 +1,8 @@
-.. _notebook-303-2:
+.. _notebook-303-1:
 
 ###############################
-303.2. Galaxy shapes
+303.1. Galaxy photometry
 ###############################
 
 .. raw:: html
-    :file: 303_2_Galaxy_Shapes.html
+    :file: 303_1_Galaxy_photometry.html
