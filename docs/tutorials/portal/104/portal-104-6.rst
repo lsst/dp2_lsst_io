@@ -27,15 +27,17 @@ Rubin staff will respond to all questions posted there.
 
 .. code-block:: SQL
 
-SELECT coord_dec, coord_ra,
-g_cModelMag,
-r_cModelMag,
-g_extendedness,
-r_extendedness
-FROM dp2.Object
-WHERE CONTAINS(POINT('ICRS', coord_ra, coord_dec),
-CIRCLE('ICRS', 53.0, -28.0, 0.3)) =1
-AND g_extendedness = 1
-AND r_extendedness = 1
-AND g_cModelFlux > 360
-AND r_cModelFlux > 360
+   SELECT coord_dec, coord_ra,
+   g_cModelMag,
+   r_cModelMag,
+   g_extendedness,
+   r_extendedness
+   FROM dp1.Object
+   WHERE CONTAINS(POINT('ICRS', coord_ra, coord_dec),
+   CIRCLE('ICRS', 53.0, -28.0, 0.3)) =1
+   AND g_extendedness = 1
+   AND r_extendedness = 1
+   AND g_cModelFlux > 360
+   AND r_cModelFlux > 360
+
+
