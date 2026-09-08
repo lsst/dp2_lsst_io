@@ -53,4 +53,19 @@ Click "OK".
 
     Figure 1: The "Add New Chart" pop-up window, set up for a histogram.
 
+**3. Delete the default chart.**
+Remove the default plot of ``coord_ra`` vs. ``coord_dec`` by clicking on the "x" in the upper right corner of the plot.
+
+**4. Add a new chart, and choose heatmap.**
+Open the "Add New Chart" pop-up window.
+Select "Heatmap" as the plot type and enter ``g_cModelMag`` for X and the expression ``g_cModelMag`` - ``r_cModelMag`` for Y (Figure 2).
+Leave the Color Scale as "Default".
+Click "OK".
+
+.. figure:: images/portal-104-6-2.png
+    :name: portal-104-6-2
+    :width: 400
+    :alt: Screenshot of the "Add New Chart" pop-up window, set up for a heatmap.
+
+    Figure 2: The "Add New Chart" pop-up window, set up for a heatmap.
 
