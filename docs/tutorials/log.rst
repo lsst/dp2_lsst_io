@@ -4,6 +4,11 @@
 Log of major tutorial updates
 #############################
 
+2026-09-04
+==========
+
+Released new notebook tutorials about galaxy photometry and galaxy color selections.
+
 2026-08-21
 ==========
 
