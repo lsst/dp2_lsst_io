@@ -23,7 +23,7 @@ Rubin staff will respond to all questions posted there.
 
 ----
 
-**1. Log in to the Portal aspect of the Rubin Science Platform and execute a query.** Go to the Portal’s "DP1 & DP2 Catalogs" tab, and ensure that the Table Collection and Table are set to dp2 and dp2.Object (respectively). Switch to the ADQL interface. Copy-paste the query below into the box, which will retrieve g- and r-band magnitudes for a sample of extended objects (galaxies) with fluxes greater than 360 nJy. Click “Search”.
+**1. Log in to the Portal aspect of the Rubin Science Platform and execute a query.** Go to the Portal’s "DP1 & DP2 Catalogs" tab. Switch to the ADQL interface. Copy-paste the query below into the box, which will retrieve g- and r-band magnitudes for a sample of extended objects (galaxies) with fluxes greater than 360 nJy. Click “Search”.
 
 .. code-block:: SQL
 
