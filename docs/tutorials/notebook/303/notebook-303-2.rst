@@ -5,4 +5,4 @@
 ###############################
 
 .. raw:: html
-    :file: 303_2_Galaxy_Shapes.html
+    :file: 303_2_Galaxy_shapes.html
