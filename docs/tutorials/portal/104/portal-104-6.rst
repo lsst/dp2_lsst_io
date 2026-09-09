@@ -69,3 +69,11 @@ Click "OK".
 
     Figure 2: The "Add New Chart" pop-up window, set up for a heatmap.
 
+**5. View the histogram and the heatmap.**
+The Active Charts panel now displays a 1-dimensional histogram of the g-band magnitudes at left, and a 2-dimensional histogram (a heatmap) of the g-band magnitude vs. the g-r color at right, as in Figure 3.
+
+.. figure:: images/portal-104-6-3.png
+    :name: portal-104-6-3.png
+    :alt: Screenshot of the Active Charts showing a 1-d histogram and a 2-d heatamp.
+
+    Figure 3: The Active Charts panel displays the g-magnitude histogram and the color-magnitude diagram.
