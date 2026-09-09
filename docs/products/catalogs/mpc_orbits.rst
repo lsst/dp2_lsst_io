@@ -48,7 +48,7 @@ Some :doc:`known issues <overview/known_issues>` are present in the MPC-derived 
 Processing
 ----------
 
-The table was adopted from the MPC database; its contents were not recomputed by DP2 processing.
+The table was adopted from the MPC database; its contents were _not_ recomputed by DP2 processing.
 
 Tutorials
 ---------
