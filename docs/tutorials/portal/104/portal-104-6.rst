@@ -78,4 +78,5 @@ The Active Charts panel now displays a 1-dimensional histogram of the g-band mag
 
     Figure 3: The Active Charts panel displays the g-magnitude histogram and the color-magnitude diagram.
 
-**6. ** Include how a scatter plot will automatically be a heatmap if N is high
+**6. Scatter plot** 
+Include how a scatter plot will automatically be a heatmap if N is high
