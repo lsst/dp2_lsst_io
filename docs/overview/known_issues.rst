@@ -309,7 +309,7 @@ This interpretation remains under investigation and will be discussed in detail 
 Rubin First Look Solar System objects
 -------------------------------------
 
-The DP2 release includes the M49 and Trifid-Lagoon fields (see :doc:`small fields <overview/observations>`), which produced the Rubin First Look (RFL) images in June 2025. However, not all of the >2,000 Solar System objects detected/discovered and released via the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC) as part of the RFL media event are included in the DP2 release due to differences in quality cuts between the RFL and DP2 datasets. For more information on accessing the RFL Solar System objects through the MPC, see the tutorial on `Rubin First Look Solar System object discoveries <https://prompt-products.lsst.io/tutorials/notebook/notebook-mpc.html>`_.
+The DP2 release includes the M49 and Trifid-Lagoon fields (see :doc:`small fields </overview/observations>`), which produced the Rubin First Look (RFL) images in June 2025. However, not all of the >2,000 Solar System objects detected/discovered and released via the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC) as part of the RFL media event are included in the DP2 release due to differences in quality cuts between the RFL and DP2 datasets. For more information on accessing the RFL Solar System objects through the MPC, see the tutorial on `Rubin First Look Solar System object discoveries <https://prompt-products.lsst.io/tutorials/notebook/notebook-mpc.html>`_.
 
 MPC_orbits table
 ----------------
