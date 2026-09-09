@@ -315,6 +315,7 @@ MPC_orbits table
 ----------------
 
 Several fields in the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC)-derived data contained in the DP2 ``mpc_orbits`` table (2026 March 13 snapshot obtained from the MPC) contain inconsistent information or issues related to upstream failures, including:
+
 - Missing semimajor axes
 - Incorrect number of oppositions
 - Incorrect number of observations
