@@ -6,9 +6,7 @@ Small body tracklet linking and orbit fitting
 
 .. important::
 
-   The discovery campaign described on this page runs as part of `Prompt Processing <https://prompt-products.lsst.io/processing/prompt-processing/index.html>`_, which started in February 2026, but was not used in the DP2 data release processing, which focuses on associations between Rubin difference image detections (``DiaSources``) and previously known small bodies.
-Objects discovered by Rubin and reported to the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC) before the DP2 processing cutoff date may appear in the DP2 known-object data products, but DP2 does not deliver a standalone catalog of Rubin discoveries or Rubin-derived orbits.
-The discovery process is presented here to give a general idea of how Rubin discovers asteroids on a continuous basis, including those objects discovered by Rubin prior to the DP2 cutoff date that may appear in the DP2 data products.
+   The discovery campaign described on this page runs as part of `Prompt Processing <https://prompt-products.lsst.io/processing/prompt-processing/index.html>`_, which started in February 2026, but was not used in the DP2 data release processing, which focuses on associations between Rubin difference image detections (``DiaSources``) and previously known small bodies. Objects discovered by Rubin and reported to the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC) before the DP2 processing cutoff date may appear in the DP2 known-object data products, but DP2 does not deliver a standalone catalog of Rubin discoveries or Rubin-derived orbits. The discovery process is presented here to give a general idea of how Rubin discovers asteroids on a continuous basis, including those objects discovered by Rubin prior to the DP2 cutoff date that may appear in the DP2 data products.
 
 .. image:: images/LSST-HelioLinC3D-Infographic.png
 
