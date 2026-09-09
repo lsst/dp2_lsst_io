@@ -34,7 +34,7 @@ Each ``diaSourceId`` occurs at most once in the ``SSSource`` table; unassociated
 ==============================================
 
 A DP2 “Solar System source” is a signal-to-noise ratio > 5 moving object detection in a difference image that has been associated with a previously known small body.
-Each row in the DP2 ``SSSource` table represents a one-to-one positional association between a ``DiaSource`` and the predicted position of a known small body.
+Each row in the DP2 ``SSSource`` table represents a one-to-one positional association between a ``DiaSource`` and the predicted position of a known small body.
 
 Each ``SSSource`` table row contains selected measured quantities from the ``DiaSource`` and the predicted ephemeris at the observation epoch.
 These include measured astrometry and PSF photometry, predicted position and apparent Johnson-V magnitude, observing geometry, rates, and Cartesian position and velocity components.

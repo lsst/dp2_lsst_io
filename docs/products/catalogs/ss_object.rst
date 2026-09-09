@@ -39,7 +39,7 @@ This catalog does _not_ include objects discovered by Rubin, and the table does 
 
 ``SSObject`` includes the unique identifier integer ``ssObjectId``, the unpacked primary provisional ``designation``, total and per-band observation counts, the first observation epoch and observing arc, per-band phase-angle ranges, extendedness summaries, and selected quantities derived from the input MPC orbit.
 
-The ``SSObject` table can be joined to the :doc:`SSSource <ss_source>` table on the ``ssObjectId`` to obtain single-epoch measurements and observing geometry.
+The ``SSObject`` table can be joined to the :doc:`SSSource <ss_source>` table on the ``ssObjectId`` to obtain single-epoch measurements and observing geometry.
 
 The ``SSObject`` table per-band absolute magnitudes were fitted to the associated PSF photometry with an H-G12 phase function.
 For DP2, G12 was fixed at 0.5 and only H was fitted; valid G12 values therefore all equal 0.5, while G12 uncertainties and the H-G12 covariance are undefined.
