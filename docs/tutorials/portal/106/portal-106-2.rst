@@ -32,6 +32,7 @@ On the Portal landing page, click on the menu icon (three horizontal lines at up
 .. figure:: images/portal-106-2-1.png
     :name: portal-106-2-1
     :alt: A portion of the sidebar menu in the Portal Aspect, showing available options for archive searches.
+    :width: 300
 
     Figure 1: A portion of the sidebar menu in the Portal Aspect, showing available options for archive searches.
 
