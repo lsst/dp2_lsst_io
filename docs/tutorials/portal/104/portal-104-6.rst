@@ -8,7 +8,7 @@ For the Portal Aspect of the Rubin Science Platform (RSP) at data.lsst.cloud.
 
 **Data Release:** Data Preview 2
 
-**Last verified to run:** 2026-08-17
+**Last verified to run:** 2026-09-10
 
 **Learning objective:** Create histograms and heatmaps in the results active chart.
 
