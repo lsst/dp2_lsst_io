@@ -8,7 +8,7 @@ For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
 **Data Release:** Data Preview 2
 
-**Last verified to run:** 2026-09-03
+**Last verified to run:** 2026-09-10
 
 **Learning objective:** How to upload a table and cross-match by coordinate.
 
