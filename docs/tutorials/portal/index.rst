@@ -88,6 +88,7 @@ Upload tables and join them in ADQL statements.
     :glob:
 
     106/portal-106-1.rst
+    106/portal-106-2.rst
 
 
 
