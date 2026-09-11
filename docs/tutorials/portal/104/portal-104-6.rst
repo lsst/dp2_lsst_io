@@ -75,7 +75,7 @@ The Active Charts panel now displays a 1-dimensional histogram of the g-band mag
 
 .. figure:: images/portal-104-6-3.png
     :name: portal-104-6-3.png
-    :alt: Screenshot of the Active Charts showing a 1-d histogram and a 2-d heatamp.
+    :alt: Screenshot of the Active Charts showing a 1-d histogram and a 2-d heatmap.
 
     Figure 3: The Active Charts panel displays the g-magnitude histogram and the color-magnitude diagram.
 
