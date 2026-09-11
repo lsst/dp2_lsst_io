@@ -41,7 +41,7 @@ Rubin staff will respond to all questions posted there.
    AND r_cModelFlux > 360
 
 **2. Add a new chart, and choose histogram.**
-The default plot in "Active Charts" panel shows the number of objects as a function of position in the selected region.
+The default plot in the "Active Charts" panel shows the number of objects as a function of position in the selected region.
 The default plot type will be heatmap for N > 20,000 and scatter for smaller query returns.
 In the Active Chart panel, click on the "+" button in the upper-left corner of the panel.
 In the "Add New Chart" pop-up window select "Histogram" as the plot type and enter ``g_cModelMag`` as the column (Figure 1).
