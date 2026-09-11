@@ -67,10 +67,7 @@ Select the CSV file containing the user table and click the "Load Table" button.
     Figure 2. After a successful upload, the table appears in the "Spatial" section, displaying the file name, number of rows, and file size.
 
 **6. Select columns and set the radius for cross-matching.**
-Click the drop down menu under "Position Columns: ra, dec (from the uploaded table)."
-Indicate which of the uploaded table columns to use for spatial matching (default ``ra`` and ``dec``).
-Click the drop down menu under "Position Columns: coord_ra, coord_dec (from the selected table on the right)" and check that the default ``coord_ra`` and ``coord_dec`` are shown.
-Set the search radius to 1 arcseconds.
+Leave the spatial matching drop-down menus in their default configurations by verifying that the "Position Columns" for the uploaded table are set to ``ra`` and ``dec``, and the "Position Columns" for the ``Object`` table are set to ``coord_ra`` and ``coord_dec``. Set the search radius to 1 arcseconds.
 
 .. figure:: images/portal-106-1-3.png
     :name: portal-106-1-3
