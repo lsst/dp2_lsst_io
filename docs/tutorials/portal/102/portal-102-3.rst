@@ -82,6 +82,6 @@ footprint contains the target point.
 
     Figure 2: The image results interface, showing the six ``deep_coadd`` images (one per band) that meet the search criteria.
 
-**Next steps:** tutorial 102.2 performs a similar image query with the SIAv2 service instead of ObsTAP,
-tutorial 103.4 writes the equivalent ObsTAP query directly in ADQL, and the 105-series tutorials show how
+**Next steps:** Tutorial 102.2 performs a similar image query with the SIAv2 service instead of ObsTAP,
+Tutorial 103.4 writes the equivalent ObsTAP query directly in ADQL, and the 105-series tutorials show how
 to work with image results in the Firefly viewer.
