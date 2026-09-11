@@ -1,8 +1,8 @@
 .. _notebook-205-1:
 
-###############################
-205.1. PSF for deep coadd imags
-###############################
+################################
+205.1. PSF for deep coadd images
+################################
 
 .. raw:: html
     :file: 205_1_PSF_for_deep_coadd_images.html
