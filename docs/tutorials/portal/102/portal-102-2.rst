@@ -8,7 +8,7 @@ For the Portal Aspect of the Rubin Science Platform (RSP) at data.lsst.cloud.
 
 **Data Release:** Data Preview 2
 
-**Last verified to run:** TBD
+**Last verified to run:** 2026-09-11
 
 **Learning objective:** Use the Simple Image Access version 2 (SIAv2) service to set up and execute an image query with the Portal's graphical user interface (UI), without writing ADQL.
 
@@ -59,7 +59,7 @@ This opens the "DP2 Images SIAv2" tab, headed "DP2 Image Search via SIAv2".
 Check the box next to "Spatial".
 For "Shape Type" select "Cone Shape".
 In the "Coordinates or Object Name" field enter the approximate centre of the ECDFS field, RA, Dec = 53, -28 degrees.
-Set the radius to 1 and its units to "degrees", roughly the extent of the field.
+Set the radius's units to "degrees", then set the radius to 1, roughly the extent of the field.
 
 **5. Set the observation type and source.**
 Check the box next to "Observation Type and Source".
@@ -98,5 +98,5 @@ search criteria: the *r*-band coadd of every ECDFS patch that falls within the s
 
     Figure 5: The image results interface.
 
-**Next steps:** tutorial 102.3 performs a similar image query with the ObsTAP service instead of SIAv2, and
+**Next steps:** Tutorial 102.3 performs a similar image query with the ObsTAP service instead of SIAv2, and
 the 105-series tutorials show how to work with image results in the Firefly viewer.
