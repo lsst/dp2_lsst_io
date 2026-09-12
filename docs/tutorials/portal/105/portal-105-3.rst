@@ -6,9 +6,9 @@
 
 For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
-**Data Release:** DP1
+**Data Release:** DP2
 
-**Last verified to run:** 2026-04-07
+**Last verified to run:** 2026-09-11
 
 **Learning objective:** Add overlays to images displayed in Firefly.
 
@@ -23,7 +23,7 @@ Rubin staff will respond to all questions posted there.
 ----
 
 **1. Log in to the Portal Aspect of the RSP.**
-Go to `data.lsst.cloud <https://data.lsst.cloud>`_ , select the Portal Aspect, and click on the "DP1 Images" tab at the top.
+Go to `data.lsst.cloud <https://data.lsst.cloud>`_ , select the Portal Aspect, and click on the "DP1 & DP2 Images" tab at the top.
 
 **2. Execute an ADQL query for an image.**
 Click on "Edit ADQL" at upper right.
@@ -39,7 +39,9 @@ This query statement will return one *g*-band image in the Euclid Deep Field Sou
   FROM ivoa.ObsCore
   WHERE CONTAINS(POINT('ICRS', 59.1, -48.73), s_region)=1
         AND (483e-9 BETWEEN em_min AND em_max)
-        AND calib_level = 3 AND dataproduct_type = 'image' AND dataproduct_subtype = 'lsst.deep_coadd'
+        AND calib_level = 3 AND dataproduct_type = 'image'
+        AND obs_collection = 'LSST.DP2'
+        AND dataproduct_subtype = 'lsst.deep_coadd'
         AND (lsst_tract = 2394 AND lsst_patch = 25)
 
 **3. Explore available image layer options.**

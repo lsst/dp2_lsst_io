@@ -37,8 +37,8 @@ This query will return all processed visit images that overlap coordinates RA, D
            s_region,access_url,access_format
   FROM ivoa.ObsCore
   WHERE obs_collection = 'LSST.DP2'
-  AND dataproduct_subtype = 'lsst.deep_coadd'
-  AND CONTAINS(POINT('ICRS', 53.0, -28.0), s_region)=1
+        AND dataproduct_subtype = 'lsst.deep_coadd'
+        AND CONTAINS(POINT('ICRS', 53.0, -28.0), s_region)=1
 
 
 **2. Review the results interface for images.**
