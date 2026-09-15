@@ -4,6 +4,11 @@
 Log of major tutorial updates
 #############################
 
+2026-09-15
+==========
+
+Released two new notebooks about multi-coadd cutouts and custom color images.
+
 2026-09-09
 ==========
 
