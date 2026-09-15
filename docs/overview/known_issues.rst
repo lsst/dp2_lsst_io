@@ -7,7 +7,7 @@ Known issues
 
 For questions related to any of the issues listed on this page, please ask in the `Support category on community.lsst.org <https://community.lsst.org/c/support>`_, where Rubin staff will follow up.
 
-.. _processing_failures:
+.. _issues_processing_failures:
 
 Processing Failures
 ===================
@@ -20,6 +20,7 @@ products, with details of failure counts at each processing step.
     :glob:
 
     processing_failures
+
 
 .. _issues_crowded_fields:
 
