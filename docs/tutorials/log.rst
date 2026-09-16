@@ -4,6 +4,11 @@
 Log of major tutorial updates
 #############################
 
+2026-09-15
+==========
+
+Released a notebook tutorial demonstrating how to use the skyMap.
+
 2026-09-09
 ==========
 

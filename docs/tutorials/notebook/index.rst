@@ -134,6 +134,7 @@ Tutorials with a learning objective of understanding one of the data products.
     :glob:
 
     203/notebook-203-1.rst
+    203/notebook-203-2.rst
 
 
 204. Calibrations
