@@ -238,7 +238,7 @@ Noise realizations bug
 ----------------------
 
 The artifact masks from the compare-warp stage of image processing were not used when rejecting pixels from deep coadd image, and as a result the noise realizations are inaccurate.
-This effect should be limited to regions :doc:`masked <products/images/mask_planes>` on the deep coadd image as CLIPPED.
+This effect should be limited to regions :doc:`masked </products/images/mask_planes>` on the deep coadd image as CLIPPED.
 
 
 .. _issues_object_catalog:
