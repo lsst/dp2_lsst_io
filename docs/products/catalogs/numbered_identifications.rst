@@ -4,7 +4,7 @@
 Numbered identifications
 ########################
 
-Minor Planet Center mappings between permanent numbers and primary provisional designations.
+A catalog snapshot adopted from the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC) containing mappings between permanent numbers and primary provisional designations.
 
 Schema: `numbered_identifications table <https://sdm-schemas.lsst.io/dp2.html#numbered_identifications>`_
 
@@ -26,9 +26,9 @@ Not available.
 Description
 ===========
 
-The ``numbered_identifications`` table is an auxiliary snapshot adopted from the Minor Planet Center PostgreSQL database.
+The ``numbered_identifications`` table is an auxiliary snapshot adopted from the `Minor Planet Center PostgreSQL database <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_.
 It connects an object's permanent number to its primary provisional designation and includes IAU designations, names, discovery credits, and publication references where available.
 The upstream definitions and field semantics are documented in the `MPC replicated-tables schema <https://docs.minorplanetcenter.net/mpc-ops-docs/data-and-services/replicated-tables-schema/>`_.
 
 This table is useful for translating between permanent numbers and the provisional designations used by the Rubin-derived Solar System tables.
-It was not computed from DP2 observations.
+It was _not_ computed from Rubin DP2 observations.
