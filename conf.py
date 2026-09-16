@@ -10,6 +10,8 @@ html_static_path.append('_static')  # noqa: F405
 
 DATA_QUALITY_PAGE = 'overview/data_quality'
 
+PROCESSING_FAILURES_PAGE = 'overview/processing_failures'
+
 
 def _add_data_quality_assets(app, pagename, templatename, context, doctree):
     """Attach the plot bundle to its own page.
@@ -25,8 +27,21 @@ def _add_data_quality_assets(app, pagename, templatename, context, doctree):
     app.add_js_file('dp2_data_quality/dp2-data-quality.js', type='module')
 
 
+def _add_processing_failures_assets(app, pagename, templatename, context,
+                                    doctree):
+    """Attach the count-column styles to their own page.
+
+    Scoped the same way as the data quality bundle: the rules only describe the
+    label/count tables on that page, so they stay off every other one.
+    """
+    if pagename != PROCESSING_FAILURES_PAGE:
+        return
+    app.add_css_file('dp2-count-tables.css')
+
+
 def setup(app):
     app.connect('html-page-context', _add_data_quality_assets)
+    app.connect('html-page-context', _add_processing_failures_assets)
 
 # This can't go in documenteer.toml because TOML interprets the "lsst.images"
 # in relation to the existing "lsst" (i.e. pipelines.lsst.io) in a way that

@@ -1,0 +1,22 @@
+/* Count columns on the processing failures page.
+ *
+ * Those tables are a label paired with a magnitude, and docutils has no
+ * per-column alignment option, so the alignment has to come from here.
+ */
+
+/* Right-align the count column against a common edge and set the digits on
+ * tabular figures, so place values line up down the column: 5,288,244 sits
+ * directly above 816 rather than each number starting at a ragged left edge.
+ */
+table.dp2-count-table td:last-child,
+table.dp2-count-table th:last-child {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Counts are read as whole values, so never break a digit group onto a second
+ * line.
+ */
+table.dp2-count-table td:last-child {
+  white-space: nowrap;
+}
