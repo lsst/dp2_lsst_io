@@ -234,6 +234,13 @@ They are also a subset of the visits listed in :ref:`Bad visits <issues_badvisit
     2025071700678, 2025071800299, 2025071800360, 2025071800368, 2025071800445, 2025071800518]
 
 
+Noise realizations bug
+----------------------
+
+The artifact masks from the compare-warp stage of image processing were not used when rejecting pixels from deep coadd image, and as a result the noise realizations are inaccurate.
+This effect should be limited to regions :doc:`masked <products/images/mask_planes.html>` on the deep coadd image as CLIPPED.
+
+
 .. _issues_object_catalog:
 
 Object catalog
