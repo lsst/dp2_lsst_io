@@ -4,6 +4,11 @@
 Log of major tutorial updates
 #############################
 
+2026-09-16
+==========
+
+Released a notebook tutorial demonstrating filter transformations between DP2 and other photometric systems.
+
 2026-09-15
 ==========
 

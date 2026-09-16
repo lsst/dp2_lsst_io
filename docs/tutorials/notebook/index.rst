@@ -295,6 +295,7 @@ Longer tutorials with a learning objective of executing an end-to-end scientific
     :glob:
 
     311/notebook-311-1.rst
+    311/notebook-311-2.rst
 
 
 312. Interactive plots
