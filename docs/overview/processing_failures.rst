@@ -25,6 +25,7 @@ Precursor datasets
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Dataset
      - Count
@@ -40,6 +41,7 @@ isr
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Dataset
      - Count
@@ -49,6 +51,7 @@ isr
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Failure
      - Count
@@ -61,6 +64,7 @@ calibrateImage
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Dataset
      - Count
@@ -76,6 +80,7 @@ calibrateImage
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Failure
      - Count
@@ -117,6 +122,7 @@ refitPsfModelDetector
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Dataset
      - Count
@@ -126,6 +132,7 @@ refitPsfModelDetector
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Failure
      - Count
@@ -138,6 +145,7 @@ consolidateRefitPsfModelDetector
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Dataset
      - Count
@@ -154,6 +162,7 @@ fgcmOutputProducts
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Dataset
      - Count
@@ -170,6 +179,7 @@ gbdesHealpix3AstrometricFit
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Dataset
      - Count
@@ -183,6 +193,7 @@ gbdesHealpix3AstrometricFit
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Failure
      - Count
@@ -199,6 +210,7 @@ gaussianProcessesTurbulenceFit
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Dataset
      - Count
@@ -210,6 +222,7 @@ Covers 5,268,032 visit/detector dataIds.
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Failure
      - Count
@@ -224,6 +237,7 @@ updateVisitSummary
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Dataset
      - Count
@@ -243,6 +257,7 @@ reprocessVisitImage
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Dataset
      - Count
@@ -252,6 +267,7 @@ reprocessVisitImage
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Failure
      - Count
@@ -266,6 +282,7 @@ standardizeSource
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Dataset
      - Count
@@ -280,6 +297,7 @@ consolidateSource
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Dataset
      - Count
@@ -294,6 +312,7 @@ splitPrimarySource
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Dataset
      - Count
@@ -320,6 +339,7 @@ Precursor datasets
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Dataset
      - Count
@@ -341,6 +361,7 @@ forcedPhotObjectDetector
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Dataset
      - Count
@@ -358,6 +379,7 @@ standardizeObjectForcedSource
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Dataset
      - Count
@@ -367,6 +389,7 @@ standardizeObjectForcedSource
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Failure
      - Count
@@ -379,6 +402,7 @@ splitPrimaryObjectForcedSource
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Dataset
      - Count
@@ -400,6 +424,7 @@ Precursor datasets
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Dataset
      - Count
@@ -421,6 +446,7 @@ associateIsolatedStar
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Dataset
      - Count
@@ -440,6 +466,7 @@ fitStellarMotion
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Dataset
      - Count
@@ -449,6 +476,7 @@ fitStellarMotion
 .. list-table::
    :header-rows: 1
    :widths: auto
+   :class: dp2-count-table
 
    * - Failure
      - Count
