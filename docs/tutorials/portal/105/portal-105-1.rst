@@ -25,7 +25,7 @@ Rubin staff will respond to all questions posted there.
 **1. Execute an ADQL query for deep coadd images.**
 Log in to the Portal Aspect, select the "DP1 & DP2 Images" tab and click on "Edit ADQL" at upper right.
 Enter the following ADQL statement and click "Search" at lower left.
-This query will return all processed visit images that overlap coordinates RA, Dec = 53.0, -28.0 degrees.
+This query will return all deep coadd images that overlap coordinates RA, Dec = 53.0, -28.0 degrees.
 
 .. code-block:: SQL
 
