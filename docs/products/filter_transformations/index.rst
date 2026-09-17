@@ -17,7 +17,7 @@ Description
 **Filter transformations for DP2** were derived and are intended to support calibration and comparison across survey systems.
 The filter transformation relations include both polynomial-fit equations and lookup-table-based methods.
 They are generally valid for stars with typical spectral energy distributions (SEDs), and caution should be used when applying them to objects with strong emission lines or atypical colors.
-Transformation relations are currently available to/from LSSTCam Data Preview 2 (DP2) photometric system and the photometric systems of the LSSTComCam (DP1), Dark Energy Survey (DES) (DR2), PanSTARRS, SDSS (DR18), Gaia (DR3), Euclid (Q1), and Johnson-Cousins (UBVRcIc).
+Transformation relations are currently available to/from LSSTCam Data Preview 2 (DP2) photometric system and the photometric systems of the LSSTComCam (DP1), Dark Energy Survey (DES) (DR2), PanSTARRS (DR2), SDSS (DR18), Gaia (DR3), Euclid (Q1), and Johnson-Cousins (UBVRcIc).
 
 
 Tutorials
