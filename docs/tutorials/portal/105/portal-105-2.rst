@@ -71,3 +71,38 @@ The coadd image planes are:
 - BACKGROUND/FIELDS/OBJECT/DATA (HDU #11) -- the background that was subtracted from the deep coadd image.
 
 Notice that the background images are binned to lower resolution than the full images.
+
+**3. Change the orientation of the image.**
+
+Toggle the image plane view to return to the original deep coadd image.
+
+Click the "Tools" drop-down and then the "rotate image" tool (labeled "A" in Figure 3) in the "Rotate/Flip" portion of the Tools menu.
+Rotate the image to an angle 135 degrees East of North by either using the slider or manually entering 135 in the box.
+The result should appear as in Figure 4.
+
+.. figure:: images/portal-105-2-3.png
+    :name: portal-105-2-3
+    :alt: The buttons to cycle through image planes.
+
+    Figure 3: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
+
+.. figure:: images/portal-105-2-4.png
+    :name: portal-105-2-4
+    :alt: The buttons to cycle through image planes.
+
+    Figure 3: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
+
+To restore the image to its original orientation with North up and East to the left, click the button with an up arrow pointing to a letter "N" (labeled "B" in Figure 3).
+
+Before clicking the button to "flip" the image on the Y axis, first select the "North/East" compass from the "Layers" menu.
+Now click on the "flip" button (labeled "C" in Figure 3) to flip the image in the X direction (i.e., flip it about the Y axis). Notice that East is now pointing to the right, as in Figure 5.
+
+.. figure:: images/portal-105-2-5.png
+    :name: portal-105-2-5
+    :alt: The buttons to cycle through image planes.
+
+    Figure 3: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
+
+To return to the original view, click the "Restore to the defaults" button in the Tools menu (labeled "D" in Figure 3).
+
+**4. **
