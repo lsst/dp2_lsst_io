@@ -105,4 +105,23 @@ Now click on the "flip" button (labeled "C" in Figure 3) to flip the image in th
 
 To return to the original view, click the "Restore to the defaults" button in the Tools menu (labeled "D" in Figure 3).
 
-**4. **
+**4. Change the color map and image scaling.**
+
+The color map used to display the image can be changed by clicking the "Color drop down" icon that looks like a painter's palette (labeled "A" in Figure 6).
+Click the Color drop down and change the color mapping by clicking one of the options (as in Figure 7; the example selected there is the "plasma" colorbar).
+Notice that there is a "reverse" option to the right of each colorbar.
+Click one of these to get the "flipped" version of a color map.
+
+The "Bias" and "Contrast" parameters can be manually adjusted using the sliders at the bottom of the Color drop down.
+
+.. figure:: images/portal-105-2-6.png
+    :name: portal-105-2-6
+    :alt: The buttons to access dropdown menus for color and image scaling.
+
+    Figure 6: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
+
+.. figure:: images/portal-105-2-7.png
+    :name: portal-105-2-7
+    :alt: The colorbar options.
+
+    Figure 7: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
