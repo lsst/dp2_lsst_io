@@ -7,6 +7,20 @@ Known issues
 
 For questions related to any of the issues listed on this page, please ask in the `Support category on community.lsst.org <https://community.lsst.org/c/support>`_, where Rubin staff will follow up.
 
+.. _issues_processing_failures:
+
+Processing Failures
+===================
+
+Full tracing from raw images to final dataset counts for all DP2 output
+products, with details of failure counts at each processing step.
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    processing_failures
+
 
 .. _issues_crowded_fields:
 
