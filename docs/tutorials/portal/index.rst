@@ -128,3 +128,15 @@ Longer tutorials demonstrating an end-to-end scientific workflow.
 Explore the observations included in the DP2 dataset.
 
 ``Coming soon.``
+
+
+303. Galaxies
+-------------
+
+Explore galaxies in the DP2 catalogs and images.
+
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    303/portal-303-1.rst

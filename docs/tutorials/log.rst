@@ -4,6 +4,11 @@
 Log of major tutorial updates
 #############################
 
+2026-09-17
+==========
+
+Released a new Portal tutorial, 303.1 "Explore galaxy shapes in a DP2 field".
+
 2026-09-16
 ==========
 
