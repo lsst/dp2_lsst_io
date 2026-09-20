@@ -278,6 +278,18 @@ Longer tutorials with a learning objective of executing an end-to-end scientific
     308/notebook-308-01.rst
     308/notebook-308-02.rst
 
+309. Low surface brightness
+---------------------------
+
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    309/notebook-309-1.rst
+    309/notebook-309-2.rst
+    309/notebook-309-3.rst
+
+
 310. Photometric redshifts
 ----------------------------
 

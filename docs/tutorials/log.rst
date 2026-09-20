@@ -9,6 +9,11 @@ Log of major tutorial updates
 
 Released two new notebooks about multi-coadd cutouts and custom color images.
 
+2026-09-20
+==========
+
+Released new notebook tutorials about low surface brightness science.
+
 2026-09-16
 ==========
 
