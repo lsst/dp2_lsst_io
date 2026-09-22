@@ -4,6 +4,11 @@
 Log of major tutorial updates
 #############################
 
+2026-09-22
+==========
+
+Released the DP2 Portal 304 tutorial on cosmology, identifying the red sequence of the galaxy cluster PSZ2 G309.43-72.86.
+
 2026-09-21
 ==========
 
