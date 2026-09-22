@@ -1,7 +1,7 @@
 .. _portal-304-1:
 
 ###############################################
-304.1. Cosmology: red sequence of an SZ cluster
+304.1. Red sequence of a galaxy cluster
 ###############################################
 
 For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
