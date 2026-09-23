@@ -15,7 +15,7 @@ Small bodies discovered after that date, including those found in Rubin data, ar
 The input orbit catalog did not contain comets, so no comets were available for association in DP2.
 
 Ephemerides at the visit epochs were generated with `Sorcha <https://sorcha.space/>`_ (see `Merritt et al. 2025 <https://scixplorer.org/abs/2025AJ....170..100M/abstract>`_ and `Holman et al. 2025 <https://scixplorer.org/abs/2025AJ....170...97H/abstract>`_).
-The MPC orbit snapshot used for association is available via the DP2 ``mpc_orbits`` table.
+The DP2 ``mpc_orbits`` table contains a snapshot of the Minor Planet Center's catalog of orbital elements, as used for Solar System object association.
 
 Matching algorithm
 ==================
@@ -36,8 +36,8 @@ Each ``diaSourceId`` occurs at most once in the ``SSSource`` table; unassociated
 A DP2 “Solar System source” is a signal-to-noise ratio > 5 moving object detection in a difference image that has been associated with a previously known small body.
 Each row in the DP2 ``SSSource`` table represents a one-to-one positional association between a ``DiaSource`` and the predicted position of a known small body.
 
-Each ``SSSource`` table row contains selected measured quantities from the ``DiaSource`` and the predicted ephemeris at the observation epoch.
-These include measured astrometry and PSF photometry, predicted position and apparent Johnson-V magnitude, observing geometry, rates, and Cartesian position and velocity components.
+Each ``SSSource`` table contains the addtional useful computed quantities for previously known objects in the Solar System Object catalog that have been linked to measured ``DIASource`` photometry and astrometry.
+These include predicted position and apparent Johnson-V magnitude, observing geometry, rates, and Cartesian position and velocity components.
 The ephemeris coordinates and state vectors are predictions from the input MPC orbit, not a Rubin-derived orbital solution.
 Users needing the complete detection record or detection-quality fields should join the ``SSSource`` table to the ``DiaSource`` table on ``diaSourceId``.
 
@@ -48,4 +48,4 @@ These residuals are useful diagnostics, but the hard 1-arcsecond selection radiu
 Chance associations remain possible, especially in regions with high ``DiaSource`` density, because the match does not use brightness or detection reliability.
 Users constructing a high-purity sample should consider detection reliability, angular and cross-track residuals, consistency with the predicted magnitude, and the uncertainty of the input orbit.
 
-Rubin is submitting the astrometric measurements represented in the DP2 ``SSSource`` table to the MPC in stages, so that association quality can be validated before each submission and the risk of reporting misassociations can be minimized. The associations delivered in the DP2 data set are currently being reported to the Minor Planet Center (MPC) in this manner.
+At this time, not all measurements of known objects have yet been reported to the Minor Planet Center. Rubin is submitting the astrometric measurements represented in the DP2 ``SSSource`` table to the MPC in stages, so that association quality can be validated before each submission and the risk of reporting misassociations can be minimized. The associations delivered in the DP2 data set are currently being reported to the Minor Planet Center (MPC) in this manner.

@@ -34,8 +34,7 @@ Butler
 Description
 ===========
 
-A “Solar System object” in the DP2 tables is a moving object for which one or more difference image detections (``DIASources``) have been associated to a previously known small body.
-This catalog does _not_ include objects discovered by Rubin, and the table does _not_ contain orbits fitted from Rubin DP2 observations.
+A “Solar System object” in the DP2 tables is a moving object for which one or more difference image detections (``DIASources``) have been associated to a previously known small body as of 2026 March 13, including all objects that Rubin has discovered and submitted to the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC) up to that date.
 
 ``SSObject`` includes the unique identifier integer ``ssObjectId``, the unpacked primary provisional ``designation``, total and per-band observation counts, the first observation epoch and observing arc, per-band phase-angle ranges, extendedness summaries, and selected quantities derived from the input MPC orbit.
 

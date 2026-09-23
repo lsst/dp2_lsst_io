@@ -9,7 +9,7 @@ That campaign preceded the official DP2 release processing, so that objects disc
 DP2 does not, however, deliver a standalone catalog of Rubin discoveries; these Rubin-discovery-only catalogs will be delivered in future Data Releases.
 The `Solar System Prompt Processing <https://prompt-products.lsst.io/processing/moving/ss_prompt.html>`_ discoveries will be described once they are made available by Rubin. Currently, all Solar System objects discovered by Rubin get reported to and are made available via the `Minor Planet Center <https://minorplanetcenter.net/>`_ and the `B612 Foundation's Asteroid Institute <https://b612.ai/rubin-mpc-downloads/>`_ (see `Prompt Products Data Access <https://prompt-products.lsst.io/access/index.html#minor-planet-center-mpc>`_ for more information).
 
-The DP2 data products deliver the associations between Rubin difference image detections (``DiaSources``) and previously known small bodies in ``SSSource`` and Rubin-derived object-level photometry and summary quantities in ``SSObject``. It also provides three auxiliary snapshots adopted from the `Minor Planet Center (MPC) PostgreSQL database <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_ (see :doc:`DP2 catalogs </products/catalogs/index>` for details):
+The DP2 data products deliver associations between Rubin difference image detections (``DiaSources``) and known small bodies (``SSSource``) as well as Rubin-derived object-level photometry and summary properties (``SSObject``). DP2 also includes snapshots of three tables from the `Minor Planet Center (MPC) PostgreSQL database <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_ (see :doc:`DP2 catalogs </products/catalogs/index>` for details):
 
 .. list-table::
    :header-rows: 1
@@ -29,7 +29,7 @@ The DP2 data products deliver the associations between Rubin difference image de
      - An MPC mapping between permanent numbers and primary provisional designations.
 
 The three MPC tables retain the upstream MPC field semantics rather than being recomputed from Rubin DP2 observations.
-The delivered ``mpc_orbits`` reference product is the same 2026 March 13 MPC orbit snapshot that was used as input to association.
+The delivered ``mpc_orbits`` reference product is the same snapshot of the ``mpc_orbits`` table from the Minor Planet Center Database from 2026 March 13 that was used as input to association.
 
 
 .. toctree::

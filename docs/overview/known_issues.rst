@@ -314,7 +314,7 @@ The DP2 release includes the M49 and Trifid-Lagoon fields (see :doc:`small field
 MPC_orbits table
 ----------------
 
-Several fields in the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC)-derived data contained in the DP2 ``mpc_orbits`` table (2026 March 13 snapshot obtained from the MPC) contain inconsistent information or issues related to upstream failures, including:
+The contents of the DP2 ``mpc_orbits`` table were copied without modification from the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC) as a snapshot of the MPC's orbital element catalog from 2026 March 13 and inherited any issues that the table may have had at the time. A few known issues include:
 
 - Missing semimajor axes
 - Incorrect number of oppositions
@@ -322,12 +322,10 @@ Several fields in the `Minor Planet Center <https://minorplanetcenter.net/>`_ (M
 - Incorrect arc lengths
 - Missing orbit type integers
 
-Overall, the orbital elements in the DP2 ``mpc_orbits`` table are generally reliable, though occasional upstream failures may have occurred and be included in the table.
-
 Current_identifications table
 -----------------------------
 
-The MPC-derived data contained in the DP2 ``current_identifications`` table (2026 March 13 snapshot obtained from the MPC) include many missing object type integers due to upstream failures.
+Similarly, the contents of the DP2 ``current_identifications`` table were copied from the `Minor Planet Center <https://minorplanetcenter.net/>`  without modification and inherited any issues from that table at the time, including many missing object type integers.
 
 
 .. _issues_badvisits:
