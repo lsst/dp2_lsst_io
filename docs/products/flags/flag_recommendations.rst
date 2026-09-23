@@ -7,9 +7,6 @@ Flag usage guidance
 The guidance below is intentionally **minimal and conservative**: it lists only a small set of flags that are almost always appropriate to exclude, for typical science-quality selections.
 It is **not** a recipe for a "clean sample." The correct flag cuts depend strongly on your science case, and stricter or looser cuts than these will be appropriate for many analyses.
 
-The tables below give, per catalog table, a **minimal recommended set** of flags to apply, followed by **optional, science-case-dependent** cuts.
-Only the minimal set is suggested for most analyses; treat everything under "optional" as a starting point to adapt, not a default.
-
 .. note::
 
    General rule: whenever you use a measured quantity (a flux, shape, color, etc.), require that quantity's own general failure flag to be ``0``.
@@ -21,32 +18,32 @@ Object table
 ============
 
 Guidance for the deep-coadd measurements of static-sky objects.
-In the snippets below, ``f`` is the band (one of ``ugrizy``); apply the same logic independently in each band you use.
+In the snippets below, ``{band}`` stands for one of ``u``, ``g``, ``r``, ``i``, ``z``, ``y``; apply the same logic independently in each band you use.
 
 **Minimal recommended set.**
 
 .. code-block:: sql
 
-   WHERE f_inputCount > 0                        -- At least one input image at the position
-     AND f_psfFlux_flag = 0                      -- (or the flag for whichever flux you use)
-     AND f_invalidPsfFlag = 0                    -- Valid PSF model
-     AND f_pixelFlags_saturatedCenter = 0        -- No saturation at the center
-     AND f_pixelFlags_interpolatedCenter = 0     -- No interpolated pixels at the center
+   WHERE {band}_inputCount > 0                        -- At least one input image at the position
+     AND {band}_psfFlux_flag = 0                      -- (or the flag for whichever flux you use)
+     AND {band}_invalidPsfFlag = 0                    -- Valid PSF model
+     AND {band}_pixelFlags_saturatedCenter = 0        -- No saturation at the center
+     AND {band}_pixelFlags_interpolatedCenter = 0     -- No interpolated pixels at the center
 
 .. note::
 
-   - Require ``f_inputCount > 0`` in each band used.
+   - Require ``{band}_inputCount > 0`` in each band used.
    - The Object table is already delivered as the primary set: only inner-patch, deblended child objects are included, so no primary/deduplication flag needs to be (or can be) applied.
-   - Replace ``f_psfFlux_flag`` with the failure flag of the flux you actually use (e.g. ``f_cModel_flag`` for CModel fluxes, ``f_free_psfFlux_flag`` for the free/unforced PSF flux — see the note on free versus forced measurements in :doc:`/products/flags/flag_definitions`).
+   - Replace ``{band}_psfFlux_flag`` with the failure flag of the flux you actually use (e.g. ``{band}_cModel_flag`` for CModel fluxes, ``{band}_free_psfFlux_flag`` for the free/unforced PSF flux — see the note on free versus forced measurements in :doc:`/products/flags/flag_definitions`).
    - The DP2 Object columns ``pixelFlags_bad``, ``pixelFlags_edge``, ``pixelFlags_suspect``/``pixelFlags_suspectCenter``, and ``pixelFlags_offimage`` are **deprecated** and must not be used as cuts here (see :doc:`/products/flags/flag_definitions`). Use ``pixelFlags_sensor_edgeCenter`` if you need a coadd edge cut.
 
 **Optional, science-case-dependent cuts.**
 
 .. code-block:: sql
 
-   AND f_pixelFlags_crCenter = 0            -- No cosmic ray at center
-   AND f_pixelFlags_sensor_edgeCenter = 0   -- Not near a detector boundary (coadd edge)
-   AND f_pixelFlags_interpolated = 0        -- Stricter: no interpolated pixels anywhere in the footprint
+   AND {band}_pixelFlags_crCenter = 0            -- No cosmic ray at center
+   AND {band}_pixelFlags_sensor_edgeCenter = 0   -- Not near a detector boundary (coadd edge)
+   AND {band}_pixelFlags_interpolated = 0        -- Stricter: no interpolated pixels anywhere in the footprint
 
 Galaxy / star selection (extendedness)
 --------------------------------------
@@ -65,44 +62,42 @@ They differ in what they measure, in whether a companion failure flag exists, an
    * - ``{band}_extendedness``
      - 0 or 1
      - ``{band}_extendedness_flag``
-     - PSF-to-CModel flux ratio, thresholded by the pipeline. Already binary, so there is no cutoff for the user to choose.
+     - PSF-to-CModel flux ratio, thresholded by the pipeline.
    * - ``{band}_sizeExtendedness``
      - 0 to 1
      - ``{band}_sizeExtendedness_flag``
-     - Moments-based comparison of the source size to the local PSF. Quasi-probabilistic, so a 0.5 split is a defensible default.
+     - Moments-based comparison of the source size to the local PSF.
    * - ``{band}_model_extendedness``, ``griz_model_extendedness``
      - 0 to 1
      - *none*
-     - Sersic model flux- and size-based. Most likely of the three to have a finite value, but the values are not probabilities and no failure flag is published.
+     - Sersic model flux- and size-based.
 
 **Which one to use.**
 ``model_extendedness`` is the most broadly usable classifier in DP2: it is the most likely of the three to have a finite value for a given object, and ``griz_model_extendedness`` combines the four bands with the best signal.
-The trade-off is that it ships with **no flag columns**, so the selection has to do the validity check itself.
+There is no associated flag column.
 
 Selecting galaxies with ``model_extendedness``:
 
 .. code-block:: sql
 
-   AND f_model_extendedness > 0.3
-   AND f_model_extendedness <= 1
+   AND {band}_model_extendedness > 0.3
+   AND {band}_model_extendedness <= 1
 
 and point sources with the complementary cut (``>= 0`` and ``<= 0.3``).
-The upper and lower bounds are not redundant: they double as the validity test, because a non-finite (NaN) value fails any range comparison.
-If you filter client-side after the query instead, apply the equivalent ``numpy.isfinite`` check on the column before thresholding.
 
 Selecting galaxies with ``sizeExtendedness``:
 
 .. code-block:: sql
 
-   AND f_sizeExtendedness > 0.5
-   AND f_sizeExtendedness_flag = 0
+   AND {band}_sizeExtendedness > 0.5
+   AND {band}_sizeExtendedness_flag = 0
 
 Selecting galaxies with the binary ``extendedness``:
 
 .. code-block:: sql
 
-   AND f_extendedness = 1       -- Extended source (galaxy); use = 0 for point sources (stars)
-   AND f_extendedness_flag = 0  -- Classification valid
+   AND {band}_extendedness = 1       -- Extended source (galaxy); use = 0 for point sources (stars)
+   AND {band}_extendedness_flag = 0  -- Classification valid
 
 .. warning::
 
@@ -118,7 +113,7 @@ Selecting galaxies with the binary ``extendedness``:
    Treat star/galaxy separation as approximate and validate it against your own science requirements.
    ``refExtendedness`` and ``refSizeExtendedness`` give the reference-band values of the first two classifiers if you want a single band-independent classification.
 
-Model photometry and shapes: require the matching general flag when using the quantity, e.g. ``f_cModel_flag = 0`` for CModel fluxes, ``f_kronFlux_flag = 0`` for Kron fluxes, or ``f_hsmShapeRegauss_flag = 0`` for HSM shapes.
+Model photometry and shapes: require the matching general flag when using the quantity, e.g. ``{band}_cModel_flag = 0`` for CModel fluxes, ``{band}_kronFlux_flag = 0`` for Kron fluxes, or ``{band}_hsmShapeRegauss_flag = 0`` for HSM shapes.
 
 .. _flags-source:
 
