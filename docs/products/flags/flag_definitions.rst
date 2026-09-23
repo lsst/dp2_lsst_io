@@ -118,7 +118,7 @@ The general flag alone is sufficient for filtering; the subflags are diagnostic.
      - Flux-ratio star/galaxy classifier failed; ``extendedness`` unreliable.
    * - ``{band}_sizeExtendedness_flag``
      - Object
-     - Moments-based star/galaxy classifier failed.
+     - Moments-based star/galaxy classifier failed. Note that the third classifier, ``{band}_model_extendedness`` (and ``griz_model_extendedness``), has **no** corresponding failure flag; see :ref:`flags-object`.
    * - ``{band}_hsmShapeRegauss_flag``
      - Object
      - HSM Regaussianization shape measurement failed.
