@@ -158,12 +158,18 @@ The general flag alone is sufficient for filtering; the subflags are diagnostic.
    * - ``{band}_blendedness_flag``
      - Object, Source
      - Blendedness measurement failed.
-   * - ``sersic_no_data_flag``, ``sersic_unknown_flag``
+   * - ``sersic_no_data_flag``
      - Object
-     - Multi-band Sersic model fit had no data, or failed for an unspecified reason. New in DP2.
-   * - ``exponential_no_data_flag``, ``exponential_unknown_flag``
+     - Multi-band Sersic model fit had no data. New in DP2.
+   * - ``sersic_unknown_flag``
      - Object
-     - Multi-band exponential model fit had no data, or failed for an unspecified reason. New in DP2.
+     - Multi-band Sersic model fit failed for an unspecified reason. New in DP2.
+   * - ``exponential_no_data_flag``
+     - Object
+     - Multi-band exponential model fit had no data. New in DP2.
+   * - ``exponential_unknown_flag``
+     - Object
+     - Multi-band exponential model fit failed for an unspecified reason. New in DP2.
    * - ``{band}_moments_flag``
      - Object
      - Higher-order moments measurement failed. New in DP2.
@@ -173,9 +179,12 @@ The general flag alone is sufficient for filtering; the subflags are diagnostic.
    * - ``{band}_moments_psf_debiased_flag``
      - Object
      - Debiased PSF moments measurement failed. New in DP2.
-   * - ``{band}_psfModel_TwoGaussian_unknown_flag``, ``{band}_psfModel_TwoGaussian_no_inputs_flag``
+   * - ``{band}_psfModel_TwoGaussian_unknown_flag``
      - Object
-     - Two-Gaussian PSF model fit failed for an unspecified reason, or had no inputs. New in DP2.
+     - Two-Gaussian PSF model fit failed for an unspecified reason. New in DP2.
+   * - ``{band}_psfModel_TwoGaussian_no_inputs_flag``
+     - Object
+     - Two-Gaussian PSF model fit had no inputs. New in DP2.
 
 .. note::
 
@@ -192,7 +201,7 @@ Purpose: indicate particular issues with difference image analysis (DIA), i.e. t
 
 .. important::
 
-   The DP2 DIA pipeline errs toward completeness rather than purity, and **no real/bogus reliability cut was applied** before writing the DiaSource catalog.
+   **No real/bogus reliability cut was applied** before writing the DiaSource catalog.
    Users who need a higher-purity transient sample should apply a minimum threshold on the DiaSource ``reliability`` column (the machine-learned real/bogus score) themselves.
 
 .. list-table::

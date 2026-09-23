@@ -23,6 +23,7 @@ In the snippets below, ``{band}`` stands for one of ``u``, ``g``, ``r``, ``i``, 
 **Minimal recommended set.**
 
 .. code-block:: sql
+   :force:
 
    WHERE {band}_inputCount > 0                        -- At least one input image at the position
      AND {band}_psfFlux_flag = 0                      -- (or the flag for whichever flux you use)
@@ -33,13 +34,13 @@ In the snippets below, ``{band}`` stands for one of ``u``, ``g``, ``r``, ``i``, 
 .. note::
 
    - Require ``{band}_inputCount > 0`` in each band used.
-   - The Object table is already delivered as the primary set: only inner-patch, deblended child objects are included, so no primary/deduplication flag needs to be (or can be) applied.
    - Replace ``{band}_psfFlux_flag`` with the failure flag of the flux you actually use (e.g. ``{band}_cModel_flag`` for CModel fluxes, ``{band}_free_psfFlux_flag`` for the free/unforced PSF flux — see the note on free versus forced measurements in :doc:`/products/flags/flag_definitions`).
    - The DP2 Object columns ``pixelFlags_bad``, ``pixelFlags_edge``, ``pixelFlags_suspect``/``pixelFlags_suspectCenter``, and ``pixelFlags_offimage`` are **deprecated** and must not be used as cuts here (see :doc:`/products/flags/flag_definitions`). Use ``pixelFlags_sensor_edgeCenter`` if you need a coadd edge cut.
 
 **Optional, science-case-dependent cuts.**
 
 .. code-block:: sql
+   :force:
 
    AND {band}_pixelFlags_crCenter = 0            -- No cosmic ray at center
    AND {band}_pixelFlags_sensor_edgeCenter = 0   -- Not near a detector boundary (coadd edge)
@@ -67,10 +68,14 @@ They differ in what they measure, in whether a companion failure flag exists, an
      - 0 to 1
      - ``{band}_sizeExtendedness_flag``
      - Moments-based comparison of the source size to the local PSF.
-   * - ``{band}_model_extendedness``, ``griz_model_extendedness``
+   * - ``{band}_model_extendedness``
      - 0 to 1
      - *none*
-     - Sersic model flux- and size-based.
+     - Sersic model flux- and size-based, single band.
+   * - ``griz_model_extendedness``
+     - 0 to 1
+     - *none*
+     - Sersic model flux- and size-based, combining the ``griz`` bands.
 
 **Which one to use.**
 ``model_extendedness`` is the most broadly usable classifier in DP2: it is the most likely of the three to have a finite value for a given object, and ``griz_model_extendedness`` combines the four bands with the best signal.
@@ -79,6 +84,7 @@ There is no associated flag column.
 Selecting galaxies with ``model_extendedness``:
 
 .. code-block:: sql
+   :force:
 
    AND {band}_model_extendedness > 0.3
    AND {band}_model_extendedness <= 1
@@ -88,6 +94,7 @@ and point sources with the complementary cut (``>= 0`` and ``<= 0.3``).
 Selecting galaxies with ``sizeExtendedness``:
 
 .. code-block:: sql
+   :force:
 
    AND {band}_sizeExtendedness > 0.5
    AND {band}_sizeExtendedness_flag = 0
@@ -95,6 +102,7 @@ Selecting galaxies with ``sizeExtendedness``:
 Selecting galaxies with the binary ``extendedness``:
 
 .. code-block:: sql
+   :force:
 
    AND {band}_extendedness = 1       -- Extended source (galaxy); use = 0 for point sources (stars)
    AND {band}_extendedness_flag = 0  -- Classification valid
@@ -175,7 +183,7 @@ Guidance for transient/variable detections on difference images.
 
 .. important::
 
-   No real/bogus reliability cut was applied when building the DP2 DiaSource catalog, and the pipeline favors completeness over purity.
+   No real/bogus reliability cut was applied when building the DP2 DiaSource catalog.
    For a higher-purity transient sample, apply a minimum threshold on the ``reliability`` column in addition to the flags below; the appropriate threshold is science-case dependent.
 
 **Minimal recommended set.**
