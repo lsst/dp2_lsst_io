@@ -325,7 +325,7 @@ The contents of the DP2 ``mpc_orbits`` table were copied without modification fr
 Current_identifications table
 -----------------------------
 
-Similarly, the contents of the DP2 ``current_identifications`` table were copied from the `Minor Planet Center <https://minorplanetcenter.net/>`  without modification and inherited any issues from that table at the time, including many missing object type integers.
+Similarly, the contents of the DP2 ``current_identifications`` table were copied from the `Minor Planet Center <https://minorplanetcenter.net/>`_  without modification and inherited any issues from that table at the time, including many missing object type integers.
 
 
 .. _issues_badvisits:
