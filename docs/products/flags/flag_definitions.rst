@@ -25,50 +25,83 @@ Center flags are generally the more important for photometry and shapes because 
 
 .. list-table::
    :header-rows: 1
-   :widths: 30 30 40
+   :widths: 25 15 60
 
-   * - Pixel quality flag
+   * - Flag name
      - Tables
      - Meaning when set to 1
-   * - ``pixelFlags_saturated`` / ``…saturatedCenter``
+   * - ``pixelFlags_saturated``
      - Object, Source, ForcedSource, DiaSource, ForcedSourceOnDiaObject
-     - Saturated pixels in the footprint (or center). On coadds, saturated pixels are rejected but would otherwise have contributed appreciably.
-   * - ``pixelFlags_cr`` / ``…crCenter``
+     - Saturated pixels in footprint; photometry unreliable.
+   * - ``pixelFlags_saturatedCenter``
      - Object, Source, ForcedSource, DiaSource, ForcedSourceOnDiaObject
-     - A cosmic ray was detected and interpolated over in the footprint (or center).
-   * - ``pixelFlags_interpolated`` / ``…interpolatedCenter``
+     - Saturated pixel in central 3x3 footprint; critical quality issue.
+   * - ``pixelFlags_cr``
      - Object, Source, ForcedSource, DiaSource, ForcedSourceOnDiaObject
-     - An interpolated pixel (from cosmic rays, defects, or saturation) contributed in the footprint (or center).
-   * - ``pixelFlags_sensor_edge`` / ``…sensor_edgeCenter``
+     - Cosmic ray detected and interpolated in footprint.
+   * - ``pixelFlags_crCenter``
+     - Object, Source, ForcedSource, DiaSource, ForcedSourceOnDiaObject
+     - Cosmic ray at center.
+   * - ``pixelFlags_interpolated``
+     - Object, Source, ForcedSource, DiaSource, ForcedSourceOnDiaObject
+     - Interpolated pixels in footprint (from CRs, defects, saturation).
+   * - ``pixelFlags_interpolatedCenter``
+     - Object, Source, ForcedSource, DiaSource, ForcedSourceOnDiaObject
+     - Interpolated pixel at center; affects core photometry and shapes.
+   * - ``pixelFlags_sensor_edge``
      - Object
-     - A detector boundary from an input visit passed through the footprint (or near the center). This is the edge indicator to use on coadds.
-   * - ``pixelFlags_clipped`` / ``…clippedCenter``
+     - Detector boundary crossed footprint.
+   * - ``pixelFlags_sensor_edgeCenter``
      - Object
-     - Input pixels were rejected by warp comparison (artifact clipping) during coaddition in the footprint (or center).
-   * - ``pixelFlags_inexact_psf`` / ``…inexact_psfCenter``
+     - Detector edge near center; important for coadds.
+   * - ``pixelFlags_clipped``
      - Object
-     - The coadd PSF model is discontinuous in the footprint (or near the center), typically at cell/patch boundaries or where input artifacts were rejected.
-   * - ``pixelFlags_nodata`` / ``…nodataCenter``
+     - Artifact rejection during coaddition excluded input pixels.
+   * - ``pixelFlags_clippedCenter``
+     - Object
+     - Clipping occurred at center.
+   * - ``pixelFlags_inexact_psf``
+     - Object
+     - Coadd PSF model is discontinuous in footprint, typically at cell or patch boundaries or where input artifacts were rejected.
+   * - ``pixelFlags_inexact_psfCenter``
+     - Object
+     - Coadd PSF model is discontinuous at center. Covers a large area; not recommended as a general cut.
+   * - ``pixelFlags_nodata``
      - Object, Source, ForcedSource, DiaSource, ForcedSourceOnDiaObject
-     - No pixel data were available (outside the usable coverage region). ``nodataCenter`` is available in DiaSource.
-   * - ``pixelFlags_edge``
-     - Source, ForcedSource, DiaSource, ForcedSourceOnDiaObject
-     - Source is on the edge of the usable exposure region (single-epoch/difference images).
-   * - ``pixelFlags_bad``, ``pixelFlags_suspect`` / ``…suspectCenter``
-     - Source, ForcedSource, DiaSource, ForcedSourceOnDiaObject
-     - Known bad (detector defect) or suspect (near-saturation, non-linear) pixels in the footprint (or center).
-   * - ``pixelFlags_streak`` / ``…streakCenter``
+     - No pixel data available (off coverage area).
+   * - ``pixelFlags_nodataCenter``
      - DiaSource
-     - A masked streak (e.g. satellite trail) overlaps the footprint (or center).
-   * - ``pixelFlags_injected`` / ``…injectedCenter``, ``pixelFlags_injected_template`` / ``…injected_templateCenter``
+     - No pixel data available at center.
+   * - ``pixelFlags_streak``
      - DiaSource
-     - Synthetic-source injection overlaps the footprint (or center) in the science image or template. Relevant only for injection test datasets.
+     - Masked streak (e.g., satellite trail) overlaps footprint.
+   * - ``pixelFlags_streakCenter``
+     - DiaSource
+     - Masked streak overlaps center.
+   * - ``pixelFlags_injected``
+     - DiaSource
+     - Synthetic-source injection overlaps footprint in the science image. Relevant only for injection test datasets.
+   * - ``pixelFlags_injectedCenter``
+     - DiaSource
+     - Synthetic-source injection overlaps center in the science image.
+   * - ``pixelFlags_injected_template``
+     - DiaSource
+     - Synthetic-source injection overlaps footprint in the template image.
+   * - ``pixelFlags_injected_templateCenter``
+     - DiaSource
+     - Synthetic-source injection overlaps center in the template image.
+
+Key points:
+
+- Center variants: Flags with a ``Center`` suffix indicate the issue affects the object's central footprint (typically a 3x3 pixel box), which is more critical for photometry and shapes than flags affecting only the outer footprint.
+- Coadd-specific flags: On Object table coadds, use ``pixelFlags_sensor_edge`` and ``pixelFlags_sensor_edgeCenter`` as the edge indicator, since they record where detector boundaries from input visits crossed the object.
 
 .. warning::
 
-   **Deprecated in the DP2 Object table.**
-   In the coadd Object table the columns ``pixelFlags_bad``, ``pixelFlags_edge``, ``pixelFlags_suspect``, ``pixelFlags_suspectCenter``, and ``pixelFlags_offimage`` are deprecated: they are only set in the (rare) case of missing band data and should **not** be used as quality cuts.
-   Use ``pixelFlags_sensor_edge``/``sensor_edgeCenter`` for coadd edges. These flags remain valid in the single-epoch and difference-image tables (Source, ForcedSource, DiaSource, ForcedSourceOnDiaObject).
+   **Flags omitted from the table above because they are deprecated in the DP2 Object table.**
+   ``pixelFlags_bad`` (known bad pixels, i.e. detector defects, in footprint), ``pixelFlags_edge`` (source on the edge of the usable exposure region), ``pixelFlags_suspect`` and ``pixelFlags_suspectCenter`` (suspect pixels near saturation or with non-linear response), and ``pixelFlags_offimage`` are deprecated in the coadd Object table: they are only set in the (rare) case of missing band data, and should **not** be used as quality cuts there.
+   Use ``pixelFlags_sensor_edge`` / ``pixelFlags_sensor_edgeCenter`` for coadd edges instead.
+   These flags remain valid and useful in the single-epoch and difference-image tables (Source, ForcedSource, DiaSource, ForcedSourceOnDiaObject).
 
 
 Measurement failure flags
@@ -125,6 +158,24 @@ The general flag alone is sufficient for filtering; the subflags are diagnostic.
    * - ``{band}_blendedness_flag``
      - Object, Source
      - Blendedness measurement failed.
+   * - ``sersic_no_data_flag``, ``sersic_unknown_flag``
+     - Object
+     - Multi-band Sersic model fit had no data, or failed for an unspecified reason. New in DP2.
+   * - ``exponential_no_data_flag``, ``exponential_unknown_flag``
+     - Object
+     - Multi-band exponential model fit had no data, or failed for an unspecified reason. New in DP2.
+   * - ``{band}_moments_flag``
+     - Object
+     - Higher-order moments measurement failed. New in DP2.
+   * - ``{band}_moments_psf_flag``
+     - Object
+     - Higher-order moments of the PSF model failed. New in DP2.
+   * - ``{band}_moments_psf_debiased_flag``
+     - Object
+     - Debiased PSF moments measurement failed. New in DP2.
+   * - ``{band}_psfModel_TwoGaussian_unknown_flag``, ``{band}_psfModel_TwoGaussian_no_inputs_flag``
+     - Object
+     - Two-Gaussian PSF model fit failed for an unspecified reason, or had no inputs. New in DP2.
 
 .. note::
 
@@ -133,14 +184,9 @@ The general flag alone is sufficient for filtering; the subflags are diagnostic.
    DP2 also provides **free** (unforced) variants — ``{band}_free_psfFlux`` / ``{band}_free_psfFlux_flag`` and ``{band}_free_cModelFlux`` / ``{band}_free_cModelFlux_flag`` — which are measured independently in each band.
    When filtering, apply the flag that matches the flux you use: use ``{band}_psfFlux_flag`` with the forced flux and ``{band}_free_psfFlux_flag`` with the free flux.
 
-.. note::
 
-   New model-fit flags in DP2 include the multi-band ``exponential_*`` and ``sersic_*`` model flags (``…_no_data_flag``, ``…_unknown_flag``), the higher-order ``{band}_moments_flag`` / ``moments_psf_flag`` / ``moments_psf_debiased_flag`` shape flags, and the ``{band}_psfModel_TwoGaussian_*`` PSF-model flags.
-   These support new DP2 measurements (multi-band morphology and improved shape/PSF modeling); require the relevant general flag to be 0 if you use the associated quantity.
-
-
-DIA flags
-=========
+Difference image analysis (DIA) flags
+=====================================
 
 Purpose: indicate particular issues with difference image analysis (DIA), i.e. transient/variable detections on difference images (DiaSource).
 
@@ -153,7 +199,7 @@ Purpose: indicate particular issues with difference image analysis (DIA), i.e. t
    :header-rows: 1
    :widths: 30 15 55
 
-   * - DIA flag
+   * - Flag name
      - Tables
      - Meaning when set to 1
    * - ``isDipole``
@@ -193,11 +239,6 @@ Special flags
 =============
 
 Additional notable flags that provide ancillary information about sources and objects.
-
-.. note::
-
-   The DP2 Object table does not include a ``detect_isPrimary`` column (unlike some earlier data previews).
-   It is delivered already reduced to the primary set — only inner-patch, deblended child objects — so no primary/deduplication cut is needed.
 
 .. list-table::
    :header-rows: 1

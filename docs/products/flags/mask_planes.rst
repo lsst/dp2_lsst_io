@@ -4,10 +4,6 @@
 Connection to image mask planes
 ###############################
 
-.. important::
-
-   DP2 flag descriptions and guidance for their scientific applications are still being developed and validated.
-
 Catalog ``pixelFlags_*`` columns are derived directly from the image :ref:`mask planes <images-mask-planes>`.
 Each relevant mask-plane bit set in the pixels of a source's footprint propagates to the corresponding pixel flag in the catalog.
 
@@ -38,41 +34,64 @@ It applies to the coadd-based **Object** catalog.
      - No usable data at this location; check for coverage.
    * - ``INTERPOLATED``
      - ``INTRP``
-     - ``pixelFlags_interpolated`` / ``…interpolatedCenter``
-     - Pixel value interpolated from neighbors.
+     - ``pixelFlags_interpolated``
+     - Pixel value interpolated from neighbors, anywhere in the footprint.
+   * - ``INTERPOLATED``
+     - ``INTRP``
+     - ``pixelFlags_interpolatedCenter``
+     - Interpolated pixel in the central 3×3 box.
    * - ``COSMIC_RAY``
      - ``CR``
-     - ``pixelFlags_cr`` / ``…crCenter``
-     - Cosmic ray on ≥1 input (interpolated over).
+     - ``pixelFlags_cr``
+     - Cosmic ray on ≥1 input (interpolated over), anywhere in the footprint.
+   * - ``COSMIC_RAY``
+     - ``CR``
+     - ``pixelFlags_crCenter``
+     - Cosmic ray in the central 3×3 box.
    * - ``SATURATED``
      - ``SAT``
-     - ``pixelFlags_saturated`` / ``…saturatedCenter``
+     - ``pixelFlags_saturated``
      - >10% of potential inputs saturated here; implies ``REJECTED``.
-   * - ``DETECTION_EDGE``
-     - ``EDGE``
-     - ``pixelFlags_edge``
-     - **Deprecated on the Object table** — use ``pixelFlags_sensor_edge`` for coadd edges (see note below).
+   * - ``SATURATED``
+     - ``SAT``
+     - ``pixelFlags_saturatedCenter``
+     - Saturation in the central 3×3 box.
    * - ``CLIPPED``
      - ``CLIPPED``
-     - ``pixelFlags_clipped`` / ``…clippedCenter``
+     - ``pixelFlags_clipped``
      - Probable artifact rejected in coaddition; implies ``REJECTED``.
+   * - ``CLIPPED``
+     - ``CLIPPED``
+     - ``pixelFlags_clippedCenter``
+     - Clipping occurred in the central 3×3 box.
    * - ``REJECTED``
      - ``REJECTED``
-     - (no dedicated catalog flag; implies ``CLIPPED``/``INEXACT_PSF``)
-     - An input visit was left out at this pixel due to masking.
+     - (no dedicated catalog flag)
+     - An input visit was left out at this pixel due to masking; implied by ``CLIPPED`` and ``INEXACT_PSF``.
    * - ``INEXACT_PSF``
      - ``INEXACT_PSF``
-     - ``pixelFlags_inexact_psf`` / ``…inexact_psfCenter``
+     - ``pixelFlags_inexact_psf``
      - PSF may be inexact; covers a large area, **not** recommended as a general cut.
+   * - ``INEXACT_PSF``
+     - ``INEXACT_PSF``
+     - ``pixelFlags_inexact_psfCenter``
+     - Inexact PSF in the central 3×3 box.
    * - ``DETECTED``
      - ``DETECTED``
      - (no quality flag; see ``detect_*`` columns)
      - Pixel is part of a detected source footprint.
 
+.. warning::
+
+   **Omitted from the table above: flags deprecated in the Object table.**
+   The ``DETECTION_EDGE`` plane (legacy ``EDGE``) maps to the catalog column ``pixelFlags_edge``, which is deprecated on the coadd Object table.
+   Use ``pixelFlags_sensor_edge`` / ``pixelFlags_sensor_edgeCenter`` for coadd edges instead.
+   ``pixelFlags_edge`` remains valid on the Source, ForcedSource, DiaSource, and ForcedSourceOnDiaObject tables.
+   The same applies to ``pixelFlags_bad``, ``pixelFlags_suspect`` / ``pixelFlags_suspectCenter``, and ``pixelFlags_offimage``.
+
 .. note::
 
-   The Object catalog does provide ``pixelFlags_sensor_edge`` / ``pixelFlags_sensor_edgeCenter`` columns, and these are the recommended edge flag for the Object table (``pixelFlags_edge`` is deprecated there).
-   However, the ``SENSOR_EDGE`` mask plane is **not** present in the EDP2 ``deep_coadd`` (cell coadd) mask schema — it is a non-cell/template-coadd plane — so the image-side provenance of these catalog columns for the cell coadds is not verified here.
+   The ``SENSOR_EDGE`` mask plane is **not** present in the EDP2 ``deep_coadd`` (cell coadd) mask schema — it is a non-cell/template-coadd plane — so the image-side provenance of the ``pixelFlags_sensor_edge`` / ``pixelFlags_sensor_edgeCenter`` catalog columns for the cell coadds is not verified here.
 
 Footprint versus center: flags without a ``Center`` suffix are set if *any* pixel in the source footprint carries the mask bit; ``Center`` flags are set only if a pixel in the central 3×3 box carries it.
 For quality filtering, center flags are usually the more important because they affect the core photometry and shape.
