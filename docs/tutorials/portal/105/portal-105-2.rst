@@ -125,3 +125,24 @@ The "Bias" and "Contrast" parameters can be manually adjusted using the sliders 
     :alt: The colorbar options.
 
     Figure 7: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
+
+The image "stretch" can be changed using the "Stretch drop down" icon that looks like a histogram plot (labeled "B" in Figure 6).
+Reset the colormap to the default ("Reverse Gray Scale").
+Click the stretch drop down to reveal the options as seen in Figure 8.
+
+.. figure:: images/portal-105-2-8.png
+    :name: portal-105-2-8
+    :alt: The stretch options.
+
+    Figure 8: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
+
+Change the stretch to "Z Scale Linear Stretch". Then change it to "Z Scale Asinh Stretch". The results should look like those seen in Figure 9.
+
+.. figure:: images/portal-105-2-9.png
+    :name: portal-105-2-9
+    :alt: Z Scale linear vs. Z Scale Asinh stretch.
+
+    Figure 9: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
+
+By clicking the "Color stretch..." button in the stretch drop down, the stretch parameters and type can be manually controlled using the widget that will appear.
+
