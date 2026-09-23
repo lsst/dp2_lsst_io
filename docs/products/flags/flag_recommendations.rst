@@ -38,7 +38,7 @@ In the snippets below, ``f`` is the band (one of ``ugrizy``); apply the same log
    - Require ``f_inputCount > 0`` in each band used.
    - The Object table is already delivered as the primary set: only inner-patch, deblended child objects are included, so no primary/deduplication flag needs to be (or can be) applied.
    - Replace ``f_psfFlux_flag`` with the failure flag of the flux you actually use (e.g. ``f_cModel_flag`` for CModel fluxes, ``f_free_psfFlux_flag`` for the free/unforced PSF flux — see the note on free versus forced measurements in :doc:`/products/flags/flag_definitions`).
-   - The DP2 Object columns ``pixelFlags_bad``, ``pixelFlags_edge``, and ``pixelFlags_suspect`` are **deprecated** and must not be used as cuts here (see :doc:`/products/flags/flag_definitions`). Use ``pixelFlags_sensor_edgeCenter`` if you need a coadd edge cut.
+   - The DP2 Object columns ``pixelFlags_bad``, ``pixelFlags_edge``, ``pixelFlags_suspect``/``pixelFlags_suspectCenter``, and ``pixelFlags_offimage`` are **deprecated** and must not be used as cuts here (see :doc:`/products/flags/flag_definitions`). Use ``pixelFlags_sensor_edgeCenter`` if you need a coadd edge cut.
 
 **Optional, science-case-dependent cuts.**
 
@@ -48,18 +48,75 @@ In the snippets below, ``f`` is the band (one of ``ugrizy``); apply the same log
    AND f_pixelFlags_sensor_edgeCenter = 0   -- Not near a detector boundary (coadd edge)
    AND f_pixelFlags_interpolated = 0        -- Stricter: no interpolated pixels anywhere in the footprint
 
-Galaxy / star selection (extendedness):
+Galaxy / star selection (extendedness)
+--------------------------------------
+
+DP2 provides three star/galaxy classifiers in the Object table, per band, plus one multi-band variant.
+They differ in what they measure, in whether a companion failure flag exists, and in how meaningful the numeric value is.
+
+.. list-table::
+   :header-rows: 1
+   :widths: 24 12 14 50
+
+   * - Column
+     - Range
+     - Failure flag
+     - Notes
+   * - ``{band}_extendedness``
+     - 0 or 1
+     - ``{band}_extendedness_flag``
+     - PSF-to-CModel flux ratio, thresholded by the pipeline. Already binary, so there is no cutoff for the user to choose.
+   * - ``{band}_sizeExtendedness``
+     - 0 to 1
+     - ``{band}_sizeExtendedness_flag``
+     - Moments-based comparison of the source size to the local PSF. Quasi-probabilistic, so a 0.5 split is a defensible default.
+   * - ``{band}_model_extendedness``, ``griz_model_extendedness``
+     - 0 to 1
+     - *none*
+     - Sersic model flux- and size-based. Most likely of the three to have a finite value, but the values are not probabilities and no failure flag is published.
+
+**Which one to use.**
+``model_extendedness`` is the most broadly usable classifier in DP2: it is the most likely of the three to have a finite value for a given object, and ``griz_model_extendedness`` combines the four bands with the best signal.
+The trade-off is that it ships with **no flag columns**, so the selection has to do the validity check itself.
+
+Selecting galaxies with ``model_extendedness``:
+
+.. code-block:: sql
+
+   AND f_model_extendedness > 0.3
+   AND f_model_extendedness <= 1
+
+and point sources with the complementary cut (``>= 0`` and ``<= 0.3``).
+The upper and lower bounds are not redundant: they double as the validity test, because a non-finite (NaN) value fails any range comparison.
+If you filter client-side after the query instead, apply the equivalent ``numpy.isfinite`` check on the column before thresholding.
+
+Selecting galaxies with ``sizeExtendedness``:
+
+.. code-block:: sql
+
+   AND f_sizeExtendedness > 0.5
+   AND f_sizeExtendedness_flag = 0
+
+Selecting galaxies with the binary ``extendedness``:
 
 .. code-block:: sql
 
    AND f_extendedness = 1       -- Extended source (galaxy); use = 0 for point sources (stars)
    AND f_extendedness_flag = 0  -- Classification valid
 
+.. warning::
+
+   **The cutoff values above carry different weight.**
+   ``sizeExtendedness`` is quasi-probabilistic, so 0.5 is a reasonable, self-explanatory choice.
+   The values of ``model_extendedness`` are more arbitrary, and the 0.3 threshold quoted here is simply the "best" cut found in testing **restricted to the Deep Drilling Fields**.
+   It has not been validated over the rest of the DP2 footprint, at other depths, or against any particular purity/completeness requirement, and the optimal value will move with depth and seeing.
+   Treat 0.3 as a starting point to tune, not as a recommended default.
+
 .. note::
 
-   The ``extendedness`` classifier has not been fully characterized for purity or completeness, and there is no published selection function for these cuts.
+   None of the DP2 star/galaxy classifiers has been fully characterized for purity or completeness, and there is no published selection function for any of these cuts.
    Treat star/galaxy separation as approximate and validate it against your own science requirements.
-   DP2 also provides ``sizeExtendedness`` and a continuous ``model_extendedness`` (per band and for summed ``griz``); consider these as alternatives.
+   ``refExtendedness`` and ``refSizeExtendedness`` give the reference-band values of the first two classifiers if you want a single band-independent classification.
 
 Model photometry and shapes: require the matching general flag when using the quantity, e.g. ``f_cModel_flag = 0`` for CModel fluxes, ``f_kronFlux_flag = 0`` for Kron fluxes, or ``f_hsmShapeRegauss_flag = 0`` for HSM shapes.
 
