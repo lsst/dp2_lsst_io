@@ -2,7 +2,7 @@
 Solar System processing (SSP)
 #############################
 
-The DP2 Solar System processing and data products concentrate on associations between Rubin difference image detections (``DiaSources``) and previously known small bodies, and do _not_ include a blind moving object search or catalogs derived from Rubin observations alone. For more information, see :doc:`Solar System source detection and association <ss_association>`.
+The DP2 Solar System processing and data products concentrate on associations between Rubin difference image detections (``DiaSources``) and previously known small bodies, and do *not* include a blind moving object search or catalogs derived from Rubin observations alone. For more information, see :doc:`Solar System source detection and association <ss_association>`.
 
 Rubin searched for and discovered new Solar System objects during a period of pre-DP2 :doc:`small body tracklet linking and orbit fitting <ss_linking>`.
 That campaign preceded the official DP2 release processing, so that objects discovered by Rubin and reported to the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC) before the association cutoff for DP2 processing occurred, were able to be included in the DP2 known/associated object data products.

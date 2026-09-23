@@ -31,4 +31,4 @@ It connects an object's permanent number to its primary provisional designation 
 The upstream definitions and field semantics are documented in the `MPC replicated-tables schema <https://docs.minorplanetcenter.net/mpc-ops-docs/data-and-services/replicated-tables-schema/>`_.
 
 This table is useful for translating between permanent numbers and the provisional designations used by the Rubin-derived Solar System tables.
-It was _not_ computed from Rubin DP2 observations.
+It was *not* computed from Rubin DP2 observations.

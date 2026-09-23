@@ -31,6 +31,6 @@ It maps primary and secondary provisional designations that refer to the same ph
 The upstream definitions and field semantics are documented in the `MPC replicated-tables schema <https://docs.minorplanetcenter.net/mpc-ops-docs/data-and-services/replicated-tables-schema/>`_.
 
 This table is useful for resolving historical or alternate designations before joining to the Rubin-derived Solar System tables.
-It was _not_ computed from Rubin DP2 observations.
+It was *not* computed from Rubin DP2 observations.
 
 Some :doc:`known issues </overview/known_issues>` are present in the MPC-derived data contained in the DP2 ``current_identifications`` table, including missing or inconsistent information.

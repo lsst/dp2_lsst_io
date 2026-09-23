@@ -34,7 +34,7 @@ The `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC) is the single 
 The MPC is responsible for the identification, designation, and orbit computation for all of these objects.
 
 The ``mpc_orbits`` table is a snapshot of the `MPC PostgreSQL orbit table <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_.
-It contains MPC orbital elements, photometric parameters, fit metadata, and uncertainties; it does _not_ contain Rubin difference-image detections and was _not_ derived by fitting Rubin DP2 observations.
+It contains MPC orbital elements, photometric parameters, fit metadata, and uncertainties; it does *not* contain Rubin difference-image detections and was *not* derived by fitting Rubin DP2 observations.
 The upstream definitions and field semantics are documented in the `MPC replicated-tables schema <https://docs.minorplanetcenter.net/mpc-ops-docs/data-and-services/replicated-tables-schema/>`_.
 
 For end-user convenience, DP2 adds a ``designation`` column containing the unpacked primary provisional designation.
@@ -48,7 +48,7 @@ Some :doc:`known issues </overview/known_issues>` are present in the MPC-derived
 Processing
 ----------
 
-The table was adopted from the MPC database; its contents were _not_ recomputed by DP2 processing.
+The table was adopted from the MPC database; its contents were *not* recomputed by DP2 processing.
 
 Tutorials
 ---------
