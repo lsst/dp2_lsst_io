@@ -202,3 +202,5 @@ The objects from the search result will now be highlighted as in Figure 13 (the 
     :alt: Cone search results overlaid on image.
 
     Figure 13: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
+
+Note: the crop tool that appears when a selection is made is not currently functional. One should use the cutout tool instead to get a cutout image. Additionally, the zoom tool in that menu will zoom to the selected area, but then make the select tool inactive. If you want to perform additional operations on the selected area, you will need to select it again.
