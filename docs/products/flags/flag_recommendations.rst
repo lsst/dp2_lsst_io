@@ -109,11 +109,9 @@ Selecting galaxies with the binary ``extendedness``:
 
 .. warning::
 
-   **The cutoff values above carry different weight.**
-   ``sizeExtendedness`` is quasi-probabilistic, so 0.5 is a reasonable, self-explanatory choice.
-   The values of ``model_extendedness`` are more arbitrary, and the 0.3 threshold quoted here is simply the "best" cut found in testing **restricted to the Deep Drilling Fields**.
-   It has not been validated over the rest of the DP2 footprint, at other depths, or against any particular purity/completeness requirement, and the optimal value will move with depth and seeing.
-   Treat 0.3 as a starting point to tune, not as a recommended default.
+   The 0.3 cut on ``model_extendedness`` was only tested in the Deep Drilling Fields.
+   It is not a recommended default, and the best value will change with depth and seeing.
+   Check the distribution in your own field and pick a cut that suits your science case.
 
 .. note::
 
