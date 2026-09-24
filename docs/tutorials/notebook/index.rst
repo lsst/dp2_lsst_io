@@ -277,6 +277,7 @@ Longer tutorials with a learning objective of executing an end-to-end scientific
 
     308/notebook-308-01.rst
     308/notebook-308-02.rst
+    308/notebook-308-08.rst
 
 309. Low surface brightness
 ---------------------------
