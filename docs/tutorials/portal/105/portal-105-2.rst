@@ -1,8 +1,8 @@
 .. _portal-105-2:
 
-#################################################
-105.2. Use the Firefly image viewer (Coming Soon)
-#################################################
+###################################
+105.2. Use the Firefly image viewer
+###################################
 
 For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
