@@ -366,6 +366,14 @@ These are a subset of the visits listed in ``bad.ecsv`` for LSSTCam in `excluded
     2025071800151, 2025071800299, 2025071800360, 2025071800368, 2025071800382,
     2025071800445, 2025071800518, 2025072000352, 2025072200096, 2025072200207]
 
+.. _issues_baddetectors:
+
+There are 9 LSST Camera detectors that were excluded from the DP2, including 8 heavily vignetted corner detectors (detectors 0, 20, 27, 65, 123, 161, 168, 188) and 1 non-operable detector (detector 122). An additional 4 detectors (24, 120, 121, 172) are excluded from data taken before July 3, 2025 due to a lack of calibration data. 
+
+.. code-block::
+
+    bad_detector_list = [0, 20, 27, 65, 123, 161, 168, 188, 122]
+
 .. _issues_forcephotometry:
 
 Force Photometry
