@@ -99,7 +99,7 @@ Interact with image data in the results interface (Firefly).
     105/portal-105-3.rst
     105/portal-105-4.rst
     105/portal-105-5.rst
-
+    105/portal-105-x.rst
 
 106. User-uploaded tables
 -------------------------
