@@ -128,3 +128,15 @@ Longer tutorials demonstrating an end-to-end scientific workflow.
 Explore the observations included in the DP2 dataset.
 
 ``Coming soon.``
+
+
+304. Cosmology
+--------------
+
+Explore galaxy clusters for cosmology.
+
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    304/portal-304-1.rst
