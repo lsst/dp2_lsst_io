@@ -85,7 +85,7 @@ Close the statistics window.
 
 **4. Search for catalog objects in the selected region.**
 
-To search for catalog objects in the selected region, click the "Search this area" button that looks like a microscope (labeled "C" in Figure 10).
+To search for catalog objects in the selected region, click the "Search this area" button that looks like a microscope (labeled "C" in Figure 2).
 In the drop-down, select "Search (cone) using TAP..." to search a DP2 table with the radius enclosed by the box.
 
 Clicking the search button will take you to the Catalog search view of the Portal, showing by default the Object table (others can be selected using the dropdown menus, as demonstrated in the 100-level Portal tutorials).
@@ -93,22 +93,22 @@ Keep all of the default column selections and click Search (at the lower left).
 
 A catalog query results table will appear. In most cases, the display will show a lightcurve of the first object in the results table, as seen in Figure 12 (your display may show something slightly different, and have a different layout depending on what you have selected earlier).
 
-.. figure:: images/portal-105-2-12.png
-    :name: portal-105-2-12
+.. figure:: images/portal-105-x-4.png
+    :name: portal-105-x-4
     :alt: Cone search results.
 
-    Figure 12: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
+    Figure 4: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
 
 To return to a view of the HiPS map with the search results overlaid, click the "Coverage" button at the upper left.
 
 To instead overlay the retrieved objects on the image from your previous search, change tabs in the Tables window to the one that says "ivoa.ObsCore - data". (You may also have to click on the "Data Product: ..." button in the image display window on the left.)
 
-The objects from the search result will now be highlighted as in Figure 13 (the search results are the small magenta markers).
+The objects from the search result will now be highlighted as in Figure 5 (the search results are the small magenta markers).
 
-.. figure:: images/portal-105-2-13.png
-    :name: portal-105-2-13
+.. figure:: images/portal-105-x-5.png
+    :name: portal-105-x-5
     :alt: Cone search results overlaid on image.
 
-    Figure 13: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
+    Figure 5: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
 
 Note: the crop tool that appears when a selection is made is not currently functional. One should use the cutout tool instead to get a cutout image. Additionally, the zoom tool in that menu will zoom to the selected area, but then make the select tool inactive. If you want to perform additional operations on the selected area, you will need to select it again.
