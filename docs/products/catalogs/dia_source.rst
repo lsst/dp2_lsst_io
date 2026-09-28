@@ -26,10 +26,10 @@ TAP
 Butler
 ------
 
-* |source_doi|
+* |dia_source_doi|
 * Dataset type: ('dia_source', {**skymap**, **tract**}, ArrowAstropy)
 * Format: Parquet
-* Number of Butler datasets: |source_butler_count|
+* Number of Butler datasets: |dia_source_butler_count|
 
 Description
 ===========
