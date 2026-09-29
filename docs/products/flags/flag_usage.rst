@@ -12,7 +12,7 @@ The correct application of flags depends on the science analysis.
 
 **General advice:**
 
-* **It is recommended to test queries with and without flag cuts to understand the selection effects and how they might impact the science analysis.**
+* **It is recommended to test queries with and without flag cuts to understand the selection effects and how they impact the science analysis.**
 * When a measured quantity is used in an analysis, check also that the quantity's general failure flag is false. For example, when using ``r_cModelFlux``, check that the value of ``r_cModel_flag`` is false (or 0). In the snippets below, ``{band}`` stands for one of ``u``, ``g``, ``r``, ``i``, ``z``, ``y``.
 
 
@@ -29,7 +29,7 @@ Object table
 
 
 **Selection effects:**
-For a spatial query on the Object table near the edge of the COSMOS field, the typical example below reduces by :math:`\sim10`% the number of objects returned; with the two additional examples, the total reduction is :math:`\sim23`%.
+For a spatial query on the Object table near the edge of the COSMOS field, the typical example below reduces by :math:`\sim`10% the number of objects returned; with the two additional examples, the total reduction is :math:`\sim`23%.
 The fraction of objects cut will change depending on the observations obtained in the region being queried, and the filters included.
 It is important to consider which flag cuts are necessary for a given science analysis, and to characterize the selection effects.
 
@@ -112,9 +112,13 @@ Extendedness
 Source table
 ============
 
-Guidance for single-epoch visit detections.
+**Guidance:**
 
-**Minimal recommended set.**
+* Unlike the Object table, ``pixelFlags_bad``, ``pixelFlags_edge``, and ``pixelFlags_suspect`` are valid in the Source table.
+* When selecting or excluding calibration stars, use the ``calib_*`` flags (see :ref:`calibration-flags`).
+
+
+Typical example:
 
 .. code-block:: sql
 
@@ -123,7 +127,8 @@ Guidance for single-epoch visit detections.
      AND pixelFlags_saturatedCenter = 0      -- No saturation at center
      AND pixelFlags_interpolatedCenter = 0   -- No interpolation at center
 
-**Optional, science-case-dependent cuts.**
+
+Additional examples:
 
 .. code-block:: sql
 
@@ -132,18 +137,17 @@ Guidance for single-epoch visit detections.
    AND pixelFlags_bad = 0            -- No known-bad pixels in footprint
    AND pixelFlags_suspectCenter = 0  -- No suspect pixels at center
 
-Unlike the Object table, ``pixelFlags_bad``, ``pixelFlags_edge``, and ``pixelFlags_suspect`` are valid in the Source table.
-If you are selecting or excluding calibration stars, use the ``calib_*`` flags (see :ref:`calibration-flags`).
+
 
 .. _flags-forced-source:
 
 ForcedSource table
 ==================
 
-Guidance for forced photometry at Object positions on single-epoch images.
-When building light curves, apply these flags per measurement (row) so that poor epochs are dropped while good epochs for the same object are kept.
+**Guidance:**
+* When building light curves, apply these flags per measurement (row) so that poor epochs are dropped while good epochs for the same object are kept.
 
-**Minimal recommended set (science-image flux).**
+Typical example:
 
 .. code-block:: sql
 
@@ -151,26 +155,24 @@ When building light curves, apply these flags per measurement (row) so that poor
      AND invalidPsfFlag = 0                 -- Valid PSF model
      AND pixelFlags_saturatedCenter = 0     -- No saturation at the forced position
 
-**If using the difference-image flux, add:**
+
+If using the difference-image flux, add:
 
 .. code-block:: sql
 
    AND psfDiffFlux_flag = 0               -- Difference-image flux succeeded
    AND diff_PixelFlags_nodataCenter = 0   -- Difference image has coverage at this position
 
+
 .. _flags-dia-source:
 
 DiaSource table
 ===============
 
-Guidance for transient/variable detections on difference images.
+**Guidance:**
+* No cut on the ``reliability`` column was applied before writing the DiaSource catalog (:ref:`dia-reliability` is a machine-learned real/bogus score).
 
-.. important::
-
-   No real/bogus reliability cut was applied when building the DP2 DiaSource catalog.
-   For a higher-purity transient sample, apply a minimum threshold on the ``reliability`` column in addition to the flags below; the appropriate threshold is science-case dependent.
-
-**Minimal recommended set.**
+Typical example:
 
 .. code-block:: sql
 
@@ -178,7 +180,8 @@ Guidance for transient/variable detections on difference images.
      AND psfFlux_flag = 0                -- Difference-image flux succeeded
      AND pixelFlags_saturatedCenter = 0  -- No saturation at center
 
-**Optional, science-case-dependent cuts.**
+
+Additional examples:
 
 .. code-block:: sql
 
@@ -187,15 +190,16 @@ Guidance for transient/variable detections on difference images.
    AND glint_trail = 0     -- Exclude probable orbital-debris glint trails
    AND isNegative = 0      -- Exclude flux-decrease detections (keep them for fading/disappearing sources)
 
+
 .. _flags-dia-forced:
 
 ForcedSourceOnDiaObject table
 =============================
 
-Guidance for forced photometry at DiaObject positions.
-As with ForcedSource, filter per measurement (row) to remove bad epochs while keeping good ones.
+**Guidance:**
+* As with ForcedSource, filter per measurement (row) to remove bad epochs while keeping good ones.
 
-**Minimal recommended set (difference-image flux).**
+Typical example when using difference-image flux:
 
 .. code-block:: sql
 
@@ -204,7 +208,7 @@ As with ForcedSource, filter per measurement (row) to remove bad epochs while ke
      AND invalidPsfFlag = 0                -- Valid PSF model
      AND pixelFlags_saturatedCenter = 0    -- No saturation at position
 
-**If using the science-image flux instead:**
+If using the science-image flux instead:
 
 .. code-block:: sql
 
