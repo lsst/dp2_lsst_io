@@ -13,9 +13,7 @@ The correct application of flags depends on the science analysis.
 **General advice:**
 
 * **It is recommended to test queries with and without flag cuts to understand the selection effects and how they might impact the science analysis.**
-* When a measured quantity is used in an analysis, check also that the quantity's general failure flag is false.
-For example, when using ``r_cModelFlux``, check that the value of ``r_cModel_flag`` is false (or 0).
-In the snippets below, ``{band}`` stands for one of ``u``, ``g``, ``r``, ``i``, ``z``, ``y``.
+* When a measured quantity is used in an analysis, check also that the quantity's general failure flag is false. For example, when using ``r_cModelFlux``, check that the value of ``r_cModel_flag`` is false (or 0). In the snippets below, ``{band}`` stands for one of ``u``, ``g``, ``r``, ``i``, ``z``, ``y``.
 
 
 .. _flags-object:
@@ -27,8 +25,7 @@ Object table
 
 * Use the ``{band}`` flag for each band that is necessary for the analysis.
 * In the typical example below, replace ``{band}_psfFlux_flag`` with the failure flag for the flux type used in the analysis (e.g., ``{band}_cModel_flag``, ``{band}_free_psfFlux_flag``).
-* For model photometry and shapes, require the matching general flag when using the quantity.
-E.g. ``{band}_cModel_flag = 0`` for CModel fluxes, ``{band}_kronFlux_flag = 0`` for Kron fluxes, or ``{band}_hsmShapeRegauss_flag = 0`` for HSM shapes.
+* For model photometry and shapes, require the matching general flag when using the quantity, e.g., ``{band}_cModel_flag = 0`` for CModel fluxes, ``{band}_kronFlux_flag = 0`` for Kron fluxes, or ``{band}_hsmShapeRegauss_flag = 0`` for HSM shapes.
 
 
 **Selection effects:**
@@ -64,17 +61,13 @@ Extendedness
 
 **Key points:**
 
-* An "extendedness" parameter provides a measure of whether an astrophysical sources is point-like or extended.
-These parameters can help to distinguish between point-like stars and extended galaxies, but keep in mind that high-redshift objects can also appear point-like.
-* There are three measures of extendedness in the Object table, per band, plus one multi-band variant.
-Each differ with respect to what is measured, whether a companion failure flag exists, and how meaningful the numeric value is.
+* An "extendedness" parameter provides a measure of whether an astrophysical sources is point-like or extended. These parameters can help to distinguish between point-like stars and extended galaxies, but keep in mind that high-redshift objects can also appear point-like.
+* There are three measures of extendedness in the Object table, per band, plus one multi-band variant. Each differ with respect to what is measured, whether a companion failure flag exists, and how meaningful the numeric value is.
 
 **Guidance:**
 
-* The extendedness parameters have not been characterized or validated as a star/galaxy separation parameter, and performance will vary across the DP2 fields due to their varying image depth and image quality.
-Any selection based on the extendedness parameters should be tested and validated for the science analysis.
-* The ``model_extendedness`` parameter is the most likely to have a finite value for a given object, and the ``griz_model_extendedness`` combines the four bands with the best signal.
-However, the drawback is that there is no associated flag column and the ``griz_model_extendedness`` tends to classify everything as a galaxy fainter than approximately ``i`` = 24 mag (see the discussion under :ref:`detection-measurement`).
+* The extendedness parameters have not been characterized or validated as a star/galaxy separation parameter, and performance will vary across the DP2 fields due to their varying image depth and image quality. Any selection based on the extendedness parameters should be tested and validated for the science analysis.
+* The ``model_extendedness`` parameter is the most likely to have a finite value for a given object, and the ``griz_model_extendedness`` combines the four bands with the best signal. However, the drawback is that there is no associated flag column and the ``griz_model_extendedness`` tends to classify everything as a galaxy fainter than approximately ``i`` = 24 mag (see the discussion under :ref:`detection-measurement`).
 * See also the :doc:`tutorial notebook </tutorials/notebook/index>` on extendedness.
 
 
