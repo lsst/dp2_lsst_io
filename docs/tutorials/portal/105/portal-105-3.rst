@@ -8,7 +8,7 @@ For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
 **Data Release:** DP2
 
-**Last verified to run:** 2026-09-11
+**Last verified to run:** 2026-09-29
 
 **Learning objective:** Add overlays to images displayed in Firefly.
 
@@ -19,7 +19,7 @@ Please consider acknowledging them if this tutorial is used for the preparation 
 DOI: `10.11578/rubin/dc.20250909.20 <https://doi.org/10.11578/rubin/dc.20250909.20>`_
 
 
-**Get Support:** Everyone is encouraged to ask questions or raise issues in the `Support Category <https://community.lsst.org/c/support/6>`_ of the Rubin Community Forum.
+**Get Support:** Everyone is encouraged to ask questions or raise issues in the `Support Category <https://www.rubin.community/c/support/6>`_ of the Rubin Community Forum.
 Rubin staff will respond to all questions posted there.
 
 ----
