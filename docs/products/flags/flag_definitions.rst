@@ -29,12 +29,13 @@ Flags with a ``Center`` suffix indicate the issue affects the object's central f
 For DP2, the Object table flags ``pixelFlags_sensor_edge`` and ``pixelFlags_sensor_edgeCenter`` still exist but they are deprecated and always set to false because the deep coadd images are :ref:`images-new-cell-based` which are not affected by the sensor edges of the input visit images.
 Other deprecated flags include: ``pixelFlags_bad``, ``pixelFlags_edge``, ``pixelFlags_suspect``, ``pixelFlags_suspectCenter``, and ``pixelFlags_offimage``.
 
+**\*Table legend:**  O, Object; S, Source; FS, ForcedSource; DS, DiaSource; DFS, ForcedSourceOnDiaObject
 
 .. list-table::
    :header-rows: 1
    :widths: 25 60
 
-   * - Flag name and tables[\*]
+   * - Flag name and tables\*
      - Meaning when set to 1
    * - | ``pixelFlags_saturated``
        | O, S, FS, DS, DFS
@@ -92,160 +93,97 @@ Other deprecated flags include: ``pixelFlags_bad``, ``pixelFlags_edge``, ``pixel
      - Synthetic-source injection overlaps center in the template image.
 
 
-.. [\*] Table legend: O, Object; S, Source; FS, ForcedSource; DS, DiaSource; DFS, ForcedSourceOnDiaObject
-
-
-.. list-table::
-   :header-rows: 1
-   :widths: 25 15 60
-
-   * - Flag name
-     - Tables
-     - Meaning when set to 1
-   * - ``pixelFlags_saturated``
-     - Object, Source, ForcedSource, DiaSource, ForcedSourceOnDiaObject
-     - Saturated pixels in footprint; photometry unreliable.
-   * - ``pixelFlags_saturatedCenter``
-     - Object, Source, ForcedSource, DiaSource, ForcedSourceOnDiaObject
-     - Saturated pixel in central 3x3 footprint; critical quality issue.
-   * - ``pixelFlags_cr``
-     - Object, Source, ForcedSource, DiaSource, ForcedSourceOnDiaObject
-     - Cosmic ray detected and interpolated in footprint.
-   * - ``pixelFlags_crCenter``
-     - Object, Source, ForcedSource, DiaSource, ForcedSourceOnDiaObject
-     - Cosmic ray at center.
-   * - ``pixelFlags_interpolated``
-     - Object, Source, ForcedSource, DiaSource, ForcedSourceOnDiaObject
-     - Interpolated pixels in footprint (from CRs, defects, saturation).
-   * - ``pixelFlags_interpolatedCenter``
-     - Object, Source, ForcedSource, DiaSource, ForcedSourceOnDiaObject
-     - Interpolated pixel at center; affects core photometry and shapes.
-   * - ``pixelFlags_clipped``
-     - Object
-     - Artifact rejection during coaddition excluded input pixels.
-   * - ``pixelFlags_clippedCenter``
-     - Object
-     - Clipping occurred at center.
-   * - ``pixelFlags_inexact_psf``
-     - Object
-     - Coadd PSF model is discontinuous in footprint, typically at cell or patch boundaries or where input artifacts were rejected.
-   * - ``pixelFlags_inexact_psfCenter``
-     - Object
-     - Coadd PSF model is discontinuous at center. Covers a large area; not recommended as a general cut.
-   * - ``pixelFlags_nodata``
-     - Object, Source, ForcedSource, DiaSource, ForcedSourceOnDiaObject
-     - No pixel data available (off coverage area).
-   * - ``pixelFlags_nodataCenter``
-     - DiaSource
-     - No pixel data available at center.
-   * - ``pixelFlags_streak``
-     - DiaSource
-     - Masked streak (e.g., satellite trail) overlaps footprint.
-   * - ``pixelFlags_streakCenter``
-     - DiaSource
-     - Masked streak overlaps center.
-   * - ``pixelFlags_injected``
-     - DiaSource
-     - Synthetic-source injection overlaps footprint in the science image. Relevant only for injection test datasets.
-   * - ``pixelFlags_injectedCenter``
-     - DiaSource
-     - Synthetic-source injection overlaps center in the science image.
-   * - ``pixelFlags_injected_template``
-     - DiaSource
-     - Synthetic-source injection overlaps footprint in the template image.
-   * - ``pixelFlags_injected_templateCenter``
-     - DiaSource
-     - Synthetic-source injection overlaps center in the template image.
-
 
 Measurement failure flags
 =========================
 
-Pattern: ``{band}_{algorithm}_flag`` (Object) or ``{algorithm}_flag`` (Source-level tables).
+**Pattern:**
+``{band}_{algorithm}_flag`` (object table) or ``{algorithm}_flag`` (source tables).
 
-Purpose: indicate that a particular measurement algorithm failed or produced unreliable results.
-The general rule is simple: **if you use a measured quantity, require its general failure flag to be 0.** For example, when using ``r_psfFlux``, require ``r_psfFlux_flag = 0``.
+**Purpose:**
+To indicate that a particular measurement algorithm failed or produced unreliable results.
 
-Most algorithms provide both a *general* failure flag (set for any failure) and one or more detailed *subflags* that explain what went wrong (e.g. ``psfFlux_flag_edge``, ``psfFlux_flag_noGoodPixels``).
-The general flag alone is sufficient for filtering; the subflags are diagnostic.
+**Key points:**
+In general, when using a measured quantity for an object or source, check that its general failure flag is false.
+For example, when using ``r_psfFlux``, the value of ``r_psfFlux_flag`` should be false (or 0).
+Most algorithms provide both the general failure flag and one or more diagnostic subflags that explain what went wrong (e.g., ``psfFlux_flag_edge``, ``psfFlux_flag_noGoodPixels``).
+
+**Changes from DP1:**
+In the Object table most fluxes are forced (measured at the reference-band position; e.g., ``{band}_psfFlux``, ``{band}_cModel_*``).
+DP2 also provides free (unforced) variants of these fluxes which are measured independently in each band (e.g., ``{band}_free_psfFlux``, ``{band}_free_cModelFlux``).
+Both options have associated flags, so be sure to apply the flag that matches the type of flux measurement (e.g., use ``{band}_psfFlux_flag`` with ``{band}_psfFlux``, and ``{band}_free_psfFlux_flag`` iwth ``{band}_free_psfFlux``).
+
 
 .. list-table::
    :header-rows: 1
-   :widths: 30 30 40
+   :widths: 25 60
 
-   * - Measurement flag
+   * - Flag name and tables\*
      - Tables
      - Meaning when set to 1
-   * - ``{band}_psfFlux_flag``
+   * - | ``{band}_psfFlux_flag``
      - Object, Source, ForcedSource, ForcedSourceOnDiaObject
      - PSF flux measurement failed; do not use the PSF flux.
-   * - ``{band}_cModel_flag``
-     - Object
+   * - | ``{band}_cModel_flag``
+       | O
      - CModel (galaxy model) fit failed; do not use the model fluxes.
-   * - ``{band}_kronFlux_flag``
-     - Object
+   * - | ``{band}_kronFlux_flag``
+       | O
      - Kron aperture flux failed (e.g. bad radius, near edge).
-   * - ``{band}_gaapFlux_flag``
-     - Object
+   * - | ``{band}_gaapFlux_flag``
+       | O
      - GAaP (Gaussian Aperture and PSF) photometry failed.
-   * - ``{band}_apNNFlux_flag``
-     - Object, Source
+   * - | ``{band}_apNNFlux_flag``
+       | O, S
      - Aperture flux in the ``NN``-pixel aperture failed (e.g. ``ap12Flux_flag``).
-   * - ``centroid_flag``
-     - Source, DiaSource
+   * - | ``centroid_flag``
+       | S, DS
      - Centroid algorithm failed; do not trust the position.
-   * - ``coord_flag``
-     - Object
+   * - | ``coord_flag``
+       | O
      - General reference-band centroid/coordinate failure.
-   * - ``shape_flag``
-     - Object, DiaSource
+   * - | ``shape_flag``
+       | O, DS
      - Shape (second-moments) measurement failed.
-   * - ``{band}_extendedness_flag``
-     - Object
+   * - | ``{band}_extendedness_flag``
+       | O
      - Flux-ratio star/galaxy classifier failed; ``extendedness`` unreliable.
-   * - ``{band}_sizeExtendedness_flag``
-     - Object
+   * - | ``{band}_sizeExtendedness_flag``
+       | O
      - Moments-based star/galaxy classifier failed. Note that the third classifier, ``{band}_model_extendedness`` (and ``griz_model_extendedness``), has **no** corresponding failure flag; see :ref:`flags-object`.
-   * - ``{band}_hsmShapeRegauss_flag``
-     - Object
+   * - | ``{band}_hsmShapeRegauss_flag``
+       | O
      - HSM Regaussianization shape measurement failed.
-   * - ``{band}_blendedness_flag``
-     - Object, Source
+   * - | ``{band}_blendedness_flag``
+       | O, S
      - Blendedness measurement failed.
-   * - ``sersic_no_data_flag``
-     - Object
+   * - | ``sersic_no_data_flag``
+       | O
      - Multi-band Sersic model fit had no data. New in DP2.
-   * - ``sersic_unknown_flag``
-     - Object
+   * - | ``sersic_unknown_flag``
+       | O
      - Multi-band Sersic model fit failed for an unspecified reason. New in DP2.
-   * - ``exponential_no_data_flag``
-     - Object
+   * - | ``exponential_no_data_flag``
+       | O
      - Multi-band exponential model fit had no data. New in DP2.
-   * - ``exponential_unknown_flag``
-     - Object
+   * - | ``exponential_unknown_flag``
+       | O
      - Multi-band exponential model fit failed for an unspecified reason. New in DP2.
-   * - ``{band}_moments_flag``
-     - Object
+   * - | ``{band}_moments_flag``
+       | O
      - Higher-order moments measurement failed. New in DP2.
-   * - ``{band}_moments_psf_flag``
-     - Object
+   * - | ``{band}_moments_psf_flag``
+       | O
      - Higher-order moments of the PSF model failed. New in DP2.
-   * - ``{band}_moments_psf_debiased_flag``
-     - Object
+   * - | ``{band}_moments_psf_debiased_flag``
+       | O
      - Debiased PSF moments measurement failed. New in DP2.
-   * - ``{band}_psfModel_TwoGaussian_unknown_flag``
-     - Object
+   * - | ``{band}_psfModel_TwoGaussian_unknown_flag``
+       | O
      - Two-Gaussian PSF model fit failed for an unspecified reason. New in DP2.
-   * - ``{band}_psfModel_TwoGaussian_no_inputs_flag``
-     - Object
+   * - | ``{band}_psfModel_TwoGaussian_no_inputs_flag``
+       | O
      - Two-Gaussian PSF model fit had no inputs. New in DP2.
-
-.. note::
-
-   **Free versus forced measurements.**
-   In the Object table most fluxes (e.g. ``{band}_psfFlux``, ``{band}_cModel_*``) are **forced**: they are measured at the reference-band position and shape so that colors are consistent across bands.
-   DP2 also provides **free** (unforced) variants — ``{band}_free_psfFlux`` / ``{band}_free_psfFlux_flag`` and ``{band}_free_cModelFlux`` / ``{band}_free_cModelFlux_flag`` — which are measured independently in each band.
-   When filtering, apply the flag that matches the flux you use: use ``{band}_psfFlux_flag`` with the forced flux and ``{band}_free_psfFlux_flag`` with the free flux.
 
 
 Difference image analysis (DIA) flags
