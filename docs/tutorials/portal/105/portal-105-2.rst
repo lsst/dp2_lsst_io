@@ -8,7 +8,7 @@ For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
 **Data Release:** DP2
 
-**Last verified to run:** 2026-09-17
+**Last verified to run:** 2026-09-29
 
 **Learning objective:** Use the components of the Firefly image viewer.
 
@@ -65,7 +65,7 @@ The coadd image planes are:
 
 - IMAGE (HDU #1) -- the deep coadd image.
 - MASK (HDU #2) -- the mask plane showing pixels that have been masked for various reasons.
-- VARIANCE (HDU #3) -- the variance plane corresponding to the pixel variance (in nJy<sup>2</sup>).
+- VARIANCE (HDU #3) -- the variance plane corresponding to the pixel variance (in nJy\ :sup:`2`).
 - MASK_FRACTION (HDU #4) -- the fraction of input visit images that were masked.
 - NOISE_REALIZATION (HDU #5) -- a noise realization to be used for shear measurements.
 - BACKGROUND/FIELDS/PRETTY/DATA (HDU #10) -- the difference between the deep coadd background and the "pretty coadd" background. Restoring this will roughly reproduce the "pretty coadds" that are used in the HiPS maps.
@@ -83,15 +83,15 @@ The result should appear as in Figure 4.
 
 .. figure:: images/portal-105-2-3.png
     :name: portal-105-2-3
-    :alt: The buttons to cycle through image planes.
+    :alt: The buttons in the Tools drop down menu, including labeled buttons for image rotation, setting North to be up, flipping the image in the X direction, and restoring the display defaults.
 
-    Figure 3: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
+    Figure 3: The Tools drop-down menu. Labeled buttons are tools to (A) rotate the image by a specified angle, (B) rotate the image so that North is up, (C) flip the image across the Y axis, and (D) restore the display to the defaults.
 
 .. figure:: images/portal-105-2-4.png
     :name: portal-105-2-4
-    :alt: The buttons to cycle through image planes.
+    :alt: An image rotated by 135 degrees, with the image rotation tool interface shown.
 
-    Figure 3: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
+    Figure 4: A deep coadd image that has been rotated to an angle of 135 degrees East of North, as can be seen in the inset interface to the image rotation tool.
 
 To restore the image to its original orientation with North up and East to the left, click the button with an up arrow pointing to a letter "N" (labeled "B" in Figure 3).
 
@@ -100,9 +100,9 @@ Now click on the "flip" button (labeled "C" in Figure 3) to flip the image in th
 
 .. figure:: images/portal-105-2-5.png
     :name: portal-105-2-5
-    :alt: The buttons to cycle through image planes.
+    :alt: A deep coadd image that has been flipped in the X direction so that East now points to the right.
 
-    Figure 3: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
+    Figure 5: A deep coadd image that has been flipped in the X direction. The compass at upper left shows that East now points to the right, whereas the default display shows East to the left.
 
 To return to the original view, click the "Restore to the defaults" button in the Tools menu (labeled "D" in Figure 3).
 
@@ -119,13 +119,13 @@ The "Bias" and "Contrast" parameters can be manually adjusted using the sliders 
     :name: portal-105-2-6
     :alt: The buttons to access dropdown menus for color and image scaling.
 
-    Figure 6: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
+    Figure 6: The buttons to access various tools menus. The drop-down menu for selecting color maps is labeled "A", and the menu to control the image stretch is labeled "B".
 
 .. figure:: images/portal-105-2-7.png
     :name: portal-105-2-7
-    :alt: The colorbar options.
+    :alt: The menu showing various colorbar options. The "plasma" colormap is selected, as can be seen by the image in the backdrop, which has a mostly blue and purple background with astronomical sources in orange/red.
 
-    Figure 7: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
+    Figure 7: The Color drop-down menu, showing the various colormaps that are available. The "plasma" colormap is selected, and the underlying image is displayed with that colormap.
 
 The image "stretch" can be changed using the "Stretch drop down" icon that looks like a histogram plot (labeled "B" in Figure 6).
 Reset the colormap to the default ("Reverse Gray Scale").
