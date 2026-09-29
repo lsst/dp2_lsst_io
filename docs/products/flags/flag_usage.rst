@@ -9,10 +9,11 @@ The flag use examples below include only a small set of flags that apply to most
 **Warning:**
 These examples are not recipes for a "clean" sample (i.e., pure or complete).
 The correct application of flags depends on the science analysis.
-It is recommended that users test queries with and without flag cuts, to understand the selection effects and how they might impact the science analysis.
 
 **General advice:**
-When a measured quantity is used in an analysis, check also that the quantity's general failure flag is false.
+
+* **It is recommended to test queries with and without flag cuts to understand the selection effects and how they might impact the science analysis.**
+* When a measured quantity is used in an analysis, check also that the quantity's general failure flag is false.
 For example, when using ``r_cModelFlux``, check that the value of ``r_cModel_flag`` is false (or 0).
 In the snippets below, ``{band}`` stands for one of ``u``, ``g``, ``r``, ``i``, ``z``, ``y``.
 
@@ -22,15 +23,19 @@ In the snippets below, ``{band}`` stands for one of ``u``, ``g``, ``r``, ``i``, 
 Object table
 ============
 
-**Key points:**
+**Guidance:**
 
 * Use the ``{band}`` flag for each band that is necessary for the analysis.
-* Replace ``{band}_psfFlux_flag`` with the failure flag for the flux type used in the analysis (e.g., ``{band}_cModel_flag``, ``{band}_free_psfFlux_flag``).
+* In the typical example below, replace ``{band}_psfFlux_flag`` with the failure flag for the flux type used in the analysis (e.g., ``{band}_cModel_flag``, ``{band}_free_psfFlux_flag``).
+* For model photometry and shapes, require the matching general flag when using the quantity.
+E.g. ``{band}_cModel_flag = 0`` for CModel fluxes, ``{band}_kronFlux_flag = 0`` for Kron fluxes, or ``{band}_hsmShapeRegauss_flag = 0`` for HSM shapes.
 
-**Advisory:**
-For a spatial query on the Object table near the edge of the COSMOS field, the typical example below reduces by :math:`\sim10%` the number of objects returned; with the two additional examples, the total reduction is :math:`\sim23%`.
+
+**Selection effects:**
+For a spatial query on the Object table near the edge of the COSMOS field, the typical example below reduces by :math:`\sim10`% the number of objects returned; with the two additional examples, the total reduction is :math:`\sim23`%.
 The fraction of objects cut will change depending on the observations obtained in the region being queried, and the filters included.
 It is important to consider which flag cuts are necessary for a given science analysis, and to characterize the selection effects.
+
 
 Typical example:
 
@@ -54,12 +59,23 @@ Additional examples:
 
 
 
-Galaxy / star selection (extendedness)
---------------------------------------
+Extendedness
+------------
 
-DP2 provides three star/galaxy classifiers in the Object table, per band, plus one multi-band variant.
-They differ in what they measure, in whether a companion failure flag exists, and in how meaningful the numeric value is.
+**Key points:**
 
+* An "extendedness" parameter provides a measure of whether an astrophysical sources is point-like or extended.
+These parameters can help to distinguish between point-like stars and extended galaxies, but keep in mind that high-redshift objects can also appear point-like.
+* There are three measures of extendedness in the Object table, per band, plus one multi-band variant.
+Each differ with respect to what is measured, whether a companion failure flag exists, and how meaningful the numeric value is.
+
+**Guidance:**
+
+* The extendedness parameters have not been characterized or validated as a star/galaxy separation parameter, and performance will vary across the DP2 fields due to their varying image depth and image quality.
+Any selection based on the extendedness parameters should be tested and validated for the science analysis.
+* The ``model_extendedness`` parameter is the most likely to have a finite value for a given object, and the ``griz_model_extendedness`` combines the four bands with the best signal.
+However, the drawback is that there is no associated flag column and the ``griz_model_extendedness`` tends to classify everything as a galaxy fainter than approximately ``i`` = 24 mag (see the discussion under :ref:`detection-measurement`).
+* See also the :doc:`tutorial notebook </tutorials/notebook/index>` on extendedness.
 
 
 .. list-table::
@@ -71,12 +87,22 @@ They differ in what they measure, in whether a companion failure flag exists, an
      - Notes
    * - | ``{band}_extendedness``
        | ``{band}_extendedness_flag``
-     - 0 or 1
+     - | 0 or 1
+       | 0 or 1
      - PSF-to-CModel flux ratio, thresholded by the pipeline.
+   * - | ``refExtendedness``
+       | *no flag*
+     - 0 or 1
+     - PSF-to-CModel flux ratio, in the ``refBand``.
    * - | ``{band}_sizeExtendedness``
        | ``{band}_sizeExtendedness_flag``
-     - 0 to 1
+     - | 0 to 1
+       | 0 or 1
      - Moments-based comparison of the source size to the local PSF.
+   * - | ``refSizeExtendedness``
+       | *no flag*
+     - 0 to 1
+     - Moments-based extendedness, in the ``refBand``.
    * - | ``{band}_model_extendedness``
        | *no flag*
      - 0 to 1
@@ -87,77 +113,6 @@ They differ in what they measure, in whether a companion failure flag exists, an
      - Sersic model flux- and size-based, combining the ``griz`` bands.
 
 
-.. list-table::
-   :header-rows: 1
-   :widths: 24 12 14 50
-
-   * - Column
-     - Range
-     - Failure flag
-     - Notes
-   * - ``{band}_extendedness``
-     - 0 or 1
-     - ``{band}_extendedness_flag``
-     - PSF-to-CModel flux ratio, thresholded by the pipeline.
-   * - ``{band}_sizeExtendedness``
-     - 0 to 1
-     - ``{band}_sizeExtendedness_flag``
-     - Moments-based comparison of the source size to the local PSF.
-   * - ``{band}_model_extendedness``
-     - 0 to 1
-     - *none*
-     - Sersic model flux- and size-based, single band.
-   * - ``griz_model_extendedness``
-     - 0 to 1
-     - *none*
-     - Sersic model flux- and size-based, combining the ``griz`` bands.
-
-
-
-
-**Which one to use.**
-``model_extendedness`` is the most broadly usable classifier in DP2: it is the most likely of the three to have a finite value for a given object, and ``griz_model_extendedness`` combines the four bands with the best signal.
-There is no associated flag column.
-
-Selecting galaxies with ``model_extendedness``:
-
-.. code-block:: sql
-   :force:
-
-   AND {band}_model_extendedness > 0.3
-   AND {band}_model_extendedness <= 1
-
-and point sources with the complementary cut (``>= 0`` and ``<= 0.3``).
-
-Selecting galaxies with ``sizeExtendedness``:
-
-.. code-block:: sql
-   :force:
-
-   AND {band}_sizeExtendedness > 0.5
-   AND {band}_sizeExtendedness_flag = 0
-
-Selecting galaxies with the binary ``extendedness``:
-
-.. code-block:: sql
-   :force:
-
-   AND {band}_extendedness = 1       -- Extended source (galaxy); use = 0 for point sources (stars)
-   AND {band}_extendedness_flag = 0  -- Classification valid
-
-.. warning::
-
-   The 0.3 cut on ``model_extendedness`` was only tested in the Deep Drilling Fields.
-   It is not a recommended default, and the best value will change with depth and seeing.
-   Check the distribution in your own field and pick a cut that suits your science case.
-
-.. note::
-
-   None of the DP2 star/galaxy classifiers has been fully characterized for purity or completeness, and there is no published selection function for any of these cuts.
-   Treat star/galaxy separation as approximate and validate it against your own science requirements.
-   ``refExtendedness`` and ``refSizeExtendedness`` give the reference-band values of the first two classifiers if you want a single band-independent classification.
-
-Model photometry and shapes: require the matching general flag when using the quantity, e.g. ``{band}_cModel_flag = 0`` for CModel fluxes, ``{band}_kronFlux_flag = 0`` for Kron fluxes, or ``{band}_hsmShapeRegauss_flag = 0`` for HSM shapes.
 
 .. _flags-source:
 
