@@ -119,10 +119,9 @@ Both options have associated flags, so be sure to apply the flag that matches th
    :widths: 25 60
 
    * - Flag name and tables\*
-     - Tables
      - Meaning when set to 1
    * - | ``{band}_psfFlux_flag``
-     - Object, Source, ForcedSource, ForcedSourceOnDiaObject
+       | O, S, FS, DFS
      - PSF flux measurement failed; do not use the PSF flux.
    * - | ``{band}_cModel_flag``
        | O
