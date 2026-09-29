@@ -8,22 +8,24 @@ To help users interpret flag meanings, the sections below organize flags into ca
 
 .. note::
 
-   Which flags exist, what they're called, and whether it is meaningfully populated depends on the table.
+   Which flags exist and whether they are meaningfully populated changes between tables and data releases.
    Some DP1-era pixel quality flags are deprecated or removed in DP2, and these cases are listed below.
 
 
 Pixel quality flags
 ===================
 
-Pattern: ``{band}_pixelFlags_*`` (object tables) or ``pixelFlags_*`` (source tables).
+**Pattern:**
+``{band}_pixelFlags_*`` (object tables) or ``pixelFlags_*`` (source tables).
 
-Purpose: To report on the mask-plane status of the pixels in a source's footprint, derived from the image :doc:`/products/images/mask_planes` as explained in :doc:`/products/flags/mask_planes`.
+**Purpose:**
+To report on the mask-plane status of the pixels in a source's footprint, derived from the image :doc:`/products/images/mask_planes` as explained in :doc:`/products/flags/mask_planes`.
 
-Key points:
+**Key points:**
 Flags without a ``Center`` suffix are set if *any* pixel in the footprint carries the corresponding mask bit; ``Center`` variants are set only if a pixel in the central 3×3 box carries it.
 Flags with a ``Center`` suffix indicate the issue affects the object's central footprint (typically a 3x3 pixel box), which is more critical for photometry and shapes than flags affecting only the outer footprint.
 
-Deprecated flags:
+**Deprecated flags:**
 For DP2, the Object table flags ``pixelFlags_sensor_edge`` and ``pixelFlags_sensor_edgeCenter`` still exist but they are deprecated and always set to false because the deep coadd images are :ref:`images-new-cell-based` which are not affected by the sensor edges of the input visit images.
 Other deprecated flags include: ``pixelFlags_bad``, ``pixelFlags_edge``, ``pixelFlags_suspect``, ``pixelFlags_suspectCenter``, and ``pixelFlags_offimage``.
 
@@ -32,14 +34,65 @@ Other deprecated flags include: ``pixelFlags_bad``, ``pixelFlags_edge``, ``pixel
    :header-rows: 1
    :widths: 25 60
 
-   * - Flag name
+   * - Flag name and tables[\*]
      - Meaning when set to 1
    * - | ``pixelFlags_saturated``
-       | O, S, FS, DiaS, DiaFS
+       | O, S, FS, DS, DFS
      - Saturated pixels in footprint; photometry unreliable.
    * - | ``pixelFlags_saturatedCenter``
-       | O, S, FS, DiaS, DiaFS
+       | O, S, FS, DS, DFS
      - Saturated pixel in central 3x3 footprint; critical quality issue.
+   * - | ``pixelFlags_cr``
+       | O, S, FS, DS, DFS
+     - Cosmic ray detected and interpolated in footprint.
+   * - | ``pixelFlags_crCenter``
+       | O, S, FS, DS, DFS
+     - Cosmic ray at center.
+   * - | ``pixelFlags_interpolated``
+       | O, S, FS, DS, DFS
+     - Interpolated pixels in footprint (from CRs, defects, saturation).
+   * - | ``pixelFlags_interpolatedCenter``
+       | O, S, FS, DS, DFS
+     - Interpolated pixel at center; affects core photometry and shapes.
+   * - | ``pixelFlags_clipped``
+       | O
+     - Artifact rejection during coaddition excluded input pixels.
+   * - | ``pixelFlags_clippedCenter``
+       | O
+     - Clipping occurred at center.
+   * - | ``pixelFlags_inexact_psf``
+       | O
+     - Coadd PSF model is discontinuous in footprint, typically at cell or patch boundaries or where input artifacts were rejected.
+   * - | ``pixelFlags_inexact_psfCenter``
+       | O
+     - Coadd PSF model is discontinuous at center. Covers a large area; not recommended as a general cut.
+   * - | ``pixelFlags_nodata``
+       | O, S, FS, DS, DFS
+     - No pixel data available (off coverage area).
+   * - | ``pixelFlags_nodataCenter``
+       | DS
+     - No pixel data available at center.
+   * - | ``pixelFlags_streak``
+       | DS
+     - Masked streak (e.g., satellite trail) overlaps footprint.
+   * - | ``pixelFlags_streakCenter``
+       | DS
+     - Masked streak overlaps center.
+   * - | ``pixelFlags_injected``
+       | DS
+     - Synthetic-source injection overlaps footprint in the science image. Relevant only for injection test datasets.
+   * - | ``pixelFlags_injectedCenter``
+       | DS
+     - Synthetic-source injection overlaps center in the science image.
+   * - | ``pixelFlags_injected_template``
+       | DS
+     - Synthetic-source injection overlaps footprint in the template image.
+   * - | ``pixelFlags_injected_templateCenter``
+       | DS
+     - Synthetic-source injection overlaps center in the template image.
+
+
+.. [\*] Table legend: O, Object; S, Source; FS, ForcedSource; DS, DiaSource; DFS, ForcedSourceOnDiaObject
 
 
 .. list-table::
