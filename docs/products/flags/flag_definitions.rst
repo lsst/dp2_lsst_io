@@ -4,24 +4,43 @@
 Flag definitions and categories
 ###############################
 
-To help users interpret flag meanings, the sections below organize the most scientifically useful flags into categories based on what each flag indicates.
-See also the :doc:`/products/flags/flag_recommendations` page for guidance on which flags to apply for science-quality selections.
+To help users interpret flag meanings, the sections below organize flags into categories based on what each flag indicates.
 
 .. note::
 
-   Which flags exist, and whether a flag is meaningful, depends on the table.
-   The same measurement flag can have a different name (or not exist) in another table, and some flags that were useful in DP1 are **deprecated** or removed in DP2.
-   Deprecated cases are called out explicitly below.
+   Which flags exist, what they're called, and whether it is meaningfully populated depends on the table.
+   Some DP1-era pixel quality flags are deprecated or removed in DP2, and these cases are listed below.
 
 
 Pixel quality flags
 ===================
 
-Pattern: ``{band}_pixelFlags_*`` (Object) or ``pixelFlags_*`` (Source-level tables).
+Pattern: ``{band}_pixelFlags_*`` (object tables) or ``pixelFlags_*`` (source tables).
 
-Purpose: report on the mask-plane status of the pixels in a source's footprint, derived from the image :doc:`mask planes </products/flags/mask_planes>`.
+Purpose: To report on the mask-plane status of the pixels in a source's footprint, derived from the image :doc:`</products/images/mask_planes>` as explained in :doc:`</products/flags/mask_planes>`.
+
+Key points:
 Flags without a ``Center`` suffix are set if *any* pixel in the footprint carries the corresponding mask bit; ``Center`` variants are set only if a pixel in the central 3×3 box carries it.
-Center flags are generally the more important for photometry and shapes because they affect the core of the source.
+Flags with a ``Center`` suffix indicate the issue affects the object's central footprint (typically a 3x3 pixel box), which is more critical for photometry and shapes than flags affecting only the outer footprint.
+
+Deprecated flags:
+For DP2, the Object table flags ``pixelFlags_sensor_edge`` and ``pixelFlags_sensor_edgeCenter`` still exist but they are deprecated and always set to false because the deep coadd images are `Cell-based coadds`_ which are not affected by the sensor edges of the input visit images.
+Other deprecated flags include: ``pixelFlags_bad``, ``pixelFlags_edge``, ``pixelFlags_suspect``, ``pixelFlags_suspectCenter``, and ``pixelFlags_offimage``.
+
+
+.. list-table::
+   :header-rows: 1
+   :widths: 25 60
+
+   * - Flag name
+     - Meaning when set to 1
+   * - |``pixelFlags_saturated``
+       | O, S, FS, DiaS, DiaFS
+     - Saturated pixels in footprint; photometry unreliable.
+   * - |``pixelFlags_saturatedCenter``
+       | O, S, FS, DiaS, DiaFS
+     - Saturated pixel in central 3x3 footprint; critical quality issue.
+
 
 .. list-table::
    :header-rows: 1
@@ -48,12 +67,6 @@ Center flags are generally the more important for photometry and shapes because 
    * - ``pixelFlags_interpolatedCenter``
      - Object, Source, ForcedSource, DiaSource, ForcedSourceOnDiaObject
      - Interpolated pixel at center; affects core photometry and shapes.
-   * - ``pixelFlags_sensor_edge``
-     - Object
-     - Detector boundary crossed footprint.
-   * - ``pixelFlags_sensor_edgeCenter``
-     - Object
-     - Detector edge near center; important for coadds.
    * - ``pixelFlags_clipped``
      - Object
      - Artifact rejection during coaddition excluded input pixels.
@@ -90,18 +103,6 @@ Center flags are generally the more important for photometry and shapes because 
    * - ``pixelFlags_injected_templateCenter``
      - DiaSource
      - Synthetic-source injection overlaps center in the template image.
-
-Key points:
-
-- Center variants: Flags with a ``Center`` suffix indicate the issue affects the object's central footprint (typically a 3x3 pixel box), which is more critical for photometry and shapes than flags affecting only the outer footprint.
-- Coadd-specific flags: On Object table coadds, use ``pixelFlags_sensor_edge`` and ``pixelFlags_sensor_edgeCenter`` as the edge indicator, since they record where detector boundaries from input visits crossed the object.
-
-.. warning::
-
-   **Flags omitted from the table above because they are deprecated in the DP2 Object table.**
-   ``pixelFlags_bad`` (known bad pixels, i.e. detector defects, in footprint), ``pixelFlags_edge`` (source on the edge of the usable exposure region), ``pixelFlags_suspect`` and ``pixelFlags_suspectCenter`` (suspect pixels near saturation or with non-linear response), and ``pixelFlags_offimage`` are deprecated in the coadd Object table: they are only set in the (rare) case of missing band data, and should **not** be used as quality cuts there.
-   Use ``pixelFlags_sensor_edge`` / ``pixelFlags_sensor_edgeCenter`` for coadd edges instead.
-   These flags remain valid and useful in the single-epoch and difference-image tables (Source, ForcedSource, DiaSource, ForcedSourceOnDiaObject).
 
 
 Measurement failure flags
