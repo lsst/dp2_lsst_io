@@ -13,7 +13,7 @@ Catalog data is delivered largely "as measured" with minimal a priori filtering,
    :titlesonly:
 
    flag_definitions
-   flag_recommendations
+   flag_usage
    mask_planes
 
 
