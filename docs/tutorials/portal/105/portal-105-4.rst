@@ -61,6 +61,7 @@ The "Recenter image" button is labeled "A" in Figure 2.
 
 
 .. figure:: images/portal-105-4-2.png
+    :width: 500
     :name: portal-105-4-2
     :alt: Rectangular selection tools.
 
@@ -74,6 +75,7 @@ A window displaying the pixel statistics within the selected rectangle will pop 
 An example of a rectangular selection and the statistics window is shown in Figure 3.
 
 .. figure:: images/portal-105-4-3.png
+    :width: 500
     :name: portal-105-4-3
     :alt: Rectangular selection and stats.
 
@@ -106,6 +108,7 @@ To instead overlay the retrieved objects on the image from your previous search,
 The objects from the search result will now be highlighted as in Figure 5 (the search results are the small magenta markers).
 
 .. figure:: images/portal-105-4-5.png
+    :width: 400
     :name: portal-105-4-5
     :alt: Cone search results overlaid on image.
 
