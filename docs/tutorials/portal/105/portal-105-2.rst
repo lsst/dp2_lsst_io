@@ -56,6 +56,7 @@ By default the "IMAGE" plane (HDU #1) will be displayed. By pressing the left an
 Advance to the third plane, the VARIANCE. Using the stretch drop down tool, change the image stretch to "Z Scale Linear". The result should look like Figure 2.
 
 .. figure:: images/portal-105-2-2.png
+    :width: 500
     :name: portal-105-2-2
     :alt: The VARIANCE image plane, showing pixel variances in nJy-squared units.
 
@@ -88,6 +89,7 @@ The result should appear as in Figure 4.
     Figure 3: The Tools drop-down menu. Labeled buttons are tools to (A) rotate the image by a specified angle, (B) rotate the image so that North is up, (C) flip the image across the Y axis, and (D) restore the display to the defaults.
 
 .. figure:: images/portal-105-2-4.png
+    :width: 500
     :name: portal-105-2-4
     :alt: An image rotated by 135 degrees, with the image rotation tool interface shown.
 
@@ -99,6 +101,7 @@ Before clicking the button to "flip" the image on the Y axis, first select the "
 Now click on the "flip" button (labeled "C" in Figure 3) to flip the image in the X direction (i.e., flip it about the Y axis). Notice that East is now pointing to the right, as in Figure 5.
 
 .. figure:: images/portal-105-2-5.png
+    :width: 500
     :name: portal-105-2-5
     :alt: A deep coadd image that has been flipped in the X direction so that East now points to the right.
 
@@ -122,6 +125,7 @@ The "Bias" and "Contrast" parameters can be manually adjusted using the sliders 
     Figure 6: The buttons to access various tools menus. The drop-down menu for selecting color maps is labeled "A", and the menu to control the image stretch is labeled "B".
 
 .. figure:: images/portal-105-2-7.png
+    :width: 400
     :name: portal-105-2-7
     :alt: The menu showing various colorbar options. The "plasma" colormap is selected, as can be seen by the image in the backdrop, which has a mostly blue and purple background with astronomical sources in orange/red.
 
@@ -132,6 +136,7 @@ Reset the colormap to the default ("Reverse Gray Scale").
 Click the stretch drop down to reveal the options as seen in Figure 8.
 
 .. figure:: images/portal-105-2-8.png
+    :width: 400
     :name: portal-105-2-8
     :alt: The stretch options.
 
