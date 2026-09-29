@@ -1,125 +1,113 @@
 .. _portal-105-5:
 
-################################
-105.5. Use the image cutout tool
-################################
+#######################################
+105.5. Extract pixel values from images
+#######################################
 
 For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
-**Data Release:** DP1
+**Data Release:** DP2
 
-**Last verified to run:** 2025-09-25
+**Last verified to run:** 2026-09-29
 
-**Learning objective:** View image cutouts instead of full-frame images in Firefly.
+**Learning objective:** Extract pixel values from an image with Firefly (e.g., line profiles, apertures).
 
-**LSST data products:** ``visit_image``
+**LSST data products:** ``deep_coadd`` image
 
-**Credit:** Originally developed by the Rubin Community Science team.
+**Credit:** Originally developed by the Rubin Community Science Team.
 Please consider acknowledging them if this tutorial is used for the preparation of journal articles, software releases, or other tutorials.
+DOI: `10.11578/rubin/dc.20250909.20 <https://doi.org/10.11578/rubin/dc.20250909.20>`_
 
-**Get Support:** Everyone is encouraged to ask questions or raise issues in the `Support Category <https://community.lsst.org/c/support/6>`_ of the Rubin Community Forum.
+**Get Support:** Everyone is encouraged to ask questions or raise issues in the `Support Category <https://www.rubin.community/c/support/6>`_ of the Rubin Community Forum.
 Rubin staff will respond to all questions posted there.
 
 ----
 
 **1. Log in to the Portal Aspect of the RSP.**
-Go to `data.lsst.cloud <https://data.lsst.cloud>`_ , select the Portal Aspect, and click on the "DP1 Images" tab at the top.
+Go to `data.lsst.cloud <https://data.lsst.cloud>`_, select the Portal Aspect, and click on the "DP1 & DP2 Images" tab at the top.
 
 **2. Execute an ADQL query for an image.**
 Click on "Edit ADQL" at upper right.
 Enter the following ADQL statement and click "Search" at lower left.
-This query will return a subset of processed visit images in the Euclid Deep Field South field that overlap coordinates RA, Dec = 59.1, -48.73 deg.
+This query statement will return one *i*-band image in the Euclid Deep Field South field.
 
 .. code-block:: SQL
 
-  SELECT dataproduct_type,dataproduct_subtype,calib_level,lsst_band,em_min,em_max,lsst_tract,lsst_patch,
-         lsst_filter,lsst_visit,lsst_detector,t_exptime,t_min,t_max,s_ra,s_dec,s_fov,obs_id,
-         obs_collection,o_ucd,facility_name,instrument_name,obs_title,s_region,access_url,access_format
+  SELECT dataproduct_type,dataproduct_subtype,calib_level,
+           lsst_band,em_min,em_max,lsst_tract,lsst_patch,
+           lsst_filter,s_ra,s_dec,s_fov,obs_id,obs_collection,
+           o_ucd,facility_name,instrument_name,obs_title,
+           s_region,access_url,access_format
   FROM ivoa.ObsCore
-  WHERE CONTAINS(POINT('ICRS', 59.1, -48.73), s_region) = 1
-        AND calib_level = 2 AND dataproduct_type = 'image' AND dataproduct_subtype = 'lsst.visit_image'
-        AND (t_min <= 60641 AND 60638 <= t_max)
+  WHERE obs_collection = 'LSST.DP2'
+        AND dataproduct_subtype = 'lsst.deep_coadd'
+        AND lsst_band = 'i'
+        AND CONTAINS(POINT('ICRS', 59.1, -48.73), s_region)=1
 
 
-**3. Select a single i-band image.**
-In the results view, in the table across the bottom, in the column with the header "lsst band" select "i" from the dropdown menu.
-Click on the line for ``lsst_visit`` 2024112500284.
-That row of the table will be highlighted, and that specific image displayed in the Firefly viewer at upper left, as in Figure 1.
 
-**4. Open the cutout tool.**
-Above the image on the upper left, click on "Cutout" tool icon (the scissors, as shown in Figure 1).
-The "Cutout Settings" pop-up window displays the default cutout size and center (a radius of 72 arcseconds and "Search Target Center", respectively).
+**3. Zoom in.**
+Click on the "zoom-in" icon (the magnifying glass with a "+" sign in the upper left of the image panel), or use the mouse, to zoom in on any object(s) of interest (as in Figure 1).
+
 
 .. figure:: images/portal-105-5-1.png
     :name: portal-105-5-1
-    :alt: The screenshot with the pop-up window resulting from clicking on "scissors" (marked with an arrow).
+    :alt: The Firefly panel of the results interface.
 
-    Figure 1: The results view with *i*-band image for visit 2024112500284 displayed. The search coordinate is marked with a yellow symbol. Also shown is the pop-up window that appears after clicking on the "cutout" icon (the scissors, marked with an arrow).
+    Figure 1: The Firefly interface displays the retrieved image, zoomed-in, with the "Tools" window displayed.
 
 
-**5. View the default cutout.**
-In the "Cutout Settings" window, click on "Show Cutout".
-The image displayed in the Firefly panel will update to be the default cutout, as in Figure 2.
+**4. Extract a line profile.**
+Click the "Tools" icon, then select the "Line" icon in the "Extract" row (see Figure 1).
+The pop-up "Extract" window will appear.
+In the image, click-and-drag to draw a line across any object(s), and the 1D brightness profile (line profile) will appear in the pop-up window (see Figure 2).
+
+
+**5. Adjust the aperture.**
+In the "Extract" window, aperture options are provided in the format "x-by-y".
+The options will always be 1 along the direction of the line.
+For a more horizontal line the options will be "1x3" to "1x7" (i.e., always 1 in the x-direction).
+Whereras for a more vertical line the options will be "3x1" to "7x1" (i.e., always 1 in the y-direction).
+The options to calculate the "Average" or "Sum" of the fluxes within the aperture are given.
+Figure 2 demonstrates a "7x1" sum aperture used on a more vertical line profile across two blended objects.
+
 
 .. figure:: images/portal-105-5-2.png
+    :width: 500
     :name: portal-105-5-2
-    :alt: The screenshot showing the single cutout.
+    :alt: A screenshot displaying a line drawn across a source, accompanied by a pop-up window showing the source's 1D brightness profile along that line.
 
-    Figure 2: The default cutout, 72x72 arcseconds, centered on the original search coordinates (yellow symbol).
+    Figure 2: A line profile drawn across two blended objects, with the pop-up "Extract" window options set to use a "7x1" aperture and "Sum" the pixel values within the aperture.
 
 
-**6. Create a custom cutout.**
-Open the "Cutout Settings" window and change the size to a radius of 10 arcseconds.
-Click on the circle next to "Entered Position", then click on the "Change Cutout Center" box that appears and enter "59.1017464, -48.7366495".
-These are the RA and Dec coordinates of a small faint extended object, in degrees.
-As shown in Figure 3, click on "Update Cutout", and the result will be as shown in Figure 4.
+**6. Pin or download the extracted line profile.**
+In the pop-up "Extract" window click "Pin Chart/Table" to send the extracted fluxes to the table and chart panels of the results viewer, as shown in Figure 3.
+Clicking either of the two download buttons will present options for downloadable file formats, including a DS9 region file.
 
 .. figure:: images/portal-105-5-3.png
+    :width: 500
     :name: portal-105-5-3
-    :width: 300
-    :alt: The screenshot of the cutout settings for a custom cutout.
+    :alt: A screenshot with an extracted line profile appearing in the table and chart panels of the results viewer.
 
-    Figure 3: Cutout settings for a custom cutout that is 20 arcseconds per side, and centered on the provided RA and Dec in degrees.
+    Figure 3: After clicking "Pin Chart/Table", the extracted line profile will appear in the table (bottom) and chart (right) for further analysis and manipulation.
 
+
+**7. Clear the extracted line profile.**
+Click the "x" at upper right in the chart (plot) and the "x" in the table tab named "Extract line".
+Open the "Layers" pop-up window and click the "x" at far right in the "Extract Line" row, and then close the "Layers" window.
+
+**8. Extract point fluxes.**
+Click the "Tools" icon, then select the "Points" icon in the "Extract" row (see Figure 1).
+Click on a few objects across the image; in Figure 4, faint objects were selected.
+In the pop-up window, see that the single-pixel flux will be plotted as a function of the x-axis location.
+Set the aperture to "7x7" and "Sum", as in the example in Figure 4 below.
 
 .. figure:: images/portal-105-5-4.png
+    :width: 500
     :name: portal-105-5-4
-    :width: 300
-    :alt: The screenshot showing the cutout centered on the selected coordinates.
+    :alt: A screenshot displaying selected points and their aperture flux values.
 
-    Figure 4: The cutout that results from the settings in Figure 3.
+    Figure 4: The summed flux in a 7x7 pixel aperture for each of the marked locations, plotted versus the x-axis location.
 
-
-**7. Reset the cutout size to 60 arcseconds.**
-Open the cutout setting window, enter 60 in the size box, and click "Update Cutout".
-The following steps are better demonstrated with larger cutouts.
-
-
-**8. Display multiple cutouts.**
-Click on the "Tile" icon at upper left (six little rectangles; marked with an arrow in Figure 5).
-Cutouts will be displayed from the first eight images in the table, as shown in Figure 5.
-Notice that the visit images have different rotations, and that for visit image 20241125000283 (second from left on the bottom) the cutout center coordinates are close to that image's edge, and the cutout is not square.
-
-.. figure:: images/portal-105-5-5.png
-    :name: portal-105-5-5
-    :alt: The screenshot showing the eight cutout centered on the selected coordinates.
-
-    Figure 5: A tiled view of eight cutouts of eight different visit images, all made with 60 arcsecond radii and centered on the same coordinates.
-
-
-**9. Align the tiled cutouts in sky coordinates.**
-Click on the "image alignment" tool icon (marked with an arrow in Figure 6).
-Under "Align and Lock" click on "by WCS" (World Coordinate System; sky coordinate).
-As in Figure 6, all cutouts are now oriented north-up, east-left.
-
-.. figure:: images/portal-105-5-6.png
-    :name: portal-105-5-6
-    :alt: The screenshot showing the eight cutout centered on the selected coordinates, aligned to WCS.
-
-    Figure 6: A tiled view of the same eight cutouts as in Figure 5, but aligned by WCS and oriented north-up, east-left.
-
-
-**10. Return to full image display.**
-Return to full-image display by opening the cutout tool window and clicking "Show Full Image".
-
-
+**9. Pin or download the extracted fluxes.**
+As in step 6, send the extracted fluxes into the table and chart panels.
