@@ -1,50 +1,47 @@
-.. _flag-recommendations:
+.. _flag-usage:
 
-###################
-Flag usage guidance
-###################
+#################
+Flag use examples
+#################
 
-The guidance below is intentionally **minimal and conservative**: it lists only a small set of flags that are almost always appropriate to exclude, for typical science-quality selections.
-It is **not** a recipe for a "clean sample." The correct flag cuts depend strongly on your science case, and stricter or looser cuts than these will be appropriate for many analyses.
+The flag use examples below include only a small set of flags that apply to most typical science-quality selections.
+These examples are not recipes for a "clean" sample (i.e., pure or complete), and flag use depends on science application.
 
-.. note::
+In general, when a measured quantity is used in an analysis, check also that the quantity's general failure flag is false.
+For example, when using ``r_cModelFlux``, check that the value of ``r_cModel_flag`` is false (or 0).
+In the snippets below, ``{band}`` stands for one of ``u``, ``g``, ``r``, ``i``, ``z``, ``y``.
 
-   General rule: whenever you use a measured quantity (a flux, shape, color, etc.), require that quantity's own general failure flag to be ``0``.
-   For example, if you use ``r_cModelFlux``, require ``r_cModel_flag = 0``. The minimal sets below cover the most common quality problems; the per-quantity rule covers the rest.
 
 .. _flags-object:
 
 Object table
 ============
 
-Guidance for the deep-coadd measurements of static-sky objects.
-In the snippets below, ``{band}`` stands for one of ``u``, ``g``, ``r``, ``i``, ``z``, ``y``; apply the same logic independently in each band you use.
+**Key points:**
 
-**Minimal recommended set.**
+* Use ``{band}_inputCount > 0`` in each band that is used in the analysis.
+* Replace ``{band}_psfFlux_flag`` with the failure flag for the flux type used in the analysis (e.g., ``{band}_cModel_flag``, ``{band}_free_psfFlux_flag``).
+
+
+Example general selection:
 
 .. code-block:: sql
    :force:
 
    WHERE {band}_inputCount > 0                        -- At least one input image at the position
-     AND {band}_psfFlux_flag = 0                      -- (or the flag for whichever flux you use)
+     AND {band}_psfFlux_flag = 0                      -- Successful flux measurement (replace with flux type used)
      AND {band}_invalidPsfFlag = 0                    -- Valid PSF model
      AND {band}_pixelFlags_saturatedCenter = 0        -- No saturation at the center
      AND {band}_pixelFlags_interpolatedCenter = 0     -- No interpolated pixels at the center
 
-.. note::
-
-   - Require ``{band}_inputCount > 0`` in each band used.
-   - Replace ``{band}_psfFlux_flag`` with the failure flag of the flux you actually use (e.g. ``{band}_cModel_flag`` for CModel fluxes, ``{band}_free_psfFlux_flag`` for the free/unforced PSF flux — see the note on free versus forced measurements in :doc:`/products/flags/flag_definitions`).
-   - The DP2 Object columns ``pixelFlags_bad``, ``pixelFlags_edge``, ``pixelFlags_suspect``/``pixelFlags_suspectCenter``, and ``pixelFlags_offimage`` are **deprecated** and must not be used as cuts here (see :doc:`/products/flags/flag_definitions`). Use ``pixelFlags_sensor_edgeCenter`` if you need a coadd edge cut.
-
-**Optional, science-case-dependent cuts.**
+Additional examples:
 
 .. code-block:: sql
    :force:
 
    AND {band}_pixelFlags_crCenter = 0            -- No cosmic ray at center
-   AND {band}_pixelFlags_sensor_edgeCenter = 0   -- Not near a detector boundary (coadd edge)
    AND {band}_pixelFlags_interpolated = 0        -- Stricter: no interpolated pixels anywhere in the footprint
+
 
 Galaxy / star selection (extendedness)
 --------------------------------------
