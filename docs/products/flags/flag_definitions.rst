@@ -17,14 +17,14 @@ Pixel quality flags
 
 Pattern: ``{band}_pixelFlags_*`` (object tables) or ``pixelFlags_*`` (source tables).
 
-Purpose: To report on the mask-plane status of the pixels in a source's footprint, derived from the image :doc:`</products/images/mask_planes>` as explained in :doc:`</products/flags/mask_planes>`.
+Purpose: To report on the mask-plane status of the pixels in a source's footprint, derived from the image :doc:`/products/images/mask_planes` as explained in :doc:`/products/flags/mask_planes`.
 
 Key points:
 Flags without a ``Center`` suffix are set if *any* pixel in the footprint carries the corresponding mask bit; ``Center`` variants are set only if a pixel in the central 3×3 box carries it.
 Flags with a ``Center`` suffix indicate the issue affects the object's central footprint (typically a 3x3 pixel box), which is more critical for photometry and shapes than flags affecting only the outer footprint.
 
 Deprecated flags:
-For DP2, the Object table flags ``pixelFlags_sensor_edge`` and ``pixelFlags_sensor_edgeCenter`` still exist but they are deprecated and always set to false because the deep coadd images are :ref:`Cell-based coadds` which are not affected by the sensor edges of the input visit images.
+For DP2, the Object table flags ``pixelFlags_sensor_edge`` and ``pixelFlags_sensor_edgeCenter`` still exist but they are deprecated and always set to false because the deep coadd images are :ref:`images-new-cell-based` which are not affected by the sensor edges of the input visit images.
 Other deprecated flags include: ``pixelFlags_bad``, ``pixelFlags_edge``, ``pixelFlags_suspect``, ``pixelFlags_suspectCenter``, and ``pixelFlags_offimage``.
 
 
