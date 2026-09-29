@@ -4,10 +4,15 @@
 Flag use examples
 #################
 
-The flag use examples below include only a small set of flags that apply to most typical science-quality selections.
-These examples are not recipes for a "clean" sample (i.e., pure or complete), and flag use depends on science application.
+The flag use examples below include only a small set of flags that apply to most typical science analyses.
 
-In general, when a measured quantity is used in an analysis, check also that the quantity's general failure flag is false.
+**Warning:**
+These examples are not recipes for a "clean" sample (i.e., pure or complete).
+The correct application of flags depends on the science analysis.
+It is recommended that users test queries with and without flag cuts, to understand the selection effects and how they might impact the science analysis.
+
+**General advice:**
+When a measured quantity is used in an analysis, check also that the quantity's general failure flag is false.
 For example, when using ``r_cModelFlux``, check that the value of ``r_cModel_flag`` is false (or 0).
 In the snippets below, ``{band}`` stands for one of ``u``, ``g``, ``r``, ``i``, ``z``, ``y``.
 
@@ -19,11 +24,15 @@ Object table
 
 **Key points:**
 
-* Use ``{band}_inputCount > 0`` in each band that is used in the analysis.
+* Use the ``{band}`` flag for each band that is necessary for the analysis.
 * Replace ``{band}_psfFlux_flag`` with the failure flag for the flux type used in the analysis (e.g., ``{band}_cModel_flag``, ``{band}_free_psfFlux_flag``).
 
+**Advisory:**
+For a spatial query on the Object table near the edge of the COSMOS field, the typical example below reduces by :math:`\sim10%` the number of objects returned; with the two additional examples, the total reduction is :math:`\sim23%`.
+The fraction of objects cut will change depending on the observations obtained in the region being queried, and the filters included.
+It is important to consider which flag cuts are necessary for a given science analysis, and to characterize the selection effects.
 
-Example general selection:
+Typical example:
 
 .. code-block:: sql
    :force:
@@ -34,13 +43,15 @@ Example general selection:
      AND {band}_pixelFlags_saturatedCenter = 0        -- No saturation at the center
      AND {band}_pixelFlags_interpolatedCenter = 0     -- No interpolated pixels at the center
 
+
 Additional examples:
 
 .. code-block:: sql
    :force:
 
    AND {band}_pixelFlags_crCenter = 0            -- No cosmic ray at center
-   AND {band}_pixelFlags_interpolated = 0        -- Stricter: no interpolated pixels anywhere in the footprint
+   AND {band}_pixelFlags_interpolated = 0        -- No interpolated pixels anywhere in the footprint
+
 
 
 Galaxy / star selection (extendedness)
@@ -48,6 +59,33 @@ Galaxy / star selection (extendedness)
 
 DP2 provides three star/galaxy classifiers in the Object table, per band, plus one multi-band variant.
 They differ in what they measure, in whether a companion failure flag exists, and in how meaningful the numeric value is.
+
+
+
+.. list-table::
+   :header-rows: 1
+   :widths: 24 14 50
+
+   * - Columns
+     - Range
+     - Notes
+   * - | ``{band}_extendedness``
+       | ``{band}_extendedness_flag``
+     - 0 or 1
+     - PSF-to-CModel flux ratio, thresholded by the pipeline.
+   * - | ``{band}_sizeExtendedness``
+       | ``{band}_sizeExtendedness_flag``
+     - 0 to 1
+     - Moments-based comparison of the source size to the local PSF.
+   * - | ``{band}_model_extendedness``
+       | *no flag*
+     - 0 to 1
+     - Sersic model flux- and size-based, single band.
+   * - | ``griz_model_extendedness``
+       | *no flag*
+     - 0 to 1
+     - Sersic model flux- and size-based, combining the ``griz`` bands.
+
 
 .. list-table::
    :header-rows: 1
@@ -73,6 +111,9 @@ They differ in what they measure, in whether a companion failure flag exists, an
      - 0 to 1
      - *none*
      - Sersic model flux- and size-based, combining the ``griz`` bands.
+
+
+
 
 **Which one to use.**
 ``model_extendedness`` is the most broadly usable classifier in DP2: it is the most likely of the three to have a finite value for a given object, and ``griz_model_extendedness`` combines the four bands with the best signal.

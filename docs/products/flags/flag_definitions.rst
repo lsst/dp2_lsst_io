@@ -12,6 +12,9 @@ To help users interpret flag meanings, the sections below organize flags into ca
    Some DP1-era pixel quality flags are deprecated or removed in DP2, and these cases are listed below.
 
 
+**\*Table legend:**  O = Object; S = Source; FS = ForcedSource; DS = DiaSource; DFS = ForcedSourceOnDiaObject
+
+
 Pixel quality flags
 ===================
 
@@ -28,8 +31,6 @@ Flags with a ``Center`` suffix indicate the issue affects the object's central f
 **Deprecated flags:**
 For DP2, the Object table flags ``pixelFlags_sensor_edge`` and ``pixelFlags_sensor_edgeCenter`` still exist but they are deprecated and always set to false because the deep coadd images are :ref:`images-new-cell-based` which are not affected by the sensor edges of the input visit images.
 Other deprecated flags include: ``pixelFlags_bad``, ``pixelFlags_edge``, ``pixelFlags_suspect``, ``pixelFlags_suspectCenter``, and ``pixelFlags_offimage``.
-
-**\*Table legend:**  O = Object; S = Source; FS = ForcedSource; DS = DiaSource; DFS = ForcedSourceOnDiaObject
 
 .. list-table::
    :header-rows: 1
