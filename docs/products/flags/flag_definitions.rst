@@ -34,10 +34,10 @@ Other deprecated flags include: ``pixelFlags_bad``, ``pixelFlags_edge``, ``pixel
 
    * - Flag name
      - Meaning when set to 1
-   * - |``pixelFlags_saturated``
+   * - | ``pixelFlags_saturated``
        | O, S, FS, DiaS, DiaFS
      - Saturated pixels in footprint; photometry unreliable.
-   * - |``pixelFlags_saturatedCenter``
+   * - | ``pixelFlags_saturatedCenter``
        | O, S, FS, DiaS, DiaFS
      - Saturated pixel in central 3x3 footprint; critical quality issue.
 
