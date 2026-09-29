@@ -16,7 +16,7 @@ Pixel quality flags
 ===================
 
 **Pattern:**
-``{band}_pixelFlags_*`` (object tables) or ``pixelFlags_*`` (source tables).
+``{band}_pixelFlags_*`` (Object table) or ``pixelFlags_*`` (Source tables).
 
 **Purpose:**
 To report on the mask-plane status of the pixels in a source's footprint, derived from the image :doc:`/products/images/mask_planes` as explained in :doc:`/products/flags/mask_planes`.
@@ -29,7 +29,7 @@ Flags with a ``Center`` suffix indicate the issue affects the object's central f
 For DP2, the Object table flags ``pixelFlags_sensor_edge`` and ``pixelFlags_sensor_edgeCenter`` still exist but they are deprecated and always set to false because the deep coadd images are :ref:`images-new-cell-based` which are not affected by the sensor edges of the input visit images.
 Other deprecated flags include: ``pixelFlags_bad``, ``pixelFlags_edge``, ``pixelFlags_suspect``, ``pixelFlags_suspectCenter``, and ``pixelFlags_offimage``.
 
-**\*Table legend:**  O, Object; S, Source; FS, ForcedSource; DS, DiaSource; DFS, ForcedSourceOnDiaObject
+**\*Table legend:**  O = Object; S = Source; FS = ForcedSource; DS = DiaSource; DFS = ForcedSourceOnDiaObject
 
 .. list-table::
    :header-rows: 1
@@ -98,7 +98,7 @@ Measurement failure flags
 =========================
 
 **Pattern:**
-``{band}_{algorithm}_flag`` (object table) or ``{algorithm}_flag`` (source tables).
+``{band}_{algorithm}_flag`` (Object table) or ``{algorithm}_flag`` (Source tables).
 
 **Purpose:**
 To indicate that a particular measurement algorithm failed or produced unreliable results.
@@ -108,7 +108,7 @@ In general, when using a measured quantity for an object or source, check that i
 For example, when using ``r_psfFlux``, the value of ``r_psfFlux_flag`` should be false (or 0).
 Most algorithms provide both the general failure flag and one or more diagnostic subflags that explain what went wrong (e.g., ``psfFlux_flag_edge``, ``psfFlux_flag_noGoodPixels``).
 
-**Changes from DP1:**
+**New for DP2:**
 In the Object table most fluxes are forced (measured at the reference-band position; e.g., ``{band}_psfFlux``, ``{band}_cModel_*``).
 DP2 also provides free (unforced) variants of these fluxes which are measured independently in each band (e.g., ``{band}_free_psfFlux``, ``{band}_free_cModelFlux``).
 Both options have associated flags, so be sure to apply the flag that matches the type of flux measurement (e.g., use ``{band}_psfFlux_flag`` with ``{band}_psfFlux``, and ``{band}_free_psfFlux_flag`` iwth ``{band}_free_psfFlux``).
@@ -188,80 +188,76 @@ Both options have associated flags, so be sure to apply the flag that matches th
 Difference image analysis (DIA) flags
 =====================================
 
-Purpose: indicate particular issues with difference image analysis (DIA), i.e. transient/variable detections on difference images (DiaSource).
+**Purpose:**
+To indicate particular issues with :doc:`/processing/dia/index` (DIA; detections of variable, transient, and moving objects in difference images).
 
-.. important::
+**Key points:**
+No cut on the ``reliability`` column was applied before writing the DiaSource catalog (:ref:`dia-reliability` is a machine-learned real/bogus score).
+The DiaSource table carries a general ``pixelFlags`` column, and when it has a value of true (or 1) the mask-plane bookkeeping for that footprint failed and *other* ``pixelFlags_*`` for that source may be incorrectly reported as false.
 
-   **No real/bogus reliability cut was applied** before writing the DiaSource catalog.
-   Users who need a higher-purity transient sample should apply a minimum threshold on the DiaSource ``reliability`` column (the machine-learned real/bogus score) themselves.
 
 .. list-table::
    :header-rows: 1
-   :widths: 30 15 55
+   :widths: 25 60
 
-   * - Flag name
-     - Tables
+   * - Flag name and tables\*
      - Meaning when set to 1
-   * - ``isDipole``
-     - DiaSource
+   * - | ``isDipole``
+       | DS
      - Detection is well fit by a dipole model, i.e. a subtraction artifact (typically at bright stars). Exclude for clean transient samples.
-   * - ``isNegative``
-     - DiaSource
+   * - | ``isNegative``
+       | DS
      - Source was detected as significantly negative (a flux decrease). New in DP2; keep or exclude depending on whether the science targets fading/disappearing sources.
-   * - ``glint_trail``
-     - DiaSource
+   * - | ``glint_trail``
+       | DS
      - Source is part of a "glint trail" (a line of detections likely from rotating orbital debris). Flagged, not removed.
-   * - ``dipoleFitAttempted``
-     - DiaSource
+   * - | ``dipoleFitAttempted``
+       | DS
      - A dipole model was fit to this source (informational, not a quality reject).
-   * - ``trail_flag_edge``
-     - DiaSource
+   * - | ``trail_flag_edge``
+       | DS
      - A trailed source extends onto or past edge pixels.
-   * - ``psfFlux_flag``
-     - DiaSource
+   * - | ``psfFlux_flag``
+       | DS
      - PSF flux on the difference image failed. Require 0 to use the difference flux.
-   * - ``forced_PsfFlux_flag``
-     - DiaSource
+   * - | ``forced_PsfFlux_flag``
+       | DS
      - Forced PSF photometry on the science (direct) image failed.
-   * - ``psfDiffFlux_flag``
-     - ForcedSource, ForcedSourceOnDiaObject
+   * - | ``psfDiffFlux_flag``
+       | FS, DFS
      - Forced PSF flux on the difference image failed.
-   * - ``diff_PixelFlags_nodataCenter``
-     - ForcedSource, ForcedSourceOnDiaObject
+   * - | ``diff_PixelFlags_nodataCenter``
+       | FS, DFS
      - Forced position falls outside difference-image coverage (no template); the difference flux is invalid.
-
-.. note::
-
-   The DiaSource table also carries a general ``pixelFlags`` column: when set, the mask-plane bookkeeping for that footprint failed and *other* ``pixelFlags_*`` for that source may be incorrectly reported as ``False``.
 
 
 Special flags
 =============
 
+**Purpose:**
 Additional notable flags that provide ancillary information about sources and objects.
+
+**New for DP2:**
+DP2 adds the :doc:`/products/catalogs/object_shear` table, which is produced by multi-band metadetection and carries its own suite of flags (e.g. ``gauss_flags``, ``pgauss_flags``, and their ``*_object_flags`` and ``*_shape_flags`` variants; ``bmask_flags``, ``ormask_flags``, ``image_flags``, ``psfOriginal_flags``, and the ``is_*_inner`` and ``is_primary`` selection flags).
+Note that no deblending is performed prior to these measurements.
+
 
 .. list-table::
    :header-rows: 1
-   :widths: 30 30 40
+   :widths: 25 60
 
-   * - Flag name
-     - Tables
+   * - Flag name and tables\*
      - Meaning when set to 1
-   * - ``{band}_invalidPsfFlag``
-     - Object
+   * - | ``{band}_invalidPsfFlag``
+       | O
      - The PSF model is invalid (no usable inputs); measurements are unreliable. Exclude these objects.
-   * - ``invalidPsfFlag``
-     - Source, ForcedSource, ForcedSourceOnDiaObject
+   * - | ``invalidPsfFlag``
+       | S, FS, DFS
      - As above, for the single-epoch and forced tables.
-   * - ``{band}_inputCount_flag``
-     - Object
+   * - | ``{band}_inputCount_flag``
+       | O
      - Failed to compute the number of coadd input exposures.
 
-.. note::
-
-   **Weak-lensing shear (new ShearObject table).**
-   DP2 adds a ShearObject table produced by multi-band metadetection, which carries its own suite of flags (e.g. ``gauss_flags`` / ``pgauss_flags`` and their ``…_object_flags``/``…_shape_flags`` variants, ``bmask_flags``, ``ormask_flags``, ``image_flags``, ``psfOriginal_flags``, and the ``is_*_inner`` / ``is_primary`` selection flags).
-   Detailed shear-flag guidance is still being validated; consult the `schema browser <https://sdm-schemas.lsst.io/dp2.html>`_ for current recommendations, and note that no deblending is performed prior to these measurements.
 
 
 .. _calibration-flags:
@@ -269,45 +265,48 @@ Additional notable flags that provide ancillary information about sources and ob
 Calibration flags
 =================
 
-Pattern: ``calib_*`` (Source) or ``{band}_calib_*`` (Object).
+**Pattern:**
+``calib_*`` (Source table) or ``{band}_calib_*`` (Object table).
 
-Purpose: these flags indicate whether a source was used in astrometric calibration, photometric calibration, or PSF modeling during single-visit processing.
+**Purpose:**
+To indicate whether a source was used in astrometric calibration, photometric calibration, or PSF modeling during single-visit processing.
 
-**For most science applications, these flags can be ignored, as they pertain to internal use in the calibration process.**
+**Key points:**
+For most science applications these flags can be ignored because they pertain to internal use in the calibration process.
 
-The public Source catalog does not contain the same single-visit detections used to estimate the PSF and fit the astrometric and photometric calibrations.
-Those initial sources (the ``single_visit_star`` and ``recalibrated_star`` butler dataset types) are intermediate products that are not retained in a final data release, while Source detections are made on the final visit image after all calibration steps are complete.
+**New for DP2:**
+The ``calib_photometry_reserved`` flag is available in the Source table in DP2 but is no longer in the Object table.
 
-The ``{band}_calib_*`` columns in the Object table are propagated from the single-visit sources by a spatial match, and so can suffer from mismatch problems in rare cases.
-Note also that these flags currently reflect the preliminary single-detector astrometric and photometric calibration steps, not the later FGCM and GBDES fits (they do reflect the stars that went into the final Piff PSF models).
-This is expected to be improved in future data releases.
+**Additional details:**
+The Source table does not contain the same single-visit detections used to estimate the PSF and fit the astrometric and photometric calibrations.
+Those initial sources (the ``single_visit_star`` and ``recalibrated_star`` Butler dataset types) are intermediate products that are not retained in a final data release.
+Detections for the Source table are made on the final visit image after all calibration steps are complete.
+The ``{band}_calib_*`` columns in the Object table are propagated from the single-visit sources by a spatial match, and can suffer from mismatch problems in rare cases.
+Note also that these flags currently reflect the preliminary single-detector astrometric and photometric calibration steps, not the later FGCM (see :doc:`/processing/calibration/photometric`) and GBDES (see :doc:`/processing/calibration/astrometric`) fits: they do reflect the stars that went into the final Piff :doc:`/processing/calibration/psf`.
+
 
 .. list-table::
    :header-rows: 1
-   :widths: 35 15 50
+   :widths: 25 60
 
-   * - Calibration flag
-     - Tables
+   * - Flag name and tables\*
      - Meaning when set to 1
-   * - ``calib_astrometry_used``
-     - Source, Object
+   * - | ``calib_astrometry_used``
+       | S, O
      - Source was used in the astrometric (WCS) solution.
-   * - ``calib_photometry_used``
-     - Source, Object
+   * - | ``calib_photometry_used``
+       | S, O
      - Source was used in the photometric zeropoint determination.
-   * - ``calib_photometry_reserved``
-     - Source
+   * - | ``calib_photometry_reserved``
+       | S
      - Source was reserved (held out) from photometric calibration for validation.
-   * - ``calib_psf_used``
-     - Source, Object
+   * - | ``calib_psf_used``
+       | S, O
      - Source was used for PSF modeling.
-   * - ``calib_psf_reserved``
-     - Source, Object
+   * - | ``calib_psf_reserved``
+       | S, O
      - Source was reserved (held out) from PSF determination.
-   * - ``calib_psf_candidate``
-     - Source, Object
+   * - | ``calib_psf_candidate``
+       | S, O
      - Source was a candidate for PSF-star selection.
 
-.. note::
-
-   ``calib_photometry_reserved`` is available in the Source table in DP2 but is no longer carried on the Object table.
