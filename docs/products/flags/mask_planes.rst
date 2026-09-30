@@ -11,6 +11,8 @@ Each relevant mask-plane bit set in the pixels of a source's footprint propagate
 Several mask plane names have been updated to be more descriptive; the legacy (old) and new mask names are listed below.
 Note that the catalog ``pixelFlags_*`` columns use the legacy names.
 
+Legacy (old) to new mask names:
+
 * ``SAT`` → ``SATURATED``
 * ``CR`` → ``COSMIC_RAY``
 * ``INTRP`` → ``INTERPOLATED``
