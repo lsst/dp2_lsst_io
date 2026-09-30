@@ -6,9 +6,11 @@ Flag use examples
 
 The flag use examples below include only a small set of flags that apply to most typical science analyses.
 
-**Warning:**
-These examples are not recipes for a "clean" sample (i.e., pure or complete).
-The correct application of flags depends on the science analysis.
+.. note::
+
+   These examples are not recipes for a "clean" sample (i.e., pure or complete).
+   The correct application of flags depends on the science analysis.
+
 
 **General advice:**
 
