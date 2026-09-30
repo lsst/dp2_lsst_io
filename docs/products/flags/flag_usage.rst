@@ -147,6 +147,7 @@ ForcedSource table
 ==================
 
 **Guidance:**
+
 * When building light curves, apply these flags per measurement (row) so that poor epochs are dropped while good epochs for the same object are kept.
 
 Typical example:
@@ -172,6 +173,7 @@ DiaSource table
 ===============
 
 **Guidance:**
+
 * No cut on the ``reliability`` column was applied before writing the DiaSource catalog (:ref:`dia-reliability` is a machine-learned real/bogus score).
 
 Typical example:
@@ -199,6 +201,7 @@ ForcedSourceOnDiaObject table
 =============================
 
 **Guidance:**
+
 * As with ForcedSource, filter per measurement (row) to remove bad epochs while keeping good ones.
 
 Typical example when using difference-image flux:
