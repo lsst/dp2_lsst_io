@@ -33,7 +33,7 @@ The relevant coadd mask plane (``DETECTION_EDGE``) and corresponding Object cata
 
 .. list-table::
    :header-rows: 1
-   :widths: 24 16 32 28
+   :widths: 25 25 50
 
    * - Mask plane (new and legacy)
      - Object catalog flag
