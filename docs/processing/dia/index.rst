@@ -35,6 +35,8 @@ Deblending is not run on difference image sources.
 The results of DIA source detection are stored in the ``DiaSource`` catalog.
 
 
+.. _dia-reliability:
+
 Reliability score
 -----------------
 
