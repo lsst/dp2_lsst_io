@@ -46,6 +46,9 @@ These almost always inherit from `~lsst.images.MaskedImage`, which combines the 
 
 An `~lsst.images.Image` is conceptually just a `numpy.ndarray` with optional units (via `astropy.units`), a `~lsst.images.SkyProjection`, and a `~lsst.images.Image.yx0` offset that allows its pixel origin to be something other than ``(0, 0)`` (see :external+lsst.images:ref:`image-slicing-and-boxes`).
 
+
+.. _images-new-cell-based:
+
 Cell-based coadds
 =================
 
