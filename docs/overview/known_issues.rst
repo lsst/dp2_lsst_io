@@ -266,6 +266,11 @@ The ``object_shear_all`` table has a completely different set of rows from the O
 Users will need to be careful when comparing or matching the two tables.
 
 
+Bug in calculation of blendedness parameter
+--------------------------------------
+
+To update. 
+
 .. _issues_dia:
 
 Difference imaging
