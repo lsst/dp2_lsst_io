@@ -57,11 +57,11 @@ a default plot of RA vs. Dec at upper right, and the table with image metadata a
 Click on another row of the table so that it is highlighted in orange, and it will display at upper left.
 
 **4. Subset images by filtering the table.**
-In the table column for ``lsst_band``, use the drop-down table in the header (labeled "B" in Figure 1) to select only *r*-band images.
+In the table column for ``lsst_band``, use the drop-down table in the header (labeled "A" in Figure 1) to select only *r*-band images.
 This will filter the table down to a single *r*-band image.
 
 **5. Display multiple images.**
-To display up to eight images side-by-side, clear the filter from step 4 so that all bands are showing, then click on the icon displaying six little boxes above the single image (labeled "A" in Figure 1). Sort the images in wavelength order (i.e., *ugrizy*) by clicking the ``em_min`` table header to sort on that column.
+To display up to eight images side-by-side, clear the filter from step 4 so that all bands are showing, then click on the icon displaying six little boxes above the single image (labeled "B" in Figure 1). Sort the images in wavelength order (i.e., *ugrizy*) by clicking the ``em_min`` table header to sort on that column.
 
 .. figure:: images/portal-105-1-2.png
     :name: portal-105-1-2
@@ -74,7 +74,8 @@ To display up to eight images side-by-side, clear the filter from step 4 so that
 Open the left sidebar using the menu icon at upper left.
 Under "Results Layout," select a side-by-side view of the coverage/images panel and the tables panel, as in Figure 3.
 The layout should now resemble Figure 4.
-Note that it might be necessary to choose a different tab in the left panel in order to see the images instead of the coverage map or active chart.
+Note that if a different tab is selected at the upper left, the images may not appear.
+Click on the tab labeled "Data Product: ivoa.ObsCore-data" to change the view to the image display.
 
 .. figure:: images/portal-105-1-3.png
     :name: portal-105-1-3
