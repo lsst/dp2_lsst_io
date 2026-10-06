@@ -27,7 +27,7 @@ Rubin staff will respond to all questions posted there.
 1. Introduction
 ===============
 
-This tutorial explores the galaxy cluster PSZ2 G309.43-72.86, which was detected by the Planck satellite through the Sunyaev-Zel'dovich (SZ) effect.
+This tutorial explores the galaxy cluster PSZ2 G309.43-72.86 (in the DDF ELAIS S1 field), which was detected by the Planck satellite through the Sunyaev-Zel'dovich (SZ) effect.
 Galaxy clusters are important probes of cosmology, and a large fraction of their member galaxies are red, passive galaxies that form a tight sequence in the color–magnitude diagram, known as the "red sequence."
 
 This tutorial performs a cone search around the cluster, makes a color-magnitude diagram of galaxies, identifies the red sequence, and inspects individual galaxies in the deep coadd images.
@@ -65,16 +65,16 @@ Click the funnel icon at the top left of the table to collapse it to just the se
 
 **2.4. Execute the search.**
 At lower left, click the blue button labeled "Search".
-The query returns N rows of the ``Object`` table.
+The query returns 551 rows of the ``Object`` table.
 
 
 3. Make the color-magnitude diagram
 ===================================
 
 **3.1. Create a color-magnitude diagram.**
-In the "Active Chart" panel, click the icon of the plus sign in a circle to open the "Add New Chart" pop-up window.
+In the "Active Chart" panel, click the icon of the plus sign in a circle (under the "Active Chart" text; Figure 3) to open the "Add New Chart" pop-up window.
 Choose "Plot Type: Scatter", and use magnitude (``r_cModelMag``) on the x-axis and color (``r_cModelMag``-``i_cModelMag``) on the y-axis.
-Set the X Min, X Max values to 17, 22, and the Y Min, Y Max values to 0, 1.
+Set the X Min, X Max values to 17, 22, and the Y Min, Y Max values to 0, 1 under "Chart Options".
 Click "OK".
 
 **3.2. Identify the red sequence.**
