@@ -8,7 +8,7 @@ For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
 **Data Release:** DP2
 
-**Last verified to run:** 2026-09-28
+**Last verified to run:** 2026-10-06
 
 **Learning objective:** Use the selection tool in the Firefly image viewer.
 
@@ -43,7 +43,6 @@ This query will return all *r*-band deep coadd images that overlap coordinates R
 
 
 **2. Select a rectangular region of the image.**
-
 The "Select drop down" tool, which looks like a dashed open circle (labeled "A" in Figure 1), can be used to select a region of the image and perform operations on the selected region.
 
 Click on the select drop down, then choose "Rectangular Selection".
@@ -57,19 +56,17 @@ The "Recenter image" button is labeled "A" in Figure 2.
     :name: portal-105-4-1
     :alt: The buttons to access dropdown menus for color and image scaling.
 
-    Figure 1: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
-
+    Figure 1: The buttons to access dropdown menus for color and image scaling.
 
 .. figure:: images/portal-105-4-2.png
     :width: 500
     :name: portal-105-4-2
     :alt: Rectangular selection tools.
 
-    Figure 2: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
+    Figure 2: The tools that appear once a rectangular selection has been made on the image.
 
 
 **3. Extract statistics for the pixels in the selected region.**
-
 Click the button (labeled "B" in Figure 2) to "Show statistics for the selected area".
 A window displaying the pixel statistics within the selected rectangle will pop up.
 An example of a rectangular selection and the statistics window is shown in Figure 3.
@@ -77,29 +74,28 @@ An example of a rectangular selection and the statistics window is shown in Figu
 .. figure:: images/portal-105-4-3.png
     :width: 500
     :name: portal-105-4-3
-    :alt: Rectangular selection and stats.
+    :alt: An example of a rectangular selection and the statistics for the selected pixels.
 
-    Figure 3: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
+    Figure 3: An example showing a rectangular region selected in an image, and the statistics for the selected pixels that appear when the statistics button is clicked.
 
 Mouse over each of the rows in the pop-up table, and note that an "x" appears at the position corresponding to each row's measurement.
 
 Close the statistics window.
 
 **4. Search for catalog objects in the selected region.**
-
 To search for catalog objects in the selected region, click the "Search this area" button that looks like a microscope (labeled "C" in Figure 2).
 In the drop-down, select "Search (cone) using TAP..." to search a DP2 table with the radius enclosed by the box.
 
 Clicking the search button will take you to the Catalog search view of the Portal, showing by default the Object table (others can be selected using the dropdown menus, as demonstrated in the 100-level Portal tutorials).
 Keep all of the default column selections and click Search (at the lower left).
 
-A catalog query results table will appear. In most cases, the display will show a lightcurve of the first object in the results table, as seen in Figure 12 (your display may show something slightly different, and have a different layout depending on what you have selected earlier).
+A catalog query results table will appear. In most cases, the display will show a lightcurve of the first object in the results table, as seen in Figure 4 (your display may show something slightly different, and have a different layout depending on what you have selected earlier).
 
 .. figure:: images/portal-105-4-4.png
     :name: portal-105-4-4
-    :alt: Cone search results.
+    :alt: Cone search results. The right half of the screen shows the Object table query results, and the left panel displays a light curve of the selected object from the ForcedSource table.
 
-    Figure 4: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
+    Figure 4: The results of the catalog query performed by the cone search in Section 4. The right half of the screen shows the Object table query results, and the left panel displays a light curve of the selected object from the ForcedSource table.
 
 To return to a view of the HiPS map with the search results overlaid, click the "Coverage" button at the upper left.
 
@@ -112,6 +108,6 @@ The objects from the search result will now be highlighted as in Figure 5 (the s
     :name: portal-105-4-5
     :alt: Cone search results overlaid on image.
 
-    Figure 5: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
+    Figure 5: A zoomed in view of a small portion of the deep coadd image, with small magenta markers overlaid at the positions of the catalog objects returned by the cone search.
 
 Note: the crop tool that appears when a selection is made is not currently functional. One should use the cutout tool instead to get a cutout image. Additionally, the zoom tool in that menu will zoom to the selected area, but then make the select tool inactive. If you want to perform additional operations on the selected area, you will need to select it again.

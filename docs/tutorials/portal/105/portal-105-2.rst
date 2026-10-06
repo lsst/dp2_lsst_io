@@ -8,7 +8,7 @@ For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
 **Data Release:** DP2
 
-**Last verified to run:** 2026-09-29
+**Last verified to run:** 2026-10-06
 
 **Learning objective:** Use the components of the Firefly image viewer.
 
@@ -26,7 +26,7 @@ Rubin staff will respond to all questions posted there.
 **1. Execute an ADQL query for a deep coadd image.**
 Log in to the Portal Aspect, select the "DP1 & DP2 Images" tab and click on "Edit ADQL" at upper right.
 Enter the following ADQL statement and click "Search" at lower left.
-This query will return all *r*-band deep coadd images that overlap coordinates RA, Dec = 53.0, -28.0 degrees.
+This query will return a single *r*-band deep coadd image that overlaps coordinates RA, Dec = 53.0, -28.0 degrees.
 
 .. code-block:: SQL
 
@@ -74,10 +74,7 @@ The coadd image planes are:
 
 Notice that the background images are binned to lower resolution than the full images.
 
-**3. Change the orientation of the image.**
-
-Toggle the image plane view to return to the original deep coadd image.
-
+**3. Change the orientation of the image.** Toggle the image plane view to return to the original deep coadd image.
 Click the "Tools" drop-down and then the "rotate image" tool (labeled "A" in Figure 3) in the "Rotate/Flip" portion of the Tools menu.
 Rotate the image to an angle 135 degrees East of North by either using the slider or manually entering 135 in the box.
 The result should appear as in Figure 4.
@@ -110,7 +107,6 @@ Now click on the "flip" button (labeled "C" in Figure 3) to flip the image in th
 To return to the original view, click the "Restore to the defaults" button in the Tools menu (labeled "D" in Figure 3).
 
 **4. Change the color map and image scaling.**
-
 The color map used to display the image can be changed by clicking the "Color drop down" icon that looks like a painter's palette (labeled "A" in Figure 6).
 Click the Color drop down and change the color mapping by clicking one of the options (as in Figure 7; the example selected there is the "plasma" colorbar).
 Notice that there is a "reverse" option to the right of each colorbar.
@@ -140,7 +136,7 @@ Click the stretch drop down to reveal the options as seen in Figure 8.
     :name: portal-105-2-8
     :alt: The stretch options.
 
-    Figure 8: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
+    Figure 8: The color stretch drop down menu, showing 11 preset options as well as the "Color stretch..." choice for customizing the stretch.
 
 Change the stretch to "Z Scale Linear Stretch". Then change it to "Z Scale Asinh Stretch". The results should look like those seen in Figure 9.
 
@@ -148,6 +144,6 @@ Change the stretch to "Z Scale Linear Stretch". Then change it to "Z Scale Asinh
     :name: portal-105-2-9
     :alt: Z Scale linear vs. Z Scale Asinh stretch.
 
-    Figure 9: The buttons to cycle through image planes in Firefly. They appear above the displayed image.
+    Figure 9: A zoomed-in region of the same image, but with different stretches applied. The image on the left uses the "Z Scale Linear" stretch, and the one on the right uses "Z Scale Asinh".
 
 By clicking the "Color stretch..." button in the stretch drop down, the stretch parameters and type can be manually controlled using the widget that will appear.

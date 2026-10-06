@@ -8,7 +8,7 @@ For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
 **Data Release:** DP2
 
-**Last verified to run:** 2026-09-29
+**Last verified to run:** 2026-10-06
 
 **Learning objective:** Add overlays to images displayed in Firefly.
 
@@ -58,7 +58,7 @@ Click the "Tools" icon (A in Figure 1) to open the drop-down menu, then mouse-ov
 **4. Add a compass.**
 Click the "Compass" icon (the north-east arrow; C in Figure 1).
 A compass will appear on the image.
-Change its color to purple by clicking the "Layers" icon (B in Figure 1), and in the pop-up window (Figure 2) clicking "Color" to the right of "North Arrow", and selecting purple.
+Change its color to purple by clicking the "Overlays" icon (labeled B in Figure 1), and in the pop-up window (Figure 2) clicking "Color" to the right of "North Arrow", and selecting purple.
 
 **5. Add a coordinate grid.**
 Click the "Grid" icon (D in Figure 1) to display the coordinate grid on the image.
@@ -70,9 +70,9 @@ In the "Layers" pop-up window, check "Offset Calculation" under "Distance Tool",
 
 **7. Add a mask.**
 To display image mask planes, do not use the "Mask" icon (F in Figure 1), which does not work properly with Rubin images.
-Instead, click the "Layers" icon (B in Figure 1), and then click "Enable" in the lower-left corner next to where it says "Mask Layer found" (see Figure 2).
-A list of many mask planes will appear, starting with "BAD," "SAT," "INTRP," "CR," "EDGE," and so on.
-Click the toggle next to "bit # 5 - DETECTED" to display the mask for all pixels that are part of detected objects.
+Instead, click the "Overlays" icon (B in Figure 1), and then click "Enable" in the lower-left corner next to where it says "Mask Layer found" (see Figure 2).
+A list of many mask planes will appear, starting with "NO_DATA," "INTERPOLATED," "COSMIC_RAY," "SATURATED," "DETECTION_EDGE," and so on.
+Click the toggle next to "bit # 7 - DETECTED" to display the mask for all pixels that are part of detected objects.
 At the right side, change the color of this mask plane to green by clicking on the "Color" button and selecting green.
 Turn the DETECTED mask display off by clicking the toggle at the left side.
 

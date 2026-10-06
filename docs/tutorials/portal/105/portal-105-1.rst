@@ -8,7 +8,7 @@ For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
 **Data Release:** DP2
 
-**Last verified to run:** 2026-09-29
+**Last verified to run:** 2026-10-06
 
 **Learning objective:** Navigate the multi-panel interface for image data results.
 
