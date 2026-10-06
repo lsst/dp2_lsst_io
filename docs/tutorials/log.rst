@@ -14,6 +14,11 @@ Released a Portal tutorial demonstrating how to save portal visualizations as JS
 
 Released five DP2 Portal series 105 tutorials demonstrating how to interact with images in the image search results interface.
 
+2026-10-06
+==========
+
+Released a new Portal tutorial, 303.2 "Compare photometry types for galaxies in a DP2 field".
+
 2026-10-05
 ==========
 
