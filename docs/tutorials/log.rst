@@ -4,6 +4,11 @@
 Log of major tutorial updates
 #############################
 
+2026-10-06
+==========
+
+Released five DP2 Portal series 105 tutorials demonstrating how to interact with images in the image search results interface.
+
 2026-10-05
 ==========
 

@@ -90,10 +90,17 @@ Interact with catalog data in the results interface (subset and plot).
 
 Interact with image data in the results interface (Firefly).
 
-``Coming soon.``
+.. toctree::
+    :titlesonly:
+    :glob:
 
+    105/portal-105-1.rst
+    105/portal-105-2.rst
+    105/portal-105-3.rst
+    105/portal-105-4.rst
+    105/portal-105-5.rst
 
-106. User-uploaded tables
+1.   User-uploaded tables
 -------------------------
 
 Upload tables and join them in ADQL statements.
