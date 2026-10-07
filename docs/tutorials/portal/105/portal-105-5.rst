@@ -71,7 +71,6 @@ Whereras for a more vertical line the options will be "3x1" to "7x1" (i.e., alwa
 The options to calculate the "Average" or "Sum" of the fluxes within the aperture are given.
 Figure 2 demonstrates a "7x1" sum aperture used on a more vertical line profile across two blended objects.
 
-
 .. figure:: images/portal-105-5-2.png
     :width: 500
     :name: portal-105-5-2
