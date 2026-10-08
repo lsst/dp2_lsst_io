@@ -139,4 +139,4 @@ Explore galaxies in the DP2 catalogs and images.
     :titlesonly:
     :glob:
 
-    303/portal-303-1.rst
+    303/portal-303-2.rst
