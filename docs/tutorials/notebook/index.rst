@@ -65,6 +65,8 @@ Short tutorials with a learning objective of how to use a single RSP function or
     103/notebook-103-5.rst
     103/notebook-103-6.rst
     103/notebook-103-7.rst
+    103/notebook-103-8.rst
+    103/notebook-103-9.rst
 
 
 104. Butler data access
@@ -233,6 +235,8 @@ Longer tutorials with a learning objective of executing an end-to-end scientific
     :glob:
 
     304/notebook-304-1.rst
+    304/notebook-304-2.rst
+    304/notebook-304-3.rst
 
 
 305. Galactic variables and transients
@@ -275,6 +279,19 @@ Longer tutorials with a learning objective of executing an end-to-end scientific
 
     308/notebook-308-01.rst
     308/notebook-308-02.rst
+    308/notebook-308-08.rst
+
+309. Low surface brightness
+---------------------------
+
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    309/notebook-309-1.rst
+    309/notebook-309-2.rst
+    309/notebook-309-3.rst
+
 
 310. Photometric redshifts
 ----------------------------

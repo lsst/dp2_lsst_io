@@ -4,6 +4,31 @@
 Log of major tutorial updates
 #############################
 
+2026-10-06
+==========
+
+Released five DP2 Portal series 105 tutorials demonstrating how to interact with images in the image search results interface.
+
+2026-10-05
+==========
+
+Released two new notebooks on cosmology.
+
+2026-10-05
+==========
+
+Released the DP2 Portal 304 tutorial on cosmology, identifying the red sequence of the galaxy cluster PSZ2 G309.43-72.86.
+
+2026-09-21
+==========
+
+Released two new notebooks about multi-coadd cutouts and custom color images.
+
+2026-09-20
+==========
+
+Released new notebook tutorials about low surface brightness science.
+
 2026-09-17
 ==========
 

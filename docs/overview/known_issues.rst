@@ -234,6 +234,13 @@ They are also a subset of the visits listed in :ref:`Bad visits <issues_badvisit
     2025071700678, 2025071800299, 2025071800360, 2025071800368, 2025071800445, 2025071800518]
 
 
+Noise realizations bug
+----------------------
+
+The artifact masks from the ``CompareWarp`` stage of :doc:`/processing/coaddition/index` were not used when rejecting pixels from the deep coadd image, and as a result the noise realizations are inaccurate.
+As of mid-September 2026, tests were still underway to understand the full impact, but this effect should be limited to regions :doc:`masked </products/images/mask_planes>` on the deep coadd image as ``CLIPPED``.
+
+
 .. _issues_object_catalog:
 
 Object catalog
@@ -258,6 +265,11 @@ Matching to the object_shear_all table
 The ``object_shear_all`` table has a completely different set of rows from the Object table: it includes rows with ``is_tract_inner == False``, but not rows with ``is_patch_inner == False``.
 Users will need to be careful when comparing or matching the two tables.
 
+
+Bug in calculation of blendedness parameter
+-------------------------------------------
+
+A bug in the science pipelines that generated EDP2 results in some objects having negative ``<f>_blendedness`` values (where ``<f>`` corresponds to the LSST filter). This bug will also impact DP2. To select objects that are not heavily blended, the ``deblend_blendNChild`` parameter (which indicates how many children were deblended with the object in the catalog) can be used instead, selecting for ``(deblend_blendNChild == 1)  | detect_isIsolated`` in place of ``<f>_blendedness < 0.1``.
 
 .. _issues_dia:
 
@@ -303,19 +315,38 @@ Since DP2 is derived from LSSTCam commissioning data, standard dithering routine
 
 .. _issues_solarsystem:
 
-Solar system processing
-========================
+Solar system
+============
 
-DP2 delivers associations between ``DiaSource`` detections and previously known small bodies; it does not deliver a standalone catalog of Rubin discoveries.
-Association used a 1-arcsecond positional match without astrometric uncertainties, photometry, or a probabilistic score.
-Chance associations are therefore possible, particularly where the ``DiaSource`` density is high.
-See :doc:`/processing/moving/ss_association` for selection and quality guidance.
+Astrometry
+----------
 
-Astrometric comparisons show different behavior for different object samples.
+Astrometric comparisons show different behavior for different object samples in DP2.
 For long-observed objects discovered before 2000, median measured-minus-predicted coordinate residuals are below 1 mas, with approximately 13--14 mas scatter.
 For objects discovered during 2000--2020, offsets relative to JPL Horizons are spatially coherent across the DP2 footprint: in 5 by 5 degree sky cells, the median offset-vector length is approximately 19 mas, the 95th percentile is approximately 30 mas, and the largest values approach 42 mas.
 The current hypothesis is that orbit catalogs can retain 20--40 mas systematic errors in predicted positions, especially for objects constrained primarily by northern, pre-Gaia astrometry.
 This interpretation remains under investigation and will be discussed in detail in a subsequent paper.
+
+Rubin First Look Solar System objects
+-------------------------------------
+
+The DP2 release includes the M49 and Trifid-Lagoon fields (see :doc:`small fields </overview/observations>`), which produced the Rubin First Look (RFL) images in June 2025. However, not all of the >2,000 Solar System objects detected/discovered and released via the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC) as part of the RFL media event are included in the DP2 release due to differences in quality cuts between the RFL and DP2 datasets. For more information on accessing the RFL Solar System objects through the MPC, see the tutorial on `Rubin First Look Solar System object discoveries <https://prompt-products.lsst.io/tutorials/notebook/notebook-mpc.html>`_.
+
+MPC_orbits table
+----------------
+
+The contents of the DP2 ``mpc_orbits`` table were copied without modification from the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC) as a snapshot of the MPC's orbital element catalog from 2026 March 13 and inherited any issues that the table may have had at the time. A few known issues include:
+
+- Missing semimajor axes
+- Incorrect number of oppositions
+- Incorrect number of observations
+- Incorrect arc lengths
+- Missing orbit type integers
+
+Current_identifications table
+-----------------------------
+
+Similarly, the contents of the DP2 ``current_identifications`` table were copied from the `Minor Planet Center <https://minorplanetcenter.net/>`_  without modification and inherited any issues from that table at the time, including many missing object type integers.
 
 
 .. _issues_badvisits:
@@ -339,3 +370,32 @@ These are a subset of the visits listed in ``bad.ecsv`` for LSSTCam in `excluded
     2025071600479, 2025071700678, 2025071800104, 2025071800110, 2025071800129,
     2025071800151, 2025071800299, 2025071800360, 2025071800368, 2025071800382,
     2025071800445, 2025071800518, 2025072000352, 2025072200096, 2025072200207]
+
+.. _issues_forcephotometry:
+
+Force Photometry
+================
+
+Missing ForcedSources
+---------------------
+
+Approximately 3% of visit images in the coadded area that were processed successfully and included in coadd construction were not measured during force photometry and did not generate ``ForcedSources``.
+The affected images had failed image differencing, and because force photometry is normally performed on both the visit image and its corresponding difference image by the same task, the pipeline skipped both types of force photometry since the required inputs were not all available.
+In some areas where very few visits were obtained, this means there may be ``Objects`` that have no corresponding ``ForcedSources`` at all.
+In future data releases this task will be corrected to perform visit image force photometry regardless of the difference image status.
+
+
+.. _issues_productdifferences:
+
+Data Product Differences
+========================
+
+Differences between Butler tables and TAP
+-----------------------------------------
+
+A small number of changes have been made to the tables presented in TAP (Table Access Protocol) which cause them to differ from the tables available in parquet format via the Butler:
+
+- ``coord_ra`` and ``coord_dec`` are omitted from ``ForcedSource`` and ``ForcedSourceOnDiaObject``, as it is more efficient to perform spatial queries by joining to ``Object`` or ``DiaObject`` and spatially restricting on the ``Object``/``DiaObject`` coordinates.
+- ``ra`` in the ``isolated_star_stellar_motions`` Butler dataset ranges from -180 to +180; in TAP this has been corrected to run from 0 to 360.
+- ``coord_ra`` and ``coord_dec`` are empty in the ``dia_source`` Butler dataset and omitted from TAP; ``ra`` and ``dec`` are the correct columns to use.
+- ``coord_ra`` and ``coord_dec`` are duplicates of ``ra`` and ``dec`` in ``source``, and are omitted from TAP.

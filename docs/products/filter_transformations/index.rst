@@ -9,19 +9,19 @@ Filter transformations to/from the LSST photometric system and other astronomica
 Access
 ======
 
-Until they are available for DP2 and LSSTCam, refer to the `Data Preview 1 (DP1) filter transformations for LSSTComCam <https://dp1.lsst.io/products/filter_transformations/index.html>`_.
+To convert between Data Preview 2 (DP2) and other photometric systems, refer to the filter transformations in `RTN-125 <https://rtn-125.lsst.io/>`_.
 
 Description
 ===========
 
-**Filter transformations for DP1** were derived using both synthetic and empirical data and are intended to support calibration and comparison across survey systems.
+**Filter transformations for DP2** were derived and are intended to support calibration and comparison across survey systems.
 The filter transformation relations include both polynomial-fit equations and lookup-table-based methods.
 They are generally valid for stars with typical spectral energy distributions (SEDs), and caution should be used when applying them to objects with strong emission lines or atypical colors.
-Transformation relations are currently available to/from LSSTComCam Data Preview 1 (DP1) photometric system and the photometric systems of the Dark Energy Survey (DES), PanSTARRS, SDSS, Gaia DR3, Euclid Q1, and Johnson-Cousins UBVRcIc.
-There are also some transformation equations based on synthetic photometry available to/from LSSTCam filters and DES and TESS.
+Transformation relations are currently available to/from LSSTCam Data Preview 2 (DP2) photometric system and the photometric systems of the LSSTComCam (DP1), Dark Energy Survey (DES) (DR2), PanSTARRS (DR2), SDSS (DR18), Gaia (DR3), Euclid (Q1), and Johnson-Cousins (UBVRcIc).
+
 
 Tutorials
 ---------
 
-Until they are available for DP2 and LSSTCam, refer to the `DP1 calibrations tutorial notebooks <https://dp1.lsst.io/tutorials/notebook/index.html#calibrations>`_.
+DP2 tutorial notebook describing the use of these transformations can be found in the  `Filter Transformations notebook <https://dp2.lsst.io/tutorials/notebook/311/notebook-311-2.html>`_.
 
