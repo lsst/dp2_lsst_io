@@ -137,6 +137,18 @@ Explore the observations included in the DP2 dataset.
 ``Coming soon.``
 
 
+303. Galaxies
+-------------
+
+Explore the galaxy population in DP2 fields.
+
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    303/portal-303-1.rst
+
+
 304. Cosmology
 --------------
 
