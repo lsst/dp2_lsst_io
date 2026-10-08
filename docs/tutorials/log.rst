@@ -29,6 +29,11 @@ Released two new notebooks about multi-coadd cutouts and custom color images.
 
 Released new notebook tutorials about low surface brightness science.
 
+2026-09-17
+==========
+
+Released a new Portal tutorial, 303.2 "Explore galaxy shapes in a DP2 field".
+
 2026-09-16
 ==========
 
