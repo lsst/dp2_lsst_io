@@ -235,6 +235,8 @@ Longer tutorials with a learning objective of executing an end-to-end scientific
     :glob:
 
     304/notebook-304-1.rst
+    304/notebook-304-2.rst
+    304/notebook-304-3.rst
 
 
 305. Galactic variables and transients
