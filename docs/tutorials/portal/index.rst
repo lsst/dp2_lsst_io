@@ -139,7 +139,7 @@ Explore the galaxy population in DP2 fields.
     :titlesonly:
     :glob:
 
-    303/portal-303-2.rst
+    303/portal-303-1.rst
 
 
 304. Cosmology
