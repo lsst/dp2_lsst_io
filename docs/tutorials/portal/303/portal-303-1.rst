@@ -1,7 +1,7 @@
-.. _portal-303-2:
+.. _portal-303-1:
 
 ###########################################################
-303.2. Compare photometry types for galaxies in a DP2 field
+303.1. Compare photometry types for galaxies in a DP2 field
 ###########################################################
 
 For the Portal Aspect of the Rubin Science Platform (RSP) at data.lsst.cloud.
@@ -73,8 +73,8 @@ It also converts the Kron and aperture fluxes, which are in nanojansky (nJy), to
 **2.3. Review the results.**
 Click the "Results" tab and check the number of rows returned.
 
-.. figure:: images/portal-303-2-1.png
-    :name: portal-303-2-1
+.. figure:: images/portal-303-1-1.png
+    :name: portal-303-1-1
     :alt: The results interface showing the galaxy photometry columns returned by the query.
 
     Figure 1: The results table for the galaxies in the ECDFS field.
@@ -87,11 +87,11 @@ Click the "Results" tab and check the number of rows returned.
 A PSF magnitude assumes every source is a point, so for a resolved galaxy it misses light in the outer parts of the galaxy.
 The difference between the two magnitudes should therefore be positive, and grow for brighter galaxies.
 
-Open the "Add New Chart" dialog and make a scatter plot with ``i_cModelMag`` on the x-axis and ``i_psf_minus_cModel`` on the y-axis.
+Click the "+" button to open the "Add New Chart" dialog, and make a scatter plot with ``i_cModelMag`` on the x-axis and ``i_psf_minus_cModel`` on the y-axis.
 This difference is one of the computed columns in the query in section 2.2.
 
-.. figure:: images/portal-303-2-2.png
-    :name: portal-303-2-2
+.. figure:: images/portal-303-1-2.png
+    :name: portal-303-1-2
     :alt: A scatter plot of the PSF-minus-cModel magnitude difference against cModel magnitude for galaxies.
 
     Figure 2: The difference between the PSF and cModel magnitudes against the cModel magnitude.
@@ -102,8 +102,8 @@ Make a second scatter plot with ``i_cModelMag`` on the x-axis and ``i_kron_minus
 The Kron magnitude adapts its aperture to the galaxy's size, so its offset from cModel should stay close to zero across magnitudes.
 A fixed aperture encloses a different fraction of each galaxy's light, so its offset depends on how large the galaxy is, and it does not measure the total flux.
 
-.. figure:: images/portal-303-2-3.png
-    :name: portal-303-2-3
+.. figure:: images/portal-303-1-3.png
+    :name: portal-303-1-3
     :alt: A scatter plot of the Kron-minus-cModel magnitude difference against cModel magnitude.
 
     Figure 3: The Kron magnitude compared with cModel. The offset is close to zero, with a wider spread at faint magnitudes.
@@ -116,7 +116,7 @@ A fixed aperture encloses a different fraction of each galaxy's light, so its of
 A color is the difference between a galaxy's magnitudes in two bands. This tutorial uses *g*-*r* colors.
 They are reliable only if both bands measure the same part of the galaxy.
 
-The cModel color is used as a reference here, because it compares the same model region in each band.
+The cModel color is used as a reference here, because the forced cModel fit applies the same model of the entire galaxy in every band.
 Open the "Add New Chart" dialog and make three scatter plots. For each, use ``i_cModelMag`` on the x-axis and one of the following differences on the y-axis:
 
 * PSF color minus cModel color: ``gr_psf_minus_cModel``
@@ -125,13 +125,13 @@ Open the "Add New Chart" dialog and make three scatter plots. For each, use ``i_
 
 A difference of zero means the measurement agrees with the reference.
 
-The PSF color is expected to depart most from the reference for galaxies, because a PSF does not describe the extent of a galaxy, and the seeing differs between bands.
+The PSF color is expected to depart most from the reference for galaxies, because a PSF does not describe the extent of a galaxy, and the resolution differs between bands.
 The cModel fluxes are forced measurements. The model's position and shape come from a fit in a reference band, and in each other band only the flux of that model is refitted.
 The Kron fluxes are also measured independently in each band, so each band's aperture is set from that band's image.
 The aperture color uses the same fixed aperture in each band, but it omits light outside the aperture.
 
-.. figure:: images/portal-303-2-4.png
-    :name: portal-303-2-4
+.. figure:: images/portal-303-1-4.png
+    :name: portal-303-1-4
     :alt: Three scatter plots of g-r color against i-band cModel magnitude, for PSF, cModel and aperture colors.
 
     Figure 4: The g-r color difference from the cModel color, for PSF, aperture and Kron fluxes, against i-band cModel magnitude.
