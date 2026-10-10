@@ -27,7 +27,7 @@ Rubin staff will respond to all questions posted there.
 
 ----
 
-**1. Log in to the Portal aspect of the Rubin Science Platform and execute a query.** Go to the Portal’s "DP1 & DP2 Catalogs" tab. Switch to the ADQL interface. Copy-paste the query below into the box, will retrieve PSF photometry in *g* and *r* bands for the point-like objects with signal-to-noise ratio > 5 in both bands around a galaxy, NGC 6822. Click "Search".
+**1. Log in to the Portal aspect of the Rubin Science Platform and execute a query.** Go to the Portal’s "DP1 & DP2 Catalogs" tab. Switch to the ADQL interface. Copy and paste the query below into the box. Click "Search". This will retrieve PSF photometry in the *g* and *r* bands for point-like objects around the galaxy NGC 6822 with a signal-to-noise ratio > 10 and no general failure flags set in either band.
 
 .. code-block:: SQL
 
@@ -35,19 +35,21 @@ Rubin staff will respond to all questions posted there.
         FROM dp2.Object
         WHERE CONTAINS(POINT('ICRS', coord_ra, coord_dec),
         CIRCLE('ICRS', 296.2, -14.8, 1))=1
-        AND (refExtendedness =0)
-        AND g_psfFlux/g_psfFluxErr > 5
-        AND r_psfFlux/r_psfFluxErr > 5
+        AND (refSizeExtendedness < 0.1)
+        AND g_psfFlux/g_psfFluxErr > 10
+        AND r_psfFlux/r_psfFluxErr > 10
+        AND g_i_flag = 0
+        AND r_i_flag = 0
 
 **2. Plot a color-magnitude diagram.**
-Add a new chart (click on the plus sign) and select the "Heatmap" plot type. Use color (``g_psfMag``-``r_psfMag``) on the x-axis and magnitude (``r_psfMag``) on the y-axis. Select 200 bins in X and 200 bins in Y. Set the X Min, X Max values to -0.5, 2, and the Y Min, Y Max values to 15, 26. Select "reverse" under "Chart Options" for the y-axis to display brighter magnitudes (i.e., lower numbers) toward the top of the plot.
+Add a new chart (click on the plus sign) and select the "Heatmap" plot type. Use color (``g_psfMag``-``r_psfMag``) on the x-axis and magnitude (``r_psfMag``) on the y-axis. Select 300 bins in X and 300 bins in Y. Set the X Min, X Max values to -0.5, 2, and the Y Min, Y Max values to 15, 25. Select "reverse" under "Chart Options" for the y-axis to display brighter magnitudes (i.e., lower numbers) toward the top of the plot.
 
 .. figure:: images/portal-104-7-1.png
     :name: portal-104-7-1
     :width: 500
-    :alt: g-r versus r color-magnitude diagram for stars
+    :alt: g-r versus r color-magnitude diagram for stars around NGC 6822
 
-    Figure 1: *g*-*r* versus *r* color-magnitude diagram for stars in the NGC 6822 field.
+    Figure 1: *g*-*r* versus *r* color-magnitude diagram for stars around NGC 6822.
 
 **3. Save the plot as a JSON file.**
 First, close the default (``g_psfMag`` vs. ``r_psfMag``) plot, and then click the floppy disk icon at the top of the plot interface, then select "JSON" from the format options to save the plot. The file will be saved to your local computer.
