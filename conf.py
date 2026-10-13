@@ -32,3 +32,7 @@ def setup(app):
 # in relation to the existing "lsst" (i.e. pipelines.lsst.io) in a way that
 # causes a conflict.
 intersphinx_mapping["lsst.images"] = ("https://images.lsst.io/", None)
+
+# This DOI intermittently times out when linkcheck resolves the redirect chain
+# through osti.gov.
+linkcheck_ignore.append(r'https://doi.org/10.11578/rubin/dc.20250909.20')  # noqa: F405
