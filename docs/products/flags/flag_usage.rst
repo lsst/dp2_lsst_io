@@ -31,7 +31,7 @@ Object table
 
 
 **Selection effects:**
-For a spatial query on the Object table near the edge of the COSMOS field, the typical example below reduces by :math:`\sim`10% the number of objects returned; with the two additional examples, the total reduction is :math:`\sim`23%.
+For a spatial query on the Object table near the edge of the COSMOS field, the typical example below reduces by about 10\% the number of objects returned; with the two additional examples, the total reduction is about 23\%.
 The fraction of objects cut will change depending on the observations obtained in the region being queried, and the filters included.
 It is important to consider which flag cuts are necessary for a given science analysis, and to characterize the selection effects.
 
