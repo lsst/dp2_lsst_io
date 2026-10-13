@@ -4,6 +4,11 @@
 Log of major tutorial updates
 #############################
 
+2026-10-13
+==========
+
+Released a Portal tutorial demonstrating how to save portal visualizations as JSON files.
+
 2026-10-06
 ==========
 
