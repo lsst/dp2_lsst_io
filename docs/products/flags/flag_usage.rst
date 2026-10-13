@@ -120,7 +120,7 @@ Source table
 * When selecting or excluding calibration stars, use the ``calib_*`` flags (see :ref:`calibration-flags`).
 
 
-Typical example:
+Example:
 
 .. code-block:: sql
 
