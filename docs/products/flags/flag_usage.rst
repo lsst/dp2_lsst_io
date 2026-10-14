@@ -4,7 +4,7 @@
 Flag use examples
 #################
 
-The flag use examples below include only a small set of flags that apply to most typical science analyses.
+The flag use examples below include only a small set of flags that apply to most science analyses.
 
 .. note::
 
@@ -26,17 +26,17 @@ Object table
 **Guidance:**
 
 * Use the ``{band}`` flag for each band that is necessary for the analysis.
-* In the typical example below, replace ``{band}_psfFlux_flag`` with the failure flag for the flux type used in the analysis (e.g., ``{band}_cModel_flag``, ``{band}_free_psfFlux_flag``).
+* In the example below, replace ``{band}_psfFlux_flag`` with the failure flag for the flux type used in the analysis (e.g., ``{band}_cModel_flag``, ``{band}_free_psfFlux_flag``).
 * For model photometry and shapes, require the matching general flag when using the quantity, e.g., ``{band}_cModel_flag = 0`` for CModel fluxes, ``{band}_kronFlux_flag = 0`` for Kron fluxes, or ``{band}_hsmShapeRegauss_flag = 0`` for HSM shapes.
 
 
 **Selection effects:**
-For a spatial query on the Object table near the edge of the COSMOS field, the typical example below reduces by about 10\% the number of objects returned; with the two additional examples, the total reduction is about 23\%.
+For a spatial query on the Object table near the edge of the COSMOS field, the example below reduces by about 10\% the number of objects returned; with the two additional examples, the total reduction is about 23\%.
 The fraction of objects cut will change depending on the observations obtained in the region being queried, and the filters included.
 It is important to consider which flag cuts are necessary for a given science analysis, and to characterize the selection effects.
 
 
-Typical example:
+Example:
 
 .. code-block:: sql
    :force:
@@ -150,7 +150,7 @@ ForcedSource table
 
 * When building light curves, apply these flags per measurement (row) so that poor epochs are dropped while good epochs for the same object are kept.
 
-Typical example:
+Example:
 
 .. code-block:: sql
 
@@ -176,7 +176,7 @@ DiaSource table
 
 * No cut on the ``reliability`` column was applied before writing the DiaSource catalog (:ref:`dia-reliability` is a machine-learned real/bogus score).
 
-Typical example:
+Example:
 
 .. code-block:: sql
 
@@ -204,7 +204,7 @@ ForcedSourceOnDiaObject table
 
 * As with ForcedSource, filter per measurement (row) to remove bad epochs while keeping good ones.
 
-Typical example when using difference-image flux:
+Example when using difference-image flux:
 
 .. code-block:: sql
 
