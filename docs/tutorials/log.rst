@@ -4,6 +4,12 @@
 Log of major tutorial updates
 #############################
 
+2026-10-16
+==========
+
+Released a new Notebook tutorial demonstrating ``DiaObject`` cross-match.
+
+
 2026-10-13
 ==========
 
