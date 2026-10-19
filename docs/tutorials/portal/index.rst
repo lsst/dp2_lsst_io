@@ -101,7 +101,7 @@ Interact with image data in the results interface (Firefly).
     105/portal-105-4.rst
     105/portal-105-5.rst
 
-1.   User-uploaded tables
+106. User-uploaded tables
 -------------------------
 
 Upload tables and join them in ADQL statements.
