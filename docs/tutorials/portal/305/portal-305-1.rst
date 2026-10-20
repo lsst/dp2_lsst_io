@@ -43,13 +43,13 @@ This query will return all forced photometry measurements for a known variable s
   WHERE CONTAINS(POINT('ICRS', diaobj.ra, diaobj.dec),
                  CIRCLE('ICRS', 226.7244283498404, -40.30405425755786, 0.5/3600)) = 1
 
-The above query locates the star of interest in the `DiaObject`` table, matches based on `diaObjectId` to the `ForcedSourceOnDiaObject`` table to get the forced photometry measurements, then matches based on `visit` to the `Visit` table to get the observation times, `expMidptMJD`.
+The above query locates the star of interest in the ``DiaObject`` table, matches based on ``diaObjectId`` to the ``ForcedSourceOnDiaObject`` table to get the forced photometry measurements, then matches based on ``visit`` to the ``Visit`` table to get the observation times, ``expMidptMJD``.
 The query should return 887 results.
 
 **2. Plot a light curve (flux vs. time).**
 In the "Active Chart" panel, click the "+" to add a chart.
-Choose a "Scatter" plot, then select `psfDiffFlux` vs. `expMidptMJD` to plot a light curve of the difference image flux (see Figure 1 for the plot parameters window).
-Include the errors on the flux by toggling the "Y Error" button on, then selecting `psfDiffFluxErr`.
+Choose a "Scatter" plot, then select ``psfDiffFlux`` vs. ``expMidptMJD`` to plot a light curve of the difference image flux (see Figure 1 for the plot parameters window).
+Include the errors on the flux by toggling the "Y Error" button on, then selecting ``psfDiffFluxErr``.
 Enter X and Y labels, then click OK to display the plot.
 Delete the default chart that plots RA, Dec coordinates.
 
@@ -70,7 +70,7 @@ Delete the default chart that plots RA, Dec coordinates.
 The light curve should look like Figure 2.
 Fluxes can be positive or negative, as expected for a variable star that sometimes is brighter and sometimes fainter than it is in the template.
 
-This light curve shows measurements from all 6 of the `ugrizy` bands.
+This light curve shows measurements from all 6 of the *ugrizy* bands.
 Use the filter at the top of the "band" column in the table to select only the *r* band.
 The table and plot should change to display only 164 points.
 Experiment with toggling different bands on and off.
@@ -92,18 +92,18 @@ Note that this will often not work for difference fluxes, as they can be negativ
 
     Figure 3: The interface to calculate a new column value derived from existing columns. The formula -2.5*log10(psfFlux) + 31.4 converts from flux in nJy to AB magnitudes.
 
-Select *g*-band measurements, then change the plot to display `psfmag` vs. `expMidptMJD`.
+Select *g*-band measurements, then change the plot to display ``psfmag`` vs. ``expMidptMJD``.
 Reverse the y-axis so brighter magnitudes are toward the top of the plot.
 
 To place each measurement into the RR Lyrae star's phase, one must choose a reference measurement to use as the initial time.
-Sort the table by `expMidptMJD` so that it is in ascending order (i.e., the earliest measurement appears first).
+Sort the table by ``expMidptMJD`` so that it is in ascending order (i.e., the earliest measurement appears first).
 Use this earliest point as the reference time "t0".
-Create a new table column "tdiff" that calculates the difference between each measurement and this reference time, `expMidptMJD-60791.369557566984` (where t0=60791.369557566984).
+Create a new table column "tdiff" that calculates the difference between each measurement and this reference time, ``expMidptMJD-60791.369557566984`` (where t0=60791.369557566984).
 
 To calculate phase, calculate the number of periods that have passed since t0 as tdiff/period.
-Then subtract off the number of full periods that passed from that number using the `floor` function, such that `phase = (tdiff/period)-floor(tdiff/period)`, where `period=0.5180638410804721` is the known period.
+Then subtract off the number of full periods that passed from that number using the ``floor`` function, such that ``phase = (tdiff/period)-floor(tdiff/period)``, where ``period=0.5180638410804721`` is the known period.
 
-Change the existing plot to show `g magnitude` vs. `phase`. This phased light curve should look like Figure 4.
+Change the existing plot to show *g* magnitude vs. ``phase``. This phased light curve should look like Figure 4.
 
 .. figure:: images/portal-305-1-4.png
     :width: 700
