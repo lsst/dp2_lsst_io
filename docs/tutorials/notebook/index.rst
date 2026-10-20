@@ -326,6 +326,7 @@ Longer tutorials with a learning objective of executing an end-to-end scientific
     312/notebook-312-1.rst
     312/notebook-312-2.rst
     312/notebook-312-3.rst
+    312/notebook-312-4.rst
 
 
 .. _notebook-es:
