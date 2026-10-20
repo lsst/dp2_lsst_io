@@ -30,18 +30,18 @@ This query will return all forced photometry measurements for a known variable s
 
 .. code-block:: SQL
 
-SELECT diaobj.ra, diaobj.dec, diaobj.diaObjectId, fsodo.visit, fsodo.band,
-       fsodo.psfDiffFlux, fsodo.psfDiffFluxErr,
-       fsodo.psfFlux as psfFlux, fsodo.psfFluxErr,
-       fsodo.psfDiffFlux_flag, fsodo.diff_PixelFlags_nodataCenter,
-       fsodo.pixelFlags_saturatedCenter, fsodo.invalidPsfFlag,
-       fsodo.pixelFlags_bad, fsodo.psfFlux_flag,
-       vis.expMidptMJD
-FROM dp2.DiaObject as diaobj
-JOIN dp2.ForcedSourceOnDiaObject as fsodo ON fsodo.diaObjectId = diaobj.diaObjectId
-JOIN dp2.Visit as vis ON vis.visit = fsodo.visit
-WHERE CONTAINS(POINT('ICRS', diaobj.ra, diaobj.dec),
-               CIRCLE('ICRS', 226.7244283498404, -40.30405425755786, 0.5/3600)) = 1
+  SELECT diaobj.ra, diaobj.dec, diaobj.diaObjectId, fsodo.visit, fsodo.band,
+         fsodo.psfDiffFlux, fsodo.psfDiffFluxErr,
+         fsodo.psfFlux as psfFlux, fsodo.psfFluxErr,
+         fsodo.psfDiffFlux_flag, fsodo.diff_PixelFlags_nodataCenter,
+         fsodo.pixelFlags_saturatedCenter, fsodo.invalidPsfFlag,
+         fsodo.pixelFlags_bad, fsodo.psfFlux_flag,
+         vis.expMidptMJD
+  FROM dp2.DiaObject as diaobj
+  JOIN dp2.ForcedSourceOnDiaObject as fsodo ON fsodo.diaObjectId = diaobj.diaObjectId
+  JOIN dp2.Visit as vis ON vis.visit = fsodo.visit
+  WHERE CONTAINS(POINT('ICRS', diaobj.ra, diaobj.dec),
+                 CIRCLE('ICRS', 226.7244283498404, -40.30405425755786, 0.5/3600)) = 1
 
 The above query locates the star of interest in the `DiaObject`` table, matches based on `diaObjectId` to the `ForcedSourceOnDiaObject`` table to get the forced photometry measurements, then matches based on `visit` to the `Visit` table to get the observation times, `expMidptMJD`.
 The query should return 887 results.
