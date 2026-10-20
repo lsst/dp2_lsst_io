@@ -7,13 +7,14 @@ Log of major tutorial updates
 2026-10-20
 ==========
 
-Released a new Notebook tutorial demonstrating how to manipulate figures with the plotly package..
+Released a new Notebook tutorial demonstrating how to manipulate figures with the plotly package.
+
+Updated seven notebook tutorials (103.4, 103.5, 202.1, 202.5, 309.1, 309.2, and 309.3) to use the DP2 mask plane names directly.
 
 2026-10-16
 ==========
 
 Released a new Notebook tutorial demonstrating ``DiaObject`` cross-match.
-
 
 2026-10-13
 ==========
