@@ -7,7 +7,7 @@ Log of major tutorial updates
 2026-10-20
 ==========
 
-Released a new Notebook tutorial demonstrating how to manipulate figures with the plotly package..
+Released a new Notebook tutorial demonstrating how to manipulate figures with the plotly package.
 
 2026-10-16
 ==========
