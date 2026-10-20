@@ -8,7 +8,7 @@ For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
 **Data Release:** DP2
 
-**Last verified to run:** 2026-10-05
+**Last verified to run:** 2026-10-20
 
 **Learning objective:** Extract and plot a light curve of a known variable star.
 
@@ -61,7 +61,7 @@ Delete the default chart that plots RA, Dec coordinates.
     Figure 1: The interface to set plot parameters. It is configured to show "difference flux" and its errors on the y-axis, and "expMidptMJD" on the x-axis.
 
 .. figure:: images/portal-305-1-2.png
-    :width: 600
+    :width: 700
     :name: portal-305-1-2
     :alt: The lightcurve of the selected star, showing difference flux vs. the midpoint time of each exposure.
 
@@ -106,22 +106,9 @@ Then subtract off the number of full periods that passed from that number using 
 Change the existing plot to show `g magnitude` vs. `phase`. This phased light curve should look like Figure 4.
 
 .. figure:: images/portal-305-1-4.png
-    :width: 600
+    :width: 700
     :name: portal-305-1-4
-    :alt: The phased light curve.
+    :alt: The phased light curve, showing brightness in g magnitude vs. phase.
 
-    Figure 4: Phased light curve.
+    Figure 4: The light curve of the selected star with measurements placed into their correct phase within the star's variability period. Brightnesses are plotted as magnitudes, showing a variability amplitude of +/-0.6 magnitudes.
 
-
-Plot flux vs. time.
-
-Demonstrate toggling measurements in different bands on/off.
-
-Demonstrate applying flag cuts?
-
-Calculate phase. Use the earliest observation time as t0. Use the known period.
-
-Time since t0: expMidptMJD-60791.35148273523
-phase: (tdiff/0.5180638410804721)-floor(tdiff/0.5180638410804721)
-
-Convert to magnitude: mag = -2.5*log10(psfFlux) + 31.4 [remind that this won't work for psfDiffFlux]
