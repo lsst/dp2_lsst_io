@@ -54,12 +54,14 @@ Enter X and Y labels, then click OK to display the plot.
 Delete the default chart that plots RA, Dec coordinates.
 
 .. figure:: images/portal-305-1-1.png
+    :width: 400
     :name: portal-305-1-1
     :alt: The interface to set plot parameters.
 
     Figure 1: The interface to set plot parameters. It is configured to show "difference flux" and its errors on the y-axis, and "expMidptMJD" on the x-axis.
 
 .. figure:: images/portal-305-1-2.png
+    :width: 600
     :name: portal-305-1-2
     :alt: The lightcurve of the selected star, showing difference flux vs. the midpoint time of each exposure.
 
@@ -69,7 +71,7 @@ The light curve should look like Figure 2.
 Fluxes can be positive or negative, as expected for a variable star that sometimes is brighter and sometimes fainter than it is in the template.
 
 This light curve shows measurements from all 6 of the `ugrizy` bands.
-Use the filter at the top of the "band" column in the table to select only the _r_ band.
+Use the filter at the top of the "band" column in the table to select only the *r* band.
 The table and plot should change to display only 164 points.
 Experiment with toggling different bands on and off.
 
@@ -84,12 +86,13 @@ The formula -2.5*log10(psfFlux) + 31.4 converts from flux in nJy to AB magnitude
 Note that this will often not work for difference fluxes, as they can be negative and will cause the logarithm to fail.
 
 .. figure:: images/portal-305-1-3.png
+    :width: 400
     :name: portal-305-1-3
     :alt: The interface to calculate a new column value derived from existing columns.
 
     Figure 3: The interface to calculate a new column value derived from existing columns. The formula -2.5*log10(psfFlux) + 31.4 converts from flux in nJy to AB magnitudes.
 
-Select _g_-band measurements, then change the plot to display `psfmag` vs. `expMidptMJD`.
+Select *g*-band measurements, then change the plot to display `psfmag` vs. `expMidptMJD`.
 Reverse the y-axis so brighter magnitudes are toward the top of the plot.
 
 To place each measurement into the RR Lyrae star's phase, one must choose a reference measurement to use as the initial time.
@@ -103,6 +106,7 @@ Then subtract off the number of full periods that passed from that number using 
 Change the existing plot to show `g magnitude` vs. `phase`. This phased light curve should look like Figure 4.
 
 .. figure:: images/portal-305-1-4.png
+    :width: 600
     :name: portal-305-1-4
     :alt: The phased light curve.
 
