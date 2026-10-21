@@ -179,7 +179,12 @@ This is likely a problem with the sinc interpolation used for smaller apertures,
 Sersic and Exponential model outputs
 ------------------------------------
 
-Improvements to the Sersic and Exponential model outputs are planned for future data releases.
+Due to a data entry error in the MultiProFit code that produced them, all ``exponential_reff_*`` and ``sersic_reff_*`` size columns and corresponding error values are too small by a factor of 2ln(2), or about 1.3863.
+These values must be multiplied by this factor to yield the correct sizes.
+This bug also affects DP1 in the same way.
+It will be fixed for future releases.
+
+Improvements to the Sersic and Exponential model outputs are also planned for future data releases.
 A full description of the ellipse parameterizations and units will be provided on the :doc:`/products/catalogs/object` page.
 
 Photometric zeropoints in non-photometric conditions
