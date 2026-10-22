@@ -29,8 +29,10 @@ Flags without a ``Center`` suffix are set if *any* pixel in the footprint carrie
 Flags with a ``Center`` suffix indicate the issue affects the object's central footprint (typically a 3x3 pixel box), which is more critical for photometry and shapes than flags affecting only the outer footprint.
 
 **Deprecated flags:**
-For DP2, the Object table flags ``pixelFlags_sensor_edge`` and ``pixelFlags_sensor_edgeCenter`` still exist but they are deprecated and always set to false because the deep coadd images are :ref:`images-new-cell-based` which are not affected by the sensor edges of the input visit images.
-Other deprecated flags include: ``pixelFlags_bad``, ``pixelFlags_edge``, ``pixelFlags_suspect``, ``pixelFlags_suspectCenter``, and ``pixelFlags_offimage``.
+For DP2, the Object table flags ``pixelFlags_sensor_edge`` and ``pixelFlags_sensor_edgeCenter`` still exist but they are deprecated, because the deep coadd images are :ref:`images-new-cell-based` which are not affected by the sensor edges of the input visit images.
+Also deprecated in the Object table are ``pixelFlags_bad``, ``pixelFlags_edge``, ``pixelFlags_suspect``, ``pixelFlags_suspectCenter``, and ``pixelFlags_offimage``.
+None of these should be used as a quality cut on the Object table; they remain valid and useful in the Source, ForcedSource, DiaSource, and ForcedSourceOnDiaObject tables.
+To identify Object table positions with no pixel data in a band, use ``pixelFlags_nodata``.
 
 .. list-table::
    :header-rows: 1
