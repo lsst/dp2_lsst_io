@@ -39,7 +39,7 @@ The pipeline enforces the implication chain ``SATURATED`` ⇒ ``REJECTED`` ⇒ `
 
     .. note::
 
-       For quality selection on the **Object catalog**, the corresponding coadd-edge flag to use is ``pixelFlags_sensor_edge`` (derived from the ``SENSOR_EDGE`` plane on non-cell/template coadds); the catalog ``pixelFlags_edge`` column (from ``DETECTION_EDGE``) is deprecated on the Object table. See :doc:`/products/flags/flag_definitions`.
+       For quality selection on the **Object catalog**, the catalog ``pixelFlags_edge`` column (from ``DETECTION_EDGE``) is deprecated on the Object table, as are ``pixelFlags_sensor_edge`` and ``pixelFlags_sensor_edgeCenter``. See :doc:`/products/flags/flag_definitions`.
 
 ``CLIPPED``
     The region was identified as a probable artifact when comparing multiple single-visit warps and was excluded from the coadd at this pixel.
