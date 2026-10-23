@@ -29,6 +29,7 @@ Enter the following ADQL statement and click "Search" at lower left.
 This query will return all forced photometry measurements for a known variable star from Gaia, at coordinates (RA, Dec) = (226.7244283498404, -40.30405425755786) degrees, within a 0.5-arcsecond matching radius.
 
 .. code-block:: SQL
+
   SELECT diaobj.ra, diaobj.dec, diaobj.diaObjectId, fsodo.visit, fsodo.band,
          fsodo.psfDiffFlux, fsodo.psfDiffFluxErr,
          fsodo.psfFlux as psfFlux, fsodo.psfFluxErr,
