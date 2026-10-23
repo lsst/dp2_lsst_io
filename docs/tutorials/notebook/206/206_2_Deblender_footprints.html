@@ -10483,7 +10483,7 @@ A notebook introducing the deblender data products stored in the <code>Object</c
 <span class="n">job</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">phases</span><span class="o">=</span><span class="p">[</span><span class="s1">'COMPLETED'</span><span class="p">,</span> <span class="s1">'ERROR'</span><span class="p">])</span>
 <span class="k">if</span> <span class="n">job</span><span class="o">.</span><span class="n">phase</span> <span class="o">==</span> <span class="s1">'ERROR'</span><span class="p">:</span>
     <span class="n">job</span><span class="o">.</span><span class="n">raise_if_error</span><span class="p">()</span>
-    
+
 <span class="n">results</span> <span class="o">=</span> <span class="n">job</span><span class="o">.</span><span class="n">fetch_result</span><span class="p">()</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">))</span>
 </pre></div>
