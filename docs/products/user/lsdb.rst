@@ -45,5 +45,6 @@ For further LSDB resources, see:
 
 * `lsdb.io/dp2 <https://lsdb.io/dp2>`__ for more information on using LSDB with DP2 data
 * `data.lsdb.io <https://data.lsdb.io/>`__ for descriptions of the DP2 LSDB data products
+* `Tutorial: accessing EDP2's LSDB-formatted catalogs <https://docs.lsdb.io/en/latest/tutorials/pre_executed/rubin_dp2.html>`_
 * `docs.lsdb.io <https://docs.lsdb.io/>`__ for general LSDB documentation and tutorials
 

@@ -11,7 +11,7 @@ Schema: `DiaObject table <https://sdm-schemas.lsst.io/dp2.html#DiaObject>`_
 Access
 ======
 
-The DIA object table is accessible via the TAP and Butler services.
+The DIA object table is accessible via the TAP and Butler services, and also in :doc:`/products/user/lsdb` format.
 
 **Recommended access service:** TAP
 

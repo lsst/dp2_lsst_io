@@ -6,7 +6,7 @@ Vera C. Rubin Observatory Data Preview 2 (DP2)
 
 **Early DP2 release date:** Monday July 27 2026
 
-**Full DP2 release date:** expected Oct-Dec 2026
+**Full DP2 release date:** expected Nov-Dec 2026
 
 .. important::
 
