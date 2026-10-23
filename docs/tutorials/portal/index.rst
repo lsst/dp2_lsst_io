@@ -137,7 +137,6 @@ Explore the observations included in the DP2 dataset.
 
 ``Coming soon.``
 
-
 303. Galaxies
 -------------
 
@@ -161,3 +160,15 @@ Explore galaxy clusters for cosmology.
     :glob:
 
     304/portal-304-1.rst
+
+305. Galactic time domain
+-------------------------
+
+Explore light curves of Galactic variable stars.
+
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    305/portal-305-1.rst
+
