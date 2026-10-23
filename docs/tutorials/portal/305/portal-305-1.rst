@@ -105,3 +105,25 @@ Change the existing plot to show *g* magnitude vs. ``phase``. This phased light 
 
     Figure 3: The light curve of the selected star with measurements placed into their correct phase within the star's variability period. Brightnesses are plotted as magnitudes, showing a variability amplitude of +/-0.6 magnitudes.
 
+**4. Plot a phased light curve in all bands.**
+Clear the selection on *g*-band so that measurements in all 6 filters are visible.
+Open the plot parameters menu, and change the selection in "Group by" to "band", then change the y-axis label to "magnitude", as in Figure 4.
+
+.. figure:: images/portal-305-1-4.png
+    :width: 400
+    :name: portal-305-1-4
+    :alt: The plot parameters window with "band" selected under the "Group by" option.
+
+    Figure 4: The plot parameters window with "band" selected under the "Group by" option and the y-axis label set to "magnitude."
+
+The "group by" functionality will color-code the points by band so that each band's light curve can be identified in a single plot.
+In this tutorial's example, there is a single outlier point at nearly 24th magnitude that causes the y-axis range to be zoomed out very far.
+Using the zoom tool, drag your mouse to select the area from roughly 17.7-20.1 in magnitude.
+The resulting plot should look like Figure 5.
+
+.. figure:: images/portal-305-1-5.png
+    :width: 700
+    :name: portal-305-1-5
+    :alt: The phased light curve, showing brightness in all magnitudes vs. phase, with different bands color-coded.
+
+    Figure 5: The light curve of the selected star with measurements placed into their correct phase within the star's variability period. Brightnesses are plotted as magnitudes, showing a variability amplitude of +/-0.6 magnitudes. Measurements are color-coded by the band in which they were obtained.
