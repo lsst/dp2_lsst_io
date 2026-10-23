@@ -11,12 +11,18 @@ For a log of updates to the tutorial notebooks, see also the `GitHub pull reques
 
 Released a new Notebook tutorial, 302.4, demonstrating faint high proper motion source selection.
 
+2026-10-28
+==========
+
+Released a new Notebook tutorial series, 209, on catalog flags, starting with 209.1 on the ``Object`` table flags.
+
 2026-10-26
 ==========
 
 Corrected notebook 303.2, "Galaxy shapes in DP2", for a known issue in which Sersic and
 exponential effective radius measurements in the Object table were too small by a factor
 of 2 ln 2.
+
 
 2026-10-23
 ==========

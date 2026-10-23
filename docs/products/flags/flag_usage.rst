@@ -25,6 +25,7 @@ Object table
 
 **Guidance:**
 
+* See the :doc:`209.1 notebook tutorial </tutorials/notebook/209/notebook-209-1>`, which characterizes the Object table flag columns and measures which objects a set of flag cuts removes.
 * Use the ``{band}`` flag for each band that is necessary for the analysis.
 * In the example below, replace ``{band}_psfFlux_flag`` with the failure flag for the flux type used in the analysis (e.g., ``{band}_cModel_flag``, ``{band}_free_psfFlux_flag``).
 * For model photometry and shapes, require the matching general flag when using the quantity, e.g., ``{band}_cModel_flag = 0`` for CModel fluxes, ``{band}_kronFlux_flag = 0`` for Kron fluxes, or ``{band}_hsmShapeRegauss_flag = 0`` for HSM shapes.
