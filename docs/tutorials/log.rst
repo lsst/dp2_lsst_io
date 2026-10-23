@@ -6,6 +6,11 @@ Log of major tutorial updates
 
 For a log of updates to the tutorial notebooks, see also the `GitHub pull request history for the tutorial-notebooks repository <https://github.com/lsst/tutorial-notebooks/pulls?q=is%3Apr+state%3Aclosed>`_.
 
+2026-10-28
+==========
+
+Released a new Notebook tutorial series, 209, on catalog flags, starting with 209.1 on the ``Object`` table flags.
+
 2026-10-23
 ==========
 
