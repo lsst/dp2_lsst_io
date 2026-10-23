@@ -8,7 +8,7 @@ For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
 **Data Release:** DP2
 
-**Last verified to run:** 2026-10-20
+**Last verified to run:** 2026-10-23
 
 **Learning objective:** Extract and plot a light curve of a known variable star.
 
@@ -26,25 +26,29 @@ Rubin staff will respond to all questions posted there.
 **1. Execute an ADQL query for a light curve.**
 Log in to the Portal Aspect, select the "DP1 & DP2 Catalogs" tab and click on "Edit ADQL" at upper right.
 Enter the following ADQL statement and click "Search" at lower left.
-This query will return all forced photometry measurements for a known variable star from Gaia, at coordinates (RA, Dec) = (226.7244283498404, -40.30405425755786) degrees.
+This query will return all forced photometry measurements for a known variable star from Gaia, at coordinates (RA, Dec) = (226.7244283498404, -40.30405425755786) degrees, within a 0.5-arcsecond matching radius.
 
 .. code-block:: SQL
-
   SELECT diaobj.ra, diaobj.dec, diaobj.diaObjectId, fsodo.visit, fsodo.band,
          fsodo.psfDiffFlux, fsodo.psfDiffFluxErr,
          fsodo.psfFlux as psfFlux, fsodo.psfFluxErr,
-         fsodo.psfDiffFlux_flag, fsodo.diff_PixelFlags_nodataCenter,
+         scisql_nanojanskyToAbMag(fsodo.psfFLux) as mag,
          fsodo.pixelFlags_saturatedCenter, fsodo.invalidPsfFlag,
-         fsodo.pixelFlags_bad, fsodo.psfFlux_flag,
+         fsodo.psfFlux_flag,
          vis.expMidptMJD
   FROM dp2.DiaObject as diaobj
   JOIN dp2.ForcedSourceOnDiaObject as fsodo ON fsodo.diaObjectId = diaobj.diaObjectId
   JOIN dp2.Visit as vis ON vis.visit = fsodo.visit
   WHERE CONTAINS(POINT('ICRS', diaobj.ra, diaobj.dec),
                  CIRCLE('ICRS', 226.7244283498404, -40.30405425755786, 0.5/3600)) = 1
+  AND fsodo.psfFlux_flag = 0
+  AND fsodo.invalidPsfFlag = 0
+  AND fsodo.pixelFlags_saturatedCenter = 0
+
 
 The above query locates the star of interest in the ``DiaObject`` table, matches based on ``diaObjectId`` to the ``ForcedSourceOnDiaObject`` table to get the forced photometry measurements, then matches based on ``visit`` to the ``Visit`` table to get the observation times, ``expMidptMJD``.
-The query should return 887 results.
+It also calculates magnitudes from the forced PSF fluxes, and applies the recommended flags for science-image fluxes from `the documentation <https://dp2.lsst.io/products/flags/flag_usage.html#forcedsourceondiaobject-table>`_.
+The query should return 878 results.
 
 **2. Plot a light curve (flux vs. time).**
 In the "Active Chart" panel, click the "+" to add a chart.
@@ -80,19 +84,7 @@ The selected star was identified as an RR Lyrae variable via its light curve fro
 Its ID is `6005347144427786624 <https://gaia.aip.de/serve/references/source_id/6005347144427786624?job_id=9a24e576-30d9-4d93-9c52-7dd39ba85f86>`_ in Gaia.
 This star is classified in Gaia DR3's vari_rrlyrae table as an RRab-type variable with a period of 0.5180638410804721 days.
 
-Calculate magnitudes for the science image forced measurements in the table.
-To do so, click the "Add a column" icon at the top of the results table, then enter the parameters shown in Figure 3.
-The formula -2.5*log10(psfFlux) + 31.4 converts from flux in nJy to AB magnitudes.
-Note that this will often not work for difference fluxes, as they can be negative and will cause the logarithm to fail.
-
-.. figure:: images/portal-305-1-3.png
-    :width: 400
-    :name: portal-305-1-3
-    :alt: The interface to calculate a new column value derived from existing columns.
-
-    Figure 3: The interface to calculate a new column value derived from existing columns. The formula -2.5*log10(psfFlux) + 31.4 converts from flux in nJy to AB magnitudes.
-
-Select *g*-band measurements, then change the plot to display ``psfmag`` vs. ``expMidptMJD``.
+Select *g*-band measurements, then change the plot to display ``mag`` vs. ``expMidptMJD``.
 Reverse the y-axis so brighter magnitudes are toward the top of the plot.
 
 To place each measurement into the RR Lyrae star's phase, one must choose a reference measurement to use as the initial time.
@@ -103,12 +95,12 @@ Create a new table column "tdiff" that calculates the difference between each me
 To calculate phase, calculate the number of periods that have passed since t0 as tdiff/period.
 Then subtract off the number of full periods that passed from that number using the ``floor`` function, such that ``phase = (tdiff/period)-floor(tdiff/period)``, where ``period=0.5180638410804721`` is the known period.
 
-Change the existing plot to show *g* magnitude vs. ``phase``. This phased light curve should look like Figure 4.
+Change the existing plot to show *g* magnitude vs. ``phase``. This phased light curve should look like Figure 3.
 
-.. figure:: images/portal-305-1-4.png
+.. figure:: images/portal-305-1-3.png
     :width: 700
-    :name: portal-305-1-4
+    :name: portal-305-1-3
     :alt: The phased light curve, showing brightness in g magnitude vs. phase.
 
-    Figure 4: The light curve of the selected star with measurements placed into their correct phase within the star's variability period. Brightnesses are plotted as magnitudes, showing a variability amplitude of +/-0.6 magnitudes.
+    Figure 3: The light curve of the selected star with measurements placed into their correct phase within the star's variability period. Brightnesses are plotted as magnitudes, showing a variability amplitude of +/-0.6 magnitudes.
 
