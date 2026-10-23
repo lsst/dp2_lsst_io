@@ -94,7 +94,7 @@ Use this earliest point as the reference time "t0".
 Create a new table column "tdiff" that calculates the difference between each measurement and this reference time, ``expMidptMJD-60791.369557566984`` (where t0=60791.369557566984).
 
 To calculate phase, calculate the number of periods that have passed since t0 as tdiff/period.
-Then subtract off the number of full periods that passed from that number using the ``floor`` function, such that ``phase = (tdiff/period)-floor(tdiff/period)``, where ``period=0.5180638410804721`` is the known period.
+Then subtract off the number of full periods that passed from that number using the ``floor`` function, such that ``phase = (tdiff/0.5180638410804721)-floor(tdiff/0.5180638410804721)``, where ``period=0.5180638410804721`` is the known period.
 
 Change the existing plot to show *g* magnitude vs. ``phase``. This phased light curve should look like Figure 3.
 
