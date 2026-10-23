@@ -4,6 +4,11 @@
 Log of major tutorial updates
 #############################
 
+2026-10-23
+==========
+
+Released a new Notebook tutorial, 206.2, demonstrating use and access of deblender footprints.
+
 2026-10-20
 ==========
 
