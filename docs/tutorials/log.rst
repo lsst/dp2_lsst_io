@@ -4,6 +4,11 @@
 Log of major tutorial updates
 #############################
 
+2026-10-23
+==========
+
+Released a new Notebook tutorial series, 209, on catalog flags, starting with 209.1 on the ``Object`` table flags.
+
 2026-10-20
 ==========
 
