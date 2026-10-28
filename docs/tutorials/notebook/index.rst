@@ -193,6 +193,16 @@ Tutorials with a learning objective of understanding one of the data products.
     208/notebook-208-1.rst
 
 
+209. Flags
+----------
+
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    209/notebook-209-1.rst
+
+
 .. _notebook-300:
 
 300. Science demonstrations
