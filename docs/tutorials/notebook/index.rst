@@ -224,6 +224,7 @@ Longer tutorials with a learning objective of executing an end-to-end scientific
     302/notebook-302-1.rst
     302/notebook-302-2.rst
     302/notebook-302-3.rst
+    302/notebook-302-4.rst
 
 
 303. Galaxies
