@@ -345,4 +345,8 @@ Longer tutorials with a learning objective of executing an end-to-end scientific
 Traducciones al Español
 =======================
 
-Check back here for updates.
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    ES/notebook-es-102-1.rst
