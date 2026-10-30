@@ -8035,7 +8035,7 @@ y la clase <code>RSPDiscovery</code> para acceder al servicio TAP del RSP.</p>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>&lt;DALResultsTable length=5&gt;
    schema_name    utype  ... schema_index
-      str64       str512 ...    int32    
+      str64       str512 ...    int32
 ----------------- ------ ... ------------
        tap_schema        ...       100000
               dp2        ...            1
@@ -8340,9 +8340,9 @@ coord_flag
    float
      int
     long
-  unit  
+    unit
 --------
-        
+
   arcsec
        d
      deg
@@ -12816,7 +12816,7 @@ el volumen consultado tiene forma de cono en 3D, no de cilindro.</p>
     FROM dp2.Object
     WHERE CONTAINS(POINT('ICRS', coord_ra, coord_dec),
     CIRCLE('ICRS', 53, -28, 0.01)) = 1
-    
+
 </pre>
 </div>
 </div>
@@ -12889,9 +12889,9 @@ el volumen consultado tiene forma de cono en 3D, no de cilindro.</p>
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>&lt;DALResultsTable length=106&gt;
-     coord_ra           coord_dec     
-       deg                 deg        
-     float64             float64      
+     coord_ra           coord_dec
+       deg                 deg
+     float64             float64
 ------------------ -------------------
  53.00974122815018   -28.0050175995451
 52.992207474582024  -27.99425087611583
@@ -13001,7 +13001,7 @@ el volumen consultado tiene forma de cono en 3D, no de cilindro.</p>
     WHERE CONTAINS(POINT('ICRS', coord_ra, coord_dec),
     CIRCLE('ICRS', 53, -28, 0.3)) = 1
     AND g_cModelMag &lt; 20
-    
+
 </pre>
 </div>
 </div>
