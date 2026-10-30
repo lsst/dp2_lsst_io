@@ -11,7 +11,7 @@ Schema: `Object table <https://sdm-schemas.lsst.io/dp2.html#Object>`_
 Access
 ======
 
-The object table is accessible via the TAP and Butler services.
+The object table is accessible via the TAP and Butler services, and also in :doc:`/products/user/lsdb` format.
 
 **Recommended access service:** TAP
 

@@ -36,3 +36,12 @@ intersphinx_mapping["lsst.images"] = ("https://images.lsst.io/", None)
 # This DOI intermittently times out when linkcheck resolves the redirect chain
 # through osti.gov.
 linkcheck_ignore.append(r'https://doi.org/10.11578/rubin/dc.20250909.20')  # noqa: F405
+
+# These external pages intermittently time out during linkcheck.
+linkcheck_ignore.extend(  # noqa: F405
+    [
+        r'https://aladin\.cds\.unistra\.fr/$',
+        r'https://aladin\.cds\.unistra\.fr/AladinDesktop/#Download',
+        r'https://cdsweb\.u-strasbg\.fr/Dic/iau-spec\.html',
+    ]
+)
