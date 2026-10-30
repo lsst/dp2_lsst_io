@@ -53,7 +53,7 @@ Set up queries in the user interface without ADQL.
     102/portal-102-2.rst
     102/portal-102-3.rst
     102/portal-102-1_ES.rst
-    102/portal-102-2.ES.rst
+    102/portal-102-2_ES.rst
 
 
 103. Queries with ADQL
