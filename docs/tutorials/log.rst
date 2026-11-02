@@ -18,13 +18,6 @@ Corrected notebook 303.2, "Galaxy shapes in DP2", for a known issue in which Ser
 exponential effective radius measurements in the Object table were too small by a factor
 of 2 ln 2.
 
-2026-10-26
-==========
-
-Corrected notebook 303.2, "Galaxy shapes in DP2", for a known issue in which Sersic and
-exponential effective radius measurements in the Object table were too small by a factor
-of 2 ln 2.
-
 2026-10-23
 ==========
 
