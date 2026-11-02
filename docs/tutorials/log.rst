@@ -9,7 +9,7 @@ For a log of updates to the tutorial notebooks, see also the `GitHub pull reques
 2026-11-02
 ==========
 
-Released a new Notebook tutorial, 103.10, demonstrating how to write a ``deep_coadd`` image to a
+Released a new Notebook tutorial, 103.12, demonstrating how to write a ``deep_coadd`` image to a
 FITS file and read it back, using both the LSST Science Pipelines tools and astropy.
 
 2026-10-29
