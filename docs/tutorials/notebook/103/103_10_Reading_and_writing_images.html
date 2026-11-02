@@ -7972,7 +7972,7 @@ body {
 <pre style="font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><code style="font-family:inherit">CellCoadd
 ├── skymap: lsst_cells_v2
 ├── tract: 5063
-├── patch: id=15, index=(y=1, x=5), inner_bbox=[y=3000:6000, x=15000:18000], cells=([y=2850:6150, 
+├── patch: id=15, index=(y=1, x=5), inner_bbox=[y=3000:6000, x=15000:18000], cells=([y=2850:6150,
 │   x=14850:18150], cell_shape=(y=150, x=150))
 ├── band: r
 ├── bbox: [y=2850:6150, x=14850:18150]
@@ -7983,7 +7983,7 @@ body {
 ├── mask (Mask)
 │   └── schema (MaskSchema)
 │       ├── dtype: uint8
-│       └── Mask planes                                                                             
+│       └── Mask planes
 │           ┏━━━━━┳━━━━━━━┳━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┓
 │           ┃<span style="font-weight: bold"> Bit </span>┃<span style="font-weight: bold"> Index </span>┃<span style="font-weight: bold"> Mask </span>┃<span style="font-weight: bold"> Name           </span>┃<span style="font-weight: bold"> Description                       </span>┃<span style="font-weight: bold"> Set pixels </span>┃
 │           ┡━━━━━╇━━━━━━━╇━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━┩
@@ -8024,12 +8024,12 @@ body {
 │           └─────┴───────┴──────┴────────────────┴───────────────────────────────────┴────────────┘
 ├── variance: (dtype float32)
 ├── sky_projection (ICRS coordinates)
-│   ├── center pixel: (x=16499.5, y=4499.5) → 03h31m58.3s -28d06m14s  (RA 52.993059°, Dec 
+│   ├── center pixel: (x=16499.5, y=4499.5) → 03h31m58.3s -28d06m14s  (RA 52.993059°, Dec
 │   │   -28.103914°)
 │   ├── Image extent: 11 x 11 arcmin @ 0 deg E of N
 │   ├── Nominal pixel scale: 0.20 arcsec
 │   ├── fits_wcs: available
-│   └── Corners                                                                 
+│   └── Corners
 │       ┏━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━┓
 │       ┃<span style="font-weight: bold"> x       </span>┃<span style="font-weight: bold"> y      </span>┃<span style="font-weight: bold"> RA          </span>┃<span style="font-weight: bold"> Dec        </span>┃<span style="font-weight: bold"> RA (°)    </span>┃<span style="font-weight: bold"> Dec (°)    </span>┃
 │       ┡━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━┩
@@ -8039,7 +8039,7 @@ body {
 │       │ 18149.5 │ 2849.5 │ 03h31m33.4s │ -28d11m44s │ 52.888979 │ -28.195459 │
 │       └─────────┴────────┴─────────────┴────────────┴───────────┴────────────┘
 ├── psf (CellPointSpreadFunction)
-│   ├── bounds: [y=2850:6150, x=14850:18150] in grid ([y=2850:6150, x=14850:18150], 
+│   ├── bounds: [y=2850:6150, x=14850:18150] in grid ([y=2850:6150, x=14850:18150],
 │   │   cell_shape=(y=150, x=150))
 │   └── kernel_bbox: [y=-17:18, x=-17:18]
 ├── provenance (CoaddProvenance)
@@ -8173,10 +8173,10 @@ body {
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Filename: /deleted-sundays/gmartin/deep_coadd_image.fits
 No.    Name      Ver    Type      Cards   Dimensions   Format
-  0  PRIMARY       1 PrimaryHDU      11   ()      
-  1  IMAGE         1 CompImageHDU     35   (3300, 3300)   float32   
-  2  JSON          1 BinTableHDU     12   1R x 1C   [PB(11316)]   
-  3  INDEX         1 BinTableHDU     24   3R x 7C   [5A, J, 8A, L, K, K, K]   
+  0  PRIMARY       1 PrimaryHDU      11   ()
+  1  IMAGE         1 CompImageHDU     35   (3300, 3300)   float32
+  2  JSON          1 BinTableHDU     12   1R x 1C   [PB(11316)]
+  3  INDEX         1 BinTableHDU     24   3R x 7C   [5A, J, 8A, L, K, K, K]
 </pre>
 </div>
 </div>
@@ -8186,20 +8186,20 @@ No.    Name      Ver    Type      Cards   Dimensions   Format
 <pre>=======================================================
 Filename: /deleted-sundays/gmartin/deep_coadd_full.fits
 No.    Name      Ver    Type      Cards   Dimensions   Format
-  0  PRIMARY       1 PrimaryHDU      14   ()      
-  1  IMAGE         1 CompImageHDU     35   (3300, 3300)   float32   
-  2  MASK          1 CompImageHDU     61   (3300, 3300)   int32   
-  3  VARIANCE      1 CompImageHDU     35   (3300, 3300)   float32   
-  4  MASK_FRACTIONS/REJECTED    1 CompImageHDU     17   (3300, 3300)   float32   
-  5  NOISE_REALIZATIONS/0    1 CompImageHDU     17   (3300, 3300)   float32   
-  6  PSF           1 CompImageHDU     11   (35, 35, 22, 22)   float64   
-  7  APERTURE_CORRECTIONS/TABLE    1 BinTableHDU    142   484R x 66C   [K, K, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D]   
-  8  PROVENANCE/INPUTS    1 BinTableHDU     27   98R x 6C   [K, I, J, B, 7D, 7D]   
-  9  PROVENANCE/CONTRIBUTIONS    1 BinTableHDU     41   10387R x 12C   [I, I, K, I, L, D, D, D, D, D, D, L]   
- 10  BACKGROUND/FIELDS/PRETTY/DATA    1 CompImageHDU      9   (52, 52)   float32   
- 11  BACKGROUND/FIELDS/OBJECT/DATA    1 CompImageHDU      9   (26, 26)   float32   
- 12  JSON          1 BinTableHDU     12   1R x 1C   [PB(32241)]   
- 13  INDEX         1 BinTableHDU     24   13R x 7C   [29A, J, 8A, L, K, K, K]   
+  0  PRIMARY       1 PrimaryHDU      14   ()
+  1  IMAGE         1 CompImageHDU     35   (3300, 3300)   float32
+  2  MASK          1 CompImageHDU     61   (3300, 3300)   int32
+  3  VARIANCE      1 CompImageHDU     35   (3300, 3300)   float32
+  4  MASK_FRACTIONS/REJECTED    1 CompImageHDU     17   (3300, 3300)   float32
+  5  NOISE_REALIZATIONS/0    1 CompImageHDU     17   (3300, 3300)   float32
+  6  PSF           1 CompImageHDU     11   (35, 35, 22, 22)   float64
+  7  APERTURE_CORRECTIONS/TABLE    1 BinTableHDU    142   484R x 66C   [K, K, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D, D]
+  8  PROVENANCE/INPUTS    1 BinTableHDU     27   98R x 6C   [K, I, J, B, 7D, 7D]
+  9  PROVENANCE/CONTRIBUTIONS    1 BinTableHDU     41   10387R x 12C   [I, I, K, I, L, D, D, D, D, D, D, L]
+ 10  BACKGROUND/FIELDS/PRETTY/DATA    1 CompImageHDU      9   (52, 52)   float32
+ 11  BACKGROUND/FIELDS/OBJECT/DATA    1 CompImageHDU      9   (26, 26)   float32
+ 12  JSON          1 BinTableHDU     12   1R x 1C   [PB(32241)]
+ 13  INDEX         1 BinTableHDU     24   13R x 7C   [29A, J, 8A, L, K, K, K]
 </pre>
 </div>
 </div>
