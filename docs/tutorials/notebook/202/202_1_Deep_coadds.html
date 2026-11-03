@@ -7867,7 +7867,7 @@ body {
 <pre style="font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><code style="font-family:inherit">CellCoadd
 ├── skymap: lsst_cells_v2
 ├── tract: 5063
-├── patch: id=15, index=(y=1, x=5), inner_bbox=[y=3000:6000, x=15000:18000], cells=([y=2850:6150, 
+├── patch: id=15, index=(y=1, x=5), inner_bbox=[y=3000:6000, x=15000:18000], cells=([y=2850:6150,
 │   x=14850:18150], cell_shape=(y=150, x=150))
 ├── band: r
 ├── bbox: [y=2850:6150, x=14850:18150]
@@ -7878,7 +7878,7 @@ body {
 ├── mask (Mask)
 │   └── schema (MaskSchema)
 │       ├── dtype: uint8
-│       └── Mask planes                                                                             
+│       └── Mask planes
 │           ┏━━━━━┳━━━━━━━┳━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┓
 │           ┃<span style="font-weight: bold"> Bit </span>┃<span style="font-weight: bold"> Index </span>┃<span style="font-weight: bold"> Mask </span>┃<span style="font-weight: bold"> Name           </span>┃<span style="font-weight: bold"> Description                       </span>┃<span style="font-weight: bold"> Set pixels </span>┃
 │           ┡━━━━━╇━━━━━━━╇━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━┩
@@ -7919,12 +7919,12 @@ body {
 │           └─────┴───────┴──────┴────────────────┴───────────────────────────────────┴────────────┘
 ├── variance: (dtype float32)
 ├── sky_projection (ICRS coordinates)
-│   ├── center pixel: (x=16499.5, y=4499.5) → 03h31m58.3s -28d06m14s  (RA 52.993059°, Dec 
+│   ├── center pixel: (x=16499.5, y=4499.5) → 03h31m58.3s -28d06m14s  (RA 52.993059°, Dec
 │   │   -28.103914°)
 │   ├── Image extent: 11 x 11 arcmin @ 0 deg E of N
 │   ├── Nominal pixel scale: 0.20 arcsec
 │   ├── fits_wcs: available
-│   └── Corners                                                                 
+│   └── Corners
 │       ┏━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━┓
 │       ┃<span style="font-weight: bold"> x       </span>┃<span style="font-weight: bold"> y      </span>┃<span style="font-weight: bold"> RA          </span>┃<span style="font-weight: bold"> Dec        </span>┃<span style="font-weight: bold"> RA (°)    </span>┃<span style="font-weight: bold"> Dec (°)    </span>┃
 │       ┡━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━┩
@@ -7934,7 +7934,7 @@ body {
 │       │ 18149.5 │ 2849.5 │ 03h31m33.4s │ -28d11m44s │ 52.888979 │ -28.195459 │
 │       └─────────┴────────┴─────────────┴────────────┴───────────┴────────────┘
 ├── psf (CellPointSpreadFunction)
-│   ├── bounds: [y=2850:6150, x=14850:18150] in grid ([y=2850:6150, x=14850:18150], 
+│   ├── bounds: [y=2850:6150, x=14850:18150] in grid ([y=2850:6150, x=14850:18150],
 │   │   cell_shape=(y=150, x=150))
 │   └── kernel_bbox: [y=-17:18, x=-17:18]
 ├── provenance (CoaddProvenance)
@@ -9666,9 +9666,9 @@ CellIJ(i=8, j=12)
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>bbox {'y': {'start': 2850, 'stop': 6150}, 'x': {'start': 14850, 'stop': 18150}} 
+<pre>bbox {'y': {'start': 2850, 'stop': 6150}, 'x': {'start': 14850, 'stop': 18150}}
 
-cell_shape {'y': 150, 'x': 150} 
+cell_shape {'y': 150, 'x': 150}
 
 </pre>
 </div>
@@ -10297,16 +10297,16 @@ NAXIS : 3300  3300</pre>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>corner (x, y):  (14850, 2850) 
+<pre>corner (x, y):  (14850, 2850)
  &lt;SkyCoord (ICRS): (ra, dec) in deg
     (53.09694922, -28.19557406)&gt;
-corner (x, y):  (14850, 6149) 
+corner (x, y):  (14850, 6149)
  &lt;SkyCoord (ICRS): (ra, dec) in deg
     (53.09693349, -28.01231544)&gt;
-corner (x, y):  (18149, 6149) 
+corner (x, y):  (18149, 6149)
  &lt;SkyCoord (ICRS): (ra, dec) in deg
     (52.88934327, -28.01217359)&gt;
-corner (x, y):  (18149, 2850) 
+corner (x, y):  (18149, 2850)
  &lt;SkyCoord (ICRS): (ra, dec) in deg
     (52.88901088, -28.19543113)&gt;
 </pre>
@@ -10933,7 +10933,7 @@ Directory already existed:  /deleted-sundays/jrob
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
+<div class="highlight hl-ipython3"><pre><span></span>
 </pre></div>
 </div>
 </div>
