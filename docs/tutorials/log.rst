@@ -6,6 +6,12 @@ Log of major tutorial updates
 
 For a log of updates to the tutorial notebooks, see also the `GitHub pull request history for the tutorial-notebooks repository <https://github.com/lsst/tutorial-notebooks/pulls?q=is%3Apr+state%3Aclosed>`_.
 
+2026-11-02
+==========
+
+Released a new Notebook tutorial, 103.12, demonstrating how to write a ``deep_coadd`` image to a
+FITS file and read it back, using both the LSST Science Pipelines tools and astropy.
+
 2026-10-29
 ==========
 
