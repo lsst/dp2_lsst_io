@@ -42,7 +42,7 @@ The query retrieves coordinates, PSF photometry in *gri*, and *E(B-V)* values wi
 The query should return 70,838 rows.
 
 **2. Apply dust correction.**
-Use the extinction coefficients for the Rubin filters for dust correction: $R_g = 3.66$, $R_r = 2.70$, and $R_i = 2.05$. These coefficients are derived from the CCM89 extinction law (Cardelli, Clayton, & Mathis 1989), assuming a flat spectral energy distribution and a default total-to-selective extinction ratio of $R_V = 3.1$, representative of the diffuse Milky Way interstellar medium. To add columns for the dust-corrected magnitudes, click the "Add a column" icon in the table toolbar, name the new column ``g0``, and enter the expression ``g_psfMag`` - 3.66*``ebv``. Repeat this for ``r0`` with the expression ``r_psfMag`` - 2.70*``ebv``, and for ``i0`` with the expression ``i`` - 2.05*``ebv``."
+Use the extinction coefficients for the Rubin filters for dust correction: $R_g = 3.66$, $R_r = 2.70$, and $R_i = 2.05$. These coefficients are derived from the CCM89 extinction law (Cardelli, Clayton, & Mathis 1989), assuming a flat spectral energy distribution and a default total-to-selective extinction ratio of $R_V = 3.1$, representative of the diffuse Milky Way interstellar medium. To add columns for the dust-corrected magnitudes, click the "Add a column" icon in the table toolbar, name the new column ``g0``, and enter the expression ``g_psfMag`` - 3.66 x ``ebv``. Repeat this for ``r0`` with the expression ``r_psfMag`` - 2.70 x ``ebv``, and for ``i0`` with the expression ``i`` - 2.05 x ``ebv``.
 
 **3. Plot the $E(g-i)$ color excess.**
 Visualize the $E(g-i)$ color excess. In the "Active Chart" panel, click the "+" icon to add a chart.
@@ -60,9 +60,9 @@ Choose "Histogram" as the plot type, enter (``g_psfMag`` - ``i_psfMag``) - (``g0
 Plot the color-color and color-magnitude diagrams (CCD and CMD, respectively) using the dust-corrected magnitudes ``g0``, ``r0``, and ``i0``. Click the "+" icon to add a chart, and choose "Heatmap" as the plot type. Set the x-axis to ``g0``-``r0`` and the y-axis to ``r0``-``i0``, using 300 bins for both axes. Finally, set the range for both axes from -2 to 4, and click OK to display the plot. The resulting plot should look like Figure 2.
 
 
-.. figure:: images/portal-302-1-5.png
+.. figure:: images/portal-302-2-2.png
     :width: 900
     :name: portal-302-2-2
     :alt: The color-color and color-magnitude diagrams of stars in the NGC 6822 field.
 
-    Figure 2: The CCD (left) and CMD (right) of stars in the NGC 6822 field, constructed with dust-corrected magnitudes ``g0``, ``r0``, and ``i0``. Stars form a well-defined locus in the CCD. In the CMD, distinct stellar populations are visible: the blue plume at $-0.5 < ``g0``-``i0`` < 0$ corresponds to upper main-sequence stars belonging to NGC 6822; the densest feature at $0 < ``g0``-``i0`` < 2$ and $20 < ``i0`` < 24$ traces the NGC 6822 red-giant sequence; and the vertical structure near ``g0``-``i0`` $\approx 0.9$ is composed of Milky Way foreground main-sequence turnoff stars.
+    Figure 2: The CCD (left) and CMD (right) of stars in the NGC 6822 field, constructed with dust-corrected magnitudes ``g0``, ``r0``, and ``i0``. Stars form a well-defined locus in the CCD. In the CMD, distinct stellar populations are visible: the blue plume at $-0.5 < ``g0``-``i0`` < 0$ corresponds to upper main-sequence stars belonging to NGC 6822; the densest feature at 0 < ``g0``-``i0`` < 2 and 20 < ``i0`` < 24 traces the NGC 6822 red-giant sequence; and the vertical structure near ``g0``-``i0`` ~ 0.9 is composed of Milky Way foreground main-sequence turnoff stars.
