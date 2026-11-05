@@ -57,8 +57,7 @@ Choose "Histogram" as the plot type, enter (``g_psfMag`` - ``i_psfMag``) - (``g0
 
 
 **4. Plot the CCD and CMD.**
-Plot the color-color and color-magnitude diagrams (CCD and CMD, respectively) using the dust-corrected magnitudes ``g0``, ``r0``, and ``i0``. Click the "+" icon to add a chart, and choose "Heatmap" as the plot type. Set the x-axis to ``g0``-``r0`` and the y-axis to ``r0``-``i0``, using 300 bins for both axes. Finally, set the range for both axes from -2 to 4, and click OK to display the plot. The resulting plot should look like Figure 2.
-
+Plot the color-color and color-magnitude diagrams (CCD and CMD, respectively) using the dust-corrected magnitudes ``g0``, ``r0``, and ``i0``. Click the "+" icon to add a chart, and choose "Heatmap" as the plot type. Set the x-axis to ``g0``-``i0`` and the y-axis to ``r0``-``i0``, using 300 bins for both axes. Finally, set the range for both axes from -2 to 4, and click OK to display the plot. The resulting plot should look like Figure 2. Repeat the same steps for the CMD, but set the y-axis to ``i0`` and its range from 14 to 25 with the "reverse" option enabled.
 
 .. figure:: images/portal-302-2-2.png
     :width: 900
