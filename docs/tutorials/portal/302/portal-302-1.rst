@@ -1,7 +1,7 @@
 .. _portal-302-1:
 
 ###############################
-302.1. PSF Photometry for stars
+302.1. PSF photometry for stars
 ###############################
 
 For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
@@ -27,7 +27,7 @@ Rubin staff will respond to all questions posted there.
 Log in to the Portal Aspect, select the "DP1 & DP2 Catalogs" tab, and click "Edit ADQL" at upper right.
 Enter the following ADQL statement and click "Search" at lower left.
 The query retrieves PSF photometry, PSF second moments, aperture fluxes at multiple radii, and the flags that indicate whether an object was used for PSF modeling or reserved for PSF evaluation, from the ``Object`` table within a circular region of 0.5-degree radius centered on the ECDFS field (RA = 53.13, Dec = -28.10).
-It restricts the results to point sources (``r_extendedness`` = 0) with signal-to-noise ratio > 5 and requires ``r_pixelFlags_inexact_psfCenter`` = 0 to exclude objects with a discontinuous PSF at the centroid.
+It restricts the results to point sources (``r_extendedness`` = 0) with signal-to-noise ratio > 5 and requires ``r_pixelFlags_inexact_psfCenter`` = 0 to exclude objects with a discontinuous PSF near its center. The coadd PSF is discontinuous where the set of input visits changes (e.g., across chip gaps or masked pixels), so the PSF fluxes and second moments are unreliable for such objects.
 
 .. code-block:: SQL
 
