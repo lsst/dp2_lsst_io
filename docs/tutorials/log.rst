@@ -6,6 +6,11 @@ Log of major tutorial updates
 
 For a log of updates to the tutorial notebooks, see also the `GitHub pull request history for the tutorial-notebooks repository <https://github.com/lsst/tutorial-notebooks/pulls?q=is%3Apr+state%3Aclosed>`_.
 
+2026-11-05
+==========
+
+Release a new Portal tutorial series, 302, on stars.
+
 2026-11-03
 ==========
 
