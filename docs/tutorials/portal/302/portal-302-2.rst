@@ -26,7 +26,7 @@ Rubin staff will respond to all questions posted there.
 **1. Execute an ADQL query for stars in the NGC 6822 field.**
 Log in to the Portal Aspect, select the "DP1 & DP2 Catalogs" tab, and click "Edit ADQL" at upper right.
 Enter the following ADQL statement, set the row limit to 100,000, and click "Search" at lower left.
-The query retrieves coordinates, PSF photometry in *gri*, and *E(B-V)* values within a 0.5-degree radius centered on NGC 6822 (RA = 296.24, Dec = -14.8). It restricts the results to point sources (``refExtendedness`` = 0) with a PSF flux signal-to-noise ratio greater than 5 in *gri*.
+The query retrieves coordinates, PSF photometry in *gri*, and *E(B-V)* values by Schlegel, Finkbeiner \& Davis (1998) within a 0.5-degree radius centered on NGC 6822 (RA = 296.24, Dec = -14.8). It restricts the results to point sources (``refExtendedness`` = 0) with a PSF flux signal-to-noise ratio greater than 5 in *gri*. This dwarf galaxy lies ~500 kpc away, just beyond the Milky Way’s halo, and is resolved into individual stars by Rubin, making it a good target for demonstrating star-by-star Milky Way foreground dust removal.
 
 .. code-block:: SQL
 
@@ -42,18 +42,17 @@ The query retrieves coordinates, PSF photometry in *gri*, and *E(B-V)* values wi
 The query should return 70,838 rows.
 
 **2. Apply dust correction.**
-Use the extinction coefficients for the Rubin filters for dust correction: $R_g = 3.66$, $R_r = 2.70$, and $R_i = 2.05$. These coefficients are derived from the CCM89 extinction law (Cardelli, Clayton, & Mathis 1989), assuming a flat spectral energy distribution and a default total-to-selective extinction ratio of $R_V = 3.1$, representative of the diffuse Milky Way interstellar medium. To add columns for the dust-corrected magnitudes, click the "Add a column" icon in the table toolbar, name the new column ``g0``, and enter the expression ``g_psfMag`` - 3.66 x ``ebv``. Repeat this for ``r0`` with the expression ``r_psfMag`` - 2.70 x ``ebv``, and for ``i0`` with the expression ``i`` - 2.05 x ``ebv``.
+Use the extinction coefficients for the Rubin filters for dust correction: :math:`R_g = 3.66`, :math:`R_r = 2.70`, and :math:`R_i = 2.05`. These coefficients are derived from the CCM89 extinction law (Cardelli, Clayton, & Mathis 1989), assuming a flat spectral energy distribution and a default total-to-selective extinction ratio of :math:`R_V = 3.1`, representative of the diffuse Milky Way interstellar medium. To add columns for the dust-corrected magnitudes, click the "Add a column" icon in the table toolbar, name the new column ``g0``, and enter the expression ``g_psfMag - 3.66 x ebv``. Repeat this for ``r0`` with ``r_psfMag - 2.70 x ebv``, and for ``i0`` with ``i - 2.05 x ebv``.
 
-**3. Plot the $E(g-i)$ color excess.**
-Visualize the $E(g-i)$ color excess. In the "Active Chart" panel, click the "+" icon to add a chart.
-Choose "Histogram" as the plot type, enter (``g_psfMag`` - ``i_psfMag``) - (``g0`` - ``i0``) into the expression field, set the number of bins to 100, set the x-axis label to "E(g-i) = (g - i) - (g0 - i0)", and click OK to generate the plot. Delete the default chart of RA and Dec coordinates.
+**3. Plot the *E(g-i)* color excess.**
+The color excess *E(g-i)* quantifies interstellar reddening by measuring how much redder a star appears than its intrinsic, unreddened color: :math:`E(g-i) = (g-i)_{\mathrm{obs}} - (g-i)_0`. To visualize the *E(g-i)* distribution, click the "+" icon in the "Active Chart" panel. Choose "Histogram" as the plot type, enter ``(g_psfMag - i_psfMag) - (g0 - i0)`` into the expression field, set the number of bins to 100, set the x-axis label to "E(g-i) = (g - i) - (g0 - i0)", and click "OK" to generate the plot. Delete the default chart of RA and Dec coordinates.
 
 .. figure:: images/portal-302-2-1.png
     :width: 600
     :name: portal-302-2-1
     :alt: Histogram of the E(g-i) color excess.
 
-    Figure 1: The $E(g-i)$ color excess. Color excess quantifies interstellar reddening by measuring how much redder an observed star appears compared to its intrinsic, unreddened color: $E(g-i) = (g - i)_{obs} - (g - i)_0$.
+    Figure 1: Histogram of the *E(g-i)* color excess. Because the observed magnitudes cancel, :math:E(g-i) = (R_g - R_i)\,E(B-V), so the histogram is simply a rescaling of the *E(B-V)* values at the stars’ positions and does not depend on the stellar photometry. Its purpose is to show the typical reddening toward individual stars and its spread across the field.
 
 
 **4. Plot the CCD and CMD.**
@@ -64,4 +63,4 @@ Plot the color-color and color-magnitude diagrams (CCD and CMD, respectively) us
     :name: portal-302-2-2
     :alt: The color-color and color-magnitude diagrams of stars in the NGC 6822 field.
 
-    Figure 2: The CCD (left) and CMD (right) of stars in the NGC 6822 field, constructed with dust-corrected magnitudes ``g0``, ``r0``, and ``i0``. Stars form a well-defined locus in the CCD. In the CMD, distinct stellar populations are visible: the blue plume at $-0.5 < ``g0``-``i0`` < 0$ corresponds to upper main-sequence stars belonging to NGC 6822; the densest feature at 0 < ``g0``-``i0`` < 2 and 20 < ``i0`` < 24 traces the NGC 6822 red-giant sequence; and the vertical structure near ``g0``-``i0`` ~ 0.9 is composed of Milky Way foreground main-sequence turnoff stars.
+    Figure 2: The CCD (left) and CMD (right) of stars in the NGC 6822 field, constructed with dust-corrected magnitudes ``g0``, ``r0``, and ``i0``. Stars form a well-defined locus in the CCD. In the CMD, distinct stellar populations are visible: the blue plume at -0.5 < ``g0``-``i0`` < 0 corresponds to upper main-sequence stars belonging to NGC 6822; the densest feature at 0 < ``g0``-``i0`` < 2 and 20 < ``i0`` < 24 traces the NGC 6822 red-giant sequence; and the vertical structure near ``g0``-``i0`` ~ 0.9 is composed of Milky Way foreground main-sequence turnoff stars.
