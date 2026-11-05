@@ -8,7 +8,7 @@ For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
 **Data Release:** DP2
 
-**Last verified to run:** 2026-11-04
+**Last verified to run:** 2026-11-05
 
 **Learning objective:** Explore stellar color-magnitude and color-color diagrams in DP2.
 

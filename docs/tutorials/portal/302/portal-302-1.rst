@@ -8,7 +8,7 @@ For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
 **Data Release:** DP2
 
-**Last verified to run:** 2026-11-03
+**Last verified to run:** 2026-11-05
 
 **Learning objective:** To understand the Point Spread Function (PSF) photometry for stars.
 
@@ -91,7 +91,7 @@ Add a new chart. Set the plot type to "Histogram", select ``T_psf`` as the colum
     Figure 4: Histograms of the trace of the second-moment matrix, ``T_psf`` (left), and the total ellipticity, ``e`` (right), for the 181 PSF-reserved stars. The median *T* ~ 9 pixel² corresponds to a full width at half maximum of about 1 arcsec, given the 0.2 arcsec pixel scale. The ellipticities are small, with most stars below *e* ~ 0.05, indicating a nearly round PSF model at the positions of the reserved stars.
 
 **4. Compare PSF and aperture fluxes.**
-In principle, a properly normalized PSF model integrates to 100% of a point source's flux, whereas a circular aperture measures only the flux enclosed within its radius.
+The PSF flux of a point source is aperture corrected to the total calibrated flux, which is tied to a 12-pixel-radius reference aperture, whereas a circular aperture measures only the uncorrected flux enclosed within its radius.
 In practice, small apertures miss flux, and large apertures admit contamination from neighboring sources and the sky background.
 This step compares the circular-aperture fluxes (radii of 3 to 70 pixels, centered on the stellar positions) to the PSF fluxes.
 
