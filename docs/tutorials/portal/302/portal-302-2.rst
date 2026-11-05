@@ -52,7 +52,7 @@ The color excess *E(g-i)* quantifies interstellar reddening by measuring how muc
     :name: portal-302-2-1
     :alt: Histogram of the E(g-i) color excess.
 
-    Figure 1: Histogram of the *E(g-i)* color excess. Because the observed magnitudes cancel, :math:E(g-i) = (R_g - R_i)\,E(B-V), so the histogram is simply a rescaling of the *E(B-V)* values at the stars’ positions and does not depend on the stellar photometry. Its purpose is to show the typical reddening toward individual stars and its spread across the field.
+    Figure 1: Histogram of the *E(g-i)* color excess. Because the observed magnitudes cancel, :math:`E(g-i) = (R_g - R_i)\,E(B-V)`, so the histogram is simply a rescaling of the *E(B-V)* values at the stars’ positions and does not depend on the stellar photometry. Its purpose is to show the typical reddening toward individual stars and its spread across the field.
 
 
 **4. Plot the CCD and CMD.**

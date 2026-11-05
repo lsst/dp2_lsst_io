@@ -81,14 +81,14 @@ Click the "Add a column" icon in the table toolbar (marked with a red box in Fig
 
     Figure 3: A portion of the results table with four new columns added: ``T_psf``, ``e1_psf``, ``e2_psf``, and ``e``. The "Add a column" icon is marked with a red box.
 
-Add a new chart. Set the plot type to "Histogram", select ``T_psf`` as the column to plot, and click "OK". Add a second histogram in the same way for the total ellipticity ``e`. To restrict both histograms to the PSF-reserved stars, set the table column condition for ``r_calib_psf_reserved`` to "=true". Delete the scatter plot from Step 2. The two histograms should look like Figure 4.
+Add a new chart. Set the plot type to "Histogram", select ``T_psf`` as the column to plot, and click "OK". Add a second histogram in the same way for the total ellipticity ``e``. To restrict both histograms to the PSF-reserved stars, set the table column condition for ``r_calib_psf_reserved`` to "=true". Delete the scatter plot from Step 2. The two histograms should look like Figure 4.
 
 .. figure:: images/portal-302-1-4.png
     :width: 700
     :name: portal-302-1-4
     :alt: The histograms of the PSF size T and the total ellipticity e for the PSF-reserved stars.
 
-    Figure 4: Histograms of the trace of the second-moment matrix, ``T_psf`` (left), and the total ellipticity, ``e`` (right), for the 181 PSF-reserved stars. The median T ~ 9 pixel² corresponds to a full width at half maximum of about 1 arcsec, given the 0.2 arcsec pixel scale. The ellipticities are small, with most stars below e ~ 0.05, indicating a nearly round PSF model at the positions of the reserved stars.
+    Figure 4: Histograms of the trace of the second-moment matrix, ``T_psf`` (left), and the total ellipticity, ``e`` (right), for the 181 PSF-reserved stars. The median *T* ~ 9 pixel² corresponds to a full width at half maximum of about 1 arcsec, given the 0.2 arcsec pixel scale. The ellipticities are small, with most stars below *e* ~ 0.05, indicating a nearly round PSF model at the positions of the reserved stars.
 
 **4. Compare PSF and aperture fluxes.**
 In principle, a properly normalized PSF model integrates to 100% of a point source's flux, whereas a circular aperture measures only the flux enclosed within its radius.
