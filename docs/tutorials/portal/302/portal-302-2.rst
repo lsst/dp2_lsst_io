@@ -49,7 +49,7 @@ Visualize the $E(g-i)$ color excess. In the "Active Chart" panel, click the "+" 
 Choose "Histogram" as the plot type, enter (``g_psfMag`` - ``i_psfMag``) - (``g0`` - ``i0``) into the expression field, set the number of bins to 100, set the x-axis label to "E(g-i) = (g - i) - (g0 - i0)", and click OK to generate the plot. Delete the default chart of RA and Dec coordinates.
 
 .. figure:: images/portal-302-2-1.png
-    :width: 400
+    :width: 600
     :name: portal-302-2-1
     :alt: Histogram of the E(g-i) color excess.
 
