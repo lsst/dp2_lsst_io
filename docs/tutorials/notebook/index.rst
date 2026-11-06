@@ -248,6 +248,9 @@ Longer tutorials with a learning objective of executing an end-to-end scientific
     303/notebook-303-1.rst
     303/notebook-303-2.rst
     303/notebook-303-3.rst
+    303/notebook-303-4.rst
+    303/notebook-303-5.rst
+    303/notebook-303-6.rst
 
 
 304. Cosmology
