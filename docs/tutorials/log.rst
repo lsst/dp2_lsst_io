@@ -6,6 +6,13 @@ Log of major tutorial updates
 
 For a log of updates to the tutorial notebooks, see also the `GitHub pull request history for the tutorial-notebooks repository <https://github.com/lsst/tutorial-notebooks/pulls?q=is%3Apr+state%3Aclosed>`_.
 
+2026-11-06
+==========
+
+Released a new Notebook tutorial series, 303.4-303.6, on machine learning with galaxies: 303.4
+classifies galaxy morphology, 303.5 clusters galaxies by morphology, and 303.6 regresses galaxy
+stellar mass from photometry, structure, and redshift.
+
 2026-11-05
 ==========
 
