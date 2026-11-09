@@ -274,7 +274,7 @@ Users will need to be careful when comparing or matching the two tables.
 Bug in calculation of blendedness parameter
 -------------------------------------------
 
-A bug in the science pipelines that generated EDP2 results in some objects having negative ``<f>_blendedness`` values (where ``<f>`` corresponds to the LSST filter). Other impacted parameters that do not currently contain meaningful values in DP2 are <f>_deblend_blendedness, <f>_blendedness_flag, <f>_deblend_fluxOverlap, and <f>_deblend_fluxOverlapFraction. This bug will also impact DP2. To select objects that are not heavily blended, the ``deblend_blendNChild`` parameter (which indicates how many children were deblended with the object in the catalog) can be used instead, selecting for ``(deblend_blendNChild == 1)  | detect_isIsolated`` in place of ``<f>_blendedness < 0.1``.
+A bug in the science pipelines that generated EDP2 results in some objects having negative ``<f>_blendedness`` values (where ``<f>`` corresponds to the LSST filter). Other impacted parameters that do not currently contain meaningful values in DP2 are ``<f>_deblend_blendedness``, ``<f>_blendedness_flag``, ``<f>_deblend_fluxOverlap``, and ``<f>_deblend_fluxOverlapFraction``. This bug will also impact DP2. To select objects that are not heavily blended, the ``deblend_blendNChild`` parameter (which indicates how many children were deblended with the object in the catalog) can be used instead, selecting for ``(deblend_blendNChild == 1)  | detect_isIsolated`` in place of ``<f>_blendedness < 0.1``.
 
 .. _issues_dia:
 
