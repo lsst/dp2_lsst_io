@@ -329,6 +329,7 @@ Longer tutorials with a learning objective of executing an end-to-end scientific
 
     310/notebook-310-1.rst
     310/notebook-310-2.rst
+    310/notebook-310-3.rst
 
 
 311. Astronomical analysis
