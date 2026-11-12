@@ -6,6 +6,12 @@ Log of major tutorial updates
 
 For a log of updates to the tutorial notebooks, see also the `GitHub pull request history for the tutorial-notebooks repository <https://github.com/lsst/tutorial-notebooks/pulls?q=is%3Apr+state%3Aclosed>`_.
 
+2026-11-12
+==========
+
+Released a new Notebook tutorial, 310.3, which uses photometric redshifts to measure the
+galaxy luminosity function and fit it with a Schechter function.
+
 2026-11-06
 ==========
 
