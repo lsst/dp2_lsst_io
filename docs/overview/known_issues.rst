@@ -276,6 +276,14 @@ Bug in calculation of blendedness parameter
 
 A bug in the science pipelines that generated the DP2 ``object`` table results in some objects having negative ``<f>_blendedness`` values (where ``<f>`` corresponds to the LSST filter). Other impacted parameters that do not currently contain meaningful values in DP2 are ``<f>_deblend_blendedness``, ``<f>_blendedness_flag``, ``<f>_deblend_fluxOverlap``, and ``<f>_deblend_fluxOverlapFraction``. To select objects that are not heavily blended, the ``deblend_blendNChild`` parameter (which indicates how many children were deblended with the object in the catalog) can be used instead, selecting for ``(deblend_blendNChild == 1)  | detect_isIsolated`` in place of ``<f>_blendedness < 0.1``.
 
+The ``inputCount`` column is incorrect
+--------------------------------------
+
+In the ``Object`` table, the ``<f>_inputCount`` column is the sum of *all* visits that overlap the object's coordinates, not the sum of the visits that actually contributed to the deep coadd cell in which that object is located.
+Instead of  ``<f>_inputCount``, use the deep coadd image provenance data to get the contributing visits at a given location, as demonstrated in the :doc:`Tutorial </tutorials/index>` notebook for the deep coadd images (see the 202-series of tutorials on images).
+
+
+
 .. _issues_dia:
 
 Difference imaging
