@@ -71,13 +71,6 @@ Follow the process to log in.
 **1.2. Select the X tab in the Portal.** 
 *Explanation of the setup, reference to Figure 1.*
 
-.. figure:: /_static/aspect_y_1_fig1.png
-    :name: aspect_y_1_fig1
-    :alt: Alt-text goes here.
-
-    Figure 1: Figure caption goes here.
-
-
 **1.3. Execute the ADQL query.**
 *Explanation of the query, reference to the code block below.*
 
@@ -100,7 +93,7 @@ Follow the process to log in.
 
 .. _DPX-Aspect-Y-exercises:
 
-X. Exercises for the learner 
+X. Exercises for the learner
 ============================
 
 **X.1. A clear, achievable task.**
