@@ -11,7 +11,7 @@
 .. _Tutorials-Examples-DPX-Aspect-Y:
 .. Each section should include a label for cross referencing to a given area.
 .. Recommended format for all labels is "Title Name"-"Section Name" -- Spaces should be replaced by hyphens.
-.. To reference a label that isn't associated with an reST object such as a title or figure, you must include the link and explicit title using the syntax :ref:`link text <label-name>`.
+.. To reference a label that isn't associated with an reST object such as a title or figure, you must include the link and explicit title using the syntax
 .. A warning will alert you of identical labels during the linkcheck process.
 
 
