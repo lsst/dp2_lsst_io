@@ -57,7 +57,7 @@ Introduction
 *It is not necessary to mention the preceeding/subsequent tutorials in the same series as this one - those are trivial for the user to find.*
 *But do use this section to mention related tutorials in other series.*
 
-
+:download:`Download the table of high proper motion candidates </_static/tutorials/dp2_302_4_NSC_candidates.csv>`.
 
 .. _DPX-Aspect-Y-1:
 
