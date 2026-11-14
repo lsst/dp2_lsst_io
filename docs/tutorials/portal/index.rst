@@ -150,6 +150,7 @@ Explore the point-like sources in the DP2 dataset.
 
     302/portal-302-1.rst
     302/portal-302-2.rst
+    302/portal-302-4.rst
 
 
 303. Galaxies
