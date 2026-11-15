@@ -126,7 +126,7 @@ Click on the "Add a column" icon (rectangle with encircled plus mark) within the
 **3.2. Add a significance of motion column.**
 Click the "Add a column" icon again. Define a second new column with Name of ``chi2_motion``, and Expression of ``power(raPM/raPMErr,2) + power(decPM/decPMErr,2)``, then click the "Add column" button.
 
-4. Filter for bona-fide high proper motion sources
+4. Filter for bona-fide high proper motion objects
 ==================================================
 
 **4.1. Click the "Table Options" gear icon in the table panel.**
