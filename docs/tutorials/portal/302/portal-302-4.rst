@@ -57,10 +57,12 @@ Searches for rare astronomical objects like high proper motion stars inherently 
 ==================================================================
 
 **1.1. Log in to the Portal Aspect of the Rubin Science Platform.**
+
 In a browser, go to the URL `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
 Follow the process to log in.
 
 **1.2. Select the DP1 & DP2 Catalogs tab in the Portal.**
+
 This tutorial uses the UI assisted interface of the RSP Portal Aspect.
 
 **1.2. Download the file of NSC proper motion candidates.**
@@ -96,6 +98,13 @@ Within the Portal's UI assisted query interface, ensure that only "Spatial" is c
 **1.4. Customize the uploaded table's selection of columns**
 
 ``dp2_302_4_NSC_candidates.csv`` has 9 columns. By default, the query results will only retain 2 columns, ``ra`` and ``dec``, but additional columns are necessary for scientific analysis. Click on the text that says ``9 columns (2 selected)`` (Figure 2).
+
+.. figure:: images/portal-302-4-2.png
+    :width: 600
+    :name: portal-302-4-2
+    :alt: Location of button to select columns from user-uploaded table.
+
+    Figure 2: The red arrow annotation points to the text to click in order to customize the selection of columns that the query will retain from the user-uploaded table.
 
 This brings up an interface to select additional columns. Leave both ``ra`` and ``dec`` columns selected, and additionally select ``pmra`` (the NSC RA proper motion in mas/yr), ``pmdec`` (the NSC Dec proper motion in mas/yr), and ``pmraerr`` and ``pmdecerr`` which are the uncertainties on the NSC proper motions.
 
