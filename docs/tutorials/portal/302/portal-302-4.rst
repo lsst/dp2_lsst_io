@@ -156,7 +156,7 @@ In the Active Chart panel, click the encircled plus symbol to add another chart.
     :name: portal-302-4-3
     :alt: Scatter plots showing good agreement between DP2 and NSC proper motion components.
 
-    Figure 2: Agreement between Rubin DP2 ``IsolatedStarStellarMotions`` proper motion components and those of NSC DR2 (RA at left, Dec at right), for the identified set of bona-fide high proper motion objects.
+    Figure 3: Agreement between Rubin DP2 ``IsolatedStarStellarMotions`` proper motion components and those of NSC DR2 (RA at left, Dec at right), for the identified set of bona-fide high proper motion objects.
 
 6. Histogram of total proper motions
 ====================================
