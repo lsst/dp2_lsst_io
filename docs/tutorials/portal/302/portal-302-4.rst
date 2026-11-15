@@ -78,6 +78,14 @@ Note that additional NSC cuts may be possible, for instance on its ``flags`` col
 
 The NSC proper motion selection includes false positives, and the goal is to use the Rubin DP2 ``IsolatedStarStellarMotions`` table in combination with NSC DR2 to isolate a pure sample of high proper motion objects. Figure 1 illustrates that the images used to create both NSC (DECam images) and DP2's ``IsolatedStarStellarMotions`` (LSSTCam images) have artifacts like diffraction spikes, but these artifacts are poorly correlated, allowing for selection of a pure sample whose members have high proper motions reported in *both* DP2 and NSC.
 
+.. figure:: images/portal-302-4-1.png
+    :width: 600
+    :name: portal-302-4-1
+    :alt: Illustration of differing artifacts in DP2 versus NSC.
+
+    Figure 1: Left - NSC high proper motion selection contaminants (at centers of green circles) related to a bright star in the ELAIS S1 deep drilling field. The background image is a Dark Energy Camera (DECam) color composite from DESI Legacy Surveys DR11 (`Dey et al. 2019 <https://ui.adsabs.harvard.edu/abs/2019AJ....157..168D/abstract>`_; `legacysurvey.org/viewer <http://legacysurvey.org/viewer>`_). Right - DP2 gri 'pretty coadd' of the same sky region, showing that artifacts like diffraction spikes, while present in both datasets, are poorly correlated, allowing for a pure sample to be selected by requiring high proper motion to be reported in both DP2 and NSC. Each cutout is approximately 1.9 arcminutes on a side.
+
+
 :download:`Download the table of high proper motion candidates <../../../../_static/tutorials/dp2_302_4_NSC_candidates.csv>`.
 
 .. code-block:: SQL
