@@ -155,7 +155,7 @@ There are now two plots (Figure 3) comparing the Rubin DP2 proper motions agains
 ====================================
 
 .. figure:: images/portal-302-4-4.png
-    :width: 600
+    :width: 450
     :name: portal-302-4-4
     :alt: Histogram of total proper motions peaking slightly above 50 milliarcseconds per year.
 
