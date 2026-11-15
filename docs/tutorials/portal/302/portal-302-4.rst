@@ -32,6 +32,7 @@ For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 **Credit:** Originally developed by the Rubin Community Science team.
 Please consider acknowledging them if this tutorial is used for the preparation of journal articles, software releases, or other tutorials.
 DOI: `10.11578/rubin/dc.20250909.20 <https://doi.org/10.11578/rubin/dc.20250909.20>`_
+The NOIRLab Source Catalog is described in Nidever et al. 2018. and Nidever et al. 2021. This research used services or data provided by the Astro Data Lab, which is part of the Community Science and Data Center (CSDC) Program of NSF NOIRLab (Fitzpatrick et al. 2014; Nikutta et al. 2020). NOIRLab is operated by the Association of Universities for Research in Astronomy (AURA), Inc. under a cooperative agreement with the U.S. National Science Foundation.
 
 **DOI:** `10.11578/rubin/dc.20250909.20 <https://doi.org/10.11578/rubin/dc.20250909.20>`_
 
@@ -43,24 +44,16 @@ DOI: `10.11578/rubin/dc.20250909.20 <https://doi.org/10.11578/rubin/dc.20250909.
 Introduction
 ============
 
-*Provide a light narrative about this tutorial, e.g., "This tutorial will demonstrate how to...".*
 
-*Cite or link to any external information, documentation, or papers.*
+**Related tutorials:** See the Portal 106-series tutorial regarding user-uploaded tables.
 
-*Describe key scientific concepts.*
-
-**Related tutorials:**
-*If applicable, mention other relevant tutorials by name but do not link to them.*
-*Tutorials evolve continuously, there is no linkchecker for the notebook repo, and tutorial hotlinks will go stale quickly.*
-*It is not necessary to mention the preceeding/subsequent tutorials in the same series as this one - those are trivial for the user to find.*
-*But do use this section to mention related tutorials in other series.*
-
-:download:`Download the table of high proper motion candidates <../../../../_static/tutorials/dp2_302_4_NSC_candidates.csv>`.
 
 .. _DPX-Aspect-Y-1:
 
 1. The first section
 ====================
+
+:download:`Download the table of high proper motion candidates <../../../../_static/tutorials/dp2_302_4_NSC_candidates.csv>`.
 
 **1.1. Log in to the Portal Aspect of the Rubin Science Platform.**
 In a browser, go to the URL `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
