@@ -93,7 +93,7 @@ This will result in a file named ``dp2_302_4_NSC_candidates.csv`` on your comput
 
 Within the Portal's UI assisted query interface, ensure that only "Spatial" is checked under "Enter Constraints". Under "Spatial", select the "Multi-object" option for "Spatial Type". This will bring up a window allowing you to upload the downloaded CSV file of proper motion candidates. Within this window, select "Choose file" and choose the ``dp2_302_4_NSC_candidates.csv`` file that you downloaded in section 1.2 above. Then click "Load".
 
-**1.4. Customize the uploaded table's selection of columns**
+**1.4. Customize the uploaded table's selection of columns.**
 
 ``dp2_302_4_NSC_candidates.csv`` has 9 columns. By default, the query results will only retain 2 columns, ``ra`` and ``dec``, but additional columns are necessary for scientific analysis. Click on the text that says ``9 columns (2 selected)`` (Figure 2).
 
@@ -111,15 +111,15 @@ This brings up an interface to select additional columns. Leave both ``ra`` and 
 2. Cross-match to the ``IsolatedStarStellarMotions`` table
 ==========================================================
 
-**2.1. Select the IsolatedStarStellarMotions table in the UI interface**
+**2.1. Select the IsolatedStarStellarMotions table in the UI interface.**
 
 Near the upper portion of the Portal's UI assisted inerface, select ``dp2.IsolatedStarStellarMotions`` within the Tables dropdown. If selecting the ``IsolatedStarStellarMotions`` checks the "Temporal" box under "Enter Constraints", then uncheck "Temporal".
 
-**2.2. Set the cross-match radius**
+**2.2. Set the cross-match radius.**
 
 Set the cross-match radius to 3 arcseconds using the "Radius" text box.
 
-**2.3. Run the query**
+**2.3. Run the query.**
 
 Run the cross-match between the uploaded table and the ``IsolatedStarStellarMotions`` table by clicking "Search" near bottom left. This will take you to the query results page once the query completes.
 
@@ -128,7 +128,7 @@ Run the cross-match between the uploaded table and the ``IsolatedStarStellarMoti
 
 Use the proper motion measurements of the ``IsolatedStarStellarProperMotions`` cross-matches to identify bona-fide high proper motion objects among the list of candidates uploaded.
 
-**3.1. Compute additional proper motion metrics**
+**3.1. Compute additional proper motion metrics.**
 
 The results table includes columns from both the ``IsolatedStarStellarMotions`` table and from the user-uploaded table of NSC candidates. Add two more columns, computed based on the ``IsolatedStarStellarMotions`` columns retrieved via the Portal query:
 
@@ -139,18 +139,18 @@ Click on the "Add a column" icon (rectangle with encircled plus mark) within the
 
 Then click on the "Add a column" icon again. Define a second new column with Name of ``chi2_motion``, and Expression of ``power(raPM/raPMErr,2) + power(decPM/decPMErr,2)``, then click the "Add column" button. Now the query's results table has been augmented with two additional columns, ``pmtot`` and ``chi2_motion``, containing the  total proper motion in mas/yr and significance of motion, both as determined from DP2's ``IsolatedStarStellarMotions`` table.
 
-**3.2. Filter on the proper motion metrics**
+**3.2. Filter on the proper motion metrics.**
 
 Click the "Table Options" gear icon in the table panel. This brings up a Table Options window with a table of the available columns. Scroll all the way down to see the newly added ``pmtot`` and ``chi2_motion`` columns. In the "filter" column, enter ``> 50`` for ``pmtot`` to select stars with Rubin DP2 total proper motions > 50 mas/yr. Similarly, enter ``> 30`` for ``chi2_motion`` in the ``filter`` column to select stars with highly significant proper motions according to the DP2 ``IsolatedStarStellarMotions`` catalog. Click the "Close" button on the Table Options window. There will now be a smaller number of table rows remaining in the query results.
 
 4. Compare Rubin DP2 versus NSC proper motions
 ==============================================
 
-**4.1. Compare proper motions along right ascension**
+**4.1. Compare proper motions along right ascension.**
 
 In the Active Charts panel of the Results tab, click the encircled plus symbol to add a chart. This brings up an Add New Chart window. For Plot Type, select "Scatter". For X, select ``raPM``, the ``IsolatedStarStellarMotions`` RA proper motion. For Y, select ``pmra``, which is the name of the NSC RA proper motion column. For both X and Y, activate the Error toggle to plot errorbars, and for the X error column choose ``raPMErr`` and for the Y error column choose ``pmraerr``.
 
-**4.2. Compare proper motions along declination**
+**4.2. Compare proper motions along declination.**
 
 In the Active Charts panel of the Results tab, click the encircled plus symbol to add another chart. For Plot Type, select "Scatter". For X, select ``decPM``, the ``IsolatedStarStellarMotions`` Dec proper motion. For Y, select ``pmdec``, which is the name of the NSC Dec proper motion column. For both X and Y, activate the Error toggle to plot errorbars, and for the X error column choose ``decPMErr`` and for the Y error column choose ``pmdecerr``.
 
