@@ -137,6 +137,8 @@ The results table includes columns from both the ``IsolatedStarStellarMotions`` 
 - ``pmtot``, given by :math:`\mu = \sqrt{\mu^2_{\alpha} + \mu^2_{\delta}}`, where within the ``IsolatedStarStellarMotions`` table :math:`\mu_{\alpha}` is column ``rapm`` and :math:`\mu_{\delta}` is column ``decpm``
 - ``chi2_motion``, defined as :math:`X^2_{\rm motion} = (\mu_{\alpha}/\sigma_{\mu_{\alpha}})^2 + (\mu_{\delta}/\sigma_{\mu_{\delta}})^2`, where within the ``IsolatedStarStellarMotions`` table :math:`\sigma_{\mu_{\alpha}}` is column ``rapmerr`` and :math:`\sigma_{\mu_{\delta}}` is column ``decpmerr``.
 
+Click on the "Add a column" icon (rectangle with encircled plus mark) within the Results tab. Define a new column with Name of ``pmtot``, and Expression of ``sqrt(power(rapm,2) + power(decpm,2))`` then click the "Add column" button. Then click on the "Add a column" icon again. Define a second new column with Name of ``chi2_motion``, and Expression of ``power(rapm/rapmerr,2) + power(decpm/decpmerr,2)``, then click the "Add column" button. Now the query's results table has been augmented with two additional columns, ``pmtot`` and ``chi2_motion``, containing the  total proper motion in mas/yr and significance of motion, both as determined from DP2's ``IsolatedStarStellarMotions`` table.
+
 **3.2. Filter on the proper motion metrics**
 
 4. Compare Rubin DP2 versus NSC proper motions
