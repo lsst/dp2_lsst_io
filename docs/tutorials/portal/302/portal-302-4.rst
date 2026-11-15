@@ -115,3 +115,16 @@ Set the cross-match radius to 3 arcseconds using the "Radius" text box.
 **2.3. Run the query**
 
 Run the cross-match between the uploaded table and the ``IsolatedStarStellarMotions`` table by clicking "Search" near bottom left. This will take you to the query results page once the query completes.
+
+3. Filter for bona-fide high proper motion sources
+==================================================
+
+**3.1. Compute additional proper motion metrics**
+
+**3.2. Filter on the proper motion metrics**
+
+4. Compare Rubin DP2 versus NSC proper motions
+==============================================
+
+5. Histogram of total proper motions
+====================================
