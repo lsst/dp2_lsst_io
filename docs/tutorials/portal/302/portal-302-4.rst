@@ -156,7 +156,7 @@ In the Active Charts panel of the Results tab, click the encircled plus symbol t
 
 In the Active Charts panel of the Results tab, click the encircled plus symbol to add another chart. For Plot Type, select "Scatter". For X, select ``decPM``, the ``IsolatedStarStellarMotions`` Dec proper motion. For Y, select ``pmdec``, which is the name of the NSC Dec proper motion column. For both X and Y, activate the Error toggle to plot errorbars, and for the X error column choose ``decPMErr`` and for the Y error column choose ``pmdecerr``.
 
-There are now two plots comparing the Rubin DP2 proper motions against the NSC proper motions (one plot per proper motion component), for the identified subset of bona-fide high proper motion sources in the ELAIS S1 field. In both cases, there is good agreement in that the proper motion components from Rubin and NSC fall approximately along the line y=x with some scatter.
+There are now two plots (Figure 3) comparing the Rubin DP2 proper motions against the NSC proper motions (one plot per proper motion component), for the identified subset of bona-fide high proper motion sources in the ELAIS S1 field. In both cases, there is good agreement in that the proper motion components from Rubin and NSC fall approximately along the line y=x with some scatter.
 
 5. Histogram of total proper motions
 ====================================
