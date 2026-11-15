@@ -81,11 +81,7 @@ Follow the process to log in.
 **1.2. Select the DP1 & DP2 Catalogs tab in the Portal.**
 This tutorial uses the UI assisted interface of the RSP Portal Aspect.
 
-**1.2. Download the file of NSC proper motion candidates.**
-
-:download:`Download the table of high proper motion candidates <../../../../_static/tutorials/dp2_302_4_NSC_candidates.csv>`.
-
-This will result in a file named ``dp2_302_4_NSC_candidates.csv`` on your computer.
+**1.2. Download the file of NSC proper motion candidates.** :download:`Download dp2_302_4_NSC_candidates.csv <../../../../_static/tutorials/dp2_302_4_NSC_candidates.csv>`.
 
 **1.3. Upload the file of NSC proper motion candidates.**
 Within the Portal's UI assisted query interface, ensure that only "Spatial" is checked under "Enter Constraints". Under "Spatial", select the "Multi-object" option for "Spatial Type". This will bring up a window allowing you to upload the downloaded CSV file of proper motion candidates. Within this window, select "Choose file" and choose the ``dp2_302_4_NSC_candidates.csv`` file that you downloaded in section 1.2 above. Then click "Load".
