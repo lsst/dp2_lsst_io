@@ -151,6 +151,13 @@ In the Active Chart panel, click the encircled plus symbol to add another chart.
 
 **5.3. Remove the default RA versus Dec scatter plot by clicking the X on its panel.** There remain two plots (Figure 3) comparing the Rubin DP2 proper motion components against those of NSC, for the identified sample of bona-fide high proper motion sources in the ELAIS S1 field. In both cases, there is good agreement in that the proper motion components from Rubin and NSC fall approximately along the line y=x with some scatter.
 
+.. figure:: images/portal-302-4-3.png
+    :width: 600
+    :name: portal-302-4-3
+    :alt: Scatter plots showing good agreement between DP2 and NSC proper motion components.
+
+    Figure 2: Agreement between Rubin DP2 ``IsolatedStarStellarMotions`` proper motion components and those of NSC DR2 (RA at left, Dec at right), for the identified set of bona-fide high proper motion objects.
+
 6. Histogram of total proper motions
 ====================================
 
