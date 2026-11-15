@@ -51,8 +51,8 @@ Searches for rare objects like high proper motion stars inherently select outlie
 
 .. _DPX-Aspect-Y-1:
 
-1. Upload a table of unvetted candidate high proper motion objects
-==================================================================
+1. Upload a table of unvetted high proper motion candidates
+===========================================================
 
 The initial list of several thousand unvetted high proper motion candidates in the ELAIS S1 field was obtained by querying the NOIRLab Source Catalog via NOIRLab's `Astro Data Lab <https://datalab.noirlab.edu/>`_. This list of unvetted NSC candidates includes legitimate high proper motion stars mixed with contaminants due to artifacts and noise. The NSC list of high proper motion candidates was selected from the NSC DR2 ``Object`` table according to the following criteria:
 
