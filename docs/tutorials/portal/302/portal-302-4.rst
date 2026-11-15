@@ -23,7 +23,7 @@ For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
 **Data Release:** DP2
 
-**Last verified to run:** 2026-11-14
+**Last verified to run:** 2026-11-15
 
 **Learning objective:** Use the ``IsolatedStarStellarMotions`` table to help identify high proper motion sources beyond Gaia's depth.
 
