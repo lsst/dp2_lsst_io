@@ -54,17 +54,6 @@ Searches for rare astronomical objects like high proper motion stars inherently 
 1. Upload a table of unvetted candidate high proper motion objects
 ==================================================================
 
-**1.1. Log in to the Portal Aspect of the Rubin Science Platform.**
-
-In a browser, go to the URL `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
-Follow the process to log in.
-
-**1.2. Select the DP1 & DP2 Catalogs tab in the Portal.**
-
-This tutorial uses the UI assisted interface of the RSP Portal Aspect.
-
-**1.2. Download the file of NSC proper motion candidates.**
-
 The initial list of several thousand unvetted high proper motion candidates in the ELAIS S1 field was obtained by querying the NOIRLab Source Catalog via NOIRLab's `Astro Data Lab <https://datalab.noirlab.edu/>`_. This list of unvetted NSC candidates includes legitimate high proper motion stars mixed with contaminants due to artifacts and noise. The NSC list of high proper motion candidates was selected from the NSC DR2 ``Object`` table according to the following criteria:
 
 - within 1.1° of (RA, Dec) = (9.5°, -44°)
@@ -84,6 +73,17 @@ The NSC proper motion selection includes false positives, and the goal is to use
     :alt: Illustration of differing artifacts in DP2 versus NSC.
 
     Figure 1: Left - NSC high proper motion selection contaminants (at centers of green circles) related to a bright star in the ELAIS S1 deep drilling field. The background image is a Dark Energy Camera (DECam) color composite from DESI Legacy Surveys DR11 (`Dey et al. 2019 <https://iopscience.iop.org/article/10.3847/1538-3881/ab089d>`_). Right - DP2 gri 'pretty coadd' of the same sky region, showing that artifacts like diffraction spikes, while present in both datasets, are poorly correlated, allowing for a pure sample to be selected by requiring high proper motion to be reported in both DP2 and NSC. Each cutout is approximately 1.9 arcminutes on a side.
+
+**1.1. Log in to the Portal Aspect of the Rubin Science Platform.**
+
+In a browser, go to the URL `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
+Follow the process to log in.
+
+**1.2. Select the DP1 & DP2 Catalogs tab in the Portal.**
+
+This tutorial uses the UI assisted interface of the RSP Portal Aspect.
+
+**1.2. Download the file of NSC proper motion candidates.**
 
 :download:`Download the table of high proper motion candidates <../../../../_static/tutorials/dp2_302_4_NSC_candidates.csv>`.
 
