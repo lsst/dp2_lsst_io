@@ -42,26 +42,26 @@ The NOIRLab Source Catalog is described in `Nidever et al. 2018 <https://iopscie
 Introduction
 ============
 
-The ``IsolatedStarStellarMotions`` table provides Rubin-based proper motion measurements for hundreds of millions of isolated stars. Gaia proper motion solutions are used as priors where available. For relatively faint stars detected by Rubin, Gaia does not provide proper motion solutions. This tutorial shows an example of using the ``IsolatedStarStellarMotions`` table to identify faint high proper motion sources that lack Gaia proper motion solutions. This tutorial focuses on the ELAIS S1 deep drilling field, which provides a footprint with hundreds of overlapping LSSTCam exposures that span a ~200 day time baseline in DP2.
+The ``IsolatedStarStellarMotions`` table provides Rubin-based proper motion measurements for hundreds of millions of isolated stars. Gaia proper motion solutions are used as priors where available. For relatively faint stars detected by Rubin, Gaia does not provide proper motion solutions. This tutorial shows an example of using the ``IsolatedStarStellarMotions`` table to identify faint high proper motion (HPM) sources that lack Gaia proper motion solutions. This tutorial focuses on the ELAIS S1 deep drilling field, which provides a footprint with hundreds of overlapping LSSTCam exposures that span a ~200 day time baseline in DP2.
 
-Searches for rare objects like high proper motion stars inherently select outliers, and therefore generally suffer from high false positive rates due to noise excursions and artifacts which are rare but may be less rare than the targets of interest. To assemble a bona fide sample of high proper motion objects in the ELAIS S1 field, this tutorial begins with a large, unvetted sample of high proper motion candidates selected from NOIRLab Source Catalog (NSC) Data Release 2 (DR2), based on Dark Energy Camera (DECam) observations of this field during the 2010s. This initial, unvetted list of candidates, which contains many false positives, is then cross-referenced with high proper motion objects selected from the Rubin DP2 ``IsolatedStarStellarMotions`` table to create a pure sample of bona fide high proper motion objects in the ELAIS S1 field. The purity of the sample for which DP2 and NSC agree on each source's high proper motions is achieved because, while both DP2 and NSC have noise and artifacts, the noise and artifacts are generally uncorrelated in these two independent datasets (Figure 1).
+Searches for rare objects like HPM stars inherently select outliers, and therefore generally suffer from high false positive rates due to noise excursions and artifacts which are rare but may be less rare than the targets of interest. To assemble a bona fide sample of HPM objects in the ELAIS S1 field, this tutorial begins with a large, unvetted sample of HPM candidates selected from NOIRLab Source Catalog (NSC) Data Release 2 (DR2), based on Dark Energy Camera (DECam) observations of this field during the 2010s. This initial, unvetted list of candidates, which contains many false positives, is then cross-referenced with HPM objects selected from the Rubin DP2 ``IsolatedStarStellarMotions`` table to create a pure sample of bona fide HPM objects in the ELAIS S1 field. The purity of the sample for which DP2 and NSC agree on each source's high proper motion is achieved because, while both DP2 and NSC have noise and artifacts, the noise and artifacts are generally uncorrelated in these two independent datasets (Figure 1).
 
 .. figure:: images/portal-302-4-1.png
     :width: 600
     :name: portal-302-4-1
     :alt: Illustration of differing artifacts in DP2 versus NSC.
 
-    Figure 1: Left - NSC high proper motion selection contaminants (green circles) due to a bright star in ELAIS S1. The background image is from DESI Legacy Surveys DR11 (`Dey et al. 2019 <https://iopscience.iop.org/article/10.3847/1538-3881/ab089d>`_). Right - DP2 gri 'pretty coadd' of the same sky region, showing that artifacts like diffraction spikes, while present in both datasets, are poorly correlated, allowing for a pure sample to be selected by requiring high proper motion in both DP2 and NSC. Cutouts are ~1.9′x1.9′.
+    Figure 1: Left - NSC HPM selection contaminants (green circles) due to a bright star in ELAIS S1. The background image is from DESI Legacy Surveys DR11 (`Dey et al. 2019 <https://iopscience.iop.org/article/10.3847/1538-3881/ab089d>`_). Right - DP2 gri 'pretty coadd' of the same sky region, showing that artifacts like diffraction spikes, while present in both datasets, are poorly correlated, allowing for a pure sample to be selected by requiring high proper motion in both DP2 and NSC. Cutouts are ~1.9′x1.9′.
 
 **Related tutorials:** See the Portal 106-series tutorial about user-uploaded tables.
 
 
 .. _DPX-Aspect-Y-1:
 
-1. Upload a table of unvetted high proper motion candidates
-===========================================================
+1. Upload a table of unvetted HPM candidates
+============================================
 
-The initial list of several thousand unvetted high proper motion candidates in the ELAIS S1 field was obtained by querying the NOIRLab Source Catalog via NOIRLab's `Astro Data Lab <https://datalab.noirlab.edu/>`_. This list of unvetted NSC candidates includes legitimate high proper motion stars mixed with contaminants due to artifacts and noise. The NSC list of high proper motion candidates was selected from the NSC DR2 ``Object`` table according to the following criteria:
+The initial list of several thousand unvetted HPM candidates in the ELAIS S1 field was obtained by querying the NOIRLab Source Catalog via NOIRLab's `Astro Data Lab <https://datalab.noirlab.edu/>`_. This list of unvetted NSC candidates includes legitimate HPM stars mixed with contaminants due to artifacts and noise. The NSC list of HPM candidates was selected from the NSC DR2 ``Object`` table according to the following criteria:
 
 - within 1.1° of (RA, Dec) = (9.5°, -44°)
 - at least 8 detections by NSC in individual exposures
@@ -124,8 +124,8 @@ Click on the "Add a column" icon (rectangle with encircled plus mark) within the
 **3.2. Add a significance of motion column.**
 Click the "Add a column" icon again. Define a second new column with Name of ``chi2_motion``, and Expression of ``power(raPM/raPMErr,2) + power(decPM/decPMErr,2)``, then click the "Add column" button.
 
-4. Filter for bona fide high proper motion objects
-==================================================
+4. Filter for bona fide HPM objects
+===================================
 
 **4.1. Click the "Table Options" gear icon in the table panel.**
 This brings up a Table Options window with a table of the available columns. Scroll all the way down to see the newly added ``pmtot`` and ``chi2_motion`` columns.
@@ -147,14 +147,14 @@ In the Active Chart panel, click the encircled plus symbol to add a chart. For P
 **5.2. Compare proper motions along Dec.**
 In the Active Chart panel, click the encircled plus symbol to add another chart. For Plot Type, select "Scatter". For X, select ``decPM``, the ``IsolatedStarStellarMotions`` Dec proper motion. For Y, select ``pmdec``, the NSC Dec proper motion column. For both X and Y, activate the Error toggle to plot error bars, and for the X error column choose ``decPMErr`` and for the Y error column choose ``pmdecerr``. Click "OK".
 
-**5.3. Remove the default RA versus Dec scatter plot by clicking the "X" symbol on its panel.** There remain two plots (Figure 3) comparing the Rubin DP2 proper motion components against those of NSC, for the identified sample of bona fide high proper motion sources in the ELAIS S1 field. In both cases, there is good agreement: the proper motion components from Rubin and NSC fall approximately along the line y=x with some scatter.
+**5.3. Remove the default RA versus Dec scatter plot by clicking the "X" symbol on its panel.** There remain two plots (Figure 3) comparing the Rubin DP2 proper motion components against those of NSC, for the identified sample of bona fide HPM sources in the ELAIS S1 field. In both cases, there is good agreement: the proper motion components from Rubin and NSC fall approximately along the line y=x with some scatter.
 
 .. figure:: images/portal-302-4-3.png
     :width: 600
     :name: portal-302-4-3
     :alt: Scatter plots showing good agreement between DP2 and NSC proper motion components.
 
-    Figure 3: Agreement between Rubin DP2 ``IsolatedStarStellarMotions`` proper motion components and those of NSC DR2 (RA at left, Dec at right), for the identified set of bona fide high proper motion objects.
+    Figure 3: Agreement between Rubin DP2 ``IsolatedStarStellarMotions`` proper motion components and those of NSC DR2 (RA at left, Dec at right), for the identified set of bona fide HPM objects.
 
 6. Histogram of total proper motions
 ====================================
@@ -166,4 +166,4 @@ In the Active Chart panel, click the encircled plus symbol to add a chart. Selec
     :name: portal-302-4-4
     :alt: Histogram of total proper motions peaking slightly above 50 milliarcseconds per year.
 
-    Figure 4: Histogram of total proper motions of the bona fide high proper motion object sample in ELAIS S1.
+    Figure 4: Histogram of total proper motions of the bona fide HPM object sample in ELAIS S1.
