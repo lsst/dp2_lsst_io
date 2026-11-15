@@ -63,7 +63,7 @@ The initial list of several thousand unvetted high proper motion candidates in t
 - significance of motion > 30, where significance of motion is defined as :math:`X^2_{\rm motion} = (\mu_{\alpha}/\sigma_{\mu_{\alpha}})^2 + (\mu_{\delta}/\sigma_{\mu_{\delta}})^2`
 - time baseline of NSC detections for the object is > 1000 days
 
-Note that additional NSC cuts may be possible, for instance on its ``flags`` column, however this tutorial instead illustrates a filtering method that relies on cross-referencing high proper motions from NSC with those from the Rubin DP2 ``IsolatedStarStellarMotions`` catalog.
+Note that additional NSC cuts may be possible, for instance on its ``flags`` column.
 
 The NSC proper motion selection includes false positives, and the goal is to use the Rubin DP2 ``IsolatedStarStellarMotions`` table in combination with NSC DR2 to isolate a pure sample of high proper motion objects. Figure 1 illustrates that the images used to create both NSC (DECam images) and DP2's ``IsolatedStarStellarMotions`` (LSSTCam images) have artifacts like diffraction spikes, but these artifacts are poorly correlated, allowing for selection of a pure sample whose members have high proper motions reported in *both* DP2 and NSC.
 
