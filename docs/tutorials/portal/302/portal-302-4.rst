@@ -153,3 +153,10 @@ There are now two plots (Figure 3) comparing the Rubin DP2 proper motions agains
 
 6. Histogram of total proper motions
 ====================================
+
+.. figure:: images/portal-302-4-4.png
+    :width: 600
+    :name: portal-302-4-4
+    :alt: Histogram of total proper motions peaking slightly above 50 milliarcseconds per year.
+
+    Figure 4: Histogram of total proper motions of the bona-fide high proper motion object sample in ELAIS S1.
