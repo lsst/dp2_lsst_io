@@ -56,6 +56,17 @@ Searches for rare astronomical objects like high proper motion stars inherently 
 1. Upload a table of unvetted candidate high proper motion objects
 ==================================================================
 
+The initial list of several thousand unvetted high proper motion candidates in the ELAIS S1 field was obtained by querying the NOIRLab Source Catalog via NOIRLab's `Astro Data Lab <https://datalab.noirlab.edu/>`_. This list of unvetted NSC candidates includes legitimate high proper motion stars mixed with contaminants due to artifacts and noise. The NSC list of high proper motion candidates was selected from the NSC DR2 `Object` table according to the following criteria:
+
+- within 1.1° of (RA, Dec) = (9.5°, -44°)
+- at least 8 detections by NSC in individual exposures
+- no Gaia DR3 source with proper motions available within 3 arcseconds
+- total proper motion > 50 mas/yr, where total proper motion is defined as :math:`\mu = \sqrt{\mu^2_{\alpha} + \mu^2_{\delta}}`
+- significance of motion > 30, where significance of motion is defined as :math:`X^2_{\rm motion} = (\mu_{\alpha}/\sigma_{\mu_{\alpha}})^2 + (\mu_{\delta}/\sigma_{\mu_{\delta}})^2`
+- time baseline of NSC detections for the object is > 1000 days
+
+Note that additional NSC cuts may be possible, for instance on its `flags` column, however this notebook instead illustrates a filtering method that relies on cross-referencing high proper motions from NSC with those from the Rubin DP2 `IsolatedStarStellarMotions` catalog.
+
 :download:`Download the table of high proper motion candidates <../../../../_static/tutorials/dp2_302_4_NSC_candidates.csv>`.
 
 **1.1. Log in to the Portal Aspect of the Rubin Science Platform.**
