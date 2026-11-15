@@ -60,10 +60,10 @@ Searches for rare astronomical objects like high proper motion stars inherently 
 In a browser, go to the URL `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
 Follow the process to log in.
 
-**1.2. Select the DP1 & DP2 Catalogs tab in the Portal.** 
+**1.2. Select the DP1 & DP2 Catalogs tab in the Portal.**
 This tutorial uses the UI assisted interface of the RSP Portal Aspect.
 
-**1.2. Download and upload the file of proper motion candidates.** 
+**1.2. Download and upload the file of proper motion candidates.**
 
 The initial list of several thousand unvetted high proper motion candidates in the ELAIS S1 field was obtained by querying the NOIRLab Source Catalog via NOIRLab's `Astro Data Lab <https://datalab.noirlab.edu/>`_. This list of unvetted NSC candidates includes legitimate high proper motion stars mixed with contaminants due to artifacts and noise. The NSC list of high proper motion candidates was selected from the NSC DR2 ``Object`` table according to the following criteria:
 
