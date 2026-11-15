@@ -87,25 +87,31 @@ The NSC proper motion selection includes false positives, and the goal is to use
 
 :download:`Download the table of high proper motion candidates <../../../../_static/tutorials/dp2_302_4_NSC_candidates.csv>`.
 
+This will result in a file named ``dp2_302_4_NSC_candidates.csv`` on your computer.
+
 **1.3. Upload the file of NSC proper motion candidates.**
 
-Within the Portal's UI assisted query interface, ensure that only "Spatial" is checked under "Enter Constraints". Under "Spatial", check the "Multi-object" box option for "Spatial Type". This will bring up a window allowing you to upload the downloaded CSV file of proper motion candidates. Within this window, select "Choose file" and choose the ``dp2_302_4_NSC_candidates.csv`` file that you downloaded in section 1.2 above. Then click "Load".
+Within the Portal's UI assisted query interface, ensure that only "Spatial" is checked under "Enter Constraints". Under "Spatial", select the "Multi-object" option for "Spatial Type". This will bring up a window allowing you to upload the downloaded CSV file of proper motion candidates. Within this window, select "Choose file" and choose the ``dp2_302_4_NSC_candidates.csv`` file that you downloaded in section 1.2 above. Then click "Load".
 
-.. code-block:: SQL
-
-    SELECT g_H, r_H, i_H, z_H
-    FROM dp03_catalogs_10yr.SSObject
-    WHERE ssObjectId > 8660000000000000000
-
+**1.4. Customize the uploaded table's selection of columns**
 
 
 .. _DPX-Aspect-Y-2:
 
-2. The second section
-=====================
+2. Cross-match to the ``IsolatedStarStellarMotions`` table
+==========================================================
 
-**2.1.** *And so on.*
+**2.1. Select the IsolatedStarStellarMotions table in the UI interface**
 
+Near the upper portion of the Portal's UI assisted inerface, select ``dp2.IsolatedStarStellarMotions`` within the Tables dropdown.
+
+**2.2. Set the cross-match radius**
+
+Set the cross-match radius to 3 arcseconds using the "Radius" text box.
+
+**2.3. Run the query**
+
+Run the cross-match between the uploaded table and the ``IsolatedStarStellarMotions`` table by clicking "Search" near bottom left. This will take you to the query results page once the query completes.
 
 
 .. _DPX-Aspect-Y-exercises:
