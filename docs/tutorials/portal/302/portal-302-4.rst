@@ -51,7 +51,7 @@ Searches for rare objects like high proper motion stars inherently select outlie
     :name: portal-302-4-1
     :alt: Illustration of differing artifacts in DP2 versus NSC.
 
-    Figure 1: Left - NSC high proper motion selection contaminants (at centers of green circles) related to a bright star in the ELAIS S1 deep drilling field. The background image is a Dark Energy Camera (DECam) color composite from DESI Legacy Surveys DR11 (`Dey et al. 2019 <https://iopscience.iop.org/article/10.3847/1538-3881/ab089d>`_). Right - DP2 gri 'pretty coadd' of the same sky region, showing that artifacts like diffraction spikes, while present in both datasets, are poorly correlated, allowing for a pure sample to be selected by requiring high proper motion to be reported in both DP2 and NSC. Each cutout is approximately 1.9 arcminutes on a side.
+    Figure 1: Left - NSC high proper motion selection contaminants (green circles) due to a bright star in ELAIS S1. The background image is from DESI Legacy Surveys DR11 (`Dey et al. 2019 <https://iopscience.iop.org/article/10.3847/1538-3881/ab089d>`_). Right - DP2 gri 'pretty coadd' of the same sky region, showing that artifacts like diffraction spikes, while present in both datasets, are poorly correlated, allowing for a pure sample to be selected by requiring high proper motion in both DP2 and NSC. Cutouts are ~1.9′x1.9′.
 
 **Related tutorials:** See the Portal 106-series tutorial about user-uploaded tables.
 
