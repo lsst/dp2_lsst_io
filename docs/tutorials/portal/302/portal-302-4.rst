@@ -129,7 +129,16 @@ Click the "Add a column" icon again. Define a second new column with Name of ``c
 4. Filter for bona-fide high proper motion sources
 ==================================================
 
-Click the "Table Options" gear icon in the table panel. This brings up a Table Options window with a table of the available columns. Scroll all the way down to see the newly added ``pmtot`` and ``chi2_motion`` columns. In the "filter" column, enter ``> 50`` for ``pmtot`` to select stars with Rubin DP2 total proper motions > 50 mas/yr. Similarly, enter ``> 30`` for ``chi2_motion`` in the ``filter`` column to select stars with highly significant proper motions according to the DP2 ``IsolatedStarStellarMotions`` catalog. Click the "Close" button on the Table Options window. There will now be a smaller number of table rows remaining in the query results.
+**4.1. Click the "Table Options" gear icon in the table panel.**
+This brings up a Table Options window with a table of the available columns. Scroll all the way down to see the newly added ``pmtot`` and ``chi2_motion`` columns.
+
+**4.2. Filter on high total proper motion.**
+In the "filter" column, enter ``> 50`` for ``pmtot`` to select stars with Rubin DP2 total proper motions > 50 mas/yr.
+
+**4.3. Filter on high significance of motion.**
+Enter ``> 30`` for ``chi2_motion`` in the ``filter`` column to select stars with highly significant proper motions according to the DP2 ``IsolatedStarStellarMotions`` catalog. 
+
+**4.4. Click the "Close" button on the Table Options window.**
 
 5. Compare Rubin DP2 versus NSC proper motions
 ==============================================
