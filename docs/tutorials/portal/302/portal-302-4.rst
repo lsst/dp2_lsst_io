@@ -128,7 +128,14 @@ Run the cross-match between the uploaded table and the ``IsolatedStarStellarMoti
 3. Filter for bona-fide high proper motion sources
 ==================================================
 
+Use the proper motion measurements of the ``IsolatedStarStellarProperMotions`` cross-matches to identify bona-fide high proper motion objects among the list of candidates uploaded.
+
 **3.1. Compute additional proper motion metrics**
+
+The results table includes columns from both the ``IsolatedStarStellarMotions`` table and from the user-uploaded table of NSC candidates. Add two more columns, computed based on the ``IsolatedStarStellarMotions`` columns retrieved via the TAP query:
+
+- ``pmtot``, given by :math:`\mu = \sqrt{\mu^2_{\alpha} + \mu^2_{\delta}}`, where within the ``IsolatedStarStellarMotions`` table :math:`\mu_{\alpha}` is column ``rapm`` and :math:`\mu_{\delta}` is column ``decpm``
+- ``chi2_motion``, defined as :math:`X^2_{\rm motion} = (\mu_{\alpha}/\sigma_{\mu_{\alpha}})^2 + (\mu_{\delta}/\sigma_{\mu_{\delta}})^2`, where within the ``IsolatedStarStellarMotions`` table :math:`\sigma_{\mu_{\alpha}}` is column ``rapmerr`` and :math:`\sigma_{\mu_{\delta}}` is column ``decpmerr``.
 
 **3.2. Filter on the proper motion metrics**
 
