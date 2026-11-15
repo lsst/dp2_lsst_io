@@ -56,7 +56,16 @@ Searches for rare astronomical objects like high proper motion stars inherently 
 1. Upload a table of unvetted candidate high proper motion objects
 ==================================================================
 
-The initial list of several thousand unvetted high proper motion candidates in the ELAIS S1 field was obtained by querying the NOIRLab Source Catalog via NOIRLab's `Astro Data Lab <https://datalab.noirlab.edu/>`_. This list of unvetted NSC candidates includes legitimate high proper motion stars mixed with contaminants due to artifacts and noise. The NSC list of high proper motion candidates was selected from the NSC DR2 `Object` table according to the following criteria:
+**1.1. Log in to the Portal Aspect of the Rubin Science Platform.**
+In a browser, go to the URL `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
+Follow the process to log in.
+
+**1.2. Select the DP1 & DP2 Catalogs tab in the Portal.** 
+This tutorial uses the UI assisted interface of the RSP Portal Aspect.
+
+**1.2. Download and upload the file of proper motion candidates.** 
+
+The initial list of several thousand unvetted high proper motion candidates in the ELAIS S1 field was obtained by querying the NOIRLab Source Catalog via NOIRLab's `Astro Data Lab <https://datalab.noirlab.edu/>`_. This list of unvetted NSC candidates includes legitimate high proper motion stars mixed with contaminants due to artifacts and noise. The NSC list of high proper motion candidates was selected from the NSC DR2 ``Object`` table according to the following criteria:
 
 - within 1.1° of (RA, Dec) = (9.5°, -44°)
 - at least 8 detections by NSC in individual exposures
@@ -65,19 +74,9 @@ The initial list of several thousand unvetted high proper motion candidates in t
 - significance of motion > 30, where significance of motion is defined as :math:`X^2_{\rm motion} = (\mu_{\alpha}/\sigma_{\mu_{\alpha}})^2 + (\mu_{\delta}/\sigma_{\mu_{\delta}})^2`
 - time baseline of NSC detections for the object is > 1000 days
 
-Note that additional NSC cuts may be possible, for instance on its `flags` column, however this notebook instead illustrates a filtering method that relies on cross-referencing high proper motions from NSC with those from the Rubin DP2 `IsolatedStarStellarMotions` catalog.
+Note that additional NSC cuts may be possible, for instance on its ``flags`` column, however this notebook instead illustrates a filtering method that relies on cross-referencing high proper motions from NSC with those from the Rubin DP2 ``IsolatedStarStellarMotions`` catalog.
 
 :download:`Download the table of high proper motion candidates <../../../../_static/tutorials/dp2_302_4_NSC_candidates.csv>`.
-
-**1.1. Log in to the Portal Aspect of the Rubin Science Platform.**
-In a browser, go to the URL `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
-Follow the process to log in.
-
-**1.2. Select the X tab in the Portal.**
-*Explanation of the setup, reference to Figure 1.*
-
-**1.3. Execute the ADQL query.**
-*Explanation of the query, reference to the code block below.*
 
 .. code-block:: SQL
 
