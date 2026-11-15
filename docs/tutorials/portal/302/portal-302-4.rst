@@ -95,7 +95,7 @@ Within the Portal's UI assisted query interface, ensure that only "Spatial" is c
 
 **1.4. Customize the uploaded table's selection of columns.**
 
-``dp2_302_4_NSC_candidates.csv`` has 9 columns. By default, the query results will only retain 2 columns, ``ra`` and ``dec``, but additional columns are necessary for scientific analysis. Click on the text that says ``9 columns (2 selected)`` (Figure 2).
+Click on the text that says ``9 columns (2 selected)`` (Figure 2).
 
 .. figure:: images/portal-302-4-2.png
     :width: 600
