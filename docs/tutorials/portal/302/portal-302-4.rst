@@ -46,7 +46,7 @@ The ``IsolatedStarStellarMotions`` table provides Rubin-based proper motion meas
 
 Searches for rare astronomical objects like high proper motion stars inherently select outliers in the catalog, and therefore generally suffer from high false positive rates due to noise excursions and artifacts which are rare but may be less rare than the targets of interest. To assemble a bona-fide sample of high proper motion objects in the ELAIS S1 field, this tutorial begins with a large, unvetted sample of high proper motion candidates selected from NOIRLab Source Catalog (NSC) Data Release 2 (DR2), based on Dark Energy Camera (DECam) observations of this field during the 2010's. This initial, unvetted list of candidates, which contains many false positives, is then cross-referenced with high proper motion objects selected from the Rubin DP2 ``IsolatedStarStellarMotions`` table to create a pure sample of bona-fide high proper motion objects in the ELAIS S1 field that are too faint to have Gaia proper motion measurements. The cross-match between ``IsolatedStarStellarMotions`` and NSC makes it possible to confirm the high proper motions reported by the ``IsolatedStarStellarMotions`` table and by NSC, in the absence of available proper motions from Gaia. The purity of the sample for which DP2 and NSC agree on each source's high proper motions is achieved thanks to the fact that, while both DP2 and NSC have noise and artifacts, the noise and artifacts are generally uncorrelated in these two independent datasets.
 
-**Related tutorials:** See the Portal 106-series tutorial regarding user-uploaded tables.
+**Related tutorials:** See the Portal 106-series tutorial about user-uploaded tables.
 
 
 .. _DPX-Aspect-Y-1:
