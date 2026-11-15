@@ -31,8 +31,8 @@ For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
 **Credit:** Originally developed by the Rubin Community Science team.
 Please consider acknowledging them if this tutorial is used for the preparation of journal articles, software releases, or other tutorials.
-DOI: `10.11578/rubin/dc.20250909.20 <https://doi.org/10.11578/rubin/dc.20250909.20>`_
-The NOIRLab Source Catalog is described in `Nidever et al. 2018 <https://iopscience.iop.org/article/10.3847/1538-3881/aad68f>`_. and `Nidever et al. 2021 <https://iopscience.iop.org/article/10.3847/1538-3881/abd6e1>`_. This research used services or data provided by the Astro Data Lab, which is part of the Community Science and Data Center (CSDC) Program of NSF NOIRLab (`Fitzpatrick et al. 2014 <https://doi.org/10.1117/12.2057445>`_; `Nikutta et al. 2020 <https://doi.org/10.1016/j.ascom.2020.100411>`_). NOIRLab is operated by the Association of Universities for Research in Astronomy (AURA), Inc. under a cooperative agreement with the U.S. National Science Foundation.
+DOI: `10.11578/rubin/dc.20250909.20 <https://doi.org/10.11578/rubin/dc.20250909.20>`_.
+The NOIRLab Source Catalog is described in `Nidever et al. 2018 <https://iopscience.iop.org/article/10.3847/1538-3881/aad68f>`_. and `Nidever et al. 2021 <https://iopscience.iop.org/article/10.3847/1538-3881/abd6e1>`_. This research used services or data provided by the Astro Data Lab, which is part of the Community Science and Data Center (CSDC) Program of NSF NOIRLab (`Fitzpatrick et al. 2014 <https://ui.adsabs.harvard.edu/abs/2014SPIE.9149E..1TF>`_; `Nikutta et al. 2020 <https://doi.org/10.1016/j.ascom.2020.100411>`_). NOIRLab is operated by the Association of Universities for Research in Astronomy (AURA), Inc. under a cooperative agreement with the U.S. National Science Foundation.
 
 **DOI:** `10.11578/rubin/dc.20250909.20 <https://doi.org/10.11578/rubin/dc.20250909.20>`_
 
