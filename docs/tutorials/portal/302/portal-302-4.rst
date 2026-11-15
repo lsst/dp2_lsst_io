@@ -136,7 +136,7 @@ This brings up a Table Options window with a table of the available columns. Scr
 In the "filter" column, enter ``> 50`` for ``pmtot`` to select stars with Rubin DP2 total proper motions > 50 mas/yr.
 
 **4.3. Filter on high significance of motion.**
-Enter ``> 30`` for ``chi2_motion`` in the ``filter`` column to select stars with highly significant proper motions according to the DP2 ``IsolatedStarStellarMotions`` catalog. 
+Enter ``> 30`` for ``chi2_motion`` in the ``filter`` column to select stars with highly significant proper motions according to the DP2 ``IsolatedStarStellarMotions`` catalog.
 
 **4.4. Click the "Close" button on the Table Options window.**
 
