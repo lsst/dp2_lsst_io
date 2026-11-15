@@ -104,7 +104,7 @@ This brings up an interface to select additional columns. Leave both ``ra`` and 
 ==========================================================
 
 **2.1. Select the IsolatedStarStellarMotions table in the UI interface.**
-Near the upper portion of the Portal's UI assisted inerface, select ``dp2.IsolatedStarStellarMotions`` within the Tables dropdown. If selecting the ``IsolatedStarStellarMotions`` checks the "Temporal" box under "Enter Constraints", then uncheck "Temporal".
+Select ``dp2.IsolatedStarStellarMotions`` within the Tables dropdown. If selecting the ``IsolatedStarStellarMotions`` checks the "Temporal" box under "Enter Constraints", then uncheck "Temporal".
 
 **2.2. Set the cross-match radius.**
 Set the cross-match radius to 3 arcseconds using the "Radius" text box.
