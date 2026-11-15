@@ -113,7 +113,7 @@ This brings up an interface to select additional columns. Leave both ``ra`` and 
 2. Cross-match to the ``IsolatedStarStellarMotions`` table
 ==========================================================
 
-**2.1. Select the ``IsolatedStarStellarMotions`` table in the UI interface**
+**2.1. Select the IsolatedStarStellarMotions table in the UI interface**
 
 Near the upper portion of the Portal's UI assisted inerface, select ``dp2.IsolatedStarStellarMotions`` within the Tables dropdown. If selecting the ``IsolatedStarStellarMotions`` checks the "Temporal" box under "Enter Constraints", then uncheck "Temporal".
 
