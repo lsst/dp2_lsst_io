@@ -61,7 +61,7 @@ Searches for rare objects like HPM stars inherently select outliers, and thus su
 1. Upload a table of unvetted HPM candidates
 ============================================
 
-The initial list of several thousand unvetted HPM candidates in the ELAIS S1 field was obtained by querying the NOIRLab Source Catalog via NOIRLab's `Astro Data Lab <https://datalab.noirlab.edu/>`_. This list of unvetted NSC candidates includes legitimate HPM stars mixed with contaminants due to artifacts and noise. The NSC list of HPM candidates was selected from the NSC DR2 ``Object`` table according to the following criteria:
+The initial list of ~5000 unvetted HPM candidates in the ELAIS S1 field was obtained by querying the NOIRLab Source Catalog via NOIRLab's `Astro Data Lab <https://datalab.noirlab.edu/>`_. This list of unvetted NSC candidates includes legitimate HPM stars mixed with contaminants due to artifacts and noise. The NSC list of HPM candidates was selected from the NSC DR2 ``Object`` table according to the following criteria:
 
 - within 1.1° of (RA, Dec) = (9.5°, -44°)
 - at least 8 detections by NSC in individual exposures
