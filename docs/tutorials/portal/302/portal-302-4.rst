@@ -161,8 +161,10 @@ In the Active Chart panel, click the encircled plus symbol to add another chart.
 6. Histogram of total proper motions
 ====================================
 
+In the Active Chart panel, click the encircled plus symbol to add a chart. Select "Histogram" for "Plot Type", ``pmtot`` for "Column or expression" and 50 for the number of bins. Figure 4 shows the resulting histogram. The distribution of total proper motions is peaked near the > 50 mas/yr threshold imposed in Section 4.
+
 .. figure:: images/portal-302-4-4.png
-    :width: 450
+    :width: 400
     :name: portal-302-4-4
     :alt: Histogram of total proper motions peaking slightly above 50 milliarcseconds per year.
 
