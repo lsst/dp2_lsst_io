@@ -142,7 +142,7 @@ Enter ``> 30`` for ``chi2_motion`` in the ``filter`` column to select stars with
 ==============================================
 
 **5.1. Compare proper motions along RA.**
-In the Active Chart panel, click the encircled plus symbol to add a chart. This brings up an Add New Chart window. For Plot Type, select "Scatter". For X, select ``raPM``, the ``IsolatedStarStellarMotions`` RA proper motion. For Y, select ``pmra``, the NSC RA proper motion column. For both X and Y, activate the Error toggle to plot errorbars, and for the X error column choose ``raPMErr`` and for the Y error column choose ``pmraerr``. Click "OK".
+In the Active Chart panel, click the encircled plus symbol to add a chart. For Plot Type, select "Scatter". For X, select ``raPM``, the ``IsolatedStarStellarMotions`` RA proper motion. For Y, select ``pmra``, the NSC RA proper motion column. For both X and Y, activate the Error toggle to plot errorbars, and for the X error column choose ``raPMErr`` and for the Y error column choose ``pmraerr``. Click "OK".
 
 **5.2. Compare proper motions along Dec.**
 In the Active Chart panel, click the encircled plus symbol to add another chart. For Plot Type, select "Scatter". For X, select ``decPM``, the ``IsolatedStarStellarMotions`` Dec proper motion. For Y, select ``pmdec``, the NSC Dec proper motion column. For both X and Y, activate the Error toggle to plot errorbars, and for the X error column choose ``decPMErr`` and for the Y error column choose ``pmdecerr``. Click "OK".
