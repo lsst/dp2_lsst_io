@@ -147,7 +147,7 @@ In the Active Chart panel, click the encircled plus symbol to add a chart. For P
 **5.2. Compare proper motions along Dec.**
 In the Active Chart panel, click the encircled plus symbol to add another chart. For Plot Type, select "Scatter". For X, select ``decPM``, the ``IsolatedStarStellarMotions`` Dec proper motion. For Y, select ``pmdec``, the NSC Dec proper motion column. For both X and Y, activate the Error toggle to plot errorbars, and for the X error column choose ``decPMErr`` and for the Y error column choose ``pmdecerr``. Click "OK".
 
-**5.3. Remove the default RA versus Dec scatter plot by clicking the "X" symbol on its panel.** There remain two plots (Figure 3) comparing the Rubin DP2 proper motion components against those of NSC, for the identified sample of bona-fide high proper motion sources in the ELAIS S1 field. In both cases, there is good agreement in that the proper motion components from Rubin and NSC fall approximately along the line y=x with some scatter.
+**5.3. Remove the default RA versus Dec scatter plot by clicking the "X" symbol on its panel.** There remain two plots (Figure 3) comparing the Rubin DP2 proper motion components against those of NSC, for the identified sample of bona-fide high proper motion sources in the ELAIS S1 field. In both cases, there is good agreement: the proper motion components from Rubin and NSC fall approximately along the line y=x with some scatter.
 
 .. figure:: images/portal-302-4-3.png
     :width: 600
