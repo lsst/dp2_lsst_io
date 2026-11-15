@@ -106,7 +106,7 @@ Within the Portal's UI assisted query interface, ensure that only "Spatial" is c
 
     Figure 2: The red arrow annotation points to the text to click in order to customize the selection of columns that the query will retain from the user-uploaded table.
 
-This brings up an interface to select additional columns. Leave both ``ra`` and ``dec`` columns selected, and additionally select ``pmra`` (the NSC RA proper motion in mas/yr), ``pmdec`` (the NSC Dec proper motion in mas/yr), and ``pmraerr`` and ``pmdecerr`` which are the uncertainties on the NSC proper motions.
+This brings up an interface to select additional columns. Leave both ``ra`` and ``dec`` columns selected, and additionally select ``pmra`` (the NSC RA proper motion in mas/yr), ``pmdec`` (the NSC Dec proper motion in mas/yr), and ``pmraerr`` and ``pmdecerr`` which are the uncertainties on the NSC proper motions. Once you have selected these 4 additional columns and exited the user-uploaded table column selection window, the Portal interface should show ``9 columns (6 selected)``
 
 .. _DPX-Aspect-Y-2:
 
@@ -142,6 +142,9 @@ Click on the "Add a column" icon (rectangle with encircled plus mark) within the
 Then click on the "Add a column" icon again. Define a second new column with Name of ``chi2_motion``, and Expression of ``power(raPM/raPMErr,2) + power(decPM/decPMErr,2)``, then click the "Add column" button. Now the query's results table has been augmented with two additional columns, ``pmtot`` and ``chi2_motion``, containing the  total proper motion in mas/yr and significance of motion, both as determined from DP2's ``IsolatedStarStellarMotions`` table.
 
 **3.2. Filter on the proper motion metrics**
+
+Click the "Table Options" gear icon in the table panel. This brings up a Table Options window with a table of the available columns. Scroll all the way down to see the newly added ``pmtot`` and ``chi2_motion`` columns. In the "filter" column, enter ``> 50`` for ``pmtot`` to select stars with Rubin DP2 total proper motions > 50 mas/yr. Similarly, enter ``> 30`` for ``chi2_motion`` in the ``filter`` column to select stars with highly significant proper motions according to the DP2 ``IsolatedStarStellarMotions`` catalog. Click the "Close" button on the Table Options window. There will now be a smaller number of table rows remaining in the query results.
+
 
 4. Compare Rubin DP2 versus NSC proper motions
 ==============================================
