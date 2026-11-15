@@ -44,7 +44,7 @@ Introduction
 
 The ``IsolatedStarStellarMotions`` table provides Rubin-based proper motion measurements for hundreds of millions of isolated stars. Gaia proper motion solutions are used as priors where available. For relatively faint stars detected by Rubin, Gaia does not provide proper motion solutions. This tutorial shows an example of using the ``IsolatedStarStellarMotions`` table to identify faint high proper motion sources that lack Gaia proper motion solutions. This tutorial focuses on the ELAIS S1 deep drilling field, which provides a footprint with hundreds of overlapping LSSTCam exposures that span a ~200 day time baseline in DP2.
 
-Searches for rare objects like high proper motion stars inherently select outliers in the catalog, and therefore generally suffer from high false positive rates due to noise excursions and artifacts which are rare but may be less rare than the targets of interest. To assemble a bona-fide sample of high proper motion objects in the ELAIS S1 field, this tutorial begins with a large, unvetted sample of high proper motion candidates selected from NOIRLab Source Catalog (NSC) Data Release 2 (DR2), based on Dark Energy Camera (DECam) observations of this field during the 2010's. This initial, unvetted list of candidates, which contains many false positives, is then cross-referenced with high proper motion objects selected from the Rubin DP2 ``IsolatedStarStellarMotions`` table to create a pure sample of bona-fide high proper motion objects in the ELAIS S1 field. The cross-match between ``IsolatedStarStellarMotions`` and NSC makes it possible to confirm the high proper motions reported by the ``IsolatedStarStellarMotions`` table and by NSC, in the absence of available proper motions from Gaia. The purity of the sample for which DP2 and NSC agree on each source's high proper motions is achieved thanks to the fact that, while both DP2 and NSC have noise and artifacts, the noise and artifacts are generally uncorrelated in these two independent datasets (Figure 1).
+Searches for rare objects like high proper motion stars inherently select outliers in the catalog, and therefore generally suffer from high false positive rates due to noise excursions and artifacts which are rare but may be less rare than the targets of interest. To assemble a bona fide sample of high proper motion objects in the ELAIS S1 field, this tutorial begins with a large, unvetted sample of high proper motion candidates selected from NOIRLab Source Catalog (NSC) Data Release 2 (DR2), based on Dark Energy Camera (DECam) observations of this field during the 2010s. This initial, unvetted list of candidates, which contains many false positives, is then cross-referenced with high proper motion objects selected from the Rubin DP2 ``IsolatedStarStellarMotions`` table to create a pure sample of bona fide high proper motion objects in the ELAIS S1 field. The cross-match between ``IsolatedStarStellarMotions`` and NSC makes it possible to confirm the high proper motions reported by the ``IsolatedStarStellarMotions`` table and by NSC, in the absence of available proper motions from Gaia. The purity of the sample for which DP2 and NSC agree on each source's high proper motions is achieved thanks to the fact that, while both DP2 and NSC have noise and artifacts, the noise and artifacts are generally uncorrelated in these two independent datasets (Figure 1).
 
 .. figure:: images/portal-302-4-1.png
     :width: 600
@@ -94,15 +94,15 @@ Click on the text that says ``9 columns (2 selected)`` (Figure 2).
 
     Figure 2: The red arrow annotation points to the text to click to customize the set of columns that the query will retain from the uploaded table.
 
-This brings up an interface to select additional columns. Leave both ``ra`` and ``dec`` columns selected, and additionally select ``pmra`` (the NSC RA proper motion in mas/yr), ``pmdec`` (the NSC Dec proper motion in mas/yr), and ``pmraerr`` and ``pmdecerr`` which are the uncertainties on the NSC proper motions. Once you have selected these 4 additional columns and exited the user-uploaded table column selection window, the Portal interface will show ``9 columns (6 selected)``
+This brings up an interface to select additional columns. Leave both ``ra`` and ``dec`` columns selected, and additionally select ``pmra`` (the NSC RA proper motion in mas/yr), ``pmdec`` (the NSC Dec proper motion in mas/yr), and ``pmraerr`` and ``pmdecerr`` which are the uncertainties on the NSC proper motions. Once you have selected these 4 additional columns and exited the user-uploaded table column selection window, the Portal interface will show ``9 columns (6 selected)``.
 
 .. _DPX-Aspect-Y-2:
 
 2. Cross-match to the ``IsolatedStarStellarMotions`` table
 ==========================================================
 
-**2.1. Select the IsolatedStarStellarMotions table in the UI interface.**
-Select ``dp2.IsolatedStarStellarMotions`` within the Tables dropdown. If selecting the ``IsolatedStarStellarMotions`` checks the "Temporal" box under "Enter Constraints", then uncheck "Temporal".
+**2.1. Select the IsolatedStarStellarMotions table.**
+Select ``dp2.IsolatedStarStellarMotions`` within the Tables dropdown. If selecting ``IsolatedStarStellarMotions`` checks the "Temporal" box under "Enter Constraints", then uncheck "Temporal".
 
 **2.2. Set the cross-match radius.**
 Set the cross-match radius to 3 arcseconds using the "Radius" text box.
@@ -124,7 +124,7 @@ Click on the "Add a column" icon (rectangle with encircled plus mark) within the
 **3.2. Add a significance of motion column.**
 Click the "Add a column" icon again. Define a second new column with Name of ``chi2_motion``, and Expression of ``power(raPM/raPMErr,2) + power(decPM/decPMErr,2)``, then click the "Add column" button.
 
-4. Filter for bona-fide high proper motion objects
+4. Filter for bona fide high proper motion objects
 ==================================================
 
 **4.1. Click the "Table Options" gear icon in the table panel.**
@@ -134,7 +134,7 @@ This brings up a Table Options window with a table of the available columns. Scr
 In the "filter" column, enter ``> 50`` for ``pmtot`` to select stars with Rubin DP2 total proper motions > 50 mas/yr.
 
 **4.3. Filter on high significance of motion.**
-Enter ``> 30`` for ``chi2_motion`` in the ``filter`` column to select stars with highly significant proper motions according to the DP2 ``IsolatedStarStellarMotions`` catalog.
+Enter ``> 30`` for ``chi2_motion`` in the "filter" column to select stars with highly significant proper motions according to the DP2 ``IsolatedStarStellarMotions`` catalog.
 
 **4.4. Click the "Close" button on the Table Options window.**
 
@@ -142,19 +142,19 @@ Enter ``> 30`` for ``chi2_motion`` in the ``filter`` column to select stars with
 ==============================================
 
 **5.1. Compare proper motions along RA.**
-In the Active Chart panel, click the encircled plus symbol to add a chart. For Plot Type, select "Scatter". For X, select ``raPM``, the ``IsolatedStarStellarMotions`` RA proper motion. For Y, select ``pmra``, the NSC RA proper motion column. For both X and Y, activate the Error toggle to plot errorbars, and for the X error column choose ``raPMErr`` and for the Y error column choose ``pmraerr``. Click "OK".
+In the Active Chart panel, click the encircled plus symbol to add a chart. For Plot Type, select "Scatter". For X, select ``raPM``, the ``IsolatedStarStellarMotions`` RA proper motion. For Y, select ``pmra``, the NSC RA proper motion column. For both X and Y, activate the Error toggle to plot error bars, and for the X error column choose ``raPMErr`` and for the Y error column choose ``pmraerr``. Click "OK".
 
 **5.2. Compare proper motions along Dec.**
-In the Active Chart panel, click the encircled plus symbol to add another chart. For Plot Type, select "Scatter". For X, select ``decPM``, the ``IsolatedStarStellarMotions`` Dec proper motion. For Y, select ``pmdec``, the NSC Dec proper motion column. For both X and Y, activate the Error toggle to plot errorbars, and for the X error column choose ``decPMErr`` and for the Y error column choose ``pmdecerr``. Click "OK".
+In the Active Chart panel, click the encircled plus symbol to add another chart. For Plot Type, select "Scatter". For X, select ``decPM``, the ``IsolatedStarStellarMotions`` Dec proper motion. For Y, select ``pmdec``, the NSC Dec proper motion column. For both X and Y, activate the Error toggle to plot error bars, and for the X error column choose ``decPMErr`` and for the Y error column choose ``pmdecerr``. Click "OK".
 
-**5.3. Remove the default RA versus Dec scatter plot by clicking the "X" symbol on its panel.** There remain two plots (Figure 3) comparing the Rubin DP2 proper motion components against those of NSC, for the identified sample of bona-fide high proper motion sources in the ELAIS S1 field. In both cases, there is good agreement: the proper motion components from Rubin and NSC fall approximately along the line y=x with some scatter.
+**5.3. Remove the default RA versus Dec scatter plot by clicking the "X" symbol on its panel.** There remain two plots (Figure 3) comparing the Rubin DP2 proper motion components against those of NSC, for the identified sample of bona fide high proper motion sources in the ELAIS S1 field. In both cases, there is good agreement: the proper motion components from Rubin and NSC fall approximately along the line y=x with some scatter.
 
 .. figure:: images/portal-302-4-3.png
     :width: 600
     :name: portal-302-4-3
     :alt: Scatter plots showing good agreement between DP2 and NSC proper motion components.
 
-    Figure 3: Agreement between Rubin DP2 ``IsolatedStarStellarMotions`` proper motion components and those of NSC DR2 (RA at left, Dec at right), for the identified set of bona-fide high proper motion objects.
+    Figure 3: Agreement between Rubin DP2 ``IsolatedStarStellarMotions`` proper motion components and those of NSC DR2 (RA at left, Dec at right), for the identified set of bona fide high proper motion objects.
 
 6. Histogram of total proper motions
 ====================================
@@ -166,4 +166,4 @@ In the Active Chart panel, click the encircled plus symbol to add a chart. Selec
     :name: portal-302-4-4
     :alt: Histogram of total proper motions peaking slightly above 50 milliarcseconds per year.
 
-    Figure 4: Histogram of total proper motions of the bona-fide high proper motion object sample in ELAIS S1.
+    Figure 4: Histogram of total proper motions of the bona fide high proper motion object sample in ELAIS S1.
