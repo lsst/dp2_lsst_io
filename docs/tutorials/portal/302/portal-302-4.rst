@@ -61,11 +61,11 @@ Searches for rare objects like HPM stars inherently select outliers, and thus su
 1. Upload a table of unvetted HPM candidates
 ============================================
 
-The initial list of ~5000 unvetted HPM candidates in the ELAIS S1 field was obtained by querying the NOIRLab Source Catalog via NOIRLab's `Astro Data Lab <https://datalab.noirlab.edu/>`_. This list of unvetted NSC candidates includes legitimate HPM stars mixed with contaminants due to artifacts and noise. The NSC list of HPM candidates was selected from the NSC DR2 ``Object`` table according to the following criteria:
+The initial list of ~5000 unvetted HPM candidates in the ELAIS S1 field was obtained by querying NSC via NOIRLab's `Astro Data Lab <https://datalab.noirlab.edu/>`_. This list of unvetted NSC candidates includes legitimate HPM stars mixed with contaminants due to artifacts and noise. The NSC list of HPM candidates was selected from the NSC DR2 ``Object`` table based on:
 
 - within 1.1° of (RA, Dec) = (9.5°, -44°)
 - at least 8 detections by NSC in individual exposures
-- no Gaia DR3 source with proper motions available within 3 arcseconds
+- no Gaia DR3 source with proper motions available within 3″
 - total proper motion > 50 mas/yr, where total proper motion is defined as :math:`\mu = \sqrt{\mu^2_{\alpha} + \mu^2_{\delta}}`
 - significance of motion > 30, where significance of motion is defined as :math:`X^2_{\rm motion} = (\mu_{\alpha}/\sigma_{\mu_{\alpha}})^2 + (\mu_{\delta}/\sigma_{\mu_{\delta}})^2`
 - time baseline of NSC detections for the object is > 1000 days
@@ -105,7 +105,7 @@ This brings up an interface to select additional columns. Leave both ``ra`` and 
 Select ``dp2.IsolatedStarStellarMotions`` within the Tables dropdown. If selecting ``IsolatedStarStellarMotions`` checks the "Temporal" box under "Enter Constraints", then uncheck "Temporal".
 
 **2.2. Set the cross-match radius.**
-Set the cross-match radius to 3 arcseconds using the "Radius" text box.
+Set the cross-match radius to 3″ using the "Radius" text box.
 
 **2.3. Run the query.**
 Run the cross-match between the uploaded table and the ``IsolatedStarStellarMotions`` table by clicking "Search" near bottom left. This will take you to the query results page once the query completes.
