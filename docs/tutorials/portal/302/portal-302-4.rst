@@ -144,10 +144,10 @@ Enter ``> 30`` for ``chi2_motion`` in the ``filter`` column to select stars with
 ==============================================
 
 **5.1. Compare proper motions along right ascension.**
-In the Active Chart panel, click the encircled plus symbol to add a chart. This brings up an Add New Chart window. For Plot Type, select "Scatter". For X, select ``raPM``, the ``IsolatedStarStellarMotions`` RA proper motion. For Y, select ``pmra``, which is the name of the NSC RA proper motion column. For both X and Y, activate the Error toggle to plot errorbars, and for the X error column choose ``raPMErr`` and for the Y error column choose ``pmraerr``.
+In the Active Chart panel, click the encircled plus symbol to add a chart. This brings up an Add New Chart window. For Plot Type, select "Scatter". For X, select ``raPM``, the ``IsolatedStarStellarMotions`` RA proper motion. For Y, select ``pmra``, the NSC RA proper motion column. For both X and Y, activate the Error toggle to plot errorbars, and for the X error column choose ``raPMErr`` and for the Y error column choose ``pmraerr``.
 
 **5.2. Compare proper motions along declination.**
-In the Active Chart panel, click the encircled plus symbol to add another chart. For Plot Type, select "Scatter". For X, select ``decPM``, the ``IsolatedStarStellarMotions`` Dec proper motion. For Y, select ``pmdec``, which is the name of the NSC Dec proper motion column. For both X and Y, activate the Error toggle to plot errorbars, and for the X error column choose ``decPMErr`` and for the Y error column choose ``pmdecerr``.
+In the Active Chart panel, click the encircled plus symbol to add another chart. For Plot Type, select "Scatter". For X, select ``decPM``, the ``IsolatedStarStellarMotions`` Dec proper motion. For Y, select ``pmdec``, the NSC Dec proper motion column. For both X and Y, activate the Error toggle to plot errorbars, and for the X error column choose ``decPMErr`` and for the Y error column choose ``pmdecerr``.
 
 There are now two plots (Figure 3) comparing the Rubin DP2 proper motions against the NSC proper motions (one plot per proper motion component), for the identified subset of bona-fide high proper motion sources in the ELAIS S1 field. In both cases, there is good agreement in that the proper motion components from Rubin and NSC fall approximately along the line y=x with some scatter.
 
