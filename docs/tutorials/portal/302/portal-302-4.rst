@@ -54,7 +54,7 @@ Searches for rare astronomical objects like high proper motion stars inherently 
 .. _DPX-Aspect-Y-1:
 
 1. Upload a table of unvetted candidate high proper motion objects
-================================================================
+==================================================================
 
 :download:`Download the table of high proper motion candidates <../../../../_static/tutorials/dp2_302_4_NSC_candidates.csv>`.
 
