@@ -94,7 +94,7 @@ Click on the text that says ``9 columns (2 selected)`` (Figure 2).
     :name: portal-302-4-2
     :alt: Location of button to select columns from user-uploaded table.
 
-    Figure 2: The red arrow annotation points to the text to click in order to customize the selection of columns that the query will retain from the user-uploaded table.
+    Figure 2: The red arrow annotation points to the text to click to customize the selection of columns that the query will retain from the user-uploaded table.
 
 This brings up an interface to select additional columns. Leave both ``ra`` and ``dec`` columns selected, and additionally select ``pmra`` (the NSC RA proper motion in mas/yr), ``pmdec`` (the NSC Dec proper motion in mas/yr), and ``pmraerr`` and ``pmdecerr`` which are the uncertainties on the NSC proper motions. Once you have selected these 4 additional columns and exited the user-uploaded table column selection window, the Portal interface should show ``9 columns (6 selected)``
 
