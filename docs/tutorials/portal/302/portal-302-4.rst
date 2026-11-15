@@ -117,8 +117,8 @@ Run the cross-match between the uploaded table and the ``IsolatedStarStellarMoti
 
 The results table includes columns from both the ``IsolatedStarStellarMotions`` table and from the user-uploaded table of NSC candidates. Add two more columns, computed based on the ``IsolatedStarStellarMotions`` columns retrieved via the Portal query:
 
-- ``pmtot``, given by :math:`\mu = \sqrt{\mu^2_{\alpha} + \mu^2_{\delta}}`, where within the ``IsolatedStarStellarMotions`` table :math:`\mu_{\alpha}` is column ``rapm`` and :math:`\mu_{\delta}` is column ``decpm``
-- ``chi2_motion``, defined as :math:`X^2_{\rm motion} = (\mu_{\alpha}/\sigma_{\mu_{\alpha}})^2 + (\mu_{\delta}/\sigma_{\mu_{\delta}})^2`, where within the ``IsolatedStarStellarMotions`` table :math:`\sigma_{\mu_{\alpha}}` is column ``rapmerr`` and :math:`\sigma_{\mu_{\delta}}` is column ``decpmerr``.
+- ``pmtot``, given by :math:`\mu = \sqrt{\mu^2_{\alpha} + \mu^2_{\delta}}`, where within the ``IsolatedStarStellarMotions`` table :math:`\mu_{\alpha}` is column ``raPM`` and :math:`\mu_{\delta}` is column ``decPM``
+- ``chi2_motion``, defined as :math:`X^2_{\rm motion} = (\mu_{\alpha}/\sigma_{\mu_{\alpha}})^2 + (\mu_{\delta}/\sigma_{\mu_{\delta}})^2`, where within the ``IsolatedStarStellarMotions`` table :math:`\sigma_{\mu_{\alpha}}` is column ``raPMErr`` and :math:`\sigma_{\mu_{\delta}}` is column ``decPMErr``.
 
 **3.1. Add a total proper motion column.**
 Click on the "Add a column" icon (rectangle with encircled plus mark) within the Results tab. Define a new column with Name of ``pmtot``, and Expression of ``sqrt(power(raPM,2) + power(decPM,2))`` then click the "Add column" button.
