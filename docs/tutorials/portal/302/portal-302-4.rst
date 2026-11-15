@@ -84,7 +84,7 @@ This tutorial uses the UI assisted interface of the RSP Portal Aspect.
 **1.2. Download the file of NSC proper motion candidates.** :download:`Download dp2_302_4_NSC_candidates.csv <../../../../_static/tutorials/dp2_302_4_NSC_candidates.csv>`.
 
 **1.3. Upload the file of NSC proper motion candidates.**
-Within the Portal's UI assisted query interface, ensure that only "Spatial" is checked under "Enter Constraints". Under "Spatial", select the "Multi-object" option for "Spatial Type". This will bring up a window allowing you to upload the downloaded CSV file of proper motion candidates. Within this window, select "Choose file" and choose the ``dp2_302_4_NSC_candidates.csv`` file that you downloaded in section 1.2 above. Then click "Load".
+Within the Portal's UI assisted query interface, ensure that only "Spatial" is checked under "Enter Constraints". Under "Spatial", select the "Multi-object" option for "Spatial Type". This brings up a window to upload the downloaded CSV file of proper motion candidates. Within this window, select "Choose file" and choose ``dp2_302_4_NSC_candidates.csv`` that you downloaded. Click "Load".
 
 **1.4. Customize the uploaded table's selection of columns.**
 Click on the text that says ``9 columns (2 selected)`` (Figure 2).
