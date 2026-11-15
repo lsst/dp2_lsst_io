@@ -15,19 +15,19 @@
 .. A warning will alert you of identical labels during the linkcheck process.
 
 
-##############################################
-101.1. A template documentation-based tutorial
-##############################################
+###########################################
+302.4. Faint proper motion source selection
+###########################################
 
 For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
 
-**Data Release:** *DPX* or *DRX*
+**Data Release:** DP2
 
-**Last verified to run:** *yyyy-mm-dd*
+**Last verified to run:** 2026-11-14
 
-**Learning objective:** *Very brief description of tutorial's learning objective.*
+**Learning objective:** Use the `IsolatedStarStellarMotions` table to help identify high proper motion sources beyond Gaia's depth.
 
-**LSST data products:** *List the catalogs and images used.*
+**LSST data products:** `IsolatedStarStellarMotions`
 
 **Credit:** *E.g., "Originally developed by" or "Based on tutorials developed by" and then people's names, including journal article or software release citations if appropriate.* Please consider acknowledging them if this tutorial is used for the preparation of journal articles, software releases, or other tutorials.
 
