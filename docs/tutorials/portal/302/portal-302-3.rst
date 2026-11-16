@@ -16,7 +16,7 @@
 
 
 ###########################################
-302.4. Faint proper motion source selection
+302.3. Faint proper motion source selection
 ###########################################
 
 For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
@@ -46,9 +46,9 @@ The ``IsolatedStarStellarMotions`` table provides Rubin-based proper motion meas
 
 Searches for rare objects like HPM stars inherently select outliers, and thus suffer from high false positive rates due to noise excursions and artifacts which are rare but may be less rare than the targets of interest. To assemble a bona fide sample of HPM objects in ELAIS S1, this tutorial begins with a large, unvetted sample of HPM candidates selected from NOIRLab Source Catalog (NSC), based on Dark Energy Camera observations of this field. This initial, unvetted list of candidates, which contains many false positives, is then cross-referenced with HPM objects selected from the Rubin DP2 ``IsolatedStarStellarMotions`` table to create a pure sample of bona fide HPM objects. The purity of the sample for which DP2 and NSC agree on high proper motion is achieved because, while both DP2 and NSC have noise and artifacts, these are generally uncorrelated in the two independent datasets (Figure 1).
 
-.. figure:: images/portal-302-4-1.png
+.. figure:: images/portal-302-3-1.png
     :width: 600
-    :name: portal-302-4-1
+    :name: portal-302-3-1
     :alt: Illustration of differing artifacts in DP2 versus NSC.
 
     Figure 1: Left - NSC HPM selection contaminants (green circles) due to a bright star in ELAIS S1. The background image is from DESI Legacy Surveys DR11 (`Dey et al. 2019 <https://iopscience.iop.org/article/10.3847/1538-3881/ab089d>`_). Right - DP2 gri 'pretty coadd' of the same sky region, showing that artifacts like diffraction spikes, while present in both datasets, are poorly correlated, allowing for a pure sample to be selected by requiring high proper motion in both DP2 and NSC. Cutouts are ~1.9′x1.9′.
@@ -79,17 +79,17 @@ Follow the process to log in.
 **1.2. Select the DP1 & DP2 Catalogs tab in the Portal.**
 This tutorial uses the UI assisted interface of the RSP Portal Aspect.
 
-**1.3. Download the file of NSC proper motion candidates.** :download:`Download dp2_302_4_NSC_candidates.csv <../../../../_static/tutorials/dp2_302_4_NSC_candidates.csv>`.
+**1.3. Download the file of NSC proper motion candidates.** :download:`Download dp2_302_3_NSC_candidates.csv <../../../../_static/tutorials/dp2_302_3_NSC_candidates.csv>`.
 
 **1.4. Upload the file of NSC proper motion candidates.**
-Within the Portal's UI assisted query interface, ensure that only "Spatial" is checked under "Enter Constraints". Under "Spatial", select the "Multi-object" option for "Spatial Type". This brings up a window to upload the downloaded CSV file of HPM candidates. Within this window, select "Choose file" and choose ``dp2_302_4_NSC_candidates.csv`` that you downloaded. Click "Load Table".
+Within the Portal's UI assisted query interface, ensure that only "Spatial" is checked under "Enter Constraints". Under "Spatial", select the "Multi-object" option for "Spatial Type". This brings up a window to upload the downloaded CSV file of HPM candidates. Within this window, select "Choose file" and choose ``dp2_302_3_NSC_candidates.csv`` that you downloaded. Click "Load Table".
 
 **1.5. Customize the uploaded table's selection of columns.**
 Click on the text that says ``9 columns (2 selected)`` (Figure 2).
 
-.. figure:: images/portal-302-4-2.png
+.. figure:: images/portal-302-3-2.png
     :width: 600
-    :name: portal-302-4-2
+    :name: portal-302-3-2
     :alt: Location of button to select columns from user-uploaded table.
 
     Figure 2: The red arrow annotation points to the text to click to customize the set of columns that the query will retain from the uploaded table.
@@ -149,9 +149,9 @@ In the Active Chart panel, click the encircled plus symbol to add another chart.
 
 **5.3. Remove the default RA versus Dec scatter plot by clicking the "X" symbol on its panel.** There remain two plots (Figure 3) comparing the Rubin DP2 proper motion components against those of NSC, for the identified sample of bona fide HPM sources in the ELAIS S1 field. In both cases, there is good agreement: the proper motion components from Rubin and NSC fall approximately along the line y=x with some scatter.
 
-.. figure:: images/portal-302-4-3.png
+.. figure:: images/portal-302-3-3.png
     :width: 600
-    :name: portal-302-4-3
+    :name: portal-302-3-3
     :alt: Scatter plots showing good agreement between DP2 and NSC proper motion components.
 
     Figure 3: Agreement between Rubin DP2 ``IsolatedStarStellarMotions`` proper motion components and those of NSC DR2 (RA at left, Dec at right), for the identified set of bona fide HPM objects.
@@ -161,9 +161,9 @@ In the Active Chart panel, click the encircled plus symbol to add another chart.
 
 In the Active Chart panel, click the encircled plus symbol to add a chart. Select "Histogram" for "Plot Type", ``pmtot`` for "Column or expression", and 12 for "Number of bins". Figure 4 shows the resulting histogram. The distribution of total proper motions is peaked near the 50 mas/yr minimum imposed in Section 4.
 
-.. figure:: images/portal-302-4-4.png
+.. figure:: images/portal-302-3-4.png
     :width: 400
-    :name: portal-302-4-4
+    :name: portal-302-3-4
     :alt: Histogram of total proper motions peaking slightly above 50 milliarcseconds per year.
 
     Figure 4: Histogram of total proper motions of the bona fide HPM object sample in ELAIS S1.
