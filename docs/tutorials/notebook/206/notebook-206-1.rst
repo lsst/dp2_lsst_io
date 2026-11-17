@@ -1,7 +1,7 @@
 .. _notebook-206-1:
 
 ###########################
-206.2. Deblender outputs
+206.1. Deblender outputs
 ###########################
 
 .. raw:: html
