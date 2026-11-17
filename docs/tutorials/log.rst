@@ -6,6 +6,11 @@ Log of major tutorial updates
 
 For a log of updates to the tutorial notebooks, see also the `GitHub pull request history for the tutorial-notebooks repository <https://github.com/lsst/tutorial-notebooks/pulls?q=is%3Apr+state%3Aclosed>`_.
 
+2026-11-17
+==========
+
+Released a new Notebook tutorial, 206.1, demonstrating use of deblender outputs in the Object table.
+
 2026-11-12
 ==========
 
