@@ -121,7 +121,7 @@ The results table includes columns from both the ``IsolatedStarStellarMotions`` 
 Note that the values in the :math:`\mu_{\alpha}` columns (``raPM`` from ``IsolatedStarStellarMotions``, ``pmra`` from NSC) both include a factor of cos(:math:`\delta`).
 
 **3.1. Add a total proper motion column.**
-Click on the "Add a column" icon (rectangle with encircled plus mark) within the Results tab. Define a new column with Name of ``pmtot``, and Expression of ``sqrt(power(raPM,2) + power(decPM,2))`` then click the "Add column" button.
+Click on the "Add a column" icon (rectangle with encircled plus mark) near the top right of the Results table. Define a new column with Name of ``pmtot``, and Expression of ``sqrt(power(raPM,2) + power(decPM,2))`` then click the "Add column" button.
 
 **3.2. Add a significance of motion column.**
 Click the "Add a column" icon again. Define a second new column with Name of ``chi2_motion``, and Expression of ``power(raPM/raPMErr,2) + power(decPM/decPMErr,2)``, then click the "Add column" button.
