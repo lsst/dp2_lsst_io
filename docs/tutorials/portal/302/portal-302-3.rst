@@ -108,7 +108,7 @@ Select ``dp2.IsolatedStarStellarMotions`` within the Tables dropdown. If selecti
 Set the cross-match radius to 3″ using the "Radius" text box.
 
 **2.3. Run the query.**
-Run the cross-match between the uploaded table and the ``IsolatedStarStellarMotions`` table by clicking "Search" near bottom left. This will take you to the query results page once the query completes.
+Run the cross-match between the uploaded table and the ``IsolatedStarStellarMotions`` table by clicking "Search" near bottom left. This will take you to the query results page once the query completes. The query typically takes 3-6 minutes to execute, and should return 105 rows.
 
 3. Compute additional proper motion metrics
 ===========================================
