@@ -72,14 +72,14 @@ The initial list of ~5000 unvetted HPM candidates in the ELAIS S1 field was obta
 
 Note that additional NSC cuts may be possible, for instance on its ``flags`` column.
 
-**1.1. Log in to the Portal Aspect of the Rubin Science Platform.**
+**1.1. Download the file of NSC proper motion candidates.** :download:`Download dp2_302_3_NSC_candidates.csv <../../../../_static/tutorials/dp2_302_3_NSC_candidates.csv>`.
+
+**1.2. Log in to the Portal Aspect of the Rubin Science Platform.**
 In a browser, go to the URL `data.lsst.cloud <https://data.lsst.cloud>`_ and select the Portal Aspect.
 Follow the process to log in.
 
-**1.2. Select the DP1 & DP2 Catalogs tab in the Portal.**
+**1.3. Select the DP1 & DP2 Catalogs tab in the Portal.**
 This tutorial uses the UI assisted interface of the RSP Portal Aspect.
-
-**1.3. Download the file of NSC proper motion candidates.** :download:`Download dp2_302_3_NSC_candidates.csv <../../../../_static/tutorials/dp2_302_3_NSC_candidates.csv>`.
 
 **1.4. Upload the file of NSC proper motion candidates.**
 Within the Portal's UI assisted query interface, ensure that only "Spatial" is checked under "Enter Constraints". Under "Spatial", select the "Multi-object" option for "Spatial Type". This brings up a window to upload the downloaded CSV file of HPM candidates. Within this window, select "Choose file" and choose ``dp2_302_3_NSC_candidates.csv`` that you downloaded. Click "Load Table".
