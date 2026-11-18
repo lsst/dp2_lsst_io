@@ -118,6 +118,8 @@ The results table includes columns from both the ``IsolatedStarStellarMotions`` 
 - ``pmtot``, given by :math:`\mu = \sqrt{\mu^2_{\alpha} + \mu^2_{\delta}}`, where within the ``IsolatedStarStellarMotions`` table :math:`\mu_{\alpha}` is column ``raPM`` and :math:`\mu_{\delta}` is column ``decPM``
 - ``chi2_motion``, defined as :math:`X^2_{\rm motion} = (\mu_{\alpha}/\sigma_{\mu_{\alpha}})^2 + (\mu_{\delta}/\sigma_{\mu_{\delta}})^2`, where within the ``IsolatedStarStellarMotions`` table :math:`\sigma_{\mu_{\alpha}}` is column ``raPMErr`` and :math:`\sigma_{\mu_{\delta}}` is column ``decPMErr``.
 
+Note that the values in the :math:`\mu_{\alpha}` columns (``raPM`` from ``IsolatedStarStellarMotions``, ``pmra`` from NSC) both include a factor of cos(:math:`\delta`).
+
 **3.1. Add a total proper motion column.**
 Click on the "Add a column" icon (rectangle with encircled plus mark) within the Results tab. Define a new column with Name of ``pmtot``, and Expression of ``sqrt(power(raPM,2) + power(decPM,2))`` then click the "Add column" button.
 
