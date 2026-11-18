@@ -171,6 +171,7 @@ Tutorials with a learning objective of understanding one of the data products.
     :titlesonly:
     :glob:
 
+    206/notebook-206-1.rst
     206/notebook-206-2.rst
 
 
