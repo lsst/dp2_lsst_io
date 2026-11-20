@@ -160,8 +160,10 @@ Seeing
 The DP2 images were acquired during commissioning, during which the Active Optics System (AOS) to stabilize image quality was also being commissioned for operations.
 These mean seeing values are not representative of the future expected image quality distributions.
 
+The values in the table below are the mean seeing values from the ``VisitDetector`` table, averaged over all detectors for all associated visits.
 
-.. csv-table:: Table 5: The mean seeing over all detectors and visits (the mean PSF FWHM in arcsec, from the ``VisitDetector`` table).
+
+.. csv-table:: Table 5: The mean seeing (PSF FWHM in arcsec).
    :header: "Field Name", "u", "g", "r", "i", "z", "y"
    :widths: 30, 10, 10, 10, 10, 10, 10
    :align: left
@@ -192,8 +194,10 @@ Magnitude limits
 
 For the same reason as described above, these values are also not representative of the future expected mean depths per image (see `LSST Key Numbers <https://rubinobservatory.org/for-scientists/rubin-101/key-numbers>`_).
 
+The values in the table below are the mean :math:`5\sigma` PSF magnitude limits from the ``VisitDetector`` table, averaged over all detectors for all associated visits.
 
-.. csv-table:: Table 6: The mean :math:`5\sigma` PSF magnitude limit over all detectors and visits (from the ``VisitDetector`` table).
+
+.. csv-table:: Table 6: The mean :math:`5\sigma` PSF magnitude limit.
    :header: "Field Name", "u", "g", "r", "i", "z", "y"
    :widths: 30, 10, 10, 10, 10, 10, 10
    :align: left
@@ -225,9 +229,9 @@ Deep coadd images metadata
 Depth
 -----
 
-The :math:`5\sigma` PSF magnitude depth of the deep coadd image at the center coordinates of each field, derived from the ``psf_maglim`` :doc:`/products/maps/sp_maps`.
+The :math:`5\sigma` PSF magnitude limit of the deep coadd image at the center coordinates of each field, derived from the ``psf_maglim`` :doc:`/products/maps/sp_maps`.
 
-.. csv-table:: Table 7: Deep coadd :math:`5\sigma` PSF magnitude limits.
+.. csv-table:: Table 7: Deep coadd :math:`5\sigma` PSF magnitude limit at the field's center.
    :header: "Field Name", "u", "g", "r", "i", "z", "y"
    :widths: 30, 10, 10, 10, 10, 10, 10
    :align: left
@@ -257,7 +261,7 @@ PSF FWHM
 
 The PSF FWHM of the deep coadd image at the center coordinates of each field, derived from the ``psf_size`` :doc:`/products/maps/sp_maps`.
 
-.. csv-table:: Table 8: Deep coadd PSF FWHM, in arcseconds.
+.. csv-table:: Table 8: Deep coadd PSF FWHM, in arcseconds, at the field's center.
    :header: "Field Name", "u", "g", "r", "i", "z", "y"
    :widths: 30, 10, 10, 10, 10, 10, 10
    :align: left
