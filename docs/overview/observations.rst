@@ -21,7 +21,7 @@ Coadded images and catalogs cover ~3000 square degrees; single-epoch catalogs co
     :name: dp2_depth_map
     :alt: DP2 deep coadd image depth over the sky.
 
-    Figure 2: A map of the i-band PSF limiting magnitude for DP2 deep coadd images. Deep coadd images are only made within the pre-defined tracts for which sufficient input visits exist. The total area covered by deep coadd images is approximately 3000 square degrees.
+    Figure 2: A visualization of the survey property map of the i-band :math:`5\sigma` PSF limiting magnitude for DP2 deep coadd images. Deep coadd images are only made within the pre-defined tracts for which sufficient input visits exist. The total area covered by deep coadd images is approximately 3000 square degrees.
 
 
 Wide-fast-deep region
@@ -38,25 +38,28 @@ Small fields
 
 Selected to provide LSSTCam commissioning-era images for science validation across a variety of environments (crowded, dusty, galactic, extragalactic, clustering, nebulosity, and so on).
 The small fields include M49 and Trifid-Lagoon, which produced the Rubin First Look images in June 2025.
-These coordinates are the mean RA and mean Dec for all visits associated with these fields.
+The **center coordinates** are the mid-range values of the central (boresight) RA and Dec of all visits labeled by the LSST scheduler as associated with the field.
+The **radius** (R\ :sub:`V`\ ) is the maximum 2D sky distance between the field center and the most distant associated visit, rounded up to the nearest decimal place.
+This radius does not encompass every detector (visit image), or every ``skymap`` patch, or every detected source or object associated with that field.
+Only use this radius as a constraint on the central coordinates of visits associated with this field.
 
 .. csv-table:: Table 1: Small field survey area central coordinates.
-   :header: "Field Name", "RA, Dec", "RA, Dec [deg]"
-   :widths: 30, 30, 20
+   :header: "Field Name", "RA, Dec", "RA, Dec [deg]", "R\ :sub:`V`\ [deg]"
+   :widths: 30, 30, 20, 10
    :align: left
 
-    "Abell 2764", "00h22m00s -49d00m00s", "5.5 -49"
-    "DESI SV3 R1", "12h02m00s -00d18m00s", "180.5 -0.3"
-    "M49", "12h25m12s +06d54m00s", "186.3 6.9"
-    "Prawn", "16h54m00s -41d00m00s", "253.5 -41"
-    "Trifid-Lagoon", "18h06m48s -23d54m00s", "271.7 -23.9"
-    "New Horizons", "19h17m36s -20d12m00s", "289.4 -20.2"
-    "Rubin SV 212 -7", "14h06m48s -07d00m00s", "211.7 -7"
-    "Rubin SV 216 -17", "14h24m24s -16d42m00s", "216.1 -16.7"
-    "Rubin SV 225 -40", "15h00m00s -39d30m00s", "225 -39.5"
-    "Rubin SV 280 -48", "18h40m24s -48d00m00s", "280.1 -48"
-    "Rubin SV 300 -41", "20h01m12s -41d00m00s", "300.3 -41"
-    "Rubin SV 320 -15", "21h20m48s -15d06m00s", "320.2 -15.1"
+    "Abell 2764", "00h22m00s -49d00m00s", "5.5 -49.0", "2.0"
+    "DESI SV3 R1", "12h02m00s -00d18m00s", "180.5 -0.3", "0.9"
+    "M49", "12h25m12s +06d54m00s", "186.3 6.9", "2.2"
+    "Prawn", "16h54m00s -41d00m00s", "253.5 -41.0", "2.8"
+    "Trifid-Lagoon", "18h06m48s -23d54m00s", "271.7 -23.9", "1.9"
+    "New Horizons", "19h17m36s -20d12m00s", "289.4 -20.2", "1.6"
+    "Rubin SV 212 -7", "14h06m48s -07d00m00s", "211.7 -7.0", "0.6"
+    "Rubin SV 216 -17", "14h24m24s -16d42m00s", "216.1 -16.7", "0.5"
+    "Rubin SV 225 -40", "15h00m00s -39d30m00s", "225.0 -39.5", "2.0"
+    "Rubin SV 280 -48", "18h40m24s -48d00m00s", "280.1 -48.0", "2.1"
+    "Rubin SV 300 -41", "20h01m12s -41d00m00s", "300.3 -41.0", "1.9"
+    "Rubin SV 320 -15", "21h20m48s -15d06m00s", "320.2 -15.1", "4.5"
 
 
 Deep drilling fields
@@ -65,19 +68,22 @@ Deep drilling fields
 The LSST Deep Drilling Field (DDF) program includes 5 single-pointing fields, chosen to maximize multi-wavelength coverage with pre-existing surveys.
 The Euclid Deep Field South (EDFS) is larger and is split between an "a" and a "b" pointing which share the DDF visits.
 While these fields were covered during commissioning, observations did not follow the `baseline DDF strategy <https://survey-strategy.lsst.io/baseline/ddf.html>`_ (primarily, the seasons were short).
+The **center coordinates** are the mean values of the central (boresight) RA and Dec of all visits labeled by the LSST scheduler as associated with the DDF.
+The **radius** (R\ :sub:`V`\ ) is the maximum 2D sky distance between the field center and the most distant associated visit, rounded up to the nearest decimal place.
+This radius does not encompass every detector (visit image), or every ``skymap`` patch, or every detected source or object associated with that field.
+Only use this radius as a constraint on the central coordinates of visits associated with this field.
 
 .. csv-table:: Table 2: Deep drilling field central coordinates.
-   :header: "Field Name", "RA, Dec", "RA, Dec [deg]"
-   :widths: 30, 30, 20
+   :header: "Field Name", "RA, Dec", "RA, Dec [deg]", "R\ :sub:`V`\ [deg]"
+   :widths: 30, 30, 20, 10
    :align: left
 
-    "DDF ELAIS S1", "00h38m00s -44d00m00s", "9.5 -44"
-    "DDF XMM LSS", "02h22m24s -04d48m00s", "35.6 -4.8"
-    "DDF ECDFS", "03h32m00s -28d06m00s", "53 -28.1"
-    "DDF EDFS a", "03h56m48s -49d12m00s", "59.2 -49.2"
-    "DDF EDFS b", "04h12m48s -47d48m00s", "63.2 -47.8"
-    "DDF COSMOS", "10h00m24s +02d06m00s", "150.1 2.1"
-
+    "DDF ELAIS S1", "00h38m00s -44d00m00s", "9.5 -44.0", "1.0"
+    "DDF XMM LSS", "02h22m24s -04d48m00s", "35.6 -4.8", "1.0"
+    "DDF ECDFS", "03h32m00s -28d06m00s", "53.0 -28.1", "1.0"
+    "DDF EDFS a", "03h56m48s -49d12m00s", "59.2 -49.2", "1.5"
+    "DDF EDFS b", "04h12m48s -47d48m00s", "63.2 -47.8", "1.5"
+    "DDF COSMOS", "10h00m24s +02d06m00s", "150.1 2.1", "1.0"
 
 
 Visit images metadata
