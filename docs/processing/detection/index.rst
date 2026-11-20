@@ -30,6 +30,8 @@ If the footprint contains one or more flagged pixels, e.g., for cosmic rays, det
 Deblending
 ==========
 
+Deblending on deep coadd and visit images are performed using different processes. For sources detected in the visit images, the deblending procedure follows the process developed for SDSS (Lupton et al 2001, Bosch et al. 2018).
+
 After detection of objects from the deep coadds, footprints with multiple peaks are deblended into "children", and the original blended footprint is called the "parent".
 The Scarlet Lite algorithm performs the deblending, as described in
 "The current state of scarlet and looking toward the future" (`dmtn-194.lsst.io <https://dmtn-194.lsst.io/>`_).
