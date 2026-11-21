@@ -6,6 +6,11 @@ Log of major tutorial updates
 
 For a log of updates to the tutorial notebooks, see also the `GitHub pull request history for the tutorial-notebooks repository <https://github.com/lsst/tutorial-notebooks/pulls?q=is%3Apr+state%3Aclosed>`_.
 
+2026-11-19
+==========
+
+Released coadd-only versions of Notebook tutorials 105.1-105.4 demonstrating image reprocessing with the LSST Science Pipelines.
+
 2026-11-17
 ==========
 
