@@ -25,10 +25,10 @@ Rubin staff will respond to all questions posted there.
 
 **1. Go to the RSP Portal's HiPS search interface.**
 In a web browser, go to `data.lsst.cloud <https://data.lsst.cloud/>`_, click on the "Portal" panel, and log in.
-Click on the sidebar menu (three vertical lines in the upper left hand corner) and click on Rubin HiPS Search (Figure 1).
+Click on the sidebar menu (three vertical lines in the upper left hand corner) and click on Rubin HiPS Search.
 
 **2. Select the target, cutout size, and data set.**
-Next to "Select Target" enter the coordinates ``3h36m50.66s, -28d04m44.5s EQ_J2000`` (a pretty cluster in the Extended Chandra Deep Field South field) and a field of view of 5 arcminutes.
+Next to "Select Target" enter the coordinates ``3h36m50.66s -28d04m44.5s EQ_J2000`` (a pretty cluster in the Extended Chandra Deep Field South field) and a field of view of 5 arcminutes.
 Under "Select Data Set" click on the row "DP2 gri pretty coadd" then click "Search" at lower left.
 
 **3. Download the color cutout as a PNG.**
