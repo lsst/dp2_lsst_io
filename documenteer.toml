@@ -31,7 +31,7 @@ ignore = [
     "https://aladin.cds.unistra.fr/", # temporary to unblock PR 131
     "https://cdsweb.u-strasbg.fr/", # temporary to unblock PR 131
     "https://.*linea.org.br/", # temporary to unblock PR 131
-    "https://iopscience.iop.org/", # temporary to unblock PR 152
+    "https://data.minorplanetcenter.net/mpcops/documentation/", # temporary to unblock PR 155
 ]
 
 [sphinx.intersphinx.projects]
