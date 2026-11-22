@@ -36,6 +36,7 @@ Learn to navigate the Portal's user interface.
     101/portal-101-2.rst
     101/portal-101-3.rst
     101/portal-101-4.rst
+    101/portal-101-5.rst
 
 
 

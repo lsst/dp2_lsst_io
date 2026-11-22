@@ -1,16 +1,16 @@
 .. _portal-101-3:
 
-##########################
-101.3. Switch to dark mode
-##########################
+####################################
+101.3. Download a color cutout image
+####################################
 
 For the Portal Aspect of the Rubin Science Platform (RSP) at data.lsst.cloud.
 
 **Data Release:** Data Preview 2
 
-**Last verified to run:** 2026-08-06
+**Last verified to run:** 2026-11-18
 
-**Learning objective:** Switch the color theme to dark mode.
+**Learning objective:** Download a color cutout of a HiPS image.
 
 **LSST data products:** N/A
 
@@ -23,21 +23,20 @@ Rubin staff will respond to all questions posted there.
 
 ----
 
-**1. Go to the RSP and enter the Portal Aspect.**
+**1. Go to the RSP Portal's HiPS search interface.**
 In a web browser, go to `data.lsst.cloud <https://data.lsst.cloud/>`_, click on the "Portal" panel, and log in.
+Click on the sidebar menu (three vertical lines in the upper left hand corner) and click on Rubin HiPS Search.
 
-**2. Open the sidebar menu.**
-At upper left, click on the "menu" icon (three horizontal bars) to open the sidebar.
+**2. Select the target, cutout size, and data set.**
+Next to "Select Target" enter the coordinates ``3h36m50.66s -28d04m44.5s EQ_J2000`` (a pretty cluster in the Extended Chandra Deep Field South field) and a field of view of 5 arcminutes.
+Under "Select Data Set" click on the row "DP2 gri pretty coadd" then click "Search" at lower left.
 
-**3. Open the Appearance menu.**
-At the bottom of the sidebar, click on "Appearance".
-
-**4. Choose "Dark" as the theme.**
-Choose to display the Portal in Dark mode, Light mode, or match it to your system settings.
+**3. Download the color cutout as a PNG.**
+Above the color image, click on the "tools" icon (wrench and hammer) then on the "save" icon (floppy disk), as shown in Figure 1 below, to open the "Save Image" pop-up window (not shown).
+Ensure the option to save as a PNG file is selected, alter the filename if desired, then click "Save" to download the color image.
 
 .. figure:: images/portal-101-3-1.png
     :name: portal-101-3-1
-    :alt: The appearance menu in the sidebar.
-    :width: 300
+    :alt: Use the tools icon to download the image.
 
-    Figure 1: The Appearance menu in the Portal's sidebar offers Dark mode.
+    Figure 1: Under the "tools" icon, click the "save" icon to download the color cutout.
