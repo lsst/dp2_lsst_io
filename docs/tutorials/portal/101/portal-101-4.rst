@@ -1,21 +1,21 @@
 .. _portal-101-4:
 
-##########################################
-101.4. See query status in the job monitor
-##########################################
+##########################
+101.4. Switch to dark mode
+##########################
 
-For the Portal Aspect of the Rubin Science Platform at data.lsst.cloud.
+For the Portal Aspect of the Rubin Science Platform (RSP) at data.lsst.cloud.
 
 **Data Release:** Data Preview 2
 
 **Last verified to run:** 2026-08-06
 
-**Learning objective:** Use the Job Monitor to see information about past and current queries.
+**Learning objective:** Switch the color theme to dark mode.
 
-**LSST data products:** ``Object`` table
+**LSST data products:** N/A
 
-**Credit:** Originally developed by the Rubin Community Science team. Please consider acknowledging them if this tutorial is used for the preparation of journal articles,
-software releases, or other tutorials.
+**Credit:** Originally developed by the Rubin Community Science team.
+Please consider acknowledging them if this tutorial is used for the preparation of journal articles, software releases, or other tutorials.
 DOI: `10.11578/rubin/dc.20250909.20 <https://doi.org/10.11578/rubin/dc.20250909.20>`_
 
 **Get Support:** Everyone is encouraged to ask questions or raise issues in the `Support Category <https://community.lsst.org/c/support/6>`_ of the Rubin Community Forum.
@@ -23,42 +23,21 @@ Rubin staff will respond to all questions posted there.
 
 ----
 
-**1. Log into the Portal from the RSP.**
-In a web browser go to the Rubin Science Platform (RSP) using the URL `data.lsst.cloud <https://data.lsst.cloud/>`_.
-Select the "Portal" box.
-Click on the "DP1 & DP2 Catalogs" tab.
+**1. Go to the RSP and enter the Portal Aspect.**
+In a web browser, go to `data.lsst.cloud <https://data.lsst.cloud/>`_, click on the "Portal" panel, and log in.
 
-**2. Create a sample job.**
-For the purpose of this tutorial, click the "Edit ADQL" box in the upper right hand corner and paste the following query into the box.
-Hit the "Search" button in the lower left corner to execute the query.
+**2. Open the sidebar menu.**
+At upper left, click on the "menu" icon (three horizontal bars) to open the sidebar.
 
-.. code-block:: sql
+**3. Open the Appearance menu.**
+At the bottom of the sidebar, click on "Appearance".
 
-  SELECT coord_dec,coord_ra,g_psfFlux
-    FROM dp2.Object
-    WHERE CONTAINS(POINT('ICRS', coord_ra, coord_dec),CIRCLE('ICRS', 53.13, -28.1, 0.0027))=1
-
-
-**3.  Examine the job monitor.**
-Click on the "Job Monitor" tab.
-The job monitor will have all jobs submitted by you (created within the retention period).
-The jobs listed are in the chronological order (most recent first).
+**4. Choose "Dark" as the theme.**
+Choose to display the Portal in Dark mode, Light mode, or match it to your system settings.
 
 .. figure:: images/portal-101-4-1.png
     :name: portal-101-4-1
-    :alt: Job monitor screenshot.
+    :alt: The appearance menu in the sidebar.
+    :width: 300
 
-    Figure 1: The Portal's job monitor interface.
-
-**4. Learn about individual jobs.**
-In the "Control" column click on the green "plot" icon to go to the results interface for that job.
-Click on the circle with a letter "i" to see information about the submitted job, such as the ADQL statement and the job ID, as in Figure 2.
-Clicking on the red "garbage can" will delete the job.
-
-.. figure:: images/portal-101-4-2.png
-    :width:  400
-    :name: portal-101-4-2
-    :alt: The screenshot illustrating information about a recent job, available from the job monitor.
-
-    Figure 2: The job information pop-up window.
-
+    Figure 1: The Appearance menu in the Portal's sidebar offers Dark mode.

@@ -84,6 +84,19 @@ Short tutorials with a learning objective of how to use a single RSP function or
     104/notebook-104-5.rst
 
 
+105. Image reprocessing
+-----------------------
+
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    105/notebook-105-1.rst
+    105/notebook-105-2.rst
+    105/notebook-105-3.rst
+    105/notebook-105-4.rst
+
+
 .. _notebook-200:
 
 200. Data products definitions
@@ -286,6 +299,7 @@ Longer tutorials with a learning objective of executing an end-to-end scientific
 
     306/notebook-306-1.rst
     306/notebook-306-2.rst
+    306/notebook-306-3.rst
 
 
 307. Active Galactic Nuclei (AGN)

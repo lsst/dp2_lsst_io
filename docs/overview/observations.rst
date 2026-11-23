@@ -21,7 +21,7 @@ Coadded images and catalogs cover ~3000 square degrees; single-epoch catalogs co
     :name: dp2_depth_map
     :alt: DP2 deep coadd image depth over the sky.
 
-    Figure 2: A map of the i-band PSF limiting magnitude for DP2 deep coadd images. Deep coadd images are only made within the pre-defined tracts for which sufficient input visits exist. The total area covered by deep coadd images is approximately 3000 square degrees.
+    Figure 2: A visualization of the survey property map of the i-band :math:`5\sigma` PSF limiting magnitude for DP2 deep coadd images. Deep coadd images are only made within the pre-defined tracts for which sufficient input visits exist. The total area covered by deep coadd images is approximately 3000 square degrees.
 
 
 Wide-fast-deep region
@@ -38,25 +38,28 @@ Small fields
 
 Selected to provide LSSTCam commissioning-era images for science validation across a variety of environments (crowded, dusty, galactic, extragalactic, clustering, nebulosity, and so on).
 The small fields include M49 and Trifid-Lagoon, which produced the Rubin First Look images in June 2025.
-These coordinates are the mean RA and mean Dec for all visits associated with these fields.
+The **center coordinates** are the mid-range values of the central (boresight) RA and Dec of all visits labeled by the LSST scheduler as associated with the field.
+The **visits radius** (R\ :sub:`V`\ ) is the maximum 2D sky distance between the field center and the most distant associated visit, rounded up to the nearest decimal place.
+This radius does not encompass every detector (visit image), or every ``skymap`` patch, or every detected source or object associated with that field.
+Only use this radius as a constraint on the central coordinates of visits associated with this field.
 
 .. csv-table:: Table 1: Small field survey area central coordinates.
-   :header: "Field Name", "RA, Dec", "RA, Dec [deg]"
-   :widths: 30, 30, 20
+   :header: "Field Name", "RA, Dec", "RA, Dec [deg]", "R\ :sub:`V`\  [deg]"
+   :widths: 30, 30, 20, 10
    :align: left
 
-    "Abell 2764", "00h22m00s -49d00m00s", "5.5 -49"
-    "DESI SV3 R1", "12h02m00s -00d18m00s", "180.5 -0.3"
-    "M49", "12h25m12s +06d54m00s", "186.3 6.9"
-    "Prawn", "16h54m00s -41d00m00s", "253.5 -41"
-    "Trifid-Lagoon", "18h06m48s -23d54m00s", "271.7 -23.9"
-    "New Horizons", "19h17m36s -20d12m00s", "289.4 -20.2"
-    "Rubin SV 212 -7", "14h06m48s -07d00m00s", "211.7 -7"
-    "Rubin SV 216 -17", "14h24m24s -16d42m00s", "216.1 -16.7"
-    "Rubin SV 225 -40", "15h00m00s -39d30m00s", "225 -39.5"
-    "Rubin SV 280 -48", "18h40m24s -48d00m00s", "280.1 -48"
-    "Rubin SV 300 -41", "20h01m12s -41d00m00s", "300.3 -41"
-    "Rubin SV 320 -15", "21h20m48s -15d06m00s", "320.2 -15.1"
+    "Abell 2764", "00h22m00s -49d00m00s", "5.5 -49.0", "2.0"
+    "DESI SV3 R1", "12h02m00s -00d18m00s", "180.5 -0.3", "0.9"
+    "M49", "12h25m12s +06d54m00s", "186.3 6.9", "2.2"
+    "Prawn", "16h54m00s -41d00m00s", "253.5 -41.0", "2.8"
+    "Trifid-Lagoon", "18h06m48s -23d54m00s", "271.7 -23.9", "1.9"
+    "New Horizons", "19h17m36s -20d12m00s", "289.4 -20.2", "1.6"
+    "Rubin SV 212 -7", "14h06m48s -07d00m00s", "211.7 -7.0", "0.6"
+    "Rubin SV 216 -17", "14h24m24s -16d42m00s", "216.1 -16.7", "0.5"
+    "Rubin SV 225 -40", "15h00m00s -39d30m00s", "225.0 -39.5", "2.0"
+    "Rubin SV 280 -48", "18h40m24s -48d00m00s", "280.1 -48.0", "2.1"
+    "Rubin SV 300 -41", "20h01m12s -41d00m00s", "300.3 -41.0", "1.9"
+    "Rubin SV 320 -15", "21h20m48s -15d06m00s", "320.2 -15.1", "4.5"
 
 
 Deep drilling fields
@@ -65,19 +68,22 @@ Deep drilling fields
 The LSST Deep Drilling Field (DDF) program includes 5 single-pointing fields, chosen to maximize multi-wavelength coverage with pre-existing surveys.
 The Euclid Deep Field South (EDFS) is larger and is split between an "a" and a "b" pointing which share the DDF visits.
 While these fields were covered during commissioning, observations did not follow the `baseline DDF strategy <https://survey-strategy.lsst.io/baseline/ddf.html>`_ (primarily, the seasons were short).
+The **center coordinates** are the mean values of the central (boresight) RA and Dec of all visits labeled by the LSST scheduler as associated with the DDF.
+The **visits radius** (R\ :sub:`V`\ ) is the maximum 2D sky distance between the field center and the most distant associated visit, rounded up to the nearest decimal place.
+This radius does not encompass every detector (visit image), or every ``skymap`` patch, or every detected source or object associated with that field.
+Only use this radius as a constraint on the central coordinates of visits associated with this field.
 
 .. csv-table:: Table 2: Deep drilling field central coordinates.
-   :header: "Field Name", "RA, Dec", "RA, Dec [deg]"
-   :widths: 30, 30, 20
+   :header: "Field Name", "RA, Dec", "RA, Dec [deg]", "R\ :sub:`V`\  [deg]"
+   :widths: 30, 30, 20, 10
    :align: left
 
-    "DDF ELAIS S1", "00h38m00s -44d00m00s", "9.5 -44"
-    "DDF XMM LSS", "02h22m24s -04d48m00s", "35.6 -4.8"
-    "DDF ECDFS", "03h32m00s -28d06m00s", "53 -28.1"
-    "DDF EDFS a", "03h56m48s -49d12m00s", "59.2 -49.2"
-    "DDF EDFS b", "04h12m48s -47d48m00s", "63.2 -47.8"
-    "DDF COSMOS", "10h00m24s +02d06m00s", "150.1 2.1"
-
+    "DDF ELAIS S1", "00h38m00s -44d00m00s", "9.5 -44.0", "1.0"
+    "DDF XMM LSS", "02h22m24s -04d48m00s", "35.6 -4.8", "1.0"
+    "DDF ECDFS", "03h32m00s -28d06m00s", "53.0 -28.1", "1.0"
+    "DDF EDFS a", "03h56m48s -49d12m00s", "59.2 -49.2", "1.5"
+    "DDF EDFS b", "04h12m48s -47d48m00s", "63.2 -47.8", "1.5"
+    "DDF COSMOS", "10h00m24s +02d06m00s", "150.1 2.1", "1.0"
 
 
 Visit images metadata
@@ -101,17 +107,17 @@ While observations in all six filters *ugrizy* are included in DP2, each field h
     "DDF EDFS b", "5", "37", "33", "59", "34", "10", "178"
     "DDF COSMOS", "105", "87", "173", "162", "110", "77", "714"
     "Abell 2764", "0", "7", "0", "3", "0", "0", "10"
-    "DESI SV3 R1", "0", "0", "0", "3", "0", "0", "3"
+    "DESI SV3 R1", "0", "0", "0", "4", "0", "0", "4"
     "M49", "234", "280", "378", "213", "0", "0", "1105"
     "Prawn", "196", "160", "142", "93", "30", "0", "621"
     "Trifid-Lagoon", "240", "210", "134", "124", "10", "8", "726"
-    "New Horizons", "37", "53", "78", "116", "80", "33", "397"
+    "New Horizons", "38", "53", "78", "116", "80", "33", "398"
     "Rubin SV 212 -7", "0", "139", "187", "123", "0", "0", "449"
     "Rubin SV 216 -17", "0", "28", "30", "63", "0", "0", "121"
     "Rubin SV 225 -40", "312", "529", "391", "381", "241", "104", "1958"
     "Rubin SV 280 -48", "30", "30", "29", "31", "29", "0", "149"
     "Rubin SV 300 -41", "0", "8", "0", "0", "30", "0", "38"
-    "Rubin SV 320 -15", "12", "49", "106", "267", "216", "82", "732"
+    "Rubin SV 320 -15", "12", "49", "106", "266", "215", "80", "728"
     "All", "1964", "4166", "4856", "7959", "5809", "3944", "28698"
 
 
@@ -134,17 +140,17 @@ The number of visits, and the number of unique nights (epochs), varies by field.
     "DDF EDFS b", "178", "50", "4"
     "DDF COSMOS", "714", "21", "34"
     "Abell 2764", "10", "3", "3"
-    "DESI SV3 R1", "3", "1", "3"
+    "DESI SV3 R1", "4", "1", "4"
     "M49", "1105", "7", "158"
     "Prawn", "621", "7", "89"
     "Trifid-Lagoon", "726", "24", "30"
-    "New Horizons", "397", "25", "16"
+    "New Horizons", "398", "26", "15"
     "Rubin SV 212 -7", "449", "5", "90"
     "Rubin SV 216 -17", "121", "2", "60"
     "Rubin SV 225 -40", "1958", "29", "68"
     "Rubin SV 280 -48", "149", "2", "74"
     "Rubin SV 300 -41", "38", "2", "19"
-    "Rubin SV 320 -15", "732", "34", "22"
+    "Rubin SV 320 -15", "728", "34", "21"
     "All", "28698", "131", "219"
 
 
@@ -152,10 +158,12 @@ Seeing
 ------
 
 The DP2 images were acquired during commissioning, during which the Active Optics System (AOS) to stabilize image quality was also being commissioned for operations.
-These values are not representative of the future expected image quality distributions.
+These mean seeing values are not representative of the future expected image quality distributions.
+
+The values in the table below are the mean seeing values from the ``VisitDetector`` table, averaged over all detectors for all associated visits.
 
 
-.. csv-table:: Table 5: The mean seeing (PSF FWHM in arcsec) across all detectors and visits.
+.. csv-table:: Table 5: The mean seeing (PSF FWHM in arcsec).
    :header: "Field Name", "u", "g", "r", "i", "z", "y"
    :widths: 30, 10, 10, 10, 10, 10, 10
    :align: left
@@ -167,7 +175,7 @@ These values are not representative of the future expected image quality distrib
     "DDF EDFS b", "1.34", "1.41", "1.39", "1.16", "1.29", "1.01"
     "DDF COSMOS", "1.36", "1.16", "1.25", "1.14", "1.17", "1.22"
     "Abell 2764", "nan", "1.0", "nan", "1.04", "nan", "nan"
-    "DESI SV3 R1", "nan", "nan", "nan", "1.47", "nan", "nan"
+    "DESI SV3 R1", "nan", "nan", "nan", "1.51", "nan", "nan"
     "M49", "1.49", "1.37", "1.27", "1.22", "nan", "nan"
     "Prawn", "1.49", "1.38", "1.28", "1.24", "1.42", "nan"
     "Trifid-Lagoon", "1.22", "1.14", "1.14", "1.03", "1.09", "1.41"
@@ -177,9 +185,8 @@ These values are not representative of the future expected image quality distrib
     "Rubin SV 225 -40", "1.51", "1.43", "1.27", "1.24", "1.32", "1.25"
     "Rubin SV 280 -48", "1.69", "1.53", "1.52", "1.35", "1.53", "nan"
     "Rubin SV 300 -41", "nan", "1.86", "nan", "nan", "1.65", "nan"
-    "Rubin SV 320 -15", "1.26", "1.67", "1.47", "1.38", "1.39", "1.16"
+    "Rubin SV 320 -15", "1.26", "1.67", "1.47", "1.38", "1.39", "1.15"
     "All", "1.36", "1.3", "1.27", "1.18", "1.21", "1.19"
-
 
 
 Magnitude limits
@@ -187,8 +194,10 @@ Magnitude limits
 
 For the same reason as described above, these values are also not representative of the future expected mean depths per image (see `LSST Key Numbers <https://rubinobservatory.org/for-scientists/rubin-101/key-numbers>`_).
 
+The values in the table below are the mean :math:`5\sigma` PSF magnitude limits from the ``VisitDetector`` table, averaged over all detectors for all associated visits.
 
-.. csv-table:: Table 6: The mean :math:`5\sigma` PSF magnitude limit across all detectors and visits.
+
+.. csv-table:: Table 6: The mean :math:`5\sigma` PSF magnitude limit.
    :header: "Field Name", "u", "g", "r", "i", "z", "y"
    :widths: 30, 10, 10, 10, 10, 10, 10
    :align: left
@@ -200,19 +209,18 @@ For the same reason as described above, these values are also not representative
     "DDF EDFS b", "23.26", "23.68", "23.25", "23.42", "22.5", "21.9"
     "DDF COSMOS", "23.39", "24.39", "23.54", "22.98", "22.58", "21.57"
     "Abell 2764", "nan", "24.87", "nan", "23.14", "nan", "nan"
-    "DESI SV3 R1", "nan", "nan", "nan", "23.5", "nan", "nan"
+    "DESI SV3 R1", "nan", "nan", "nan", "23.48", "nan", "nan"
     "M49", "23.29", "24.3", "23.85", "23.44", "nan", "nan"
     "Prawn", "23.11", "24.07", "23.74", "23.39", "22.71", "nan"
     "Trifid-Lagoon", "23.41", "24.29", "23.86", "23.65", "22.65", "21.28"
-    "New Horizons", "23.17", "24.41", "24.11", "23.63", "22.94", "21.88"
+    "New Horizons", "23.18", "24.41", "24.11", "23.63", "22.94", "21.88"
     "Rubin SV 212 -7", "nan", "24.23", "23.83", "23.71", "nan", "nan"
     "Rubin SV 216 -17", "nan", "24.34", "24.02", "23.62", "nan", "nan"
     "Rubin SV 225 -40", "23.29", "23.97", "23.52", "23.33", "22.75", "21.63"
     "Rubin SV 280 -48", "22.59", "23.45", "23.27", "23.15", "22.27", "nan"
     "Rubin SV 300 -41", "nan", "23.25", "nan", "nan", "22.31", "nan"
-    "Rubin SV 320 -15", "23.55", "24.09", "23.3", "23.04", "22.39", "21.65"
+    "Rubin SV 320 -15", "23.55", "24.09", "23.3", "23.04", "22.39", "21.67"
     "All", "23.37", "24.12", "23.58", "23.32", "22.65", "21.68"
-
 
 
 Deep coadd images metadata
@@ -221,9 +229,9 @@ Deep coadd images metadata
 Depth
 -----
 
-The :math:`5\sigma` PSF magnitude depth of the deep coadd image at the center coordinates of each field
+The :math:`5\sigma` PSF magnitude limit of the deep coadd image at the center coordinates of each field, derived from the ``psf_maglim`` :doc:`/products/maps/sp_maps`.
 
-.. csv-table:: Table 7: Deep coadd PSF magnitude limits.
+.. csv-table:: Table 7: Deep coadd :math:`5\sigma` PSF magnitude limit at the field's center.
    :header: "Field Name", "u", "g", "r", "i", "z", "y"
    :widths: 30, 10, 10, 10, 10, 10, 10
    :align: left
@@ -251,9 +259,9 @@ The :math:`5\sigma` PSF magnitude depth of the deep coadd image at the center co
 PSF FWHM
 --------
 
-The PSF FWHM of the deep coadd image at the center coordinates of each field.
+The PSF FWHM of the deep coadd image at the center coordinates of each field, derived from the ``psf_size`` :doc:`/products/maps/sp_maps`.
 
-.. csv-table:: Table 8: Deep coadd PSF FWHM, in arcseconds.
+.. csv-table:: Table 8: Deep coadd PSF FWHM, in arcseconds, at the field's center.
    :header: "Field Name", "u", "g", "r", "i", "z", "y"
    :widths: 30, 10, 10, 10, 10, 10, 10
    :align: left
@@ -276,7 +284,6 @@ The PSF FWHM of the deep coadd image at the center coordinates of each field.
     "Rubin SV 280 -48", "1.54", "1.49", "1.47", "1.32", "1.46", "nan"
     "Rubin SV 300 -41", "nan", "1.12", "nan", "nan", "1.5", "nan"
     "Rubin SV 320 -15", "1.08", "1.41", "1.19", "1.26", "1.24", "1.15"
-
 
 
 Additional resources
