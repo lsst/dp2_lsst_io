@@ -30,7 +30,7 @@ If the footprint contains one or more flagged pixels, e.g., for cosmic rays, det
 Deblending
 ==========
 
-Deblending on visit and deep coadd images are performed using different processes. 
+Deblending on visit and deep coadd images are performed using different processes.
 
 For sources detected in the visit images, the deblending procedure follows the process developed for SDSS. After sources detected in the visit images as contiguous regions with S/N > 5, if a region contains multiple peaks, it is deblended using algorithm based on the legacy SDSS deblender (`Lupton et al. 2001 <https://www.astro.princeton.edu/~rhl/photomisc/deblender.pdf>`_, `Bosch et al. 2018 <https://scixplorer.org/abs/2018PASJ...70S...5B/abstract>`_). This algorithm assumes that individual sub-peaks have a symmetric morphology in order to model the overlapping flux between blended sources.
 
