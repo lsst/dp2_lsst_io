@@ -34,7 +34,7 @@ Deblending on visit and deep coadd images are performed using different processe
 
 For sources detected in the visit images, the deblending procedure follows the process developed for SDSS. After sources detected in the visit images as contiguous regions with S/N > 5, if a region contains multiple peaks, it is deblended using algorithm based on the legacy SDSS deblender (`Lupton et al. 2001 <https://www.astro.princeton.edu/~rhl/photomisc/deblender.pdf>`_, `Bosch et al. 2018 <https://scixplorer.org/abs/2018PASJ...70S...5B/abstract>`_). This algorithm assumes that individual sub-peaks have a symmetric morphology in order to model the overlapping flux between blended sources.
 
-After detection of objects from the deep coadds, footprints with multiple peaks are deblended into "children" using color information from one or more of the 6 LSST bands. The original blended footprint is called the "parent".
+After detection of objects from the deep coadds, footprints with multiple peaks are deblended into "children", using color information when 2 or more of the 6 LSST bands are available. The original blended footprint is called the "parent".
 The Scarlet Lite algorithm performs the deblending, as described in
 "The current state of scarlet and looking toward the future" (`dmtn-194.lsst.io <https://dmtn-194.lsst.io/>`_, see also `Melchior et al. 2018 <https://scixplorer.org/abs/2018A%26C....24..129M/abstract>`_).
 The catalogs only include the deblended children.
