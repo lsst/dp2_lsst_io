@@ -33,3 +33,10 @@ Processing
 ----------
 
 TBD
+
+Tutorials
+---------
+
+See the 200-level catalog :doc:`/tutorials/index` for notebook tutorial 206.2 on accessing deblender footprints.
+
+
