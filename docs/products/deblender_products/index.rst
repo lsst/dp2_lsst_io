@@ -27,7 +27,7 @@ Butler
 Description
 ===========
 
-TBD
+`object_scarlet_models` is an archive of the multi-band deblending models generated for each `deep_coadd` for detected objects in the `object` catalog. `object_scarlet_models` stores the parameters including the LSST bands used in the deblending process, model PSF, dictionary of blends for each parent object and other metadata required to reconstruct blend models and footprints on the fly. 
 
 Processing
 ----------
