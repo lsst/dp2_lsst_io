@@ -9,7 +9,7 @@ An archive of Scarlet-deblended models as JSON objects.
 Access
 ======
 
-The `object_scarlet_models` data set is only accessible via the Butler service.
+The ``object_scarlet_models`` data set is only accessible via the Butler service.
 
 TAP
 ---
@@ -27,7 +27,7 @@ Butler
 Description
 ===========
 
-`object_scarlet_models` is an archive of the multi-band deblending models generated for each `deep_coadd` for detected objects in the `object` catalog. `object_scarlet_models` stores the parameters including the LSST bands used in the deblending process, model PSF, dictionary of blends for each parent object and other metadata required to reconstruct blend models and footprints on the fly. 
+``object_scarlet_models`` is an archive of the multi-band deblending models generated for each ``deep_coadd`` for detected objects in the ``object`` catalog. ``object_scarlet_models`` stores the parameters including the LSST bands used in the deblending process, model PSF, dictionary of blends for each parent object and other metadata required to reconstruct blend models and footprints on the fly. 
 
 Processing
 ----------
