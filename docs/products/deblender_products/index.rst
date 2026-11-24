@@ -9,7 +9,7 @@ An archive of Scarlet-deblended models as JSON objects.
 Access
 ======
 
-The object Scarlet models table is only accessible via the Butler service.
+The `object_scarlet_models` data set is only accessible via the Butler service.
 
 TAP
 ---
