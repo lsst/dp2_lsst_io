@@ -1,27 +1,35 @@
-.. _deblender_products:
+.. _object-scarlet-models:
 
-######################
-Deblender products
-######################
+#####################
+Object Scarlet models
+#####################
 
-Filter transformations to/from the LSST photometric system and other astronomical photometric systems.
+An archive of Scarlet-deblended models as JSON objects.
 
 Access
 ======
 
-To convert between Data Preview 2 (DP2) and other photometric systems, refer to the filter transformations in `RTN-125 <https://rtn-125.lsst.io/>`_.
+The object Scarlet models table is only accessible via the Butler service.
+
+TAP
+---
+
+This dataset is not available via TAP.
+
+Butler
+------
+
+* |object_scarlet_models_doi|
+* Dataset type: ('object_scarlet_models', {**skymap**, **tract**, **patch**}, LsstScarletModelData)
+* Format: Parquet
+* Number of Butler datasets: |object_scarlet_models_butler_count|
 
 Description
 ===========
 
-**Filter transformations for DP2** were derived and are intended to support calibration and comparison across survey systems.
-The filter transformation relations include both polynomial-fit equations and lookup-table-based methods.
-They are generally valid for stars with typical spectral energy distributions (SEDs), and caution should be used when applying them to objects with strong emission lines or atypical colors.
-Transformation relations are currently available to/from LSSTCam Data Preview 2 (DP2) photometric system and the photometric systems of the LSSTComCam (DP1), Dark Energy Survey (DES) (DR2), PanSTARRS (DR2), SDSS (DR18), Gaia (DR3), Euclid (Q1), and Johnson-Cousins (UBVRcIc).
+TBD
 
+Processing
+----------
 
-Tutorials
----------
-
-DP2 tutorial notebook describing the use of these transformations can be found in the  `Filter Transformations notebook <https://dp2.lsst.io/tutorials/notebook/311/notebook-311-2.html>`_.
-
+TBD
