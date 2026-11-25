@@ -27,7 +27,7 @@ Butler
 Description
 ===========
 
-The deblending of objects in the ``deep_coadd`` images is performed by the scarlet lite implementation of the scarlet deblender algorithm (`Melchior et al. 2018 <https://scixplorer.org/abs/2018A%26C....24..129M/abstract>`_). The ``object_scarlet_models`` dataset is an archive of the multi-band deblending models generated for each ``deep_coadd`` for detected objects in the ``object`` catalog. ``object_scarlet_models`` stores the parameters including the LSST bands used in the deblending process, model PSF, dictionary of blends for each parent object and other metadata required to reconstruct blend models and footprints on the fly. 
+The deblending of objects in the ``deep_coadd`` images is performed by the scarlet lite implementation of the scarlet deblender algorithm (`Melchior et al. 2018 <https://scixplorer.org/abs/2018A%26C....24..129M/abstract>`_). The ``object_scarlet_models`` dataset is an archive of the multi-band deblending models generated for each ``deep_coadd`` for detected objects in the ``object`` catalog. ``object_scarlet_models`` stores the parameters including the LSST bands used in the deblending process, model PSF, dictionary of blends for each parent object and other metadata required to reconstruct blend models and footprints on the fly.
 
 Processing
 ----------
