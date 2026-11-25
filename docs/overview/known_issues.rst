@@ -201,6 +201,44 @@ Since these visits are combined into coadds, the impact is most visible as spati
 
 Users performing precision photometry — especially on faint or extended sources — should be aware that the photometric uniformity of DP2 may be locally degraded in regions observed predominantly under non-photometric conditions.
 
+Incorrect reference band used in forced photometry on coadds
+------------------------------------------------------------
+Forced photometry measurements on coadds use a single position and shape obtained from unforced measurements on a reference band.
+A very recent bug was discovered, showing that during deblending the per-band detection flags were mangled.
+This caused the brightest source (parent) in a blend to overwrite the detection flags for all of its children with its own values, resulting in the wrong reference band being used for objects when the parent was missing a detection in the default reference band (i), usually due to saturation at the core of the parent.
+This bug does not affect isolated objects at all.
+It predominantly affects crowded fields, where the i-, r-, and z-band coadds are more likely to have a saturated source in those bands, causing all of the sources in the blend to have their reference band set to one of g, y, or u.
+
+This affects the reference quantities:
+
+- ``coord_ra``/``coord_dec``
+- ``shape_xx``/``shape_yy``/``shape_xy``
+- ``refExtendedness``
+- ``refSizeExtendedness``
+
+as well as the forced measurements:
+
+- ``psfFlux``
+- ``cModelFlux``
+- GAaP aperture fluxes (``ap03`` - ``ap70``)
+
+For bright stars the observed effect is an approximately 5 mmag shift in i-band PSF - CModel measurements, while fainter sources (roughly 21-24 mag) see PSF magnitudes with wider scatter by as much as 0.5 mag.
+
+Multi-band ``exponentialFlux`` and ``sersicFlux`` appear to be unaffected by this error, as they only use the reference band quantities for initialization.
+Unforced measurements (``free_psfFlux``, ``free_cModelFlux``, etc.) are also unaffected.
+
+Users should check the reference band.
+Objects with ``refBand = 'i'`` are likely to be unaffected, as they are correctly using the default band.
+A ``refBand`` of ``g`` or ``y`` is a warning sign, especially in crowded fields.
+However, for bluer objects it is possible that they are missing detections in the redder bands.
+A reasonable cut on ``{refBand}_free_psfFlux`` will identify most of the affected objects.
+
+For objects that fail the cut:
+
+- Use ``free_psfFlux`` for point sources, bearing in mind that unforced fluxes are biased near the detection limit and won't result in matched aperture colors.
+- Use the Sersic fluxes for galaxy colors.
+- Use per-band ``ra``/``dec`` in well-detected bands as opposed to ``coord_ra``/``coord_dec``.
+- Do not cut on ``refBand = 'i'`` alone for population studies. It preferentially removes objects in crowded fields and i-band dropouts.
 
 .. _issues_backgrounds:
 
