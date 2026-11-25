@@ -33,7 +33,7 @@ Processing
 ----------
 
 Objects are first detected from the ``deep_coadd`` imaging as (possibly blended) footprints of flux with S/N > 5 and detections are merged across all available LSST
-bands to identify overlapping objects. In order to subdivide parent blends ``DeconvolveExposureTask`` is run on each deep_coadd to partially deconvolve the images to a target Gaussian PSF with sigma=0.8, the model seeing used in scarlet lite. ``DeblendCoaddSourcesMultiTask`` then invokes ``ScarletDeblendTask``, breaks large parent footprints into smaller sub-blends using the deconvolved images,then runs scarlet lite to model each child source simultaneously across all available bands.
+bands to identify overlapping objects. In order to subdivide parent blends, ``DeconvolveExposureTask`` is run on each deep_coadd to partially deconvolve the images to a target Gaussian PSF with sigma=0.8, the model seeing used in scarlet lite. ``DeblendCoaddSourcesMultiTask`` then invokes ``ScarletDeblendTask``, breaks large parent footprints into smaller sub-blends using the deconvolved images, then runs scarlet lite to model each child source simultaneously across all available bands.
 
 Tutorials
 ---------
