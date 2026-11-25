@@ -32,7 +32,8 @@ Deblending of objects in the ``deep_coadd`` imaging is performed by the multi-ba
 Processing
 ----------
 
-TBD
+Objects are first detected from the ``deep_coadd`` imaging as (possibly blended) footprints of flux with S/N > 5 and detections are merged across all available LSST
+bands to identify overlapping sources. ``DeblendCoaddSourcesMultiTask`` then invokes ``ScarletDeblendTask``, which applies partial deconvolution to a target Gaussian PSF (sigma = 0.8 pixels) to break large parent footprints into smaller sub-blends, and runs the scarlet lite algorithm to model each child source simultaneously across all available bands.
 
 Tutorials
 ---------
