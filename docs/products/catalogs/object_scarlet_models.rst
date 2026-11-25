@@ -1,4 +1,4 @@
-.. _object-scarlet-models:
+.. _object-scarlet-models_old:
 
 #####################
 Object Scarlet models

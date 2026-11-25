@@ -33,6 +33,8 @@ ignore = [
     "https://.*linea.org.br/", # temporary to unblock PR 131
     "https://data.minorplanetcenter.net/mpcops/documentation/", # temporary to unblock PR 155
     "https://gaia.aip.de", # temporary to unblock PR 156
+    "https://data.lsdb.io/", # temporary to unblock PR 160
+    "https://iopscience.iop.org", # to unblock PR 160 (iop is maybe blocking github linkcheck as a bot, links are fine)
 ]
 
 [sphinx.intersphinx.projects]
